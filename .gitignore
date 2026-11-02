@@ -466,3 +466,7 @@ CLAUDE.local.md
 
 # Local agent worktrees
 .claude/worktrees/
+
+# Hook helpers imported by .claude/hooks/*.py; re-included because the Python
+# template above ignores every lib/ directory ([Ll]ib).
+!.claude/hooks/lib/

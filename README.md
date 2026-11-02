@@ -1,4 +1,4 @@
-# am-mini-docling · the Amir Engine 📌
+# extrct_docling · the Amir Engine 📌
 
 > **A fork of [Docling](https://github.com/docling-project/docling) that turns one PDF into one folder an AI agent (or a tired human) can actually use.**
 > Upstream Docling docs follow [further down](#docling-upstream).
@@ -6,7 +6,7 @@
 ## ⚡ TL;DR
 
 ```bash
-git clone https://github.com/Sdamirsa/am-mini-docling.git && cd am-mini-docling
+git clone https://github.com/Sdamirsa/extrct_docling.git && cd extrct_docling
 uv sync --frozen --no-group docs --extra standard --extra feat-ocr-rapidocr-onnx --extra models-vlm-inline   # install
 uv run amir-batch my-paper.pdf -o out                                   # convert → out/my-paper/
 ```

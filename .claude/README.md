@@ -1,6 +1,6 @@
 # `.claude/` — Navigation Index
 
-This directory configures Claude Code for **docling-slim** (the am-mini-docling
+This directory configures Claude Code for **docling-slim** (the extrct_docling
 fork hosting the **Amir Engine** build). The structure mirrors the official
 taxonomy.
 

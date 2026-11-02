@@ -1,4 +1,4 @@
-# Reference catalog — docling-slim (am-mini-docling / Amir Engine)
+# Reference catalog — docling-slim (extrct_docling / Amir Engine)
 
 > Read on demand. Do NOT load all of this at session start.
 > Consult before designing new schemas, prompts, extractors, charts, or pipelines.

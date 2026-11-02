@@ -1,4 +1,4 @@
-# Hand-off — `am-mini-docling` (Amir Engine on Docling)
+# Hand-off — `extrct_docling` (Amir Engine on Docling)
 
 > Use this as the first thing you read when you take over the repo. Cross-references: [REPO_CONTEXT.md](REPO_CONTEXT.md) (architecture map), [AMIR_STAGE.md](AMIR_STAGE.md) (live status), [AMIR_TODO.md](AMIR_TODO.md) (phase plan), [AMIR_cheatsheet.html](AMIR_cheatsheet.html) (commands).
 
@@ -6,12 +6,12 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Pinned commit at hand-off: **`23d73f2`** (https://github.com/Sdamirsa/am-mini-docling/tree/23d73f2). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Pinned commit at hand-off: **`23d73f2`** (https://github.com/Sdamirsa/extrct_docling/tree/23d73f2). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
 ```
-am-mini-docling/
+extrct_docling/
 ├── docling/                          # upstream Docling — don't modify unless necessary
 │   ├── backend/  pipeline/  models/  datamodel/  cli/  ...
 │   ├── document_converter.py         # upstream entry point
@@ -180,9 +180,9 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 13 pass
 
 ```bash
 # In the consumer repo:
-git submodule add -b dgx https://github.com/Sdamirsa/am-mini-docling.git vendor/am-mini-docling
+git submodule add -b dgx https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
 git submodule update --init --recursive
-cd vendor/am-mini-docling
+cd vendor/extrct_docling
 uv sync --frozen --no-group docs --extra standard --extra feat-ocr-rapidocr-onnx --extra models-vlm-inline   # onnx extra keeps RapidOCR working; models-vlm-inline brings open-clip-torch for figure types
 
 # Then use the package the same way as in this repo:
@@ -192,8 +192,8 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a specific commit (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/am-mini-docling && git checkout 23d73f2 && cd ../..
-git add vendor/am-mini-docling && git commit -m "pin am-mini-docling@23d73f2"
+cd vendor/extrct_docling && git checkout 23d73f2 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@23d73f2"
 ```
 
 ## 12 · What to do next (if you take over)

@@ -55,6 +55,8 @@ VLM runtime: HF `transformers` by default; if [vLLM](https://github.com/vllm-pro
 
 ```
 out/<pdf-name>/
+├── <pdf-name>.html         📄 the manuscript as ONE readable HTML file, figures inlined; every block
+│                              tagged with self_ref/page/bbox + a JSON manifest for agents
 ├── preview.embedded.html   👀 clickable viewer, ONE file, images inlined: share this
 ├── preview.html            👀 same viewer, links to images/ (small; keep the folder together)
 ├── <pdf-name>.md           📝 markdown, figures linked from images/
@@ -68,7 +70,7 @@ out/<pdf-name>/
 └── images/                 🖼️ page renders + figure/table crops
 ```
 
-**Citable:** every chunk/table/figure carries a `self_ref` (e.g. `#/texts/12`). Open `preview.html?ref=%23%2Ftexts%2F12` to jump to the highlighted box on the page. See [docs/hand-off-notes/hand-off-note-for-citation.md](docs/hand-off-notes/hand-off-note-for-citation.md).
+**Citable:** every chunk/table/figure carries a `self_ref` (e.g. `#/texts/12`). Open `preview.html?ref=%23%2Ftexts%2F12` to jump to the highlighted box on the page, or `<pdf-name>.html#texts-12` for the same block in the reading view (its `data-page` / `data-bbox` give the page region). See [docs/hand-off-notes/hand-off-note-for-citation.md](docs/hand-off-notes/hand-off-note-for-citation.md).
 
 ## 🔬 Worked example: one paper, three configs (real output, committed)
 

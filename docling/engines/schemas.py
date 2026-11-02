@@ -72,6 +72,15 @@ class PdfConversionOutput(BaseModel):
             "``embed_images=True``."
         ),
     )
+    html_path: Path | None = Field(
+        None,
+        description=(
+            "Path to ``<stem>.html`` — the manuscript as one standalone HTML "
+            "page (images inlined) whose blocks carry ``data-self-ref`` / "
+            "``data-page`` / ``data-bbox``, with a JSON manifest of figures, "
+            "tables, chunks and run metadata. Written when ``embed_images=True``."
+        ),
+    )
     output_dir: Path | None = Field(
         None,
         description="Directory where artifacts (markdown, json) were saved, if any.",

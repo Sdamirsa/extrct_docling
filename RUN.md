@@ -104,6 +104,7 @@ per-PDF output path. Exit code is `1` if any PDF ends `FAILURE` or
 ```
 <stem>.md              # primary markdown, noise pictures stripped
 <stem>.embedded.md     # standalone markdown, base64-inlined images
+<stem>.html            # standalone manuscript HTML (images inlined), see below
 document.json          # full DoclingDocument (round-trippable)
 nodes.jsonl            # one row per DocItem (iterate_items() order)
 chunks.jsonl           # HybridChunker output: text, headings, page_nos, self_refs
@@ -113,6 +114,20 @@ run.json               # env, timing, full engine_config/pipeline_options
 images/                # page renders + picture/table crops
 preview.html           # bbox viewer — needs images/ alongside it, see below
 preview.embedded.html  # same viewer, images inlined — a single shareable file
+```
+
+`<stem>.html` is the one-file version of the manuscript for humans *and* agents:
+Docling's HTML export (headings, lists, tables with merged cells, captions,
+figures inline; noise pictures dropped) where every block carries `id`,
+`data-self-ref`, `data-label`, `data-page` and `data-bbox` (PDF points,
+top-left origin), figures add `data-figure-type`, and
+`<script id="extrct-manifest" type="application/json">` embeds the
+`figures` / `tables` / `chunks` rows and `run.json` (its `how_to_read` field
+explains the format). To (re)build it for an existing bundle without
+reconverting:
+
+```bash
+uv run --frozen python -c "from pathlib import Path; from docling.engines import rebuild_document_html as r; [r(p.parent) for p in Path('samples/out').glob('*/document.json')]"
 ```
 
 `preview.html` is **not standalone** (use `preview.embedded.html` for that) — it references `images/page_NNNN.png`

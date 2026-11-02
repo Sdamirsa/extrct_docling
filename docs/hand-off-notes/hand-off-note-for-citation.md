@@ -166,7 +166,7 @@ whether it exists yet:
 | Deep link + highlight to one or more specific nodes | done — `?ref=a,b,...` (this hand-off) |
 | Copy a citation link from the viewer itself | done — panel's "Citation link" field |
 | Multi-node citation shown together (not just highlighted) | **not built** — today only the first `ref` opens the side panel; the rest are highlighted but you scroll to see them |
-| Single-file, zero-dependency HTML (no separate `images/` folder) | **not built** — would mean base64-embedding every page render; the existing `.embedded.md` precedent was ~700 KB for 7 *figure* crops, so full page images at `--images-scale 1.5` would likely run several MB per document. Worth doing only if folder-sharing becomes a real blocker. |
+| Single-file, zero-dependency HTML (no separate `images/` folder) | done — `preview.embedded.html` (the viewer, page renders inlined) and `<stem>.html` (reading view; every block carries `data-self-ref` / `data-page` / `data-bbox`, so `<stem>.html#texts-12` is a citation anchor) |
 | A landing page/index across many documents | **not built** — if the student receives more than a handful of PDFs, they currently open each `preview.html` separately; no cross-document index exists yet. |
 
 None of the "not built" rows are required for a single-document,

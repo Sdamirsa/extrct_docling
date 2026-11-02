@@ -70,6 +70,7 @@ Produces `samples/out/<my>/`:
 |---|---|---|
 | `<my>.md` | Linked markdown — `![](images/picture_NNN.png)` refs; noise pictures replaced by `<!-- noise picture: reason -->` | default |
 | `<my>.embedded.md` | Standalone — base64-inlined images (same noise filtering); ~10–15× larger | when `embed_images=True` (default) |
+| `<my>.html` | Standalone manuscript HTML — blocks tagged `data-self-ref`/`data-page`/`data-bbox`, JSON manifest (figures/tables/chunks/run) in `<script id="extrct-manifest">`; `docling/engines/html_export.py` | when `embed_images=True` (default) |
 | `document.json` | Full `DoclingDocument` (round-trippable) | `save_artifacts=True` (default) |
 | `nodes.jsonl` | One JSON per `iterate_items()` node — label, prov/bbox, text, captions, table data, `_kind`, `_level`, `image_path` | `save_artifacts=True` |
 | `chunks.jsonl` | HybridChunker output: `{index, text, token_count, headings, captions, page_nos, self_refs}` | `save_artifacts=True` |

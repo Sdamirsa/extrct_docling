@@ -130,7 +130,7 @@ out = PdfEngine(images_scale=1.5).convert(
 `PdfEngine` flags (Phase 1+2+3):
 - `save_artifacts=True` (default) — `document.json`, `nodes.jsonl`, `chunks.jsonl`, `tables.jsonl`, `figures.jsonl`, `run.json`, image crops. Auto-enables page + picture image generation.
 - `link_images=True` (default) — primary `<stem>.md` rewrites `<!-- image -->` placeholders to `![](images/picture_NNN.png)`.
-- `embed_images=True` (default) — additionally writes `<stem>.embedded.md` with base64 data URIs.
+- `embed_images=True` (default) — additionally writes `<stem>.embedded.md` with base64 data URIs and `<stem>.html` (`docling/engines/html_export.py`: Docling HTML + per-block `data-self-ref`/`data-page`/`data-bbox` + JSON manifest; `rebuild_document_html(pdf_dir)` regenerates it from a bundle).
 - `filter_noise_pictures=True` (default) — flags logos / watermarks / repeated banners (classifier + bbox-repeat heuristic). Strips them from both markdown files; tags `is_noise` in `figures.jsonl`. Uses Docling's generic DocumentFigureClassifier, whose labels have no medical classes — trusted for noise only (`generic_classifier_label`).
 - `figure_types=True` (default) — BiomedCLIP zero-shot figure type (`ct`, `angiography`, `ecg`, `kaplan_meier`, `bar_chart`, ...) in `docling/engines/figure_typing.py` → `figures.jsonl[*].figure_type` + `PictureItem.meta.amir__figure_type`. Needs `models-vlm-inline` extra.
 - `chunk_tokenizer="sentence-transformers/all-MiniLM-L6-v2"`, `chunk_max_tokens=512` — chunker config.

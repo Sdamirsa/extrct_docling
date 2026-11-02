@@ -33,6 +33,7 @@ from docling.engines.figure_typing import (
     FigureTyper,
     type_pictures,
 )
+from docling.engines.html_export import write_document_html
 from docling.engines.picture_filter import (
     DEFAULT_NOISE_CLASSES,
     DEFAULT_REPEAT_THRESHOLD,
@@ -111,7 +112,10 @@ class PdfEngine:
             When True (default), additionally writes a second
             ``<stem>.embedded.md`` next to the primary markdown, with image
             placeholders replaced by base64 data URIs — a standalone file you
-            can share without the surrounding ``images/`` folder.
+            can share without the surrounding ``images/`` folder — and
+            ``<stem>.html``, the same content as a standalone HTML page with
+            per-block provenance and a JSON manifest for agents (see
+            :mod:`docling.engines.html_export`).
         link_images
             When True (default), the primary ``<stem>.md`` swaps each image
             placeholder for a relative ``![](images/picture_NNN.png)``
@@ -394,6 +398,12 @@ class PdfEngine:
                     errors=[e.model_dump() for e in output.errors],
                 )
 
+            # After run.json and the jsonl sidecars: the HTML manifest embeds them.
+            if self._embed_images:
+                output.html_path = self._write_document_html(
+                    result, pdf_dir, output.errors, noise_flags
+                )
+
             if make_html_preview:
                 try:
                     output.preview_html = render_html_preview(
@@ -504,6 +514,22 @@ class PdfEngine:
         target.write_text(embedded, encoding="utf-8")
         _log.info("PdfEngine: wrote embedded markdown to %s", target)
         return target
+
+    @staticmethod
+    def _write_document_html(
+        result: ConversionResult,
+        pdf_dir: Path,
+        errors: list[PdfEngineError],
+        noise_flags: list[PictureNoiseFlag],
+    ) -> Path | None:
+        try:
+            return write_document_html(
+                result.document, pdf_dir, noise_flags=noise_flags
+            )
+        except Exception as exc:
+            _log.warning("PdfEngine: standalone HTML export failed: %s", exc)
+            errors.append(PdfEngineError(component="html_export", message=str(exc)))
+            return None
 
 
 _SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")

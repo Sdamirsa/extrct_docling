@@ -74,7 +74,7 @@ out/<pdf-name>/
 
 ## 🔬 Worked example: one paper, three configs (real output, committed)
 
-Input: [`showcase/Public-test-manuscript.pdf`](showcase/Public-test-manuscript.pdf): *Vision-Language and Large Language Model Performance in Gastroenterology* (arXiv preprint, 68 pages), shared by its first author.
+Input: [`showcase/Public-test-manuscript.pdf`](showcase/Public-test-manuscript.pdf): *Vision-Language and Large Language Model Performance in Gastroenterology* (arXiv preprint, 68 pages; Safavi-Naini et al., [arXiv:2409.00084](https://arxiv.org/abs/2409.00084), published in *npj Digital Medicine* 2025). The paper and its outputs are CC BY-NC-ND 4.0, not MIT: see [`showcase/LICENSE`](showcase/LICENSE).
 
 | Config | Output | Time |
 |---|---|---|

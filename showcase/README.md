@@ -5,7 +5,12 @@ Pick the folder that matches your hardware and open its `preview.embedded.html`.
 
 **Input:** [`Public-test-manuscript.pdf`](Public-test-manuscript.pdf):
 *Vision-Language and Large Language Model Performance in Gastroenterology*
-(arXiv preprint, 68 pages, 15 figures, 17 tables), shared by its first author.
+(arXiv preprint, 68 pages, 15 figures, 17 tables), Safavi-Naini et al.,
+[arXiv:2409.00084](https://arxiv.org/abs/2409.00084); published in *npj Digital
+Medicine* 8, 797 (2025), [doi:10.1038/s41746-025-02174-0](https://doi.org/10.1038/s41746-025-02174-0).
+
+**License:** the paper and all three output folders are **CC BY-NC-ND 4.0**
+(© The Author(s)), not the repository's MIT license; see [`LICENSE`](LICENSE).
 
 ## ⚡ Which one should I look at?
 

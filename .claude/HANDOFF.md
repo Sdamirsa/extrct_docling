@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Pinned commit at hand-off: **`23d73f2`** (https://github.com/Sdamirsa/extrct_docling/tree/23d73f2). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Pinned commit at hand-off: **`1afc44fe`** (https://github.com/Sdamirsa/extrct_docling/tree/1afc44fe). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -23,12 +23,15 @@ extrct_docling/
 │       ├── chunker.py                # HybridChunker → chunks.jsonl
 │       ├── structured_outputs.py     # tables.jsonl + figures.jsonl (flat schema for agents)
 │       ├── picture_filter.py         # noise tagging (logos, repeated banners)
+│       ├── figure_typing.py          # BiomedCLIP zero-shot figure type (ecg, ct, kaplan_meier, ...)
 │       ├── vlm_specs.py              # picture-description VLM presets (Qwen2.5-VL-3B, Granite-Vision-4.1-4b)
 │       ├── compare_pipelines.py      # standard vs full-page VLM A/B runner
 │       ├── visualizer.py             # clickable bbox HTML viewer (preview.html)
+│       ├── html_export.py            # standalone <stem>.html (provenance attrs + JSON manifest)
 │       ├── run_snapshot.py           # run.json (env + timing + models)
 │       └── cli.py                    # `amir-batch` typer CLI
-├── tests/test_engines/test_pdf_engine.py  # 14 tests; 13 run, 1 skip on the pictureless fixture
+├── tests/test_engines/               # test_pdf_engine.py + test_html_export.py; 18 pass, 1 skip
+├── showcase/                         # demo bundles of the first author's paper — CC BY-NC-ND 4.0, NOT MIT (showcase/LICENSE)
 ├── samples/                          # gitignored except README — drop PDFs here
 ├── .claude/                          # project-local agent config
 │   ├── REPO_CONTEXT.md               # architecture cheat-sheet
@@ -144,7 +147,7 @@ The `standard` extra includes `format-pdf`, `models-local` (torch), `feat-ocr-ra
 make validate                              # full pre-commit gate (ruff, ty, tach, etc.)
 make check                                 # read-only checks
 make test                                  # full pytest
-uv run pytest tests/test_engines/ -q       # just engine tests (fast — 13 pass, 1 skip)
+uv run pytest tests/test_engines/ -q       # just engine tests (fast — 18 pass, 1 skip)
 ```
 
 `tach.toml` enforces module coverage. `docling.engines` is registered as a module under the `entrypoints` layer.
@@ -165,6 +168,9 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 13 pass
 - **vLLM** is not installed in this env. The engine defaults to `picture_description_engine="default"` which uses `AUTO_INLINE` and gracefully falls back to transformers. Forcing `"vllm"` without `pip install vllm` crashes the pipeline at convert time, not at engine construction.
 - **`run.json` uses `serialize_as_any=True`** on `pipeline_options.model_dump()` so subclass fields like `layout_options.model_spec` survive (otherwise pydantic strips them — see Docling commit history).
 - **Picture noise classifier** uses `document_figure_classifier_v2` (downloaded on first use). Labels observed in the wild: `logo`, `signature`, `watermark`, `barcode`, `qr_code`, `page_header`, `page_footer`, `photograph`, `box_plot`, `scatter_plot`, `icon`, `full_page_image`. The noise set in `picture_filter.py::DEFAULT_NOISE_CLASSES` is configurable.
+- **`.claude/hooks/lib/` must stay tracked.** Upstream's `.gitignore` ignores every `[Ll]ib` folder, so until 2026-11-02 the hooks' shared helpers were never committed and 5 of the 6 project hooks (secrets and destructive-command guards included) crashed on import in any fresh clone — silently, since a crashing hook doesn't block. `.gitignore` now re-includes it with `!.claude/hooks/lib/`. If a hook raises `ModuleNotFoundError` on a new machine, check this first.
+- **`showcase/` is not MIT.** The paper (arXiv:2409.00084; published as npj Digit Med 8, 797, 2025) and every conversion of it are CC BY-NC-ND 4.0 — see `showcase/LICENSE`. Keep that file and the README citation when regenerating. The maintainer chose to keep the full paper (2026-11-02) over a page excerpt or a CC BY replacement: the license allows sharing it in whole or in part, and it has been public in history since `c6aacb06`.
+- **Conversion weak spots** seen on a 4-paper batch (2026-11-02): a 20-page SSRN-formatted paper came out as 5 text blocks with no headings, and text printed inside figures (axis labels, panel text) leaks into the body text of `<stem>.md` / chunks. Not investigated.
 - **Hostname / machine paths** must never be committed to repo docs — keep them in `.claude/private-hand-off/` (gitignored). The maintainer is sensitive to this; we had to relocate one hand-off doc after a previous leak.
 
 ## 10 · Conventions (load-bearing)
@@ -193,15 +199,15 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a specific commit (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout 23d73f2 && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@23d73f2"
+cd vendor/extrct_docling && git checkout 1afc44fe && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@1afc44fe"
 ```
 
 ## 12 · What to do next (if you take over)
 
 Pick one of these based on the maintainer's ask:
 
-1. **Real GPU validation pass.** Actually run `picture_description="granite_vision_4b"` and `granite_vision_tables=True` end-to-end on the DGX with the models downloaded, and pin observed per-figure / per-table durations in `AMIR_STAGE.md`. Currently un-measured.
+1. **Conversion quality on hard layouts.** The SSRN paper and figure-text leaks under §9 "Conversion weak spots". (The old "real GPU validation pass" item is done — see the 2026-08-07 and 2026-10-01 rows in `AMIR_STAGE.md`.) Older bundles (`showcase/`, earlier sample runs) predate `<stem>.html`; `rebuild_document_html(pdf_dir)` backfills it without reconverting.
 2. **Reading-order bug** — test workaround #1 (`force_backend_text=True`) on `test-pdf-ai-manuscript.pdf`. If it fixes the column flip, expose a `reading_order` knob on `PdfEngine`. Otherwise file upstream per the checklist in `issues-with-docling/reading-order-mixed-layout-page.md`.
 3. **Tokenizer / VLM upgrades**, per "Future considerations" in `AMIR_TODO.md`: swap `sentence-transformers/all-MiniLM-L6-v2` → `Qwen/Qwen3-Embedding-4B` (bump `chunk_max_tokens` to 1024–2048) and `Qwen/Qwen2.5-VL-3B-Instruct` → Qwen3-VL once vLLM ships stable support. Both are one-line changes in `docling/engines/vlm_specs.py` / `pdf_engine.py`.
 4. **onnxruntime-gpu on aarch64** — there's a separate hand-off at `.claude/private-hand-off/onnxruntime-gpu-aarch64.md` (gitignored) for getting GPU OCR working system-wide on the DGX Spark.

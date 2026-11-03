@@ -26,11 +26,11 @@ _log = logging.getLogger(__name__)
 _RUN_JSON_FILENAME = "run.json"
 _SCHEMA_VERSION = "1"
 
-# This fork's release, independent of the upstream Docling version it is
-# based on (docling-slim in environment.packages). Bump with each
-# ``extrct-v<version>`` tag.
+# This fork's release: the upstream Docling version it is built on plus
+# "-r<n>", the fork's revision on that base. Matches the git tag
+# ``extrct_docling-v<ENGINE_VERSION>``; restart at -r1 on a new Docling base.
 ENGINE_NAME = "extrct_docling"
-ENGINE_VERSION = "1.0.1"
+ENGINE_VERSION = "2.131.0-r1"
 ENGINE_REPOSITORY = "https://github.com/Sdamirsa/extrct_docling"
 
 _TRACKED_PACKAGES = (

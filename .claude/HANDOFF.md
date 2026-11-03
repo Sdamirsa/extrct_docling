@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Current release: **`extrct-v1.0.1`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.1); releases are `extrct-v<version>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must match, and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Current release: **`extrct_docling-v2.131.0-r1`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r1); releases are `extrct_docling-v<docling version>-r<n>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must equal the part after `-v`; cut releases with the `release-tag` skill (`.claude/skills/release-tag/`, includes a sensitive-content scan), and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -200,8 +200,8 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a release (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout extrct-v1.0.1 && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct-v1.0.1"
+cd vendor/extrct_docling && git checkout extrct_docling-v2.131.0-r1 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_docling-v2.131.0-r1"
 ```
 
 ## 12 · What to do next (if you take over)

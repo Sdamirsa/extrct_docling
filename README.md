@@ -104,25 +104,24 @@ More: [RUN.md](RUN.md) (CLI reference) · [.claude/HANDOFF.md](.claude/HANDOFF.m
 
 ## 📌 Releases: pin a version
 
-Releases of this fork are git tags named `extrct-v<version>`, numbered independently of the upstream Docling version they're built on (`docling-slim` still reports the upstream number). Every bundle's `run.json` has an `engine` block with the release and, when run from a git checkout, the exact commit (`git_commit`) and whether tracked files had uncommitted changes (`git_dirty`). Any output can be traced back to the code that produced it.
+Releases of this fork are git tags named `extrct_docling-v<docling version>-r<n>`: the upstream Docling version the fork is built on, plus `-r<n>`, the fork's revision on that base (`-r2` is the next fork release on the same Docling, a Docling upgrade restarts at `-r1`). Every bundle's `run.json` has an `engine` block with that version and, when run from a git checkout, the exact commit (`git_commit`) and whether tracked files had uncommitted changes (`git_dirty`). Any output can be traced back to the code that produced it.
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
-| [`extrct-v1.0.1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.1) | 2026-11-03 | Docling v2.131.0 | Caps Granite-Vision table generation (a boxed prompt laid out like a table generated for over an hour: the limit was the tokenizer's unset ~1e30 `model_max_length`); a table whose model-typed cells miss words printed in its box keeps the box's PDF text in the HTML |
-| [`extrct-v1.0.0`](https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.0) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above |
+| [`extrct_docling-v2.131.0-r1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r1) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above, plus a cap on Granite-Vision table generation (it used the tokenizer's unset ~1e30 `model_max_length`, so a boxed prompt laid out like a table generated for over an hour) and, for a table whose model-typed cells miss words printed in its box, that box's PDF text in the HTML |
 
 Pin it from another project:
 
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct-v1.0.1
+git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r1
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct-v1.0.1"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r1"
 ```
 
-In code, `docling.engines.ENGINE_VERSION` gives the release number.
+In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r1"`).
 
 ---
 

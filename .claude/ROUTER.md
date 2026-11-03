@@ -14,6 +14,10 @@ The user's intent dictates which artifact handles a request. Consult this first.
 | "commit", "save changes", "check in" | `skills/commit` | Chains to open-pr if pr-flow installed |
 <!-- /managed:baseline -->
 
+| User says | Skill | Notes |
+|---|---|---|
+| "tag a release", "cut a release", "make a release version", "tag this version" | `skills/release-tag` | `extrct_docling-v<docling version>-r<n>` tag + sensitive-content scan before push |
+
 <!-- managed:pack-pr-flow -->
 <!-- /managed:pack-pr-flow -->
 

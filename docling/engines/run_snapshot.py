@@ -30,7 +30,7 @@ _SCHEMA_VERSION = "1"
 # "-r<n>", the fork's revision on that base. Matches the git tag
 # ``extrct_docling-v<ENGINE_VERSION>``; restart at -r1 on a new Docling base.
 ENGINE_NAME = "extrct_docling"
-ENGINE_VERSION = "2.131.0-r1"
+ENGINE_VERSION = "2.131.0-r2"
 ENGINE_REPOSITORY = "https://github.com/Sdamirsa/extrct_docling"
 
 _TRACKED_PACKAGES = (

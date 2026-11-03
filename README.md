@@ -108,6 +108,7 @@ Releases of this fork are git tags named `extrct_docling-v<docling version>-r<n>
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
+| [`extrct_docling-v2.131.0-r2`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r2) | 2026-11-03 | Docling v2.131.0 | The HTML also keeps captions and footnotes of code blocks (a boxed prompt Docling reads as code loses its "Table SI.x" caption in Docling's HTML) and any other child of a text item; `html_written_by` in the manifest names the release that wrote the HTML when it differs from the one that converted the PDF (`rebuild_document_html`) |
 | [`extrct_docling-v2.131.0-r1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r1) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above, plus a cap on Granite-Vision table generation (it used the tokenizer's unset ~1e30 `model_max_length`, so a boxed prompt laid out like a table generated for over an hour) and, for a table whose model-typed cells miss words printed in its box, that box's PDF text in the HTML |
 
 Pin it from another project:
@@ -115,13 +116,13 @@ Pin it from another project:
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r1
+git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r2
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r1"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r2"
 ```
 
-In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r1"`).
+In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r2"`).
 
 ---
 

@@ -54,6 +54,7 @@ from typing_extensions import override
 
 from docling.engines.figure_typing import META_KEY, get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.run_snapshot import engine_provenance
 from docling.engines.text_repair import TABLE_PDF_TEXT_META_KEY, get_table_pdf_text
 
 _log = logging.getLogger(__name__)
@@ -90,7 +91,9 @@ _HOW_TO_READ = (
     "paper's running content. figures/tables/chunks are the rows of "
     "figures.jsonl / tables.jsonl (without the html column, which is the "
     "body table) / chunks.jsonl; image_path is relative to the bundle "
-    "folder, the images themselves are inlined in the body."
+    "folder, the images themselves are inlined in the body. run.engine is "
+    "the release that converted the PDF; html_written_by the one that wrote "
+    "this file (they differ when the HTML was regenerated from a bundle)."
 )
 
 _EXTRA_CSS = """
@@ -196,7 +199,41 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
                 text = _with_formula_text(text, item.orig)
         if isinstance(item, PictureItem | TableItem):
             text = self._with_children(item, text, attrs, **kwargs)
+        else:
+            if isinstance(item, FloatingItem):
+                # A code block is a floating item too: the doc serializer skips
+                # its captions/footnotes as "handled by the floating item", and
+                # the HTML code serializer then renders neither.
+                caption = self.serialize_captions(item=item, tag="div", **kwargs).text
+                text = "\n".join(
+                    p for p in (text, caption, *self._footnotes(item)) if p
+                )
+            if isinstance(item, TextItem) and item.children:
+                text = self._with_unrendered_children(item, text, **kwargs)
         return result.model_copy(update={"text": text})
+
+    def _footnotes(self, item: FloatingItem) -> list[str]:
+        return [
+            f"<div{_attr_str(_element_attrs(note, self.doc))}>"
+            f"{html.escape(note.text)}</div>"
+            for ref in item.footnotes
+            if isinstance(note := ref.resolve(self.doc), TextItem)
+        ]
+
+    def _with_unrendered_children(
+        self, item: TextItem, text: str, **kwargs: Any
+    ) -> str:
+        """Children of a text item that the base serializer left out — the
+        caption Docling attaches to a code block, for one. List items and
+        inline groups render their own children; those are already tagged."""
+        kwargs = {**kwargs, "is_inline_scope": False}
+        parts = [
+            part
+            for ref in item.children
+            if not _rendered(child := ref.resolve(self.doc), self.doc, text)
+            and (part := self.serialize(item=child, **kwargs).text)
+        ]
+        return "\n".join([text, *parts]) if parts else text
 
     def _with_children(
         self,
@@ -211,12 +248,7 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
         other children — the text Docling found inside a figure."""
         caption_refs = {ref.cref for ref in item.captions}
         footnote_refs = {ref.cref for ref in item.footnotes}
-        notes = [
-            f"<div{_attr_str(_element_attrs(note, self.doc))}>"
-            f"{html.escape(note.text)}</div>"
-            for ref in item.footnotes
-            if isinstance(note := ref.resolve(self.doc), TextItem)
-        ]
+        notes = self._footnotes(item)
         kwargs = {**kwargs, "is_inline_scope": False}
         inner = [
             part
@@ -371,6 +403,14 @@ def _element_attrs(item: DocItem, doc: DoclingDocument) -> dict[str, str]:
     return attrs
 
 
+def _rendered(node: NodeItem, doc: DoclingDocument, fragment: str) -> bool:
+    """Whether *node* — for a group, every item below it — is tagged in
+    *fragment*."""
+    if isinstance(node, DocItem):
+        return f'data-self-ref="{node.self_ref}"' in fragment
+    return all(_rendered(ref.resolve(doc), doc, fragment) for ref in node.children)
+
+
 def _with_formula_text(fragment: str, orig: str) -> str:
     """Formulas without a decoded LaTeX text render as an image only; add the
     characters the PDF text layer has for them."""
@@ -422,6 +462,7 @@ def _build_manifest(doc: DoclingDocument, pdf_dir: Path) -> dict[str, Any]:
         "tables": tables,
         "chunks": chunks,
         "run": run,
+        "html_written_by": engine_provenance(),
     }
 
 
@@ -445,6 +486,16 @@ def _about_header(manifest: dict[str, Any]) -> str:
     if core:
         tools.append(f"docling-core {core}")
     by = f" with {html.escape(' · '.join(tools))}" if tools else ""
+    writer = manifest.get("html_written_by") or {}
+    if (writer.get("version"), writer.get("git_commit")) != (
+        engine.get("version"),
+        engine.get("git_commit"),
+    ):
+        commit = writer.get("git_commit")
+        at = f" @ {commit[:10]}" if commit else ""
+        by += html.escape(
+            f"; this HTML written by {writer.get('name')} {writer.get('version')}{at}"
+        )
     models = [
         (
             "table structure",

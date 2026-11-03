@@ -26,7 +26,7 @@ from docling_core.types.doc import (
 )
 from docling_core.types.doc.document import FloatingMeta
 
-from docling.engines import PdfEngine
+from docling.engines import ENGINE_VERSION, PdfEngine
 from docling.engines.figure_typing import FigureTypePrediction
 from docling.engines.html_export import (
     MANIFEST_ID,
@@ -195,6 +195,16 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
         "amir", "pdf_text", {"text": "0.91 Boldface best", "cell_text_recall": 0.5}
     )
 
+    prompt = doc.add_code(text="You are a medical expert.", prov=prov(350))
+    prompt_caption = doc.add_text(
+        label=DocItemLabel.CAPTION,
+        text="Table SI.3 | Agent prompt",
+        prov=prov(340),
+        parent=prompt,
+    )
+    prompt.captions.append(
+        prompt_caption.get_ref()
+    )  # dropped by Docling's HTML code serializer
     formula = doc.add_formula(text="", orig="sim ( w a t , p i )", prov=prov(400))
     references = doc.add_list_group()
     reference = doc.add_list_item(
@@ -225,6 +235,7 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
     assert max(parsed.ref_counts.values()) == 1
     assert parsed.manifest["chunks"][0]["text"] == script_text
     assert parsed.tags.count("script") == 1
+    assert parsed.manifest["html_written_by"]["version"] == ENGINE_VERSION
 
     assert parsed.blocks[logo.self_ref]["data-noise"] == "classifier:logo"
     assert logo_caption.self_ref in parsed.blocks

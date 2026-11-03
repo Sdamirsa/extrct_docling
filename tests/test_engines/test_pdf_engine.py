@@ -25,7 +25,7 @@ from docling_core.types.doc import (
 )
 
 from docling.datamodel.base_models import ConversionStatus
-from docling.engines import PdfConversionOutput, PdfEngine, SourceKind
+from docling.engines import ENGINE_VERSION, PdfConversionOutput, PdfEngine, SourceKind
 from docling.engines.figure_typing import (
     BIOMEDCLIP_REPO,
     FIGURE_TYPES,
@@ -303,6 +303,11 @@ def test_pdf_engine_writes_artifacts(tmp_path: Path) -> None:
     assert run["timing"]["duration_seconds"] > 0
     assert run["environment"]["python"]
     assert run["engine_config"]["save_artifacts"] is True
+    # Provenance: the fork release that wrote the bundle, and in a checkout
+    # the exact commit (the tests run from one).
+    assert run["engine"]["version"] == ENGINE_VERSION
+    assert len(run["engine"]["git_commit"]) == 40
+    assert isinstance(run["engine"]["git_dirty"], bool)
 
 
 @pytest.mark.skipif(

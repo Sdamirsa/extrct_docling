@@ -18,7 +18,11 @@ from docling.engines.picture_filter import (
     PictureNoiseFlag,
     classify_pictures,
 )
-from docling.engines.run_snapshot import write_run_snapshot
+from docling.engines.run_snapshot import (
+    ENGINE_VERSION,
+    engine_provenance,
+    write_run_snapshot,
+)
 from docling.engines.schemas import (
     PageSummary,
     PdfConversionOutput,
@@ -34,6 +38,7 @@ from docling.engines.visualizer import PreviewError, render_html_preview
 
 __all__ = [
     "DEFAULT_NOISE_CLASSES",
+    "ENGINE_VERSION",
     "ArtifactPaths",
     "ArtifactsError",
     "ChunkPaths",
@@ -49,6 +54,7 @@ __all__ = [
     "StructuredOutputPaths",
     "StructuredOutputsError",
     "classify_pictures",
+    "engine_provenance",
     "rebuild_document_html",
     "render_html_preview",
     "run_comparison",

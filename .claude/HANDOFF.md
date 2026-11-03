@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Pinned commit at hand-off: **`1afc44fe`** (https://github.com/Sdamirsa/extrct_docling/tree/1afc44fe). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Current release: **`extrct-v1.0.0`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.0); releases are `extrct-v<version>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must match, and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -73,7 +73,7 @@ Produces `samples/out/<my>/`:
 |---|---|---|
 | `<my>.md` | Linked markdown — `![](images/picture_NNN.png)` refs; noise pictures replaced by `<!-- noise picture: reason -->` | default |
 | `<my>.embedded.md` | Standalone — base64-inlined images (same noise filtering); ~10–15× larger | when `embed_images=True` (default) |
-| `<my>.html` | Standalone manuscript HTML — blocks tagged `data-self-ref`/`data-page`/`data-bbox`, JSON manifest (figures/tables/chunks/run) in `<script id="extrct-manifest">`; `docling/engines/html_export.py` | when `embed_images=True` (default) |
+| `<my>.html` | Standalone manuscript HTML — blocks tagged `data-self-ref`/`data-page`/`data-bbox`, JSON manifest (figures/tables/chunks/run) in `<script id="extrct-manifest">`; holds every `document.json` item (furniture, noise pictures, figure text, table footnotes marked, not dropped); `docling/engines/html_export.py` | when `embed_images=True` (default) |
 | `document.json` | Full `DoclingDocument` (round-trippable) | `save_artifacts=True` (default) |
 | `nodes.jsonl` | One JSON per `iterate_items()` node — label, prov/bbox, text, captions, table data, `_kind`, `_level`, `image_path` | `save_artifacts=True` |
 | `chunks.jsonl` | HybridChunker output: `{index, text, token_count, headings, captions, page_nos, self_refs}` | `save_artifacts=True` |
@@ -196,11 +196,11 @@ uv sync --frozen --no-group docs --extra standard --extra feat-ocr-rapidocr-onnx
 python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 ```
 
-To pin a specific commit (so the consumer doesn't drift when `dgx` advances):
+To pin a release (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout 1afc44fe && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@1afc44fe"
+cd vendor/extrct_docling && git checkout extrct-v1.0.0 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct-v1.0.0"
 ```
 
 ## 12 · What to do next (if you take over)

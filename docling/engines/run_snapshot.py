@@ -11,9 +11,11 @@ which environment, without needing to re-read the source code.
 from __future__ import annotations
 
 import datetime as _dt
+import functools
 import json
 import logging
 import platform
+import subprocess
 import sys
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
@@ -24,14 +26,24 @@ _log = logging.getLogger(__name__)
 _RUN_JSON_FILENAME = "run.json"
 _SCHEMA_VERSION = "1"
 
+# This fork's release, independent of the upstream Docling version it is
+# based on (docling-slim in environment.packages). Bump with each
+# ``extrct-v<version>`` tag.
+ENGINE_NAME = "extrct_docling"
+ENGINE_VERSION = "1.0.0"
+ENGINE_REPOSITORY = "https://github.com/Sdamirsa/extrct_docling"
+
 _TRACKED_PACKAGES = (
     "docling",
+    "docling-slim",
     "docling-core",
     "docling-ibm-models",
     "docling-parse",
     "onnxruntime",
     "onnxruntime-gpu",
+    "open-clip-torch",
     "pypdfium2",
+    "torch",
     "transformers",
 )
 
@@ -56,6 +68,7 @@ def write_run_snapshot(
 
     snapshot = {
         "schema_version": _SCHEMA_VERSION,
+        "engine": engine_provenance(),
         "source": _source_block(source, source_kind),
         "status": status,
         "timing": _timing_block(started_at, finished_at),
@@ -79,6 +92,42 @@ def write_run_snapshot(
     )
     _log.info("Wrote run snapshot to %s", target)
     return target
+
+
+@functools.cache
+def engine_provenance() -> dict[str, Any]:
+    """Which release of this fork wrote the bundle. ``git_commit`` /
+    ``git_dirty`` (uncommitted changes to tracked files) are filled when
+    running from a git checkout; a wheel or ``git+https`` install has none."""
+    block: dict[str, Any] = {
+        "name": ENGINE_NAME,
+        "version": ENGINE_VERSION,
+        "repository": ENGINE_REPOSITORY,
+        "git_commit": None,
+        "git_dirty": None,
+    }
+    root = Path(__file__).resolve().parents[2]
+    if not (root / ".git").exists():
+        return block
+    try:
+        commit = _git(root, "rev-parse", "HEAD")
+        changes = _git(root, "status", "--porcelain", "--untracked-files=no")
+    except (OSError, subprocess.SubprocessError) as exc:
+        _log.warning("run.json: git state unavailable: %s", exc)
+        return block
+    block["git_commit"] = commit
+    block["git_dirty"] = bool(changes)
+    return block
+
+
+def _git(root: Path, *args: str) -> str:
+    return subprocess.run(
+        ["git", "-C", str(root), *args],
+        capture_output=True,
+        text=True,
+        timeout=10,
+        check=True,
+    ).stdout.strip()
 
 
 def _source_block(source: str, source_kind: str) -> dict[str, Any]:

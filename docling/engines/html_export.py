@@ -415,12 +415,21 @@ def _about_header(manifest: dict[str, Any]) -> str:
     source = (run.get("source") or {}).get("file_name") or manifest["document"]["name"]
     finished = (run.get("timing") or {}).get("finished_at", "")[:16].replace("T", " ")
     core = ((run.get("environment") or {}).get("packages") or {}).get("docling-core")
+    engine = run.get("engine") or {}
     config = run.get("engine_config") or {}
     figures = manifest["figures"]
     noise = sum(1 for f in figures if f.get("is_noise"))
 
     converted = f"converted {finished} UTC" if finished else "converted"
-    by = f" with docling-core {core}" if core else ""
+    tools = []
+    if engine.get("version"):
+        commit = engine.get("git_commit")
+        dirty = ", uncommitted changes" if engine.get("git_dirty") else ""
+        at = f" @ {commit[:10]}{dirty}" if commit else ""
+        tools.append(f"{engine.get('name')} {engine['version']}{at}")
+    if core:
+        tools.append(f"docling-core {core}")
+    by = f" with {html.escape(' · '.join(tools))}" if tools else ""
     models = [
         (
             "table structure",

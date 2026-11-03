@@ -56,7 +56,8 @@ VLM runtime: HF `transformers` by default; if [vLLM](https://github.com/vllm-pro
 ```
 out/<pdf-name>/
 ├── <pdf-name>.html         📄 the manuscript as ONE readable HTML file, figures inlined; every block
-│                              tagged with self_ref/page/bbox + a JSON manifest for agents
+│                              tagged with self_ref/page/bbox + a JSON manifest for agents; nothing
+│                              Docling extracted is dropped (headers, logos, figure text are marked)
 ├── preview.embedded.html   👀 clickable viewer, ONE file, images inlined: share this
 ├── preview.html            👀 same viewer, links to images/ (small; keep the folder together)
 ├── <pdf-name>.md           📝 markdown, figures linked from images/
@@ -66,7 +67,7 @@ out/<pdf-name>/
 ├── figures.jsonl           🤖 one row per figure: caption, figure type, VLM description, noise flag
 ├── nodes.jsonl             🤖 every document node with bbox
 ├── document.json           🤖 full DoclingDocument (lossless)
-├── run.json                🧾 models, options, timing, package versions
+├── run.json                🧾 engine release + git commit, models, options, timing, package versions
 └── images/                 🖼️ page renders + figure/table crops
 ```
 
@@ -93,10 +94,34 @@ Known rough edges: some supplementary figures/tables have no detected caption, t
 - `amir-batch` CLI: batch conversion with a rich summary table (`--compare` A/Bs against full-page GraniteDocling)
 - Clickable HTML bbox viewer, linked + standalone versions, deep-linkable by `self_ref`
 - Agent-ready JSONL (chunks / tables / figures / nodes) + `run.json` provenance
-- Noise filter for journal logos and repeated banners
+- Standalone `<pdf-name>.html` that keeps everything Docling extracted (page headers/footers, text inside figures, table footnotes, reference numbers, formula text), marked rather than dropped
+- Noise filter for journal logos and repeated banners, which never hides a picture BiomedCLIP confidently calls a medical image
+- BiomedCLIP medical figure types (`ecg`, `ct`, `ultrasound`, `kaplan_meier`, ...)
+- Repair of words the PDF parser splits around ligatures ("speci fi city" → "specificity"), checked against the PDF's own text
 - Granite-Vision 4.1-4B figure-description preset + Granite-Vision tables, with fixes so they load under current `transformers`
 
 More: [RUN.md](RUN.md) (CLI reference) · [.claude/HANDOFF.md](.claude/HANDOFF.md) (architecture + defaults).
+
+## 📌 Releases: pin a version
+
+Releases of this fork are git tags named `extrct-v<version>`, numbered independently of the upstream Docling version they're built on (`docling-slim` still reports the upstream number). Every bundle's `run.json` has an `engine` block with the release and, when run from a git checkout, the exact commit (`git_commit`) and whether tracked files had uncommitted changes (`git_dirty`). Any output can be traced back to the code that produced it.
+
+| Release | Date | Based on | What's in it |
+|---|---|---|---|
+| [`extrct-v1.0.0`](https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.0) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above |
+
+Pin it from another project:
+
+```bash
+# as a git submodule
+git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
+git -C vendor/extrct_docling checkout extrct-v1.0.0
+
+# or as a dependency (uv.lock then records the resolved commit)
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct-v1.0.0"
+```
+
+In code, `docling.engines.ENGINE_VERSION` gives the release number.
 
 ---
 

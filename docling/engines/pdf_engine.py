@@ -53,7 +53,11 @@ from docling.engines.structured_outputs import (
     StructuredOutputsError,
     write_structured_outputs,
 )
-from docling.engines.text_repair import pdf_page_words, repair_ligature_splits
+from docling.engines.text_repair import (
+    attach_table_pdf_text,
+    pdf_page_words,
+    repair_ligature_splits,
+)
 from docling.engines.validation import validate_pdf_source
 from docling.engines.visualizer import (
     PreviewError,
@@ -319,6 +323,7 @@ class PdfEngine:
             # Before _build_output (which exports the markdown) and every
             # other export. A URL source has no local file to read.
             repair_ligature_splits(result.document, pdf_page_words(Path(normalised)))
+            attach_table_pdf_text(result.document, Path(normalised))
 
         output = self._build_output(result, kind=kind, normalised=normalised)
 

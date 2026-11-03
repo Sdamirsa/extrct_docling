@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Current release: **`extrct-v1.0.0`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.0); releases are `extrct-v<version>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must match, and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Current release: **`extrct-v1.0.1`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.1); releases are `extrct-v<version>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must match, and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -171,6 +171,7 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 18 pass
 - **`.claude/hooks/lib/` must stay tracked.** Upstream's `.gitignore` ignores every `[Ll]ib` folder, so until 2026-11-02 the hooks' shared helpers were never committed and 5 of the 6 project hooks (secrets and destructive-command guards included) crashed on import in any fresh clone — silently, since a crashing hook doesn't block. `.gitignore` now re-includes it with `!.claude/hooks/lib/`. If a hook raises `ModuleNotFoundError` on a new machine, check this first.
 - **`showcase/` is not MIT.** The paper (arXiv:2409.00084; published as npj Digit Med 8, 797, 2025) and every conversion of it are CC BY-NC-ND 4.0 — see `showcase/LICENSE`. Keep that file and the README citation when regenerating. The maintainer chose to keep the full paper (2026-11-02) over a page excerpt or a CC BY replacement: the license allows sharing it in whole or in part, and it has been public in history since `c6aacb06`.
 - **Conversion weak spots** seen on a 4-paper batch (2026-11-02): a 20-page SSRN-formatted paper came out as 5 text blocks with no headings, and text printed inside figures (axis labels, panel text) leaks into the body text of `<stem>.md` / chunks. Not investigated.
+- **Granite-Vision tables retype cell text from the image** (`<tables_otsl>` output carries the text) instead of reading the PDF, and its generation had no length limit (tokenizer `model_max_length` is unset, ~1e30): a supplement of 41 boxed prompts, which the layout model calls tables, generated for 75+ min with GPU memory climbing 17 → 57 GB. `_generation_budget` in `table_structure_model_granite_vision.py` now caps each page at max(2048, 3 × PDF-text tokens in the crops + 512) — no real table of 88 came near it. Tables whose cells hold < 95 % of the words printed in their box keep that text (`amir__pdf_text`, HTML `details.extrct-table-pdf-text`); 10 of 88 did.
 - **Hostname / machine paths** must never be committed to repo docs — keep them in `.claude/private-hand-off/` (gitignored). The maintainer is sensitive to this; we had to relocate one hand-off doc after a previous leak.
 
 ## 10 · Conventions (load-bearing)
@@ -199,8 +200,8 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a release (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout extrct-v1.0.0 && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct-v1.0.0"
+cd vendor/extrct_docling && git checkout extrct-v1.0.1 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct-v1.0.1"
 ```
 
 ## 12 · What to do next (if you take over)

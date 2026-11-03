@@ -54,6 +54,7 @@ from typing_extensions import override
 
 from docling.engines.figure_typing import META_KEY, get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.text_repair import TABLE_PDF_TEXT_META_KEY, get_table_pdf_text
 
 _log = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ MANIFEST_SCHEMA = "extrct.document-html/1"
 
 # The generic picture classifier is unreliable on medical figures (it calls
 # ECGs "Line chart"); its label stays in the manifest, not in the visible meta.
-_BLOCKED_META = {"classification"}
+_BLOCKED_META = {"classification", TABLE_PDF_TEXT_META_KEY}
 
 _HOW_TO_READ = (
     "Every content block in the body carries id, data-self-ref (same refs as "
@@ -78,7 +79,10 @@ _HOW_TO_READ = (
     "and badges carry data-noise (the reason) and match is_noise in figures; "
     "text printed inside a figure (axis labels, diagram boxes, screenshot "
     "text) sits in a details.extrct-figure-text element inside that figure; "
-    "table footnotes follow their table in div.extrct-table-notes. A "
+    "table footnotes follow their table in div.extrct-table-notes. A table "
+    "whose cells (typed by the table model) miss words printed in its box "
+    "has data-cell-text-recall and, in details.extrct-table-pdf-text after "
+    "it, the box's text as the PDF text layer has it. A "
     "formula is an image plus, in div.extrct-formula-text, its characters "
     "as printed in the PDF text layer (not LaTeX). Numbered list items "
     "(references '[12]', steps '1.') start with span.extrct-marker. Skip "
@@ -221,6 +225,14 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
             and (part := self.serialize(item=ref.resolve(self.doc), **kwargs).text)
         ]
         if isinstance(item, TableItem):
+            pdf_text = get_table_pdf_text(item)
+            if pdf_text is not None:
+                inner.append(
+                    '<details class="extrct-table-pdf-text"><summary>Text in this '
+                    "table's box as printed in the PDF (the table model's cells hold "
+                    f"{pdf_text['cell_text_recall']:.0%} of its words)</summary>"
+                    f"<pre>{html.escape(pdf_text['text'])}</pre></details>"
+                )
             if not notes and not inner:
                 return text
             body = "\n".join(notes + inner)
@@ -353,6 +365,9 @@ def _element_attrs(item: DocItem, doc: DoclingDocument) -> dict[str, str]:
     if isinstance(item, TableItem):
         attrs["data-rows"] = str(item.data.num_rows)
         attrs["data-cols"] = str(item.data.num_cols)
+        pdf_text = get_table_pdf_text(item)
+        if pdf_text is not None:
+            attrs["data-cell-text-recall"] = f"{pdf_text['cell_text_recall']:.3f}"
     return attrs
 
 

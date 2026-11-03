@@ -36,6 +36,7 @@ from docling_core.types.doc.document import MetaUtils, PictureMeta
 from pydantic import BaseModel
 
 from docling.datamodel.accelerator_options import AcceleratorDevice
+from docling.engines.text_repair import TABLE_PDF_TEXT_META_KEY
 from docling.utils.accelerator_utils import decide_device
 
 if TYPE_CHECKING:
@@ -89,7 +90,8 @@ META_KEY = MetaUtils.create_meta_field_name(namespace=_META_NAMESPACE, name=_MET
 # figures.jsonl / document.json.
 TEXT_EXPORT_META_PARAMS: dict[str, Any] = {
     "include_picture_classification": False,
-    "blocked_meta_names": {META_KEY},
+    # TABLE_PDF_TEXT_META_KEY: a table box's PDF text, kept for the HTML only.
+    "blocked_meta_names": {META_KEY, TABLE_PDF_TEXT_META_KEY},
 }
 
 

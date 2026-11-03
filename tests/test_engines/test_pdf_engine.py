@@ -33,7 +33,11 @@ from docling.engines.figure_typing import (
     get_figure_type,
 )
 from docling.engines.picture_filter import classify_pictures
-from docling.engines.text_repair import repair_ligature_splits
+from docling.engines.text_repair import (
+    attach_table_pdf_text,
+    get_table_pdf_text,
+    repair_ligature_splits,
+)
 from docling.engines.validation import (
     InvalidPdfSourceError,
     classify_source,
@@ -545,6 +549,58 @@ def test_ligature_split_words_are_rejoined_only_when_the_pdf_has_them() -> None:
     assert repair_ligature_splits(doc, page_words) == 3
     assert para.text == "the first domain-specific result, from a hi fi system"
     assert table.data.table_cells[0].text == "specificity"
+
+
+@pytest.mark.skipif(
+    not FIXTURE_PDF.exists(),
+    reason=f"fixture {FIXTURE_PDF} not available",
+)
+def test_table_keeps_pdf_text_when_its_cells_miss_words() -> None:
+    """A table model that retypes cells from the image can drop text (or
+    return an empty table when its output can't be parsed); the PDF text of
+    the table's box is then kept on the table. Complete cells get nothing."""
+    import pypdfium2 as pdfium
+
+    pdf = pdfium.PdfDocument(FIXTURE_PDF)
+    width, height = pdf[0].get_size()
+    page_text = pdf[0].get_textpage().get_text_range()
+    pdf.close()
+
+    doc = DoclingDocument(name="tables")
+    doc.add_page(page_no=1, size=Size(width=width, height=height))
+    whole_page = ProvenanceItem(
+        page_no=1,
+        bbox=BoundingBox(l=0, t=0, r=width, b=height),  # top-left origin
+        charspan=(0, 0),
+    )
+
+    def table(cell_text: str | None):
+        cells = (
+            [
+                TableCell(
+                    text=cell_text,
+                    start_row_offset_idx=0,
+                    end_row_offset_idx=1,
+                    start_col_offset_idx=0,
+                    end_col_offset_idx=1,
+                )
+            ]
+            if cell_text is not None
+            else []
+        )
+        return doc.add_table(
+            data=TableData(num_rows=1, num_cols=1, table_cells=cells),
+            prov=whole_page,
+        )
+
+    unparsed = table(None)
+    complete = table(page_text)
+
+    assert attach_table_pdf_text(doc, FIXTURE_PDF) == 1
+    kept = get_table_pdf_text(unparsed)
+    assert kept is not None and kept["cell_text_recall"] == 0
+    assert "TableFormer" in kept["text"]
+    assert get_table_pdf_text(complete) is None
 
 
 PICTURE_FIXTURE_PDF = Path("tests/data/pdf/sources/picture_classification.pdf")

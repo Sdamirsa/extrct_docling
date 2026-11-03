@@ -108,6 +108,7 @@ Releases of this fork are git tags named `extrct-v<version>`, numbered independe
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
+| [`extrct-v1.0.1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.1) | 2026-11-03 | Docling v2.131.0 | Caps Granite-Vision table generation (a boxed prompt laid out like a table generated for over an hour: the limit was the tokenizer's unset ~1e30 `model_max_length`); a table whose model-typed cells miss words printed in its box keeps the box's PDF text in the HTML |
 | [`extrct-v1.0.0`](https://github.com/Sdamirsa/extrct_docling/tree/extrct-v1.0.0) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above |
 
 Pin it from another project:
@@ -115,10 +116,10 @@ Pin it from another project:
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct-v1.0.0
+git -C vendor/extrct_docling checkout extrct-v1.0.1
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct-v1.0.0"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct-v1.0.1"
 ```
 
 In code, `docling.engines.ENGINE_VERSION` gives the release number.

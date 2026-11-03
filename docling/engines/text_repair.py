@@ -1,14 +1,20 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
-"""Rejoin words the PDF parser split around a ligature glyph.
+"""Check extracted text against the PDF's own text layer (pypdfium2).
 
-With some fonts Docling's parser emits a ligature glyph (``ﬁ``, ``ﬂ``...) as a
-word of its own: "specificity" becomes "speci fi city", "first" becomes
-"fi rst", in ``TextItem.text`` and table cells alike, so the markdown, chunks
-and HTML can't be searched for the word. pypdfium2 reads the same PDF
-correctly, so a split is rejoined only when the joined word occurs in
-pdfium's text of the same page. ``TextItem.orig`` keeps the parser's text.
+- **Ligature splits.** With some fonts Docling's parser emits a ligature
+  glyph (``ﬁ``, ``ﬂ``...) as a word of its own: "specificity" becomes
+  "speci fi city", "first" becomes "fi rst", in ``TextItem.text`` and table
+  cells alike, so no export can be searched for the word. A split is
+  rejoined only when the joined word occurs in pdfium's text of the same
+  page. ``TextItem.orig`` keeps the parser's text.
+- **Table text.** A vision-language table model (Granite-Vision) retypes
+  cell text from the image instead of reading the PDF; on 84 tables 4 kept
+  under 90 % of the words printed in their box, and a crop it fails to parse
+  becomes an empty table. When the cells hold less than
+  :data:`TABLE_TEXT_MIN_RECALL` of those words, the box's PDF text is stored
+  on the table (``amir__pdf_text`` meta) so the HTML can carry it.
 """
 
 from __future__ import annotations
@@ -16,11 +22,21 @@ from __future__ import annotations
 import logging
 import re
 import unicodedata
+from collections import Counter
 from pathlib import Path
 
 from docling_core.types.doc import DoclingDocument, TableItem, TextItem
+from docling_core.types.doc.document import FloatingMeta, MetaUtils
 
 _log = logging.getLogger(__name__)
+
+TABLE_TEXT_MIN_RECALL = 0.95
+_META_NAMESPACE = "amir"
+_META_NAME = "pdf_text"
+TABLE_PDF_TEXT_META_KEY = MetaUtils.create_meta_field_name(
+    namespace=_META_NAMESPACE, name=_META_NAME
+)
+_TOKEN = re.compile(r"[a-z0-9]{2,}")
 
 _LIGATURES = {"fi", "fl", "ff", "ffi", "ffl"}
 _WORD = re.compile(r"[a-z]+")
@@ -109,3 +125,61 @@ def _rejoin(text: str, known: set[str]) -> tuple[str, int]:
             continue
         fixed += 1
     return " ".join(out), fixed
+
+
+def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
+    """Store the PDF text of each table box whose cells miss words of it;
+    returns the number of tables that got it."""
+    import pypdfium2 as pdfium
+
+    pdf = pdfium.PdfDocument(pdf_path)
+    attached = 0
+    try:
+        for table in doc.tables:
+            region_text = ""
+            for prov in table.prov:
+                if not 1 <= prov.page_no <= len(pdf):
+                    continue
+                page = pdf[prov.page_no - 1]
+                bbox = prov.bbox.to_bottom_left_origin(page.get_height())
+                textpage = page.get_textpage()
+                region_text += textpage.get_text_bounded(bbox.l, bbox.b, bbox.r, bbox.t)
+                textpage.close()
+                page.close()
+            printed = Counter(_tokens(region_text))
+            if not printed:
+                continue
+            in_cells = Counter(
+                _tokens(" ".join(cell.text for cell in table.data.table_cells))
+            )
+            recall = 1 - sum((printed - in_cells).values()) / sum(printed.values())
+            if recall >= TABLE_TEXT_MIN_RECALL:
+                continue
+            if table.meta is None:
+                table.meta = FloatingMeta()
+            table.meta.set_custom_field(
+                _META_NAMESPACE,
+                _META_NAME,
+                {
+                    "text": _HYPHENATION.sub("", region_text).strip(),
+                    "cell_text_recall": round(recall, 3),
+                },
+            )
+            attached += 1
+    finally:
+        pdf.close()
+    if attached:
+        _log.info("Kept the PDF text of %d table(s) with incomplete cells", attached)
+    return attached
+
+
+def get_table_pdf_text(table: TableItem) -> dict | None:
+    """The stored PDF text of a table box (``text``, ``cell_text_recall``)."""
+    if table.meta is None:
+        return None
+    return table.meta.get_custom_part().get(TABLE_PDF_TEXT_META_KEY)
+
+
+def _tokens(text: str) -> list[str]:
+    text = unicodedata.normalize("NFKC", _HYPHENATION.sub("", text)).lower()
+    return _TOKEN.findall(text)

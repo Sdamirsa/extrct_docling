@@ -30,7 +30,7 @@ _SCHEMA_VERSION = "1"
 # based on (docling-slim in environment.packages). Bump with each
 # ``extrct-v<version>`` tag.
 ENGINE_NAME = "extrct_docling"
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.0.1"
 ENGINE_REPOSITORY = "https://github.com/Sdamirsa/extrct_docling"
 
 _TRACKED_PACKAGES = (

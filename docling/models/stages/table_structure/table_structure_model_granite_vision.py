@@ -13,7 +13,12 @@ from docling_core.types.doc import DocItemLabel
 from transformers import AutoModelForImageTextToText, AutoProcessor
 
 from docling.datamodel.accelerator_options import AcceleratorDevice, AcceleratorOptions
-from docling.datamodel.base_models import Page, Table, TableStructurePrediction
+from docling.datamodel.base_models import (
+    Cluster,
+    Page,
+    Table,
+    TableStructurePrediction,
+)
 from docling.datamodel.document import ConversionResult
 from docling.datamodel.pipeline_options import GraniteVisionTableStructureOptions
 from docling.models.base_table_model import BaseTableStructureModel
@@ -119,6 +124,23 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
             )
         self._model.eval()
 
+    def _generation_budget(self, clusters: Sequence[Cluster]) -> int:
+        """Max new tokens for one page's batch of table crops.
+
+        The tokenizer's ``model_max_length`` is unset (~1e30), so it can't bound
+        generation: a crop the model never closes (a boxed prompt laid out
+        like a table) generated for over an hour. A table's OTSL output is its
+        cell text plus tags; on 88 tables it never exceeded 3x the tokens of
+        the PDF text in the crop + 512 (median 1.4x), and the floor covers
+        image-only tables, whose crops have no PDF text.
+        """
+        tokenizer = self._processor.tokenizer
+        budget = 2048
+        for cluster in clusters:
+            text = " ".join(cell.text for cell in cluster.cells)
+            budget = max(budget, 3 * len(tokenizer(text)["input_ids"]) + 512)
+        return min(budget, self._model_max_length)
+
     def predict_tables(
         self,
         conv_res: ConversionResult,
@@ -194,7 +216,7 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
 
                 output_ids = cast(Any, self._model).generate(
                     **inputs,
-                    max_new_tokens=self._model_max_length,
+                    max_new_tokens=self._generation_budget(valid_clusters),
                     use_cache=True,
                 )
 

@@ -24,6 +24,7 @@ from docling_core.types.doc import (
     TableCell,
     TableData,
 )
+from docling_core.types.doc.document import FloatingMeta
 
 from docling.engines import PdfEngine
 from docling.engines.figure_typing import FigureTypePrediction
@@ -189,6 +190,10 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
         parent=table,
     )
     table.footnotes.append(footnote.get_ref())
+    table.meta = FloatingMeta()  # the table model's cells missed words
+    table.meta.set_custom_field(
+        "amir", "pdf_text", {"text": "0.91 Boldface best", "cell_text_recall": 0.5}
+    )
 
     formula = doc.add_formula(text="", orig="sim ( w a t , p i )", prov=prov(400))
     references = doc.add_list_group()
@@ -230,6 +235,11 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
     )
     assert figure_text is not None and lead_label.self_ref in figure_text.group()
     assert footnote.self_ref in parsed.blocks
+    assert parsed.blocks[table.self_ref]["data-cell-text-recall"] == "0.500"
+    assert re.search(
+        r'extrct-table-pdf-text">.*?<pre>0\.91 Boldface best</pre>', html_text
+    )
+    assert 'data-meta-name="amir__pdf_text"' not in html_text
     assert re.search(r'class="extrct-formula-text">sim \( w a t , p i \)<', html_text)
     assert parsed.blocks[formula.self_ref]["data-label"] == "formula"
     assert parsed.blocks[reference.self_ref]["data-marker"] == "[3]"

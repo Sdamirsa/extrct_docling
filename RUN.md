@@ -131,8 +131,10 @@ running text instead of dropping it: page headers/footers
 (`data-content-layer="furniture"`: journal line, printed page numbers),
 logos and badges (`data-noise`, dimmed), text printed inside a figure (a
 collapsed "Text inside this figure" block in the figure), table footnotes,
-reference / step numbers (`span.extrct-marker`, e.g. `[12]`) and, for a
-formula Docling didn't decode, its characters from the PDF text layer. On
+reference / step numbers (`span.extrct-marker`, e.g. `[12]`), for a
+formula Docling didn't decode its characters from the PDF text layer, and
+for a table whose cells (retyped by the Granite-Vision table model) miss
+words printed in its box, that box's PDF text (`data-cell-text-recall`). On
 the 18 ACA papers it holds 99.5 % of the words in the PDFs' own text layer;
 the rest are mostly formula spacing and text-layer artefacts. To (re)build it
 for an existing bundle without reconverting:

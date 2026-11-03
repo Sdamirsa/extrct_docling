@@ -118,13 +118,24 @@ preview.embedded.html  # same viewer, images inlined — a single shareable file
 
 `<stem>.html` is the one-file version of the manuscript for humans *and* agents:
 Docling's HTML export (headings, lists, tables with merged cells, captions,
-figures inline; noise pictures dropped) where every block carries `id`,
-`data-self-ref`, `data-label`, `data-page` and `data-bbox` (PDF points,
-top-left origin), figures add `data-figure-type`, and
+figures inline) where every block carries `id`, `data-self-ref`,
+`data-label`, `data-page` and `data-bbox` (PDF points, top-left origin),
+figures add `data-figure-type`, and
 `<script id="extrct-manifest" type="application/json">` embeds the
 `figures` / `tables` / `chunks` rows and `run.json` (its `how_to_read` field
-explains the format). To (re)build it for an existing bundle without
-reconverting:
+explains the format).
+
+Unlike the markdown and chunks, it leaves out nothing Docling extracted —
+every `document.json` item is one tagged element — and marks what isn't
+running text instead of dropping it: page headers/footers
+(`data-content-layer="furniture"`: journal line, printed page numbers),
+logos and badges (`data-noise`, dimmed), text printed inside a figure (a
+collapsed "Text inside this figure" block in the figure), table footnotes,
+reference / step numbers (`span.extrct-marker`, e.g. `[12]`) and, for a
+formula Docling didn't decode, its characters from the PDF text layer. On
+the 18 ACA papers it holds 99.5 % of the words in the PDFs' own text layer;
+the rest are mostly formula spacing and text-layer artefacts. To (re)build it
+for an existing bundle without reconverting:
 
 ```bash
 uv run --frozen python -c "from pathlib import Path; from docling.engines import rebuild_document_html as r; [r(p.parent) for p in Path('samples/out').glob('*/document.json')]"

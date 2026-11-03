@@ -9,9 +9,11 @@ Two complementary signals:
    (``DocumentPictureClassifier``) ran, any picture whose predicted class
    is in :data:`DEFAULT_NOISE_CLASSES` (configurable) is flagged — but only
    if it covers less than :data:`DEFAULT_MAX_CLASSIFIER_NOISE_AREA` of its
-   page, since a large picture is content even when mislabelled. This
-   generic classifier is only trusted for noise; content figure types come
-   from :mod:`docling.engines.figure_typing`.
+   page, since a large picture is content even when mislabelled, and not
+   when BiomedCLIP (:mod:`docling.engines.figure_typing`) confidently calls
+   it a medical image (:data:`IMAGING_FIGURE_TYPES`): the generic
+   classifier labels small echo frames inside a composite figure ``icon``
+   or ``logo``.
 2. **Repeated-bbox heuristic** — if the same picture geometry appears on
    ``repeat_threshold`` or more pages, it's almost certainly a journal
    header / logo / running banner. Works even when the classifier didn't
@@ -30,6 +32,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 from docling_core.types.doc import PictureItem
+
+from docling.engines.figure_typing import get_figure_type
 
 if TYPE_CHECKING:
     from docling.datamodel.document import ConversionResult
@@ -63,6 +67,26 @@ DEFAULT_MIN_AREA = 0  # off by default; opt-in tiny-picture filter.
 # Logos / badges / QR codes in 25 medical papers covered <= 1.65 %; the
 # generic classifier called an 8 % 3-D CT rendering ``icon``.
 DEFAULT_MAX_CLASSIFIER_NOISE_AREA = 0.05
+
+# BiomedCLIP types that overrule a classifier noise label at or above
+# IMAGING_VETO_CONFIDENCE. Checked on all 68 classifier-hidden pictures in 37
+# papers: the 6 real ones (echo frames) scored ultrasound >= 0.95, while a QR
+# code scored ultrasound 0.85. ``ecg`` and ``nuclear_medicine`` stay out:
+# Springer logos score ecg 1.00 and a "Check for updates" badge
+# nuclear_medicine 0.93.
+IMAGING_FIGURE_TYPES: frozenset[str] = frozenset(
+    {
+        "radiograph",
+        "ct",
+        "mri",
+        "ultrasound",
+        "angiography",
+        "ophthalmic_imaging",
+        "histopathology",
+        "endoscopy",
+    }
+)
+IMAGING_VETO_CONFIDENCE = 0.9
 
 
 @dataclass
@@ -101,7 +125,8 @@ def classify_pictures(
 
         if label and label.lower() in {c.lower() for c in noise_classes}:
             page_frac = _page_area_fraction(pic, result.document)
-            if page_frac is None or page_frac < max_classifier_noise_area:
+            small = page_frac is None or page_frac < max_classifier_noise_area
+            if small and not _is_confident_medical_image(pic):
                 reason = f"classifier:{label}"
         if reason is None:
             sig = _picture_bbox_signature(pic)
@@ -130,6 +155,15 @@ def classify_pictures(
             repeat_threshold,
         )
     return flags
+
+
+def _is_confident_medical_image(item: PictureItem) -> bool:
+    prediction = get_figure_type(item)
+    return (
+        prediction is not None
+        and prediction.label in IMAGING_FIGURE_TYPES
+        and prediction.confidence >= IMAGING_VETO_CONFIDENCE
+    )
 
 
 def _classifier_label(item: PictureItem) -> str | None:

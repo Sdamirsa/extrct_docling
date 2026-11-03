@@ -13,11 +13,15 @@ from types import SimpleNamespace
 import pytest
 from docling_core.types.doc import (
     BoundingBox,
+    DocItemLabel,
     DoclingDocument,
     PictureClassificationClass,
     PictureClassificationData,
+    PictureMeta,
     ProvenanceItem,
     Size,
+    TableCell,
+    TableData,
 )
 
 from docling.datamodel.base_models import ConversionStatus
@@ -25,9 +29,11 @@ from docling.engines import PdfConversionOutput, PdfEngine, SourceKind
 from docling.engines.figure_typing import (
     BIOMEDCLIP_REPO,
     FIGURE_TYPES,
+    FigureTypePrediction,
     get_figure_type,
 )
 from docling.engines.picture_filter import classify_pictures
+from docling.engines.text_repair import repair_ligature_splits
 from docling.engines.validation import (
     InvalidPdfSourceError,
     classify_source,
@@ -458,6 +464,82 @@ def test_classifier_noise_ignores_large_pictures() -> None:
     logo, rendering = classify_pictures(SimpleNamespace(document=doc))
     assert logo.is_noise and logo.noise_reason == "classifier:logo"
     assert not rendering.is_noise
+
+
+def test_confident_medical_image_overrules_classifier_noise_label() -> None:
+    """Small echo frames inside a composite figure get ``icon`` / ``logo`` from
+    the generic classifier; a confident BiomedCLIP imaging type keeps them.
+    The cases mirror the corpus check: a QR code typed ultrasound 0.85 and a
+    Springer logo typed ecg 1.00 stay noise."""
+    doc = DoclingDocument(name="noise")
+    doc.add_page(page_no=1, size=Size(width=600, height=800))
+
+    def picture(x: float, label: str, figure_type: str, confidence: float) -> None:
+        pic = doc.add_picture(
+            prov=ProvenanceItem(
+                page_no=1,
+                bbox=BoundingBox(l=x, t=20, r=x + 40, b=60),
+                charspan=(0, 0),
+            ),
+            annotations=[
+                PictureClassificationData(
+                    provenance="test",
+                    predicted_classes=[
+                        PictureClassificationClass(class_name=label, confidence=0.9)
+                    ],
+                )
+            ],
+        )
+        pic.meta = PictureMeta()
+        pic.meta.set_custom_field(
+            "amir",
+            "figure_type",
+            FigureTypePrediction(label=figure_type, confidence=confidence).model_dump(),
+        )
+
+    picture(20, "logo", "ultrasound", 0.9999)  # echo frame
+    picture(100, "icon", "ultrasound", 0.85)  # QR code
+    picture(180, "logo", "ecg", 1.0)  # Springer logo
+
+    echo_frame, qr_code, springer = classify_pictures(SimpleNamespace(document=doc))
+    assert not echo_frame.is_noise
+    assert qr_code.is_noise and springer.is_noise
+
+
+def test_ligature_split_words_are_rejoined_only_when_the_pdf_has_them() -> None:
+    """The parser emits some ligature glyphs as words ("speci fi city"); a
+    split is rejoined only into a word the page's PDF text layer contains."""
+    doc = DoclingDocument(name="ligatures")
+    doc.add_page(page_no=1, size=Size(width=600, height=800))
+    prov = ProvenanceItem(
+        page_no=1, bbox=BoundingBox(l=0, t=0, r=10, b=10), charspan=(0, 0)
+    )
+    para = doc.add_text(
+        label=DocItemLabel.TEXT,
+        text="the fi rst domain-speci fi c result, from a hi fi system",
+        prov=prov,
+    )
+    table = doc.add_table(
+        data=TableData(
+            num_rows=1,
+            num_cols=1,
+            table_cells=[
+                TableCell(
+                    text="speci fi city",
+                    start_row_offset_idx=0,
+                    end_row_offset_idx=1,
+                    start_col_offset_idx=0,
+                    end_col_offset_idx=1,
+                )
+            ],
+        ),
+        prov=prov,
+    )
+    page_words = {1: {"the", "first", "domain", "specific", "specificity", "hi"}}
+
+    assert repair_ligature_splits(doc, page_words) == 3
+    assert para.text == "the first domain-specific result, from a hi fi system"
+    assert table.data.table_cells[0].text == "specificity"
 
 
 PICTURE_FIXTURE_PDF = Path("tests/data/pdf/sources/picture_classification.pdf")

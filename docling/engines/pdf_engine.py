@@ -37,6 +37,8 @@ from docling.engines.html_export import write_document_html
 from docling.engines.picture_filter import (
     DEFAULT_NOISE_CLASSES,
     DEFAULT_REPEAT_THRESHOLD,
+    IMAGING_FIGURE_TYPES,
+    IMAGING_VETO_CONFIDENCE,
     PictureNoiseFlag,
     classify_pictures,
 )
@@ -51,6 +53,7 @@ from docling.engines.structured_outputs import (
     StructuredOutputsError,
     write_structured_outputs,
 )
+from docling.engines.text_repair import pdf_page_words, repair_ligature_splits
 from docling.engines.validation import validate_pdf_source
 from docling.engines.visualizer import (
     PreviewError,
@@ -149,8 +152,11 @@ class PdfEngine:
             classified as logos/watermarks or repeated across many pages get
             tagged with ``is_noise=True`` in ``figures.jsonl`` and their
             placeholders are replaced by ``<!-- noise picture: reason -->``
-            comments in both markdown files. Auto-enables the picture
-            classifier.
+            comments in both markdown files (``<stem>.html`` keeps them,
+            marked ``data-noise``). A classifier label is overruled when
+            figure typing confidently calls the picture a medical image
+            (:data:`~docling.engines.picture_filter.IMAGING_FIGURE_TYPES`).
+            Auto-enables the picture classifier.
         noise_picture_classes
             Classifier labels considered noise (default:
             :data:`~docling.engines.picture_filter.DEFAULT_NOISE_CLASSES`).
@@ -204,6 +210,12 @@ class PdfEngine:
             "filter_noise_pictures": filter_noise_pictures,
             "noise_picture_classes": sorted(noise_picture_classes),
             "noise_repeat_threshold": noise_repeat_threshold,
+            "noise_imaging_veto": {
+                "figure_types": sorted(IMAGING_FIGURE_TYPES),
+                "min_confidence": IMAGING_VETO_CONFIDENCE,
+            }
+            if figure_types
+            else None,
             "picture_description": picture_description,
             "picture_description_engine": picture_description_engine
             if picture_description
@@ -298,6 +310,15 @@ class PdfEngine:
                 ],
             )
         finished_at = _dt.datetime.now(_dt.timezone.utc)
+
+        if (
+            result.status
+            in {ConversionStatus.SUCCESS, ConversionStatus.PARTIAL_SUCCESS}
+            and kind == SourceKind.LOCAL_PATH
+        ):
+            # Before _build_output (which exports the markdown) and every
+            # other export. A URL source has no local file to read.
+            repair_ligature_splits(result.document, pdf_page_words(Path(normalised)))
 
         output = self._build_output(result, kind=kind, normalised=normalised)
 

@@ -25,4 +25,7 @@ See [.claude/REPO_CONTEXT.md](.claude/REPO_CONTEXT.md) for the condensed archite
 - `.claude/reference/INDEX.md` — reference catalog (consult on demand).
 - `.claude/README.md` — full navigation map.
 - `.claude/REPO_CONTEXT.md` — Docling architecture cheat-sheet for this fork.
-- `.claude/AMIR_TODO.md` / `AMIR_STAGE.md` — Amir Engine plan + live status.
+- `.claude/STATUS.md` — read first: current focus, next steps, watch-outs (rewritten by `/project-memory`).
+- `.claude/Project-log.jsonl` / `LESSONS.jsonl` — append-only session log and mistakes-with-prevention, curated by `/project-memory`.
+- `/project-memory` — the session-end ritual; only the user types it (`.claude/skills/project-memory/`).
+- `.claude/AMIR_TODO.md` / `AMIR_STAGE.md` — Amir Engine plan + phase tables; log history up to 2026-11-04.

@@ -5,6 +5,7 @@
     "10-pre-deny-secrets.py": "sha256:dd11e19f7b5db24f9a7f1b7675f9db8941fcf13898732732c7240b703c7fc810",
     "15-warn-stale-model.py": "sha256:39755400ba97b5efaa4572d5ce3fb40ac64cefc4ad9bbdcf687232f06b348f91",
     "20-pre-deny-destructive.py": "sha256:f88a36d1a1543b6848a5a997eae4cdae64112fea03ad52fe3324a56867a641d9",
+    "30-ritual-ticket.py": "sha256:3e7c25ee3012464879363b7d61738ef91dc517d5ddfb5c318bad6d940e489586",
     "90-stop-log-invocation.py": "sha256:24eaefc74b85ce46ef7ede349703813af05b0bb7e73c32768abdebdc7a475be2"
   },
   "version": 1

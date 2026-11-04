@@ -16,6 +16,7 @@ The user's intent dictates which artifact handles a request. Consult this first.
 
 | User says | Skill | Notes |
 |---|---|---|
+| "update memory", "update memory and log", "log this session", "wrap up" | `/project-memory` (user-typed only) | Ask the user to type it; CHECK, POLISH, PUBLISH, EVOLVE, ROUTE |
 | "tag a release", "cut a release", "make a release version", "tag this version" | `skills/release-tag` | `extrct_docling-v<docling version>-r<n>` tag + sensitive-content scan before push |
 
 <!-- managed:pack-pr-flow -->

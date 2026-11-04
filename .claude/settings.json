@@ -42,7 +42,10 @@
       "Bash(exec *)",
       "Bash(ssh -o StrictHostKeyChecking=no*)",
       "Bash(scp *@*)",
-      "Bash(rsync *@*)"
+      "Bash(rsync *@*)",
+      "Edit(**/.claude/.cache/ritual-ticket.json)",
+      "Write(**/.claude/.cache/ritual-ticket.json)",
+      "Bash(*check.py --grant*)"
     ],
     "ask": [
       "Bash(git push:*)",
@@ -120,6 +123,18 @@
             "type": "command",
             "command": "uv run --script \"${CLAUDE_PROJECT_DIR}/.claude/hooks/15-warn-stale-model.py\"",
             "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run --script \"${CLAUDE_PROJECT_DIR}/.claude/hooks/30-ritual-ticket.py\"",
+            "timeout": 10
           }
         ]
       }

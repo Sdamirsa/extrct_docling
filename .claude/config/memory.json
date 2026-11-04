@@ -1,0 +1,4 @@
+{
+  "_comment": "Knobs for the /project-memory ritual (.claude/skills/project-memory/SKILL.md). push: ask (ask once per ritual, naming branch and remote) | always (invoking the ritual is the standing instruction) | never (commit only). The push target is origin, the user's fork, never upstream.",
+  "push": "ask"
+}

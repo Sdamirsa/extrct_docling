@@ -77,6 +77,8 @@ Open items for future work (not active):
 
 ## Log
 
+From 2026-11-04 the log continues in `.claude/Project-log.jsonl` and next steps live in `.claude/STATUS.md`, both kept by the `/project-memory` ritual. This table is the history before that.
+
 | Date | Phase | Change |
 |---|---|---|
 | 2026-05-21 | — | `.claude/` workspace initialised. |

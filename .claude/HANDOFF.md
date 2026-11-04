@@ -28,9 +28,10 @@ extrct_docling/
 │       ├── compare_pipelines.py      # standard vs full-page VLM A/B runner
 │       ├── visualizer.py             # clickable bbox HTML viewer (preview.html)
 │       ├── html_export.py            # standalone <stem>.html (provenance attrs + JSON manifest)
+│       ├── text_repair.py            # PDF text-layer checks: ligature rejoin, table PDF-text fallback
 │       ├── run_snapshot.py           # run.json (env + timing + models)
 │       └── cli.py                    # `amir-batch` typer CLI
-├── tests/test_engines/               # test_pdf_engine.py + test_html_export.py; 18 pass, 1 skip
+├── tests/test_engines/               # test_pdf_engine.py + test_html_export.py; 21 pass, 1 skip
 ├── showcase/                         # demo bundles of the first author's paper — CC BY-NC-ND 4.0, NOT MIT (showcase/LICENSE)
 ├── samples/                          # gitignored except README — drop PDFs here
 ├── .claude/                          # project-local agent config
@@ -147,7 +148,7 @@ The `standard` extra includes `format-pdf`, `models-local` (torch), `feat-ocr-ra
 make validate                              # full pre-commit gate (ruff, ty, tach, etc.)
 make check                                 # read-only checks
 make test                                  # full pytest
-uv run pytest tests/test_engines/ -q       # just engine tests (fast — 18 pass, 1 skip)
+uv run pytest tests/test_engines/ -q       # just engine tests (fast — 21 pass, 1 skip)
 ```
 
 `tach.toml` enforces module coverage. `docling.engines` is registered as a module under the `entrypoints` layer.
@@ -172,6 +173,8 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 18 pass
 - **`showcase/` is not MIT.** The paper (arXiv:2409.00084; published as npj Digit Med 8, 797, 2025) and every conversion of it are CC BY-NC-ND 4.0 — see `showcase/LICENSE`. Keep that file and the README citation when regenerating. The maintainer chose to keep the full paper (2026-11-02) over a page excerpt or a CC BY replacement: the license allows sharing it in whole or in part, and it has been public in history since `c6aacb06`.
 - **Conversion weak spots** seen on a 4-paper batch (2026-11-02): a 20-page SSRN-formatted paper came out as 5 text blocks with no headings, and text printed inside figures (axis labels, panel text) leaks into the body text of `<stem>.md` / chunks. Not investigated.
 - **Granite-Vision tables retype cell text from the image** (`<tables_otsl>` output carries the text) instead of reading the PDF, and its generation had no length limit (tokenizer `model_max_length` is unset, ~1e30): a supplement of 41 boxed prompts, which the layout model calls tables, generated for 75+ min with GPU memory climbing 17 → 57 GB. `_generation_budget` in `table_structure_model_granite_vision.py` now caps each page at max(2048, 3 × PDF-text tokens in the crops + 512) — no real table of 88 came near it. Tables whose cells hold < 95 % of the words printed in their box keep that text (`amir__pdf_text`, HTML `details.extrct-table-pdf-text`); 10 of 88 did.
+- **Docling's HTML serializer leaves things out** that `html_export.py` puts back: picture children (text inside figures), furniture (`HTMLParams.layers` defaults to body), footnotes of floating items and captions of code blocks (the doc serializer leaves them to the floating item, whose HTML serializer never renders them). `test_document_html_keeps_everything_docling_extracted` guards each; when upgrading docling-core, rerun it first.
+- **Hooks are hash-locked** (`.claude/.meta/hooks.lock`, checked at session start). Claude's Edit/Write are denied in `.claude/hooks/`: the maintainer copies a hook in, then the folder-handler's `approve_hooks` re-locks. `30-ritual-ticket.py` mints the `/project-memory` ticket.
 - **Hostname / machine paths** must never be committed to repo docs — keep them in `.claude/private-hand-off/` (gitignored). The maintainer is sensitive to this; we had to relocate one hand-off doc after a previous leak.
 
 ## 10 · Conventions (load-bearing)
@@ -206,7 +209,7 @@ git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_doclin
 
 ## 12 · What to do next (if you take over)
 
-Pick one of these based on the maintainer's ask:
+Start from `.claude/STATUS.md` (rewritten by every `/project-memory`); its Next steps are current: export self-checks in `amir-batch`, Granite-Vision vs TableFormer measured on the converted batches, the upstream Granite-Vision `max_new_tokens` report, small `-r3` items. Longer-standing options:
 
 1. **Conversion quality on hard layouts.** The SSRN paper and figure-text leaks under §9 "Conversion weak spots". (The old "real GPU validation pass" item is done — see the 2026-08-07 and 2026-10-01 rows in `AMIR_STAGE.md`.) Older bundles (`showcase/`, earlier sample runs) predate `<stem>.html`; `rebuild_document_html(pdf_dir)` backfills it without reconverting.
 2. **Reading-order bug** — test workaround #1 (`force_backend_text=True`) on `test-pdf-ai-manuscript.pdf`. If it fixes the column flip, expose a `reading_order` knob on `PdfEngine`. Otherwise file upstream per the checklist in `issues-with-docling/reading-order-mixed-layout-page.md`.
@@ -216,7 +219,7 @@ Pick one of these based on the maintainer's ask:
 If the maintainer asks for "the full picture" again, point them at:
 - `AMIR_cheatsheet.html` for commands
 - `REPO_CONTEXT.md` for architecture
-- `AMIR_STAGE.md` for current state
+- `STATUS.md` for current state, `Project-log.jsonl` for what happened (history before 2026-11-04: `AMIR_STAGE.md`)
 - this file for the hand-off context
 
 Good luck.

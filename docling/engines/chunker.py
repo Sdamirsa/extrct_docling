@@ -20,6 +20,10 @@ Each line in ``chunks.jsonl`` is one chunk:
   "self_refs": ["#/texts/12", "#/texts/13"]
 }
 ```
+
+The text follows the markdown policy of :mod:`docling.engines.serializers`
+(marked VLM descriptions, a table's PDF text after it); chunks without text
+are not written.
 """
 
 from __future__ import annotations
@@ -30,18 +34,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from docling_core.transforms.chunker import HybridChunker
-from docling_core.transforms.chunker.hierarchical_chunker import (
-    ChunkingDocSerializer,
-    ChunkingSerializerProvider,
-)
+from docling_core.transforms.chunker import DocChunk, HybridChunker
 from docling_core.transforms.chunker.tokenizer.huggingface import HuggingFaceTokenizer
 
-from docling.engines.figure_typing import TEXT_EXPORT_META_PARAMS
+from docling.engines.serializers import build_serializer_provider
 
 if TYPE_CHECKING:
-    from docling_core.types.doc import DoclingDocument
-
     from docling.datamodel.document import ConversionResult
 
 _log = logging.getLogger(__name__)
@@ -54,16 +52,6 @@ DEFAULT_MAX_TOKENS = 512  # matches MiniLM model_max_length; bump alongside toke
 
 class ChunkerError(RuntimeError):
     """Raised when chunking cannot complete."""
-
-
-class _SerializerProvider(ChunkingSerializerProvider):
-    """Docling's chunking serializer minus model-guessed picture labels."""
-
-    def get_serializer(self, doc: DoclingDocument) -> ChunkingDocSerializer:
-        params = ChunkingDocSerializer(doc=doc).params.model_copy(
-            update=TEXT_EXPORT_META_PARAMS
-        )
-        return ChunkingDocSerializer(doc=doc, params=params)
 
 
 @dataclass
@@ -97,62 +85,55 @@ def write_chunks(
     chunker = HybridChunker(
         tokenizer=tokenizer,
         merge_peers=merge_peers,
-        serializer_provider=_SerializerProvider(),
+        serializer_provider=build_serializer_provider(),
     )
 
-    count = 0
+    rows: list[dict] = []
+    dropped = 0
+    for chunk in chunker.chunk(dl_doc=result.document):
+        doc_chunk = DocChunk.model_validate(chunk)
+        # A caption split off its table (to fit the token budget) serializes
+        # to nothing: the table's own chunk renders it.
+        if not doc_chunk.text.strip():
+            dropped += 1
+            continue
+        rows.append(_chunk_to_dict(len(rows), doc_chunk, tokenizer))
     with target.open("w", encoding="utf-8") as fh:
-        for idx, chunk in enumerate(chunker.chunk(dl_doc=result.document)):
-            row = _chunk_to_dict(idx, chunk, tokenizer)
+        for row in rows:
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
-            count += 1
 
+    if dropped:
+        _log.info("Dropped %d chunk(s) without text (headings only)", dropped)
     _log.info(
         "Chunks written: %s (%d chunks, tokenizer=%s, max_tokens=%d)",
         target,
-        count,
+        len(rows),
         tokenizer_repo,
         max_tokens,
     )
     return ChunkPaths(
         chunks_jsonl=target,
-        chunk_count=count,
+        chunk_count=len(rows),
         tokenizer_repo=tokenizer_repo,
         max_tokens=max_tokens,
     )
 
 
-def _chunk_to_dict(index: int, chunk, tokenizer) -> dict:
+def _chunk_to_dict(
+    index: int, chunk: DocChunk, tokenizer: HuggingFaceTokenizer
+) -> dict:
     """Serialise a HybridChunker chunk for JSONL."""
-    text = chunk.text
-    token_count: int | None
-    try:
-        token_count = tokenizer.count_tokens(text=text)
-    except Exception:
-        token_count = None
-
     meta = chunk.meta
-    headings = list(getattr(meta, "headings", None) or [])
-    captions = list(getattr(meta, "captions", None) or [])
-
-    doc_items = list(getattr(meta, "doc_items", None) or [])
-    self_refs: list[str] = []
-    page_nos: list[int] = []
-    for item in doc_items:
-        ref = getattr(item, "self_ref", None)
-        if ref:
-            self_refs.append(ref)
-        for prov in getattr(item, "prov", None) or []:
-            page_no = getattr(prov, "page_no", None)
-            if page_no is not None and page_no not in page_nos:
-                page_nos.append(page_no)
-
     return {
         "index": index,
-        "text": text,
-        "token_count": token_count,
-        "headings": headings,
-        "captions": captions,
-        "page_nos": sorted(page_nos),
-        "self_refs": self_refs,
+        "text": chunk.text,
+        "token_count": tokenizer.count_tokens(text=chunk.text),
+        "headings": meta.headings or [],
+        # DocMeta.captions is deprecated and never set by HybridChunker; the
+        # captions are in the chunk text. The key stays for existing readers.
+        "captions": [],
+        "page_nos": sorted(
+            {prov.page_no for item in meta.doc_items for prov in item.prov}
+        ),
+        "self_refs": [item.self_ref for item in meta.doc_items],
     }

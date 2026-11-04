@@ -5,13 +5,19 @@
 
 from __future__ import annotations
 
+import contextlib
 import datetime as _dt
+import itertools
 import logging
 import re
-from pathlib import Path
-from typing import Optional
+import shutil
+import sys
+import unicodedata
+from collections.abc import Collection, Iterator
+from pathlib import Path, PurePath, PurePosixPath
+from typing import Any, Optional
 
-from docling_core.types.doc import ImageRefMode
+from docling_core.types.doc import DoclingDocument, ImageRefMode
 
 from docling.datamodel.base_models import ConversionStatus, InputFormat
 from docling.datamodel.document import ConversionResult
@@ -20,16 +26,19 @@ from docling.datamodel.pipeline_options import (
     PdfPipelineOptions,
 )
 from docling.document_converter import DocumentConverter, PdfFormatOption
-from docling.engines.artifacts import ArtifactsError, write_artifacts
+from docling.engines.artifacts import IMAGES_SUBDIR, crop_stem, write_artifacts
 from docling.engines.chunker import (
     DEFAULT_MAX_TOKENS,
     DEFAULT_TOKENIZER,
-    ChunkerError,
     write_chunks,
+)
+from docling.engines.export_check import (
+    CHECK_FILENAME,
+    check_bundle,
+    write_bundle_check,
 )
 from docling.engines.figure_typing import (
     BIOMEDCLIP_REPO,
-    TEXT_EXPORT_META_PARAMS,
     FigureTyper,
     type_pictures,
 )
@@ -42,28 +51,29 @@ from docling.engines.picture_filter import (
     PictureNoiseFlag,
     classify_pictures,
 )
-from docling.engines.run_snapshot import write_run_snapshot
+from docling.engines.run_snapshot import (
+    RUN_JSON_FILENAME,
+    build_run_snapshot,
+    engine_provenance,
+    read_run_record,
+    write_run_snapshot,
+)
 from docling.engines.schemas import (
     PageSummary,
     PdfConversionOutput,
     PdfEngineError,
     SourceKind,
 )
-from docling.engines.structured_outputs import (
-    StructuredOutputsError,
-    write_structured_outputs,
-)
+from docling.engines.serializers import export_markdown
+from docling.engines.structured_outputs import write_structured_outputs
 from docling.engines.text_repair import (
     attach_table_pdf_text,
     pdf_page_words,
     repair_ligature_splits,
+    strip_vlm_stop_tokens,
 )
 from docling.engines.validation import validate_pdf_source
-from docling.engines.visualizer import (
-    PreviewError,
-    embed_html_images,
-    render_html_preview,
-)
+from docling.engines.visualizer import embed_html_images, render_html_preview
 from docling.engines.vlm_specs import (
     PictureDescriptionEngine,
     PictureDescriptionPreset,
@@ -102,6 +112,7 @@ class PdfEngine:
         noise_repeat_threshold: int = DEFAULT_REPEAT_THRESHOLD,
         picture_description: PictureDescriptionPreset | None = "granite_vision_4b",
         picture_description_engine: PictureDescriptionEngine = "default",
+        picture_area_threshold: float = 0.03,
         figure_types: bool = True,
     ) -> None:
         """Initialise the engine.
@@ -180,6 +191,10 @@ class PdfEngine:
             when vLLM isn't installed; this is the default), ``"vllm"``
             (force vLLM — requires it installed), ``"transformers"`` (force
             transformers). Ignored when ``picture_description`` is None.
+        picture_area_threshold
+            Smallest picture, as a fraction of the page area, that gets a VLM
+            description (default 0.03; Docling's 0.05 left real charts at
+            4-5 % of the page and an ECG at 3.9 % without one).
         figure_types
             When True (default), types every picture with BiomedCLIP into a
             scientific/medical taxonomy (``ct``, ``angiography``, ``ecg``,
@@ -224,10 +239,14 @@ class PdfEngine:
             "picture_description_engine": picture_description_engine
             if picture_description
             else None,
+            "picture_area_threshold": picture_area_threshold
+            if picture_description
+            else None,
             "figure_types": BIOMEDCLIP_REPO if figure_types else None,
             "converter_supplied": converter is not None,
         }
         self._figure_typer = FigureTyper() if figure_types else None
+        engine_provenance()
         if converter is not None:
             self._converter = converter
             self._pipeline_options: PdfPipelineOptions | None = None
@@ -253,12 +272,12 @@ class PdfEngine:
             self._pipeline_options.do_picture_classification = True
 
         if picture_description is not None:
-            self._pipeline_options.do_picture_description = True
-            self._pipeline_options.picture_description_options = (
-                build_picture_description_options(
-                    picture_description, engine=picture_description_engine
-                )
+            description_options = build_picture_description_options(
+                picture_description, engine=picture_description_engine
             )
+            description_options.picture_area_threshold = picture_area_threshold
+            self._pipeline_options.do_picture_description = True
+            self._pipeline_options.picture_description_options = description_options
 
         self._converter = DocumentConverter(
             allowed_formats=[InputFormat.PDF],
@@ -269,11 +288,17 @@ class PdfEngine:
             },
         )
 
+    def engine_config(self, *, make_html_preview: bool) -> dict[str, Any]:
+        """The ``engine_config`` block of the ``run.json`` this engine writes
+        for a conversion with *make_html_preview*."""
+        return {**self._engine_config, "make_html_preview": make_html_preview}
+
     def convert(
         self,
         source: str | Path,
         *,
         output_dir: Path | None = None,
+        pdf_dir: Path | None = None,
         max_num_pages: int | None = None,
         make_html_preview: bool = False,
     ) -> PdfConversionOutput:
@@ -284,24 +309,33 @@ class PdfEngine:
         source
             Path to a local ``.pdf`` file or an ``http(s)://`` URL.
         output_dir
-            If given, writes the markdown export(s) to
-            ``<output_dir>/<stem>/<stem>.md`` (and ``<stem>.embedded.md`` when
-            ``embed_images=True``).
+            If given, writes the bundle to ``<output_dir>/<stem>/`` (see
+            :func:`resolve_pdf_dir`): ``<stem>.md`` and, per the engine's
+            flags, the other files of the bundle.
+        pdf_dir
+            Write the bundle to this folder instead of the one resolved under
+            ``output_dir`` — for a caller that resolves the folders of a whole
+            batch up-front, as the ``amir-batch`` CLI does.
         max_num_pages
             Optional cap on the number of pages to convert.
+
+        A failing step after the conversion (an export, the chunker, the
+        check...) is recorded in ``errors`` with its component, and the next
+        step still runs; ``run.json`` is written last and lists them all.
         """
+        if make_html_preview and output_dir is None and pdf_dir is None:
+            raise ValueError("make_html_preview=True requires output_dir to be set.")
         kind, normalised = validate_pdf_source(source)
         _log.info("PdfEngine: converting %s (%s)", normalised, kind.value)
-
-        convert_kwargs: dict[str, object] = {"raises_on_error": False}
-        if max_num_pages is not None:
-            convert_kwargs["max_num_pages"] = max_num_pages
 
         started_at = _dt.datetime.now(_dt.timezone.utc)
         try:
             result: ConversionResult = self._converter.convert(
                 normalised,
-                **convert_kwargs,  # type: ignore[arg-type]
+                raises_on_error=False,
+                max_num_pages=max_num_pages
+                if max_num_pages is not None
+                else sys.maxsize,
             )
         except ConversionError as exc:
             _log.exception("PdfEngine: conversion raised ConversionError")
@@ -315,143 +349,183 @@ class PdfEngine:
             )
         finished_at = _dt.datetime.now(_dt.timezone.utc)
 
-        if (
-            result.status
-            in {ConversionStatus.SUCCESS, ConversionStatus.PARTIAL_SUCCESS}
-            and kind == SourceKind.LOCAL_PATH
-        ):
-            # Before _build_output (which exports the markdown) and every
-            # other export. A URL source has no local file to read.
-            repair_ligature_splits(result.document, pdf_page_words(Path(normalised)))
-            attach_table_pdf_text(result.document, Path(normalised))
-
         output = self._build_output(result, kind=kind, normalised=normalised)
+        if not output.succeeded:
+            return output
 
-        if output.succeeded and self._figure_typer is not None:
-            typed = type_pictures(result, self._figure_typer)
-            _log.info("PdfEngine: typed %d picture(s) with BiomedCLIP", typed)
+        local_pdf = Path(normalised) if kind == SourceKind.LOCAL_PATH else None
+        doc = result.document
+        errors = output.errors
+        # Before every export. A URL source has no local file to read.
+        with _step(errors, "vlm_stop_tokens"):
+            strip_vlm_stop_tokens(doc)
+        if local_pdf is not None:
+            with _step(errors, "ligature_repair"):
+                repair_ligature_splits(doc, pdf_page_words(local_pdf))
+            with _step(errors, "table_pdf_text"):
+                attach_table_pdf_text(doc, local_pdf)
+        with _step(errors, "export_to_markdown"):
+            output.markdown = export_markdown(doc, image_mode=ImageRefMode.PLACEHOLDER)
 
-        if output.succeeded and output_dir is not None:
-            pdf_dir = _resolve_pdf_dir(output_dir, normalised, result)
-            pdf_dir.mkdir(parents=True, exist_ok=True)
-            output.output_dir = pdf_dir
+        if self._figure_typer is not None:
+            with _step(errors, "figure_typing"):
+                typed = type_pictures(result, self._figure_typer)
+                _log.info("PdfEngine: typed %d picture(s) with BiomedCLIP", typed)
 
-            noise_flags: list[PictureNoiseFlag] = []
-            if self._filter_noise_pictures:
+        if pdf_dir is None and output_dir is not None:
+            pdf_dir = resolve_pdf_dir(
+                output_dir,
+                result.input.file.name,
+                file_size=result.input.filesize,
+                binary_hash=result.input.document_hash or None,
+            )
+        if pdf_dir is not None:
+            self._write_bundle(
+                result,
+                output,
+                pdf_dir,
+                local_pdf=local_pdf,
+                started_at=started_at,
+                finished_at=finished_at,
+                make_html_preview=make_html_preview,
+            )
+        return output
+
+    def _write_bundle(
+        self,
+        result: ConversionResult,
+        output: PdfConversionOutput,
+        pdf_dir: Path,
+        *,
+        local_pdf: Path | None,
+        started_at: _dt.datetime,
+        finished_at: _dt.datetime,
+        make_html_preview: bool,
+    ) -> None:
+        doc = result.document
+        errors = output.errors
+        pdf_dir.mkdir(parents=True, exist_ok=True)
+        _remove_bundle_files(pdf_dir)
+        output.output_dir = pdf_dir
+
+        noise_flags: list[PictureNoiseFlag] = []
+        if self._filter_noise_pictures:
+            with _step(errors, "picture_filter"):
                 noise_flags = classify_pictures(
                     result,
                     noise_classes=self._noise_picture_classes,
                     repeat_threshold=self._noise_repeat_threshold,
                 )
 
-            if self._save_artifacts:
-                try:
-                    artifacts = write_artifacts(result, pdf_dir)
-                    output.document_json = artifacts.document_json
-                    output.nodes_jsonl = artifacts.nodes_jsonl
-                    output.picture_images = artifacts.picture_images
-                    output.table_images = artifacts.table_images
-                except ArtifactsError as exc:
-                    _log.warning("PdfEngine: artifacts not written: %s", exc)
-                    output.errors.append(
-                        PdfEngineError(component="artifacts", message=str(exc))
-                    )
-
-                try:
-                    chunks = write_chunks(
-                        result,
-                        pdf_dir,
-                        tokenizer_repo=self._chunk_tokenizer,
-                        max_tokens=self._chunk_max_tokens,
-                    )
-                    output.chunks_jsonl = chunks.chunks_jsonl
-                except ChunkerError as exc:
-                    _log.warning("PdfEngine: chunks not written: %s", exc)
-                    output.errors.append(
-                        PdfEngineError(component="chunker", message=str(exc))
-                    )
-
-                try:
-                    structured = write_structured_outputs(
-                        result,
-                        pdf_dir,
-                        picture_image_paths=output.picture_images,
-                        table_image_paths=output.table_images,
-                        picture_noise_flags=noise_flags,
-                    )
-                    output.tables_jsonl = structured.tables_jsonl
-                    output.figures_jsonl = structured.figures_jsonl
-                except StructuredOutputsError as exc:
-                    _log.warning("PdfEngine: structured outputs not written: %s", exc)
-                    output.errors.append(
-                        PdfEngineError(component="structured_outputs", message=str(exc))
-                    )
-
-            if self._link_images and output.markdown and output.picture_images:
-                rel_paths = [
-                    p.relative_to(pdf_dir).as_posix() for p in output.picture_images
-                ]
-                output.markdown = _link_picture_placeholders(
-                    output.markdown, rel_paths, noise_flags
-                )
-
-            self._write_primary_markdown(output, pdf_dir)
-
-            if self._embed_images:
-                output.markdown_embedded_path = self._write_embedded_markdown(
-                    result, pdf_dir, output.errors, noise_flags
-                )
-
-            if self._save_artifacts:
-                output.run_json = write_run_snapshot(
+        if self._save_artifacts:
+            with _step(errors, "artifacts"):
+                artifacts = write_artifacts(result, pdf_dir)
+                output.document_json = artifacts.document_json
+                output.nodes_jsonl = artifacts.nodes_jsonl
+                output.picture_images = artifacts.picture_images
+                output.table_images = artifacts.table_images
+            with _step(errors, "chunker"):
+                output.chunks_jsonl = write_chunks(
+                    result,
                     pdf_dir,
-                    source=normalised,
-                    source_kind=kind.value,
-                    status=str(output.status),
-                    started_at=started_at,
-                    finished_at=finished_at,
-                    engine_config=self._engine_config,
-                    pipeline_options=(
-                        self._pipeline_options.model_dump(
-                            mode="json", serialize_as_any=True
-                        )
-                        if self._pipeline_options is not None
-                        else None
-                    ),
-                    page_count=output.page_count,
-                    pictures_extracted=len(output.picture_images),
-                    tables_extracted=len(output.table_images),
-                    errors=[e.model_dump() for e in output.errors],
+                    tokenizer_repo=self._chunk_tokenizer,
+                    max_tokens=self._chunk_max_tokens,
+                ).chunks_jsonl
+            with _step(errors, "structured_outputs"):
+                structured = write_structured_outputs(
+                    result,
+                    pdf_dir,
+                    picture_image_paths=output.picture_images,
+                    table_image_paths=output.table_images,
+                    picture_noise_flags=noise_flags,
+                )
+                output.tables_jsonl = structured.tables_jsonl
+                output.figures_jsonl = structured.figures_jsonl
+
+        if output.markdown is not None:
+            with _step(errors, "markdown"):
+                linked = (
+                    [p.relative_to(pdf_dir).as_posix() for p in output.picture_images]
+                    if self._link_images
+                    else []
+                )
+                markdown = _link_picture_placeholders(
+                    output.markdown, linked, noise_flags
+                )
+                output.markdown = markdown
+                target = pdf_dir / f"{pdf_dir.name}.md"
+                target.write_text(markdown, encoding="utf-8")
+                output.markdown_path = target
+                _log.info("PdfEngine: wrote markdown to %s", target)
+
+        if self._embed_images:
+            with _step(errors, "export_to_markdown_embedded"):
+                output.markdown_embedded_path = _write_embedded_markdown(
+                    doc, pdf_dir, noise_flags
                 )
 
-            # After run.json and the jsonl sidecars: the HTML manifest embeds them.
-            if self._embed_images:
-                output.html_path = self._write_document_html(
-                    result, pdf_dir, output.errors, noise_flags
+        if make_html_preview:
+            with _step(errors, "visualizer"):
+                preview = render_html_preview(
+                    result,
+                    pdf_dir,
+                    image_scale=self._image_scale,
+                    noise_flags=noise_flags,
+                    chunks_jsonl=output.chunks_jsonl,
+                )
+                output.preview_html = preview
+                if self._embed_images:
+                    output.preview_html_embedded = embed_html_images(preview)
+
+        def snapshot(*, complete: bool) -> dict[str, Any]:
+            return build_run_snapshot(
+                source=output.source,
+                source_kind=output.source_kind.value,
+                file_name=result.input.file.name or None,
+                file_size=result.input.filesize,
+                binary_hash=result.input.document_hash or None,
+                status=str(output.status),
+                complete=complete,
+                started_at=started_at,
+                finished_at=finished_at,
+                engine_config=self.engine_config(make_html_preview=make_html_preview),
+                pipeline_options=(
+                    self._pipeline_options.model_dump(
+                        mode="json", serialize_as_any=True
+                    )
+                    if self._pipeline_options is not None
+                    else None
+                ),
+                page_count=output.page_count,
+                pictures_extracted=len(output.picture_images),
+                tables_extracted=len(output.table_images),
+                errors=[e.model_dump() for e in errors],
+            )
+
+        if self._embed_images:
+            with _step(errors, "html_export"):
+                output.html_path = write_document_html(
+                    doc,
+                    pdf_dir,
+                    noise_flags=noise_flags,
+                    figures_jsonl=output.figures_jsonl,
+                    tables_jsonl=output.tables_jsonl,
+                    chunks_jsonl=output.chunks_jsonl,
+                    run=snapshot(complete=False) if self._save_artifacts else None,
                 )
 
-            if make_html_preview:
-                try:
-                    output.preview_html = render_html_preview(
-                        result,
-                        pdf_dir,
-                        image_scale=self._image_scale,
-                        noise_flags=noise_flags,
-                        chunks_jsonl=output.chunks_jsonl,
-                    )
-                    if self._embed_images:
-                        output.preview_html_embedded = embed_html_images(
-                            output.preview_html
-                        )
-                except PreviewError as exc:
-                    _log.warning("PdfEngine: HTML preview skipped: %s", exc)
-                    output.errors.append(
-                        PdfEngineError(component="visualizer", message=str(exc))
-                    )
-        elif make_html_preview and output_dir is None:
-            raise ValueError("make_html_preview=True requires output_dir to be set.")
-
-        return output
+        if not self._save_artifacts:
+            return
+        # The check reads run.json (status, errors): it gets one that says the
+        # bundle is not complete, and run.json is rewritten after check.json.
+        with _step(errors, "run_snapshot"):
+            write_run_snapshot(pdf_dir, snapshot(complete=False))
+        if output.document_json is not None:
+            with _step(errors, "export_check"):
+                output.check = check_bundle(pdf_dir, pdf_path=local_pdf)
+                output.check_json = write_bundle_check(pdf_dir, output.check)
+        with _step(errors, "run_snapshot"):
+            output.run_json = write_run_snapshot(pdf_dir, snapshot(complete=True))
 
     @staticmethod
     def _build_output(
@@ -479,86 +553,158 @@ class PdfEngine:
             for err in result.errors
         ]
 
-        markdown: str | None = None
-        if result.status in {
-            ConversionStatus.SUCCESS,
-            ConversionStatus.PARTIAL_SUCCESS,
-        }:
-            try:
-                markdown = result.document.export_to_markdown(
-                    image_mode=ImageRefMode.PLACEHOLDER, **TEXT_EXPORT_META_PARAMS
-                )
-            except Exception as exc:  # pragma: no cover - defensive
-                _log.warning("PdfEngine: markdown export failed: %s", exc)
-                errors.append(
-                    PdfEngineError(component="export_to_markdown", message=str(exc))
-                )
-
         return PdfConversionOutput(
             status=result.status,
             source=normalised,
             source_kind=kind,
-            page_count=result.input.page_count
-            if result.input is not None
-            else len(pages),
+            page_count=result.input.page_count,
             pages=pages,
             errors=errors,
-            markdown=markdown,
             raw=result,
         )
 
-    @staticmethod
-    def _write_primary_markdown(output: PdfConversionOutput, pdf_dir: Path) -> None:
-        if output.markdown is None:
-            return
-        target = pdf_dir / f"{pdf_dir.name}.md"
-        target.write_text(output.markdown, encoding="utf-8")
-        _log.info("PdfEngine: wrote markdown to %s", target)
 
-    @staticmethod
-    def _write_embedded_markdown(
-        result: ConversionResult,
-        pdf_dir: Path,
-        errors: list[PdfEngineError],
-        noise_flags: list[PictureNoiseFlag] | None = None,
-    ) -> Path | None:
-        try:
-            embedded = result.document.export_to_markdown(
-                image_mode=ImageRefMode.EMBEDDED, **TEXT_EXPORT_META_PARAMS
-            )
-        except Exception as exc:
-            _log.warning("PdfEngine: embedded markdown export failed: %s", exc)
-            errors.append(
-                PdfEngineError(
-                    component="export_to_markdown_embedded", message=str(exc)
-                )
-            )
-            return None
-        if noise_flags:
-            embedded = _strip_noise_embedded(embedded, noise_flags)
-        target = pdf_dir / f"{pdf_dir.name}.embedded.md"
-        target.write_text(embedded, encoding="utf-8")
-        _log.info("PdfEngine: wrote embedded markdown to %s", target)
-        return target
-
-    @staticmethod
-    def _write_document_html(
-        result: ConversionResult,
-        pdf_dir: Path,
-        errors: list[PdfEngineError],
-        noise_flags: list[PictureNoiseFlag],
-    ) -> Path | None:
-        try:
-            return write_document_html(
-                result.document, pdf_dir, noise_flags=noise_flags
-            )
-        except Exception as exc:
-            _log.warning("PdfEngine: standalone HTML export failed: %s", exc)
-            errors.append(PdfEngineError(component="html_export", message=str(exc)))
-            return None
+@contextlib.contextmanager
+def _step(errors: list[PdfEngineError], component: str) -> Iterator[None]:
+    """Record an exception of the step in the block as an error of
+    *component* and go on with the next step; ``KeyboardInterrupt`` passes."""
+    try:
+        yield
+    except Exception as exc:
+        _log.exception("PdfEngine: step %s failed", component)
+        errors.append(
+            PdfEngineError(component=component, message=f"{type(exc).__name__}: {exc}")
+        )
 
 
-_SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
+def _write_embedded_markdown(
+    doc: DoclingDocument,
+    pdf_dir: Path,
+    noise_flags: list[PictureNoiseFlag],
+) -> Path:
+    embedded = export_markdown(doc, image_mode=ImageRefMode.EMBEDDED)
+    if noise_flags:
+        embedded = _strip_noise_embedded(embedded, noise_flags)
+    target = pdf_dir / f"{pdf_dir.name}.embedded.md"
+    target.write_text(embedded, encoding="utf-8")
+    _log.info("PdfEngine: wrote embedded markdown to %s", target)
+    return target
+
+
+def _bundle_files(pdf_dir: Path) -> tuple[Path, ...]:
+    """The files of a bundle that a conversion writes at its top level."""
+    stem = pdf_dir.name
+    names = (
+        "document.json",
+        "nodes.jsonl",
+        "chunks.jsonl",
+        "tables.jsonl",
+        "figures.jsonl",
+        RUN_JSON_FILENAME,
+        CHECK_FILENAME,
+        f"{stem}.md",
+        f"{stem}.embedded.md",
+        f"{stem}.html",
+        "preview.html",
+        "preview.embedded.html",
+    )
+    return tuple(pdf_dir / name for name in names)
+
+
+def _remove_bundle_files(pdf_dir: Path) -> None:
+    """Drop what an earlier conversion wrote into *pdf_dir*: a step that fails
+    or writes nothing this time (``tables.jsonl`` of a PDF without tables)
+    must not leave the previous run's file in the bundle, nor a picture that
+    lost its crop the previous run's crop."""
+    for path in _bundle_files(pdf_dir):
+        path.unlink(missing_ok=True)
+    if (pdf_dir / IMAGES_SUBDIR).is_dir():
+        shutil.rmtree(pdf_dir / IMAGES_SUBDIR)
+
+
+_UNSAFE_NAME = re.compile(r"[^\w.-]+")
+
+
+def bundle_dir_name(file_name: str) -> str:
+    """The sanitised stem of *file_name* that names its bundle folder; letters
+    of every script are kept."""
+    stem = unicodedata.normalize("NFC", PurePath(file_name).stem)
+    return _UNSAFE_NAME.sub("_", stem).strip("._-") or "document"
+
+
+def resolve_pdf_dir(
+    output_dir: Path,
+    file_name: str,
+    *,
+    file_size: int | None = None,
+    binary_hash: str | None = None,
+    taken: Collection[Path] = (),
+    bundle_subdir: str | None = None,
+) -> Path:
+    """The bundle folder of the PDF *file_name*: ``<output_dir>/<base>``, or
+    ``<base>_2``, ``<base>_3``... with ``base = bundle_dir_name(file_name)``.
+
+    A folder of that sequence whose ``run.json`` records this PDF (its name,
+    and its size and binary hash where known) is reused wherever it is, so a
+    PDF keeps its folder when the PDFs before it come and go. Otherwise the
+    PDF gets the first folder not in *taken* (an earlier PDF of the batch has
+    it) that does not hold another PDF's bundle; a folder without
+    ``run.json`` — an interrupted conversion of this PDF leaves one — is
+    reused. *bundle_subdir* is where each folder keeps the ``run.json`` that
+    identifies it (``standard`` in a comparison folder)."""
+    base = bundle_dir_name(file_name)
+
+    def record_dir(folder: Path) -> Path:
+        return folder / bundle_subdir if bundle_subdir is not None else folder
+
+    for folder in _numbered_dirs(output_dir, base):
+        record = read_run_record(record_dir(folder))
+        if (
+            folder not in taken
+            and record is not None
+            and record.source.file_name is not None
+            and record.is_source(file_name, file_size, binary_hash)
+        ):
+            return folder
+
+    candidate = output_dir / base
+    suffix = 1
+    while candidate in taken or _holds_other_pdf(
+        record_dir(candidate), file_name, file_size, binary_hash
+    ):
+        suffix += 1
+        candidate = output_dir / f"{base}_{suffix}"
+    if suffix > 1:
+        _log.warning(
+            "PdfEngine: %s is taken by another PDF; writing %s to %s",
+            output_dir / base,
+            file_name,
+            candidate,
+        )
+    return candidate
+
+
+def _numbered_dirs(output_dir: Path, base: str) -> list[Path]:
+    """The folders ``<base>``, ``<base>_2``, ``<base>_3``... of *output_dir*
+    that exist, in that order."""
+    if not output_dir.is_dir():
+        return []
+    numbered = re.compile(rf"{re.escape(base)}(?:_(\d+))?")
+    found: list[tuple[int, Path]] = []
+    for entry in output_dir.iterdir():
+        match = numbered.fullmatch(entry.name)
+        if match is not None and entry.is_dir():
+            found.append((int(match.group(1) or 1), entry))
+    return [entry for _n, entry in sorted(found)]
+
+
+def _holds_other_pdf(
+    pdf_dir: Path, file_name: str, file_size: int | None, binary_hash: str | None
+) -> bool:
+    record = read_run_record(pdf_dir)
+    return record is not None and not record.is_source(
+        file_name, file_size, binary_hash
+    )
 
 
 def _link_picture_placeholders(
@@ -566,61 +712,48 @@ def _link_picture_placeholders(
     picture_paths: list[str],
     noise_flags: list[PictureNoiseFlag] | None = None,
 ) -> str:
-    """Replace ``<!-- image -->`` placeholders with ``![](path)`` refs in order.
+    """Replace ``<!-- image -->`` placeholders with ``![](path)`` refs.
 
-    When ``noise_flags`` is given and the Nth placeholder corresponds to a
-    noise-flagged picture, emit ``<!-- noise picture: <reason> -->`` instead.
+    The Nth placeholder is the Nth picture of ``iterate_items()``, as are the
+    crop named ``crop_stem("picture", N)`` and ``noise_flags[N]``. A picture
+    without a crop keeps its placeholder; a noise-flagged picture becomes
+    ``<!-- noise picture: <reason> -->``.
     """
-    iterator = iter(
-        zip(picture_paths, noise_flags or [None] * len(picture_paths), strict=False)
-    )
+    crops = {PurePosixPath(path).stem: path for path in picture_paths}
+    flags = noise_flags or []
+    positions = itertools.count()
 
     def _swap(_match: re.Match[str]) -> str:
-        try:
-            path, flag = next(iterator)
-        except StopIteration:
-            return _PLACEHOLDER
+        position = next(positions)
+        flag = flags[position] if position < len(flags) else None
         if flag is not None and flag.is_noise:
-            return f"<!-- noise picture: {flag.noise_reason or 'unknown'} -->"
-        return f"![]({path})"
+            return _noise_comment(flag)
+        path = crops.get(crop_stem("picture", position))
+        return f"![]({path})" if path is not None else _PLACEHOLDER
 
     return re.sub(re.escape(_PLACEHOLDER), _swap, markdown)
 
 
-_EMBEDDED_IMG_RE = re.compile(r"!\[[^\]]*\]\(data:image/[^)]+\)")
+# One per picture: its base64 image, or docling-core's comment for a picture
+# without one ("<!-- 🖼️❌ Image not available. ... -->").
+_EMBEDDED_PICTURE_RE = re.compile(
+    r"!\[[^\]]*\]\(data:image/[^)]+\)|<!-- \S+ Image not available\.[^\n]*?-->"
+)
 
 
 def _strip_noise_embedded(markdown: str, noise_flags: list[PictureNoiseFlag]) -> str:
-    """Replace base64 image refs whose iteration index is noise with a comment."""
-    iterator = iter(noise_flags)
+    """Replace the Nth picture of the embedded markdown with a comment when
+    ``noise_flags[N]`` is noise."""
+    positions = itertools.count()
 
     def _swap(match: re.Match[str]) -> str:
-        try:
-            flag = next(iterator)
-        except StopIteration:
-            return match.group(0)
-        if flag.is_noise:
-            return f"<!-- noise picture: {flag.noise_reason or 'unknown'} -->"
+        position = next(positions)
+        if position < len(noise_flags) and noise_flags[position].is_noise:
+            return _noise_comment(noise_flags[position])
         return match.group(0)
 
-    return _EMBEDDED_IMG_RE.sub(_swap, markdown)
+    return _EMBEDDED_PICTURE_RE.sub(_swap, markdown)
 
 
-def _resolve_pdf_dir(
-    output_dir: Path, normalised: str, result: ConversionResult
-) -> Path:
-    """Return ``output_dir / <safe-stem>`` for this PDF.
-
-    Prefers the upstream-reported input filename (which works for URL inputs
-    too) and falls back to the source's stem; sanitised for filesystem
-    safety.
-    """
-    raw_name: str | None = None
-    if result.input is not None:
-        try:
-            raw_name = result.input.file.name
-        except Exception:  # pragma: no cover - defensive
-            raw_name = None
-    candidate = Path(raw_name or normalised).stem or "document"
-    safe = _SAFE_NAME.sub("_", candidate).strip("._-") or "document"
-    return output_dir / safe
+def _noise_comment(flag: PictureNoiseFlag) -> str:
+    return f"<!-- noise picture: {flag.noise_reason or 'unknown'} -->"

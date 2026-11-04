@@ -141,6 +141,30 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
             budget = max(budget, 3 * len(tokenizer(text)["input_ids"]) + 512)
         return min(budget, self._model_max_length)
 
+    def _warn_on_truncation(
+        self,
+        generated_ids: torch.Tensor,
+        clusters: Sequence[Cluster],
+        *,
+        page_no: int,
+        budget: int,
+    ) -> None:
+        """Warn about each crop whose generation was cut off by *budget*: still
+        going (last token neither EOS nor padding) when the batch hit it."""
+        if generated_ids.shape[1] < budget:
+            return
+        tokenizer = self._processor.tokenizer
+        finished = {tokenizer.eos_token_id, tokenizer.pad_token_id}
+        for row, cluster in zip(generated_ids, clusters):
+            if int(row[-1]) not in finished:
+                _log.warning(
+                    "GraniteVision table [%s] on page %d hit the %d-token "
+                    "generation budget; its structure is truncated",
+                    cluster.id,
+                    page_no,
+                    budget,
+                )
+
     def predict_tables(
         self,
         conv_res: ConversionResult,
@@ -214,10 +238,17 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
                     do_pad=True,
                 ).to(self.device)
 
+                budget = self._generation_budget(valid_clusters)
                 output_ids = cast(Any, self._model).generate(
                     **inputs,
-                    max_new_tokens=self._generation_budget(valid_clusters),
+                    max_new_tokens=budget,
                     use_cache=True,
+                )
+                self._warn_on_truncation(
+                    output_ids[:, inputs["input_ids"].shape[1] :],
+                    valid_clusters,
+                    page_no=page.page_no,
+                    budget=budget,
                 )
 
                 # Decode only generated tokens (strip input prompt tokens)

@@ -30,11 +30,13 @@ import json
 import logging
 import re
 from pathlib import Path
+from typing import Literal
 
 from docling_core.types.doc import PictureItem, TableItem
 
 from docling.datamodel.base_models import ConversionStatus, Page
 from docling.datamodel.document import ConversionResult
+from docling.engines.artifacts import crop_stem
 from docling.engines.figure_typing import get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
 
@@ -247,13 +249,12 @@ def _display_metadata(
     }
 
     if kind == "picture":
-        counters["picture"] += 1
-        idx = counters["picture"]
+        crop = _crop_path(pdf_dir, "picture", counters)
         flag = noise_by_self_ref.get(self_ref)
         figure_type = get_figure_type(item)
         info.update(
             {
-                "image_path": f"images/picture_{idx:03d}.png",
+                "image_path": crop,
                 "caption_text": _caption_text(item, doc),
                 "figure_type": figure_type.label if figure_type else None,
                 "figure_type_confidence": (
@@ -266,8 +267,7 @@ def _display_metadata(
             }
         )
     elif kind == "table":
-        counters["table"] += 1
-        idx = counters["table"]
+        crop = _crop_path(pdf_dir, "table", counters)
         try:
             table_html = item.export_to_html(doc=doc, add_caption=False)
         except Exception:
@@ -275,7 +275,7 @@ def _display_metadata(
         data = item.data
         info.update(
             {
-                "image_path": f"images/table_{idx:03d}.png",
+                "image_path": crop,
                 "caption_text": _caption_text(item, doc),
                 "num_rows": data.num_rows if data is not None else 0,
                 "num_cols": data.num_cols if data is not None else 0,
@@ -289,6 +289,16 @@ def _display_metadata(
             }
         )
     return info
+
+
+def _crop_path(
+    pdf_dir: Path, kind: Literal["picture", "table"], counters: dict[str, int]
+) -> str | None:
+    """The item's crop as written by the artifacts writer, or None when it has
+    none (no image, or artifacts not saved)."""
+    rel = f"images/{crop_stem(kind, counters[kind])}.png"
+    counters[kind] += 1
+    return rel if (pdf_dir / rel).is_file() else None
 
 
 def _caption_text(item, doc) -> str:

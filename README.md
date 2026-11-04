@@ -67,7 +67,8 @@ out/<pdf-name>/
 ├── figures.jsonl           🤖 one row per figure: caption, figure type, VLM description, noise flag
 ├── nodes.jsonl             🤖 every document node with bbox
 ├── document.json           🤖 full DoclingDocument (lossless)
-├── run.json                🧾 engine release + git commit, models, options, timing, package versions
+├── run.json                🧾 engine release + git commit, models, options, timing, package versions, errors
+├── check.json              ✅ self-check: every item in the HTML, PDF text recall per page, export fidelity, issues
 └── images/                 🖼️ page renders + figure/table crops
 ```
 
@@ -91,7 +92,8 @@ Known rough edges: some supplementary figures/tables have no detected caption, t
 ## 🧩 What this fork adds on top of Docling
 
 - `docling/engines/`: the Amir Engine (`PdfEngine`), the only new code subtree
-- `amir-batch` CLI: batch conversion with a rich summary table (`--compare` A/Bs against full-page GraniteDocling)
+- `amir-batch` CLI: batch conversion with a rich summary table, skip-existing + retries, and a per-bundle self-check (`check.json`: every item in the HTML, PDF text-layer recall per page, export fidelity; `--check-only` re-checks existing bundles; `--compare` A/Bs against full-page GraniteDocling)
+- Markdown and chunks mark model-written text (`<!--<annotation kind="description">-->…<!--<annotation/>-->`) and keep a table's printed PDF text when the table model dropped words
 - Clickable HTML bbox viewer, linked + standalone versions, deep-linkable by `self_ref`
 - Agent-ready JSONL (chunks / tables / figures / nodes) + `run.json` provenance
 - Standalone `<pdf-name>.html` that keeps everything Docling extracted (page headers/footers, text inside figures, table footnotes, reference numbers, formula text), marked rather than dropped
@@ -108,6 +110,7 @@ Releases of this fork are git tags named `extrct_docling-v<docling version>-r<n>
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
+| [`extrct_docling-v2.131.0-r3`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r3) | 2026-11-04 | Docling v2.131.0 | Bundle self-check (`check.json`: every item in the HTML, PDF text-layer recall per page, export fidelity vs `document.json`, ligature splits, degenerate tables, empty chunks; `--check-only` re-checks existing bundles); `amir-batch` skips complete bundles (same file, release and options), retries engine exceptions, exits 1 / 3 / 0 for failures / check issues / clean, builds one engine per batch and suffixes colliding folder names; VLM captions no longer end in `<\|end_of_text\|>`; markdown and chunks mark VLM descriptions and carry a table's printed PDF text when the table model dropped words; heading-only chunks dropped; crops and noise flags matched by `self_ref`; table PDF-text recall read from the right region on cropped or rotated pages; Granite-Vision truncation logged; failed export steps recorded in `run.json` (written last, `complete: true`) instead of aborting the bundle; HTML manifest built from this run's files; `picture_area_threshold` 0.03 (was 0.05); `run.json` adds `engine.release`, `source.binary_hash`, torch CUDA build |
 | [`extrct_docling-v2.131.0-r2`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r2) | 2026-11-03 | Docling v2.131.0 | The HTML also keeps captions and footnotes of code blocks (a boxed prompt Docling reads as code loses its "Table SI.x" caption in Docling's HTML) and any other child of a text item; `html_written_by` in the manifest names the release that wrote the HTML when it differs from the one that converted the PDF (`rebuild_document_html`) |
 | [`extrct_docling-v2.131.0-r1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r1) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above, plus a cap on Granite-Vision table generation (it used the tokenizer's unset ~1e30 `model_max_length`, so a boxed prompt laid out like a table generated for over an hour) and, for a table whose model-typed cells miss words printed in its box, that box's PDF text in the HTML |
 
@@ -116,13 +119,13 @@ Pin it from another project:
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r2
+git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r3
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r2"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r3"
 ```
 
-In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r2"`).
+In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r3"`).
 
 ---
 

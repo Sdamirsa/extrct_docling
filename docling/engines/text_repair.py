@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
-"""Check extracted text against the PDF's own text layer (pypdfium2).
+"""Repair extracted text, mostly against the PDF's own text layer (pypdfium2).
 
 - **Ligature splits.** With some fonts Docling's parser emits a ligature
   glyph (``ﬁ``, ``ﬂ``...) as a word of its own: "specificity" becomes
@@ -15,6 +15,9 @@
   becomes an empty table. When the cells hold less than
   :data:`TABLE_TEXT_MIN_RECALL` of those words, the box's PDF text is stored
   on the table (``amir__pdf_text`` meta) so the HTML can carry it.
+- **VLM stop tokens.** A picture-description VLM can end its text with its
+  end-of-sequence token (``<|end_of_text|>``), which then reaches the
+  markdown, chunks and ``figures.jsonl``. Needs no PDF.
 """
 
 from __future__ import annotations
@@ -24,9 +27,24 @@ import re
 import unicodedata
 from collections import Counter
 from pathlib import Path
+from typing import TYPE_CHECKING
 
-from docling_core.types.doc import DoclingDocument, TableItem, TextItem
-from docling_core.types.doc.document import FloatingMeta, MetaUtils
+from docling_core.types.doc import (
+    BoundingBox,
+    ContentLayer,
+    DescriptionAnnotation,
+    DoclingDocument,
+    TableItem,
+    TextItem,
+)
+from docling_core.types.doc.document import (
+    DescriptionMetaField,
+    FloatingMeta,
+    MetaUtils,
+)
+
+if TYPE_CHECKING:
+    from pypdfium2 import PdfPage
 
 _log = logging.getLogger(__name__)
 
@@ -38,12 +56,47 @@ TABLE_PDF_TEXT_META_KEY = MetaUtils.create_meta_field_name(
 )
 _TOKEN = re.compile(r"[a-z0-9]{2,}")
 
-_LIGATURES = {"fi", "fl", "ff", "ffi", "ffl"}
+LIGATURES = frozenset({"fi", "fl", "ff", "ffi", "ffl"})
 _WORD = re.compile(r"[a-z]+")
-_TAIL = re.compile(r"[A-Za-z]*$")
-_HEAD = re.compile(r"^[A-Za-z]*")
+WORD_TAIL = re.compile(r"[A-Za-z]*$")
+WORD_HEAD = re.compile(r"^[A-Za-z]*")
 # pdfium marks a line-end hyphenation as U+FFFE or U+0002.
-_HYPHENATION = re.compile(r"[￾\x02­]\s*")
+PDF_HYPHENATION = re.compile(r"[\ufffe\x02\u00ad]\s*")
+
+_VLM_STOP_TOKENS = (
+    "<|end_of_text|>",
+    "<end_of_utterance>",
+    "<|im_end|>",
+    "<|endoftext|>",
+)
+_TRAILING_STOP_TOKENS = re.compile(
+    r"(?:\s*(?:" + "|".join(re.escape(t) for t in _VLM_STOP_TOKENS) + r"))+\s*$"
+)
+
+
+def strip_vlm_stop_tokens(doc: DoclingDocument) -> int:
+    """Drop the end-of-sequence tokens a VLM left at the end of picture
+    descriptions (``meta.description`` and the description annotation);
+    returns the number of pictures cleaned."""
+    cleaned = 0
+    for picture in doc.pictures:
+        descriptions: list[DescriptionAnnotation | DescriptionMetaField] = [
+            annotation
+            for annotation in picture.annotations
+            if isinstance(annotation, DescriptionAnnotation)
+        ]
+        if picture.meta is not None and picture.meta.description is not None:
+            descriptions.append(picture.meta.description)
+        changed = False
+        for description in descriptions:
+            text = _TRAILING_STOP_TOKENS.sub("", description.text)
+            if text != description.text:
+                description.text = text
+                changed = True
+        cleaned += changed
+    if cleaned:
+        _log.info("Stripped VLM stop tokens from %d picture description(s)", cleaned)
+    return cleaned
 
 
 def pdf_page_words(pdf_path: Path) -> dict[int, set[str]]:
@@ -59,7 +112,7 @@ def pdf_page_words(pdf_path: Path) -> dict[int, set[str]]:
             text = textpage.get_text_range()
             textpage.close()
             page.close()
-            text = unicodedata.normalize("NFKC", _HYPHENATION.sub("", text)).lower()
+            text = unicodedata.normalize("NFKC", PDF_HYPHENATION.sub("", text)).lower()
             pages[index + 1] = set(_WORD.findall(text))
         return pages
     finally:
@@ -72,7 +125,14 @@ def repair_ligature_splits(
     """Rejoin ligature-split words in text items and table cells; returns the
     number of words rejoined."""
     fixed = 0
-    for item, _level in doc.iterate_items(with_groups=False, traverse_pictures=True):
+    # Furniture too: the HTML renders running headers and footers.
+    for item, _level in doc.iterate_items(
+        with_groups=False,
+        traverse_pictures=True,
+        included_content_layers=set(ContentLayer),
+    ):
+        if not isinstance(item, TextItem | TableItem):
+            continue
         known: set[str] = set().union(
             *(page_words.get(prov.page_no, set()) for prov in item.prov)
         )
@@ -92,24 +152,24 @@ def repair_ligature_splits(
 
 def _rejoin(text: str, known: set[str]) -> tuple[str, int]:
     tokens = text.split(" ")
-    if not any(t in _LIGATURES for t in tokens):
+    if not any(t in LIGATURES for t in tokens):
         return text, 0
     out: list[str] = []
     fixed = 0
     i = 0
     while i < len(tokens):
         tok = tokens[i]
-        prev = out[-1] if out else None
-        nxt = tokens[i + 1] if i + 1 < len(tokens) else None
-        if tok not in _LIGATURES:
+        prev = out[-1] if out else ""
+        nxt = tokens[i + 1] if i + 1 < len(tokens) else ""
+        if tok not in LIGATURES:
             out.append(tok)
             i += 1
             continue
         # Only the letters touching the ligature form the word: "domain-speci"
         # contributes "speci". Longest join first: "speci fi city" ->
         # "specificity", then "the fi rst" -> "the first", then "speci fi".
-        tail = _TAIL.search(prev).group().lower() if prev is not None else ""
-        head = _HEAD.match(nxt).group().lower() if nxt is not None else ""
+        tail = t.group().lower() if (t := WORD_TAIL.search(prev)) else ""
+        head = h.group().lower() if (h := WORD_HEAD.match(nxt)) else ""
         if tail and head and tail + tok + head in known:
             out[-1] = prev + tok + nxt
             i += 2
@@ -141,9 +201,10 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
                 if not 1 <= prov.page_no <= len(pdf):
                     continue
                 page = pdf[prov.page_no - 1]
-                bbox = prov.bbox.to_bottom_left_origin(page.get_height())
                 textpage = page.get_textpage()
-                region_text += textpage.get_text_bounded(bbox.l, bbox.b, bbox.r, bbox.t)
+                region_text += textpage.get_text_bounded(
+                    *_user_space_rect(page, prov.bbox)
+                )
                 textpage.close()
                 page.close()
             printed = Counter(_tokens(region_text))
@@ -161,7 +222,7 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
                 _META_NAMESPACE,
                 _META_NAME,
                 {
-                    "text": _HYPHENATION.sub("", region_text).strip(),
+                    "text": PDF_HYPHENATION.sub("", region_text).strip(),
                     "cell_text_recall": round(recall, 3),
                 },
             )
@@ -173,6 +234,30 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
     return attached
 
 
+def _user_space_rect(
+    page: PdfPage, bbox: BoundingBox
+) -> tuple[float, float, float, float]:
+    """*bbox* as the ``(left, bottom, right, top)`` PDF user-space rectangle
+    pdfium's text API takes.
+
+    Docling measures from the top-left corner of the page as displayed: from
+    the visible box (CropBox within MediaBox) and after ``/Rotate``. User space
+    is unrotated and its origin is wherever the PDF puts it: some journals
+    crop 34 pt off every side, and a box read without that offset reads the
+    text 34 pt away.
+    """
+    box = bbox.to_top_left_origin(page.get_height())
+    left, bottom, right, top = page.get_bbox()
+    rotation = page.get_rotation()
+    if rotation == 90:
+        return left + box.t, bottom + box.l, left + box.b, bottom + box.r
+    if rotation == 180:
+        return right - box.r, bottom + box.t, right - box.l, bottom + box.b
+    if rotation == 270:
+        return right - box.b, top - box.r, right - box.t, top - box.l
+    return left + box.l, top - box.b, left + box.r, top - box.t
+
+
 def get_table_pdf_text(table: TableItem) -> dict | None:
     """The stored PDF text of a table box (``text``, ``cell_text_recall``)."""
     if table.meta is None:
@@ -181,5 +266,5 @@ def get_table_pdf_text(table: TableItem) -> dict | None:
 
 
 def _tokens(text: str) -> list[str]:
-    text = unicodedata.normalize("NFKC", _HYPHENATION.sub("", text)).lower()
+    text = unicodedata.normalize("NFKC", PDF_HYPHENATION.sub("", text)).lower()
     return _TOKEN.findall(text)

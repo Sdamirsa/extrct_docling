@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import functools
+import importlib.util
 import json
 import logging
 import platform
@@ -21,16 +22,20 @@ from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from typing import Any
 
+from pydantic import BaseModel, Field
+
+from docling.datamodel.base_models import ConversionStatus
+
 _log = logging.getLogger(__name__)
 
-_RUN_JSON_FILENAME = "run.json"
+RUN_JSON_FILENAME = "run.json"
 _SCHEMA_VERSION = "1"
 
 # This fork's release: the upstream Docling version it is built on plus
 # "-r<n>", the fork's revision on that base. Matches the git tag
 # ``extrct_docling-v<ENGINE_VERSION>``; restart at -r1 on a new Docling base.
 ENGINE_NAME = "extrct_docling"
-ENGINE_VERSION = "2.131.0-r2"
+ENGINE_VERSION = "2.131.0-r3"
 ENGINE_REPOSITORY = "https://github.com/Sdamirsa/extrct_docling"
 
 _TRACKED_PACKAGES = (
@@ -48,12 +53,15 @@ _TRACKED_PACKAGES = (
 )
 
 
-def write_run_snapshot(
-    pdf_dir: Path,
+def build_run_snapshot(
     *,
     source: str,
     source_kind: str,
+    file_name: str | None,
+    file_size: int | None,
+    binary_hash: str | None,
     status: str,
+    complete: bool,
     started_at: _dt.datetime,
     finished_at: _dt.datetime,
     engine_config: dict[str, Any],
@@ -62,15 +70,22 @@ def write_run_snapshot(
     pictures_extracted: int,
     tables_extracted: int,
     errors: list[dict[str, Any]],
-) -> Path:
-    """Write ``<pdf_dir>/run.json`` and return its path."""
-    pdf_dir.mkdir(parents=True, exist_ok=True)
-
-    snapshot = {
+) -> dict[str, Any]:
+    """The ``run.json`` content, without writing it. ``complete`` says the
+    engine ran every step of the bundle; *binary_hash* is Docling's SHA-256
+    of the source file (``InputDocument.document_hash``)."""
+    return {
         "schema_version": _SCHEMA_VERSION,
         "engine": engine_provenance(),
-        "source": _source_block(source, source_kind),
+        "source": _source_block(
+            source,
+            source_kind,
+            file_name=file_name,
+            file_size=file_size,
+            binary_hash=binary_hash,
+        ),
         "status": status,
+        "complete": complete,
         "timing": _timing_block(started_at, finished_at),
         "engine_config": engine_config,
         "pipeline_options": pipeline_options,
@@ -85,23 +100,157 @@ def write_run_snapshot(
         "errors": errors,
     }
 
-    target = pdf_dir / _RUN_JSON_FILENAME
-    target.write_text(
-        json.dumps(snapshot, ensure_ascii=False, indent=2, default=str),
-        encoding="utf-8",
+
+def write_run_snapshot(pdf_dir: Path, snapshot: dict[str, Any]) -> Path:
+    """Write *snapshot* (from :func:`build_run_snapshot`) to
+    ``<pdf_dir>/run.json`` and return its path."""
+    pdf_dir.mkdir(parents=True, exist_ok=True)
+    target = pdf_dir / RUN_JSON_FILENAME
+    write_text_atomic(
+        target, json.dumps(snapshot, ensure_ascii=False, indent=2, default=str)
     )
     _log.info("Wrote run snapshot to %s", target)
     return target
 
 
+def write_text_atomic(target: Path, text: str) -> None:
+    """Write *text* to *target* through a temporary file in its folder, so a
+    process killed mid-write leaves the previous file, never half of one."""
+    partial = target.with_name(f".{target.name}.partial")
+    partial.write_text(text, encoding="utf-8")
+    partial.replace(target)
+
+
+def public_source_path(path: Path) -> str:
+    """*path* relative to the current directory, or its file name when it is
+    outside it: absolute paths leak usernames and machine layout into shared
+    bundles."""
+    resolved = path.resolve()
+    cwd = Path.cwd()
+    return (
+        resolved.relative_to(cwd).as_posix()
+        if resolved.is_relative_to(cwd)
+        else path.name
+    )
+
+
+class RunSource(BaseModel):
+    input: str | None = None
+    source_kind: str | None = None
+    file_name: str | None = None
+    file_size_bytes: int | None = None
+    binary_hash: str | None = Field(
+        None, description="None in bundles written before the field existed."
+    )
+
+
+class RunEngine(BaseModel):
+    version: str | None = None
+
+
+class RunOutputSummary(BaseModel):
+    page_count: int = 0
+    tables_extracted: int = 0
+
+
+class RunError(BaseModel):
+    component: str
+    message: str = ""
+
+
+class RunRecord(BaseModel):
+    """The fields of an existing ``run.json`` that are read back: by the
+    batch CLI, the bundle check and the bundle-folder resolution."""
+
+    status: str | None = None
+    complete: bool | None = Field(
+        None, description="None in bundles written before the field existed."
+    )
+    engine: RunEngine = RunEngine()
+    source: RunSource = RunSource()
+    engine_config: dict[str, Any] = Field(default_factory=dict)
+    output_summary: RunOutputSummary = RunOutputSummary()
+    errors: list[RunError] = Field(default_factory=list)
+
+    @property
+    def conversion_status(self) -> ConversionStatus | None:
+        # Written as str(ConversionStatus.X): "ConversionStatus.SUCCESS".
+        if self.status is None:
+            return None
+        return ConversionStatus(self.status.rsplit(".", 1)[-1].lower())
+
+    @property
+    def chunk_max_tokens(self) -> int | None:
+        value = self.engine_config.get("chunk_max_tokens")
+        return value if isinstance(value, int) else None
+
+    def is_source(
+        self,
+        file_name: str,
+        file_size: int | None,
+        binary_hash: str | None = None,
+    ) -> bool:
+        """Whether the bundle was converted from this PDF: the same file name,
+        and the same size and binary hash where both sides know them. A
+        bundle that records no file name (an unreadable ``run.json``) is taken
+        to be this PDF's."""
+        recorded = self.source
+        if recorded.file_name is None:
+            return True
+        return (
+            recorded.file_name == file_name
+            and _agree(recorded.file_size_bytes, file_size)
+            and _agree(recorded.binary_hash, binary_hash)
+        )
+
+    def config_differences(self, engine_config: dict[str, Any]) -> list[str]:
+        """The keys of *engine_config* whose value the bundle records
+        differently. A key the bundle does not record (it was written before
+        the key existed) is not compared."""
+        current = json.loads(json.dumps(engine_config, default=str))
+        return [
+            key
+            for key, value in current.items()
+            if key in self.engine_config and self.engine_config[key] != value
+        ]
+
+
+def _agree(recorded: object, current: object) -> bool:
+    return recorded is None or current is None or recorded == current
+
+
+def read_run_record(pdf_dir: Path) -> RunRecord | None:
+    """``<pdf_dir>/run.json`` as a :class:`RunRecord`, or None without one.
+    One that does not parse (a process killed while writing it) reads as an
+    incomplete run of an unknown file."""
+    path = pdf_dir / RUN_JSON_FILENAME
+    if not path.is_file():
+        return None
+    try:
+        return RunRecord.model_validate_json(path.read_text(encoding="utf-8"))
+    except ValueError as exc:
+        _log.warning(
+            "%s does not parse (%s); taking it for an incomplete run",
+            path,
+            str(exc).splitlines()[0],
+        )
+        return RunRecord(complete=False)
+
+
 @functools.cache
 def engine_provenance() -> dict[str, Any]:
     """Which release of this fork wrote the bundle. ``git_commit`` /
-    ``git_dirty`` (uncommitted changes to tracked files) are filled when
-    running from a git checkout; a wheel or ``git+https`` install has none."""
+    ``git_dirty`` (uncommitted changes to tracked files) and ``release`` (the
+    release tag HEAD is at; None past it) are filled when running from a git
+    checkout; a wheel or ``git+https`` install has none.
+
+    Cached for the process: :class:`~docling.engines.PdfEngine` calls it when
+    built, before it writes anything, so a bundle regenerated inside the
+    checkout does not flag its own files as uncommitted changes."""
     block: dict[str, Any] = {
         "name": ENGINE_NAME,
         "version": ENGINE_VERSION,
+        "release": None,
         "repository": ENGINE_REPOSITORY,
         "git_commit": None,
         "git_dirty": None,
@@ -117,7 +266,17 @@ def engine_provenance() -> dict[str, Any]:
         return block
     block["git_commit"] = commit
     block["git_dirty"] = bool(changes)
+    block["release"] = _release_tag(root)
     return block
+
+
+def _release_tag(root: Path) -> str | None:
+    try:
+        return _git(
+            root, "describe", "--tags", "--exact-match", f"--match={ENGINE_NAME}-v*"
+        )
+    except subprocess.CalledProcessError:
+        return None
 
 
 def _git(root: Path, *args: str) -> str:
@@ -130,21 +289,23 @@ def _git(root: Path, *args: str) -> str:
     ).stdout.strip()
 
 
-def _source_block(source: str, source_kind: str) -> dict[str, Any]:
-    block: dict[str, Any] = {"input": source, "source_kind": source_kind}
-    if source_kind == "local_path":
-        p = Path(source)
-        # Absolute paths leak usernames / machine layout into shared bundles.
-        resolved = p.resolve()
-        block["input"] = (
-            resolved.relative_to(Path.cwd()).as_posix()
-            if resolved.is_relative_to(Path.cwd())
-            else p.name
-        )
-        block["file_name"] = p.name
-        if p.exists():
-            block["file_size_bytes"] = p.stat().st_size
-    return block
+def _source_block(
+    source: str,
+    source_kind: str,
+    *,
+    file_name: str | None,
+    file_size: int | None,
+    binary_hash: str | None,
+) -> dict[str, Any]:
+    return {
+        "input": (
+            public_source_path(Path(source)) if source_kind == "local_path" else source
+        ),
+        "source_kind": source_kind,
+        "file_name": file_name,
+        "file_size_bytes": file_size,
+        "binary_hash": binary_hash,
+    }
 
 
 def _timing_block(
@@ -192,7 +353,22 @@ def _environment_block() -> dict[str, Any]:
         "platform": platform.platform(),
         "machine": platform.machine(),
         "system": platform.system(),
+        **_torch_block(),
         "packages": _package_versions(),
+    }
+
+
+def _torch_block() -> dict[str, Any]:
+    # torch comes with the models-local extra, which docling-slim can go without.
+    if importlib.util.find_spec("torch") is None:
+        return {"torch_cuda": None, "cuda_available": False, "device_name": None}
+    import torch
+
+    available = torch.cuda.is_available()
+    return {
+        "torch_cuda": torch.version.cuda,
+        "cuda_available": available,
+        "device_name": torch.cuda.get_device_name(0) if available else None,
     }
 
 

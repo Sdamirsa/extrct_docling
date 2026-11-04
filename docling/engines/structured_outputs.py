@@ -25,7 +25,9 @@ from typing import TYPE_CHECKING, Any
 
 from docling_core.types.doc import PictureItem, TableItem
 
+from docling.engines.artifacts import crops_by_self_ref
 from docling.engines.figure_typing import get_figure_type
+from docling.engines.picture_filter import PictureNoiseFlag
 
 if TYPE_CHECKING:
     from docling.datamodel.document import ConversionResult
@@ -56,41 +58,49 @@ def write_structured_outputs(
     *,
     picture_image_paths: list[Path] | None = None,
     table_image_paths: list[Path] | None = None,
-    picture_noise_flags: list | None = None,
+    picture_noise_flags: list[PictureNoiseFlag] | None = None,
 ) -> StructuredOutputPaths:
     """Write ``tables.jsonl`` + ``figures.jsonl`` if the doc has any of each.
 
-    ``picture_image_paths`` and ``table_image_paths`` come from the artifacts
-    writer (Phase 1) — passing them keeps the JSONL ``image_path`` field in
-    lockstep with the on-disk crops.
+    ``picture_image_paths`` and ``table_image_paths`` are the crops the
+    artifacts writer wrote; each row's ``image_path`` is its own item's crop,
+    or None when the item had no image.
     """
     if result.document is None:
         raise StructuredOutputsError("ConversionResult has no document.")
 
     pdf_dir.mkdir(parents=True, exist_ok=True)
-    pic_paths = picture_image_paths or []
-    tbl_paths = table_image_paths or []
-    noise_flags = picture_noise_flags or []
+    doc = result.document
+    crops = crops_by_self_ref(
+        doc, [*(picture_image_paths or []), *(table_image_paths or [])]
+    )
+    noise_flags = {
+        flag.self_ref: flag
+        for flag in picture_noise_flags or []
+        if flag.self_ref is not None
+    }
 
     table_rows: list[dict] = []
     figure_rows: list[dict] = []
-    pic_idx = 0
-    tbl_idx = 0
 
-    for item, _level in result.document.iterate_items():
+    for item, _level in doc.iterate_items():
         if isinstance(item, PictureItem):
-            img_path = pic_paths[pic_idx] if pic_idx < len(pic_paths) else None
-            flag = noise_flags[pic_idx] if pic_idx < len(noise_flags) else None
             figure_rows.append(
-                _figure_row(item, pic_idx, result.document, img_path, pdf_dir, flag)
+                _figure_row(
+                    item,
+                    len(figure_rows),
+                    doc,
+                    crops.get(item.self_ref),
+                    pdf_dir,
+                    noise_flags.get(item.self_ref),
+                )
             )
-            pic_idx += 1
         elif isinstance(item, TableItem):
-            img_path = tbl_paths[tbl_idx] if tbl_idx < len(tbl_paths) else None
             table_rows.append(
-                _table_row(item, tbl_idx, result.document, img_path, pdf_dir)
+                _table_row(
+                    item, len(table_rows), doc, crops.get(item.self_ref), pdf_dir
+                )
             )
-            tbl_idx += 1
 
     tables_path = (
         _write_jsonl(pdf_dir / _TABLES_FILENAME, table_rows) if table_rows else None
@@ -228,13 +238,13 @@ def _figure_row(
     doc,
     image_path: Path | None,
     pdf_dir: Path,
-    noise_flag: Any | None = None,
+    noise_flag: PictureNoiseFlag | None = None,
 ) -> dict[str, Any]:
     refs = [
         r.cref for r in (getattr(item, "references", None) or []) if hasattr(r, "cref")
     ]
     classifier_label = _picture_classifier_label(item) or (
-        getattr(noise_flag, "classifier_label", None) if noise_flag else None
+        noise_flag.classifier_label if noise_flag is not None else None
     )
     figure_type = get_figure_type(item)
     return {
@@ -250,8 +260,8 @@ def _figure_row(
         "figure_type_model": figure_type.model if figure_type else None,
         "vlm_caption": _picture_annotation_caption(item),
         "generic_classifier_label": classifier_label,
-        "is_noise": bool(getattr(noise_flag, "is_noise", False)),
-        "noise_reason": getattr(noise_flag, "noise_reason", None),
+        "is_noise": noise_flag is not None and noise_flag.is_noise,
+        "noise_reason": noise_flag.noise_reason if noise_flag is not None else None,
         "annotations": [
             ann.model_dump(mode="json", serialize_as_any=True)
             for ann in (getattr(item, "annotations", None) or [])

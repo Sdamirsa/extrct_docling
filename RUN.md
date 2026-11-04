@@ -10,54 +10,45 @@ Six new PDFs landed in `samples/` today (`10732855.pdf`, `16107129.pdf`,
 `samples/out/` already has results for the three older ones
 (`test-case-report1`, `test-case-report2`, `test-pdf-ai-manuscript`).
 
-**`amir-batch` has no "already done, skipping" logic.** Point it at a
-directory and it reprocesses *every* `*.pdf` it finds, unconditionally,
-overwriting the matching folder under `samples/out/<stem>/` even if that
-folder already exists and is unchanged. There's no cache, hash check, or
-`--skip-existing` flag.
-
-So there are two honest ways to run it today:
-
-**Option A — reprocess everything** (simplest, but re-runs the 3 already-done
-PDFs too; each is a full VLM pass, budget the time accordingly):
-
-```bash
-uv run amir-batch samples/ -o samples/out
-```
-
-**Option B — only the new PDFs** (skip-equivalent: name the new files
-explicitly so the 3 finished folders are left untouched):
+**Since `-r3`, `amir-batch` skips finished bundles by default.** A PDF is
+skipped when `samples/out/<stem>/run.json` says the conversion completed
+(`complete: true`, status SUCCESS or PARTIAL_SUCCESS, no step errors) for the
+same file (`source.binary_hash`, else name and size) with the same engine
+release and the same options; the row shows `SKIPPED` with the saved
+`check.json` summary. Anything else is converted again and the reason printed
+(`reconverting <stem>: engine version differs (2.131.0-r2 -> 2.131.0-r3)`,
+`options differ (make_html_preview)`, `previous run had errors`, ...). So a
+new release reconverts every older bundle it is pointed at, on purpose, and
+the simple command is also the right one:
 
 ```bash
-uv run amir-batch \
-  samples/10732855.pdf \
-  samples/16107129.pdf \
-  samples/19912435.pdf \
-  samples/24890555.pdf \
-  samples/31778462.pdf \
-  samples/39748932.pdf \
-  -o samples/out
+uv run amir-batch samples/ -o samples/out              # converts only what is new
+uv run amir-batch samples/ -o samples/out --no-skip-existing   # redo everything
+uv run amir-batch samples/ -o samples/out --check-only # re-check existing bundles, no conversion
 ```
 
-Option B is what "skip the ones already done" actually means in practice —
-there is no flag that does it for you, so scope the input list yourself.
+Bundles written before `-r3` have no `complete` field, so they are converted
+once more and then skipped from then on.
+
+A PDF whose engine raised is retried once (`--retries N` to change). Ctrl-C
+stops the batch, prints the rows done so far and exits 130; the interrupted
+bundle has no `complete: true`, so the next run redoes it.
 
 
 ## How `_collect_pdfs` decides what to process
 
 From `docling/engines/cli.py`:
 
-- A **directory** argument is scanned **non-recursively** for `*.pdf`
-  (case-sensitive glob, but the file-argument path also lower-cases the
-  suffix check) — subfolders and extension-less files are invisible to it.
+- A **directory** argument is scanned **non-recursively** for files whose
+  suffix is `.pdf` in any case — subfolders and extension-less files are
+  invisible to it.
 - A **file** argument is included only if `path.suffix.lower() == ".pdf"`.
 - Anything else is skipped with a yellow console warning, not an error.
 - The final list is deduplicated and sorted by resolved path — order is
   deterministic, not input order.
-
-There is no read of `samples/out/` before running, so it cannot know a PDF
-was already converted. If you want that behavior, the fix is choosing which
-paths to pass in (Option B above), not a CLI flag — none exists yet.
+- Output folder names are the sanitized stem; two PDFs of a batch that map to
+  the same name (`Smith 2020.pdf` and `Smith_2020.pdf`, or `main.pdf` in two
+  input folders) get `_2`, `_3`, ... suffixes, logged at run time.
 
 ## Full command reference
 
@@ -75,6 +66,10 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--granite-vision-tables / --no-granite-vision-tables` | **on** | Table structure via Granite-Vision VLM (4.1-4b) vs. plain TableFormer. |
 | `--picture-description` | `granite_vision_4b` | VLM preset for figure captions. Other values: `granite_vision`, `smolvlm`, `pixtral`, `qwen25_vl_3b`, or `off`. |
 | `--figure-types / --no-figure-types` | **on** | Types every figure with BiomedCLIP (`ct`, `angiography`, `ecg`, `ultrasound`, `kaplan_meier`, `bar_chart`, ...) → `figures.jsonl[*].figure_type`. Runs in every config, VLM or not; ~0.8 GB GPU, ~15 ms per figure. Needs the `models-vlm-inline` extra (open-clip-torch). |
+| `--picture-area-threshold` | `0.03` | Smallest picture (fraction of the page area) that gets a VLM caption. Docling's default of 0.05 left real charts at 4-5 % of the page uncaptioned. |
+| `--skip-existing / --no-skip-existing` | **on** | Skip a PDF whose bundle is complete and error-free for the same file (binary hash, else name + size), engine release and options; otherwise reconvert and print why. |
+| `--retries` | `1` | Rerun a PDF that many more times when the engine raises, before marking it `EXCEPTION`. |
+| `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`), no conversion. |
 
 Defaults are VLM-heavy (`--granite-vision-tables` on, `--picture-description
 granite_vision_4b`) — expect first-run model downloads and a noticeably
@@ -95,9 +90,17 @@ default flags: `SUCCESS`, non-empty `figures.jsonl[*].vlm_caption`, table
 structure model loads and runs. See `.claude/AMIR_STAGE.md` log for the entry.
 
 The terminal report (rich table) shows one row per PDF: status, duration,
-page count, figures (with noise count), tables, chunks, errors, and the
-per-PDF output path. Exit code is `1` if any PDF ends `FAILURE` or
-`EXCEPTION`, else `0`.
+page count, figures (with noise count), tables, chunks, errors, the bundle
+self-check summary (`check.json`: HTML item coverage, PDF text-layer recall
+per page, export fidelity, ligature splits, degenerate tables, empty chunks,
+structure sanity) and the per-PDF output path. A conversion whose Docling
+status is SUCCESS but where an export step failed shows `SUCCESS*` with the
+failed components in the errs column. Exit code is `1` if any row ends
+`FAILURE`, `PARTIAL_SUCCESS`, `EXCEPTION`, `SUCCESS*`, `MISSING` or
+`INCOMPLETE` (red status), else `3` if only bundle checks found issues
+(yellow check cell; ordinary papers often have a few, e.g. a degenerate
+table), else `0` — so `amir-batch … && next` stops only on real failures.
+`--check-only` follows the same rule.
 
 ## What lands in `samples/out/<pdf-stem>/`
 
@@ -110,7 +113,8 @@ nodes.jsonl            # one row per DocItem (iterate_items() order)
 chunks.jsonl           # HybridChunker output: text, headings, page_nos, self_refs
 tables.jsonl           # one row per table: caption, markdown, html, cells
 figures.jsonl          # one row per picture: caption, image_path, figure_type, vlm_caption, is_noise
-run.json               # env, timing, full engine_config/pipeline_options
+run.json               # env, timing, full engine_config/pipeline_options, errors, complete flag (written last)
+check.json             # bundle self-check: coverage, text-layer recall, fidelity, tables, chunks, issues
 images/                # page renders + picture/table crops
 preview.html           # bbox viewer — needs images/ alongside it, see below
 preview.embedded.html  # same viewer, images inlined — a single shareable file

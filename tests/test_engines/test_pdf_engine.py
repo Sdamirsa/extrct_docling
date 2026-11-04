@@ -7,14 +7,19 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
+import unicodedata
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 from docling_core.types.doc import (
     BoundingBox,
+    DescriptionAnnotation,
     DocItemLabel,
     DoclingDocument,
+    ImageRef,
+    ImageRefMode,
     PictureClassificationClass,
     PictureClassificationData,
     PictureMeta,
@@ -23,20 +28,32 @@ from docling_core.types.doc import (
     TableCell,
     TableData,
 )
+from docling_core.types.doc.document import DescriptionMetaField
+from PIL import Image
 
-from docling.datamodel.base_models import ConversionStatus
+from docling.backend.docling_parse_backend import ThreadedDoclingParseDocumentBackend
+from docling.datamodel.base_models import ConversionStatus, InputFormat
+from docling.datamodel.document import InputDocument
 from docling.engines import ENGINE_VERSION, PdfConversionOutput, PdfEngine, SourceKind
+from docling.engines.artifacts import write_artifacts
 from docling.engines.figure_typing import (
     BIOMEDCLIP_REPO,
     FIGURE_TYPES,
+    TEXT_EXPORT_META_PARAMS,
     FigureTypePrediction,
     get_figure_type,
 )
+from docling.engines.pdf_engine import (
+    _link_picture_placeholders,
+    _strip_noise_embedded,
+)
 from docling.engines.picture_filter import classify_pictures
+from docling.engines.structured_outputs import write_structured_outputs
 from docling.engines.text_repair import (
     attach_table_pdf_text,
     get_table_pdf_text,
     repair_ligature_splits,
+    strip_vlm_stop_tokens,
 )
 from docling.engines.validation import (
     InvalidPdfSourceError,
@@ -312,6 +329,18 @@ def test_pdf_engine_writes_artifacts(tmp_path: Path) -> None:
     assert run["engine"]["version"] == ENGINE_VERSION
     assert len(run["engine"]["git_commit"]) == 40
     assert isinstance(run["engine"]["git_dirty"], bool)
+    release = run["engine"]["release"]
+    assert release is None or release.startswith("extrct_docling-v")
+    assert run["complete"] is True
+    environment = run["environment"]
+    assert isinstance(environment["cuda_available"], bool)
+    if environment["packages"]["torch"] is not None:
+        import torch
+
+        assert environment["torch_cuda"] == torch.version.cuda
+    check = json.loads((pdf_dir / "check.json").read_text(encoding="utf-8"))
+    assert check["bundle"] == pdf_dir.name
+    assert output.check is not None and output.check.ok == check["ok"]
 
 
 @pytest.mark.skipif(
@@ -363,6 +392,7 @@ def test_pdf_engine_picture_description_config() -> None:
         embed_images=False,
         picture_description="qwen25_vl_3b",
         picture_description_engine="vllm",
+        picture_area_threshold=0.02,
         figure_types=False,
     )
     opts = engine._pipeline_options
@@ -374,6 +404,9 @@ def test_pdf_engine_picture_description_config() -> None:
     assert opts.picture_description_options.model_spec.default_repo_id == (
         "Qwen/Qwen2.5-VL-3B-Instruct"
     )
+    # Docling's 0.05 skips small real figures; the engine's own default is lower.
+    assert opts.picture_description_options.picture_area_threshold == 0.02
+    assert engine._engine_config["picture_area_threshold"] == 0.02
 
 
 def test_pdf_engine_granite_vision_tables_config() -> None:
@@ -642,3 +675,171 @@ def test_pdf_engine_types_figures(tmp_path: Path) -> None:
     for name, text in texts.items():
         assert "Bar chart" not in text, name
         assert "'label'" not in text, name
+
+
+def test_vlm_stop_tokens_are_stripped_from_picture_descriptions() -> None:
+    """Docling's transformers engine decodes with special tokens kept, so every
+    Granite-Vision caption ended with its EOS token, in ``figures.jsonl`` (the
+    annotation) and the markdown and chunks (``meta.description``)."""
+    caption = "A bar chart of survival by treatment group."
+    doc = DoclingDocument(name="captions")
+    picture = doc.add_picture(
+        annotations=[
+            DescriptionAnnotation(text=f"{caption}<|end_of_text|>", provenance="vlm")
+        ]
+    )
+    picture.meta = PictureMeta(
+        description=DescriptionMetaField(
+            text=f"{caption} <|end_of_text|>\n", created_by="vlm"
+        )
+    )
+    assert "<|end_of_text|>" in doc.export_to_markdown(**TEXT_EXPORT_META_PARAMS)
+
+    assert strip_vlm_stop_tokens(doc) == 1
+
+    markdown = doc.export_to_markdown(**TEXT_EXPORT_META_PARAMS)
+    assert caption in markdown
+    assert "<|end_of_text|>" not in markdown
+    assert picture.annotations[0].text == caption
+    assert picture.meta.description.text == caption
+
+
+@pytest.mark.skipif(
+    not FIXTURE_PDF.exists(),
+    reason=f"fixture {FIXTURE_PDF} not available",
+)
+@pytest.mark.parametrize("rotation", [0, 90, 180, 270])
+def test_table_pdf_text_is_read_from_the_box_on_cropped_and_rotated_pages(
+    tmp_path: Path, rotation: int
+) -> None:
+    """Docling's bboxes are measured on the page as displayed (CropBox,
+    /Rotate), pdfium's text API takes PDF user space: on a page whose CropBox
+    starts 30/45 pt from the origin, a table box over one of Docling's text
+    lines must read that line, not text 30/45 pt away."""
+    import pypdfium2 as pdfium
+
+    pdf = pdfium.PdfDocument(FIXTURE_PDF)
+    page = pdf[0]
+    left, bottom, right, top = page.get_mediabox()
+    page.set_cropbox(left + 30, bottom + 45, right - 20, top - 10)
+    page.set_rotation(rotation)
+    cropped = tmp_path / "cropped.pdf"
+    pdf.save(cropped)
+    pdf.close()
+
+    backend = InputDocument(
+        path_or_stream=cropped,
+        format=InputFormat.PDF,
+        backend=ThreadedDoclingParseDocumentBackend,
+    )._backend
+    page_backend = next(backend.iter_pages())
+    size = page_backend.get_size()
+    line = next(
+        cell
+        for cell in page_backend.get_text_cells()
+        if cell.text.startswith("Optimized Table Tokenization")
+    )
+    backend.unload()
+
+    doc = DoclingDocument(name="cropped")
+    doc.add_page(page_no=1, size=size)
+    table = doc.add_table(
+        data=TableData(num_rows=0, num_cols=0),
+        prov=ProvenanceItem(
+            page_no=1, bbox=line.rect.to_bounding_box(), charspan=(0, 0)
+        ),
+    )
+
+    def words(text: str) -> set[str]:
+        return set(
+            re.findall(r"[a-z0-9]{2,}", unicodedata.normalize("NFKC", text).lower())
+        )
+
+    assert attach_table_pdf_text(doc, cropped) == 1
+    kept = get_table_pdf_text(table)
+    assert kept is not None
+    assert words(line.text) <= words(kept["text"])
+
+
+def test_picture_without_image_keeps_later_crops_and_noise_flags_in_place(
+    tmp_path: Path,
+) -> None:
+    """``get_image`` can give nothing for a picture, which then has no crop;
+    the later pictures must still get their own crop and noise flag in
+    ``figures.jsonl`` and both markdown files, not their predecessor's."""
+    doc = DoclingDocument(name="pictures")
+    doc.add_page(page_no=1, size=Size(width=600, height=800))
+
+    def picture(x: float, *, image: bool, label: str | None = None) -> None:
+        doc.add_picture(
+            prov=ProvenanceItem(
+                page_no=1,
+                bbox=BoundingBox(l=x, t=20, r=x + 40, b=60),
+                charspan=(0, 0),
+            ),
+            image=ImageRef.from_pil(Image.new("RGB", (40, 40), "white"), dpi=72)
+            if image
+            else None,
+            annotations=[
+                PictureClassificationData(
+                    provenance="test",
+                    predicted_classes=[
+                        PictureClassificationClass(class_name=label, confidence=0.9)
+                    ],
+                )
+            ]
+            if label
+            else [],
+        )
+
+    picture(20, image=True)
+    picture(100, image=False)
+    picture(180, image=True)
+    picture(260, image=True, label="logo")
+    result = SimpleNamespace(document=doc)
+    flags = classify_pictures(result)
+
+    artifacts = write_artifacts(result, tmp_path)
+    assert [p.name for p in artifacts.picture_images] == [
+        "picture_001.png",
+        "picture_003.png",
+        "picture_004.png",
+    ]
+
+    structured = write_structured_outputs(
+        result,
+        tmp_path,
+        picture_image_paths=artifacts.picture_images,
+        picture_noise_flags=flags,
+    )
+    rows = [
+        json.loads(line)
+        for line in structured.figures_jsonl.read_text(encoding="utf-8").splitlines()
+    ]
+    assert [row["image_path"] for row in rows] == [
+        "images/picture_001.png",
+        None,
+        "images/picture_003.png",
+        "images/picture_004.png",
+    ]
+    assert [row["is_noise"] for row in rows] == [False, False, False, True]
+
+    linked = _link_picture_placeholders(
+        doc.export_to_markdown(image_mode=ImageRefMode.PLACEHOLDER),
+        [p.relative_to(tmp_path).as_posix() for p in artifacts.picture_images],
+        flags,
+    )
+    assert re.findall(r"!\[\]\([^)]*\)|<!--.*?-->", linked) == [
+        "![](images/picture_001.png)",
+        "<!-- image -->",
+        "![](images/picture_003.png)",
+        "<!-- noise picture: classifier:logo -->",
+    ]
+
+    embedded = _strip_noise_embedded(
+        doc.export_to_markdown(image_mode=ImageRefMode.EMBEDDED), flags
+    )
+    first, missing, third, noise = re.findall(r"!\[Image\]\(data:|<!--.*?-->", embedded)
+    assert first == third == "![Image](data:"
+    assert "Image not available" in missing
+    assert noise == "<!-- noise picture: classifier:logo -->"

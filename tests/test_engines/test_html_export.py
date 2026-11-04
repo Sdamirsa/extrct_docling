@@ -94,7 +94,8 @@ def _all_item_refs(doc: DoclingDocument) -> set[str]:
 def test_pdf_engine_writes_document_html(tmp_path: Path) -> None:
     """Every item Docling extracted — page furniture and text inside figures
     included — is one tagged element of the standalone HTML, every chunk can
-    be traced to it, and an existing bundle regenerates to the same file."""
+    be traced to it, and an existing bundle regenerates to the same file but
+    for the final run block."""
     engine = PdfEngine(
         images_scale=1.0,
         picture_description=None,
@@ -127,7 +128,12 @@ def test_pdf_engine_writes_document_html(tmp_path: Path) -> None:
         assert pages and boxes, ref
         assert len(boxes.split(";")) == len(pages.split())
 
-    assert rebuild_document_html(pdf_dir).read_text(encoding="utf-8") == html_text
+    # The conversion embeds the run block written before the check, which
+    # says the run is not complete; a rebuild embeds the final run.json.
+    assert manifest["run"]["complete"] is False
+    assert rebuild_document_html(pdf_dir).read_text(encoding="utf-8") == (
+        html_text.replace('"complete": false', '"complete": true', 1)
+    )
 
 
 def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> None:
@@ -218,7 +224,8 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
     pdf_dir = tmp_path / "paper"
     pdf_dir.mkdir()
     script_text = "x</script><script>alert(1)</script>"
-    (pdf_dir / "chunks.jsonl").write_text(
+    chunks_jsonl = pdf_dir / "chunks.jsonl"
+    chunks_jsonl.write_text(
         json.dumps({"index": 0, "text": script_text, "self_refs": [para.self_ref]})
         + "\n"
     )
@@ -227,7 +234,9 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
         PictureNoiseFlag(logo.self_ref, True, "classifier:logo", "logo"),
     ]
 
-    html_path = write_document_html(doc, pdf_dir, noise_flags=flags)
+    html_path = write_document_html(
+        doc, pdf_dir, noise_flags=flags, chunks_jsonl=chunks_jsonl
+    )
     parsed = _parse(html_path)
     html_text = html_path.read_text(encoding="utf-8")
 
@@ -257,3 +266,36 @@ def test_document_html_keeps_everything_docling_extracted(tmp_path: Path) -> Non
     assert '<span class="extrct-marker">[3]</span> T. Han' in html_text
     # Top-left origin: the paragraph sits 100 pt below the page top.
     assert parsed.blocks[para.self_ref]["data-bbox"] == "50.0,100.0,550.0,140.0"
+
+
+def test_manifest_holds_only_this_runs_sidecars(tmp_path: Path) -> None:
+    """A conversion that writes no ``tables.jsonl`` (no tables) or whose
+    chunker failed must not embed the files an earlier run left in the
+    folder; regenerating an existing bundle reads what is on disk."""
+    doc = DoclingDocument(name="paper")
+    doc.add_page(page_no=1, size=Size(width=600, height=800))
+    doc.add_text(
+        label=DocItemLabel.TEXT,
+        text="No tables here.",
+        prov=ProvenanceItem(
+            page_no=1,
+            bbox=BoundingBox(
+                l=50, t=700, r=550, b=660, coord_origin=CoordOrigin.BOTTOMLEFT
+            ),
+            charspan=(0, 15),
+        ),
+    )
+    pdf_dir = tmp_path / "paper"
+    pdf_dir.mkdir()
+    doc.save_as_json(pdf_dir / "document.json")
+    stale = {"self_ref": "#/tables/0", "caption_text": "from an earlier run"}
+    for name in ("tables.jsonl", "chunks.jsonl"):
+        (pdf_dir / name).write_text(json.dumps(stale) + "\n", encoding="utf-8")
+    run = {"status": "ConversionStatus.SUCCESS", "complete": True}
+
+    manifest = _parse(write_document_html(doc, pdf_dir, run=run)).manifest
+    assert manifest["tables"] == manifest["chunks"] == manifest["figures"] == []
+    assert manifest["run"] == run
+
+    rebuilt = _parse(rebuild_document_html(pdf_dir)).manifest
+    assert [row["caption_text"] for row in rebuilt["tables"]] == ["from an earlier run"]

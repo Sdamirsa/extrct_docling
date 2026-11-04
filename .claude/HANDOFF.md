@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Current release: **`extrct_docling-v2.131.0-r2`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r2); releases are `extrct_docling-v<docling version>-r<n>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must equal the part after `-v`; cut releases with the `release-tag` skill (`.claude/skills/release-tag/`, includes a sensitive-content scan), and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Current release: **`extrct_docling-v2.131.0-r3`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r3); releases are `extrct_docling-v<docling version>-r<n>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must equal the part after `-v`; cut releases with the `release-tag` skill (`.claude/skills/release-tag/`, includes a sensitive-content scan), and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -72,7 +72,7 @@ Produces `samples/out/<my>/`:
 
 | File | Content | When written |
 |---|---|---|
-| `<my>.md` | Linked markdown — `![](images/picture_NNN.png)` refs; noise pictures replaced by `<!-- noise picture: reason -->` | default |
+| `<my>.md` | Linked markdown — `![](images/picture_NNN.png)` refs; noise pictures replaced by `<!-- noise picture: reason -->`; VLM figure descriptions wrapped in `<!--<annotation kind="description">-->…<!--<annotation/>-->`; a table whose cells miss printed words is followed by `Table text from the PDF (cell recall 0.61): …` (`docling/engines/serializers.py`, shared with the chunker) | default |
 | `<my>.embedded.md` | Standalone — base64-inlined images (same noise filtering); ~10–15× larger | when `embed_images=True` (default) |
 | `<my>.html` | Standalone manuscript HTML — blocks tagged `data-self-ref`/`data-page`/`data-bbox`, JSON manifest (figures/tables/chunks/run) in `<script id="extrct-manifest">`; holds every `document.json` item (furniture, noise pictures, figure text, table footnotes marked, not dropped); `docling/engines/html_export.py` | when `embed_images=True` (default) |
 | `document.json` | Full `DoclingDocument` (round-trippable) | `save_artifacts=True` (default) |
@@ -80,7 +80,8 @@ Produces `samples/out/<my>/`:
 | `chunks.jsonl` | HybridChunker output: `{index, text, token_count, headings, captions, page_nos, self_refs}` | `save_artifacts=True` |
 | `tables.jsonl` | Per-table: `caption_text`, `markdown`, `html`, dims, flat cells (with row/col offsets and spans), `image_path` | `save_artifacts=True` |
 | `figures.jsonl` | Per-figure: `caption_text`, `image_path`, `figure_type` (+ `_confidence`, `_model`; BiomedCLIP), `vlm_caption`, `generic_classifier_label` (noise filter only), `is_noise`, `noise_reason`, raw annotations | `save_artifacts=True` |
-| `run.json` | schema_version, source, status, timing, full `engine_config`, full `pipeline_options` (incl. model spec), per-stage models summary, environment (python / platform / package versions) | `save_artifacts=True` |
+| `run.json` | schema_version, `engine` (release version, exact `release` tag or null, git commit, dirty flag), source, status, timing, full `engine_config`, full `pipeline_options` (incl. model spec), per-stage models summary, environment (python / platform / package versions / torch CUDA build + device), per-step `errors`, `complete: true` (written last; a bundle without it was interrupted) | `save_artifacts=True` |
+| `check.json` | Bundle self-check (`docling/engines/export_check.py`, `check_bundle`): HTML item coverage (every `document.json` item tagged once), per-page PDF text-layer recall (multiset; flags < 0.90 or ≥ 50 lost words, document < 0.97, top missing tokens), export fidelity vs `document.json` (html / md / chunks ≥ 0.99, VLM text stripped), ligature-split marker (L-2), tables (low cell recall, degenerate grids), empty chunks, structure sanity (no headings on a long paper), cheap guards; `ok` + `issues` roll-up; `summary_line()` is the CLI column | `save_artifacts=True` |
 | `images/page_NNNN.png` | Page renders | when image gen on (auto if `save_artifacts`) |
 | `images/picture_NNN.png` | `PictureItem.get_image()` crops | same |
 | `images/table_NNN.png` | `TableItem.get_image()` crops | same |
@@ -124,10 +125,13 @@ uv run amir-batch samples/ --compare                       # standard + full-pag
 uv run amir-batch samples/ --no-preview                    # skip HTML
 uv run amir-batch samples/ --picture-description off       # skip VLM captions (much faster)
 uv run amir-batch samples/ --no-granite-vision-tables      # use TableFormer instead of Granite-Vision
+uv run amir-batch samples/ --no-skip-existing              # redo bundles that are already complete (default: skip them)
+uv run amir-batch samples/ --check-only                    # re-run the bundle self-check on existing bundles, no conversion
+uv run amir-batch samples/ --retries 2                     # engine exceptions are retried N times (default 1)
 uv run amir-batch --help                                   # all flags
 ```
 
-The CLI is `docling/engines/cli.py` (typer + rich), wired via `pyproject.toml` `[project.scripts]` as `amir-batch`.
+The CLI is `docling/engines/cli.py` (typer + rich), wired via `pyproject.toml` `[project.scripts]` as `amir-batch`. One `PdfEngine` is built per batch (models load once); the summary has a `check` column (`check.json` summary), rows with a failed export step show `SUCCESS*`, and the exit code is 1 when any row is FAILURE/PARTIAL_SUCCESS/EXCEPTION/SUCCESS*/MISSING/INCOMPLETE, 3 when the only problems are bundle-check issues, else 0 (same rule for `--check-only`). Output folders are sanitized stems; collisions within a batch (or with a folder holding a different PDF) get `_2`, `_3`... Ctrl-C ends the batch with exit 130.
 
 ## 6 · Setup
 
@@ -173,6 +177,7 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 21 pass
 - **`showcase/` is not MIT.** The paper (arXiv:2409.00084; published as npj Digit Med 8, 797, 2025) and every conversion of it are CC BY-NC-ND 4.0 — see `showcase/LICENSE`. Keep that file and the README citation when regenerating. The maintainer chose to keep the full paper (2026-11-02) over a page excerpt or a CC BY replacement: the license allows sharing it in whole or in part, and it has been public in history since `c6aacb06`.
 - **Conversion weak spots** seen on a 4-paper batch (2026-11-02): a 20-page SSRN-formatted paper came out as 5 text blocks with no headings, and text printed inside figures (axis labels, panel text) leaks into the body text of `<stem>.md` / chunks. Not investigated.
 - **Granite-Vision tables retype cell text from the image** (`<tables_otsl>` output carries the text) instead of reading the PDF, and its generation had no length limit (tokenizer `model_max_length` is unset, ~1e30): a supplement of 41 boxed prompts, which the layout model calls tables, generated for 75+ min with GPU memory climbing 17 → 57 GB. `_generation_budget` in `table_structure_model_granite_vision.py` now caps each page at max(2048, 3 × PDF-text tokens in the crops + 512) — no real table of 88 came near it. Tables whose cells hold < 95 % of the words printed in their box keep that text (`amir__pdf_text`, HTML `details.extrct-table-pdf-text`); 10 of 88 did.
+- **Granite-Vision budget: do not raise it for "long tables".** Measured on the r3 smoke run (2026-11-04): the two tables that hit their budget were the model looping, not long content — AMIE-Mx p37 generated 8,054 tokens (175 × 9 grid, 59 cells "✓", 50 cells "2") for a box printing 365 words; EchoAgent-Guideline p3 generated a 1 × 679 grid for a 49-word boxed block the layout model calls a table. Real tables stay under 3 × PDF-text tokens (median 1.4×), which the budget already allows. A bigger budget only makes the loop longer (this was the 75-min hang). Both tables keep their box's PDF text (now in md/chunks too) and `check.json` lists them as degenerate; the generation log says `hit the N-token generation budget`. The real fix, for `-r4`: rerun a truncated or degenerate (< 30 % of the grid filled) crop with TableFormer, which does not loop.
 - **Docling's HTML serializer leaves things out** that `html_export.py` puts back: picture children (text inside figures), furniture (`HTMLParams.layers` defaults to body), footnotes of floating items and captions of code blocks (the doc serializer leaves them to the floating item, whose HTML serializer never renders them). `test_document_html_keeps_everything_docling_extracted` guards each; when upgrading docling-core, rerun it first.
 - **Hooks are hash-locked** (`.claude/.meta/hooks.lock`, checked at session start). Claude's Edit/Write are denied in `.claude/hooks/`: the maintainer copies a hook in, then the folder-handler's `approve_hooks` re-locks. `30-ritual-ticket.py` mints the `/project-memory` ticket.
 - **Hostname / machine paths** must never be committed to repo docs — keep them in `.claude/private-hand-off/` (gitignored). The maintainer is sensitive to this; we had to relocate one hand-off doc after a previous leak.
@@ -203,8 +208,8 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a release (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout extrct_docling-v2.131.0-r2 && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_docling-v2.131.0-r2"
+cd vendor/extrct_docling && git checkout extrct_docling-v2.131.0-r3 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_docling-v2.131.0-r3"
 ```
 
 ## 12 · What to do next (if you take over)

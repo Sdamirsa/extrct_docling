@@ -49,6 +49,7 @@ QWEN25_VL_3B_PICTURE_DESC_SPEC = VlmModelSpec(
     prompt="Describe this image in one or two concise sentences. Be specific and factual.",
     response_format=ResponseFormat.MARKDOWN,
     max_new_tokens=200,
+    extra_generation_config={"skip_special_tokens": True},
 )
 
 # Granite-Vision 4.1 4B — newest IBM document-vision model. Docling ships a
@@ -66,6 +67,9 @@ GRANITE_VISION_4B_PICTURE_DESC_SPEC = VlmModelSpec(
     response_format=ResponseFormat.PLAINTEXT,
     max_new_tokens=200,
     trust_remote_code=True,
+    # Docling's engines decode with special tokens kept unless asked; the
+    # model's EOS token <|end_of_text|> then ended every caption.
+    extra_generation_config={"skip_special_tokens": True},
     engine_overrides={
         VlmEngineType.TRANSFORMERS: EngineModelConfig(
             torch_dtype="bfloat16",

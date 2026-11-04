@@ -227,12 +227,14 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
         caption Docling attaches to a code block, for one. List items and
         inline groups render their own children; those are already tagged."""
         kwargs = {**kwargs, "is_inline_scope": False}
-        parts = [
-            part
-            for ref in item.children
-            if not _rendered(child := ref.resolve(self.doc), self.doc, text)
-            and (part := self.serialize(item=child, **kwargs).text)
-        ]
+        parts: list[str] = []
+        for ref in item.children:
+            child = ref.resolve(self.doc)
+            if _rendered(child, self.doc, text):
+                continue
+            part = self.serialize(item=child, **kwargs).text
+            if part:
+                parts.append(part)
         return "\n".join([text, *parts]) if parts else text
 
     def _with_children(
@@ -250,12 +252,13 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
         footnote_refs = {ref.cref for ref in item.footnotes}
         notes = self._footnotes(item)
         kwargs = {**kwargs, "is_inline_scope": False}
-        inner = [
-            part
-            for ref in item.children
-            if ref.cref not in caption_refs | footnote_refs
-            and (part := self.serialize(item=ref.resolve(self.doc), **kwargs).text)
-        ]
+        inner: list[str] = []
+        for ref in item.children:
+            if ref.cref in caption_refs | footnote_refs:
+                continue
+            part = self.serialize(item=ref.resolve(self.doc), **kwargs).text
+            if part:
+                inner.append(part)
         if isinstance(item, TableItem):
             pdf_text = get_table_pdf_text(item)
             if pdf_text is not None:
@@ -309,12 +312,17 @@ def write_document_html(
     pdf_dir: Path,
     *,
     noise_flags: list[PictureNoiseFlag] | None = None,
+    figures_jsonl: Path | None = None,
+    tables_jsonl: Path | None = None,
+    chunks_jsonl: Path | None = None,
+    run: dict[str, Any] | None = None,
 ) -> Path:
     """Write ``<pdf_dir>/<pdf_dir.name>.html`` and return its path.
 
-    Reads the sidecars already in *pdf_dir* (``figures.jsonl``,
-    ``tables.jsonl``, ``chunks.jsonl``, ``run.json``) for the manifest; any
-    that are missing are simply left out.
+    The manifest holds the rows of the given ``figures.jsonl`` /
+    ``tables.jsonl`` / ``chunks.jsonl`` (None: no rows) and the *run*
+    snapshot. Only these are read, not whatever an earlier run left in
+    *pdf_dir*; :func:`rebuild_document_html` reads an existing bundle's.
     """
     noise_reasons = {
         f.self_ref: f.noise_reason or "unknown"
@@ -332,7 +340,13 @@ def write_document_html(
     )
     body_html = serializer.serialize().text
 
-    manifest = _build_manifest(doc, pdf_dir)
+    manifest = _build_manifest(
+        doc,
+        figures=_read_jsonl(figures_jsonl),
+        tables=_read_jsonl(tables_jsonl),
+        chunks=_read_jsonl(chunks_jsonl),
+        run=run,
+    )
     title = manifest["document"]["title"] or doc.name
     head_extra = (
         '<meta name="viewport" content="width=device-width, initial-scale=1"/>'
@@ -365,7 +379,20 @@ def rebuild_document_html(pdf_dir: Path) -> Path:
         )
         for row in _read_jsonl(pdf_dir / "figures.jsonl")
     ]
-    return write_document_html(doc, pdf_dir, noise_flags=noise_flags)
+    run_path = pdf_dir / "run.json"
+    return write_document_html(
+        doc,
+        pdf_dir,
+        noise_flags=noise_flags,
+        figures_jsonl=pdf_dir / "figures.jsonl",
+        tables_jsonl=pdf_dir / "tables.jsonl",
+        chunks_jsonl=pdf_dir / "chunks.jsonl",
+        run=(
+            json.loads(run_path.read_text(encoding="utf-8"))
+            if run_path.exists()
+            else None
+        ),
+    )
 
 
 def _element_attrs(item: DocItem, doc: DoclingDocument) -> dict[str, str]:
@@ -433,19 +460,19 @@ def _with_attrs(fragment: str, attrs: dict[str, str], *, inline: bool) -> str:
     return f"<{tag}{attr_str}>{fragment}</{tag}>"
 
 
-def _build_manifest(doc: DoclingDocument, pdf_dir: Path) -> dict[str, Any]:
-    figures = _read_jsonl(pdf_dir / "figures.jsonl")
-    tables = _read_jsonl(pdf_dir / "tables.jsonl")
-    chunks = _read_jsonl(pdf_dir / "chunks.jsonl")
+def _build_manifest(
+    doc: DoclingDocument,
+    *,
+    figures: list[dict[str, Any]],
+    tables: list[dict[str, Any]],
+    chunks: list[dict[str, Any]],
+    run: dict[str, Any] | None,
+) -> dict[str, Any]:
     for row in figures + tables:
         if row.get("self_ref"):
             row["element_id"] = _anchor(row["self_ref"])
     for row in tables:
         row.pop("html", None)
-    run_path = pdf_dir / "run.json"
-    run = (
-        json.loads(run_path.read_text(encoding="utf-8")) if run_path.exists() else None
-    )
     return {
         "schema": MANIFEST_SCHEMA,
         "how_to_read": _HOW_TO_READ,
@@ -555,8 +582,8 @@ def _json_for_script(data: dict[str, Any]) -> str:
     return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
 
 
-def _read_jsonl(path: Path) -> list[dict[str, Any]]:
-    if not path.exists():
+def _read_jsonl(path: Path | None) -> list[dict[str, Any]]:
+    if path is None or not path.exists():
         return []
     return [
         json.loads(line)

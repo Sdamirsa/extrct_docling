@@ -11,18 +11,22 @@ of inspectable, agent-readable files:
   the item's serialised fields plus ``_kind``, ``_level`` and (for
   pictures/tables) ``image_path`` pointing at the extracted PNG.
 * ``images/picture_NNN.png`` / ``images/table_NNN.png`` — image crops from
-  :class:`PictureItem` / :class:`TableItem` ``get_image()``.
+  :class:`PictureItem` / :class:`TableItem` ``get_image()``. ``NNN`` is the
+  item's 1-based position among the pictures (tables) of ``iterate_items()``,
+  so a picture without an image leaves a gap: match crops to items with
+  :func:`crops_by_self_ref`, not by list position.
 """
 
 from __future__ import annotations
 
 import json
 import logging
+from collections.abc import Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
-from docling_core.types.doc import PictureItem, TableItem
+from docling_core.types.doc import DoclingDocument, NodeItem, PictureItem, TableItem
 
 if TYPE_CHECKING:
     from docling.datamodel.document import ConversionResult
@@ -31,7 +35,7 @@ _log = logging.getLogger(__name__)
 
 _DOCUMENT_JSON_FILENAME = "document.json"
 _NODES_FILENAME = "nodes.jsonl"
-_IMAGES_SUBDIR = "images"
+IMAGES_SUBDIR = "images"
 
 
 class ArtifactsError(RuntimeError):
@@ -59,7 +63,7 @@ def write_artifacts(result: ConversionResult, pdf_dir: Path) -> ArtifactPaths:
         raise ArtifactsError("ConversionResult has no document.")
 
     pdf_dir.mkdir(parents=True, exist_ok=True)
-    images_dir = pdf_dir / _IMAGES_SUBDIR
+    images_dir = pdf_dir / IMAGES_SUBDIR
     images_dir.mkdir(exist_ok=True)
 
     document_json = pdf_dir / _DOCUMENT_JSON_FILENAME
@@ -68,36 +72,21 @@ def write_artifacts(result: ConversionResult, pdf_dir: Path) -> ArtifactPaths:
     nodes_jsonl = pdf_dir / _NODES_FILENAME
     picture_images: list[Path] = []
     table_images: list[Path] = []
-
-    pic_counter = 0
-    tbl_counter = 0
+    stems = {item.self_ref: stem for item, stem in _crop_stems(result.document)}
 
     with nodes_jsonl.open("w", encoding="utf-8") as fh:
         for item, level in result.document.iterate_items():
             node = _node_to_dict(item, level)
 
-            if isinstance(item, PictureItem):
-                pic_counter += 1
-                img_path = _save_item_image(
-                    item,
-                    result.document,
-                    images_dir,
-                    f"picture_{pic_counter:03d}",
-                )
+            stem = stems.get(item.self_ref)
+            if stem is not None:
+                img_path = _save_item_image(item, result.document, images_dir, stem)
                 if img_path is not None:
                     node["image_path"] = str(img_path.relative_to(pdf_dir))
-                    picture_images.append(img_path)
-            elif isinstance(item, TableItem):
-                tbl_counter += 1
-                img_path = _save_item_image(
-                    item,
-                    result.document,
-                    images_dir,
-                    f"table_{tbl_counter:03d}",
-                )
-                if img_path is not None:
-                    node["image_path"] = str(img_path.relative_to(pdf_dir))
-                    table_images.append(img_path)
+                    if isinstance(item, PictureItem):
+                        picture_images.append(img_path)
+                    else:
+                        table_images.append(img_path)
 
             fh.write(json.dumps(node, ensure_ascii=False) + "\n")
 
@@ -116,7 +105,36 @@ def write_artifacts(result: ConversionResult, pdf_dir: Path) -> ArtifactPaths:
     )
 
 
-def _node_to_dict(item: object, level: int) -> dict:
+def crop_stem(kind: Literal["picture", "table"], position: int) -> str:
+    """File stem of the crop of the *position*-th (0-based) picture or table
+    of ``iterate_items()``: ``picture_001`` for the first picture."""
+    return f"{kind}_{position + 1:03d}"
+
+
+def crops_by_self_ref(doc: DoclingDocument, crops: list[Path]) -> dict[str, Path]:
+    """Match crops written by :func:`write_artifacts` (pictures, tables or
+    both) to the ``self_ref`` of their item."""
+    by_stem = {path.stem: path for path in crops}
+    matched: dict[str, Path] = {}
+    for item, stem in _crop_stems(doc):
+        path = by_stem.get(stem)
+        if path is not None:
+            matched[item.self_ref] = path
+    return matched
+
+
+def _crop_stems(doc: DoclingDocument) -> Iterator[tuple[PictureItem | TableItem, str]]:
+    pictures = tables = 0
+    for item, _level in doc.iterate_items():
+        if isinstance(item, PictureItem):
+            yield item, crop_stem("picture", pictures)
+            pictures += 1
+        elif isinstance(item, TableItem):
+            yield item, crop_stem("table", tables)
+            tables += 1
+
+
+def _node_to_dict(item: NodeItem, level: int) -> dict:
     """Serialise a document item to a JSON-friendly dict.
 
     The ``image`` field (when present) is excluded — it carries an inlined

@@ -12,6 +12,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 from docling.datamodel.base_models import ConversionStatus
+from docling.engines.export_check import BundleCheck
 
 
 class SourceKind(str, Enum):
@@ -63,6 +64,10 @@ class PdfConversionOutput(BaseModel):
             "with relative ``![](images/picture_NNN.png)`` references so the "
             "file renders in any markdown viewer."
         ),
+    )
+    markdown_path: Path | None = Field(
+        None,
+        description="Path to ``<stem>.md``, the primary markdown, when written.",
     )
     markdown_embedded_path: Path | None = Field(
         None,
@@ -127,6 +132,17 @@ class PdfConversionOutput(BaseModel):
             "Path to ``preview.embedded.html`` — the same viewer with all "
             "images inlined as data URIs (written when ``embed_images=True``)."
         ),
+    )
+    check_json: Path | None = Field(
+        None,
+        description=(
+            "Path to ``check.json`` — the bundle self-check "
+            "(:func:`~docling.engines.export_check.check_bundle`)."
+        ),
+    )
+    check: BundleCheck | None = Field(
+        None,
+        description="The bundle self-check written to ``check_json``.",
     )
     # `raw` is not part of the serialisable schema — it carries the underlying
     # ConversionResult so callers can drop down to upstream APIs.

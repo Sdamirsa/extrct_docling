@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import logging
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -32,9 +33,10 @@ from typing import Any
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import VlmConvertOptions, VlmPipelineOptions
 from docling.document_converter import DocumentConverter, PdfFormatOption
-from docling.engines.pdf_engine import PdfEngine
+from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
 from docling.engines.schemas import PdfConversionOutput
 from docling.pipeline.vlm_pipeline import VlmPipeline
+from docling.utils.utils import create_file_hash
 
 _log = logging.getLogger(__name__)
 
@@ -60,6 +62,9 @@ def run_comparison(
     vlm_preset: str = "granite_docling",
     standard_kwargs: dict[str, Any] | None = None,
     make_html_preview: bool = True,
+    standard_engine: PdfEngine | None = None,
+    vlm_engine: PdfEngine | None = None,
+    pdf_dir: Path | None = None,
 ) -> ComparisonResult:
     """Run both pipelines on *pdf_path* and write ``comparison.md``.
 
@@ -77,19 +82,36 @@ def run_comparison(
         Other presets work but markdown-only VLMs produce only ``markdown``
         in the second folder.
     standard_kwargs
-        Forwarded to :class:`PdfEngine` for the ``standard/`` run.
+        Forwarded to :class:`PdfEngine` for the ``standard/`` run; ignored
+        when ``standard_engine`` is given.
     make_html_preview
         Whether to render ``preview.html`` for each side. Default True.
+    standard_engine, vlm_engine
+        Engines to reuse (a batch loads the models once); built here when
+        None — the VLM one by :func:`build_full_page_vlm_engine`.
+    pdf_dir
+        The comparison folder; default ``<output_dir>/<sanitised stem>``, or
+        that stem with a ``_2``... suffix when the folder holds the comparison
+        of another PDF (see :func:`resolve_pdf_dir`).
     """
     pdf_path = (
         Path(pdf_path)
         if not str(pdf_path).startswith(("http://", "https://"))
         else pdf_path
     )
-    stem = (pdf_path.stem if isinstance(pdf_path, Path) else "document").replace(
-        " ", "_"
-    )
-    pdf_dir = output_dir / stem
+    stem = bundle_dir_name(pdf_path.name if isinstance(pdf_path, Path) else "document")
+    if pdf_dir is None:
+        pdf_dir = (
+            resolve_pdf_dir(
+                output_dir,
+                pdf_path.name,
+                file_size=pdf_path.stat().st_size,
+                binary_hash=create_file_hash(pdf_path),
+                bundle_subdir="standard",
+            )
+            if isinstance(pdf_path, Path)
+            else output_dir / stem
+        )
     standard_dir = pdf_dir / "standard"
     full_page_dir = pdf_dir / "full_page_vlm"
     standard_dir.mkdir(parents=True, exist_ok=True)
@@ -98,34 +120,32 @@ def run_comparison(
     # ---- Standard pipeline -------------------------------------------------
     _log.info("[comparison] running standard pipeline → %s", standard_dir)
     standard_t0 = _dt.datetime.now(_dt.timezone.utc)
-    standard_engine = PdfEngine(**(standard_kwargs or {}))
-    # PdfEngine writes into <output_dir>/<stem>/... so we point it at the
-    # parent of standard_dir so the final folder name matches.
-    standard_out = standard_engine.convert(
-        pdf_path,
-        output_dir=standard_dir.parent,
-        make_html_preview=make_html_preview,
+    if standard_engine is None:
+        standard_engine = PdfEngine(**(standard_kwargs or {}))
+    # Written to <pdf_dir>/<stem>/ so its files are named <stem>.md etc., then
+    # moved to standard/.
+    standard_out = _rename_pdf_dir(
+        standard_engine.convert(
+            pdf_path, pdf_dir=pdf_dir / stem, make_html_preview=make_html_preview
+        ),
+        standard_dir,
     )
-    # PdfEngine creates a subfolder named after the PDF stem; rename to "standard".
-    _rename_pdf_dir(standard_out, standard_dir)
     standard_t1 = _dt.datetime.now(_dt.timezone.utc)
 
     # ---- Full-page VLM pipeline -------------------------------------------
     _log.info("[comparison] running full-page VLM (%s) → %s", vlm_preset, full_page_dir)
     vlm_t0 = _dt.datetime.now(_dt.timezone.utc)
-    vlm_converter = _build_vlm_converter(vlm_preset)
-    vlm_engine = PdfEngine(
-        converter=vlm_converter,
-        save_artifacts=True,
-        embed_images=False,
-        figure_types=(standard_kwargs or {}).get("figure_types", True),
+    if vlm_engine is None:
+        vlm_engine = build_full_page_vlm_engine(
+            vlm_preset,
+            figure_types=(standard_kwargs or {}).get("figure_types", True),
+        )
+    vlm_out = _rename_pdf_dir(
+        vlm_engine.convert(
+            pdf_path, pdf_dir=pdf_dir / stem, make_html_preview=make_html_preview
+        ),
+        full_page_dir,
     )
-    vlm_out = vlm_engine.convert(
-        pdf_path,
-        output_dir=full_page_dir.parent,
-        make_html_preview=make_html_preview,
-    )
-    _rename_pdf_dir(vlm_out, full_page_dir)
     vlm_t1 = _dt.datetime.now(_dt.timezone.utc)
 
     # ---- Summary ----------------------------------------------------------
@@ -153,6 +173,17 @@ def run_comparison(
     )
 
 
+def build_full_page_vlm_engine(preset: str, *, figure_types: bool = True) -> PdfEngine:
+    """The ``full_page_vlm/`` side's engine: Docling's VlmPipeline driven by
+    the full-page VLM *preset*."""
+    return PdfEngine(
+        converter=_build_vlm_converter(preset),
+        save_artifacts=True,
+        embed_images=False,
+        figure_types=figure_types,
+    )
+
+
 def _build_vlm_converter(preset: str) -> DocumentConverter:
     vlm_options = VlmConvertOptions.from_preset(preset)
     pipeline_options = VlmPipelineOptions(vlm_options=vlm_options)
@@ -166,41 +197,32 @@ def _build_vlm_converter(preset: str) -> DocumentConverter:
     )
 
 
-def _rename_pdf_dir(output: PdfConversionOutput, target_dir: Path) -> None:
-    """Move whatever ``PdfEngine`` wrote into the target subfolder name."""
+def _rename_pdf_dir(
+    output: PdfConversionOutput, target_dir: Path
+) -> PdfConversionOutput:
+    """Move the bundle ``PdfEngine`` wrote to *target_dir* (replacing an
+    earlier one there) and return *output* with every path in it re-pointed."""
     src = output.output_dir
     if src is None or src == target_dir:
-        return
+        return output
     if target_dir.exists():
-        # Clean target so the rename is atomic-ish.
-        import shutil
-
         shutil.rmtree(target_dir)
     src.rename(target_dir)
-    output.output_dir = target_dir
-    # Patch up other path fields so callers see the new location.
-    for attr in (
-        "document_json",
-        "nodes_jsonl",
-        "chunks_jsonl",
-        "tables_jsonl",
-        "figures_jsonl",
-        "run_json",
-        "preview_html",
-        "markdown_embedded_path",
-    ):
-        old: Path | None = getattr(output, attr, None)
-        if old is None:
-            continue
-        try:
-            rel = old.relative_to(src)
-        except ValueError:
-            continue
-        setattr(output, attr, target_dir / rel)
-    output.picture_images = [
-        target_dir / p.relative_to(src) for p in output.picture_images
-    ]
-    output.table_images = [target_dir / p.relative_to(src) for p in output.table_images]
+
+    def moved(path: Path) -> Path:
+        return target_dir / path.relative_to(src) if path.is_relative_to(src) else path
+
+    updates: dict[str, Path | list[Path]] = {}
+    for name, value in output:
+        if isinstance(value, Path):
+            updates[name] = moved(value)
+        elif (
+            value
+            and isinstance(value, list)
+            and all(isinstance(v, Path) for v in value)
+        ):
+            updates[name] = [moved(v) for v in value]
+    return output.model_copy(update=updates)
 
 
 def _render_comparison_md(
@@ -221,16 +243,8 @@ def _render_comparison_md(
         lines = path.read_text(encoding="utf-8").splitlines()[:n]
         return "\n".join(f"> {line}" for line in lines)
 
-    standard_md = (
-        standard.output_dir / f"{standard.output_dir.name}.md"
-        if standard.output_dir
-        else None
-    )
-    full_md = (
-        full_page.output_dir / f"{full_page.output_dir.name}.md"
-        if full_page.output_dir
-        else None
-    )
+    standard_md = standard.markdown_path
+    full_md = full_page.markdown_path
 
     caveat = ""
     if vlm_preset not in _DOCTAGS_PRESETS:

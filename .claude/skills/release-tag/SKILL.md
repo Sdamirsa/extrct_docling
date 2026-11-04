@@ -36,6 +36,15 @@ ride along.
    `make check` here: they re-sync the env and can replace the manually
    installed CUDA torch.
 
+   **Smoke conversion** (LESSONS L-1: 1.0.0 was tagged untested and its
+   build hung 75+ min). Convert the slowest / most table-dense PDF of the
+   latest batch from the working tree into a scratch folder (never a user's
+   `samples/` folder):
+   `uv run --no-sync amir-batch <that.pdf> -o <scratch-dir>`. It must finish.
+   If nothing finishes within 15 min, sample the process's GPU memory twice a
+   minute apart: climbing memory is runaway generation, so stop it and do not
+   tag.
+
 5. **Commit** `Release extrct_docling <base>-r<n>` (hooks on, no `--no-verify`).
 
 6. **Sensitive-content check.** Write the tag notes to a scratch file (what
@@ -88,5 +97,6 @@ ride along.
 
 ## Report
 
-Tag name and commit, what's in the release, the check's result (and every
-REVIEW line), push status, and whether any workflow ran.
+Tag name and commit, what's in the release, the smoke conversion (PDF,
+pages, minutes), the check's result (and every REVIEW line), push status, and
+whether any workflow ran.

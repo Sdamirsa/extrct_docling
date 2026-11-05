@@ -1,0 +1,79 @@
+{
+  "schema_version": "extrct.bundle-check/1",
+  "bundle": "Public-test-manuscript",
+  "pdf": "showcase/Public-test-manuscript.pdf",
+  "checked_by": "2.131.0-r3",
+  "ok": true,
+  "issues": [],
+  "html_coverage": {
+    "skipped": null,
+    "issues": [],
+    "items": 1919,
+    "tagged_once": 1919,
+    "missing": 0,
+    "missing_by_label": {},
+    "duplicate": 0,
+    "phantom": 0
+  },
+  "page_recall": {
+    "skipped": null,
+    "issues": [],
+    "pdf_words": 17536,
+    "no_text_layer": false,
+    "document_recall": 0.9974,
+    "pages_checked": 61,
+    "min_page": 30,
+    "min_page_recall": 0.9485,
+    "flagged_pages": []
+  },
+  "export_fidelity": {
+    "skipped": null,
+    "issues": [],
+    "html": 1.0,
+    "md": 1.0,
+    "chunks": 0.9976
+  },
+  "ligature_splits": {
+    "skipped": null,
+    "issues": [],
+    "per_export": {
+      "md": 0,
+      "embedded.md": 0,
+      "html": 0,
+      "chunks": 0
+    },
+    "examples": []
+  },
+  "tables": {
+    "skipped": null,
+    "issues": [],
+    "count": 17,
+    "low_recall": [],
+    "degenerate": []
+  },
+  "chunks": {
+    "skipped": null,
+    "issues": [],
+    "count": 126,
+    "empty": 0,
+    "max_tokens": 512,
+    "over_max_tokens": 0,
+    "unresolved_refs": []
+  },
+  "structure": {
+    "skipped": null,
+    "issues": [],
+    "pages": 68,
+    "body_text_items": 353,
+    "section_headers": 72
+  },
+  "guards": {
+    "skipped": null,
+    "issues": [],
+    "run_status": "ConversionStatus.SUCCESS",
+    "run_errors": 0,
+    "missing_images": [],
+    "noise_in_md": [],
+    "noise_unmarked_in_html": []
+  }
+}

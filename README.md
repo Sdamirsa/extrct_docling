@@ -80,11 +80,11 @@ Input: [`showcase/Public-test-manuscript.pdf`](showcase/Public-test-manuscript.p
 
 | Config | Output | Time |
 |---|---|---|
-| Fast (no VLM) | [`showcase/fast/`](showcase/fast/Public-test-manuscript/) | 65 s |
+| Fast (no VLM) | [`showcase/fast/`](showcase/fast/Public-test-manuscript/) | 61 s |
 | Middle (VLM on figures only) | [`showcase/figures-vlm/`](showcase/figures-vlm/Public-test-manuscript/) | 2.4 min |
-| Suggested default | [`showcase/default/`](showcase/default/Public-test-manuscript/) | 11.8 min |
+| Suggested default | [`showcase/default/`](showcase/default/Public-test-manuscript/) | 11.6 min |
 
-All three: **68 pages · 15 figures · 17 tables · 126–133 chunks · 0 errors.**
+All three: **68 pages · 15 figures · 17 tables · 126–137 chunks · 0 errors · `check.json` OK.**
 ➡️ **[showcase/README.md](showcase/README.md)** compares them side by side (figure descriptions, table accuracy, versions) and helps you pick one.
 
 Known rough edges: some supplementary figures/tables have no detected caption, the figure typer mislabels some charts (2 of 15 here, both with low confidence), and VLM descriptions can misstate numbers. Check the figure itself before citing a value.

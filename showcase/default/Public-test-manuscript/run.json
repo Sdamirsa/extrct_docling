@@ -1,16 +1,26 @@
 {
   "schema_version": "1",
+  "engine": {
+    "name": "extrct_docling",
+    "version": "2.131.0-r3",
+    "release": "extrct_docling-v2.131.0-r3",
+    "repository": "https://github.com/Sdamirsa/extrct_docling",
+    "git_commit": "af4249b57b3f15e13acc57f56a968163bf6a0a30",
+    "git_dirty": false
+  },
   "source": {
     "input": "showcase/Public-test-manuscript.pdf",
     "source_kind": "local_path",
     "file_name": "Public-test-manuscript.pdf",
-    "file_size_bytes": 4039703
+    "file_size_bytes": 4039703,
+    "binary_hash": "c82966117cd0336041b6276025eff5ecbadcee028b24718e6193ffa8ebd192ab"
   },
   "status": "ConversionStatus.SUCCESS",
+  "complete": true,
   "timing": {
-    "started_at": "2026-10-02T07:33:06.308086+00:00",
-    "finished_at": "2026-10-02T07:44:43.116222+00:00",
-    "duration_seconds": 696.808
+    "started_at": "2026-11-05T16:50:28.668112+00:00",
+    "finished_at": "2026-11-05T17:01:54.269590+00:00",
+    "duration_seconds": 685.601
   },
   "engine_config": {
     "with_page_images": false,
@@ -36,10 +46,25 @@
       "watermark"
     ],
     "noise_repeat_threshold": 3,
+    "noise_imaging_veto": {
+      "figure_types": [
+        "angiography",
+        "ct",
+        "endoscopy",
+        "histopathology",
+        "mri",
+        "ophthalmic_imaging",
+        "radiograph",
+        "ultrasound"
+      ],
+      "min_confidence": 0.9
+    },
     "picture_description": "granite_vision_4b",
     "picture_description_engine": "default",
+    "picture_area_threshold": 0.03,
     "figure_types": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
-    "converter_supplied": false
+    "converter_supplied": false,
+    "make_html_preview": true
   },
   "pipeline_options": {
     "document_timeout": null,
@@ -70,7 +95,7 @@
     "picture_description_options": {
       "batch_size": 8,
       "scale": 2.0,
-      "picture_area_threshold": 0.05,
+      "picture_area_threshold": 0.03,
       "classification_allow": null,
       "classification_deny": null,
       "classification_min_confidence": 0.0,
@@ -101,7 +126,9 @@
         "stop_strings": [],
         "temperature": 0.0,
         "max_new_tokens": 200,
-        "extra_generation_config": {}
+        "extra_generation_config": {
+          "skip_special_tokens": true
+        }
       },
       "prompt": "Describe this image in a few sentences.",
       "generation_config": {
@@ -129,10 +156,10 @@
         "prompt": "<chart2csv>",
         "response_format": "plaintext",
         "supported_engines": [
-          "transformers",
-          "api_openai",
+          "api_lmstudio",
           "api_ollama",
-          "api_lmstudio"
+          "api_openai",
+          "transformers"
         ],
         "engine_overrides": {
           "transformers": {
@@ -182,7 +209,9 @@
     "do_code_enrichment": false,
     "do_formula_enrichment": false,
     "force_backend_text": false,
-    "table_structure_options": {},
+    "table_structure_options": {
+      "tableformer_fallback": true
+    },
     "ocr_options": {
       "mode": "default",
       "lang": [],
@@ -312,11 +341,13 @@
       "scale": 3.0,
       "force_full_page_ocr": false
     },
-    "table_structure": {},
+    "table_structure": {
+      "tableformer_fallback": true
+    },
     "picture_description": {
       "batch_size": 8,
       "scale": 2.0,
-      "picture_area_threshold": 0.05,
+      "picture_area_threshold": 0.03,
       "classification_allow": null,
       "classification_deny": null,
       "classification_min_confidence": 0.0,
@@ -347,7 +378,9 @@
         "stop_strings": [],
         "temperature": 0.0,
         "max_new_tokens": 200,
-        "extra_generation_config": {}
+        "extra_generation_config": {
+          "skip_special_tokens": true
+        }
       },
       "prompt": "Describe this image in a few sentences.",
       "generation_config": {
@@ -430,10 +463,10 @@
         "prompt": "<chart2csv>",
         "response_format": "plaintext",
         "supported_engines": [
-          "transformers",
-          "api_openai",
+          "api_lmstudio",
           "api_ollama",
-          "api_lmstudio"
+          "api_openai",
+          "transformers"
         ],
         "engine_overrides": {
           "transformers": {
@@ -489,17 +522,23 @@
   },
   "environment": {
     "python": "3.13.13",
-    "platform": "Linux-6.17.0-1031-nvidia-aarch64-with-glibc2.39",
+    "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
     "machine": "aarch64",
     "system": "Linux",
+    "torch_cuda": "13.0",
+    "cuda_available": true,
+    "device_name": "NVIDIA GB10",
     "packages": {
       "docling": null,
+      "docling-slim": "2.131.0",
       "docling-core": "2.98.0",
       "docling-ibm-models": "4.0.2",
       "docling-parse": "7.20.0",
       "onnxruntime": "1.29.0",
       "onnxruntime-gpu": null,
+      "open-clip-torch": "3.3.0",
       "pypdfium2": "5.13.0",
+      "torch": "2.14.0",
       "transformers": "5.17.0"
     }
   },

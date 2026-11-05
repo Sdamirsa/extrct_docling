@@ -4,7 +4,8 @@
 import importlib.metadata
 import logging
 import warnings
-from collections.abc import Sequence
+from collections.abc import Collection, Sequence
+from functools import cached_property
 from pathlib import Path
 from typing import Any, ClassVar, Literal, cast
 
@@ -18,10 +19,18 @@ from docling.datamodel.base_models import (
     Page,
     Table,
     TableStructurePrediction,
+    degenerate_table_reason,
 )
 from docling.datamodel.document import ConversionResult
-from docling.datamodel.pipeline_options import GraniteVisionTableStructureOptions
+from docling.datamodel.pipeline_options import (
+    GraniteVisionTableStructureOptions,
+    TableFormerMode,
+    TableStructureOptions,
+)
 from docling.models.base_table_model import BaseTableStructureModel
+from docling.models.stages.table_structure.table_structure_model import (
+    TableStructureModel,
+)
 from docling.models.utils.hf_model_download import download_hf_model
 from docling.utils.accelerator_utils import decide_device
 from docling.utils.granite_vision_utils import granite_vision_4_needs_remote_code
@@ -29,6 +38,23 @@ from docling.utils.otsl import parse_otsl_output
 from docling.utils.profiling import TimeRecorder
 
 _log = logging.getLogger(__name__)
+
+
+def merge_table_predictions(
+    primary: TableStructurePrediction,
+    fallback: TableStructurePrediction,
+    fallback_ids: Collection[int],
+) -> TableStructurePrediction:
+    """*primary*'s tables, with *fallback*'s in place of those in
+    *fallback_ids* (where *fallback* has one)."""
+    return TableStructurePrediction(
+        table_map={
+            cid: fallback.table_map[cid]
+            if cid in fallback_ids and cid in fallback.table_map
+            else table
+            for cid, table in primary.table_map.items()
+        }
+    )
 
 
 class GraniteVisionTableStructureModel(BaseTableStructureModel):
@@ -49,6 +75,8 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
         self.enabled = enabled
         self.options = options
         self.accelerator_options = accelerator_options
+        self._artifacts_path = artifacts_path
+        self._tableformer_unavailable = False
 
         if self.enabled:
             self.device = decide_device(
@@ -131,8 +159,10 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
         generation: a crop the model never closes (a boxed prompt laid out
         like a table) generated for over an hour. A table's OTSL output is its
         cell text plus tags; on 88 tables it never exceeded 3x the tokens of
-        the PDF text in the crop + 512 (median 1.4x), and the floor covers
-        image-only tables, whose crops have no PDF text.
+        the PDF text in the crop + 512 (median 1.4x), and the 2048 floor
+        covers image-only tables, whose crops have no PDF text. A crop that
+        hits the budget is the model looping; its structure is taken from
+        TableFormer (``tableformer_fallback``).
         """
         tokenizer = self._processor.tokenizer
         budget = 2048
@@ -141,29 +171,96 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
             budget = max(budget, 3 * len(tokenizer(text)["input_ids"]) + 512)
         return min(budget, self._model_max_length)
 
-    def _warn_on_truncation(
+    def _truncated_cluster_ids(
         self,
         generated_ids: torch.Tensor,
         clusters: Sequence[Cluster],
-        *,
-        page_no: int,
         budget: int,
-    ) -> None:
-        """Warn about each crop whose generation was cut off by *budget*: still
+    ) -> set[int]:
+        """Ids of the crops whose generation was cut off by *budget*: still
         going (last token neither EOS nor padding) when the batch hit it."""
         if generated_ids.shape[1] < budget:
-            return
+            return set()
         tokenizer = self._processor.tokenizer
         finished = {tokenizer.eos_token_id, tokenizer.pad_token_id}
-        for row, cluster in zip(generated_ids, clusters):
-            if int(row[-1]) not in finished:
+        return {
+            cluster.id
+            for row, cluster in zip(generated_ids, clusters)
+            if int(row[-1]) not in finished
+        }
+
+    @cached_property
+    def _tableformer(self) -> TableStructureModel:
+        return TableStructureModel(
+            enabled=True,
+            artifacts_path=self._artifacts_path,
+            options=TableStructureOptions(
+                mode=TableFormerMode.ACCURATE, do_cell_matching=True
+            ),
+            accelerator_options=self.accelerator_options,
+        )
+
+    def _tableformer_fallback(
+        self,
+        conv_res: ConversionResult,
+        page: Page,
+        granite: TableStructurePrediction,
+        reasons: dict[int, str],
+    ) -> TableStructurePrediction:
+        """*granite* with TableFormer's structure for the tables in *reasons*
+        (cluster id -> why Granite's is unusable), stored on *page*.
+
+        TableFormer reads the PDF's text cells (cell matching), so these
+        tables are not retyped from the image either. It predicts every table
+        of the page; only the ones in *reasons* are kept.
+        """
+        if self._tableformer_unavailable:
+            page.predictions.tablestructure = granite
+            return granite
+        try:
+            tableformer = self._tableformer.predict_tables(conv_res, [page])[0]
+        except Exception:
+            # Construction failures (no weights offline) would repeat on every
+            # page with a flagged table; remember and stop trying.
+            self._tableformer_unavailable = True
+            _log.exception(
+                "TableFormer fallback failed on page %d; keeping GraniteVision "
+                "tables %s (%s)",
+                page.page_no,
+                sorted(reasons),
+                "; ".join(f"[{cid}] {reason}" for cid, reason in reasons.items()),
+            )
+            page.predictions.tablestructure = granite
+            return granite
+        usable: set[int] = set()
+        for cid, reason in reasons.items():
+            replacement = tableformer.table_map.get(cid)
+            if replacement is None:
+                continue
+            also_degenerate = degenerate_table_reason(
+                replacement.num_rows, replacement.num_cols, replacement.table_cells
+            )
+            if also_degenerate is not None:
                 _log.warning(
-                    "GraniteVision table [%s] on page %d hit the %d-token "
-                    "generation budget; its structure is truncated",
-                    cluster.id,
-                    page_no,
-                    budget,
+                    "GraniteVision table [%s] on page %d: %s; TableFormer's is "
+                    "also unusable (%s), keeping GraniteVision's",
+                    cid,
+                    page.page_no,
+                    reason,
+                    also_degenerate,
                 )
+                continue
+            usable.add(cid)
+            _log.warning(
+                "GraniteVision table [%s] on page %d: %s; structure taken "
+                "from TableFormer",
+                cid,
+                page.page_no,
+                reason,
+            )
+        merged = merge_table_predictions(granite, tableformer, usable)
+        page.predictions.tablestructure = merged
+        return merged
 
     def predict_tables(
         self,
@@ -244,11 +341,10 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
                     max_new_tokens=budget,
                     use_cache=True,
                 )
-                self._warn_on_truncation(
+                truncated = self._truncated_cluster_ids(
                     output_ids[:, inputs["input_ids"].shape[1] :],
                     valid_clusters,
-                    page_no=page.page_no,
-                    budget=budget,
+                    budget,
                 )
 
                 # Decode only generated tokens (strip input prompt tokens)
@@ -286,6 +382,34 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
                     )
                     table_prediction.table_map[cluster.id] = tbl
 
-                predictions.append(table_prediction)
+                reasons: dict[int, str] = {}
+                for cid, tbl in table_prediction.table_map.items():
+                    if cid in truncated:
+                        reasons[cid] = f"hit the {budget}-token generation budget"
+                    elif (
+                        degenerate := degenerate_table_reason(
+                            tbl.num_rows, tbl.num_cols, tbl.table_cells
+                        )
+                    ) is not None:
+                        reasons[cid] = (
+                            f"{tbl.num_rows}x{tbl.num_cols} grid, {degenerate}"
+                        )
+
+            # Outside the TimeRecorder: TableFormer records its own
+            # table_structure time.
+            if reasons and self.options.tableformer_fallback:
+                table_prediction = self._tableformer_fallback(
+                    conv_res, page, table_prediction, reasons
+                )
+            else:
+                for cid in sorted(truncated):
+                    _log.warning(
+                        "GraniteVision table [%s] on page %d hit the %d-token "
+                        "generation budget; its structure is truncated",
+                        cid,
+                        page.page_no,
+                        budget,
+                    )
+            predictions.append(table_prediction)
 
         return predictions

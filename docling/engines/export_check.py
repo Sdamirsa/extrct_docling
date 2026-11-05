@@ -49,7 +49,11 @@ from docling_core.types.doc import (
 from pydantic import BaseModel, Field, model_validator
 from typing_extensions import Self
 
-from docling.datamodel.base_models import ConversionStatus
+from docling.datamodel.base_models import (
+    ConversionStatus,
+    degenerate_table_reason,
+    table_filled_fraction,
+)
 from docling.engines.run_snapshot import (
     ENGINE_VERSION,
     RunRecord,
@@ -77,8 +81,6 @@ PAGE_LOST_WORDS_MAX = 50
 PAGE_MIN_WORDS = 30
 DOCUMENT_RECALL_MIN = 0.97
 EXPORT_FIDELITY_MIN = 0.99
-TABLE_MIN_FILLED = 0.3
-TABLE_ONE_ROW_MAX_COLS = 5
 MIN_BODY_TEXTS_PER_PAGE = 1.0
 HEADERLESS_MAX_PAGES = 5
 
@@ -737,21 +739,10 @@ def _check_tables(doc: DoclingDocument) -> TableCheck:
         recall = pdf_text["cell_text_recall"] if pdf_text is not None else None
         if recall is not None and recall < TABLE_TEXT_MIN_RECALL:
             low.append(TableRecall(self_ref=table.self_ref, cell_text_recall=recall))
-        rows, cols = table.data.num_rows, table.data.num_cols
-        filled = sum(
-            (cell.end_row_offset_idx - cell.start_row_offset_idx)
-            * (cell.end_col_offset_idx - cell.start_col_offset_idx)
-            for cell in table.data.table_cells
-            if cell.text.strip()
-        )
-        fraction = round(min(1.0, filled / (rows * cols)), 3) if rows * cols else 0.0
-        if not rows or not cols:
-            reason = "empty grid"
-        elif rows <= 1 and cols > TABLE_ONE_ROW_MAX_COLS:
-            reason = f"one row of {cols} columns"
-        elif fraction < TABLE_MIN_FILLED:
-            reason = f"{fraction:.0%} of the grid filled"
-        else:
+        data = table.data
+        rows, cols = data.num_rows, data.num_cols
+        reason = degenerate_table_reason(rows, cols, data.table_cells)
+        if reason is None:
             continue
         degenerate.append(
             DegenerateTable(
@@ -759,7 +750,7 @@ def _check_tables(doc: DoclingDocument) -> TableCheck:
                 page=table.prov[0].page_no if table.prov else None,
                 rows=rows,
                 cols=cols,
-                filled_fraction=fraction,
+                filled_fraction=table_filled_fraction(rows, cols, data.table_cells),
                 reason=reason,
             )
         )

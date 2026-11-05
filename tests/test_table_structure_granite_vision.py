@@ -1,12 +1,34 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
+import logging
+from pathlib import Path
+
 import pytest
+import torch
+from docling_core.types.doc import BoundingBox, DocItemLabel, TableCell
+from huggingface_hub import try_to_load_from_cache
 
 from docling.datamodel.accelerator_options import AcceleratorOptions
-from docling.datamodel.pipeline_options import GraniteVisionTableStructureOptions
+from docling.datamodel.base_models import (
+    Cluster,
+    InputFormat,
+    Table,
+    TableStructurePrediction,
+    degenerate_table_reason,
+    table_filled_fraction,
+)
+from docling.datamodel.pipeline_options import (
+    GraniteVisionTableStructureOptions,
+    PdfPipelineOptions,
+)
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.models.stages.table_structure import (
+    table_structure_model_granite_vision,
+)
 from docling.models.stages.table_structure.table_structure_model_granite_vision import (
     GraniteVisionTableStructureModel,
+    merge_table_predictions,
 )
 from docling.utils.otsl import parse_otsl_output
 
@@ -268,3 +290,135 @@ def test_factory_registration():
     factory.load_from_plugins()
     registered = list(factory.classes.values())
     assert GraniteVisionTableStructureModel in registered
+
+
+def _table(cid: int, rows: list[list[str]]) -> Table:
+    cluster = Cluster(
+        id=cid, label=DocItemLabel.TABLE, bbox=BoundingBox(l=0, t=0, r=100, b=100)
+    )
+    return Table(
+        otsl_seq=[],
+        table_cells=_cells(rows),
+        num_rows=len(rows),
+        num_cols=len(rows[0]) if rows else 0,
+        id=cid,
+        page_no=1,
+        cluster=cluster,
+        label=DocItemLabel.TABLE,
+    )
+
+
+def _cells(rows: list[list[str]]) -> list[TableCell]:
+    return [
+        TableCell(
+            text=text,
+            start_row_offset_idx=r,
+            end_row_offset_idx=r + 1,
+            start_col_offset_idx=c,
+            end_col_offset_idx=c + 1,
+        )
+        for r, row in enumerate(rows)
+        for c, text in enumerate(row)
+    ]
+
+
+@pytest.mark.parametrize(
+    ("rows", "reason"),
+    [
+        ([], "empty grid"),
+        ([["Mode", "Stage", "Time", "Recall", "F1"]], None),
+        ([["The", "agent", "must", "", "", ""]], "one row of 6 columns"),
+        ([["✓", "", ""], ["", "", ""], ["", "", ""]], "11% of the grid filled"),
+        ([["✓", "", ""], ["", "✓", ""], ["", "", "✓"]], None),
+    ],
+)
+def test_degenerate_table_reason(rows: list[list[str]], reason: str | None) -> None:
+    num_cols = len(rows[0]) if rows else 0
+    assert degenerate_table_reason(len(rows), num_cols, _cells(rows)) == reason
+
+
+def test_a_spanning_cell_fills_every_slot_it_spans() -> None:
+    """A filled header across a 3x3 grid of otherwise empty cells fills 3 of
+    its 9 slots: not degenerate, though it is 1 of 7 cells."""
+    header = TableCell(
+        text="Checklist item",
+        start_row_offset_idx=0,
+        end_row_offset_idx=1,
+        start_col_offset_idx=0,
+        end_col_offset_idx=3,
+    )
+    body = _cells([["", "", ""], ["", "", ""]])
+    for cell in body:
+        cell.start_row_offset_idx += 1
+        cell.end_row_offset_idx += 1
+
+    assert table_filled_fraction(3, 3, [header, *body]) == 0.333
+    assert degenerate_table_reason(3, 3, [header, *body]) is None
+
+
+def test_merge_takes_the_fallback_table_only_for_flagged_clusters() -> None:
+    granite = TableStructurePrediction(
+        table_map={cid: _table(cid, [["granite"]]) for cid in (3, 7, 9)}
+    )
+    tableformer = TableStructurePrediction(
+        table_map={cid: _table(cid, [["tableformer"]]) for cid in (3, 7)}
+    )
+
+    merged = merge_table_predictions(granite, tableformer, {7, 9})
+
+    assert list(merged.table_map) == [3, 7, 9]
+    assert {cid: t.table_cells[0].text for cid, t in merged.table_map.items()} == {
+        3: "granite",
+        7: "tableformer",
+        9: "granite",
+    }
+
+
+_GRANITE_ON_GPU = torch.cuda.is_available() and isinstance(
+    try_to_load_from_cache(
+        GraniteVisionTableStructureModel._model_repo_id,
+        "config.json",
+        revision=GraniteVisionTableStructureModel._model_repo_revision,
+    ),
+    str,
+)
+
+
+@pytest.mark.skipif(
+    not _GRANITE_ON_GPU, reason="needs CUDA and the Granite-Vision weights cached"
+)
+def test_a_truncated_granite_table_takes_its_structure_from_tableformer(
+    monkeypatch: pytest.MonkeyPatch, caplog: pytest.LogCaptureFixture
+) -> None:
+    """With a budget no table fits in, every Granite generation is cut off;
+    each table must reach the document with TableFormer's grid, whose cells
+    are matched to PDF text cells and so are located (OTSL cells never are)."""
+    monkeypatch.setattr(
+        GraniteVisionTableStructureModel, "_generation_budget", lambda self, c: 8
+    )
+    options = PdfPipelineOptions(
+        do_ocr=False, table_structure_options=GraniteVisionTableStructureOptions()
+    )
+    converter = DocumentConverter(
+        format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)}
+    )
+
+    with caplog.at_level(
+        logging.WARNING, logger=table_structure_model_granite_vision.__name__
+    ):
+        doc = converter.convert(
+            Path("tests/data/pdf/sources/2305.03393v1-pg9.pdf")
+        ).document
+
+    fallbacks = [
+        r.getMessage()
+        for r in caplog.records
+        if r.getMessage().endswith("structure taken from TableFormer")
+    ]
+    assert doc.tables
+    assert len(fallbacks) == len(doc.tables)
+    assert all("hit the 8-token generation budget" in m for m in fallbacks)
+    for table in doc.tables:
+        assert table.data.num_rows > 1
+        assert table.data.num_cols > 1
+        assert all(cell.bbox is not None for cell in table.data.table_cells)

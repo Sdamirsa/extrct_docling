@@ -188,6 +188,16 @@ class GraniteVisionTableStructureOptions(BaseTableStructureOptions):
     """Options for the table structure model using Granite Vision (VLM-based)."""
 
     kind: ClassVar[str] = "granite_vision_table"
+    tableformer_fallback: Annotated[
+        bool,
+        Field(
+            description=(
+                "Rerun TableFormer (accurate mode, with cell matching) on each table whose Granite Vision "
+                "generation hit its token budget or whose grid is degenerate (empty, a single over-wide row, "
+                "or mostly empty cells), and keep TableFormer's structure for that table."
+            )
+        ),
+    ] = True
 
 
 class OcrOptions(BaseOptions):

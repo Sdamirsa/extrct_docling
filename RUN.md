@@ -63,7 +63,7 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--preview / --no-preview` | on | Renders the clickable HTML bbox viewer (`preview.html`). |
 | `--vlm-preset` | `granite_docling` | Full-page VLM preset, only used with `--compare`. |
 | `--images-scale` | `1.5` | Scale factor for rendered page/crop images (rendering only — does not affect layout or `self_ref` assignment). |
-| `--granite-vision-tables / --no-granite-vision-tables` | **on** | Table structure via Granite-Vision VLM (4.1-4b) vs. plain TableFormer. |
+| `--granite-vision-tables / --no-granite-vision-tables` | **on** | Table structure via Granite-Vision VLM (4.1-4b) vs. plain TableFormer. With it on, a table whose generation hits the token budget or whose grid is degenerate is redone by TableFormer (logged as `structure taken from TableFormer`). |
 | `--picture-description` | `granite_vision_4b` | VLM preset for figure captions. Other values: `granite_vision`, `smolvlm`, `pixtral`, `qwen25_vl_3b`, or `off`. |
 | `--figure-types / --no-figure-types` | **on** | Types every figure with BiomedCLIP (`ct`, `angiography`, `ecg`, `ultrasound`, `kaplan_meier`, `bar_chart`, ...) → `figures.jsonl[*].figure_type`. Runs in every config, VLM or not; ~0.8 GB GPU, ~15 ms per figure. Needs the `models-vlm-inline` extra (open-clip-torch). |
 | `--picture-area-threshold` | `0.03` | Smallest picture (fraction of the page area) that gets a VLM caption. Docling's default of 0.05 left real charts at 4-5 % of the page uncaptioned. |

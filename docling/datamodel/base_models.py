@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 from collections import defaultdict
+from collections.abc import Sequence
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
@@ -437,6 +438,43 @@ class Table(BasePageElement):
 
 class TableStructurePrediction(BaseModel):
     table_map: dict[int, Table] = {}
+
+
+TABLE_MIN_FILLED = 0.3
+TABLE_ONE_ROW_MAX_COLS = 5
+
+
+def table_filled_fraction(
+    num_rows: int, num_cols: int, cells: Sequence[TableCell]
+) -> float:
+    """Share of the grid's slots covered by cells with text (a spanning cell
+    covers every slot it spans), rounded to 3 decimals."""
+    if not num_rows * num_cols:
+        return 0.0
+    filled = sum(
+        (cell.end_row_offset_idx - cell.start_row_offset_idx)
+        * (cell.end_col_offset_idx - cell.start_col_offset_idx)
+        for cell in cells
+        if cell.text.strip()
+    )
+    return round(min(1.0, filled / (num_rows * num_cols)), 3)
+
+
+def degenerate_table_reason(
+    num_rows: int, num_cols: int, cells: Sequence[TableCell]
+) -> str | None:
+    """Why a table grid is unusable, or None when it is not: no rows or
+    columns, a single row wider than :data:`TABLE_ONE_ROW_MAX_COLS` (a
+    boxed paragraph cut into cells), or under :data:`TABLE_MIN_FILLED` of the
+    grid holding text (a structure model that looped on empty cells)."""
+    if not num_rows or not num_cols:
+        return "empty grid"
+    if num_rows <= 1 and num_cols > TABLE_ONE_ROW_MAX_COLS:
+        return f"one row of {num_cols} columns"
+    fraction = table_filled_fraction(num_rows, num_cols, cells)
+    if fraction < TABLE_MIN_FILLED:
+        return f"{fraction:.0%} of the grid filled"
+    return None
 
 
 class TextElement(BasePageElement):

@@ -92,8 +92,9 @@ structure model loads and runs. See `.claude/AMIR_STAGE.md` log for the entry.
 The terminal report (rich table) shows one row per PDF: status, duration,
 page count, figures (with noise count), tables, chunks, errors, the bundle
 self-check summary (`check.json`: HTML item coverage, PDF text-layer recall
-per page, export fidelity, ligature splits, degenerate tables, empty chunks,
-structure sanity) and the per-PDF output path. A conversion whose Docling
+per page, printed text outside every item box, export fidelity, ligature
+splits, degenerate tables, empty chunks, structure sanity) and the per-PDF
+output path. A conversion whose Docling
 status is SUCCESS but where an export step failed shows `SUCCESS*` with the
 failed components in the errs column. Exit code is `1` if any row ends
 `FAILURE`, `PARTIAL_SUCCESS`, `EXCEPTION`, `SUCCESS*`, `MISSING` or

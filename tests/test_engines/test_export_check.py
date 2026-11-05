@@ -245,6 +245,86 @@ def test_page_recall_leaves_out_the_pages_a_capped_conversion_did_not_reach(
     assert recall.document_recall == 1.0
 
 
+@pytest.mark.skipif(
+    not FIXTURE_PDF.exists(), reason=f"fixture {FIXTURE_PDF} not available"
+)
+@pytest.mark.parametrize("rotation", [0, 90, 180, 270])
+def test_uncovered_text_flags_words_whose_box_is_misplaced(
+    tmp_path: Path, rotation: int
+) -> None:
+    """With every text line boxed where Docling's parser puts it, no printed
+    character is uncovered, also on a cropped and rotated page. One item
+    holding the lower half of the page with its box 180 pt too high, as a
+    page-height mix-up puts it, gets those words flagged with a sample of
+    them, while page recall (words per page) sees nothing."""
+    import pypdfium2 as pdfium
+
+    from docling.backend.docling_parse_backend import (
+        ThreadedDoclingParseDocumentBackend,
+    )
+    from docling.datamodel.base_models import InputFormat
+    from docling.datamodel.document import InputDocument
+
+    pdf = pdfium.PdfDocument(FIXTURE_PDF)
+    page = pdf[0]
+    left, bottom, right, top = page.get_mediabox()
+    page.set_cropbox(left + 30, bottom + 45, right - 20, top - 10)
+    page.set_rotation(rotation)
+    cropped = tmp_path / "cropped.pdf"
+    pdf.save(cropped)
+    pdf.close()
+    backend = InputDocument(
+        path_or_stream=cropped,
+        format=InputFormat.PDF,
+        backend=ThreadedDoclingParseDocumentBackend,
+    )._backend
+    page_backend = next(backend.iter_pages())
+    size = page_backend.get_size()
+    lines = [
+        (cell.text, cell.rect.to_bounding_box().to_top_left_origin(size.height))
+        for cell in page_backend.get_text_cells()
+        if cell.text.strip()
+    ]
+    backend.unload()
+
+    def bundle(name: str, boxed: list[tuple[str, BoundingBox]]) -> Path:
+        doc = DoclingDocument(name=name)
+        doc.add_page(page_no=1, size=size)
+        for text, box in boxed:
+            doc.add_text(
+                label=DocItemLabel.TEXT,
+                text=text,
+                prov=ProvenanceItem(
+                    page_no=1,
+                    bbox=box.to_bottom_left_origin(size.height),
+                    charspan=(0, len(text)),
+                ),
+            )
+        return _write_bundle(tmp_path, doc)
+
+    placed = check_bundle(bundle("placed", lines), cropped).uncovered_text
+    assert placed.issues == []
+    assert placed.chars > 1000
+    assert placed.uncovered_chars == 0
+    assert placed.pages_checked == 1
+
+    upper = [(text, box) for text, box in lines if box.b <= size.height / 2]
+    lower = [(text, box) for text, box in lines if box.b > size.height / 2]
+    lower_text = " ".join(text for text, _box in lower)
+    union = BoundingBox.enclosing_bbox([box for _text, box in lower])
+    too_high = union.model_copy(update={"t": union.t - 180, "b": union.b - 180})
+    misplaced = check_bundle(
+        bundle("misplaced", [*upper, (lower_text, too_high)]), cropped
+    )
+
+    flags = misplaced.uncovered_text.flagged_pages
+    assert [flag.page for flag in flags] == [1]
+    assert flags[0].uncovered_words >= 30
+    assert all(piece in lower_text for piece in flags[0].sample.split())
+    assert misplaced.page_recall.flagged_pages == []
+    assert any(issue.startswith("uncovered_text: p1:") for issue in misplaced.issues)
+
+
 def _table_with_pdf_text(doc: DoclingDocument) -> TableItem:
     table = doc.add_table(
         data=_grid([["Model", "AUC"], ["ECG-Agent", "0.91"]]), prov=_PROV

@@ -520,8 +520,12 @@ class ReadingOrderModel:
 
                     for merged_cid in el_merges_mapping.get(rel.cid, []):
                         merged_elem = id_to_elem[cid_to_rels[merged_cid].ref.cref]
+                        # The continuation can lie on a page of another height.
+                        merged_page_height = out_doc.pages[
+                            merged_elem.page_no
+                        ].size.height
                         self._merge_elements(
-                            element, merged_elem, new_item, page_height
+                            element, merged_elem, new_item, merged_page_height
                         )
 
                 elif isinstance(element, Table):

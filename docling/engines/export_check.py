@@ -10,6 +10,8 @@ runs on bundles written by earlier releases without reconverting:
   ``data-self-ref`` element of ``<stem>.html``;
 - **page_recall** — the words of each page's PDF text layer (pypdfium2) are
   in the items ``document.json`` places on that page;
+- **uncovered_text** — the printed words of each page lie inside the box of
+  some item on that page (a box on the wrong spot, or text left out);
 - **export_fidelity** — ``<stem>.html`` holds the words of every item,
   ``<stem>.md`` and the chunks (text + headings) those of the body; model
   written descriptions are left out of the exports first;
@@ -34,15 +36,18 @@ import logging
 import re
 import unicodedata
 from collections import Counter
-from collections.abc import Collection
+from collections.abc import Collection, Mapping
 from pathlib import Path
-from typing import TypeVar
+from typing import TYPE_CHECKING, TypeVar
 
+import numpy as np
 from docling_core.types.doc import (
     ContentLayer,
     DocItem,
     DoclingDocument,
+    PageItem,
     SectionHeaderItem,
+    Size,
     TableItem,
     TextItem,
 )
@@ -71,6 +76,9 @@ from docling.engines.text_repair import (
     get_table_pdf_text,
 )
 
+if TYPE_CHECKING:
+    from pypdfium2 import PdfPage
+
 _log = logging.getLogger(__name__)
 
 CHECK_FILENAME = "check.json"
@@ -80,14 +88,20 @@ PAGE_RECALL_MIN = 0.90
 PAGE_LOST_WORDS_MAX = 50
 PAGE_MIN_WORDS = 30
 DOCUMENT_RECALL_MIN = 0.97
+UNCOVERED_SHARE_MAX = 0.05
+UNCOVERED_WORDS_MAX = 30
 EXPORT_FIDELITY_MIN = 0.99
 MIN_BODY_TEXTS_PER_PAGE = 1.0
 HEADERLESS_MAX_PAGES = 5
 
 _TOP_MISSING = 5
 _EXAMPLES = 5
+_SAMPLE_CHARS = 70
+_BOX_TOLERANCE = 1.0
 
 _WORD = re.compile(r"[^\W_]{2,}")
+# Letters only: a font without a Unicode map prints control codes and symbols.
+_LETTER_WORD = re.compile(r"[^\W\d_]{2,}")
 _ALPHA = re.compile(r"[a-z]+")
 
 _HIDDEN = re.compile(r"<(script|style|title)\b[^>]*>.*?</\1\s*>", re.S | re.I)
@@ -136,6 +150,31 @@ class PageRecall(CheckBlock):
     min_page: int | None = None
     min_page_recall: float | None = None
     flagged_pages: list[PageRecallFlag] = Field(default_factory=list)
+
+
+class UncoveredTextPage(BaseModel):
+    page: int
+    words: int
+    uncovered_words: int
+    share: float
+    chars: int
+    uncovered_chars: int
+    sample: str
+
+
+class UncoveredText(CheckBlock):
+    """Words are runs of two or more letters, chars every printed non-space
+    character; a word is uncovered when most of its letters are."""
+
+    no_text_layer: bool = False
+    chars: int = 0
+    uncovered_chars: int = 0
+    words: int = 0
+    uncovered_words: int = 0
+    pages_checked: int = 0
+    max_page: int | None = None
+    max_page_share: float | None = None
+    flagged_pages: list[UncoveredTextPage] = Field(default_factory=list)
 
 
 class ExportFidelity(CheckBlock):
@@ -203,6 +242,10 @@ class BundleCheck(BaseModel):
     issues: list[str] = Field(default_factory=list)
     html_coverage: HtmlCoverage
     page_recall: PageRecall
+    # Defaulted: check.json files written before this check still load.
+    uncovered_text: UncoveredText = Field(
+        default_factory=lambda: UncoveredText(skipped="not checked")
+    )
     export_fidelity: ExportFidelity
     ligature_splits: LigatureSplits
     tables: TableCheck
@@ -224,6 +267,7 @@ class BundleCheck(BaseModel):
         return (
             ("html_coverage", self.html_coverage),
             ("page_recall", self.page_recall),
+            ("uncovered_text", self.uncovered_text),
             ("export_fidelity", self.export_fidelity),
             ("ligature_splits", self.ligature_splits),
             ("tables", self.tables),
@@ -234,7 +278,8 @@ class BundleCheck(BaseModel):
 
     def summary_line(self) -> str:
         """One line for a batch table, e.g. ``html 100% · page-recall min 0.94
-        (p1) · md 1.000 · chunks 0.999 · tables 3 (1 low) · 0 empty chunks · OK``."""
+        (p1) · uncovered max 0.01 (p3) · md 1.000 · chunks 0.999 · tables 3
+        (1 low) · 0 empty chunks · OK``."""
         cov = self.html_coverage
         if cov.skipped is not None or not cov.items:
             parts = ["html n/a"]
@@ -252,6 +297,12 @@ class BundleCheck(BaseModel):
             parts.append(f"page-recall min {rec.min_page_recall:.2f} (p{rec.min_page})")
         elif rec.document_recall is not None:
             parts.append(f"page-recall doc {rec.document_recall:.2f}")
+
+        unc = self.uncovered_text
+        if unc.max_page_share is None:
+            parts.append("uncovered n/a")
+        else:
+            parts.append(f"uncovered max {unc.max_page_share:.2f} (p{unc.max_page})")
 
         fid = self.export_fidelity
         for name, value in (("md", fid.md), ("chunks", fid.chunks)):
@@ -329,6 +380,11 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
             _check_page_recall(content, pdf_pages, converted=doc.pages.keys())
             if pdf_pages is not None
             else PageRecall(skipped=pdf_skip)
+        ),
+        uncovered_text=(
+            _check_uncovered_text(content, doc.pages, pdf_path)
+            if pdf_path is not None
+            else UncoveredText(skipped=pdf_skip)
         ),
         export_fidelity=_check_export_fidelity(content, exports, chunks),
         ligature_splits=(
@@ -637,6 +693,143 @@ def _check_page_recall(
         min_page_recall=worst[0] if worst is not None else None,
         flagged_pages=flagged,
         issues=issues,
+    )
+
+
+def _check_uncovered_text(
+    content: _DocContent, pages: Mapping[int, PageItem], pdf_path: Path
+) -> UncoveredText:
+    """Where the words are, which page recall does not look at: the printed
+    words of each converted page whose letters lie in no item box on that
+    page, of any item and content layer (a continuation boxed on the wrong
+    spot, a panel the layout left out). Text printed off the visible page is
+    left out; pages under ``PAGE_MIN_WORDS`` words are not flagged."""
+    import pypdfium2 as pdfium
+
+    boxes: dict[int, list[tuple[float, float, float, float]]] = {}
+    for item in content.items:
+        for prov in item.prov:
+            if prov.page_no in pages:
+                box = prov.bbox.to_top_left_origin(pages[prov.page_no].size.height)
+                boxes.setdefault(prov.page_no, []).append((box.l, box.t, box.r, box.b))
+
+    result = UncoveredText()
+    flagged: list[UncoveredTextPage] = []
+    pdf = pdfium.PdfDocument(pdf_path)
+    try:
+        for page_no in sorted(pages):
+            if not 1 <= page_no <= len(pdf):
+                continue
+            page = pdf[page_no - 1]
+            text, centres = _page_glyphs(page)
+            page.close()
+            flag = _uncovered_on_page(
+                page_no, text, centres, boxes.get(page_no, []), pages[page_no].size
+            )
+            result.chars += flag.chars
+            result.uncovered_chars += flag.uncovered_chars
+            result.words += flag.words
+            result.uncovered_words += flag.uncovered_words
+            if flag.words < PAGE_MIN_WORDS:
+                continue
+            result.pages_checked += 1
+            if result.max_page_share is None or flag.share > result.max_page_share:
+                result.max_page, result.max_page_share = page_no, flag.share
+            if (
+                flag.share > UNCOVERED_SHARE_MAX
+                or flag.uncovered_words >= UNCOVERED_WORDS_MAX
+            ):
+                flagged.append(flag)
+    finally:
+        pdf.close()
+
+    result.no_text_layer = not result.chars
+    result.flagged_pages = flagged
+    result.issues = [
+        f"p{flag.page}: {flag.uncovered_words} of {flag.words} words "
+        f"({flag.share:.0%}) outside every item box (e.g. {flag.sample!r})"
+        for flag in flagged
+    ]
+    return result
+
+
+def _page_glyphs(page: PdfPage) -> tuple[str, np.ndarray]:
+    """The characters of *page* in text order and the centre of each printed
+    one in Docling's frame, top-left of the page as displayed (CropBox,
+    ``/Rotate``; the inverse of ``text_repair._user_space_rect``). NaN for
+    spaces and the characters pdfium generates."""
+    import pypdfium2.raw as pdfium_c
+
+    left, bottom, right, top = page.get_bbox()
+    rotation = page.get_rotation()
+    textpage = page.get_textpage()
+    try:
+        count = textpage.count_chars()
+        chars: list[str] = []
+        centres = np.full((count, 2), np.nan)
+        for index in range(count):
+            char = chr(pdfium_c.FPDFText_GetUnicode(textpage.raw, index))
+            chars.append(char)
+            if char.isspace() or pdfium_c.FPDFText_IsGenerated(textpage.raw, index):
+                continue
+            char_left, char_bottom, char_right, char_top = textpage.get_charbox(index)
+            x, y = (char_left + char_right) / 2, (char_bottom + char_top) / 2
+            if rotation == 90:
+                centres[index] = (y - bottom, x - left)
+            elif rotation == 180:
+                centres[index] = (right - x, y - bottom)
+            elif rotation == 270:
+                centres[index] = (top - y, right - x)
+            else:
+                centres[index] = (x - left, top - y)
+        return "".join(chars), centres
+    finally:
+        textpage.close()
+
+
+def _uncovered_on_page(
+    page_no: int,
+    text: str,
+    centres: np.ndarray,
+    boxes: list[tuple[float, float, float, float]],
+    size: Size,
+) -> UncoveredTextPage:
+    x, y = centres[:, :1], centres[:, 1:]
+    # NaN compares false: spaces are neither shown nor uncovered.
+    shown = ((x >= 0) & (x <= size.width) & (y >= 0) & (y <= size.height)).ravel()
+    inside = np.zeros(len(text), dtype=bool)
+    if boxes:
+        left, top, right, bottom = np.asarray(boxes).T
+        tol = _BOX_TOLERANCE
+        inside = (
+            (x >= left - tol)
+            & (x <= right + tol)
+            & (y >= top - tol)
+            & (y <= bottom + tol)
+        ).any(axis=1)
+    uncovered = shown & ~inside
+
+    words = uncovered_words = 0
+    for match in _LETTER_WORD.finditer(text):
+        start, end = match.span()
+        letters = int(shown[start:end].sum())
+        if not letters:
+            continue
+        words += 1
+        if 2 * int(uncovered[start:end].sum()) > letters:
+            uncovered_words += 1
+    kept = "".join(
+        char if out and char.isprintable() else " "
+        for char, out in zip(text, uncovered)
+    )
+    return UncoveredTextPage(
+        page=page_no,
+        words=words,
+        uncovered_words=uncovered_words,
+        share=round(uncovered_words / words, 4) if words else 0.0,
+        chars=int(shown.sum()),
+        uncovered_chars=int(uncovered.sum()),
+        sample=" ".join(kept.split())[:_SAMPLE_CHARS],
     )
 
 

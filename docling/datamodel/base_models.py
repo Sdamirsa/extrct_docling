@@ -365,6 +365,9 @@ class Cluster(BaseModel):
     confidence: float = 1.0
     cells: list[TextCell] = []
     children: list["Cluster"] = []  # Add child cluster support
+    # Text printed across the page (a diagonal watermark): not part of the
+    # reading flow, written to the document's background layer.
+    overlay: bool = False
 
     @field_serializer("confidence")
     def _serialize(self, value: float, info: FieldSerializationInfo) -> float:

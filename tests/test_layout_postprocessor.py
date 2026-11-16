@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 import pytest
-from docling_core.types.doc import DocItemLabel, Size
+from docling_core.types.doc import CoordOrigin, DocItemLabel, Size
 from docling_core.types.doc.page import BoundingRectangle, TextCell
 
 from docling.datamodel.base_models import BoundingBox, Cluster, Page
@@ -35,6 +35,28 @@ def _cluster(
         label=label,
         bbox=bbox,
         confidence=confidence,
+    )
+
+
+def _diagonal_cell(index: int, text: str, *, start: float, end: float) -> TextCell:
+    """A 30-unit-high line of text rising at 45 degrees from (start, end) to
+    (end, start), top-left origin."""
+    return TextCell(
+        index=index,
+        rect=BoundingRectangle(
+            r_x0=start - 10.6,
+            r_y0=end - 10.6,
+            r_x1=end - 10.6,
+            r_y1=start - 10.6,
+            r_x2=end + 10.6,
+            r_y2=start + 10.6,
+            r_x3=start + 10.6,
+            r_y3=end + 10.6,
+            coord_origin=CoordOrigin.TOPLEFT,
+        ),
+        text=text,
+        orig=text,
+        from_ocr=False,
     )
 
 
@@ -131,6 +153,81 @@ def test_assign_cells_to_clusters_indexes_passed_clusters() -> None:
     assigned = postprocessor._assign_cells_to_clusters(current_clusters)
 
     assert [cell.index for cell in assigned[0].cells] == [0]
+
+
+def test_diagonal_watermark_stays_out_of_the_page_clusters() -> None:
+    # A heading and two paragraphs, with one watermark cell printed across
+    # them. Its upright box covers the page: assigned to a paragraph, or as an
+    # orphan cluster, it used to fold the page into a single text block.
+    lines = {
+        0: BoundingBox(l=50, t=40, r=200, b=52),
+        1: BoundingBox(l=50, t=80, r=350, b=92),
+        2: BoundingBox(l=50, t=100, r=350, b=112),
+        3: BoundingBox(l=50, t=120, r=350, b=132),
+        4: BoundingBox(l=50, t=180, r=350, b=192),
+        5: BoundingBox(l=50, t=200, r=350, b=212),
+        6: BoundingBox(l=50, t=220, r=350, b=232),
+        7: BoundingBox(l=50, t=240, r=350, b=252),
+        8: BoundingBox(l=50, t=260, r=350, b=272),
+        9: BoundingBox(l=50, t=280, r=350, b=292),
+    }
+    cells = [_text_cell(index, bbox) for index, bbox in lines.items()]
+    cells.append(_diagonal_cell(10, "Preprint not peer reviewed", start=40, end=360))
+    clusters = [
+        _cluster(0, BoundingBox(l=50, t=40, r=200, b=52), DocItemLabel.SECTION_HEADER),
+        _cluster(1, BoundingBox(l=50, t=80, r=350, b=132)),
+        _cluster(2, BoundingBox(l=50, t=180, r=350, b=292)),
+    ]
+
+    processed = LayoutPostprocessor(
+        _PageStub(cells), clusters, LayoutPostprocessorOptions()
+    )._process_regular_clusters()
+
+    assert [
+        (c.label, c.overlay, [cell.index for cell in c.cells]) for c in processed
+    ] == [
+        (DocItemLabel.SECTION_HEADER, False, [0]),
+        (DocItemLabel.TEXT, False, [1, 2, 3]),
+        (DocItemLabel.TEXT, False, [4, 5, 6, 7, 8, 9]),
+        (DocItemLabel.TEXT, True, [10]),
+    ]
+
+
+def test_small_tilted_text_is_not_an_overlay() -> None:
+    # A short tilted cell (a rotated label, a word with a raised citation
+    # number) belongs to the cluster it lies in, as before.
+    cells = [
+        _text_cell(0, BoundingBox(l=50, t=80, r=350, b=92)),
+        _text_cell(1, BoundingBox(l=50, t=100, r=350, b=112)),
+        _text_cell(2, BoundingBox(l=50, t=120, r=350, b=132)),
+        _diagonal_cell(3, "ring. 5", start=60, end=140),
+    ]
+    clusters = [_cluster(0, BoundingBox(l=50, t=80, r=350, b=132))]
+
+    processed = LayoutPostprocessor(
+        _PageStub(cells), clusters, LayoutPostprocessorOptions()
+    )._process_regular_clusters()
+
+    assert [(c.overlay, [cell.index for cell in c.cells]) for c in processed] == [
+        (False, [0, 1, 2, 3]),
+    ]
+
+
+def test_page_of_skewed_text_is_clustered_as_before() -> None:
+    # A scan fed in at an angle: every line is skewed, none is singled out.
+    cells = [
+        _diagonal_cell(0, "first line of the scanned page", start=40, end=360),
+        _diagonal_cell(1, "second line of the scanned page", start=70, end=390),
+    ]
+    clusters = [_cluster(0, BoundingBox(l=20, t=20, r=400, b=400))]
+
+    processed = LayoutPostprocessor(
+        _PageStub(cells), clusters, LayoutPostprocessorOptions()
+    )._process_regular_clusters()
+
+    assert [(c.overlay, [cell.index for cell in c.cells]) for c in processed] == [
+        (False, [0, 1]),
+    ]
 
 
 def test_cross_type_overlaps_removes_picture_coinciding_with_table() -> None:

@@ -4,6 +4,7 @@
 import logging
 import sys
 from collections import defaultdict
+from collections.abc import Collection
 
 from docling_core.types.doc import BoundingBox, DocItemLabel, Size
 from docling_core.types.doc.page import TextCell
@@ -146,6 +147,9 @@ class LayoutPostprocessor:
         DocItemLabel.DOCUMENT_INDEX: 0.45,
     }
 
+    OVERLAY_MIN_SKEW = 5.0
+    OVERLAY_MIN_PAGE_SHARE = 0.1
+
     LABEL_REMAPPING = {
         # DocItemLabel.DOCUMENT_INDEX: DocItemLabel.TABLE,
         DocItemLabel.TITLE: DocItemLabel.SECTION_HEADER,
@@ -230,10 +234,15 @@ class LayoutPostprocessor:
             if cluster.label in self.LABEL_REMAPPING:
                 cluster.label = self.LABEL_REMAPPING[cluster.label]
 
+        overlays: list[Cluster] = []
+
         # Conditionally assign cells to clusters
         if not self.options.skip_cell_assignment:
+            overlay_cells = self._find_overlay_cells()
             # Initial cell assignment
-            clusters = self._assign_cells_to_clusters(clusters)
+            clusters = self._assign_cells_to_clusters(
+                clusters, skip_cells=overlay_cells
+            )
 
             # Remove clusters with no cells (if keep_empty_clusters is False),
             # but always keep clusters with label DocItemLabel.FORMULA
@@ -260,9 +269,11 @@ class LayoutPostprocessor:
                             bbox=cell.to_bounding_box(),
                             confidence=conf,
                             cells=[cell],
+                            overlay=cell.index in overlay_cells,
                         )
                     )
-                clusters.extend(orphan_clusters)
+                overlays = [c for c in orphan_clusters if c.overlay]
+                clusters.extend(c for c in orphan_clusters if not c.overlay)
 
         # Iterative refinement
         prev_count = len(clusters) + 1
@@ -273,7 +284,43 @@ class LayoutPostprocessor:
             clusters = self._adjust_cluster_bboxes(clusters)
             clusters = self._remove_overlapping_clusters(clusters, "regular")
 
-        return clusters
+        return clusters + overlays
+
+    def _find_overlay_cells(self) -> set[int]:
+        """Indexes of the cells printed across the page, such as a diagonal
+        watermark.
+
+        The upright box of a skewed line of text is mostly empty. A watermark
+        is one cell whose box spans the page: assigned to a paragraph it
+        stretches the paragraph's box to its own, and as an orphan cluster it
+        contains every cluster of the page; either way overlap resolution
+        then folds the page into one text block. Such a cell is kept out of
+        cell assignment and overlap resolution, as a cluster of its own.
+
+        A cell is an overlay when it is off the page axes by more than
+        ``OVERLAY_MIN_SKEW`` degrees and its box takes up at least
+        ``OVERLAY_MIN_PAGE_SHARE`` of the page; tilted labels and words with
+        a raised glyph are far smaller. On a page where most of the text is
+        skewed (a scan fed in at an angle) nothing is singled out.
+        """
+        if self.page_size is None:
+            return set()
+        page_area = self.page_size.width * self.page_size.height
+        overlays: set[int] = set()
+        skewed_chars = upright_chars = 0
+        for cell in self.cells:
+            chars = len(cell.text.strip())
+            off_axis = cell.rect.angle_360 % 90
+            if min(off_axis, 90 - off_axis) <= self.OVERLAY_MIN_SKEW:
+                upright_chars += chars
+                continue
+            skewed_chars += chars
+            box_area = cell.rect.to_bounding_box().area()
+            if chars and box_area >= self.OVERLAY_MIN_PAGE_SHARE * page_area:
+                overlays.add(cell.index)
+        if skewed_chars >= upright_chars:
+            return set()
+        return overlays
 
     def _process_special_clusters(self) -> list[Cluster]:
         special_clusters = [
@@ -330,11 +377,13 @@ class LayoutPostprocessor:
             if cluster.label in self.CONTAINER_TYPES
         ]
 
+        # A watermark over a full-page table or figure is not part of it.
+        nestable = [c for c in self.regular_clusters if not c.overlay]
         nested_clusters = table_clusters + picture_clusters
         for cluster in nested_clusters:
             children = [
                 regular
-                for regular in self.regular_clusters
+                for regular in nestable
                 if regular.bbox.intersection_over_self(cluster.bbox) > 0.8
             ]
             self._set_cluster_children(cluster, children)
@@ -361,7 +410,7 @@ class LayoutPostprocessor:
             regular.id for child in nested_clusters for regular in child.children
         }
         parent_by_regular_id = {}
-        for child in self.regular_clusters:
+        for child in nestable:
             if child.id in nested_regular_ids:
                 continue
             parents = [
@@ -388,7 +437,7 @@ class LayoutPostprocessor:
             ]
             direct_children = [
                 regular
-                for regular in self.regular_clusters
+                for regular in nestable
                 if parent_by_regular_id.get(regular.id) == container.id
             ]
             self._set_cluster_children(container, direct_children + nested_children)
@@ -646,9 +695,13 @@ class LayoutPostprocessor:
         return unique_cells
 
     def _assign_cells_to_clusters(
-        self, clusters: list[Cluster], min_overlap: float = 0.2
+        self,
+        clusters: list[Cluster],
+        min_overlap: float = 0.2,
+        skip_cells: Collection[int] = (),
     ) -> list[Cluster]:
-        """Assign cells to best overlapping cluster."""
+        """Assign cells to best overlapping cluster; *skip_cells* (cell
+        indexes) stay unassigned."""
         for cluster in clusters:
             cluster.cells = []
 
@@ -658,7 +711,7 @@ class LayoutPostprocessor:
         cluster_index = SpatialClusterIndex(clusters)
 
         for cell in self.cells:
-            if not cell.text.strip():
+            if not cell.text.strip() or cell.index in skip_cells:
                 continue
 
             cell_bbox = cell.rect.to_bounding_box()

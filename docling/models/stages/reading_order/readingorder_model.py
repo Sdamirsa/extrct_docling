@@ -647,6 +647,8 @@ class ReadingOrderModel:
             content_layer = ContentLayer.BODY
             if element.label in [DocItemLabel.PAGE_HEADER, DocItemLabel.PAGE_FOOTER]:
                 content_layer = ContentLayer.FURNITURE
+            elif element.cluster.overlay:
+                content_layer = ContentLayer.BACKGROUND
 
             new_item = out_doc.add_text(
                 label=element.label,
@@ -719,8 +721,20 @@ class ReadingOrderModel:
                     )
                     parent_by_child_ref[child_ref] = container_ref
 
+            # Text printed across the page (a watermark) has no place in the
+            # reading flow: ordered with the rest it would sit between a
+            # paragraph and its continuation on the next page.
+            overlays = [
+                element
+                for element in page_elements
+                if assembled_by_ref[element.ref.cref].cluster.overlay
+            ]
+            overlay_cids = {element.cid for element in overlays}
+
             # Preserve assembled order as the predictor's deterministic tie-break input.
             for element in page_elements:
+                if element.cid in overlay_cids:
+                    continue
                 siblings_by_parent[parent_by_child_ref.get(element.ref.cref)].append(
                     element
                 )
@@ -756,6 +770,12 @@ class ReadingOrderModel:
                     el_merges_mapping.update(
                         self.ro_model.predict_merges(sorted_elements=siblings)
                     )
+
+            # After the elements of their page; the sort is stable and the
+            # predictor's order is by page.
+            ordered_siblings[None] = sorted(
+                ordered_siblings[None] + overlays, key=lambda element: element.page_no
+            )
 
             docling_doc: DoclingDocument = self._readingorder_elements_to_docling_doc(
                 conv_res,

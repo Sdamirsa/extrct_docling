@@ -3,6 +3,16 @@
 Drop test PDFs in this folder (e.g. `samples/my-paper.pdf`). Files here are
 gitignored except for this README.
 
+Layout since 2026-11-16:
+
+- `aca-papers/` — the working set: 18 papers and their 5 supplements.
+- `aca-papers_out/` — its bundles, one folder per PDF (see `RUN.md` for the
+  command).
+- `archived/` — the earlier sample sets (`14v1_for_aca`, `4new_for_aca`,
+  `supp_for_aca`, `S_20pdfs`, the first test PDFs) and their outputs from
+  earlier releases, kept as they were.
+- `figure-labeler-packs/` — packs made by `tools/figure-labeler/pack.py`.
+
 ## Convert (default — full artifact bundle)
 
 ```bash
@@ -71,7 +81,7 @@ from pathlib import Path
 from docling.engines import run_comparison
 
 result = run_comparison(
-    Path("samples/test-pdf-ai-manuscript.pdf"),
+    Path("samples/archived/test-pdf-ai-manuscript.pdf"),
     Path("samples/out"),
     vlm_preset="granite_docling",   # default — DocTags response → comparable bundles
 )

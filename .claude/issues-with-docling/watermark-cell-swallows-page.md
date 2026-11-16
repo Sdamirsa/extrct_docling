@@ -4,7 +4,7 @@
 |---|---|
 | **Severity** | High: the text survives, the structure does not — no headings, no paragraphs, captions and list items gone |
 | **Status** | Patched in this fork (after `extrct_docling-v2.131.0-r3`); upstream PR not yet opened |
-| **First-seen** | 2026-11-02 batch; root cause found 2026-11-16 on `samples/4new_for_aca/Eunjung Lee ssrn-7427517 (2).pdf` (SSRN "Preprint not peer reviewed") and `Wang_et_al_2026_…pdf` (accepted manuscript, "ARTICLE IN PRESS") |
+| **First-seen** | 2026-11-02 batch; root cause found 2026-11-16 on `samples/aca-papers/Eunjung Lee ssrn-7427517 (2).pdf` (SSRN "Preprint not peer reviewed") and `Wang_et_al_2026_…pdf` (accepted manuscript, "ARTICLE IN PRESS") |
 | **Affects** | `docling/utils/layout_postprocessor.py` (`_process_regular_clusters`), `docling/models/stages/reading_order/readingorder_model.py` |
 | **Upstream issue** | _not filed_ |
 

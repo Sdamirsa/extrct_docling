@@ -119,7 +119,7 @@ from pathlib import Path
 from docling.engines import PdfEngine
 
 out = PdfEngine(images_scale=1.5).convert(
-    Path("samples/test-pdf-ai-manuscript.pdf"),
+    Path("samples/archived/test-pdf-ai-manuscript.pdf"),
     output_dir=Path("samples/out"),
     make_html_preview=True,
 )

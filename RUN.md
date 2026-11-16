@@ -5,18 +5,28 @@ what happens to PDFs that were already processed.
 
 ## TL;DR — the command you need right now
 
-Six new PDFs landed in `samples/` today (`10732855.pdf`, `16107129.pdf`,
-`19912435.pdf`, `24890555.pdf`, `31778462.pdf`, `39748932.pdf`) and
-`samples/out/` already has results for the three older ones
-(`test-case-report1`, `test-case-report2`, `test-pdf-ai-manuscript`).
+The working set is `samples/aca-papers/` (18 papers and 5 supplements); its
+bundles go to `samples/aca-papers_out/`. Everything older (earlier sample
+sets and their outputs) is under `samples/archived/`.
 
-**Since `-r3`, `amir-batch` skips finished bundles by default.** A PDF is
-skipped when `samples/out/<stem>/run.json` says the conversion completed
-(`complete: true`, status SUCCESS or PARTIAL_SUCCESS, no step errors) for the
-same file (`source.binary_hash`, else name and size) with the same engine
-release and the same options; the row shows `SKIPPED` with the saved
-`check.json` summary. Anything else is converted again and the reason printed
-(`reconverting <stem>: engine version differs (2.131.0-r2 -> 2.131.0-r3)`,
+```bash
+uv run --no-sync amir-batch samples/aca-papers -o samples/aca-papers_out \
+    --supplement "PULSE Supplementary.pdf=Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language.pdf"
+```
+
+Four supplements are paired with their manuscript by file name
+(`AMIE-Mx Supplementary.pdf` ↔ `AMIE-Mx.pdf`); `--supplement` names the fifth,
+whose name shares nothing with its manuscript's. Run it from a clean checkout
+of the release tag so every `run.json` records the release with
+`git_dirty: false`.
+
+**`amir-batch` skips finished bundles by default.** A PDF is skipped when
+`<output>/<stem>/run.json` says the conversion completed (`complete: true`,
+status SUCCESS or PARTIAL_SUCCESS, no step errors) for the same file
+(`source.binary_hash`, else name and size) with the same engine release and
+the same options; the row shows `SKIPPED` with the saved `check.json`
+summary. Anything else is converted again and the reason printed
+(`reconverting <stem>: engine version differs (2.131.0-r3 -> 2.131.0-r4)`,
 `options differ (make_html_preview)`, `previous run had errors`, ...). So a
 new release reconverts every older bundle it is pointed at, on purpose, and
 the simple command is also the right one:

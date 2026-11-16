@@ -23,8 +23,8 @@
     },
     {
       "id": "F3",
-      "bundle": "samples/14v1_for_aca_out/HeartAgent",
-      "pdf": "samples/14v1_for_aca/HeartAgent.pdf",
+      "bundle": "samples/archived/14v1_for_aca_out/HeartAgent",
+      "pdf": "samples/archived/14v1_for_aca/HeartAgent.pdf",
       "self_ref": "#/pictures/1",
       "image_path": "images/picture_002.png",
       "expected_kind": "panel a: 3x3 grid of grouped bar charts with error bars (5 methods each); panel b: 3 stacked bar charts with printed %; raster",
@@ -32,8 +32,8 @@
     },
     {
       "id": "F4",
-      "bundle": "samples/14v1_for_aca_out/AMIE-Mx",
-      "pdf": "samples/14v1_for_aca/AMIE-Mx.pdf",
+      "bundle": "samples/archived/14v1_for_aca_out/AMIE-Mx",
+      "pdf": "samples/archived/14v1_for_aca/AMIE-Mx.pdf",
       "self_ref": "#/pictures/8",
       "image_path": "images/picture_009.png",
       "expected_kind": "Extended Data Fig. 2: 3x5 grid of line charts (retrieval metrics and win rates vs prompt tokens, log2 x axis), 3 series with 95% CI bands, star markers and dotted baselines; RASTER (one 3661x2460 bitmap), BiomedCLIP mislabels it forest_plot",
@@ -41,8 +41,8 @@
     },
     {
       "id": "F5",
-      "bundle": "samples/14v1_for_aca_out/AMIE-Cardiology",
-      "pdf": "samples/14v1_for_aca/AMIE-Cardiology.pdf",
+      "bundle": "samples/archived/14v1_for_aca_out/AMIE-Cardiology",
+      "pdf": "samples/archived/14v1_for_aca/AMIE-Cardiology.pdf",
       "self_ref": "#/pictures/3",
       "image_path": "images/picture_004.png",
       "expected_kind": "three pie charts (a, b, c: clinician survey responses), 5 slices each with printed percentages, vector wedges (BiomedCLIP says bar_chart 0.97)",
@@ -50,6 +50,6 @@
     }
   ],
   "fallbacks": [
-    {"bundle": "samples/14v1_for_aca_out/AMIE-Mx", "self_ref": "#/pictures/4", "image_path": "images/picture_005.png", "expected_kind": "3x5 grid of 2-series line charts (AMIE vs PCP over visits 1-3), vector"}
+    {"bundle": "samples/archived/14v1_for_aca_out/AMIE-Mx", "self_ref": "#/pictures/4", "image_path": "images/picture_005.png", "expected_kind": "3x5 grid of 2-series line charts (AMIE vs PCP over visits 1-3), vector"}
   ]
 }

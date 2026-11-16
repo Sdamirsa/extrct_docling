@@ -4,7 +4,7 @@
 |---|---|
 | **Severity** | High for batches — a native crash kills the whole `amir-batch` process, so every PDF queued after it is lost |
 | **Status** | Open; workaround in use (one process per PDF + retry) |
-| **First-seen** | 2026-10-01, processing `samples/S_20pdfs/` on the DGX Spark (GB10, Linux aarch64) |
+| **First-seen** | 2026-10-01, processing `samples/archived/S_20pdfs/` on the DGX Spark (GB10, Linux aarch64) |
 | **Affects** | OCR stage: `docling/models/stages/ocr/rapid_ocr_model.py` → `rapidocr/ch_ppocr_det/utils.py::resize` → `cv2.resize`; `opencv-python` 5.0.0, `onnxruntime` 1.29.0 (CPU), torch 2.14.0+cu130, Python 3.13 |
 | **Upstream issue** | _not filed_ |
 
@@ -26,10 +26,10 @@ gdb shows the fault inside `cv2/cv2.abi3.so` itself.
 ## Reproducer
 
 Local-only (the `samples/` tree is gitignored — the PDF is a copyrighted
-paper): `samples/S_20pdfs/19859766.pdf` (3 pages), fast config:
+paper): `samples/archived/S_20pdfs/19859766.pdf` (3 pages), fast config:
 
 ```bash
-uv run --frozen amir-batch samples/S_20pdfs/19859766.pdf -o /tmp/x \
+uv run --frozen amir-batch samples/archived/S_20pdfs/19859766.pdf -o /tmp/x \
   --picture-description off --no-granite-vision-tables --no-preview
 ```
 
@@ -62,9 +62,9 @@ costs one attempt of one PDF instead of the rest of the batch. Used for the
 2026-10-01 S_20pdfs re-run:
 
 ```bash
-for pdf in samples/S_20pdfs/*.pdf; do
+for pdf in samples/archived/S_20pdfs/*.pdf; do
   for attempt in 1 2 3; do
-    uv run --frozen amir-batch "$pdf" -o samples/S_20pdfs_out; rc=$?
+    uv run --frozen amir-batch "$pdf" -o samples/archived/S_20pdfs_out; rc=$?
     [ $rc -lt 128 ] && break
   done
 done

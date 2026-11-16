@@ -118,7 +118,7 @@ The same folder works without the browser:
 ```
 uv run --no-sync python tools/figure-labeler/pack.py <bundle_dir>... --out <folder> \
     [--refs "#/pictures/4,HeartAgent#/pictures/1"] [--types bar_chart,line_chart] \
-    [--pdf-dir samples/14v1_for_aca] [--hires-scale 3]
+    [--pdf-dir samples/aca-papers] [--hires-scale 3]
 ```
 
 Without `--refs` it packs every non-noise figure whose BiomedCLIP

@@ -18,9 +18,9 @@ only the column order within (b) is wrong.
 
 ### Concrete example
 
-Reproducer: [samples/test-pdf-ai-manuscript.pdf](../../samples/test-pdf-ai-manuscript.pdf) — *European Journal of Radiology*, two-column journal layout.
+Reproducer: [samples/archived/test-pdf-ai-manuscript.pdf](../../samples/archived/test-pdf-ai-manuscript.pdf) — *European Journal of Radiology*, two-column journal layout.
 
-The H2 list of the generated markdown (`samples/out/test-pdf-ai-manuscript/test-pdf-ai-manuscript.md`) starts:
+The H2 list of the generated markdown (`samples/archived/out/test-pdf-ai-manuscript/test-pdf-ai-manuscript.md`) starts:
 
 ```
 ## Reproducibility assessment of rapid strains in cardiac MRI: ...
@@ -56,7 +56,7 @@ All affected headings are on **page 2**. Bounding-box top-left coordinates
 Probe used:
 
 ```python
-out = PdfEngine().convert(Path("samples/test-pdf-ai-manuscript.pdf"))
+out = PdfEngine().convert(Path("samples/archived/test-pdf-ai-manuscript.pdf"))
 for item, _ in out.raw.document.iterate_items():
     if not hasattr(item, "text") or not item.text:
         continue

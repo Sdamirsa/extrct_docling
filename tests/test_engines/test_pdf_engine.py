@@ -9,6 +9,7 @@ import importlib.util
 import json
 import re
 import unicodedata
+from collections import Counter
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -341,6 +342,26 @@ def test_pdf_engine_writes_artifacts(tmp_path: Path) -> None:
     check = json.loads((pdf_dir / "check.json").read_text(encoding="utf-8"))
     assert check["bundle"] == pdf_dir.name
     assert output.check is not None and output.check.ok == check["ok"]
+
+    # Where each element sits, and what the conversion holds: the outline of
+    # structure.json is the document's section headers, and run.json counts
+    # the labels the document has.
+    assert output.structure_json == pdf_dir / "structure.json"
+    structure = json.loads(output.structure_json.read_text(encoding="utf-8"))
+    assert run["structure_version"] == structure["structure_version"]
+    headers = {
+        text["self_ref"]: text["level"]
+        for text in doc["texts"]
+        if text["label"] == "section_header"
+    }
+    assert headers
+    assert {entry["ref"]: entry["level"] for entry in structure["outline"]} == headers
+    items = [*doc["texts"], *doc["tables"], *doc["pictures"]]
+    assert set(structure["elements"]) == {item["self_ref"] for item in items}
+    labels = Counter(item["label"] for item in items)
+    assert run["quality"]["label_counts"] == dict(sorted(labels.items()))
+    assert run["quality"]["warnings"] == []
+    assert (run["document_role"], run["related"]) == ("manuscript", [])
 
 
 @pytest.mark.skipif(

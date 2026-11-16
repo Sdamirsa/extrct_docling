@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import functools
 import logging
+import re
 import sys
 import time
 from collections.abc import Callable
@@ -58,7 +59,8 @@ from docling.engines.export_check import (
 from docling.engines.figure_data.schema import FigureDataMode, FigureDataOptions
 from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
 from docling.engines.run_snapshot import ENGINE_VERSION, RunRecord, read_run_record
-from docling.engines.schemas import PdfConversionOutput
+from docling.engines.schemas import PdfConversionOutput, RelatedDocument
+from docling.engines.structure import DocumentRole
 from docling.engines.vlm_specs import PictureDescriptionPreset
 from docling.utils.utils import create_file_hash
 
@@ -121,6 +123,18 @@ class PlannedPdf(BaseModel):
     pdf_dir: Path
     file_size: int
     binary_hash: str = Field(description="Docling's SHA-256 of the file.")
+    document_role: DocumentRole = "manuscript"
+    related: list[RelatedDocument] = Field(default_factory=list)
+
+    def as_related(self, role: DocumentRole, pairing: str) -> RelatedDocument:
+        return RelatedDocument(
+            role=role,
+            file_name=self.path.name,
+            file_size_bytes=self.file_size,
+            binary_hash=self.binary_hash,
+            bundle=self.pdf_dir.name,
+            pairing=pairing,
+        )
 
 
 _DONE_STATUSES = {ConversionStatus.SUCCESS, ConversionStatus.PARTIAL_SUCCESS}
@@ -259,6 +273,29 @@ def main(
             ),
         ),
     ] = False,
+    pair_supplements: Annotated[
+        bool,
+        typer.Option(
+            "--pair-supplements/--no-pair-supplements",
+            help=(
+                "Record a PDF named like another of the batch plus "
+                "'Supplementary' ('supplement', 'supp', 'SI', 'appendix') as "
+                "that manuscript's supplement: run.json of both gets "
+                "'related', the supplement 'document_role'."
+            ),
+        ),
+    ] = True,
+    supplement: Annotated[
+        list[str] | None,
+        typer.Option(
+            "--supplement",
+            help=(
+                "SUPPLEMENT.pdf=MANUSCRIPT.pdf (file names of two PDFs of the "
+                "batch): record the first as the supplement of the second "
+                "when their names do not say so. Repeatable."
+            ),
+        ),
+    ] = None,
 ) -> None:
     """Run ``PdfEngine`` (or the comparison runner) on every PDF found."""
     console = Console()
@@ -279,6 +316,18 @@ def main(
         f"[green]{escape(str(output_dir))}[/green]"
     )
     plan = _plan_bundles(pdf_paths, output_dir, console, compare=compare)
+    try:
+        pairs = _pair_named_supplements(plan, supplement or [])
+    except ValueError as exc:
+        console.print(f"[red]--supplement: {escape(str(exc))}[/red]")
+        raise typer.Exit(code=2) from None
+    if pair_supplements:
+        pairs += _pair_supplements(plan)
+    for manuscript, paired in pairs:
+        console.print(
+            f"[cyan]supplement[/cyan] {escape(paired.path.name)} of "
+            f"{escape(manuscript.path.name)}"
+        )
 
     if check_only:
         rows = [_check_row(item.path, item.pdf_dir) for item in plan]
@@ -349,11 +398,7 @@ def main(
                         )
                         if vlm_engine is not None
                         else functools.partial(
-                            _run_single,
-                            pdf_path,
-                            pdf_dir,
-                            engine=engine,
-                            preview=preview,
+                            _run_single, item, engine=engine, preview=preview
                         )
                     )
                     rows.append(
@@ -430,6 +475,70 @@ def _plan_bundles(
     return plan
 
 
+_SUPPLEMENT_SUFFIX = re.compile(
+    r"[\s_.\-]+(?:supp(?:l(?:ement(?:ary|al)?)?)?\.?|si|appendix)"
+    r"(?:[\s_.\-]+(?:materials?|information|info|data|files?|appendix))?"
+    r"(?:[\s_.\-]*\d+)?$",
+    re.IGNORECASE,
+)
+_NAME_SEPARATORS = re.compile(r"[\s_\-]+")
+
+
+def _mark_pair(manuscript: PlannedPdf, supplement: PlannedPdf, pairing: str) -> None:
+    supplement.document_role = "supplement"
+    supplement.related.append(manuscript.as_related("manuscript", pairing))
+    manuscript.related.append(supplement.as_related("supplement", pairing))
+
+
+def _pair_named_supplements(
+    plan: list[PlannedPdf], specs: list[str]
+) -> list[tuple[PlannedPdf, PlannedPdf]]:
+    """Pair the PDFs of *plan* named in ``SUPPLEMENT.pdf=MANUSCRIPT.pdf``
+    *specs*; ValueError for a spec that does not name two PDFs of the plan."""
+    by_name: dict[str, list[PlannedPdf]] = {}
+    for item in plan:
+        by_name.setdefault(item.path.name, []).append(item)
+    pairs: list[tuple[PlannedPdf, PlannedPdf]] = []
+    for spec in specs:
+        names = [name.strip() for name in spec.split("=")]
+        if len(names) != 2:
+            raise ValueError(f"{spec!r} is not SUPPLEMENT.pdf=MANUSCRIPT.pdf")
+        found = [by_name.get(name, []) for name in names]
+        for name, items in zip(names, found, strict=True):
+            if len(items) != 1:
+                raise ValueError(f"{name!r} names {len(items)} PDFs of the batch")
+        supplement, manuscript = found[0][0], found[1][0]
+        _mark_pair(manuscript, supplement, "explicit")
+        pairs.append((manuscript, supplement))
+    return pairs
+
+
+def _pair_supplements(plan: list[PlannedPdf]) -> list[tuple[PlannedPdf, PlannedPdf]]:
+    """Mark each PDF of *plan* whose name is another's plus a supplement
+    suffix ("AMIE-Mx Supplementary.pdf" beside "AMIE-Mx.pdf") as that
+    manuscript's supplement and return the (manuscript, supplement) pairs. A
+    name that fits two manuscripts, and a PDF already paired, are left."""
+
+    def key(stem: str) -> str:
+        return _NAME_SEPARATORS.sub(" ", stem).strip().casefold()
+
+    by_key: dict[str, list[PlannedPdf]] = {}
+    for item in plan:
+        by_key.setdefault(key(item.path.stem), []).append(item)
+    pairs: list[tuple[PlannedPdf, PlannedPdf]] = []
+    for item in plan:
+        match = _SUPPLEMENT_SUFFIX.search(item.path.stem)
+        if match is None or item.document_role == "supplement":
+            continue
+        manuscripts = by_key.get(key(item.path.stem[: match.start()]), [])
+        if len(manuscripts) != 1:
+            continue
+        manuscript = manuscripts[0]
+        _mark_pair(manuscript, item, "file-name")
+        pairs.append((manuscript, item))
+    return pairs
+
+
 def _is_done(
     item: PlannedPdf, expected: dict[str | None, dict[str, Any]], console: Console
 ) -> bool:
@@ -502,12 +611,16 @@ def _with_retries(
     )
 
 
-def _run_single(
-    pdf_path: Path, pdf_dir: Path, *, engine: PdfEngine, preview: bool
-) -> BatchRow:
+def _run_single(item: PlannedPdf, *, engine: PdfEngine, preview: bool) -> BatchRow:
     started = time.monotonic()
-    out = engine.convert(pdf_path, pdf_dir=pdf_dir, make_html_preview=preview)
-    return _converted_row(pdf_path.name, out, time.monotonic() - started)
+    out = engine.convert(
+        item.path,
+        pdf_dir=item.pdf_dir,
+        make_html_preview=preview,
+        document_role=item.document_role,
+        related=item.related,
+    )
+    return _converted_row(item.path.name, out, time.monotonic() - started)
 
 
 def _run_compare(

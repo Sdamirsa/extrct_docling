@@ -13,6 +13,7 @@ from pydantic import BaseModel, Field
 
 from docling.datamodel.base_models import ConversionStatus
 from docling.engines.export_check import BundleCheck
+from docling.engines.structure import DocumentStructure, QualityReport
 
 
 class SourceKind(str, Enum):
@@ -39,6 +40,24 @@ class PdfEngineError(BaseModel):
 
     component: str
     message: str
+
+
+class RelatedDocument(BaseModel):
+    """Another PDF this one belongs with, as recorded in ``run.json``: the
+    manuscript of a supplement, or a supplement of a manuscript."""
+
+    role: Literal["manuscript", "supplement"]
+    file_name: str
+    file_size_bytes: int | None = None
+    binary_hash: str | None = Field(
+        None, description="Docling's SHA-256 of the file (``source.binary_hash``)."
+    )
+    bundle: str | None = Field(
+        None, description="Name of its bundle folder, next to this one."
+    )
+    pairing: str | None = Field(
+        None, description="How the two were paired, e.g. ``file-name``."
+    )
 
 
 class PdfConversionOutput(BaseModel):
@@ -143,6 +162,24 @@ class PdfConversionOutput(BaseModel):
     check: BundleCheck | None = Field(
         None,
         description="The bundle self-check written to ``check_json``.",
+    )
+    structure: DocumentStructure | None = Field(
+        None,
+        description=(
+            "Outline, per-element roles and links, and relabelled items "
+            "(:func:`~docling.engines.structure.structure_document`)."
+        ),
+    )
+    structure_json: Path | None = Field(
+        None, description="Path to ``structure.json``, when artifacts were written."
+    )
+    quality: QualityReport | None = Field(
+        None,
+        description=(
+            "Label counts and warnings (``run.json`` → ``quality``); a "
+            "blocking warning also sets ``status`` to PARTIAL_SUCCESS and "
+            "adds a ``quality`` error."
+        ),
     )
     # `raw` is not part of the serialisable schema — it carries the underlying
     # ConversionResult so callers can drop down to upstream APIs.

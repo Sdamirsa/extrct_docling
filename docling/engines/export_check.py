@@ -20,7 +20,9 @@ runs on bundles written by earlier releases without reconverting:
 - **tables** — degenerate grids, and the tables whose cells miss words of
   their box (the engine's stored ``cell_text_recall``);
 - **chunks** — empty chunks, chunks over the token budget, dangling refs;
-- **structure** — a paper that came out as a few blocks or without headings;
+- **structure** — a paper that came out as a few blocks or without headings
+  (the warnings of :func:`~docling.engines.structure.quality_report`, which
+  ``run.json`` carries under ``quality``);
 - **guards** — images on disk, noise pictures kept out of the markdown and
   marked in the HTML, the run's status;
 - **figure_data** — chart figures eligible for figure-to-data, those with
@@ -73,6 +75,7 @@ from docling.engines.run_snapshot import (
     write_text_atomic,
 )
 from docling.engines.serializers import ANNOTATION_CLOSE
+from docling.engines.structure import quality_report
 from docling.engines.text_repair import (
     LIGATURES,
     PDF_HYPHENATION,
@@ -97,8 +100,8 @@ DOCUMENT_RECALL_MIN = 0.97
 UNCOVERED_SHARE_MAX = 0.05
 UNCOVERED_WORDS_MAX = 30
 EXPORT_FIDELITY_MIN = 0.99
-MIN_BODY_TEXTS_PER_PAGE = 1.0
-HEADERLESS_MAX_PAGES = 5
+# Non-blocking quality warnings that are issues of a bundle all the same.
+_STRUCTURE_ISSUE_CODES = frozenset({"no_headings"})
 
 _TOP_MISSING = 5
 _EXAMPLES = 5
@@ -226,6 +229,10 @@ class StructureCheck(CheckBlock):
     pages: int = 0
     body_text_items: int = 0
     section_headers: int = 0
+    warnings: list[str] = Field(
+        default_factory=list,
+        description="Codes of every quality warning, issues or not.",
+    )
 
 
 class GuardCheck(CheckBlock):
@@ -419,7 +426,7 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
         ),
         tables=_check_tables(doc),
         chunks=_check_chunks(content, chunks, run),
-        structure=_check_structure(doc, content),
+        structure=_check_structure(doc),
         guards=_check_guards(pdf_dir, run, figures, table_rows, md_raw, tags),
         figure_data=_check_figure_data(
             _read_rows(pdf_dir / "figures.jsonl", FigureRow) or [], run
@@ -762,17 +769,28 @@ def _check_uncovered_text(
 ) -> UncoveredText:
     """Where the words are, which page recall does not look at: the printed
     words of each converted page whose letters lie in no item box on that
-    page, of any item and content layer (a continuation boxed on the wrong
-    spot, a panel the layout left out). Text printed off the visible page is
-    left out; pages under ``PAGE_MIN_WORDS`` words are not flagged."""
+    page, of any item (a continuation boxed on the wrong spot, a panel the
+    layout left out). Text printed off the visible page is left out; pages
+    under ``PAGE_MIN_WORDS`` words are not flagged.
+
+    A background item is a watermark printed across the page: its upright
+    box would cover every word, so it is not a box here, and as many
+    uncovered words as it holds are its own."""
     import pypdfium2 as pdfium
 
     boxes: dict[int, list[tuple[float, float, float, float]]] = {}
+    background_words: Counter[int] = Counter()
     for item in content.items:
         for prov in item.prov:
-            if prov.page_no in pages:
-                box = prov.bbox.to_top_left_origin(pages[prov.page_no].size.height)
-                boxes.setdefault(prov.page_no, []).append((box.l, box.t, box.r, box.b))
+            if prov.page_no not in pages:
+                continue
+            if item.content_layer == ContentLayer.BACKGROUND:
+                background_words[prov.page_no] += len(
+                    _LETTER_WORD.findall(_item_text(item))
+                )
+                continue
+            box = prov.bbox.to_top_left_origin(pages[prov.page_no].size.height)
+            boxes.setdefault(prov.page_no, []).append((box.l, box.t, box.r, box.b))
 
     result = UncoveredText()
     flagged: list[UncoveredTextPage] = []
@@ -787,6 +805,10 @@ def _check_uncovered_text(
             flag = _uncovered_on_page(
                 page_no, text, centres, boxes.get(page_no, []), pages[page_no].size
             )
+            own = min(flag.uncovered_words, background_words[page_no])
+            if own:
+                flag.uncovered_words -= own
+                flag.share = round(flag.uncovered_words / flag.words, 4)
             result.chars += flag.chars
             result.uncovered_chars += flag.uncovered_chars
             result.words += flag.words
@@ -1054,20 +1076,18 @@ def _check_chunks(
     )
 
 
-def _check_structure(doc: DoclingDocument, content: _DocContent) -> StructureCheck:
-    body_texts = [item for item in doc.texts if item.self_ref in content.body_refs]
-    headers = sum(1 for item in body_texts if isinstance(item, SectionHeaderItem))
-    pages = len(doc.pages)
-    issues: list[str] = []
-    if pages and len(body_texts) / pages < MIN_BODY_TEXTS_PER_PAGE:
-        issues.append(f"{len(body_texts)} body text items on {pages} pages")
-    if pages > HEADERLESS_MAX_PAGES and not headers:
-        issues.append(f"no section headers on {pages} pages")
+def _check_structure(doc: DoclingDocument) -> StructureCheck:
+    report = quality_report(doc)
     return StructureCheck(
-        pages=pages,
-        body_text_items=len(body_texts),
-        section_headers=headers,
-        issues=issues,
+        pages=report.pages,
+        body_text_items=report.body_text_items,
+        section_headers=report.section_headers,
+        warnings=[warning.code for warning in report.warnings],
+        issues=[
+            f"{warning.code}: {warning.detail}"
+            for warning in report.warnings
+            if warning.blocking or warning.code in _STRUCTURE_ISSUE_CODES
+        ],
     )
 
 

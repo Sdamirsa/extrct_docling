@@ -22,6 +22,8 @@ from docling.engines.cli import (
     RowStatus,
     _collect_pdfs,
     _compare_row,
+    _pair_named_supplements,
+    _pair_supplements,
     _plan_bundles,
     app,
 )
@@ -402,3 +404,96 @@ def test_compare_bundle_move_repoints_every_path(tmp_path: Path) -> None:
     )
     assert row.status is RowStatus.FAILURE
     assert row.failed
+
+
+@needs_fixture
+def test_supplement_is_paired_with_its_manuscript_by_file_name(tmp_path: Path) -> None:
+    """``<name> Supplementary.pdf`` beside ``<name>.pdf`` is recorded as its
+    supplement in both bundles and on the elements of the supplement's HTML;
+    a supplement without its manuscript in the batch is left alone."""
+    inputs = tmp_path / "in"
+    inputs.mkdir()
+    for name in ("AMIE-Mx.pdf", "AMIE-Mx Supplementary.pdf", "Other_SI.pdf"):
+        shutil.copyfile(FIXTURE_PDF, inputs / name)
+    out = tmp_path / "out"
+
+    unknown = _batch(str(inputs), "-o", str(out), "--supplement", "Other_SI.pdf=x.pdf")
+    assert unknown.exit_code == 2
+    assert "'x.pdf' names 0 PDFs of the batch" in unknown.output
+    assert not out.exists()
+
+    result = _batch(str(inputs), "-o", str(out))
+    assert result.exit_code == 0, result.output
+    assert "supplement AMIE-Mx Supplementary.pdf of AMIE-Mx.pdf" in result.output
+
+    def run(bundle: str) -> dict:
+        return json.loads((out / bundle / "run.json").read_text(encoding="utf-8"))
+
+    file_hash = create_file_hash(FIXTURE_PDF)
+    supplement = run("AMIE-Mx_Supplementary")
+    assert supplement["document_role"] == "supplement"
+    assert supplement["related"] == [
+        {
+            "role": "manuscript",
+            "file_name": "AMIE-Mx.pdf",
+            "file_size_bytes": FIXTURE_PDF.stat().st_size,
+            "binary_hash": file_hash,
+            "bundle": "AMIE-Mx",
+            "pairing": "file-name",
+        }
+    ]
+    manuscript = run("AMIE-Mx")
+    assert manuscript["document_role"] == "manuscript"
+    assert [(r["role"], r["bundle"]) for r in manuscript["related"]] == [
+        ("supplement", "AMIE-Mx_Supplementary")
+    ]
+    other = run("Other_SI")
+    assert (other["document_role"], other["related"]) == ("manuscript", [])
+
+    def element_roles(bundle: str) -> set[str]:
+        html = (out / bundle / f"{bundle}.html").read_text(encoding="utf-8")
+        tags = re.findall(r"<[a-z0-9]+ [^>]*data-self-ref=[^>]*>", html)
+        assert tags
+        return {
+            match.group(1)
+            if (match := re.search(r'data-document-role="([^"]+)"', tag))
+            else ""
+            for tag in tags
+        }
+
+    assert element_roles("AMIE-Mx_Supplementary") == {"supplement"}
+    assert element_roles("AMIE-Mx") == {""}
+    assert (
+        _manifest(out / "AMIE-Mx_Supplementary" / "AMIE-Mx_Supplementary.html")[
+            "structure"
+        ]["document_role"]
+        == "supplement"
+    )
+
+
+def test_supplement_named_on_the_command_line_is_paired(tmp_path: Path) -> None:
+    """``--supplement`` pairs two PDFs whose names share nothing, ahead of the
+    file-name rule."""
+    for name in ("Wang.pdf", "PULSE Supplementary.pdf", "PULSE.pdf"):
+        (tmp_path / name).write_bytes(name.encode())
+    plan = _plan_bundles(
+        sorted(tmp_path.glob("*.pdf")), tmp_path / "out", Console(), compare=False
+    )
+    by_name = {item.path.name: item for item in plan}
+
+    named = _pair_named_supplements(plan, ["PULSE Supplementary.pdf = Wang.pdf"])
+    by_rule = _pair_supplements(plan)
+
+    assert [(m.path.name, s.path.name) for m, s in named] == [
+        ("Wang.pdf", "PULSE Supplementary.pdf")
+    ]
+    assert by_rule == []
+    supplement = by_name["PULSE Supplementary.pdf"]
+    assert supplement.document_role == "supplement"
+    assert [(r.role, r.file_name, r.pairing) for r in supplement.related] == [
+        ("manuscript", "Wang.pdf", "explicit")
+    ]
+    assert [r.file_name for r in by_name["Wang.pdf"].related] == [
+        "PULSE Supplementary.pdf"
+    ]
+    assert by_name["PULSE.pdf"].related == []

@@ -13,6 +13,7 @@ from pathlib import Path
 import pytest
 from docling_core.types.doc import (
     BoundingBox,
+    ContentLayer,
     DocItemLabel,
     DoclingDocument,
     PictureMeta,
@@ -287,9 +288,22 @@ def test_uncovered_text_flags_words_whose_box_is_misplaced(
     ]
     backend.unload()
 
-    def bundle(name: str, boxed: list[tuple[str, BoundingBox]]) -> Path:
+    def bundle(
+        name: str, boxed: list[tuple[str, BoundingBox]], *, watermark: bool = False
+    ) -> Path:
         doc = DoclingDocument(name=name)
         doc.add_page(page_no=1, size=size)
+        if watermark:
+            doc.add_text(
+                label=DocItemLabel.TEXT,
+                text="Preprint not peer reviewed",
+                prov=ProvenanceItem(
+                    page_no=1,
+                    bbox=BoundingBox(l=0, t=size.height, r=size.width, b=0),
+                    charspan=(0, 26),
+                ),
+                content_layer=ContentLayer.BACKGROUND,
+            )
         for text, box in boxed:
             doc.add_text(
                 label=DocItemLabel.TEXT,
@@ -323,6 +337,15 @@ def test_uncovered_text_flags_words_whose_box_is_misplaced(
     assert all(piece in lower_text for piece in flags[0].sample.split())
     assert misplaced.page_recall.flagged_pages == []
     assert any(issue.startswith("uncovered_text: p1:") for issue in misplaced.issues)
+
+    # A watermark's upright box spans the page: it is not the box of the
+    # words under it.
+    watermarked = check_bundle(
+        bundle("watermarked", [*upper, (lower_text, too_high)], watermark=True),
+        cropped,
+    )
+    assert [flag.page for flag in watermarked.uncovered_text.flagged_pages] == [1]
+    assert watermarked.uncovered_text.flagged_pages[0].uncovered_words >= 30
 
 
 def _table_with_pdf_text(doc: DoclingDocument) -> TableItem:

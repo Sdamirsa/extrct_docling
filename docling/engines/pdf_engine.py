@@ -13,7 +13,7 @@ import re
 import shutil
 import sys
 import unicodedata
-from collections.abc import Collection, Iterator
+from collections.abc import Collection, Iterator, Sequence
 from pathlib import Path, PurePath, PurePosixPath
 from typing import Any, Optional
 
@@ -65,9 +65,18 @@ from docling.engines.schemas import (
     PageSummary,
     PdfConversionOutput,
     PdfEngineError,
+    RelatedDocument,
     SourceKind,
 )
 from docling.engines.serializers import export_markdown
+from docling.engines.structure import (
+    STRUCTURE_FILENAME,
+    STRUCTURE_VERSION,
+    DocumentRole,
+    quality_report,
+    structure_document,
+    write_structure,
+)
 from docling.engines.structured_outputs import write_structured_outputs
 from docling.engines.text_repair import (
     attach_table_pdf_text,
@@ -182,6 +191,9 @@ class PdfEngine:
         noise_repeat_threshold
             A picture whose rounded bbox repeats on at least this many pages
             is flagged as noise even without a classifier hit (default 3).
+            The same count makes a short line repeated in the top or bottom
+            margin a page header / footer
+            (:func:`~docling.engines.structure.structure_document`).
         picture_description
             VLM picture-description preset. Default ``"granite_vision_4b"``
             (``ibm-granite/granite-vision-4.1-4b``). Other values:
@@ -321,6 +333,8 @@ class PdfEngine:
         pdf_dir: Path | None = None,
         max_num_pages: int | None = None,
         make_html_preview: bool = False,
+        document_role: DocumentRole = "manuscript",
+        related: Sequence[RelatedDocument] = (),
     ) -> PdfConversionOutput:
         """Convert a single PDF from a local path or URL.
 
@@ -338,6 +352,19 @@ class PdfEngine:
             batch up-front, as the ``amir-batch`` CLI does.
         max_num_pages
             Optional cap on the number of pages to convert.
+        document_role
+            ``"supplement"`` when the PDF is supplementary material of a
+            manuscript; recorded in ``run.json`` and on every element of
+            ``<stem>.html``.
+        related
+            The PDFs this one belongs with (the manuscript of a supplement,
+            the supplements of a manuscript), recorded in ``run.json``.
+
+        After the conversion the structure pass settles labels, heading
+        levels and caption links (:mod:`docling.engines.structure`), and the
+        quality report counts what came out: a blocking warning (the text
+        packed into a few blocks, no text at all) is added to ``errors`` as
+        component ``quality`` and turns ``status`` into PARTIAL_SUCCESS.
 
         A failing step after the conversion (an export, the chunker, the
         check...) is recorded in ``errors`` with its component, and the next
@@ -384,6 +411,23 @@ class PdfEngine:
                 repair_ligature_splits(doc, pdf_page_words(local_pdf))
             with _step(errors, "table_pdf_text"):
                 attach_table_pdf_text(doc, local_pdf)
+        with _step(errors, "structure"):
+            output.structure = structure_document(
+                doc,
+                pdf_path=local_pdf,
+                document_role=document_role,
+                repeat_threshold=self._noise_repeat_threshold,
+            )
+        with _step(errors, "quality"):
+            output.quality = quality_report(doc)
+            for warning in output.quality.blocking:
+                errors.append(
+                    PdfEngineError(
+                        component="quality",
+                        message=f"{warning.code}: {warning.detail}",
+                    )
+                )
+                output.status = ConversionStatus.PARTIAL_SUCCESS
         with _step(errors, "export_to_markdown"):
             output.markdown = export_markdown(doc, image_mode=ImageRefMode.PLACEHOLDER)
 
@@ -408,6 +452,8 @@ class PdfEngine:
                 started_at=started_at,
                 finished_at=finished_at,
                 make_html_preview=make_html_preview,
+                document_role=document_role,
+                related=related,
             )
         return output
 
@@ -421,6 +467,8 @@ class PdfEngine:
         started_at: _dt.datetime,
         finished_at: _dt.datetime,
         make_html_preview: bool,
+        document_role: DocumentRole,
+        related: Sequence[RelatedDocument],
     ) -> None:
         doc = result.document
         errors = output.errors
@@ -444,6 +492,9 @@ class PdfEngine:
                 output.nodes_jsonl = artifacts.nodes_jsonl
                 output.picture_images = artifacts.picture_images
                 output.table_images = artifacts.table_images
+            if output.structure is not None:
+                with _step(errors, "structure"):
+                    output.structure_json = write_structure(pdf_dir, output.structure)
             if self._figure_data is not None and output.document_json is not None:
                 # Before the chunker and the exports: they show the tables.
                 with _step(errors, "figure_data"):
@@ -535,6 +586,16 @@ class PdfEngine:
                 pictures_extracted=len(output.picture_images),
                 tables_extracted=len(output.table_images),
                 errors=[e.model_dump() for e in errors],
+                document_role=document_role,
+                related=[r.model_dump(exclude_none=True) for r in related],
+                structure_version=(
+                    STRUCTURE_VERSION if output.structure is not None else None
+                ),
+                quality=(
+                    output.quality.model_dump(mode="json")
+                    if output.quality is not None
+                    else None
+                ),
             )
 
         if self._embed_images:
@@ -547,6 +608,7 @@ class PdfEngine:
                     tables_jsonl=output.tables_jsonl,
                     chunks_jsonl=output.chunks_jsonl,
                     run=snapshot(complete=False) if self._save_artifacts else None,
+                    structure=output.structure,
                 )
 
         if not self._save_artifacts:
@@ -666,6 +728,7 @@ def _bundle_files(pdf_dir: Path) -> tuple[Path, ...]:
         "chunks.jsonl",
         "tables.jsonl",
         "figures.jsonl",
+        STRUCTURE_FILENAME,
         RUN_JSON_FILENAME,
         CHECK_FILENAME,
         f"{stem}.md",

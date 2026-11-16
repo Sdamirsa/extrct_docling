@@ -70,10 +70,18 @@ def build_run_snapshot(
     pictures_extracted: int,
     tables_extracted: int,
     errors: list[dict[str, Any]],
+    document_role: str = "manuscript",
+    related: list[dict[str, Any]] | None = None,
+    structure_version: str | None = None,
+    quality: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """The ``run.json`` content, without writing it. ``complete`` says the
     engine ran every step of the bundle; *binary_hash* is Docling's SHA-256
-    of the source file (``InputDocument.document_hash``)."""
+    of the source file (``InputDocument.document_hash``). *related* names the
+    PDFs this one belongs with (its manuscript, its supplements);
+    *structure_version* is the version of the labelling rules, which changes
+    when a label, a heading level or a link can come out differently;
+    *quality* is the :class:`~docling.engines.structure.QualityReport`."""
     return {
         "schema_version": _SCHEMA_VERSION,
         "engine": engine_provenance(),
@@ -86,6 +94,10 @@ def build_run_snapshot(
         ),
         "status": status,
         "complete": complete,
+        "document_role": document_role,
+        "related": related or [],
+        "structure_version": structure_version,
+        "quality": quality,
         "timing": _timing_block(started_at, finished_at),
         "engine_config": engine_config,
         "pipeline_options": pipeline_options,

@@ -7,6 +7,7 @@
 | Topic | Path | Consult when |
 |---|---|---|
 | (none in baseline) | | Subdirectories materialize as packs install or you create them. |
+| Structure pass | `reference/structure/RULES.md` | Before changing a labelling rule, heading-level inference, a `data-*` attribute of `<stem>.html`, or a quality warning code (bump `STRUCTURE_VERSION`). |
 <!-- /managed:reference-catalog -->
 
 ## Subdirectories (populated by packs or by you)

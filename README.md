@@ -67,7 +67,9 @@ out/<pdf-name>/
 ├── figures.jsonl           🤖 one row per figure: caption, figure type, VLM description, noise flag
 ├── nodes.jsonl             🤖 every document node with bbox
 ├── document.json           🤖 full DoclingDocument (lossless)
-├── run.json                🧾 engine release + git commit, models, options, timing, package versions, errors
+├── structure.json          🧭 outline (heading levels), each element's role / section / caption links, relabelled items
+├── run.json                🧾 engine release + git commit, models, options, timing, package versions, errors,
+│                              quality (label counts + warnings), structure_version, related PDFs
 ├── check.json              ✅ self-check: every item in the HTML, PDF text recall per page, export fidelity, issues
 └── images/                 🖼️ page renders + figure/table crops
 ```
@@ -96,6 +98,8 @@ Known rough edges: some supplementary figures/tables have no detected caption, t
 - Markdown and chunks mark model-written text (`<!--<annotation kind="description">-->…<!--<annotation/>-->`) and keep a table's printed PDF text when the table model dropped words
 - Clickable HTML bbox viewer, linked + standalone versions, deep-linkable by `self_ref`
 - Agent-ready JSONL (chunks / tables / figures / nodes) + `run.json` provenance
+- Location for every element: `<h1>` title and `<h2>`..`<h6>` by heading level (from numbering, standard section names and the PDF's own type), `data-role` / `data-section-ref` on each block, tables and figures tied to their caption and number, running lines and watermarks marked as furniture / background instead of headings or body text (`structure.json`, `docling/engines/structure.py`)
+- A conversion that lost its structure does not report plain `SUCCESS`: `run.json` → `quality` has stable warning codes, a blocking one sets `PARTIAL_SUCCESS`
 - Standalone `<pdf-name>.html` that keeps everything Docling extracted (page headers/footers, text inside figures, table footnotes, reference numbers, formula text), marked rather than dropped
 - Noise filter for journal logos and repeated banners, which never hides a picture BiomedCLIP confidently calls a medical image
 - BiomedCLIP medical figure types (`ecg`, `ct`, `ultrasound`, `kaplan_meier`, ...)

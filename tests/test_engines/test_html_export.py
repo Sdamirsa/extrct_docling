@@ -10,6 +10,7 @@ import re
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+from typing import Any
 
 import pytest
 from docling_core.types.doc import (
@@ -34,6 +35,7 @@ from docling.engines.html_export import (
     write_document_html,
 )
 from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.structure import structure_document, write_structure
 
 FIXTURE_PDF = Path("tests/data/pdf/sources/2305.03393v1-pg9.pdf")
 
@@ -299,3 +301,121 @@ def test_manifest_holds_only_this_runs_sidecars(tmp_path: Path) -> None:
 
     rebuilt = _parse(rebuild_document_html(pdf_dir)).manifest
     assert [row["caption_text"] for row in rebuilt["tables"]] == ["from an earlier run"]
+
+
+def _line(text: str, page: int, top: float, size: float = 10.0) -> ProvenanceItem:
+    return ProvenanceItem(
+        page_no=page,
+        bbox=BoundingBox(
+            l=72,
+            t=top,
+            r=72 + 0.5 * size * len(text),
+            b=top + size,
+            coord_origin=CoordOrigin.TOPLEFT,
+        ),
+        charspan=(0, len(text)),
+    )
+
+
+def test_document_html_says_where_each_block_sits(tmp_path: Path) -> None:
+    """The title is ``<h1>``, section headers ``<h2>``/``<h3>`` by level, and
+    every block carries its role, its section and its links; a bundle without
+    ``structure.json`` gets them when its HTML is rebuilt."""
+    doc = DoclingDocument(name="paper")
+    for page_no in (1, 2, 3):
+        doc.add_page(page_no=page_no, size=Size(width=612, height=792))
+
+    def heading(text: str, page: int, top: float, size: float = 12.0) -> str:
+        return doc.add_heading(text=text, prov=_line(text, page, top, size)).self_ref
+
+    def text(text: str, page: int, top: float, **kwargs: Any) -> str:
+        return doc.add_text(
+            label=DocItemLabel.TEXT, text=text, prov=_line(text, page, top), **kwargs
+        ).self_ref
+
+    # In reading order.
+    banners = [heading("ARTICLE IN PRESS", 1, 20, 10)]
+    title = heading("A study of structure in converted papers", 1, 60, 18)
+    methods = heading("1 Methods", 1, 120)
+    design = heading("1.1 Study design", 1, 180, 11)
+    paragraph = text("Outcomes are listed in Table 2.", 1, 200)
+    watermark = text(
+        "Preprint not peer reviewed", 1, 300, content_layer=ContentLayer.BACKGROUND
+    )
+    banners.append(heading("ARTICLE IN PRESS", 2, 20, 10))
+    table_caption = text("Table 2. Outcomes by group", 2, 60)
+    table = doc.add_table(
+        data=TableData(
+            num_rows=1,
+            num_cols=1,
+            table_cells=[
+                TableCell(
+                    text="42",
+                    start_row_offset_idx=0,
+                    end_row_offset_idx=1,
+                    start_col_offset_idx=0,
+                    end_col_offset_idx=1,
+                )
+            ],
+        ),
+        prov=_line("x" * 40, 2, 90, size=60),
+    ).self_ref
+    heading("References", 2, 400)
+    banners.append(heading("ARTICLE IN PRESS", 3, 20, 10))
+
+    pdf_dir = tmp_path / "paper"
+    pdf_dir.mkdir()
+    doc.save_as_json(pdf_dir / "document.json")
+    # An earlier release's bundle: no structure.json.
+    parsed = _parse(rebuild_document_html(pdf_dir))
+
+    def tag_of(ref: str) -> str:
+        html = (pdf_dir / "paper.html").read_text(encoding="utf-8")
+        match = re.search(rf'<([a-z0-9]+) [^>]*data-self-ref="{re.escape(ref)}"', html)
+        assert match is not None
+        return match.group(1)
+
+    blocks = parsed.blocks
+    assert (tag_of(title), blocks[title]["data-role"]) == ("h1", "title")
+    assert (tag_of(methods), blocks[methods]["data-level"]) == ("h2", "1")
+    assert tag_of(design) == "h3"
+    assert blocks[design]["data-number"] == "1.1"
+    assert blocks[design]["data-parent-ref"] == methods
+    assert blocks[design]["data-level-source"] == "numbering"
+    assert blocks[paragraph]["data-role"] == "body"
+    assert blocks[paragraph]["data-section-ref"] == design
+    assert blocks[table]["data-number"] == "Table 2"
+    assert blocks[table]["data-caption-ref"] == table_caption
+    assert blocks[table]["data-first-mention-ref"] == paragraph
+    assert blocks[table]["data-first-mention-section-ref"] == design
+    assert blocks[table_caption]["data-for"] == table
+    assert blocks[table_caption]["data-role"] == "table-caption"
+    assert blocks[table_caption]["data-label-was"] == "text"
+    for ref in banners:
+        assert blocks[ref]["data-label"] == "page_header"
+        assert blocks[ref]["data-content-layer"] == "furniture"
+        assert blocks[ref]["data-label-source"] == "rule:repeated-text"
+        assert blocks[ref]["data-repeat-count"] == "3"
+    assert blocks[watermark]["data-role"] == "watermark"
+    assert set(parsed.ref_counts.values()) == {1}
+
+    outline = parsed.manifest["structure"]["outline"]
+    assert [(entry["level"], entry["title"]) for entry in outline] == [
+        (1, "Methods"),
+        (2, "Study design"),
+        (1, "References"),
+    ]
+    assert parsed.manifest["document"]["title"] == (
+        "A study of structure in converted papers"
+    )
+    assert parsed.manifest["tables"] == []
+
+    # A bundle that has structure.json is rebuilt from it, not recomputed.
+    structured = DoclingDocument.load_from_json(pdf_dir / "document.json")
+    structure = structure_document(structured, document_role="supplement")
+    structured.save_as_json(pdf_dir / "document.json")
+    write_structure(pdf_dir, structure)
+    rebuilt = _parse(rebuild_document_html(pdf_dir))
+    assert rebuilt.manifest["structure"]["document_role"] == "supplement"
+    assert rebuilt.blocks[paragraph]["data-document-role"] == "supplement"
+    assert rebuilt.blocks[banners[0]]["data-label-was"] == "section_header"

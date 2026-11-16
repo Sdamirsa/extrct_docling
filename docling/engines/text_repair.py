@@ -26,14 +26,16 @@ import logging
 import re
 import unicodedata
 from collections import Counter
+from collections.abc import Mapping
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, NamedTuple
 
 from docling_core.types.doc import (
     BoundingBox,
     ContentLayer,
     DescriptionAnnotation,
     DoclingDocument,
+    ProvenanceItem,
     TableItem,
     TextItem,
 )
@@ -256,6 +258,113 @@ def _user_space_rect(
     if rotation == 270:
         return right - box.b, top - box.r, right - box.t, top - box.l
     return left + box.l, top - box.b, left + box.r, top - box.t
+
+
+class GlyphStyle(NamedTuple):
+    """How a piece of text is printed: ``size`` is the font size on the page
+    in points (to the nearest half), heavier styles compare greater."""
+
+    size: float
+    bold: bool
+    upright: bool
+
+
+# Font descriptor flags (PDF 32000-1, table 123).
+_FONT_ITALIC = 1 << 6
+_FONT_FORCE_BOLD = 1 << 18
+_BOLD_WEIGHT = 600
+_BOLD_NAME = re.compile(r"bold|black|heavy|semibold|demi", re.IGNORECASE)
+_ITALIC_NAME = re.compile(r"italic|oblique", re.IGNORECASE)
+_STYLE_GRID = (8, 3)
+
+
+def pdf_text_styles(
+    pdf_path: Path, regions: Mapping[str, ProvenanceItem]
+) -> dict[str, GlyphStyle]:
+    """The style most of the characters printed in each region have, keyed as
+    *regions*; a region without text-layer characters is left out.
+
+    The layout model reports boxes, not type: whether two headings are set
+    alike is only in the PDF."""
+    import pypdfium2 as pdfium
+
+    by_page: dict[int, list[str]] = {}
+    for key, prov in regions.items():
+        by_page.setdefault(prov.page_no, []).append(key)
+    styles: dict[str, GlyphStyle] = {}
+    pdf = pdfium.PdfDocument(pdf_path)
+    try:
+        for page_no, keys in sorted(by_page.items()):
+            if not 1 <= page_no <= len(pdf):
+                continue
+            page = pdf[page_no - 1]
+            textpage = page.get_textpage()
+            try:
+                for key in keys:
+                    rect = _user_space_rect(page, regions[key].bbox)
+                    style = _region_style(textpage, rect)
+                    if style is not None:
+                        styles[key] = style
+            finally:
+                textpage.close()
+                page.close()
+    finally:
+        pdf.close()
+    return styles
+
+
+def _region_style(
+    textpage, rect: tuple[float, float, float, float]
+) -> GlyphStyle | None:
+    import ctypes
+
+    import pypdfium2.raw as pdfium_c
+
+    left, bottom, right, top = rect
+    columns, rows = _STYLE_GRID
+    x_step, y_step = (right - left) / columns, (top - bottom) / rows
+    indexes = {
+        textpage.get_index(
+            left + (column + 0.5) * x_step,
+            bottom + (row + 0.5) * y_step,
+            x_step / 2,
+            y_step / 2,
+        )
+        for column in range(columns)
+        for row in range(rows)
+    }
+    found: Counter[GlyphStyle] = Counter()
+    name = ctypes.create_string_buffer(256)
+    flags = ctypes.c_int()
+    matrix = pdfium_c.FS_MATRIX()
+    for index in indexes:
+        if index is None or index < 0:
+            continue
+        size = pdfium_c.FPDFText_GetFontSize(textpage.raw, index)
+        # The font size is in text space; a producer may set it to 1 and
+        # scale by the matrix instead.
+        if pdfium_c.FPDFText_GetMatrix(textpage.raw, index, matrix):
+            size *= (matrix.c**2 + matrix.d**2) ** 0.5
+        if size <= 0:
+            continue
+        flags.value = 0
+        pdfium_c.FPDFText_GetFontInfo(
+            textpage.raw, index, name, len(name), ctypes.byref(flags)
+        )
+        font = name.value.decode("utf-8", "replace")
+        weight = pdfium_c.FPDFText_GetFontWeight(textpage.raw, index)
+        found[
+            GlyphStyle(
+                size=round(size * 2) / 2,
+                bold=bool(
+                    _BOLD_NAME.search(font)
+                    or flags.value & _FONT_FORCE_BOLD
+                    or weight >= _BOLD_WEIGHT
+                ),
+                upright=not (_ITALIC_NAME.search(font) or flags.value & _FONT_ITALIC),
+            )
+        ] += 1
+    return found.most_common(1)[0][0] if found else None
 
 
 def get_table_pdf_text(table: TableItem) -> dict | None:

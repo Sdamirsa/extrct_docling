@@ -70,6 +70,8 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--skip-existing / --no-skip-existing` | **on** | Skip a PDF whose bundle is complete and error-free for the same file (binary hash, else name + size), engine release and options; otherwise reconvert and print why. |
 | `--retries` | `1` | Rerun a PDF that many more times when the engine raises, before marking it `EXCEPTION`. |
 | `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`), no conversion. |
+| `--pair-supplements / --no-pair-supplements` | **on** | A PDF named like another of the batch plus `Supplementary` (`supplement`, `supp`, `SI`, `appendix`, an optional number) is recorded as that manuscript's supplement: `run.json` of both gets `related` (role, file name, size, hash, bundle folder), the supplement `document_role: "supplement"`, and every element of its HTML `data-document-role`. |
+| `--supplement SUPP.pdf=MANUSCRIPT.pdf` | none | Pair two PDFs of the batch whose names do not say so (repeatable); recorded with `pairing: "explicit"`. |
 
 Defaults are VLM-heavy (`--granite-vision-tables` on, `--picture-description
 granite_vision_4b`) — expect first-run model downloads and a noticeably
@@ -114,7 +116,9 @@ nodes.jsonl            # one row per DocItem (iterate_items() order)
 chunks.jsonl           # HybridChunker output: text, headings, page_nos, self_refs
 tables.jsonl           # one row per table: caption, markdown, html, cells
 figures.jsonl          # one row per picture: caption, image_path, figure_type, vlm_caption, is_noise
-run.json               # env, timing, full engine_config/pipeline_options, errors, complete flag (written last)
+structure.json         # outline with heading levels; per element: role, section, number, caption links; relabelled items
+run.json               # env, timing, full engine_config/pipeline_options, errors, complete flag (written last),
+                       # quality (label counts, warnings), structure_version, document_role, related
 check.json             # bundle self-check: coverage, text-layer recall, fidelity, tables, chunks, issues
 images/                # page renders + picture/table crops
 preview.html           # bbox viewer — needs images/ alongside it, see below
@@ -127,8 +131,18 @@ figures inline) where every block carries `id`, `data-self-ref`,
 `data-label`, `data-page` and `data-bbox` (PDF points, top-left origin),
 figures add `data-figure-type`, and
 `<script id="extrct-manifest" type="application/json">` embeds the
-`figures` / `tables` / `chunks` rows and `run.json` (its `how_to_read` field
-explains the format).
+`figures` / `tables` / `chunks` rows, the outline and `run.json` (its
+`how_to_read` field explains the format).
+
+Each block also says where it sits: the title is `<h1>`, section headers are
+`<h2>`..`<h6>` with `data-level`, every block has `data-role` (`abstract`,
+`body`, `reference`, `table-caption`, ...) and `data-section-ref` (the
+section header it is under), a table or figure has `data-number`
+(`Table 2`) and `data-caption-ref`, its caption `data-for`. The rules and
+attribute list are in `.claude/reference/structure/RULES.md`; the same
+records are in `structure.json`. `run.json` → `quality.warnings` uses stable
+codes (`few_text_blocks`, `no_body_text`, `no_headings`, ...); a blocking
+one turns the status into `PARTIAL_SUCCESS`.
 
 Unlike the markdown and chunks, it leaves out nothing Docling extracted —
 every `document.json` item is one tagged element — and marks what isn't

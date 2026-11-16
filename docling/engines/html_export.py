@@ -15,10 +15,14 @@ this module adds what the rest of the bundle knows, so the file stands alone:
   logos and badges (``data-noise``), text inside figures (a collapsed
   ``details.extrct-figure-text`` in the figure) and table footnotes, which
   Docling's serializer skips;
+- every block says where it sits (:mod:`docling.engines.structure`): its
+  role, the section header it is under, heading level and number, and the
+  links between a table or figure and its caption; the title is ``<h1>`` and
+  section headers ``<h2>``..``<h6>`` by level;
 - figures carry the BiomedCLIP type as data attributes, and model-generated
   metadata is labelled as such (the paper's caption stays the caption);
 - a ``<script type="application/json" id="extrct-manifest">`` holds the
-  figures / tables / chunks rows and ``run.json``.
+  figures / tables / chunks rows, the outline and ``run.json``.
 """
 
 from __future__ import annotations
@@ -49,13 +53,19 @@ from docling_core.types.doc import (
     TableItem,
     TextItem,
 )
-from docling_core.types.doc.document import BaseMeta, NodeItem
+from docling_core.types.doc.document import BaseMeta, ListGroup, NodeItem
 from typing_extensions import override
 
 from docling.engines.figure_data.schema import CHART_DATA_META_KEY
 from docling.engines.figure_typing import META_KEY, get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
 from docling.engines.run_snapshot import engine_provenance
+from docling.engines.structure import (
+    DocumentStructure,
+    ElementInfo,
+    read_structure,
+    structure_document,
+)
 from docling.engines.text_repair import TABLE_PDF_TEXT_META_KEY, get_table_pdf_text
 
 _log = logging.getLogger(__name__)
@@ -95,7 +105,52 @@ _HOW_TO_READ = (
     "body table) / chunks.jsonl; image_path is relative to the bundle "
     "folder, the images themselves are inlined in the body. run.engine is "
     "the release that converted the PDF; html_written_by the one that wrote "
-    "this file (they differ when the HTML was regenerated from a bundle)."
+    "this file (they differ when the HTML was regenerated from a bundle). "
+    "Where an element sits (structure.structure_version names the rule set; "
+    "the same records are in structure.json): the paper's title is the h1 "
+    "with data-role='title'; section headers are h2..h6 with data-level (1 = "
+    "main section), data-level-source (numbering | standard-name | font-size "
+    "| position: what decided the level), data-number where numbered and "
+    "data-parent-ref (the header above). Every element has data-role: title, "
+    "front-matter, abstract, section, body, reference, back-matter, "
+    "supplement, figure, table, figure-caption, table-caption, "
+    "algorithm-caption (box-, scheme-, listing-), figure-text, table-text, "
+    "footnote, formula, code, form, page-header, page-footer, watermark. "
+    "Body elements have data-section-ref, the self_ref of the innermost "
+    "section header they sit under; structure.outline lists the headers "
+    "with level, number, title, page, parent, path and zone. A table or "
+    "figure has data-number as its caption prints it ('Table 2', 'Figure "
+    "S1', 'Supplementary Table 1') and data-caption-ref; the caption has "
+    "data-for and the same data-number; a table footnote has data-for. "
+    "data-first-mention-ref / data-first-mention-section-ref name the first "
+    "running-text element that cites the number and the section it is in: "
+    "use them where a manuscript prints its figures after the references. "
+    "A list item has data-parent-ref, the id of its list. An element whose "
+    "label a rule changed has data-label-was and data-label-source "
+    "(rule:repeated-text, a line repeated in the margin of data-repeat-count "
+    "pages; rule:caption-pattern; rule:standard-section-name; "
+    "rule:largest-heading-on-first-page); structure.relabels lists them. "
+    "data-content-layer='background' is text printed across the page (a "
+    "watermark). data-document-role='supplement' is on every element of a "
+    "supplement, and run.related names its manuscript."
+)
+
+# ElementInfo field -> attribute, in the order written.
+_STRUCTURE_ATTRS = (
+    ("role", "data-role"),
+    ("level", "data-level"),
+    ("level_source", "data-level-source"),
+    ("number", "data-number"),
+    ("section_ref", "data-section-ref"),
+    ("parent_ref", "data-parent-ref"),
+    ("caption_ref", "data-caption-ref"),
+    ("caption_for", "data-for"),
+    ("footnote_for", "data-for"),
+    ("first_mention_ref", "data-first-mention-ref"),
+    ("first_mention_section_ref", "data-first-mention-section-ref"),
+    ("label_was", "data-label-was"),
+    ("label_source", "data-label-source"),
+    ("repeat_count", "data-repeat-count"),
 )
 
 _EXTRA_CSS = """
@@ -104,6 +159,14 @@ _EXTRA_CSS = """
 .extrct-about p { margin: 0.3em 0; }
 .extrct-about code { font-size: 0.95em; }
 [data-content-layer] { color: #888; font-size: 0.8em; }
+details.extrct-outline ol { list-style: none; padding-left: 0; margin: 0.3em 0; }
+details.extrct-outline li { margin: 0.1em 0; }
+details.extrct-outline li[data-level="2"] { margin-left: 1.5em; }
+details.extrct-outline li[data-level="3"] { margin-left: 3em; }
+details.extrct-outline li[data-level="4"] { margin-left: 4.5em; }
+details.extrct-outline li[data-level="5"] { margin-left: 6em; }
+details.extrct-outline li[data-level="6"] { margin-left: 7.5em; }
+details.extrct-outline .extrct-page { color: #888; font-size: 0.85em; }
 figure[data-noise] { opacity: 0.5; }
 figure[data-noise]::before { content: "noise: " attr(data-noise); display: block;
   font-size: 0.75em; color: #a33; }
@@ -173,15 +236,25 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
 
     meta_serializer: HTMLMetaSerializer = _AgentMetaSerializer()
     noise_reasons: dict[str, str] = {}
+    structure: DocumentStructure | None = None
+
+    def _attrs(self, item: DocItem) -> dict[str, str]:
+        return _element_attrs(item, self.doc, self.structure)
 
     @override
     def serialize(
         self, *, item: NodeItem | None = None, **kwargs: Any
     ) -> SerializationResult:
         result = super().serialize(item=item, **kwargs)
+        if isinstance(item, ListGroup) and result.text.lstrip().startswith("<"):
+            # List items point at their list with data-parent-ref.
+            text = _with_attrs(
+                result.text, {"id": _anchor(item.self_ref)}, inline=False
+            )
+            return result.model_copy(update={"text": text})
         if not isinstance(item, DocItem):
             return result
-        attrs = _element_attrs(item, self.doc)
+        attrs = self._attrs(item)
         if item.self_ref in self.noise_reasons:
             attrs["data-noise"] = self.noise_reasons[item.self_ref]
         marker = item.marker.strip() if isinstance(item, ListItem) else ""
@@ -216,8 +289,7 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
 
     def _footnotes(self, item: FloatingItem) -> list[str]:
         return [
-            f"<div{_attr_str(_element_attrs(note, self.doc))}>"
-            f"{html.escape(note.text)}</div>"
+            f"<div{_attr_str(self._attrs(note))}>{html.escape(note.text)}</div>"
             for ref in item.footnotes
             if isinstance(note := ref.resolve(self.doc), TextItem)
         ]
@@ -303,7 +375,7 @@ class _AgentHTMLSerializer(HTMLDocSerializer):
         if len(parts) != len(captions) + 1:
             return result
         text = parts[0] + "".join(
-            _CAPTION_OPEN + _attr_str(_element_attrs(cap, self.doc)) + rest
+            _CAPTION_OPEN + _attr_str(self._attrs(cap)) + rest
             for cap, rest in zip(captions, parts[1:], strict=True)
         )
         return result.model_copy(update={"text": text})
@@ -318,6 +390,7 @@ def write_document_html(
     tables_jsonl: Path | None = None,
     chunks_jsonl: Path | None = None,
     run: dict[str, Any] | None = None,
+    structure: DocumentStructure | None = None,
 ) -> Path:
     """Write ``<pdf_dir>/<pdf_dir.name>.html`` and return its path.
 
@@ -325,6 +398,8 @@ def write_document_html(
     ``tables.jsonl`` / ``chunks.jsonl`` (None: no rows) and the *run*
     snapshot. Only these are read, not whatever an earlier run left in
     *pdf_dir*; :func:`rebuild_document_html` reads an existing bundle's.
+    *structure* is what the structure pass decided about *doc*; without it
+    the blocks carry no role, section or link attributes.
     """
     noise_reasons = {
         f.self_ref: f.noise_reason or "unknown"
@@ -339,6 +414,7 @@ def write_document_html(
             layers=set(ContentLayer),
         ),
         noise_reasons=noise_reasons,
+        structure=structure,
     )
     body_html = serializer.serialize().text
 
@@ -348,6 +424,7 @@ def write_document_html(
         tables=_read_jsonl(tables_jsonl),
         chunks=_read_jsonl(chunks_jsonl),
         run=run,
+        structure=structure,
     )
     title = manifest["document"]["title"] or doc.name
     head_extra = (
@@ -370,8 +447,14 @@ def write_document_html(
 
 
 def rebuild_document_html(pdf_dir: Path) -> Path:
-    """Regenerate ``<stem>.html`` for an existing bundle, without reconverting."""
+    """Regenerate ``<stem>.html`` for an existing bundle, without reconverting.
+
+    A bundle of a release before ``structure.json`` gets the structure pass
+    here, on the loaded document only: its HTML then carries roles, levels
+    and the relabelling, while its ``document.json`` keeps the labels of the
+    conversion (``data-label-was`` says which those were)."""
     doc = DoclingDocument.load_from_json(pdf_dir / "document.json")
+    structure = read_structure(pdf_dir) or structure_document(doc)
     noise_flags = [
         PictureNoiseFlag(
             self_ref=row.get("self_ref"),
@@ -394,10 +477,13 @@ def rebuild_document_html(pdf_dir: Path) -> Path:
             if run_path.exists()
             else None
         ),
+        structure=structure,
     )
 
 
-def _element_attrs(item: DocItem, doc: DoclingDocument) -> dict[str, str]:
+def _element_attrs(
+    item: DocItem, doc: DoclingDocument, structure: DocumentStructure | None = None
+) -> dict[str, str]:
     attrs = {
         "id": _anchor(item.self_ref),
         "data-self-ref": item.self_ref,
@@ -429,7 +515,21 @@ def _element_attrs(item: DocItem, doc: DoclingDocument) -> dict[str, str]:
         pdf_text = get_table_pdf_text(item)
         if pdf_text is not None:
             attrs["data-cell-text-recall"] = f"{pdf_text['cell_text_recall']:.3f}"
+    if structure is not None:
+        attrs.update(_structure_attrs(structure.elements.get(item.self_ref)))
+        if structure.document_role != "manuscript":
+            attrs["data-document-role"] = structure.document_role
     return attrs
+
+
+def _structure_attrs(info: ElementInfo | None) -> dict[str, str]:
+    if info is None:
+        return {}
+    return {
+        attr: str(value)
+        for field, attr in _STRUCTURE_ATTRS
+        if (value := getattr(info, field)) is not None
+    }
 
 
 def _rendered(node: NodeItem, doc: DoclingDocument, fragment: str) -> bool:
@@ -469,10 +569,18 @@ def _build_manifest(
     tables: list[dict[str, Any]],
     chunks: list[dict[str, Any]],
     run: dict[str, Any] | None,
+    structure: DocumentStructure | None = None,
 ) -> dict[str, Any]:
+    elements = structure.elements if structure is not None else {}
     for row in figures + tables:
         if row.get("self_ref"):
             row["element_id"] = _anchor(row["self_ref"])
+            info = elements.get(row["self_ref"])
+            if info is not None:
+                row["number"] = info.number
+                row["caption_ref"] = info.caption_ref
+                row["section_ref"] = info.section_ref
+                row["first_mention_ref"] = info.first_mention_ref
     for row in tables:
         row.pop("html", None)
     return {
@@ -487,6 +595,11 @@ def _build_manifest(
                 for no, p in sorted(doc.pages.items())
             ],
         },
+        "structure": (
+            structure.model_dump(mode="json", exclude={"elements"}, exclude_none=True)
+            if structure is not None
+            else None
+        ),
         "figures": figures,
         "tables": tables,
         "chunks": chunks,
@@ -543,13 +656,28 @@ def _about_header(manifest: dict[str, Any]) -> str:
     ]
     if model_txt:
         lines.append(f"<p><strong>Models:</strong> {model_txt}</p>")
+    outline = (manifest.get("structure") or {}).get("outline") or []
+    if outline:
+        entries = "".join(
+            f'<li data-level="{entry["level"]}">'
+            f'<a href="#{_anchor(entry["ref"])}">'
+            f"{html.escape(' '.join(filter(None, (entry.get('number'), entry['title']))))}"
+            f'</a> <span class="extrct-page">p{entry.get("page", "?")}</span></li>'
+            for entry in outline
+        )
+        lines.append(
+            f'<details class="extrct-outline"><summary><strong>Outline:</strong> '
+            f"{len(outline)} sections</summary><ol>{entries}</ol></details>"
+        )
     lines.append(
         "<p><strong>For agents:</strong> JSON manifest in "
         f'<code>&lt;script id="{MANIFEST_ID}"&gt;</code> (figures, tables, chunks, '
-        "run metadata, how_to_read). Each block has <code>id</code>, "
+        "outline, run metadata, how_to_read). Each block has <code>id</code>, "
         "<code>data-self-ref</code>, <code>data-page</code>, "
-        "<code>data-bbox</code>. Captions are the paper's; descriptions and "
-        "figure types are model-generated.</p>"
+        "<code>data-bbox</code>, <code>data-role</code> and "
+        "<code>data-section-ref</code> (the section header it is under). "
+        "Captions are the paper's; descriptions and figure types are "
+        "model-generated.</p>"
     )
     return f'<header class="extrct-about">{"".join(lines)}</header>'
 

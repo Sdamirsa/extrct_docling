@@ -114,6 +114,7 @@ Releases of this fork are git tags named `extrct_docling-v<docling version>-r<n>
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
+| [`extrct_docling-v2.131.0-r4`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r4) | 2026-11-16 | Docling v2.131.0 | **Reconvert watermarked PDFs:** a diagonal watermark (SSRN "Preprint not peer reviewed", a journal's "ARTICLE IN PRESS") no longer folds each page into one text block (a 20-page paper came out as 5 text items and no headings, status SUCCESS); the watermark is kept as background-layer text. Structure pass (`structure.json`, `structure_version` 1): title is `<h1>`, heading levels from numbering, standard section names and the PDF's own type (`<h2>`..`<h6>`, markdown `##`/`###`, chunk heading paths), `data-role` / `data-section-ref` on every block, tables and figures tied to their caption and number (`data-number`, `data-caption-ref`, `data-for`, first mention), a line repeated in the page margin becomes a page header/footer instead of a heading, caption-like headings (`Table S11. …`, `Algorithm 1 …`) become captions. `run.json` adds `quality` (label counts, warnings with stable codes; a blocking one — `few_text_blocks`, `no_body_text` — sets `PARTIAL_SUCCESS`), `document_role` and `related`; `amir-batch` pairs a supplement with its manuscript by file name or `--supplement`. Figure-to-data v1 (`--figure-data`, `amir-figdata`; off by default). Labels of some items differ from r3 bundles (title, captions, furniture): locators made against an r3 bundle of the same PDF may not hold |
 | [`extrct_docling-v2.131.0-r3`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r3) | 2026-11-04 | Docling v2.131.0 | Bundle self-check (`check.json`: every item in the HTML, PDF text-layer recall per page, export fidelity vs `document.json`, ligature splits, degenerate tables, empty chunks; `--check-only` re-checks existing bundles); `amir-batch` skips complete bundles (same file, release and options), retries engine exceptions, exits 1 / 3 / 0 for failures / check issues / clean, builds one engine per batch and suffixes colliding folder names; VLM captions no longer end in `<\|end_of_text\|>`; markdown and chunks mark VLM descriptions and carry a table's printed PDF text when the table model dropped words; heading-only chunks dropped; crops and noise flags matched by `self_ref`; table PDF-text recall read from the right region on cropped or rotated pages; Granite-Vision truncation logged; failed export steps recorded in `run.json` (written last, `complete: true`) instead of aborting the bundle; HTML manifest built from this run's files; `picture_area_threshold` 0.03 (was 0.05); `run.json` adds `engine.release`, `source.binary_hash`, torch CUDA build; a Granite-Vision table whose generation loops (budget hit) or whose grid is degenerate is redone by TableFormer matched to the PDF text cells (`tableformer_fallback`, default on) |
 | [`extrct_docling-v2.131.0-r2`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r2) | 2026-11-03 | Docling v2.131.0 | The HTML also keeps captions and footnotes of code blocks (a boxed prompt Docling reads as code loses its "Table SI.x" caption in Docling's HTML) and any other child of a text item; `html_written_by` in the manifest names the release that wrote the HTML when it differs from the one that converted the PDF (`rebuild_document_html`) |
 | [`extrct_docling-v2.131.0-r1`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r1) | 2026-11-03 | Docling v2.131.0 | First release: everything listed above, plus a cap on Granite-Vision table generation (it used the tokenizer's unset ~1e30 `model_max_length`, so a boxed prompt laid out like a table generated for over an hour) and, for a table whose model-typed cells miss words printed in its box, that box's PDF text in the HTML |
@@ -123,13 +124,13 @@ Pin it from another project:
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r3
+git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r4
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r3"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r4"
 ```
 
-In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r3"`).
+In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r4"`).
 
 ---
 

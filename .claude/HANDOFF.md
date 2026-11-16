@@ -6,7 +6,7 @@
 
 This is a fork of [`docling-project/docling`](https://github.com/docling-project/docling) (package name in this fork: `docling-slim`) that adds a small **Amir Engine** subpackage at `docling/engines/`. The engine wraps Docling's `DocumentConverter` and produces a fully-inspectable, agent-readable bundle for every PDF: linked + standalone markdown, full `DoclingDocument` JSON, per-node JSONL, chunked text JSONL, structured tables + figures JSONL, run metadata, page + figure + table images, and a clickable HTML preview. It also bundles a `amir-batch` CLI, a `run_comparison()` runner that A/Bs against a full-page VLM, and a noise filter that drops journal logos / repeated banners from the output. Phases 1+2+3 of the plan are done; phase 4 (LLM context enrichment) was deliberately dropped — downstream consumers run their own LLM over the chunks if they want.
 
-Branch `dgx` is current. Current release: **`extrct_docling-v2.131.0-r3`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r3); releases are `extrct_docling-v<docling version>-r<n>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must equal the part after `-v`; cut releases with the `release-tag` skill (`.claude/skills/release-tag/`, includes a sensitive-content scan), and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
+Branch `dgx` is current. Current release: **`extrct_docling-v2.131.0-r4`** (https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r4); releases are `extrct_docling-v<docling version>-r<n>` tags, `ENGINE_VERSION` in `docling/engines/run_snapshot.py` must equal the part after `-v`; cut releases with the `release-tag` skill (`.claude/skills/release-tag/`, includes a sensitive-content scan), and every `run.json` records it under `engine` (README § Releases). Push protocol: maintainer pushes themselves; do **not** push to `main`/`master` without explicit ask.
 
 ## 2 · What's in the repo
 
@@ -36,7 +36,7 @@ extrct_docling/
 ├── tests/test_engines/               # engine tests (pdf_engine, html_export, export_check, cli, figure_data); tests/data/figure_data/ holds the 5-figure smoke set + agent-made truth
 ├── tools/figure-labeler/             # local HTML labelling kit (pack.py → self-contained folder; validate.py); packs under samples/figure-labeler-packs/ (git-ignored)
 ├── showcase/                         # demo bundles of the first author's paper — CC BY-NC-ND 4.0, NOT MIT (showcase/LICENSE)
-├── samples/                          # gitignored except README — drop PDFs here
+├── samples/                          # gitignored except README — working set `aca-papers/` → `aca-papers_out/`; earlier sets and outputs under `archived/`
 ├── .claude/                          # project-local agent config
 │   ├── REPO_CONTEXT.md               # architecture cheat-sheet
 │   ├── AMIR_TODO.md                  # phase plan
@@ -172,7 +172,7 @@ uv run pytest tests/test_engines/ -q       # just engine tests (fast — 21 pass
 
 ## 9 · Known issues + non-obvious things to know
 
-- **Reading-order column-flip on mixed-layout pages** — `samples/test-pdf-ai-manuscript.pdf` is the reproducer. Docling's layout post-processor emits the right column before the left when a full-width region (abstract spillover) sits above a two-column body. Documented in `.claude/issues-with-docling/reading-order-mixed-layout-page.md`. Not yet filed upstream. Workaround #1 (`force_backend_text=True`) is hypothesised, untested. We ship as-is; revisit when a downstream consumer's hierarchy depends on order.
+- **Reading-order column-flip on mixed-layout pages** — `samples/archived/test-pdf-ai-manuscript.pdf` is the reproducer. Docling's layout post-processor emits the right column before the left when a full-width region (abstract spillover) sits above a two-column body. Documented in `.claude/issues-with-docling/reading-order-mixed-layout-page.md`. Not yet filed upstream. Workaround #1 (`force_backend_text=True`) is hypothesised, untested. We ship as-is; revisit when a downstream consumer's hierarchy depends on order.
 - **Upstream bug, patched in the fork: cross-page merges on pages of another size.** `ReadingOrderModel` converted the box of a paragraph's continuation with the height of the page the paragraph *starts* on, so a continuation from a landscape page (612 pt high) onto a portrait one (792 pt) landed 180 pt too low (showcase p7 `#/texts/44`: t 537 instead of 717). The fork passes the continuation's own page height (`readingorder_model.py`, `materialize_siblings`; test `tests/test_readingorder_cross_page_merge.py`); to be filed upstream. `check.json`'s `uncovered_text` is what catches this class of bug.
 - **OCR is rarely active** on born-digital PDFs — `pypdfium2` provides the text. RapidOCR fires only on figure-region crops and usually returns empty. The "RapidOCR returned empty result!" warning is normal. If you ever process scans, the right upgrade is `run_comparison(vlm_preset="nanonets_ocr2")`, not switching the OCR engine.
 - **vLLM** is not installed in this env. The engine defaults to `picture_description_engine="default"` which uses `AUTO_INLINE` and gracefully falls back to transformers. Forcing `"vllm"` without `pip install vllm` crashes the pipeline at convert time, not at engine construction.
@@ -215,8 +215,8 @@ python -c "from docling.engines import PdfEngine; print(PdfEngine)"
 To pin a release (so the consumer doesn't drift when `dgx` advances):
 
 ```bash
-cd vendor/extrct_docling && git checkout extrct_docling-v2.131.0-r3 && cd ../..
-git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_docling-v2.131.0-r3"
+cd vendor/extrct_docling && git checkout extrct_docling-v2.131.0-r4 && cd ../..
+git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_docling-v2.131.0-r4"
 ```
 
 ## 12 · What to do next (if you take over)

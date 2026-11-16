@@ -31,7 +31,9 @@ extrct_docling/
 │       ├── text_repair.py            # PDF text-layer checks: ligature rejoin, table PDF-text fallback
 │       ├── run_snapshot.py           # run.json (env + timing + models)
 │       └── cli.py                    # `amir-batch` typer CLI
-├── tests/test_engines/               # test_pdf_engine.py + test_html_export.py; 21 pass, 1 skip
+│       └── figure_data/              # figure-to-data v1 (2026-11-09): panels, evidence, vector/VLM/raster readers, verify, publish, scoring; `amir-figdata` CLI; design + results in .claude/reference/figure-data/
+├── tests/test_engines/               # engine tests (pdf_engine, html_export, export_check, cli, figure_data); tests/data/figure_data/ holds the 5-figure smoke set + agent-made truth
+├── tools/figure-labeler/             # local HTML labelling kit (pack.py → self-contained folder; validate.py); packs under samples/figure-labeler-packs/ (git-ignored)
 ├── showcase/                         # demo bundles of the first author's paper — CC BY-NC-ND 4.0, NOT MIT (showcase/LICENSE)
 ├── samples/                          # gitignored except README — drop PDFs here
 ├── .claude/                          # project-local agent config
@@ -215,7 +217,7 @@ git add vendor/extrct_docling && git commit -m "pin extrct_docling@extrct_doclin
 
 ## 12 · What to do next (if you take over)
 
-Start from `.claude/STATUS.md` (rewritten by every `/project-memory`); its Next steps are current: export self-checks in `amir-batch`, Granite-Vision vs TableFormer measured on the converted batches, the upstream Granite-Vision `max_new_tokens` report, small `-r3` items. Longer-standing options:
+Start from `.claude/STATUS.md` (rewritten by every `/project-memory`); its Next steps are current. Figure-to-data: `.claude/reference/figure-data/DESIGN.md` (decisions, wiring, schema) and `RESULTS-2026-11-09.md` (5-figure Gemma 4 test: panels and vector/printed routes exact, VLM pointing unusable → move numbers to deterministic colour geometry; then the 50-figure human set and the four-model comparison): export self-checks in `amir-batch`, Granite-Vision vs TableFormer measured on the converted batches, the upstream Granite-Vision `max_new_tokens` report, small `-r3` items. Longer-standing options:
 
 1. **Conversion quality on hard layouts.** The SSRN paper and figure-text leaks under §9 "Conversion weak spots". (The old "real GPU validation pass" item is done — see the 2026-08-07 and 2026-10-01 rows in `AMIR_STAGE.md`.) Older bundles (`showcase/`, earlier sample runs) predate `<stem>.html`; `rebuild_document_html(pdf_dir)` backfills it without reconverting.
 2. **Reading-order bug** — test workaround #1 (`force_backend_text=True`) on `test-pdf-ai-manuscript.pdf`. If it fixes the column flip, expose a `reading_order` knob on `PdfEngine`. Otherwise file upstream per the checklist in `issues-with-docling/reading-order-mixed-layout-page.md`.

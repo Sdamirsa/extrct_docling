@@ -11,7 +11,9 @@ On top of Docling's markdown serializer:
   ``<!--<annotation kind="description">-->…<!--<annotation/>-->``, so a reader
   can tell it from the paper's text. docling-core's ``mark_annotations`` knob
   only applies to items without ``meta``, and every picture of ours has meta
-  (figure type, classification), so the description meta field is marked here;
+  (figure type, classification), so the description meta field is marked here,
+  and so is the table of a figure's numbers a model read (``tabular_chart``,
+  ``<!--<annotation kind="chart_data">-->``; see :mod:`docling.engines.figure_data`);
 - a table whose cells miss words printed in its box (``amir__pdf_text``, see
   :func:`~docling.engines.text_repair.attach_table_pdf_text`) is followed by
   a ``Table text from the PDF (cell recall 0.61): …`` paragraph, so the
@@ -49,10 +51,12 @@ from docling.engines.figure_typing import TEXT_EXPORT_META_PARAMS
 from docling.engines.text_repair import get_table_pdf_text
 
 DESCRIPTION_OPEN = '<!--<annotation kind="description">-->'
+CHART_DATA_OPEN = '<!--<annotation kind="chart_data">-->'
 ANNOTATION_CLOSE = "<!--<annotation/>-->"
 TABLE_PDF_TEXT_PREFIX = "Table text from the PDF"
 
 _DESCRIPTION_FIELD = "description"
+_CHART_DATA_FIELD = "tabular_chart"
 _TEXT_EXPORT_PARAMS: dict[str, Any] = {
     **TEXT_EXPORT_META_PARAMS,
     "mark_annotations": True,
@@ -105,6 +109,9 @@ class _MarkedMetaSerializer(MarkdownMetaSerializer):
         text = super()._serialize_meta_field(meta, name, mark_meta, **kwargs)
         if text and name == _DESCRIPTION_FIELD:
             return f"{DESCRIPTION_OPEN}{text}{ANNOTATION_CLOSE}"
+        if text and name == _CHART_DATA_FIELD:
+            # Blank lines around the table, or markdown does not render it.
+            return f"{CHART_DATA_OPEN}\n\n{text}\n\n{ANNOTATION_CLOSE}"
         return text
 
 

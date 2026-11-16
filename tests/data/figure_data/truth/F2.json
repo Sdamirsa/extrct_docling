@@ -1,0 +1,897 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "showcase/default/Public-test-manuscript",
+  "self_ref": "#/pictures/6",
+  "image_path": "images/picture_007.png",
+  "page": 22,
+  "bbox": [
+   70.67131805419922,
+   684.873664855957,
+   493.43402099609375,
+   357.6940612792969
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    2,
+    0,
+    321,
+    246
+   ],
+   "title": "Raw Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Temperature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.9,
+      94.8
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "steel blue-gray (#8AB2C0)"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "semi-transparent band of the same hue; recorded as err_lo/err_hi of the Average rows"
+    }
+   ],
+   "data": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 73.19,
+     "err_lo": 72.35,
+     "err_hi": 75.19,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 75.94,
+     "err_lo": 74.43,
+     "err_hi": 78.4,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 77.83,
+     "err_lo": 67.06,
+     "err_hi": 85.76,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 71.79,
+     "err_hi": 78.4,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 71.31,
+     "err_lo": 69.52,
+     "err_hi": 73.11,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 69.52,
+     "err_hi": 83.12,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 69.52,
+     "err_hi": 78.21,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 80.57,
+     "err_lo": 74.62,
+     "err_hi": 83.12,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 78.78,
+     "err_lo": 74.81,
+     "err_hi": 84.06,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 79.72,
+     "err_lo": 72.16,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 73.11,
+     "err_lo": 69.33,
+     "err_hi": 78.78,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 72.83,
+     "err_lo": 64.61,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 48.46,
+     "err_lo": 42.89,
+     "err_hi": 55.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "red-circled marker (best temperature) at x=1; yellow-circled marker at x=0.6",
+    "x=1.4: band top hidden under the legend box; err_hi left null (visible band reaches 86.0, the true max is at least that)",
+    "x=1.8: band top hidden under the legend box; err_hi left null (visible band reaches 85.8, the true max is at least that)",
+    "plot area (inside axes) in crop px: [37, 21, 320, 210]; bbox_px is the full quadrant incl. title and axis labels",
+    "x axis label is misspelled 'Model Tempreature' in the figure; y gridlines sit at k/12 (25, 33.3, 41.7, 50, 58.3, 66.7, 75, 83.3, 91.7) and tick labels are truncated"
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    324,
+    0,
+    632,
+    246
+   ],
+   "title": "Best Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Temperature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.9,
+      94.8
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "blue (#00ACE6)"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "semi-transparent band of the same hue; recorded as err_lo/err_hi of the Average rows"
+    }
+   ],
+   "data": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 75.94,
+     "err_lo": 75.19,
+     "err_hi": 78.02,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 76.89,
+     "err_lo": 74.62,
+     "err_hi": 80.48,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 74.15,
+     "err_lo": 69.52,
+     "err_hi": 78.02,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 75.94,
+     "err_lo": 71.79,
+     "err_hi": 80.48,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 71.31,
+     "err_lo": 66.88,
+     "err_hi": 78.78,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 78.68,
+     "err_lo": 71.6,
+     "err_hi": 91.24,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 64.04,
+     "err_hi": 81.42,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 79.61,
+     "err_lo": 74.05,
+     "err_hi": 83.31,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 75.94,
+     "err_lo": 66.88,
+     "err_hi": 80.85,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 73.2,
+     "err_lo": 68.01,
+     "err_hi": 75.38,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 59.32,
+     "err_lo": 52.14,
+     "err_hi": 67.44,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 49.12,
+     "err_lo": 42.89,
+     "err_hi": 53.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 36.18,
+     "err_lo": 25.51,
+     "err_hi": 45.15,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "red-circled marker (best temperature) at x=1; yellow-circled marker at x=0",
+    "plot area (inside axes) in crop px: [350, 21, 632, 210]; bbox_px is the full quadrant incl. title and axis labels",
+    "x axis label is misspelled 'Model Tempreature' in the figure; y gridlines sit at k/12 (25, 33.3, 41.7, 50, 58.3, 66.7, 75, 83.3, 91.7) and tick labels are truncated"
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    2,
+    248,
+    321,
+    492
+   ],
+   "title": "Raw Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Temperature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.8,
+      94.9
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "gray-green (#6BA17F)"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "semi-transparent band of the same hue; recorded as err_lo/err_hi of the Average rows"
+    }
+   ],
+   "data": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 83.29,
+     "err_lo": 80.17,
+     "err_hi": 88.47,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 76.86,
+     "err_lo": 74.69,
+     "err_hi": 78.47,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 71.29,
+     "err_lo": 69.6,
+     "err_hi": 75.64,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 77.81,
+     "err_lo": 72.05,
+     "err_hi": 83.0,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 74.03,
+     "err_lo": 72.24,
+     "err_hi": 75.82,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 81.49,
+     "err_lo": 77.33,
+     "err_hi": 86.02,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 79.6,
+     "err_lo": 77.33,
+     "err_hi": 83.56,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 75.92,
+     "err_lo": 71.86,
+     "err_hi": 78.09,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 70.35,
+     "err_lo": 66.95,
+     "err_hi": 72.62,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 72.22,
+     "err_lo": 71.29,
+     "err_hi": 72.99,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 76.86,
+     "err_lo": 66.76,
+     "err_hi": 83.19,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 74.69,
+     "err_lo": 64.69,
+     "err_hi": 80.73,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 50.25,
+     "err_lo": 42.98,
+     "err_hi": 60.16,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "red-circled marker (best temperature) at x=0; yellow-circled marker at x=1.4",
+    "plot area (inside axes) in crop px: [37, 270, 320, 460]; bbox_px is the full quadrant incl. title and axis labels",
+    "x axis label is misspelled 'Model Tempreature' in the figure; y gridlines sit at k/12 (25, 33.3, 41.7, 50, 58.3, 66.7, 75, 83.3, 91.7) and tick labels are truncated"
+   ]
+  },
+  {
+   "id": "d",
+   "bbox_px": [
+    324,
+    248,
+    632,
+    492
+   ],
+   "title": "Best Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Temperature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.8,
+      94.9
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "green (#20CE60)"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "semi-transparent band of the same hue; recorded as err_lo/err_hi of the Average rows"
+    }
+   ],
+   "data": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 77.81,
+     "err_lo": 74.69,
+     "err_hi": 80.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 75.92,
+     "err_lo": 72.24,
+     "err_hi": 80.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 77.81,
+     "err_lo": 74.31,
+     "err_hi": 80.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 74.03,
+     "err_lo": 66.58,
+     "err_hi": 77.9,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 69.41,
+     "err_lo": 66.58,
+     "err_hi": 72.99,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 74.97,
+     "err_lo": 66.58,
+     "err_hi": 83.37,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 81.49,
+     "err_lo": 76.96,
+     "err_hi": 83.56,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 84.22,
+     "err_lo": 80.17,
+     "err_hi": 86.58,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 82.34,
+     "err_lo": 75.26,
+     "err_hi": 91.49,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 85.18,
+     "err_lo": 82.05,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 74.97,
+     "err_lo": 69.22,
+     "err_hi": 81.3,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 72.14,
+     "err_lo": 66.39,
+     "err_hi": 78.09,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 65.73,
+     "err_lo": 63.93,
+     "err_hi": 67.52,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "red-circled marker (best temperature) at x=1.4; yellow-circled marker at x=2",
+    "x=1.4: band top hidden under the legend box; err_hi left null (visible band reaches 86.0, the true max is at least that)",
+    "plot area (inside axes) in crop px: [350, 270, 632, 460]; bbox_px is the full quadrant incl. title and axis labels",
+    "x axis label is misspelled 'Model Tempreature' in the figure; y gridlines sit at k/12 (25, 33.3, 41.7, 50, 58.3, 66.7, 75, 83.3, 91.7) and tick labels are truncated"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-labeler",
+  "date": "2026-11-09",
+  "time_minutes": 30
+ },
+ "uncertain": [
+  "panel a x=1.4: err_hi null, band top hidden under legend",
+  "panel a x=1.8: err_hi null, band top hidden under legend",
+  "panel d x=1.4: err_hi null, band top hidden under legend",
+  "Values read from the PDF's embedded 1284x1003 bitmap (pypdfium2), not from the 634x490 crop; y calibrated by least squares on the 9 white gridlines at k/12 (max residual < 0.1 unit), x from the 13 white vertical gridlines; one y unit ~ 5.3 px, so marker-centre error ~ +/-0.3 unit",
+  "Marker centre = midpoint of the line-colour run at the tick column (+/-1 px); where a red/yellow ring overlays the marker the ring-pixel centroid was used instead",
+  "Band edges are antialiased and were thresholded at saturation > 20, so err_lo/err_hi may be ~0.2-0.5 unit inside the true edge",
+  "At steep segments (x=1.8, 2 in a and c; 1.6-2 in b) the line passes through the marker asymmetrically, confidence lowered to 0.75",
+  "err_lo/err_hi were read for all 52 points except 3 band tops hidden under the legend box"
+ ]
+}

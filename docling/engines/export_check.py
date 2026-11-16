@@ -22,7 +22,9 @@ runs on bundles written by earlier releases without reconverting:
 - **chunks** — empty chunks, chunks over the token budget, dangling refs;
 - **structure** — a paper that came out as a few blocks or without headings;
 - **guards** — images on disk, noise pictures kept out of the markdown and
-  marked in the HTML, the run's status.
+  marked in the HTML, the run's status;
+- **figure_data** — chart figures eligible for figure-to-data, those with
+  chart data, and how many of them reached the confidence threshold.
 
 Word recall is multiset recall over NFKC + casefolded runs of two or more
 letters or digits.
@@ -59,6 +61,10 @@ from docling.datamodel.base_models import (
     degenerate_table_reason,
     table_filled_fraction,
 )
+from docling.engines.figure_data.eligibility import is_eligible
+from docling.engines.figure_data.evidence import FigureRow
+from docling.engines.figure_data.publish import panel_confidence
+from docling.engines.figure_data.schema import ChartData, FigureDataOptions
 from docling.engines.run_snapshot import (
     ENGINE_VERSION,
     RunRecord,
@@ -230,6 +236,18 @@ class GuardCheck(CheckBlock):
     noise_unmarked_in_html: list[str] = Field(default_factory=list)
 
 
+class FigureDataCheck(CheckBlock):
+    """Chart data read from the figures (:mod:`docling.engines.figure_data`):
+    *verified* figures have every panel's median value confidence at the
+    markdown threshold, the others count as *low_confidence*."""
+
+    mode: str | None = None
+    eligible: int = 0
+    extracted: int = 0
+    verified: int = 0
+    low_confidence: int = 0
+
+
 class BundleCheck(BaseModel):
     """Result of :func:`check_bundle`; ``ok`` and ``issues`` roll up the
     blocks' issues."""
@@ -252,6 +270,9 @@ class BundleCheck(BaseModel):
     chunks: ChunkCheck
     structure: StructureCheck
     guards: GuardCheck
+    figure_data: FigureDataCheck = Field(
+        default_factory=lambda: FigureDataCheck(skipped="not checked")
+    )
 
     @model_validator(mode="after")
     def _roll_up(self) -> Self:
@@ -274,6 +295,7 @@ class BundleCheck(BaseModel):
             ("chunks", self.chunks),
             ("structure", self.structure),
             ("guards", self.guards),
+            ("figure_data", self.figure_data),
         )
 
     def summary_line(self) -> str:
@@ -322,6 +344,9 @@ class BundleCheck(BaseModel):
         )
         if self.chunks.skipped is None:
             parts.append(f"{self.chunks.empty} empty chunks")
+        figs = self.figure_data
+        if figs.skipped is None:
+            parts.append(f"charts {figs.verified}/{figs.extracted}/{figs.eligible}")
         parts.append("OK" if self.ok else f"{len(self.issues)} issues")
         return " · ".join(parts)
 
@@ -396,7 +421,43 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
         chunks=_check_chunks(content, chunks, run),
         structure=_check_structure(doc, content),
         guards=_check_guards(pdf_dir, run, figures, table_rows, md_raw, tags),
+        figure_data=_check_figure_data(
+            _read_rows(pdf_dir / "figures.jsonl", FigureRow) or [], run
+        ),
     )
+
+
+def _check_figure_data(rows: list[FigureRow], run: RunRecord | None) -> FigureDataCheck:
+    configured = (
+        run.engine_config.get("figure_data") if run is not None else None
+    ) or None
+    if configured is None and not any(row.chart_data for row in rows):
+        return FigureDataCheck(skipped="figure data not run")
+    options = (
+        FigureDataOptions.model_validate(configured)
+        if configured is not None
+        else FigureDataOptions()
+    )
+    result = FigureDataCheck(mode=options.mode if configured is not None else None)
+    for row in rows:
+        result.eligible += is_eligible(row, options)
+        if not row.chart_data:
+            continue
+        result.extracted += 1
+        chart = ChartData.model_validate(row.chart_data)
+        confidences = [panel_confidence(p) for p in chart.panels]
+        if chart.panels and all(
+            c is not None and c >= options.min_confidence_for_markdown
+            for c in confidences
+        ):
+            result.verified += 1
+    result.low_confidence = result.extracted - result.verified
+    if configured is not None and result.extracted < result.eligible:
+        result.issues.append(
+            f"{result.eligible - result.extracted} of {result.eligible} chart "
+            "figure(s) without chart data"
+        )
+    return result
 
 
 def write_bundle_check(pdf_dir: Path, check: BundleCheck) -> Path:

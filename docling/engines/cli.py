@@ -55,6 +55,7 @@ from docling.engines.export_check import (
     check_bundle,
     write_bundle_check,
 )
+from docling.engines.figure_data.schema import FigureDataMode, FigureDataOptions
 from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
 from docling.engines.run_snapshot import ENGINE_VERSION, RunRecord, read_run_record
 from docling.engines.schemas import PdfConversionOutput
@@ -214,6 +215,21 @@ def main(
             ),
         ),
     ] = True,
+    figure_data: Annotated[
+        FigureDataMode,
+        typer.Option(
+            "--figure-data",
+            help=(
+                "Read the numbers behind chart figures with a local VLM "
+                "(Ollama): 'simple' (one call per figure) or 'measured' "
+                "(panels, axis calibration, pointed marks). Default off."
+            ),
+        ),
+    ] = "off",
+    figure_data_model: Annotated[
+        str,
+        typer.Option("--figure-data-model", help="Ollama model for --figure-data."),
+    ] = FigureDataOptions().model,
     skip_existing: Annotated[
         bool,
         typer.Option(
@@ -280,6 +296,9 @@ def main(
         ),
         picture_area_threshold=picture_area_threshold,
         figure_types=figure_types,
+        figure_data=FigureDataOptions(mode=figure_data, model=figure_data_model)
+        if figure_data != "off"
+        else None,
     )
     vlm_engine = (
         build_full_page_vlm_engine(vlm_preset, figure_types=figure_types)

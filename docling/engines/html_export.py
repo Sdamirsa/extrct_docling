@@ -52,6 +52,7 @@ from docling_core.types.doc import (
 from docling_core.types.doc.document import BaseMeta, NodeItem
 from typing_extensions import override
 
+from docling.engines.figure_data.schema import CHART_DATA_META_KEY
 from docling.engines.figure_typing import META_KEY, get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
 from docling.engines.run_snapshot import engine_provenance
@@ -64,7 +65,8 @@ MANIFEST_SCHEMA = "extrct.document-html/1"
 
 # The generic picture classifier is unreliable on medical figures (it calls
 # ECGs "Line chart"); its label stays in the manifest, not in the visible meta.
-_BLOCKED_META = {"classification", TABLE_PDF_TEXT_META_KEY}
+# The chart-data record is in the manifest; its table is tabular_chart.
+_BLOCKED_META = {"classification", TABLE_PDF_TEXT_META_KEY, CHART_DATA_META_KEY}
 
 _HOW_TO_READ = (
     "Every content block in the body carries id, data-self-ref (same refs as "

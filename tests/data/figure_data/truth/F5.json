@@ -1,0 +1,282 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Cardiology",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 4,
+  "bbox": [
+   42.34874694793496,
+   742.074057993796,
+   558.5089500724229,
+   631.1269062588351
+  ]
+ },
+ "source_kind": "vector",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    6,
+    235,
+    167
+   ],
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [
+    {
+     "name": "Did the AI help your assessment?",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": "Did the AI help your assessment?",
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": "Did the AI help your assessment?",
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "40.2%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": "Did the AI help your assessment?",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": "Did the AI help your assessment?",
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": "Did the AI help your assessment?",
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "3.7%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges start at centre), centre user-space (92.0,676.4), radius 45.7 pt; slice fill colours top-to-bottom of legend = ['salmon', 'pink', 'lightgrey', 'lightblue', 'dodgerblue']; bbox_px clamped to crop",
+    "Yes, definitely: printed 16.8% vs wedge angle 16.8% (label-to-wedge angular offset 4 deg)",
+    "Yes, probably: printed 40.2% vs wedge angle 40.2% (label-to-wedge angular offset 1 deg)",
+    "Neither yes nor no: printed 30.8% vs wedge angle 30.8% (label-to-wedge angular offset 1 deg)",
+    "No, probably not: printed 8.4% vs wedge angle 8.4% (label-to-wedge angular offset 5 deg)",
+    "No, definitely not: printed 3.7% vs wedge angle 3.7% (label-to-wedge angular offset 2 deg)"
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    256,
+    7,
+    501,
+    167
+   ],
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [
+    {
+     "name": "Did the AI make you more confident?",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": "Did the AI make you more confident?",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": "Did the AI make you more confident?",
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "36.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": "Did the AI make you more confident?",
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32.7%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": "Did the AI make you more confident?",
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12.1%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": "Did the AI make you more confident?",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges start at centre), centre user-space (269.3,676.4), radius 45.7 pt; slice fill colours top-to-bottom of legend = ['salmon', 'pink', 'lightgrey', 'lightblue', 'dodgerblue']; bbox_px clamped to crop",
+    "Yes, definitely: printed 15.9% vs wedge angle 15.9% (label-to-wedge angular offset 2 deg)",
+    "Yes, probably: printed 36.4% vs wedge angle 36.4% (label-to-wedge angular offset 3 deg)",
+    "Neither yes nor no: printed 32.7% vs wedge angle 32.7% (label-to-wedge angular offset 8 deg)",
+    "No, probably not: printed 12.1% vs wedge angle 12.1% (label-to-wedge angular offset 5 deg)",
+    "No, definitely not: printed 2.8% vs wedge angle 2.8% (label-to-wedge angular offset 4 deg)"
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    529,
+    7,
+    773,
+    167
+   ],
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [
+    {
+     "name": "Did the AI save you time?",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "Saved more than 50% of my time",
+     "x": null,
+     "series": "Did the AI save you time?",
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "23.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Saved more than 10% of my time",
+     "x": null,
+     "series": "Did the AI save you time?",
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "27.1%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Not sure",
+     "x": null,
+     "series": "Did the AI save you time?",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Delayed me by more than 10%",
+     "x": null,
+     "series": "Did the AI save you time?",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Delayed me by more than 50%",
+     "x": null,
+     "series": "Did the AI save you time?",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges start at centre), centre user-space (441.8,676.4), radius 45.7 pt; slice fill colours top-to-bottom of legend = ['salmon', 'pink', 'lightgrey', 'lightblue', 'dodgerblue']; bbox_px clamped to crop",
+    "Saved more than 50% of my time: printed 23.4% vs wedge angle 23.4% (label-to-wedge angular offset 3 deg)",
+    "Saved more than 10% of my time: printed 27.1% vs wedge angle 27.1% (label-to-wedge angular offset 4 deg)",
+    "Not sure: printed 30.8% vs wedge angle 30.9% (label-to-wedge angular offset 10 deg)",
+    "Delayed me by more than 10%: printed 15.9% vs wedge angle 15.9% (label-to-wedge angular offset 8 deg)",
+    "Delayed me by more than 50%: printed 2.8% vs wedge angle 2.8% (label-to-wedge angular offset 2 deg)"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-labeler",
+  "date": "2026-11-09",
+  "time_minutes": 25
+ },
+ "uncertain": [
+  "Printed slices sum to 99.9 (panels a, b) and 100.0 (panel c); the 0.1 deficit is rounding in the source, not a missing slice.",
+  "Charts are full pies (wedges start at the centre), not donuts as the earlier probe suggested; kind kept as 'pie'.",
+  "Panel bbox_px spans title + pie + legend of each third (union of all page objects in that third), not the pie disc alone.",
+  "Percent labels were matched to wedges by angular position around the pie centre; every match also agrees with the wedge's measured angle to within 0.1 percentage point (max gap: panel c 'Not sure' 30.8 printed vs 30.9 geometric), see panel notes."
+ ]
+}

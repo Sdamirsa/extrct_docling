@@ -36,6 +36,7 @@ from docling_core.types.doc.document import MetaUtils, PictureMeta
 from pydantic import BaseModel
 
 from docling.datamodel.accelerator_options import AcceleratorDevice
+from docling.engines.figure_data.schema import CHART_DATA_META_KEY
 from docling.engines.text_repair import TABLE_PDF_TEXT_META_KEY
 from docling.utils.accelerator_utils import decide_device
 
@@ -91,7 +92,8 @@ META_KEY = MetaUtils.create_meta_field_name(namespace=_META_NAMESPACE, name=_MET
 TEXT_EXPORT_META_PARAMS: dict[str, Any] = {
     "include_picture_classification": False,
     # TABLE_PDF_TEXT_META_KEY: a table box's PDF text, kept for the HTML only.
-    "blocked_meta_names": {META_KEY, TABLE_PDF_TEXT_META_KEY},
+    # CHART_DATA_META_KEY: the chart-data record; its table is tabular_chart.
+    "blocked_meta_names": {META_KEY, TABLE_PDF_TEXT_META_KEY, CHART_DATA_META_KEY},
 }
 
 

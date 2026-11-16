@@ -1,0 +1,4925 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Mx",
+  "self_ref": "#/pictures/8",
+  "image_path": "images/picture_009.png",
+  "page": 15,
+  "bbox": [
+   80.32162857050544,
+   744.3642735899143,
+   519.8502799154192,
+   449.382782384436
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "r1c1",
+   "bbox_px": [
+    1,
+    4,
+    167,
+    124
+   ],
+   "title": "Retriever recall",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Retrieval performance",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.075,
+      1.041
+     ],
+     "ticks": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.3756,
+     "err_lo": 0.3615,
+     "err_hi": 0.3956,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.5611,
+     "err_lo": 0.546,
+     "err_hi": 0.5741,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8268,
+     "err_lo": 0.7937,
+     "err_hi": 0.8529,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9532,
+     "err_lo": 0.9371,
+     "err_hi": 0.9672,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9632,
+     "err_lo": 0.9451,
+     "err_hi": 0.9772,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9812,
+     "err_lo": 0.9672,
+     "err_hi": 0.9953,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.3756,
+     "err_lo": 0.3605,
+     "err_hi": 0.3986,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5811,
+     "err_lo": 0.5591,
+     "err_hi": 0.6042,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8399,
+     "err_lo": 0.8158,
+     "err_hi": 0.8619,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9341,
+     "err_lo": 0.9181,
+     "err_hi": 0.9572,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9632,
+     "err_lo": 0.9482,
+     "err_hi": 0.9772,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9812,
+     "err_lo": 0.9672,
+     "err_hi": 0.9953,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.3555,
+     "err_lo": 0.3415,
+     "err_hi": 0.3766,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.5611,
+     "err_lo": 0.537,
+     "err_hi": 0.5841,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.8088,
+     "err_lo": 0.7787,
+     "err_hi": 0.8529,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9161,
+     "err_lo": 0.893,
+     "err_hi": 0.9321,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9632,
+     "err_lo": 0.9482,
+     "err_hi": 0.9772,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9812,
+     "err_lo": 0.9672,
+     "err_hi": 0.9953,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9993,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [49, 20, 160, 107]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=64k; read from the red line drawn over it (same value within one line width)",
+    "green line hidden at x=512k; read from the red line drawn over it (same value within one line width)",
+    "green line hidden at x=1M; read from the red line drawn over it (same value within one line width)",
+    "blue line hidden at x=32k; read from the green line drawn over it (same value within one line width)",
+    "blue line hidden at x=512k; read from the red line drawn over it (same value within one line width)",
+    "blue line hidden at x=1M; read from the red line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r1c2",
+   "bbox_px": [
+    167,
+    4,
+    291,
+    124
+   ],
+   "title": "Citation recall",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Retrieval performance",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.075,
+      1.041
+     ],
+     "ticks": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.3725,
+     "err_lo": 0.3575,
+     "err_hi": 0.3936,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.524,
+     "err_lo": 0.5049,
+     "err_hi": 0.5601,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.7506,
+     "err_lo": 0.7105,
+     "err_hi": 0.7787,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8368,
+     "err_lo": 0.8218,
+     "err_hi": 0.8509,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8038,
+     "err_lo": 0.7827,
+     "err_hi": 0.8188,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.7907,
+     "err_lo": 0.7566,
+     "err_hi": 0.8148,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.3725,
+     "err_lo": 0.3575,
+     "err_hi": 0.3866,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.537,
+     "err_lo": 0.5109,
+     "err_hi": 0.5691,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8118,
+     "err_lo": 0.7386,
+     "err_hi": 0.8469,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8138,
+     "err_lo": 0.7967,
+     "err_hi": 0.8378,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8198,
+     "err_lo": 0.7817,
+     "err_hi": 0.8529,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.7907,
+     "err_lo": 0.7606,
+     "err_hi": 0.8108,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.948,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.3555,
+     "err_lo": 0.3415,
+     "err_hi": 0.3756,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.553,
+     "err_lo": 0.531,
+     "err_hi": 0.5821,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.7977,
+     "err_lo": 0.7727,
+     "err_hi": 0.8419,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.886,
+     "err_lo": 0.8449,
+     "err_hi": 0.9181,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.904,
+     "err_lo": 0.885,
+     "err_hi": 0.9231,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9261,
+     "err_lo": 0.906,
+     "err_hi": 0.9482,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.989,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [173, 20, 284, 107]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=1M; read from the blue line drawn over it (same value within one line width)",
+    "blue line hidden at x=32k; read from the green line drawn over it (same value within one line width)",
+    "blue star blob 14px after opening (crossed by or merged with a line); centroid of the visible core used"
+   ]
+  },
+  {
+   "id": "r1c3",
+   "bbox_px": [
+    291,
+    4,
+    415,
+    124
+   ],
+   "title": "Retriever F1",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Retrieval performance",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.075,
+      1.041
+     ],
+     "ticks": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.5059,
+     "err_lo": 0.4919,
+     "err_hi": 0.524,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.6142,
+     "err_lo": 0.5932,
+     "err_hi": 0.6283,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.5851,
+     "err_lo": 0.5631,
+     "err_hi": 0.6112,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.3916,
+     "err_lo": 0.3665,
+     "err_hi": 0.4107,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.2151,
+     "err_lo": 0.1981,
+     "err_hi": 0.2432,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.1158,
+     "err_lo": 0.1008,
+     "err_hi": 0.1289,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.4929,
+     "err_lo": 0.4778,
+     "err_hi": 0.5129,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.6343,
+     "err_lo": 0.6162,
+     "err_hi": 0.6483,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5851,
+     "err_lo": 0.5661,
+     "err_hi": 0.6032,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.3916,
+     "err_lo": 0.3735,
+     "err_hi": 0.4107,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.2151,
+     "err_lo": 0.1991,
+     "err_hi": 0.2402,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.1158,
+     "err_lo": 0.1008,
+     "err_hi": 0.1289,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.4839,
+     "err_lo": 0.4698,
+     "err_hi": 0.5009,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.6142,
+     "err_lo": 0.5912,
+     "err_hi": 0.6283,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.5661,
+     "err_lo": 0.536,
+     "err_hi": 0.6002,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.3745,
+     "err_lo": 0.3555,
+     "err_hi": 0.3966,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.2151,
+     "err_lo": 0.1981,
+     "err_hi": 0.2402,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.1158,
+     "err_lo": 0.1008,
+     "err_hi": 0.1299,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9993,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [297, 20, 409, 107]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=64k; read from the red line drawn over it (same value within one line width)",
+    "green line hidden at x=128k; read from the blue line drawn over it (same value within one line width)",
+    "green line hidden at x=256k; read from the blue line drawn over it (same value within one line width)",
+    "green line hidden at x=512k; read from the red line drawn over it (same value within one line width)",
+    "green line hidden at x=1M; read from the red line drawn over it (same value within one line width)",
+    "blue line hidden at x=512k; read from the red line drawn over it (same value within one line width)",
+    "blue line hidden at x=1M; read from the red line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r1c4",
+   "bbox_px": [
+    415,
+    4,
+    539,
+    124
+   ],
+   "title": "Citation F1",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Retrieval performance",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.075,
+      1.041
+     ],
+     "ticks": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.5049,
+     "err_lo": 0.4899,
+     "err_hi": 0.523,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.6012,
+     "err_lo": 0.5861,
+     "err_hi": 0.6142,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.6212,
+     "err_lo": 0.5972,
+     "err_hi": 0.6393,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.536,
+     "err_lo": 0.522,
+     "err_hi": 0.5701,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.4869,
+     "err_lo": 0.4738,
+     "err_hi": 0.5019,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.526,
+     "err_lo": 0.5119,
+     "err_hi": 0.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5049,
+     "err_lo": 0.4899,
+     "err_hi": 0.518,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.6253,
+     "err_lo": 0.5942,
+     "err_hi": 0.6393,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.6383,
+     "err_lo": 0.6152,
+     "err_hi": 0.6603,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5149,
+     "err_lo": 0.4949,
+     "err_hi": 0.543,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5009,
+     "err_lo": 0.4849,
+     "err_hi": 0.518,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.5029,
+     "err_lo": 0.4899,
+     "err_hi": 0.524,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.4839,
+     "err_lo": 0.4698,
+     "err_hi": 0.5009,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.6132,
+     "err_lo": 0.5922,
+     "err_hi": 0.6333,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.5851,
+     "err_lo": 0.5621,
+     "err_hi": 0.6082,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.4488,
+     "err_lo": 0.4307,
+     "err_hi": 0.4989,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.4006,
+     "err_lo": 0.3856,
+     "err_hi": 0.4137,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.3956,
+     "err_lo": 0.3806,
+     "err_hi": 0.4147,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9933,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [421, 20, 533, 107]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "blue line hidden at x=32k; read from the green line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r1c5",
+   "bbox_px": [
+    539,
+    4,
+    660,
+    124
+   ],
+   "title": "Citation precision",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Retrieval performance",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.075,
+      1.041
+     ],
+     "ticks": [
+      1.0,
+      0.75,
+      0.5,
+      0.25
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8168,
+     "err_lo": 0.8027,
+     "err_hi": 0.8338,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8088,
+     "err_lo": 0.7867,
+     "err_hi": 0.8228,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.5621,
+     "err_lo": 0.531,
+     "err_hi": 0.6162,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.4237,
+     "err_lo": 0.4036,
+     "err_hi": 0.4668,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.3816,
+     "err_lo": 0.3675,
+     "err_hi": 0.3956,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.4447,
+     "err_lo": 0.4287,
+     "err_hi": 0.4598,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.7947,
+     "err_lo": 0.7807,
+     "err_hi": 0.8158,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8088,
+     "err_lo": 0.7857,
+     "err_hi": 0.8268,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.5621,
+     "err_lo": 0.541,
+     "err_hi": 0.5881,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.4026,
+     "err_lo": 0.3836,
+     "err_hi": 0.4327,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.3966,
+     "err_lo": 0.3776,
+     "err_hi": 0.4137,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.4046,
+     "err_lo": 0.3896,
+     "err_hi": 0.4327,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.7827,
+     "err_lo": 0.7656,
+     "err_hi": 0.8007,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.7807,
+     "err_lo": 0.7516,
+     "err_hi": 0.7957,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.4818,
+     "err_lo": 0.4558,
+     "err_hi": 0.5109,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.3124,
+     "err_lo": 0.2943,
+     "err_hi": 0.3374,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.2723,
+     "err_lo": 0.2572,
+     "err_hi": 0.2873,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.2683,
+     "err_lo": 0.2532,
+     "err_hi": 0.2833,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9993,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [546, 20, 657, 107]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=64k; read from the blue line drawn over it (same value within one line width)",
+    "green line hidden at x=128k; read from the blue line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r2c1",
+   "bbox_px": [
+    1,
+    124,
+    167,
+    245
+   ],
+   "title": "Minimum win rate across all axes",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.775,
+      0.966
+     ],
+     "ticks": [
+      0.95,
+      0.9,
+      0.85,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8198,
+     "err_lo": 0.8079,
+     "err_hi": 0.827,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8472,
+     "err_lo": 0.8414,
+     "err_hi": 0.8594,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8662,
+     "err_lo": 0.8521,
+     "err_hi": 0.8733,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8474,
+     "err_lo": 0.8321,
+     "err_hi": 0.8533,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8121,
+     "err_lo": 0.8016,
+     "err_hi": 0.8278,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8028,
+     "err_lo": 0.7909,
+     "err_hi": 0.8196,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8524,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.7832,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8614,
+     "err_lo": 0.8539,
+     "err_hi": 0.8743,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8749,
+     "err_lo": 0.8652,
+     "err_hi": 0.8844,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8806,
+     "err_lo": 0.8638,
+     "err_hi": 0.8852,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8804,
+     "err_lo": 0.865,
+     "err_hi": 0.9005,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8751,
+     "err_lo": 0.8497,
+     "err_hi": 0.8931,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.8804,
+     "err_lo": 0.8709,
+     "err_hi": 0.888,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.8972,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8083,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.8947,
+     "err_lo": 0.8834,
+     "err_hi": 0.9042,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9137,
+     "err_lo": 0.8907,
+     "err_hi": 0.9282,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9195,
+     "err_lo": 0.9141,
+     "err_hi": 0.927,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9274,
+     "err_lo": 0.9076,
+     "err_hi": 0.95,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.925,
+     "err_lo": 0.9121,
+     "err_hi": 0.9428,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9167,
+     "err_lo": 0.9066,
+     "err_hi": 0.9234,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9275,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8137,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [49, 141, 160, 228]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing"
+   ]
+  },
+  {
+   "id": "r2c2",
+   "bbox_px": [
+    167,
+    124,
+    291,
+    245
+   ],
+   "title": "Best overall management plan",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.775,
+      0.966
+     ],
+     "ticks": [
+      0.95,
+      0.9,
+      0.85,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8424,
+     "err_lo": 0.8248,
+     "err_hi": 0.8511,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8801,
+     "err_lo": 0.8725,
+     "err_hi": 0.8953,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8888,
+     "err_lo": 0.8826,
+     "err_hi": 0.8915,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.883,
+     "err_lo": 0.8783,
+     "err_hi": 0.8856,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8293,
+     "err_lo": 0.8171,
+     "err_hi": 0.839,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8527,
+     "err_lo": 0.8408,
+     "err_hi": 0.869,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8857,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8167,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8836,
+     "err_lo": 0.8781,
+     "err_hi": 0.8945,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.908,
+     "err_lo": 0.8989,
+     "err_hi": 0.9177,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9108,
+     "err_lo": 0.887,
+     "err_hi": 0.9333,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8866,
+     "err_lo": 0.8658,
+     "err_hi": 0.9112,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8995,
+     "err_lo": 0.8735,
+     "err_hi": 0.9175,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9054,
+     "err_lo": 0.8959,
+     "err_hi": 0.9167,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9082,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8388,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9139,
+     "err_lo": 0.9044,
+     "err_hi": 0.922,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.925,
+     "err_lo": 0.8915,
+     "err_hi": 0.9446,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9387,
+     "err_lo": 0.922,
+     "err_hi": 0.9589,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9415,
+     "err_lo": 0.9161,
+     "err_hi": 0.9591,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9415,
+     "err_lo": 0.9308,
+     "err_hi": 0.9512,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9306,
+     "err_lo": 0.9219,
+     "err_hi": 0.9383,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9442,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.825,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [173, 141, 284, 228]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing"
+   ]
+  },
+  {
+   "id": "r2c3",
+   "bbox_px": [
+    291,
+    124,
+    415,
+    245
+   ],
+   "title": "Most aligned with guidelines",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.775,
+      0.966
+     ],
+     "ticks": [
+      0.95,
+      0.9,
+      0.85,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8311,
+     "err_lo": 0.8274,
+     "err_hi": 0.8396,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8606,
+     "err_lo": 0.8537,
+     "err_hi": 0.8684,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8719,
+     "err_lo": 0.864,
+     "err_hi": 0.8745,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8555,
+     "err_lo": 0.8478,
+     "err_hi": 0.8654,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8226,
+     "err_lo": 0.8099,
+     "err_hi": 0.8285,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8175,
+     "err_lo": 0.7986,
+     "err_hi": 0.8426,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8636,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.7889,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8668,
+     "err_lo": 0.8573,
+     "err_hi": 0.885,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.883,
+     "err_lo": 0.8725,
+     "err_hi": 0.8921,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8806,
+     "err_lo": 0.8699,
+     "err_hi": 0.8854,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8804,
+     "err_lo": 0.8648,
+     "err_hi": 0.9005,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8779,
+     "err_lo": 0.8493,
+     "err_hi": 0.8935,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.886,
+     "err_lo": 0.8737,
+     "err_hi": 0.8949,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8137,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9139,
+     "err_lo": 0.9044,
+     "err_hi": 0.9217,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9195,
+     "err_lo": 0.8915,
+     "err_hi": 0.9363,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9329,
+     "err_lo": 0.922,
+     "err_hi": 0.943,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9359,
+     "err_lo": 0.9155,
+     "err_hi": 0.9585,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.925,
+     "err_lo": 0.9078,
+     "err_hi": 0.9434,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9306,
+     "err_lo": 0.9213,
+     "err_hi": 0.9381,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9359,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8167,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [297, 141, 409, 228]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line: 2 candidate runs at x=1M, took the one continuous with the previous vertex"
+   ]
+  },
+  {
+   "id": "r2c4",
+   "bbox_px": [
+    415,
+    124,
+    539,
+    245
+   ],
+   "title": "Most appropriate investigations",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.775,
+      0.966
+     ],
+     "ticks": [
+      0.95,
+      0.9,
+      0.85,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8285,
+     "err_lo": 0.8208,
+     "err_hi": 0.8428,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8583,
+     "err_lo": 0.8529,
+     "err_hi": 0.8686,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8747,
+     "err_lo": 0.8696,
+     "err_hi": 0.8804,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8581,
+     "err_lo": 0.8474,
+     "err_hi": 0.8628,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8147,
+     "err_lo": 0.8004,
+     "err_hi": 0.8295,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8081,
+     "err_lo": 0.7951,
+     "err_hi": 0.8222,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8657,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.7864,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8749,
+     "err_lo": 0.8652,
+     "err_hi": 0.885,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8779,
+     "err_lo": 0.8699,
+     "err_hi": 0.8856,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8915,
+     "err_lo": 0.8723,
+     "err_hi": 0.901,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8915,
+     "err_lo": 0.8729,
+     "err_hi": 0.9092,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8808,
+     "err_lo": 0.8499,
+     "err_hi": 0.9098,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.8915,
+     "err_lo": 0.8804,
+     "err_hi": 0.9048,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9229,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8222,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.8947,
+     "err_lo": 0.8842,
+     "err_hi": 0.9046,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9165,
+     "err_lo": 0.8904,
+     "err_hi": 0.9337,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9195,
+     "err_lo": 0.9147,
+     "err_hi": 0.9278,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9357,
+     "err_lo": 0.9232,
+     "err_hi": 0.9583,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9306,
+     "err_lo": 0.9151,
+     "err_hi": 0.9512,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9167,
+     "err_lo": 0.9066,
+     "err_hi": 0.9236,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9414,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8137,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [421, 141, 533, 228]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing"
+   ]
+  },
+  {
+   "id": "r2c5",
+   "bbox_px": [
+    539,
+    124,
+    660,
+    245
+   ],
+   "title": "Most appropriate interventions",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.775,
+      0.966
+     ],
+     "ticks": [
+      0.95,
+      0.9,
+      0.85,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8315,
+     "err_lo": 0.8107,
+     "err_hi": 0.8454,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8721,
+     "err_lo": 0.8608,
+     "err_hi": 0.8767,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8721,
+     "err_lo": 0.863,
+     "err_hi": 0.883,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8583,
+     "err_lo": 0.8531,
+     "err_hi": 0.8658,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.823,
+     "err_lo": 0.8072,
+     "err_hi": 0.8317,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.822,
+     "err_lo": 0.8014,
+     "err_hi": 0.8444,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8664,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.7943,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8721,
+     "err_lo": 0.8634,
+     "err_hi": 0.8876,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8806,
+     "err_lo": 0.8654,
+     "err_hi": 0.8927,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8888,
+     "err_lo": 0.8804,
+     "err_hi": 0.8935,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.886,
+     "err_lo": 0.8563,
+     "err_hi": 0.9084,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8806,
+     "err_lo": 0.8495,
+     "err_hi": 0.9014,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.8832,
+     "err_lo": 0.8723,
+     "err_hi": 0.8898,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9026,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9112,
+     "err_lo": 0.9032,
+     "err_hi": 0.9171,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9197,
+     "err_lo": 0.8917,
+     "err_hi": 0.9421,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9331,
+     "err_lo": 0.9217,
+     "err_hi": 0.9432,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9331,
+     "err_lo": 0.9076,
+     "err_hi": 0.9585,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.925,
+     "err_lo": 0.9076,
+     "err_hi": 0.9434,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9304,
+     "err_lo": 0.9213,
+     "err_hi": 0.9379,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9359,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8192,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [546, 141, 657, 228]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing"
+   ]
+  },
+  {
+   "id": "r3c1",
+   "bbox_px": [
+    1,
+    245,
+    167,
+    387
+   ],
+   "title": "Most detailed investigations",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.792,
+      0.992
+     ],
+     "ticks": [
+      0.9,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8446,
+     "err_lo": 0.8373,
+     "err_hi": 0.8517,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8832,
+     "err_lo": 0.8668,
+     "err_hi": 0.901,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8971,
+     "err_lo": 0.882,
+     "err_hi": 0.9029,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.889,
+     "err_lo": 0.8743,
+     "err_hi": 0.8952,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8751,
+     "err_lo": 0.8461,
+     "err_hi": 0.8805,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8311,
+     "err_lo": 0.8145,
+     "err_hi": 0.844,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8887,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8419,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8446,
+     "err_lo": 0.8407,
+     "err_hi": 0.8475,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.917,
+     "err_lo": 0.8988,
+     "err_hi": 0.9268,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.933,
+     "err_lo": 0.9139,
+     "err_hi": 0.9498,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9089,
+     "err_lo": 0.8992,
+     "err_hi": 0.9205,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9222,
+     "err_lo": 0.8909,
+     "err_hi": 0.9417,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9249,
+     "err_lo": 0.9176,
+     "err_hi": 0.9311,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9435,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9224,
+     "err_lo": 0.9091,
+     "err_hi": 0.9342,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9336,
+     "err_lo": 0.9004,
+     "err_hi": 0.9548,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9554,
+     "err_lo": 0.939,
+     "err_hi": 0.9753,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9583,
+     "err_lo": 0.9483,
+     "err_hi": 0.9689,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9583,
+     "err_lo": 0.9402,
+     "err_hi": 0.9834,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9361,
+     "err_lo": 0.9247,
+     "err_hi": 0.9502,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9554,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8639,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [49, 261, 160, 349]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "blue line hidden at x=32k; read from the green line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r3c2",
+   "bbox_px": [
+    167,
+    245,
+    291,
+    387
+   ],
+   "title": "Most detailed interventions",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.792,
+      0.992
+     ],
+     "ticks": [
+      0.9,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9037,
+     "err_lo": 0.8946,
+     "err_hi": 0.9068,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9,
+     "err_lo": 0.8786,
+     "err_hi": 0.9091,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.911,
+     "err_lo": 0.899,
+     "err_hi": 0.9237,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9164,
+     "err_lo": 0.9062,
+     "err_hi": 0.9193,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8869,
+     "err_lo": 0.8678,
+     "err_hi": 0.9035,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8718,
+     "err_lo": 0.8637,
+     "err_hi": 0.8853,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.9029,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8751,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9037,
+     "err_lo": 0.9004,
+     "err_hi": 0.9154,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9411,
+     "err_lo": 0.9151,
+     "err_hi": 0.9579,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9361,
+     "err_lo": 0.9216,
+     "err_hi": 0.9508,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9224,
+     "err_lo": 0.9141,
+     "err_hi": 0.9365,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9602,
+     "err_lo": 0.9459,
+     "err_hi": 0.9643,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9336,
+     "err_lo": 0.9237,
+     "err_hi": 0.9407,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9388,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.9224,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9365,
+     "err_lo": 0.9284,
+     "err_hi": 0.9432,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9498,
+     "err_lo": 0.9166,
+     "err_hi": 0.9834,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9583,
+     "err_lo": 0.9402,
+     "err_hi": 0.9763,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9664,
+     "err_lo": 0.9564,
+     "err_hi": 0.9761,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9666,
+     "err_lo": 0.9564,
+     "err_hi": 0.9761,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9583,
+     "err_lo": 0.9496,
+     "err_hi": 0.9687,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9665,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [173, 261, 284, 349]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=32k; read from the blue line drawn over it (same value within one line width)",
+    "blue line hidden at x=256k; read from the dotted line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r3c3",
+   "bbox_px": [
+    291,
+    245,
+    415,
+    387
+   ],
+   "title": "Most appropriate follow-up",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.792,
+      0.992
+     ],
+     "ticks": [
+      0.9,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8809,
+     "err_lo": 0.873,
+     "err_hi": 0.8882,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8973,
+     "err_lo": 0.89,
+     "err_hi": 0.9166,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9083,
+     "err_lo": 0.8973,
+     "err_hi": 0.9172,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.9135,
+     "err_lo": 0.9062,
+     "err_hi": 0.9164,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8737,
+     "err_lo": 0.8672,
+     "err_hi": 0.8861,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8749,
+     "err_lo": 0.8643,
+     "err_hi": 0.8851,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8697,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9091,
+     "err_lo": 0.8988,
+     "err_hi": 0.9172,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9442,
+     "err_lo": 0.9226,
+     "err_hi": 0.9668,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9473,
+     "err_lo": 0.9234,
+     "err_hi": 0.967,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9336,
+     "err_lo": 0.911,
+     "err_hi": 0.9442,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9386,
+     "err_lo": 0.9234,
+     "err_hi": 0.9589,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9361,
+     "err_lo": 0.9247,
+     "err_hi": 0.949,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9327,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8944,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9334,
+     "err_lo": 0.9263,
+     "err_hi": 0.9398,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9365,
+     "err_lo": 0.9083,
+     "err_hi": 0.9548,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9473,
+     "err_lo": 0.9315,
+     "err_hi": 0.9672,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9527,
+     "err_lo": 0.94,
+     "err_hi": 0.9602,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9475,
+     "err_lo": 0.9324,
+     "err_hi": 0.9674,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9446,
+     "err_lo": 0.933,
+     "err_hi": 0.9537,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9554,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8556,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [297, 261, 409, 349]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "blue line hidden at x=128k; read from the red line drawn over it (same value within one line width)"
+   ]
+  },
+  {
+   "id": "r3c4",
+   "bbox_px": [
+    415,
+    245,
+    539,
+    387
+   ],
+   "title": "Best risk management",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.792,
+      0.992
+     ],
+     "ticks": [
+      0.9,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8587,
+     "err_lo": 0.8558,
+     "err_hi": 0.8631,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8886,
+     "err_lo": 0.8842,
+     "err_hi": 0.9064,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8888,
+     "err_lo": 0.8807,
+     "err_hi": 0.9015,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8915,
+     "err_lo": 0.8873,
+     "err_hi": 0.8952,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8512,
+     "err_lo": 0.8483,
+     "err_hi": 0.8558,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8697,
+     "err_lo": 0.8546,
+     "err_hi": 0.8815,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.9052,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8224,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8869,
+     "err_lo": 0.8716,
+     "err_hi": 0.9006,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9191,
+     "err_lo": 0.9071,
+     "err_hi": 0.9342,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9222,
+     "err_lo": 0.9056,
+     "err_hi": 0.9413,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8977,
+     "err_lo": 0.8745,
+     "err_hi": 0.9197,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9243,
+     "err_lo": 0.8817,
+     "err_hi": 0.949,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9168,
+     "err_lo": 0.906,
+     "err_hi": 0.9268,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9197,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8417,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9197,
+     "err_lo": 0.9124,
+     "err_hi": 0.9288,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9251,
+     "err_lo": 0.8917,
+     "err_hi": 0.9434,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9442,
+     "err_lo": 0.9299,
+     "err_hi": 0.9591,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9444,
+     "err_lo": 0.9162,
+     "err_hi": 0.9593,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9363,
+     "err_lo": 0.9234,
+     "err_hi": 0.9517,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9363,
+     "err_lo": 0.9286,
+     "err_hi": 0.9452,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9529,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8361,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [421, 261, 533, 349]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing"
+   ]
+  },
+  {
+   "id": "r3c5",
+   "bbox_px": [
+    539,
+    245,
+    660,
+    387
+   ],
+   "title": "Safest management plan",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "guidelines-allocated prompt tokens",
+     "unit": "tokens",
+     "scale": "log",
+     "range": [
+      32768,
+      1048576
+     ],
+     "ticks": [
+      "64k",
+      "256k",
+      "1M"
+     ]
+    },
+    "y": {
+     "name": "Win rate",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.792,
+      0.992
+     ],
+     "ticks": [
+      0.9,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "oracle: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "no retrieval: chain-of-thought, no draft",
+     "color": "green"
+    },
+    {
+     "name": "structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "oracle: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "no retrieval: structured reasoning, no draft",
+     "color": "blue"
+    },
+    {
+     "name": "structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "oracle: structured reasoning, n=4 drafts",
+     "color": "red"
+    },
+    {
+     "name": "no retrieval: structured reasoning, n=4 drafts",
+     "color": "red"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": "32k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8369,
+     "err_lo": 0.8176,
+     "err_hi": 0.845,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8747,
+     "err_lo": 0.8676,
+     "err_hi": 0.8954,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8805,
+     "err_lo": 0.8774,
+     "err_hi": 0.8857,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8811,
+     "err_lo": 0.8699,
+     "err_hi": 0.884,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.6
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "chain-of-thought, no draft",
+     "value": 0.8266,
+     "err_lo": 0.8158,
+     "err_hi": 0.8386,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "chain-of-thought, no draft",
+     "value": 0.85,
+     "err_lo": 0.8243,
+     "err_hi": 0.8627,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: chain-of-thought, no draft",
+     "value": 0.8831,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: chain-of-thought, no draft",
+     "value": 0.8029,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, no draft",
+     "value": 0.878,
+     "err_lo": 0.8672,
+     "err_hi": 0.8909,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8998,
+     "err_lo": 0.8967,
+     "err_hi": 0.9058,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, no draft",
+     "value": 0.9025,
+     "err_lo": 0.8851,
+     "err_hi": 0.9093,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8811,
+     "err_lo": 0.8658,
+     "err_hi": 0.9021,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, no draft",
+     "value": 0.8861,
+     "err_lo": 0.8579,
+     "err_hi": 0.9095,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, no draft",
+     "value": 0.9002,
+     "err_lo": 0.8849,
+     "err_hi": 0.91,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, no draft",
+     "value": 0.9045,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, no draft",
+     "value": 0.8334,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": null,
+     "x": "32k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9114,
+     "err_lo": 0.9033,
+     "err_hi": 0.9172,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "64k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9226,
+     "err_lo": 0.8917,
+     "err_hi": 0.9448,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "128k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9388,
+     "err_lo": 0.9218,
+     "err_hi": 0.9591,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "256k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.939,
+     "err_lo": 0.9077,
+     "err_hi": 0.9593,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "512k",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9334,
+     "err_lo": 0.9151,
+     "err_hi": 0.9515,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": "1M",
+     "series": "structured reasoning, n=4 drafts",
+     "value": 0.9307,
+     "err_lo": 0.9216,
+     "err_hi": 0.9384,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "using reference guidelines (oracle)",
+     "x": null,
+     "series": "oracle: structured reasoning, n=4 drafts",
+     "value": 0.9443,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    },
+    {
+     "category": "no retrieval",
+     "x": null,
+     "series": "no retrieval: structured reasoning, n=4 drafts",
+     "value": 0.8278,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.85
+    }
+   ],
+   "notes": [
+    "axes frame in crop px: [546, 261, 657, 349]; bbox_px tiles the figure between neighbouring frames (title above, tick labels at left/bottom)",
+    "6 vertices per line at log2-equal spacing 32k..1M; only 64k/256k/1M are labelled, the other x values are inferred from the spacing",
+    "green line hidden at x=256k; read from the blue line drawn over it (same value within one line width)"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-labeler",
+  "date": "2026-11-09",
+  "time_minutes": 50
+ },
+ "uncertain": [
+  "Not a forest plot and not vector: the figure (Extended Data Fig. 2, 'Mx agent auto-evaluation') is one embedded 3661x2460 RGB raster on page 15 holding a 3x5 grid of line charts; every value is read from pixels of that bitmap (line centre +-2 px = +-0.004 in row 1, +-0.001 in rows 2-3 axis units)",
+  "Each line has 6 vertices at log2-equal spacing from 32k to 1M prompt tokens; only 64k/256k/1M carry tick labels, the 32k/128k/512k x values are inferred from the gridline spacing",
+  "Rows 2-3 draw no horizontal gridlines: their y maps are fitted to the tick-label glyph centres (calibrated on row 1, where glyph centre = gridline + 1 px); row 3 is labelled 0.9 and 0.8 only",
+  "Rows with confidence 0.6 are lines hidden under a series drawn later (legend order green < blue < red): the value is the visible line's, the true one lies within one line width (~0.02 row 1, ~0.004 rows 2-3)",
+  "err_lo/err_hi are the shaded 95% CI band edges read from the tint mask (+-3 px); 'confidence_err' (extra field) is 0.5 where the band is barely wider than the line, i.e. row-1 CIs smaller than ~0.01",
+  "Stars ('using reference guidelines (oracle)') are plotted ~25 px right of the 64k gridline and have no x; value = star centroid. r3c1 blue star is crossed by the red line (core centroid); r3c3 shows no green star and r2c5 no blue dotted line (probably coincident with the red dotted line at 0.819)",
+  "Dotted 'no retrieval' lines are horizontal constants (x = null); row 1 has none",
+  "bbox_px tiles the crop between neighbouring frames (titles above, tick labels left/bottom); the axes frame itself is given in each panel's first note",
+  "band edges (err_lo/err_hi) carry their own confidence of [0.5, 0.75] (removed from rows for schema compliance; lower than the line values): 259 rows"
+ ]
+}

@@ -37,6 +37,9 @@ from docling.engines.export_check import (
     check_bundle,
     write_bundle_check,
 )
+from docling.engines.figure_data.evidence import read_figure_rows
+from docling.engines.figure_data.pipeline import FIGURE_DATA_DIRNAME, read_document
+from docling.engines.figure_data.schema import FigureDataOptions
 from docling.engines.figure_typing import (
     BIOMEDCLIP_REPO,
     FigureTyper,
@@ -114,6 +117,7 @@ class PdfEngine:
         picture_description_engine: PictureDescriptionEngine = "default",
         picture_area_threshold: float = 0.03,
         figure_types: bool = True,
+        figure_data: FigureDataOptions | None = None,
     ) -> None:
         """Initialise the engine.
 
@@ -204,6 +208,14 @@ class PdfEngine:
             (``amir__figure_type``) in ``document.json``. Needs picture
             images (``save_artifacts`` or ``embed_images``) and the
             ``models-vlm-inline`` extra (open-clip-torch); ~0.8 GB GPU.
+        figure_data
+            Read the numbers behind chart figures (``mode`` ``simple`` or
+            ``measured``) with a local VLM through Ollama
+            (:mod:`docling.engines.figure_data`); None or mode ``off``
+            (default) skips it. Records land in ``figures.jsonl``
+            (``chart_data``), on ``PictureItem.meta`` and, above the
+            confidence threshold, as a marked table in the markdown.
+            Needs ``save_artifacts`` (it reads the crops).
         """
         self._image_scale = images_scale
         self._embed_images = embed_images
@@ -217,6 +229,11 @@ class PdfEngine:
         self._noise_repeat_threshold = noise_repeat_threshold
         self._picture_description = picture_description
         self._picture_description_engine = picture_description_engine
+        self._figure_data = (
+            figure_data
+            if figure_data is not None and figure_data.mode != "off"
+            else None
+        )
         self._engine_config = {
             "with_page_images": with_page_images,
             "embed_images": embed_images,
@@ -243,6 +260,9 @@ class PdfEngine:
             if picture_description
             else None,
             "figure_types": BIOMEDCLIP_REPO if figure_types else None,
+            "figure_data": self._figure_data.model_dump(mode="json")
+            if self._figure_data is not None
+            else None,
             "converter_supplied": converter is not None,
         }
         self._figure_typer = FigureTyper() if figure_types else None
@@ -424,6 +444,21 @@ class PdfEngine:
                 output.nodes_jsonl = artifacts.nodes_jsonl
                 output.picture_images = artifacts.picture_images
                 output.table_images = artifacts.table_images
+            if self._figure_data is not None and output.document_json is not None:
+                # Before the chunker and the exports: they show the tables.
+                with _step(errors, "figure_data"):
+                    if read_document(
+                        doc,
+                        pdf_dir,
+                        picture_images=output.picture_images,
+                        noise_flags=noise_flags,
+                        pdf_path=local_pdf,
+                        options=self._figure_data,
+                    ):
+                        doc.save_as_json(output.document_json)
+                        output.markdown = export_markdown(
+                            doc, image_mode=ImageRefMode.PLACEHOLDER
+                        )
             with _step(errors, "chunker"):
                 output.chunks_jsonl = write_chunks(
                     result,
@@ -591,6 +626,37 @@ def _write_embedded_markdown(
     return target
 
 
+def rewrite_bundle_markdown(doc: DoclingDocument, pdf_dir: Path) -> None:
+    """Rewrite ``<stem>.md`` and ``<stem>.embedded.md`` of an existing
+    bundle (each when present) from *doc*, with the picture links and noise
+    comments of the conversion (read back from ``figures.jsonl``)."""
+    noise_flags = [
+        PictureNoiseFlag(
+            self_ref=row.self_ref,
+            is_noise=bool(row.is_noise),
+            noise_reason=row.noise_reason,
+            classifier_label=row.generic_classifier_label,
+        )
+        for row in read_figure_rows(pdf_dir)
+    ]
+    target = pdf_dir / f"{pdf_dir.name}.md"
+    if target.is_file():
+        linked = (
+            sorted(
+                path.relative_to(pdf_dir).as_posix()
+                for path in (pdf_dir / IMAGES_SUBDIR).glob("picture_*.png")
+            )
+            if f"]({IMAGES_SUBDIR}/" in target.read_text(encoding="utf-8")
+            else []
+        )
+        markdown = export_markdown(doc, image_mode=ImageRefMode.PLACEHOLDER)
+        target.write_text(
+            _link_picture_placeholders(markdown, linked, noise_flags), encoding="utf-8"
+        )
+    if (pdf_dir / f"{pdf_dir.name}.embedded.md").is_file():
+        _write_embedded_markdown(doc, pdf_dir, noise_flags)
+
+
 def _bundle_files(pdf_dir: Path) -> tuple[Path, ...]:
     """The files of a bundle that a conversion writes at its top level."""
     stem = pdf_dir.name
@@ -618,8 +684,9 @@ def _remove_bundle_files(pdf_dir: Path) -> None:
     lost its crop the previous run's crop."""
     for path in _bundle_files(pdf_dir):
         path.unlink(missing_ok=True)
-    if (pdf_dir / IMAGES_SUBDIR).is_dir():
-        shutil.rmtree(pdf_dir / IMAGES_SUBDIR)
+    for subdir in (IMAGES_SUBDIR, FIGURE_DATA_DIRNAME):
+        if (pdf_dir / subdir).is_dir():
+            shutil.rmtree(pdf_dir / subdir)
 
 
 _UNSAFE_NAME = re.compile(r"[^\w.-]+")

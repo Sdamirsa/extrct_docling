@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figure labeler</title>
+<link rel="stylesheet" href="labeler.css">
+</head>
+<body>
+<header id="top">
+  <strong class="brand">Figure labeler</strong>
+  <span id="fig-title" class="muted"></span>
+  <span class="spacer"></span>
+  <label class="inline">Labeler <input id="labeler-name" placeholder="your name" size="12"></label>
+  <span id="timer" class="pill" title="Active time on this figure (pauses after 2 min idle)">0.0 min</span>
+  <label class="inline" title="Ticked figures count as done"><input type="checkbox" id="done"> done</label>
+  <button id="btn-import" title="Load exported JSON files">Import…</button>
+  <input type="file" id="file-import" accept=".json,application/json" multiple hidden>
+  <button id="btn-export" class="primary" title="Ctrl+S">Export figure</button>
+  <button id="btn-export-all">Export all</button>
+  <button id="btn-help" title="?">Help</button>
+</header>
+<main id="app">
+  <aside id="list">
+    <div id="progress"><div class="bar"><span></span></div><div class="txt"></div></div>
+    <ol id="figs"></ol>
+  </aside>
+  <section id="centre">
+    <div id="toolbar">
+      <div class="group" role="radiogroup" aria-label="Tool">
+        <button data-tool="select" title="Select panels, pan, click words to copy them (V)">Select <kbd>V</kbd></button>
+        <button data-tool="panel" title="Drag a rectangle around a panel (P)">Panel <kbd>P</kbd></button>
+        <button data-tool="point" title="Click marks to read values (A)">Point <kbd>A</kbd></button>
+      </div>
+      <div class="group" id="point-opts">
+        <span class="muted">click fills</span>
+        <select id="target" title="1 value · 2 err_lo · 3 err_hi">
+          <option value="value">value</option><option value="err_lo">err_lo</option><option value="err_hi">err_hi</option>
+        </select>
+        <select id="point-series" title="Series for new rows"></select>
+        <label class="inline" title="Confidence for values read by clicking">conf <input id="point-conf" value="0.8" size="3"></label>
+      </div>
+      <div class="group">
+        <label class="inline" title="Words Docling found in the figure (text layer or OCR)"><input type="checkbox" id="show-docling" checked> words</label>
+        <label class="inline" title="Words from the PDF text layer"><input type="checkbox" id="show-pdf" checked> PDF words</label>
+        <label class="inline" title="Show the high-resolution render from the PDF when available"><input type="checkbox" id="show-hires" checked> hi-res</label>
+      </div>
+      <div class="group">
+        <button id="zoom-out" title="Zoom out (-)">−</button>
+        <span id="zoom-txt" class="pill">100%</span>
+        <button id="zoom-in" title="Zoom in (+)">+</button>
+        <button id="zoom-fit" title="Fit (F)">Fit</button>
+        <button id="zoom-1" title="Native pixels (0)">1:1</button>
+      </div>
+    </div>
+    <div id="stage">
+      <div id="wrap"><img id="img" alt="figure" draggable="false"><svg id="ovl" xmlns="http://www.w3.org/2000/svg"></svg></div>
+      <div id="empty" hidden></div>
+    </div>
+    <div id="status"><span id="readout"></span><span id="flash"></span></div>
+  </section>
+  <aside id="form"></aside>
+</main>
+
+<div id="help" hidden>
+  <div class="card">
+    <button class="close" id="help-close" title="Esc">✕</button>
+    <h2>How to label</h2>
+    <ol>
+      <li>Pick a figure on the left. The timer runs while you work and fills <code>labeler.time_minutes</code>.</li>
+      <li>Press <kbd>P</kbd> and drag a box around each sub-panel (a, b, c… in reading order). For a single chart use “+ whole image”.</li>
+      <li>On the right set the panel kind, orientation, title, and each axis: name, unit, scale, range and ticks.</li>
+      <li>Calibrate the value axis: press “pick” beside ref 1 and click a tick label (or the tick mark), then ref 2 on a far-away tick. Categorical axes: fill ticks first, then pick the first and last category.</li>
+      <li>Add the legend entries as series (name + colour).</li>
+      <li>Press <kbd>A</kbd> and click each mark (bar end, point, line vertex): a row appears with the value in axis units. <kbd>Shift</kbd>+click sets err_hi, <kbd>Alt</kbd>+click err_lo of the selected row.</li>
+      <li>Printed numbers win: focus <code>label_printed</code>, click the printed word on the image; the value fills in with confidence 1.</li>
+      <li>Cannot read a number? Leave the value empty (null). Never guess; lower the confidence when reading by eye.</li>
+      <li>Once both axes are calibrated, dots show where each row lands: check they sit on the marks. Use the CSV box to paste a table (header row required).</li>
+      <li>Tick “done”, then Export figure (or Export all at the end). Put the JSON files in <code>labels/</code> and send the folder back.</li>
+    </ol>
+    <h3>Shortcuts</h3>
+    <table class="keys">
+      <tr><td><kbd>V</kbd> <kbd>P</kbd> <kbd>A</kbd></td><td>select · draw panel · add point</td><td><kbd>[</kbd> <kbd>]</kbd></td><td>previous / next figure</td></tr>
+      <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>clicks fill value · err_lo · err_hi</td><td><kbd>W</kbd></td><td>toggle word boxes</td></tr>
+      <tr><td><kbd>F</kbd> <kbd>0</kbd> <kbd>+</kbd> <kbd>-</kbd></td><td>fit · 1:1 · zoom (or mouse wheel)</td><td><kbd>Space</kbd>+drag</td><td>pan (or drag empty area in Select)</td></tr>
+      <tr><td><kbd>Del</kbd></td><td>delete the selected panel</td><td><kbd>Esc</kbd></td><td>cancel pick / back to Select</td></tr>
+      <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>export this figure</td><td><kbd>D</kbd></td><td>toggle done</td></tr>
+      <tr><td colspan="4"><b>Data grid:</b> <kbd>Enter</kbd> / <kbd>Shift</kbd>+<kbd>Enter</kbd> or <kbd>↑</kbd> <kbd>↓</kbd> move down/up (Enter on the last row adds one) · <kbd>Ctrl</kbd>+<kbd>Enter</kbd> insert row · <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicate · <kbd>Ctrl</kbd>+<kbd>Delete</kbd> delete row</td></tr>
+    </table>
+    <p class="muted">Work autosaves in this browser (localStorage) per figure. Export to keep it; the files are what counts.</p>
+  </div>
+</div>
+<div id="toast" hidden></div>
+<script src="manifest.js"></script>
+<script src="labeler-core.js"></script>
+<script src="labeler.js"></script>
+</body>
+</html>

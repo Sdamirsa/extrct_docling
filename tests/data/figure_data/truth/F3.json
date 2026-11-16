@@ -1,0 +1,1914 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "HeartAgent",
+  "self_ref": "#/pictures/1",
+  "image_path": "images/picture_002.png",
+  "page": 6,
+  "bbox": [
+   65.44611358642578,
+   717.3240737915039,
+   545.36279296875,
+   160.116943359375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a1",
+   "bbox_px": [
+    0.4,
+    6.0,
+    236.8,
+    194.0
+   ],
+   "title": "Top-3 DDx Accuracy on MIMIC (Llama-3.3-70B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.42,
+     "err_lo": 0.376,
+     "err_hi": 0.464,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.465,
+     "err_lo": 0.422,
+     "err_hi": 0.51,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.469,
+     "err_lo": 0.429,
+     "err_hi": 0.512,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.493,
+     "err_lo": 0.456,
+     "err_hi": 0.536,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.599,
+     "err_lo": 0.562,
+     "err_hi": 0.637,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '***'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a2",
+   "bbox_px": [
+    242.4,
+    6.0,
+    478.3,
+    194.0
+   ],
+   "title": "Top-3 DDx Accuracy on MIMIC (Qwen-2.5-32B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.419,
+     "err_lo": 0.384,
+     "err_hi": 0.462,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.451,
+     "err_lo": 0.415,
+     "err_hi": 0.494,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.474,
+     "err_lo": 0.439,
+     "err_hi": 0.513,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.488,
+     "err_lo": 0.451,
+     "err_hi": 0.525,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.574,
+     "err_lo": 0.54,
+     "err_hi": 0.612,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '**'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a3",
+   "bbox_px": [
+    483.9,
+    6.0,
+    719.8,
+    194.0
+   ],
+   "title": "Top-3 DDx Accuracy on MIMIC (MedGemma-27B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.377,
+     "err_lo": 0.331,
+     "err_hi": 0.416,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.452,
+     "err_lo": 0.41,
+     "err_hi": 0.494,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.449,
+     "err_lo": 0.405,
+     "err_hi": 0.489,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.515,
+     "err_lo": 0.474,
+     "err_hi": 0.557,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.589,
+     "err_lo": 0.548,
+     "err_hi": 0.627,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '*'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a4",
+   "bbox_px": [
+    0.4,
+    205.6,
+    236.8,
+    394.6
+   ],
+   "title": "Top-3 DDx Accuracy on NEJM (Llama-3.3-70B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      0.8
+     ],
+     "ticks": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.355,
+     "err_lo": 0.256,
+     "err_hi": 0.456,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.388,
+     "err_lo": 0.279,
+     "err_hi": 0.501,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.41,
+     "err_lo": 0.312,
+     "err_hi": 0.511,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.477,
+     "err_lo": 0.379,
+     "err_hi": 0.579,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.555,
+     "err_lo": 0.478,
+     "err_hi": 0.645,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '*'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a5",
+   "bbox_px": [
+    242.4,
+    205.6,
+    478.3,
+    394.6
+   ],
+   "title": "Top-3 DDx Accuracy on NEJM (Qwen-2.5-32B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      0.8
+     ],
+     "ticks": [
+      0.0,
+      0.2,
+      0.4,
+      0.6
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.321,
+     "err_lo": 0.233,
+     "err_hi": 0.421,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.355,
+     "err_lo": 0.266,
+     "err_hi": 0.445,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.355,
+     "err_lo": 0.256,
+     "err_hi": 0.456,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.388,
+     "err_lo": 0.301,
+     "err_hi": 0.478,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.555,
+     "err_lo": 0.468,
+     "err_hi": 0.645,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '*'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line",
+    "no 0.8 tick/label is drawn, but the axes box has the same height as a4/a6 (top ~0.85), so range is set to [0.0, 0.8]"
+   ]
+  },
+  {
+   "id": "a6",
+   "bbox_px": [
+    483.9,
+    205.6,
+    719.8,
+    394.6
+   ],
+   "title": "Top-3 DDx Accuracy on NEJM (MedGemma-27B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      0.8
+     ],
+     "ticks": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.388,
+     "err_lo": 0.299,
+     "err_hi": 0.467,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.421,
+     "err_lo": 0.344,
+     "err_hi": 0.5,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.443,
+     "err_lo": 0.366,
+     "err_hi": 0.522,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.432,
+     "err_lo": 0.344,
+     "err_hi": 0.522,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.565,
+     "err_lo": 0.477,
+     "err_hi": 0.656,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket MDAgent vs HeartAgent: 'n.s.'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a7",
+   "bbox_px": [
+    0.4,
+    406.0,
+    236.8,
+    594.6
+   ],
+   "title": "Top-3 DDx Accuracy on UMN (Llama-3.3-70B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.415,
+     "err_lo": 0.38,
+     "err_hi": 0.448,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.454,
+     "err_lo": 0.423,
+     "err_hi": 0.489,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.471,
+     "err_lo": 0.438,
+     "err_hi": 0.504,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.502,
+     "err_lo": 0.47,
+     "err_hi": 0.535,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.591,
+     "err_lo": 0.562,
+     "err_hi": 0.623,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '***'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a8",
+   "bbox_px": [
+    242.4,
+    406.0,
+    478.3,
+    594.6
+   ],
+   "title": "Top-3 DDx Accuracy on UMN (Qwen-2.5-32B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.408,
+     "err_lo": 0.376,
+     "err_hi": 0.442,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.443,
+     "err_lo": 0.411,
+     "err_hi": 0.478,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.446,
+     "err_lo": 0.413,
+     "err_hi": 0.478,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.463,
+     "err_lo": 0.429,
+     "err_hi": 0.495,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.559,
+     "err_lo": 0.53,
+     "err_hi": 0.59,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '***'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "a9",
+   "bbox_px": [
+    483.9,
+    406.0,
+    719.8,
+    594.6
+   ],
+   "title": "Top-3 DDx Accuracy on UMN (MedGemma-27B)",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.8
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.419,
+     "err_lo": 0.385,
+     "err_hi": 0.452,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.445,
+     "err_lo": 0.413,
+     "err_hi": 0.478,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.442,
+     "err_lo": 0.409,
+     "err_hi": 0.475,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.463,
+     "err_lo": 0.429,
+     "err_hi": 0.495,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "accuracy",
+     "value": 0.562,
+     "err_lo": 0.534,
+     "err_hi": 0.593,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    }
+   ],
+   "notes": [
+    "belongs to parent panel a (row-major 3x3 grid: rows = MIMIC, NEJM, UMN; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "one bar per method, each with its own fill colour: CoT=light red, SC-CoT=peach, MDAgent=teal, Dual-Inf=light blue, HeartAgent=pink",
+    "error bars: err_lo/err_hi are the cap positions (confidence interval per caption)",
+    "significance bracket Dual-Inf vs HeartAgent: '***'",
+    "values/errors measured from the native 1340x1568 bitmap: y calibrated from tick marks, bar top from fill colour, caps from the black error-bar line"
+   ]
+  },
+  {
+   "id": "b1",
+   "bbox_px": [
+    34.3,
+    642.2,
+    230.3,
+    832.1
+   ],
+   "title": "Correct diagnoses on MIMIC (Llama-3.3-70B)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Ratio",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "0",
+     "color": "dark green"
+    },
+    {
+     "name": "1",
+     "color": "light green"
+    },
+    {
+     "name": "2",
+     "color": "pale yellow"
+    },
+    {
+     "name": "3",
+     "color": "tan"
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "0",
+     "value": 25,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "1",
+     "value": 35,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "35%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "2",
+     "value": 30,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "3",
+     "value": 11,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "11%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "0",
+     "value": 18,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "18%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "1",
+     "value": 37,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "37%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "2",
+     "value": 32,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "3",
+     "value": 13,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "13%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "0",
+     "value": 16,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "1",
+     "value": 39,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "39%",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "2",
+     "value": 33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "33%",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "3",
+     "value": 12,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "0",
+     "value": 15,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "1",
+     "value": 35,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "35%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "2",
+     "value": 38,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "38%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "3",
+     "value": 13,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "13%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "0",
+     "value": 3.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "1",
+     "value": 33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "33%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "2",
+     "value": 44,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "44%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "3",
+     "value": 19,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "19%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "belongs to parent panel b (3 stacked bar charts, MIMIC only; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "series = 'Number of correct diagnoses' (shared legend above b2): 0 (bottom), 1, 2, 3 (top)",
+    "segment percentages are printed inside the segments; the HeartAgent '0' segment has no printed label and was measured from the bitmap",
+    "printed stacks may sum to 99-101 because of rounding",
+    "series fill RGB: 0=(129, 189, 161), 1=(185, 217, 168), 2=(244, 236, 187), 3=(235, 205, 143)"
+   ]
+  },
+  {
+   "id": "b2",
+   "bbox_px": [
+    253.3,
+    642.2,
+    450.7,
+    832.1
+   ],
+   "title": "Correct diagnoses on MIMIC (Qwen-2.5-32B)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Ratio",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "0",
+     "color": "dark green"
+    },
+    {
+     "name": "1",
+     "color": "light green"
+    },
+    {
+     "name": "2",
+     "color": "pale yellow"
+    },
+    {
+     "name": "3",
+     "color": "tan"
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "0",
+     "value": 16,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "1",
+     "value": 48,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "48%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "2",
+     "value": 29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "29%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "3",
+     "value": 6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "6%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "0",
+     "value": 14,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "14%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "1",
+     "value": 46,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "46%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "2",
+     "value": 31,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "31%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "3",
+     "value": 9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "0",
+     "value": 11,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "11%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "1",
+     "value": 43,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "43%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "2",
+     "value": 38,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "38%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "3",
+     "value": 8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "0",
+     "value": 12,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "1",
+     "value": 40,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "40%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "2",
+     "value": 38,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "38%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "3",
+     "value": 10,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "10%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "0",
+     "value": 3.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "1",
+     "value": 36,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "36%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "2",
+     "value": 45,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "45%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "3",
+     "value": 15,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "belongs to parent panel b (3 stacked bar charts, MIMIC only; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "series = 'Number of correct diagnoses' (shared legend above b2): 0 (bottom), 1, 2, 3 (top)",
+    "segment percentages are printed inside the segments; the HeartAgent '0' segment has no printed label and was measured from the bitmap",
+    "printed stacks may sum to 99-101 because of rounding",
+    "series fill RGB: 0=(129, 189, 161), 1=(185, 217, 168), 2=(244, 236, 187), 3=(235, 205, 143)"
+   ]
+  },
+  {
+   "id": "b3",
+   "bbox_px": [
+    473.4,
+    642.2,
+    670.1,
+    832.1
+   ],
+   "title": "Correct diagnoses on MIMIC (MedGemma-27B)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Method",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "CoT",
+      "SC-CoT",
+      "MDAgent",
+      "Dual-Inf",
+      "HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Ratio",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "0",
+     "color": "dark green"
+    },
+    {
+     "name": "1",
+     "color": "light green"
+    },
+    {
+     "name": "2",
+     "color": "pale yellow"
+    },
+    {
+     "name": "3",
+     "color": "tan"
+    }
+   ],
+   "data": [
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "0",
+     "value": 26,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "26%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "1",
+     "value": 41,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "41%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "2",
+     "value": 26,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "26%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "CoT",
+     "x": null,
+     "series": "3",
+     "value": 7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "7%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "0",
+     "value": 19,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "19%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "1",
+     "value": 38,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "38%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "2",
+     "value": 32,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "SC-CoT",
+     "x": null,
+     "series": "3",
+     "value": 11,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "11%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "0",
+     "value": 15,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "1",
+     "value": 43,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "43%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "2",
+     "value": 34,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "34%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "MDAgent",
+     "x": null,
+     "series": "3",
+     "value": 8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "0",
+     "value": 10,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "10%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "1",
+     "value": 39,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "39%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "2",
+     "value": 38,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "38%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Dual-Inf",
+     "x": null,
+     "series": "3",
+     "value": 14,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "14%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "0",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "1",
+     "value": 35,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "35%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "2",
+     "value": 42,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "42%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "3",
+     "value": 19,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "19%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "belongs to parent panel b (3 stacked bar charts, MIMIC only; columns = Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B)",
+    "series = 'Number of correct diagnoses' (shared legend above b2): 0 (bottom), 1, 2, 3 (top)",
+    "segment percentages are printed inside the segments; the HeartAgent '0' segment has no printed label and was measured from the bitmap",
+    "printed stacks may sum to 99-101 because of rounding",
+    "series fill RGB: 0=(129, 189, 161), 1=(185, 217, 168), 2=(244, 236, 187), 3=(235, 205, 143)"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-labeler",
+  "date": "2026-11-09",
+  "time_minutes": 10
+ },
+ "uncertain": [
+  "panel a values are raster measurements (bar top and error-bar caps) at ~0.0025 accuracy units per pixel; expect +/-0.005",
+  "panels a4-a6 (NEJM) use a 0.0-0.8 axis unlike the other rows; a5 draws no 0.8 tick, its range [0.0, 0.8] is set to match a4/a6 (same axes-box height)",
+  "panel b: OCR garbled two printed labels in b1 MDAgent ('%εE' = 33%, '%63' = 39%); verified against the bitmap geometry",
+  "panel b HeartAgent '0' segment (about 4%) carries no printed label; value is the measured segment height"
+ ]
+}

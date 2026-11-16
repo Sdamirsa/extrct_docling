@@ -12,7 +12,9 @@ doesn't expose flat:
   see :mod:`docling.engines.figure_typing`), ``vlm_caption`` (when picture
   description is on), ``generic_classifier_label`` (Docling's generic
   document-figure classifier — no medical classes, only meaningful for the
-  noise filter), and ``caption_text`` resolved from caption refs.
+  noise filter), ``caption_text`` resolved from caption refs, and
+  ``chart_data`` (``extrct.figure-data/1``, see
+  :mod:`docling.engines.figure_data`) when the figure's numbers were read.
 """
 
 from __future__ import annotations
@@ -26,6 +28,7 @@ from typing import TYPE_CHECKING, Any
 from docling_core.types.doc import PictureItem, TableItem
 
 from docling.engines.artifacts import crops_by_self_ref
+from docling.engines.figure_data.publish import get_chart_data
 from docling.engines.figure_typing import get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
 
@@ -266,4 +269,5 @@ def _figure_row(
             ann.model_dump(mode="json", serialize_as_any=True)
             for ann in (getattr(item, "annotations", None) or [])
         ],
+        "chart_data": get_chart_data(item),
     }

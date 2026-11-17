@@ -1,0 +1,71 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.2,
+        0.0,
+        754.0,
+        391.1
+      ],
+      "title": "The provided image is a flowchart or architectural diagram illustrating a multi-agent system for medical diagnosis using ECG and PPG signals, rather than a traditional data chart with axes and data points.",
+      "kind": "other",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "ECG",
+            "PPG",
+            "Reasoning",
+            "& Critic",
+            "Integrated"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "-M",
+            "Raw",
+            "ECG/PPG",
+            "Signal",
+            "Plot",
+            "Meta data"
+          ]
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

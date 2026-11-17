@@ -1,0 +1,122 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": null,
+      "kind": "scatter",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Favors clinician-authored summaries ← No difference → Favors AI-generated summaries",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.5,
+            1.5
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Rating",
+          "color": "#4472c4"
+        }
+      ],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": null,
+          "series": "Rating",
+          "value": -0.15,
+          "err_lo": -0.85,
+          "err_hi": 0.55,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Clarity",
+          "x": null,
+          "series": "Rating",
+          "value": 0.35,
+          "err_lo": -0.25,
+          "err_hi": 0.3,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "Completeness",
+          "x": null,
+          "series": "Rating",
+          "value": -0.85,
+          "err_lo": -0.7,
+          "err_hi": 0.7,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "Accuracy",
+          "x": null,
+          "series": "Rating",
+          "value": -0.35,
+          "err_lo": -0.3,
+          "err_hi": 0.3,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "Readability",
+          "x": null,
+          "series": "Rating",
+          "value": 0.7,
+          "err_lo": -0.5,
+          "err_hi": 0.5,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

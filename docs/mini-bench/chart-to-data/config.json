@@ -1,0 +1,155 @@
+{
+ "bench": "chart-to-data mini bench",
+ "date": "2026-11-17",
+ "figures": 15,
+ "data_figures": 10,
+ "no_data_figures": 5,
+ "truth_values": 560,
+ "bundles": "samples/aca-papers_out, converted with extrct_docling-v2.131.0-r4 (commit 1ad9776909), default configuration",
+ "figure_crops": "bundle crops, images_scale 1.5",
+ "engine_for_ollama_models": {
+  "cli": "amir-figdata run --mode measured --model <tag> --unload-after",
+  "options": {
+   "mode": "measured",
+   "engine": "ollama",
+   "ollama_url": "http://127.0.0.1:11434",
+   "model": "gemma4:26b-a4b-it-qat",
+   "escalation_model": "gemma4:31b-it-q8_0",
+   "keep_alive": "10m",
+   "samples": 1,
+   "panel_split": "auto",
+   "crop_dpi": 220,
+   "min_confidence_for_markdown": 0.7,
+   "eligible_types": [
+    "bar_chart",
+    "box_plot",
+    "forest_plot",
+    "heatmap",
+    "kaplan_meier",
+    "line_chart",
+    "pie_chart",
+    "roc_curve",
+    "scatter_plot"
+   ],
+   "time_budget_s_per_figure": 120.0,
+   "num_ctx": 16384,
+   "max_output_tokens": 8192,
+   "vlm_max_side_px": 1600,
+   "request_timeout_s": 600.0
+  }
+ },
+ "hardware": {
+  "gpu": "NVIDIA GB10 (DGX Spark, unified memory), one model loaded at a time, nothing else on the GPU",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "ollama": "ollama version is 0.32.14"
+ },
+ "models": {
+  "gemma4_12b-it-q8_0": {
+   "ollama_tag": "gemma4:12b-it-q8_0",
+   "family": "gemma4",
+   "parameters": "11.9B",
+   "quantization": "Q8_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "audio",
+    "tools",
+    "thinking"
+   ],
+   "digest": "41c402fdddc2",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "gemma4_26b-a4b-it-q8_0": {
+   "ollama_tag": "gemma4:26b-a4b-it-q8_0",
+   "family": "gemma4",
+   "parameters": "25.2B",
+   "quantization": "Q8_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "0755fafe4094",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "gemma4_26b-a4b-it-qat": {
+   "ollama_tag": "gemma4:26b-a4b-it-qat",
+   "family": "gemma4",
+   "parameters": "25.2B",
+   "quantization": "Q4_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "2dd70431afed",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "gemma4_31b-it-q8_0": {
+   "ollama_tag": "gemma4:31b-it-q8_0",
+   "family": "gemma4",
+   "parameters": "31.3B",
+   "quantization": "Q8_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "53dd8459790f",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "gemma4_31b-it-qat": {
+   "ollama_tag": "gemma4:31b-it-qat",
+   "family": "gemma4",
+   "parameters": "30.7B",
+   "quantization": "Q4_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "e0812a55773b",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "qwen3.8_27b-q8_0": {
+   "ollama_tag": "qwen3.8:27b-q8_0",
+   "family": "qwen35",
+   "parameters": "27.3B",
+   "quantization": "Q8_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "8f5fb6b71ea0",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "qwen3.8_27b-mtp-q8_0": {
+   "ollama_tag": "qwen3.8:27b-mtp-q8_0",
+   "family": "qwen35",
+   "parameters": "27.3B",
+   "quantization": "Q8_0",
+   "capabilities": [
+    "completion",
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "digest": "8a1582877303",
+   "reader": "fork's figure-to-data engine, measured mode (panels -> evidence -> grounded VLM -> geometry -> verify), 1 read per panel, 120 s VLM budget per figure"
+  },
+  "granite-vision-4.1-4b": {
+   "hf_repo": "ibm-granite/granite-vision-4.1-4b",
+   "parameters": "4B",
+   "reader": "upstream Docling chart-extraction stage, preset granite_vision_v4, task <chart2csv>, transformers, one call per figure on the whole crop"
+  }
+ },
+ "scoring": "docling.engines.figure_data.scoring.score_figure; strict and series-lenient (scripts/analyze.py); hit = within 2 % / 5 % of the panel's axis range",
+ "truth": "truth/README.md",
+ "judge": "judge/config.json"
+}

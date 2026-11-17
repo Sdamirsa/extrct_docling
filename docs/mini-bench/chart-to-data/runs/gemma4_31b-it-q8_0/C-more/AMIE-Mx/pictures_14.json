@@ -1,0 +1,271 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": "Consultation Metrics",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "percentage",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Metric",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "High Performance (Red)",
+          "color": "darkred"
+        },
+        {
+          "name": "Medium Performance (Red)",
+          "color": "red"
+        },
+        {
+          "name": "Low Performance (Red)",
+          "color": "lightred"
+        },
+        {
+          "name": "High Performance (Blue)",
+          "color": "darkblue"
+        },
+        {
+          "name": "Medium Performance (Blue)",
+          "color": "blue"
+        },
+        {
+          "name": "Low Performance (Blue)",
+          "color": "lightblue"
+        },
+        {
+          "name": "Uncertain/Other (Blue)",
+          "color": "hatched_blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": "High Performance (Red)",
+          "series": "darkred",
+          "value": 56.7706,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "Medium Performance (Red)",
+          "series": "red",
+          "value": 55.8196,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "Low Performance (Red)",
+          "series": "lightred",
+          "value": 2.8337,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "High Performance (Blue)",
+          "series": "darkblue",
+          "value": 33.7536,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "Medium Performance (Blue)",
+          "series": "blue",
+          "value": 34.6991,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "Low Performance (Blue)",
+          "series": "lightblue",
+          "value": 43.2884,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "Uncertain/Other (Blue)",
+          "series": "hatched_blue",
+          "value": -2.128,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "High Performance (Red)",
+          "series": "darkred",
+          "value": 87.0483,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "Medium Performance (Red)",
+          "series": "red",
+          "value": 21.6828,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "Low Performance (Red)",
+          "series": "lightred",
+          "value": 10.2763,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "High Performance (Blue)",
+          "series": "darkblue",
+          "value": 41.6318,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "Medium Performance (Blue)",
+          "series": "blue",
+          "value": 62.4477,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "Low Performance (Blue)",
+          "series": "lightblue",
+          "value": 8.5108,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "Uncertain/Other (Blue)",
+          "series": "hatched_blue",
+          "value": 2.8337,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": null,
+      "orientation": null,
+      "axes": null,
+      "series": [],
+      "data": [],
+      "notes": [
+        "not read"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

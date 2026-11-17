@@ -1,0 +1,258 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.2,
+        0.0,
+        754.0,
+        391.1
+      ],
+      "title": "Multi-agent diagnostic pipeline for ECG/PPG analysis",
+      "kind": "scatter",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Pipeline stage",
+          "unit": "categorical",
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": [
+            "ECG",
+            "PPG",
+            "Reasoning",
+            "& Critic",
+            "Integrated"
+          ]
+        },
+        "y": {
+          "name": "Component / role",
+          "unit": "categorical",
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": [
+            "-M",
+            "Raw",
+            "ECG/PPG",
+            "Signal",
+            "Plot",
+            "Meta data"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ECG Specialist (LLaVA-7B)",
+          "color": "#4da6ff"
+        },
+        {
+          "name": "PPG Specialist (LLaVA-7B)",
+          "color": "#ff6b6b"
+        },
+        {
+          "name": "Debate agents (1st/2nd)",
+          "color": "#888888"
+        },
+        {
+          "name": "Referee",
+          "color": "#333333"
+        },
+        {
+          "name": "ECG signal",
+          "color": "#00cc66"
+        },
+        {
+          "name": "PPG signal",
+          "color": "#ff9933"
+        },
+        {
+          "name": "Aggregation outputs",
+          "color": "#ffcc00"
+        },
+        {
+          "name": "RAG / PubLMed",
+          "color": "#6666ff"
+        },
+        {
+          "name": "Integrated diagnosis",
+          "color": "#ff66cc"
+        }
+      ],
+      "data": [
+        {
+          "category": "PPG",
+          "x": null,
+          "series": "ECG Specialist (LLaVA-7B)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "ECG Specialist (LLaVA-7B)",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "PPG",
+          "x": null,
+          "series": "PPG Specialist (LLaVA-7B)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "PPG Specialist (LLaVA-7B)",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "1st debate",
+          "x": null,
+          "series": "Debate agents (1st/2nd)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1st debate",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "2nd debate",
+          "x": null,
+          "series": "Debate agents (1st/2nd)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2nd debate",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Devil's advocate",
+          "x": null,
+          "series": "Debate agents (1st/2nd)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "Devil's advocate",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Referee",
+          "x": null,
+          "series": "Referee",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "Referee",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "& Critic",
+          "x": null,
+          "series": "ECG signal",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "ECG",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "& Critic",
+          "x": null,
+          "series": "PPG signal",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "PPG",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "ECG",
+          "x": null,
+          "series": "Aggregation outputs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "ECG",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "PPG",
+          "x": null,
+          "series": "Aggregation outputs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "PPG",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Patient Fusion",
+          "x": null,
+          "series": "Aggregation outputs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "Patient Fusion",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "RAG / PubLMed",
+          "x": null,
+          "series": "RAG / PubLMed",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "RAG",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Integrated",
+          "x": null,
+          "series": "Integrated diagnosis",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "Integrated diagnosis",
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

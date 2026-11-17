@@ -1,0 +1,155 @@
+{
+  "model": "gemma4_31b-it-q8_0",
+  "judged_by": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "figures": [
+    {
+      "figure_id": "A1",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned (0 rows), but the deployment schematic was not recognised as a non-chart: one empty panel typed kind=stacked_bar with an invented linear x axis range [3, 5] (the step numbers) and speech-bubble text ('PPG monitoring via', 'wearable device') as y ticks."
+    },
+    {
+      "figure_id": "A2",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned (0 rows); the pipeline diagram came back as one empty panel 'System Architecture Diagram' typed kind=scatter with diagram words as axis ticks (x: 'ECG', 'PPG', 'Reasoning'; y: 'Raw', 'Signal', 'Meta data')."
+    },
+    {
+      "figure_id": "A3",
+      "verdict": "correct",
+      "error_types": ["GEOMETRY_MISMEASURED", "SERIES_NAMES", "PRINTED_LABEL_MISREAD"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 3 centres are within 5 % of the 0.6 axis range but none within 2 %: constant downward offset of about -0.02 (0.6484 / 0.723 / 0.6418 vs truth 0.674 / 0.741 / 0.666; the overlay puts each mark at the lower edge of the disc). The scorer's 0/3 match is a naming artefact: the model invented two series 'Human-Human' and 'Judge-Reviewer' from the marker colours where the figure has no legend; the printed CI bounds were measured instead of copied (0.6078 for printed 0.60, 0.8428 for 0.84), all within 0.008."
+    },
+    {
+      "figure_id": "A4",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned (0 rows), but the architecture schematic was split into three empty chart-typed panels: 'Transformer Decoder' kind=box, 'Architecture of an Arrhythmia Reasoning Model' kind=scatter, and a third kind=box whose title is the model's own remark 'The provided image is not a chart panel but a text snippet...'."
+    },
+    {
+      "figure_id": "A5",
+      "verdict": "false_positive",
+      "error_types": ["HALLUCINATED_ON_NON_CHART"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "The GT row of the ECG strip was read as a line chart 'ECG signal' with invented axes 'Time' / 'Voltage' and 10 rows t1..t10 for series 'GT' at invented x positions 178, 278, ... 978 (first x is the garbage string ']]78, '); every value is null (source vlm, confidence 0.25). The figure has no axes or numbers; the other six traces became a second panel marked 'not read'."
+    },
+    {
+      "figure_id": "B1",
+      "verdict": "correct",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "All 12 printed counts returned exactly with the legend names verbatim (e.g. Congestive Heart Failure 13 / 6 / 299 / 102, Sepsis 25 / 26 / 283 / 86); 12/12 within 2 %, printed MAPE 0."
+    },
+    {
+      "figure_id": "B2",
+      "verdict": "missed",
+      "error_types": ["NO_OUTPUT", "PANEL_STRUCTURE"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "Nothing returned for 180 truth values: the single model request ran into the 600 s timeout (600.16 s, 0 calls completed, 0 output tokens) and the one panel is marked 'not read'. The three panels (Accuracy Reward, Format Reward, Completion Length) were also taken as one panel with bbox [2, 3, 584, 101]."
+    },
+    {
+      "figure_id": "B3",
+      "verdict": "wrong",
+      "error_types": ["MISSING_VALUES", "PRINTED_LABEL_MISREAD", "PANEL_STRUCTURE", "CATEGORY_LABELS", "SERIES_NAMES"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "15 rows came back but every value is null: none of the 15 AUROC percentages printed in the legends (e.g. OnimiaNet EF<40% 87.97 %, EchoAgent 98.43 %) was read. The five ROC panels were merged into one panel 'ROC Curves for different models'; 12 of the 15 rows are labelled category 'MemSAM' and 3 'EchoONE' (OnimiaNet, H2former, EchoAgent never appear), with series 'red' / 'blue' / 'blue' instead of the EF classes."
+    },
+    {
+      "figure_id": "B4",
+      "verdict": "correct",
+      "error_types": ["GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 5 centres within 2 % of the 3.1 axis range, but they are the model's eyeball estimates rounded to 0.1 (scatter, no calibrated axis): -0.2 / 0.3 / -0.8 / -0.4 / 0.7 vs truth -0.152 / 0.36 / -0.84 / -0.352 / 0.72. CI bounds are rounded the same way (max error 0.065), which moves the Accuracy upper bound from -0.047 to 0.0, so that interval no longer excludes zero."
+    },
+    {
+      "figure_id": "B5",
+      "verdict": "partial",
+      "error_types": ["MISSING_VALUES", "PANEL_STRUCTURE", "INVENTED_VALUES", "GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "Only 2 of the 9 detected panels were read; Cardiac, Overall and all five Quantitative panels are 'not read' (21 of 30 medians missing). 'Shortness of Breath' and 'Internal Medicine' were merged into one panel named 'Internal Medicine' with duplicated categories: first triple 76.5 / 52.0 / 54.0 fits Shortness of Breath (77.23 / 51.57 / 53.18), the second repeats 52.0 / 54.0 for Internal Medicine's GPT-4o / o3-mini (truth 50.18 / 52.05, 5.2 % and 5.6 % off) with whiskers 51-53 vs 49.95-50.18; the Stroke/TIA panel is close (58.8 vs 59.13, 57.3 vs 57.72) but carries an invented extra row 'o3-mini 61.5'."
+    },
+    {
+      "figure_id": "C1",
+      "verdict": "wrong",
+      "error_types": ["GEOMETRY_MISMEASURED", "MISSING_VALUES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "Panel 1 bars are all about 0.17 too low, a constant offset of 22-26 % of the 0.7 axis range (0.4067 / 0.5105 / 0.6869 vs truth 0.58 / 0.69 / 0.84; the overlay shows the marks inside the bars, not on their tops); panel 2 scatters (0.4158 vs 0.479, 0.5817 vs 0.628, 0.7982 vs 0.797). Only 1 of 12 values is within 5 %, and the two Top-3 panels (6 values) are 'not read'."
+    },
+    {
+      "figure_id": "C2",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned (0 rows); the inference flow schematic came back as one empty panel 'RiskCalcs Workflow Diagram' typed kind=scatter with JSON-snippet fragments as axis ticks ('\"respiratory_rate\":', '28,', '110,', '70,')."
+    },
+    {
+      "figure_id": "C3",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "SERIES_NAMES", "GEOMETRY_MISMEASURED", "AXIS_CALIBRATION"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "The GMCPQ and MXEKF panels and the top half of PACES never became a panel (the only read panel is bbox [38, 443, 321, 510], the second 'panel' is the legend): 14 rows for 2 of 22 items against 264 truth values. The legend was not used, series are invented ('High Performance (Red)', 'Uncertain/Other (Blue)'), the x range is given as [20, 100] instead of [0, 100], and the measured segments are wrong, e.g. Showing Empathy AMIE 'Very favorable' 56.77 vs 47.33, Maintaining Patient Welfare 87.05 vs 66.33, and a negative share of -2.13 %."
+    },
+    {
+      "figure_id": "C4",
+      "verdict": "partial",
+      "error_types": ["PANEL_STRUCTURE", "INTERVAL_BOUNDS", "WRONG_KIND", "GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "Box panel (a) and bar panel (b) were merged into one grouped_bar panel with y range [0, 0.4], so the scorer drops all 16 bar values as missing plus extra although about 14 of them are within 5 % when paired by hand (coarse 0.1-step estimates: ORG single-agent 4.6 vs 4.3, CNS 4.2 vs 4.45, CPH 5.0 vs 4.9). The 8 medians were filed under series 'Single-agent' (6 within 5 %; GPT-4o 0.12 vs 0.0904, Gemini-Pro 0.08 vs 0.0501) and the whiskers are an invented symmetric +/-0.01-0.02 (GPT-4o 0.10-0.14 vs truth 0.0002-0.2167)."
+    },
+    {
+      "figure_id": "C5",
+      "verdict": "correct",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 15 printed pie percentages returned exactly (16.8 / 40.2 / 30.8 / 8.4 / 3.7 etc.), 15/15 within 2 %; this came from the engine's vector path with no model call (0 calls, 0.02 s), so it says nothing about the model's reading. Cosmetic only: the panel titles have scrambled word order ('Did the AI help assessment? your', 'Did the make confident? AI you more')."
+    }
+  ],
+  "summary": {
+    "verdict_counts": {
+      "correct": 4,
+      "partial": 2,
+      "wrong": 3,
+      "missed": 1,
+      "true_negative": 4,
+      "false_positive": 1
+    },
+    "error_type_counts": {
+      "GEOMETRY_MISMEASURED": 6,
+      "OTHER": 5,
+      "PANEL_STRUCTURE": 5,
+      "MISSING_VALUES": 4,
+      "SERIES_NAMES": 4,
+      "INTERVAL_BOUNDS": 3,
+      "PRINTED_LABEL_MISREAD": 2,
+      "HALLUCINATED_ON_NON_CHART": 1,
+      "NO_OUTPUT": 1,
+      "CATEGORY_LABELS": 1,
+      "INVENTED_VALUES": 1,
+      "WRONG_KIND": 1,
+      "AXIS_CALIBRATION": 1
+    },
+    "usable_figures": 8,
+    "dominant_failure": "MISSING_VALUES",
+    "assessment": "On single-panel figures the model is dependable: the grouped bar chart with printed counts (B1) is exact, and the two interval plots (A3, B4) are within 5 % of the axis range, although the centres carry a constant -0.02 offset in A3 and are rounded to 0.1 in B4. The three pies (C5) are exact too, but they were read by the engine's vector path without any model call. Every multi-panel data figure fails, and mostly by data that never comes back: B2 timed out at 600 s with no output, B3 returned 15 rows without a single value and ignored the printed AUROCs, B5 and C1 left 7 of 9 and 2 of 4 panels 'not read', and C3 found 2 of 22 items; panels are merged or lost in five figures. Where it does measure marks in such figures the numbers are unreliable (C1 bars 0.17 too low, C3 segments off by up to 20 points and one negative), and box-plot whiskers are guessed as symmetric bands. On non-charts it returns no numbers in four of five cases but always wraps the diagram in a chart-typed empty panel, and it turned an ECG trace into a 10-row line series. It can be trusted on a single-panel chart with printed values or a handful of clearly separated marks, and not on multi-panel, stacked or box-plot figures; a call takes 100-400 s, which is what exhausts the per-figure budget."
+  }
+}

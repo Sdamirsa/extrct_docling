@@ -1,0 +1,780 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Format Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Step",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            225.0
+          ],
+          "ticks": [
+            1.0,
+            225.0
+          ]
+        },
+        "y": {
+          "name": "Format Reward",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Format Reward",
+          "color": "#8fa3ad"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 1.1033,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 1.1256,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 1.2147,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 1.4375,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 1.7939,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 2.0167,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Format Reward",
+          "value": 2.1058,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 61.6981,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 68.4335,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 75.1689,
+          "series": "Format Reward",
+          "value": 2.0167,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 81.9043,
+          "series": "Format Reward",
+          "value": 2.1058,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 88.6397,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 95.3751,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 102.1106,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 108.846,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 115.5814,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 122.3168,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 129.0522,
+          "series": "Format Reward",
+          "value": 2.3285,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 135.7876,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 142.5231,
+          "series": "Format Reward",
+          "value": 2.0167,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 149.2585,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 155.9939,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 162.7293,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 283.9668,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 290.7023,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 297.4377,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 304.1731,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 310.9085,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 317.6439,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 324.3794,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 331.1148,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 337.8502,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 344.5856,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 351.321,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 358.0564,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 364.7919,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 371.5273,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 378.2627,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 384.9981,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 391.7335,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 398.4689,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 405.2044,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 411.9398,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 418.6752,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 425.4106,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 432.146,
+          "series": "Format Reward",
+          "value": 2.1726,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 438.8815,
+          "series": "Format Reward",
+          "value": 2.2394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

@@ -1,0 +1,384 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            225.0
+          ],
+          "ticks": [
+            1.0,
+            225.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Accuracy Reward",
+          "color": "#c0c0c0"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": -224.5572,
+          "series": "Accuracy Reward",
+          "value": 1.0053,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -200.9832,
+          "series": "Accuracy Reward",
+          "value": 1.0922,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -177.4093,
+          "series": "Accuracy Reward",
+          "value": 1.2481,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -153.8353,
+          "series": "Accuracy Reward",
+          "value": 1.4887,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -130.2614,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -106.6874,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -83.1134,
+          "series": "Accuracy Reward",
+          "value": 2.5023,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": -59.5395,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.4887,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 58.3303,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 81.9043,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 105.4783,
+          "series": "Accuracy Reward",
+          "value": 2.5023,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 129.0522,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 152.6262,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.4887,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 294.07,
+          "series": "Accuracy Reward",
+          "value": 1.8385,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 317.6439,
+          "series": "Accuracy Reward",
+          "value": 2.0011,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 341.2179,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 364.7919,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 388.3658,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 411.9398,
+          "series": "Accuracy Reward",
+          "value": 2.1392,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:12b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

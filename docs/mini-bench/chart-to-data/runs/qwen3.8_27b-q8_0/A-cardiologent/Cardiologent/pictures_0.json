@@ -1,0 +1,149 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.7,
+        3.3,
+        359.6,
+        147.7
+      ],
+      "title": "Scenario of Cardiologent",
+      "kind": "scatter",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Stage",
+          "unit": "none",
+          "scale": "linear",
+          "range": [
+            3.0,
+            5.0
+          ],
+          "ticks": [
+            3.0,
+            5.0
+          ]
+        },
+        "y": {
+          "name": "Step",
+          "unit": "none",
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": [
+            "PPG monitoring via",
+            "wearable device",
+            "_ a distributed irregularity",
+            "pattern _ The rhythm ... atrial",
+            "fibrillation (AF), though ECG",
+            "confirmation is necessary"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Patient",
+          "color": "#00BFFF"
+        },
+        {
+          "name": "PPG monitoring via wearable device",
+          "color": "#000000"
+        },
+        {
+          "name": "PPG Agent",
+          "color": "#FF0000"
+        },
+        {
+          "name": "PPG & ECG monitoring",
+          "color": "#000000"
+        },
+        {
+          "name": "Cardiologent",
+          "color": "#000000"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Patient",
+          "value": 3.192,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 3.9112,
+          "series": "PPG monitoring via wearable device",
+          "value": 3.9112,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "PPG Agent",
+          "value": 3.1741,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 5.6,
+          "series": "PPG & ECG monitoring",
+          "value": 5.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Cardiologent",
+          "value": 5.1993,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

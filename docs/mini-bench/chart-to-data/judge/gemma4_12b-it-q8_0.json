@@ -1,0 +1,154 @@
+{
+  "model": "gemma4_12b-it-q8_0",
+  "judged_by": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "figures": [
+    {
+      "figure_id": "A1",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned for the deployment schematic; the model titled its one panel 'a conceptual diagram ... not a standard data chart'. OTHER: it still emitted an empty panel shell with pseudo-axes (x range 3-5 from the step numbers, y 'ticks' made of bubble text such as 'PPG monitoring via')."
+    },
+    {
+      "figure_id": "A2",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned for the pipeline diagram (panel titled 'a flow diagram illustrating a multi-agent system'). OTHER: one empty panel shell with categorical 'ticks' taken from box labels ('ECG', 'PPG', 'Reasoning', '-M', 'Raw', 'Meta data')."
+    },
+    {
+      "figure_id": "A3",
+      "verdict": "partial",
+      "error_types": ["INTERVAL_BOUNDS", "GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "Centres read low by a roughly constant offset: 0.6365 / 0.723 / 0.6431 vs truth 0.674 / 0.741 / 0.666 (-0.038, -0.018, -0.023; the first is 6 % of the 0.6 axis range, marks were placed beside the printed labels, not on the dots). The six printed CI bounds (0.79, 0.52, 0.84, 0.60, 0.78, 0.51) were read correctly but emitted as six extra value rows, while the measured err_lo are wrong (0.6052 / 0.5486 / 0.6085 vs 0.52 / 0.60 / 0.51). The scorer's 0 of 3 matches is a naming mismatch: each category was made its own series ('Judge ↔ R1' ...) instead of one series, not nine wrong numbers."
+    },
+    {
+      "figure_id": "A4",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "No values returned for the encoder schematic; panel 2 is titled 'a schematic diagram ... not a standard data chart' and the quoted 0.183 / 0.15 in the example answer were not taken as data. OTHER: three empty panel shells (bboxes [394,10,464,121], [18,12,304,488], [523,333,743,388]) were emitted for a figure with no panels."
+    },
+    {
+      "figure_id": "A5",
+      "verdict": "false_positive",
+      "error_types": ["HALLUCINATED_ON_NON_CHART", "INVENTED_VALUES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "The seven ECG trace rows (no axes, no numbers) were returned as two 'line' panels with 102 rows: 18 invented points for series 'GT' alternating 0.55 / 0.5 on a made-up y range 100-900, plus 84 rows with null values (14 each for Cardiologent, GPT-4o, Gemini-2.5-Pro, Qwen2.5-VL, MedGemma, Llama-3.2-Vision). The run also ran away: 9440 output tokens, 632 s."
+    },
+    {
+      "figure_id": "B1",
+      "verdict": "correct",
+      "error_types": ["SERIES_NAMES"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 12 printed counts returned exactly and attached to the right problem and series (13, 6, 299, 102 / 25, 25, 255, 115 / 25, 26, 283, 86). Cosmetic only: legend glyphs garbled ('MAS ‱, Base x' for 'MAS ○, Base ×', 'Both Correct (‱x)' for 'Both Correct (○)', 'Both Incorrect [x]'); kind 'bar' for 'grouped_bar' is a harmless synonym."
+    },
+    {
+      "figure_id": "B2",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "INVENTED_VALUES", "AXIS_CALIBRATION"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "The three panels were merged into one 'Accuracy Reward' panel with 28 points instead of 180: Format Reward and Completion Length (120 values) are absent as series, yet 20 of the 28 marks lie on those two panels and are scaled on the Accuracy axis (e.g. 2.1392 for points on the Completion Length curve, whose axis runs 200-275). Values repeat in a loop (2.1392 x8, 1.8385 x6, 2.0011 x6) and x was invented (range '1-225', values -224.6 ... 411.9; the figure prints no x ticks); only the first ~6 points loosely track the real curve (1.005, 1.092, 1.248 vs 1.018, 1.106, 1.215)."
+    },
+    {
+      "figure_id": "B3",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "CATEGORY_LABELS", "PRINTED_LABEL_MISREAD", "SERIES_NAMES", "UNIT_OR_FORMAT"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "Five ROC panels merged into one, and the model names are misassigned: OnimiaNet's AUROCs are labelled 'MemSAM', H2former's 'EchoONE', EchoAgent's have no category, so MemSAM and EchoONE each appear twice with different numbers. Printed percentages were returned as 3-digit fractions with 6 of 15 misread (0.897 for 87.97 %, 0.881 for 89.81 %, 0.799 for 77.99 %, 0.856 for 93.88 %, 0.528 for 56.28 %, 0.655 for 85.56 %), and the legend was misread as 'EF ≥ 40%' for 'EF<40%' and '40% ≥ SEF ≥ 50%' for '40%≤EF<50%'. The scorer's 0 of 15 is first a structure and naming mismatch, but 6 numbers are also wrong."
+    },
+    {
+      "figure_id": "B4",
+      "verdict": "correct",
+      "error_types": ["GEOMETRY_MISMEASURED"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 5 centres within 2 % of the 3.1-unit axis range and on the right domain: -0.18 / 0.35 / -0.88 / -0.38 / 0.78 vs truth -0.152 / 0.36 / -0.84 / -0.352 / 0.72 (small scatter, largest 0.06 on Readability). CI bounds also close (worst: Completeness upper -0.41 vs -0.325, 2.7 % of range). Values are the model's eyeball estimates (no axis calibrated); kind 'scatter' for 'forest' is defensible and the invented series name 'Rating domain comparison' is harmless."
+    },
+    {
+      "figure_id": "B5",
+      "verdict": "partial",
+      "error_types": ["MISSING_VALUES", "PANEL_STRUCTURE", "INTERVAL_BOUNDS", "CATEGORY_LABELS"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "Only panel a1 (Stroke/TIA, qualitative) was read; the other panels are marked 'not read' after 587 s, so 27 of 30 medians are missing, and a2 and a3 were boxed together (9 panels for 10). In a1 the medians are near but not within 2 %: 74.2 / 58.1 / 56.8 vs 73.25 / 59.13 / 57.72 (3.3-3.7 % of the 27.5 range), the two outlier diamonds were added as plain value rows (GPT-4o 54.8, o3-mini 63.3), and 'RiskAgent-8B' was read as 'RiskAgent-88'."
+    },
+    {
+      "figure_id": "C1",
+      "verdict": "wrong",
+      "error_types": ["GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "Four panels and all labels are right, but 9 of 12 bar heights are too low because the marks sit inside the bars instead of on their tops (scatter, always downward, 0.04-0.24): Top-3 Diagnosis 0.358 / 0.428 / 0.496 vs truth 0.597 / 0.65 / 0.73; Top-1 Diagnosis 0.385 / 0.541 vs 0.58 / 0.69; Top-3 Explanation 0.417 / 0.442 / 0.633 vs 0.534 / 0.551 / 0.676. Only 0.8428 (0.84), 0.6297 (0.628) and 0.7982 (0.797) are right. The scorer's 0 of 12 matches comes from naming (each bar its own series instead of 'Accuracy'), which hides that 3 values are in fact correct."
+    },
+    {
+      "figure_id": "C2",
+      "verdict": "false_positive",
+      "error_types": ["HALLUCINATED_ON_NON_CHART"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "The inference flow schematic was returned as a panel with two 'printed' values, Score = 0 and Mortality = 0.7 (label '0.7%'): the output text of the worked CURB-65 example, not chart data. The pseudo-axes are JSON fragments ('\"respiratory_rate\":', '28,', '110,', '70,')."
+    },
+    {
+      "figure_id": "C3",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "AXIS_CALIBRATION", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "GMCPQ and MXEKF were not returned at all; one panel covers only the lower half of PACES (2 of 22 items) and the legend box was returned as a second 'bar' panel with 12 null rows, so none of the 264 values is usable. The 14 numbers returned are cumulative segment ends on a miscalibrated axis, about 1.7-1.9x too large and above 100 % (Showing Empathy 88.6 / 170.1 / 168.6 where the AMIE bar's cumulative ends are 47.3 / 95 / 100; truth segments 47.33 / 47.67 / 5.0), with the AMIE and PCP bars folded into one category and seven invented colour series ('Red Series' ... 'Striped Blue Series') instead of the six legend levels."
+    },
+    {
+      "figure_id": "C4",
+      "verdict": "partial",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "INTERVAL_BOUNDS", "CATEGORY_LABELS", "GEOMETRY_MISMEASURED"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "The box plot and the grouped-bar panel were merged into one 'box' panel and the 16 bars of panel b (ACC ... FFB, 4.14-5.0) were never read. The 8 medians are mostly right as eyeball estimates (0.0 / 0.11 / 0.08 / 0.11 / 0.13 / 0.13 / 0.05 / 0.03 vs 0.0036 / 0.0904 / 0.0501 / 0.1051 / 0.1265 / 0.1269 / 0.0565 / 0.0337; Gemini-Pro is off by 7 % of the range), but 9 more rows repeat the same categories with upper-whisker or outlier heights as plain values (GPT-4o 0.22, BioGPT-Large 0.22 and 0.35, Med42 0.11 vs whisker 0.064) and two labels are wrong ('Llama-3.1', 'Med2-70B'). The scorer's 0 of 24 is because the merged panel was paired with truth panel b; it is not 8 wrong medians."
+    },
+    {
+      "figure_id": "C5",
+      "verdict": "correct",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 15 printed pie percentages exact with the right slice labels (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8). This came from the engine's vector pie reader with 0 model calls (0.02 s), so it says nothing about the model itself. OTHER, cosmetic: panel titles have scrambled word order ('Did the make confident? AI you more')."
+    }
+  ],
+  "summary": {
+    "verdict_counts": {
+      "correct": 3,
+      "partial": 3,
+      "wrong": 4,
+      "missed": 0,
+      "true_negative": 3,
+      "false_positive": 2
+    },
+    "error_type_counts": {
+      "PANEL_STRUCTURE": 5,
+      "SERIES_NAMES": 5,
+      "MISSING_VALUES": 4,
+      "GEOMETRY_MISMEASURED": 4,
+      "OTHER": 4,
+      "INTERVAL_BOUNDS": 3,
+      "CATEGORY_LABELS": 3,
+      "HALLUCINATED_ON_NON_CHART": 2,
+      "INVENTED_VALUES": 2,
+      "AXIS_CALIBRATION": 2,
+      "PRINTED_LABEL_MISREAD": 1,
+      "UNIT_OR_FORMAT": 1
+    },
+    "usable_figures": 6,
+    "dominant_failure": "PANEL_STRUCTURE",
+    "assessment": "The model is reliable only on a single-panel chart whose numbers are printed and large (B1: 12 of 12 counts exact) and gives usable eyeball estimates on a simple single-panel forest plot (B4: all centres within 2 % of the range); the third correct figure, C5, was read by the engine's vector pie reader without calling the model. Its typical failure is structural: every multi-panel data figure except C1 was merged into one panel or only partly read (B2, B3, B5, C3, C4), which loses whole panels (120 of 180 values in B2, 27 of 30 in B5, 16 of 24 in C4, all 264 in C3) and attaches values to the wrong panel, model name or axis. Where it places marks for the engine to measure, the marks are not on the data (C1: 9 of 12 bars read 0.04-0.24 too low because the marks sit inside the bars; A3: centres 0.02-0.04 low), and interval ends, whisker tops and outliers come back as extra plain values (A3, B5, C4). Small printed text is unsafe: 6 of 15 AUROC labels in B3 were misread and percent turned into fractions. On figures without data it declined three diagrams, leaving only empty panel shells, but invented a line series for ECG traces (A5, 102 rows, 632 s) and took a worked example's output as data (C2). Several of the scorer's zeros (A3, C1, C4) are naming or pairing mismatches that overstate the error, but the underlying extractions are still not usable as they are: trust it on single-panel charts with printed values, and not on multi-panel, measured or dense figures."
+  }
+}

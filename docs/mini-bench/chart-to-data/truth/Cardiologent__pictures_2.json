@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 4,
+  "bbox": [
+   53.771663665771484,
+   734.717945098877,
+   556.9486694335938,
+   473.3359375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Not a data chart: Figure 3 is the Cardiologent pipeline diagram (window-level agents/tools/debate, patient-level aggregation/fusion/RAG). The small green ECG trace under 'Grounding' is an illustrative waveform with a highlighted span and no axes; '7 tools', '9 tools', 'x3', '9 class', '7 class' are diagram labels, not a data series. One embedded bitmap."
+ ]
+}

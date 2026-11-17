@@ -1,0 +1,169 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Dynamic-Specialist-MAS",
+  "self_ref": "#/pictures/1",
+  "image_path": "images/picture_002.png",
+  "page": 5,
+  "bbox": [
+   318.1546325683594,
+   571.7991180419922,
+   557.4949951171875,
+   708.6175155639648
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    359.0,
+    205.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "PAC-G",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "PAC-G (Baseline)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "PAC-G (Current)",
+     "value": 198.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "PAC-G (Current + 1)",
+     "value": 102.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "PAC-G",
+     "value": 21.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "PAC-G (Baseline)",
+     "value": 21.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "PAC-G (Current)",
+     "value": 215.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "PAC-G (Current + 1)",
+     "value": 135.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "PAC-G",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "PAC-G (Baseline)",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "PAC-G (Current)",
+     "value": 285.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "PAC-G (Current + 1)",
+     "value": 95.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

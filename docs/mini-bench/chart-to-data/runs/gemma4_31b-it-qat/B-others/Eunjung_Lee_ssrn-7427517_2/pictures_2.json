@@ -1,0 +1,122 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": "Comparison of clinician-authored vs AI-generated summaries",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Difference in rating",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.5,
+            1.5
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Mean difference",
+          "color": "blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": ":-0.2",
+          "series": "Mean difference",
+          "value": -0.2,
+          "err_lo": -0.8,
+          "err_hi": 0.6,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Clarity",
+          "x": 0.35,
+          "series": "Mean difference",
+          "value": 0.35,
+          "err_lo": 0.1,
+          "err_hi": 0.6,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Completeness",
+          "x": -0.85,
+          "series": "Mean difference",
+          "value": -0.85,
+          "err_lo": -1.3,
+          "err_hi": -0.3,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Accuracy",
+          "x": -0.3,
+          "series": "Mean difference",
+          "value": -0.3,
+          "err_lo": -0.6,
+          "err_hi": 0.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Readability",
+          "x": 0.75,
+          "series": "Mean difference",
+          "value": 0.75,
+          "err_lo": 0.2,
+          "err_hi": 1.2,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

@@ -1,0 +1,262 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        394.0,
+        10.4,
+        464.4,
+        121.4
+      ],
+      "title": null,
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        17.9,
+        12.5,
+        303.5,
+        488.1
+      ],
+      "title": "Stage 2: Arrhythmia reasoning model",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Time (samples)",
+          "unit": "sample index",
+          "scale": "linear",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Amplitude",
+          "unit": "normalized (0-1)",
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            "Raw",
+            "Signal",
+            "You are",
+            "system ..."
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ECG/PPG Signal",
+          "color": "#008000"
+        }
+      ],
+      "data": [
+        {
+          "category": "R-Peak 1",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 2",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 3",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 4",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 5",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 6",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 7",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 8",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 9",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 10",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "R-Peak 11",
+          "x": null,
+          "series": "ECG/PPG Signal",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        522.7,
+        332.7,
+        743.0,
+        388.0
+      ],
+      "title": null,
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

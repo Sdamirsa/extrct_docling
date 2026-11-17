@@ -1,0 +1,30 @@
+[
+ [
+  "Clinical Problem",
+  "PAC-G",
+  "PAC-G (Baseline)",
+  "PAC-G (Current)",
+  "PAC-G (Current + 1)"
+ ],
+ [
+  "Congestive Heart Failure",
+  "12",
+  "0",
+  "198",
+  "102"
+ ],
+ [
+  "Acute Kidney Injury",
+  "21",
+  "21",
+  "215",
+  "135"
+ ],
+ [
+  "Sepsis",
+  "28",
+  "28",
+  "285",
+  "95"
+ ]
+]

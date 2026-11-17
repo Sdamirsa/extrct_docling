@@ -1,0 +1,69 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.7,
+        3.3,
+        359.6,
+        147.7
+      ],
+      "title": "The image is a conceptual diagram illustrating a two-stage medical monitoring process, not a standard data chart with axes and series.",
+      "kind": "other",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            3.0,
+            5.0
+          ],
+          "ticks": [
+            3.0,
+            5.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "PPG monitoring via",
+            "wearable device",
+            "_ a distributed irregularity",
+            "pattern _ The rhythm ... atrial",
+            "fibrillation (AF), though ECG",
+            "confirmation is necessary"
+          ]
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:12b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

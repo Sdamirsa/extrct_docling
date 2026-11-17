@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/0",
+  "image_path": "images/picture_001.png",
+  "page": 1,
+  "bbox": [
+   317.685302734375,
+   578.1922149658203,
+   558.3047485351562,
+   479.4557800292969
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Not a data chart: Figure 1 is a two-box deployment-scenario schematic (icons, step numbers 1-5, two quoted text bubbles); no axes, no plotted or printed numeric data. One embedded bitmap, no vector objects."
+ ]
+}

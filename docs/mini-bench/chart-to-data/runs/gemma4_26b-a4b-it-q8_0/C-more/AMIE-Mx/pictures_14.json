@@ -1,0 +1,341 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": null,
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Red Series 1",
+          "color": "#a50000"
+        },
+        {
+          "name": "Red Series 2",
+          "color": "#e31a1c"
+        },
+        {
+          "name": "Red Series 3",
+          "color": "#fc4e2a"
+        },
+        {
+          "name": "Blue Series 1",
+          "color": "#084594"
+        },
+        {
+          "name": "Blue Series 2",
+          "color": "#2171b5"
+        },
+        {
+          "name": "Blue Series 3",
+          "color": "#6baed6"
+        },
+        {
+          "name": "Blue Series 4",
+          "color": "#9ecae1"
+        },
+        {
+          "name": "Blue Series 5",
+          "color": "#c6dbef"
+        },
+        {
+          "name": "Blue Series 6",
+          "color": "#deebf7"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Red Series 1",
+          "value": 97.7877,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Red Series 2",
+          "value": 62.6369,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Red Series 3",
+          "value": 29.3315,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Blue Series 1",
+          "value": 39.9007,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Blue Series 2",
+          "value": 63.3938,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Blue Series 3",
+          "value": 55.5036,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Blue Series 4",
+          "value": 14.7536,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Blue Series 5",
+          "value": 12.3003,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Red Series 1",
+          "value": 125.0846,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Red Series 2",
+          "value": 57.5275,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Red Series 3",
+          "value": 4.7309,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Blue Series 1",
+          "value": 78.9111,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Blue Series 2",
+          "value": 67.667,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Blue Series 3",
+          "value": 39.5502,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Blue Series 4",
+          "value": 4.7309,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "PCP (bottom)",
+            "Very favorable"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#f4a59a"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#a6cee3"
+        },
+        {
+          "name": "Very favorable",
+          "color": "#800000"
+        },
+        {
+          "name": "Favorable (or \"Yes\" for Y/N)",
+          "color": "#e31a1c"
+        },
+        {
+          "name": "Neither favorable nor unfavorable",
+          "color": "#fb9a99"
+        },
+        {
+          "name": "Unfavorable (or \"No\" for Y/N)",
+          "color": "#fdbf6f"
+        },
+        {
+          "name": "Very unfavorable",
+          "color": "#ff7f00"
+        },
+        {
+          "name": "Cannot rate / Does not apply",
+          "color": "#cccccc"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

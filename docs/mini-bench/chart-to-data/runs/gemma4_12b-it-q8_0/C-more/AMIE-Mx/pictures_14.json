@@ -1,0 +1,440 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": null,
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Red Series",
+          "color": "#c00000"
+        },
+        {
+          "name": "Light Red Series",
+          "color": "#e04040"
+        },
+        {
+          "name": "Pink Series",
+          "color": "#ff8080"
+        },
+        {
+          "name": "Blue Series",
+          "color": "#0040c0"
+        },
+        {
+          "name": "Light Blue Series",
+          "color": "#60a0ff"
+        },
+        {
+          "name": "Very Light Blue Series",
+          "color": "#a0c0ff"
+        },
+        {
+          "name": "Striped Blue Series",
+          "color": "#a0c0ff"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Red Series",
+          "value": 88.5621,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Light Red Series",
+          "value": 170.1226,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Pink Series",
+          "value": 168.6087,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Blue Series",
+          "value": 39.9007,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Light Blue Series",
+          "value": 101.9978,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Very Light Blue Series",
+          "value": 144.5758,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": ", ",
+          "series": "Striped Blue Series",
+          "value": 165.6552,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Red Series",
+          "value": 124.8953,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Light Red Series",
+          "value": 168.683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Pink Series",
+          "value": 168.8974,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Blue Series",
+          "value": 79.4788,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Light Blue Series",
+          "value": 133.9786,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Very Light Blue Series",
+          "value": 164.6347,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": ", ",
+          "series": "Striped Blue Series",
+          "value": 168.6087,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Value",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            10.0
+          ],
+          "ticks": [
+            "PCP (bottom)",
+            "Very favorable"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#f4a582"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#8ec6ff"
+        }
+      ],
+      "data": [
+        {
+          "category": "Very favorable",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Very favorable",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Favorable (or \"Yes\" for Y/N)",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Favorable (or \"Yes\" for Y/N)",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Neither favorable nor unfavorable",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Neither favorable nor unfavorable",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Unfavorable (or \"No\" for Y/N)",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Unfavorable (or \"No\" for Y/N)",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Very unfavorable",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Very unfavorable",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Cannot rate / Does not apply",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Cannot rate / Does not apply",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:12b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

@@ -1,0 +1,136 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 7,
+  "bbox": [
+   342.6832580566406,
+   605.5192108154297,
+   533.6847534179688,
+   735.8361587524414
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    287.0,
+    196.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "R1 \u2194 R2 (human-human)",
+     "x": null,
+     "series": "ICC(2",
+     "value": 0.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "R1 \u2194 R2 (human-human)",
+     "x": null,
+     "series": "1)",
+     "value": 0.52,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "R1 \u2194 R2 (human-human)",
+     "x": null,
+     "series": "Lower CI",
+     "value": 0.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R1",
+     "x": null,
+     "series": "ICC(2",
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R1",
+     "x": null,
+     "series": "1)",
+     "value": 0.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R1",
+     "x": null,
+     "series": "Lower CI",
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R2",
+     "x": null,
+     "series": "ICC(2",
+     "value": 0.78,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R2",
+     "x": null,
+     "series": "1)",
+     "value": 0.51,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Judge \u2194 R2",
+     "x": null,
+     "series": "Lower CI",
+     "value": 0.78,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

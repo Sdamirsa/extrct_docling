@@ -1,0 +1,255 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": null,
+      "kind": "grouped_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Diagnostic",
+            "lability",
+            "(b)",
+            "Signle-agent",
+            "v.s.",
+            "multi-agent"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            5.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Single-agent",
+          "color": "#7289da"
+        },
+        {
+          "name": "Multi-agent (this work)",
+          "color": "#2c3e50"
+        }
+      ],
+      "data": [
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "Single-agent",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

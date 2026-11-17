@@ -1,0 +1,2182 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Med-RwR",
+  "self_ref": "#/pictures/6",
+  "image_path": "images/picture_007.png",
+  "page": 21,
+  "bbox": [
+   110.5644760131836,
+   708.3916397094727,
+   500.9998779296875,
+   640.4693908691406
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0.0,
+    0.0,
+    196.0,
+    102.0
+   ],
+   "title": "Accuracy Reward",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.734,
+      2.744
+     ],
+     "ticks": [
+      1.0,
+      1.5,
+      2.0,
+      2.5
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Accuracy Reward",
+     "color": "taupe (#B8A898)"
+    },
+    {
+     "name": "Accuracy Reward (raw points)",
+     "color": "light taupe, semi-transparent (#DDD3C9 on white)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Accuracy Reward",
+     "value": 1.018,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Accuracy Reward",
+     "value": 1.106,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Accuracy Reward",
+     "value": 1.215,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Accuracy Reward",
+     "value": 1.619,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Accuracy Reward",
+     "value": 1.878,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Accuracy Reward",
+     "value": 2.143,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Accuracy Reward",
+     "value": 2.135,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Accuracy Reward",
+     "value": 1.916,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Accuracy Reward",
+     "value": 2.206,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Accuracy Reward",
+     "value": 2.049,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Accuracy Reward",
+     "value": 1.635,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Accuracy Reward",
+     "value": 1.885,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Accuracy Reward",
+     "value": 2.167,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Accuracy Reward",
+     "value": 2.104,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Accuracy Reward",
+     "value": 2.049,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Accuracy Reward",
+     "value": 2.002,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Accuracy Reward",
+     "value": 2.221,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Accuracy Reward",
+     "value": 2.042,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Accuracy Reward",
+     "value": 2.034,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Accuracy Reward",
+     "value": 2.448,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Accuracy Reward",
+     "value": 2.127,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Accuracy Reward",
+     "value": 1.791,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Accuracy Reward",
+     "value": 1.862,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Accuracy Reward",
+     "value": 1.956,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Accuracy Reward",
+     "value": 2.314,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Accuracy Reward",
+     "value": 2.362,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Accuracy Reward",
+     "value": 2.268,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Accuracy Reward",
+     "value": 2.346,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Accuracy Reward",
+     "value": 2.26,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Accuracy Reward",
+     "value": 2.264,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.018,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.191,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.235,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.001,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.75,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.53,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.733,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.092,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.313,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.781,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.486,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.283,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.05,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.157,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.936,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.062,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.374,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.702,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.361,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.53,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.72,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.858,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 1.857,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.049,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.578,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.141,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.391,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.296,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.217,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Accuracy Reward (raw points)",
+     "value": 2.305,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Panel 'Accuracy Reward' of a 1 x 3 strip. A thick polyline (the smoothed curve, taupe (#B8A898)) over a pale filled area, plus one semi-transparent dot per logged point (light taupe, semi-transparent (#DDD3C9 on white)) drawn under the line. No legend, no x tick labels, no axis titles; the y tick labels are printed left of a grey spine, with dashed gridlines at the ticks.",
+    "Series names are not printed. 'Accuracy Reward' (the panel title) names the smoothed line; 'Accuracy Reward (raw points)' names the raw dots. x is the ordinal position of the point, 1..30 from left to right (the x axis carries no ticks or numbers; the caption says only that 'the rewards are plotted every five steps').",
+    "Measured on the PDF's embedded bitmap (page 21, one RGB image 3118 x 573 px for the whole strip, 7.87 px per PDF point; no vector paths, no text layer). Y calibration: least squares through the 4 dashed gridlines, whose centres coincide with the centres of the printed tick labels to <= 1 px: value = 3.08232 -0.0043327 * y_native (230.8 px per unit); fit residual <= 0.0013 axis units.",
+    "Line: the centreline of the stroke was fitted as a straight segment between consecutive points (max deviation of any column from its segment 0.33 px); a vertex is the mean of the two adjacent segment fits at the vertex x. The 30 vertices sit on an even x grid, native x = 155.0 + 29.15 * (k - 1) px (rms deviation of the sharp vertices from the grid <= 0.08 px). Estimated error of the line values: +/- 0.005 axis units (about 1 px).",
+    "Dots: 17 px discs; the centre was found by fitting a disc of that radius at the vertex x to the dot-coloured pixels not covered by the line. All 30 dots are individually resolvable; those more than 80% hidden under the line (visible share in brackets) carry confidence 0.7: points 1 (14%), 3 (7%), 23 (9%). Estimated error: +/- 0.005 axis units, about twice that for the low-visibility dots.",
+    "Cross-check with a known relation: in all three panels the smoothed value at point k equals the mean of raw points k and k-1 (a 2-point moving average), and at point 1 it equals raw point 1. Residual of that relation here: largest 0.0042, mean 0.0024 axis units (1.0 px); point 1: 0.0001. This confirms both readings, including the dots that are mostly hidden.",
+    "Y axis: tick labels printed 1.0, 1.5, 2.0, 2.5; the spine runs from 0.734 (x axis line) to 2.744 (top end), used as axes.y.range. Crop px of the first and last vertex: [25.6, 88.3], [186.5, 33.4]."
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    196.0,
+    0.0,
+    393.9,
+    102.0
+   ],
+   "title": "Format Reward",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.549,
+      2.106
+     ],
+     "ticks": [
+      1.0,
+      1.5,
+      2.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Format Reward",
+     "color": "blue-grey (#A9B3B7)"
+    },
+    {
+     "name": "Format Reward (raw points)",
+     "color": "light blue-grey, semi-transparent (#D9E0E2 on white)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Format Reward",
+     "value": 0.816,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Format Reward",
+     "value": 0.781,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Format Reward",
+     "value": 0.769,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Format Reward",
+     "value": 0.863,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Format Reward",
+     "value": 1.015,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Format Reward",
+     "value": 1.43,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Format Reward",
+     "value": 1.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Format Reward",
+     "value": 1.72,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Format Reward",
+     "value": 1.837,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Format Reward",
+     "value": 1.772,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Format Reward",
+     "value": 1.613,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Format Reward",
+     "value": 1.692,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Format Reward",
+     "value": 1.807,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Format Reward",
+     "value": 1.784,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Format Reward",
+     "value": 1.772,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Format Reward",
+     "value": 1.748,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Format Reward",
+     "value": 1.817,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Format Reward",
+     "value": 1.754,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Format Reward",
+     "value": 1.734,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Format Reward",
+     "value": 1.876,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Format Reward",
+     "value": 1.742,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Format Reward",
+     "value": 1.622,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Format Reward",
+     "value": 1.652,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Format Reward",
+     "value": 1.697,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Format Reward",
+     "value": 1.826,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Format Reward",
+     "value": 1.843,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Format Reward",
+     "value": 1.82,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Format Reward",
+     "value": 1.853,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Format Reward",
+     "value": 1.825,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Format Reward",
+     "value": 1.809,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Format Reward (raw points)",
+     "value": 0.815,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Format Reward (raw points)",
+     "value": 0.744,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Format Reward (raw points)",
+     "value": 0.788,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Format Reward (raw points)",
+     "value": 0.933,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.094,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.762,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.633,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.802,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.869,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.672,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.551,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.832,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.781,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.784,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.754,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.737,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.893,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.615,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.852,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.896,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.585,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.658,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.643,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.745,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.903,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.783,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.856,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.845,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.798,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Format Reward (raw points)",
+     "value": 1.815,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    }
+   ],
+   "notes": [
+    "Panel 'Format Reward' of a 1 x 3 strip. A thick polyline (the smoothed curve, blue-grey (#A9B3B7)) over a pale filled area, plus one semi-transparent dot per logged point (light blue-grey, semi-transparent (#D9E0E2 on white)) drawn under the line. No legend, no x tick labels, no axis titles; the y tick labels are printed left of a grey spine, with dashed gridlines at the ticks.",
+    "Series names are not printed. 'Format Reward' (the panel title) names the smoothed line; 'Format Reward (raw points)' names the raw dots. x is the ordinal position of the point, 1..30 from left to right (the x axis carries no ticks or numbers; the caption says only that 'the rewards are plotted every five steps').",
+    "Measured on the PDF's embedded bitmap (page 21, one RGB image 3118 x 573 px for the whole strip, 7.87 px per PDF point; no vector paths, no text layer). Y calibration: least squares through the 3 dashed gridlines, whose centres coincide with the centres of the printed tick labels to <= 1 px: value = 2.36745 -0.0033557 * y_native (298.0 px per unit); fit residual <= 0.0000 axis units.",
+    "Line: the centreline of the stroke was fitted as a straight segment between consecutive points (max deviation of any column from its segment 0.33 px); a vertex is the mean of the two adjacent segment fits at the vertex x. The 30 vertices sit on an even x grid, native x = 1177.9 + 29.15 * (k - 1) px (rms deviation of the sharp vertices from the grid <= 0.08 px). Estimated error of the line values: +/- 0.004 axis units (about 1 px).",
+    "Dots: 17 px discs; the centre was found by fitting a disc of that radius at the vertex x to the dot-coloured pixels not covered by the line. All 30 dots are individually resolvable; those more than 80% hidden under the line (visible share in brackets) carry confidence 0.7: points 1 (12%), 14 (5%), 23 (16%), 28 (8%), 30 (19%). Estimated error: +/- 0.004 axis units, about twice that for the low-visibility dots.",
+    "Cross-check with a known relation: in all three panels the smoothed value at point k equals the mean of raw points k and k-1 (a 2-point moving average), and at point 1 it equals raw point 1. Residual of that relation here: largest 0.0033, mean 0.0017 axis units (1.0 px); point 1: 0.0008. This confirms both readings, including the dots that are mostly hidden.",
+    "Y axis: tick labels printed 1.0, 1.5, 2.0; the spine runs from 0.549 (x axis line) to 2.106 (top end), used as axes.y.range. Crop px of the first and last vertex: [220.3, 85.5], [381.2, 29.1]."
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    393.9,
+    0.0,
+    585.0,
+    102.0
+   ],
+   "title": "Completion Length",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      194.6,
+      297.8
+     ],
+     "ticks": [
+      200.0,
+      225.0,
+      250.0,
+      275.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Completion Length",
+     "color": "lavender-grey (#A89FB8)"
+    },
+    {
+     "name": "Completion Length (raw points)",
+     "color": "light lavender, semi-transparent (#D3CDD8 on white)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Completion Length",
+     "value": 209.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Completion Length",
+     "value": 216.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Completion Length",
+     "value": 234.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Completion Length",
+     "value": 246.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Completion Length",
+     "value": 259.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Completion Length",
+     "value": 275.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Completion Length",
+     "value": 268.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Completion Length",
+     "value": 252.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Completion Length",
+     "value": 243.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Completion Length",
+     "value": 233.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Completion Length",
+     "value": 222.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Completion Length",
+     "value": 222.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Completion Length",
+     "value": 226.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Completion Length",
+     "value": 226.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Completion Length",
+     "value": 233.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Completion Length",
+     "value": 244.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Completion Length",
+     "value": 265.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Completion Length",
+     "value": 282.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Completion Length",
+     "value": 281.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Completion Length",
+     "value": 281.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Completion Length",
+     "value": 279.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Completion Length",
+     "value": 268.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Completion Length",
+     "value": 268.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Completion Length",
+     "value": 275.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Completion Length",
+     "value": 278.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Completion Length",
+     "value": 281.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Completion Length",
+     "value": 280.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Completion Length",
+     "value": 268.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Completion Length",
+     "value": 266.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Completion Length",
+     "value": 272.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Completion Length (raw points)",
+     "value": 209.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.7
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Completion Length (raw points)",
+     "value": 224.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 3.0,
+     "series": "Completion Length (raw points)",
+     "value": 244.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 4.0,
+     "series": "Completion Length (raw points)",
+     "value": 248.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 5.0,
+     "series": "Completion Length (raw points)",
+     "value": 271.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 6.0,
+     "series": "Completion Length (raw points)",
+     "value": 280.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 7.0,
+     "series": "Completion Length (raw points)",
+     "value": 255.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 8.0,
+     "series": "Completion Length (raw points)",
+     "value": 248.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 9.0,
+     "series": "Completion Length (raw points)",
+     "value": 238.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 10.0,
+     "series": "Completion Length (raw points)",
+     "value": 228.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 11.0,
+     "series": "Completion Length (raw points)",
+     "value": 215.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 12.0,
+     "series": "Completion Length (raw points)",
+     "value": 229.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 13.0,
+     "series": "Completion Length (raw points)",
+     "value": 223.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 14.0,
+     "series": "Completion Length (raw points)",
+     "value": 228.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 15.0,
+     "series": "Completion Length (raw points)",
+     "value": 237.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 16.0,
+     "series": "Completion Length (raw points)",
+     "value": 252.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 17.0,
+     "series": "Completion Length (raw points)",
+     "value": 278.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 18.0,
+     "series": "Completion Length (raw points)",
+     "value": 286.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 19.0,
+     "series": "Completion Length (raw points)",
+     "value": 276.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 20.0,
+     "series": "Completion Length (raw points)",
+     "value": 286.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 21.0,
+     "series": "Completion Length (raw points)",
+     "value": 271.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 22.0,
+     "series": "Completion Length (raw points)",
+     "value": 264.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 23.0,
+     "series": "Completion Length (raw points)",
+     "value": 271.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 24.0,
+     "series": "Completion Length (raw points)",
+     "value": 279.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 25.0,
+     "series": "Completion Length (raw points)",
+     "value": 277.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.8
+    },
+    {
+     "category": null,
+     "x": 26.0,
+     "series": "Completion Length (raw points)",
+     "value": 285.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 27.0,
+     "series": "Completion Length (raw points)",
+     "value": 275.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 28.0,
+     "series": "Completion Length (raw points)",
+     "value": 261.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 29.0,
+     "series": "Completion Length (raw points)",
+     "value": 271.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 30.0,
+     "series": "Completion Length (raw points)",
+     "value": 274.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Panel 'Completion Length' of a 1 x 3 strip. A thick polyline (the smoothed curve, lavender-grey (#A89FB8)) over a pale filled area, plus one semi-transparent dot per logged point (light lavender, semi-transparent (#D3CDD8 on white)) drawn under the line. No legend, no x tick labels, no axis titles; the y tick labels are printed left of a grey spine, with dashed gridlines at the ticks.",
+    "Series names are not printed. 'Completion Length' (the panel title) names the smoothed line; 'Completion Length (raw points)' names the raw dots. x is the ordinal position of the point, 1..30 from left to right (the x axis carries no ticks or numbers; the caption says only that 'the rewards are plotted every five steps').",
+    "Measured on the PDF's embedded bitmap (page 21, one RGB image 3118 x 573 px for the whole strip, 7.87 px per PDF point; no vector paths, no text layer). Y calibration: least squares through the 4 dashed gridlines, whose centres coincide with the centres of the printed tick labels to <= 1 px: value = 315.12431 -0.2224192 * y_native (4.5 px per unit); fit residual <= 0.0667 axis units.",
+    "Line: the centreline of the stroke was fitted as a straight segment between consecutive points (max deviation of any column from its segment 0.33 px); a vertex is the mean of the two adjacent segment fits at the vertex x. The 30 vertices sit on an even x grid, native x = 2201.0 + 29.15 * (k - 1) px (rms deviation of the sharp vertices from the grid <= 0.08 px). Estimated error of the line values: +/- 0.25 axis units (about 1 px).",
+    "Dots: 17 px discs; the centre was found by fitting a disc of that radius at the vertex x to the dot-coloured pixels not covered by the line. All 30 dots are individually resolvable; those more than 80% hidden under the line (visible share in brackets) carry confidence 0.7: points 1 (15%). Estimated error: +/- 0.25 axis units, about twice that for the low-visibility dots.",
+    "Cross-check with a known relation: in all three panels the smoothed value at point k equals the mean of raw points k and k-1 (a 2-point moving average), and at point 1 it equals raw point 1. Residual of that relation here: largest 0.1921, mean 0.1081 axis units (0.9 px); point 1: 0.0297. This confirms both readings, including the dots that are mostly hidden.",
+    "Y axis: tick labels printed 200, 225, 250, 275; the spine runs from 194.6 (x axis line) to 297.8 (top end), used as axes.y.range. Crop px of the first and last vertex: [415.0, 88.2], [575.9, 33.6]."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "The x axis prints nothing: no tick marks, no tick labels, no axis title (axes.x.ticks and range are null). 'Value at each x tick position' therefore does not exist for this figure; the truth records every vertex of the smoothed line instead, keyed by x = 1..30 (ordinal position, left to right). The caption ('plotted every five steps') suggests the points are 5 training steps apart, but neither the first step nor the scale is printed, so step numbers (5, 10, ... or 0, 5, ...) would be a guess and were not used. A prediction that keys its points by step number, by 0-based index or by a 0-1 fraction will not pair with these rows in the scorer (x floats must be equal); only the count and the values are comparable in that case.",
+  "Series names are not printed (no legend). The smoothed line is named after the panel title and the dots '<title> (raw points)'. With two truth series the scorer requires series names to match (they are ignored only when both sides have a single series): a prediction with one series named after the panel title pairs with the smoothed line (the 30 raw rows then count as missing); a prediction naming its series 'smoothed' / 'raw' or similar does not pair at all. Drop the '(raw points)' rows from the truth if only the line is to be scored.",
+  "kind 'line' with orientation 'vertical': the scorer normalises by axes.y.range, the measured extent of the y spine (not round numbers: the plotting library chose the limits), i.e. 2.01, 1.56 and 103.2 axis units for panels a, b, c.",
+  "Smoothed line vs raw dots differ systematically by about 0.5 px (0.002 in a/b, 0.1 in c) from the exact 2-point mean; either reading may carry that half-pixel bias. It is far below the scorer's tolerance.",
+  "No axis titles are printed: axes.y.name is null (the quantity is the panel title).",
+  "figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b with coord_origin BOTTOMLEFT, as in the existing truth files); bbox_px is in pixels of the bundle crop. The crop cuts about 2.5 pt off the left and 3 pt off the bottom of the embedded image; panel boxes are thirds of the image clamped to the crop."
+ ]
+}

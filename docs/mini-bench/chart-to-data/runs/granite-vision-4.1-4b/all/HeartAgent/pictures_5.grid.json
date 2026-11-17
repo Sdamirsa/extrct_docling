@@ -1,0 +1,30 @@
+[
+ [
+  "Category",
+  "Top-1 Diagnosis Performance on MIMIC",
+  "Top-1 Explanation Performance on MIMIC",
+  "Top-3 Diagnosis Performance on MIMIC",
+  "Top-3 Explanation Performance on MIMIC"
+ ],
+ [
+  "HeartAgent",
+  "0.58",
+  "0.48",
+  "0.60",
+  "0.55"
+ ],
+ [
+  "Expert",
+  "0.68",
+  "0.63",
+  "0.65",
+  "0.55"
+ ],
+ [
+  "Expert + HeartAgent",
+  "0.85",
+  "0.80",
+  "0.73",
+  "0.68"
+ ]
+]

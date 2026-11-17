@@ -1,0 +1,126 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 7,
+  "bbox": [
+   342.6832580566406,
+   735.8361587524414,
+   533.6847534179688,
+   605.5192108154297
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    0,
+    287,
+    196
+   ],
+   "title": "Figure 4: Rater agreement (ICC(2,1), absolute agreement, with 95% CI) on the 20-patient subset.",
+   "kind": "other",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "R1 ↔ R2 (human–human)",
+      "Judge ↔ R1",
+      "Judge ↔ R2"
+     ]
+    },
+    "y": {
+     "name": "ICC(2,1), absolute agreement",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.35,
+      0.95
+     ],
+     "ticks": [
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "ICC(2,1), absolute agreement",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "R1 ↔ R2 (human–human)",
+     "x": null,
+     "series": "ICC(2,1), absolute agreement",
+     "value": 0.674,
+     "err_lo": 0.52,
+     "err_hi": 0.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Judge ↔ R1",
+     "x": null,
+     "series": "ICC(2,1), absolute agreement",
+     "value": 0.741,
+     "err_lo": 0.6,
+     "err_hi": 0.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Judge ↔ R2",
+     "x": null,
+     "series": "ICC(2,1), absolute agreement",
+     "value": 0.666,
+     "err_lo": 0.51,
+     "err_hi": 0.78,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Point-and-interval plot (matplotlib errorbar style): one filled circle per rater pair = ICC(2,1) point estimate, vertical bar with caps = 95% CI. R1 ↔ R2 is drawn red, the two Judge pairs steel blue; there is no legend, so all three are one series named after the y axis.",
+    "err_lo / err_hi are ABSOLUTE axis values (the CI bounds), copied from the numbers printed beside the caps (exact, 2 decimals). The centre markers carry no printed label: value is measured from the raster, source 'raster'.",
+    "Measurement: native embedded bitmap of the PDF image object (3540 x 2453 px, 18.1 px per PDF point; the figure is raster in the PDF, no vector paths or text layer). Y calibration: least-squares line through the six left tick marks, centres at native y = 234, 585, 935, 1285, 1635, 1985 px for 0.9, 0.8, 0.7, 0.6, 0.5, 0.4 -> value = 0.966966 - 0.000285598*y (350.2 px per 0.1; 1 px = 0.00029). Fit residual at the ticks <= 0.00014. Marker centre = midpoint of the disc's top/bottom edges on its centre column (65 px disc, edges sharp to 1 px), equal to the pixel centroid.",
+    "Estimated error of the measured centres: +/- 0.001 axis units (about +/- 3 px; marker and tick positions are pixel-snapped to +/- 0.5 px each).",
+    "Cross-check of the calibration on the six printed cap values (measured cap-line centre -> value vs printed): 0.7892 vs 0.79, 0.5201 vs 0.52, 0.8403 vs 0.84, 0.6053 vs 0.60, 0.7752 vs 0.78, 0.5133 vs 0.51. Largest |measured - printed| = 0.0053; every cap is consistent with 2-decimal rounding of the printed label to within 0.0003 (1 px) - the one that exceeds the +/-0.005 rounding half-width is the Judge ↔ R1 lower cap (0.6053 vs '0.60'), by 0.0003.",
+    "Y axis spine runs from 0.349 to 0.951 (measured), i.e. axis limits 0.35-0.95; tick labels printed 0.4-0.9. Dotted grey gridlines at each tick.",
+    "R1 ↔ R2 (human–human): marker centre native px (875, 1026.0) = crop px (69.9, 81.8) -> 0.6739; caps measured 0.5201 / 0.7892, printed '0.52' / '0.79'; paper text gives the point estimate as 0.67.",
+    "Judge ↔ R1: marker centre native px (1877, 791.0) = crop px (153.0, 62.3) -> 0.7411; caps measured 0.6053 / 0.8403, printed '0.60' / '0.84'; paper text gives the point estimate as 0.74.",
+    "Judge ↔ R2: marker centre native px (2879, 1054.0) = crop px (236.0, 84.1) -> 0.6659; caps measured 0.5133 / 0.7752, printed '0.51' / '0.78'; paper text gives the point estimate as 0.66."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Point estimates are not printed in the figure. The paper text confirms them to 2 decimals: page 6, 'their agreement with the judge (ICC 0.74, 0.66) matches their agreement with each other (0.67, Figure 4)'; the Figure 4 caption repeats '(0.74, 0.66)' and '(0.67)'. Measured 0.674 and 0.741 round to the stated 0.67 and 0.74.",
+  "Judge ↔ R2: the marker sits at 0.6659 +/- 0.001, which rounds to 0.67, while the text states 0.66. The gap (0.006 = 1% of the 0.6 axis span, 21 px at native resolution) is larger than the measurement error, so the text's 0.66 looks truncated or computed separately; truth keeps the plotted position 0.666.",
+  "kind: 'other' (vertical point-estimate-with-CI / error-bar plot over a categorical x axis; no enum value names it). 'forest' fits the content (point estimate + CI) but was rejected because the engine and scorer treat a forest panel as value-on-x (verify.value_axis), which would normalise errors by the wrong span here; with 'other' + vertical the value axis is y, range 0.35-0.95. A prediction of 'forest' or 'scatter' is a defensible kind mismatch, not a data error.",
+  "Series: no legend is printed; a single series named after the y-axis label is used. The red/blue colour split (human-human vs judge-human) is not labelled in the figure, so series.color is left null.",
+  "Category 'R1 ↔ R2 (human–human)' is printed on two lines ('R1 ↔ R2' / '(human–human)', en dash); joined with a space.",
+  "figure.bbox is copied verbatim from document.json prov (l, t, r, b with coord_origin BOTTOMLEFT, as in the existing truth files F1-F5); bbox_px is the whole 287 x 196 crop."
+ ]
+}

@@ -1,0 +1,417 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Zodiac",
+  "self_ref": "#/pictures/5",
+  "image_path": "images/picture_006.png",
+  "page": 10,
+  "bbox": [
+   116.06034851074219,
+   708.003288269043,
+   494.5017395019531,
+   620.4822540283203
+  ]
+ },
+ "source_kind": "vector",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    0,
+    280,
+    131
+   ],
+   "title": "Diagnostic lability",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "ZODIAC",
+      "GPT-4o",
+      "Gemini-Pro",
+      "Llama-3.1-405B",
+      "Mixtral-8x22B",
+      "BioGPT-Large",
+      "Meditron-70B",
+      "Med42-70B"
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      -0.018,
+      0.4
+     ],
+     "ticks": [
+      0.0,
+      0.2,
+      0.4
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Diagnostic lability",
+     "color": "black notched boxes (ZODIAC's box filled blue-grey #345B7D), dotted dark-red whiskers and caps"
+    }
+   ],
+   "data": [
+    {
+     "category": "ZODIAC",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.0036,
+     "err_lo": 0.0003,
+     "err_hi": 0.0123,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.0904,
+     "err_lo": 0.0002,
+     "err_hi": 0.2167,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "Gemini-Pro",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.0501,
+     "err_lo": 0.0017,
+     "err_hi": 0.1528,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "Llama-3.1-405B",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.1051,
+     "err_lo": 0.0021,
+     "err_hi": 0.1937,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "Mixtral-8x22B",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.1265,
+     "err_lo": 0.1022,
+     "err_hi": 0.1993,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "BioGPT-Large",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.1269,
+     "err_lo": 0.016,
+     "err_hi": 0.2232,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "Meditron-70B",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.0565,
+     "err_lo": 0.0058,
+     "err_hi": 0.1067,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "Med42-70B",
+     "x": null,
+     "series": "Diagnostic lability",
+     "value": 0.0337,
+     "err_lo": 0.0053,
+     "err_hi": 0.0639,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    }
+   ],
+   "notes": [
+    "Notched box plot: value = median (thick black line), err_lo / err_hi = whisker cap positions; quartiles and notch ends: ZODIAC: Q1 0.0024, Q3 0.0070, notch 0.0019-0.0054; GPT-4o: Q1 0.0552, Q3 0.1353, notch 0.0589-0.1218; Gemini-Pro: Q1 0.0053, Q3 0.1035, notch 0.0116-0.0887; Llama-3.1-405B: Q1 0.0035, Q3 0.1631, notch 0.0460-0.1642; Mixtral-8x22B: Q1 0.1102, Q3 0.1581, notch 0.1078-0.1454; BioGPT-Large: Q1 0.0701, Q3 0.1811, notch 0.0834-0.1705; Meditron-70B: Q1 0.0254, Q3 0.0738, notch 0.0375-0.0755; Med42-70B: Q1 0.0175, Q3 0.0405, notch 0.0247-0.0427",
+    "Outliers (grey diamonds; drawn with transparency, so the PDF rasterises them: read from a 20x render, +/-0.002): ZODIAC about 0.020; Mixtral-8x22B about 0.009 and 0.000; BioGPT-Large about 0.355 and 0.359 (two overlapping markers each for Mixtral and BioGPT)",
+    "Read from the PDF path objects (pypdfium2): y calibrated on the three tick marks 0.0 / 0.2 / 0.4 at page y 647.65 / 676.525 / 705.40 pt (144.4 pt per unit, residual of the middle tick 0.000); coordinates are printed to 0.01 pt = 0.00007 units. The bottom spine sits at -0.018, the top frame line at 0.4.",
+    "Tick labels are printed on two lines broken at a hyphen ('Gemini' / '-Pro', 'Llama-3.1' / '-405B', 'Mixtral' / '-8x22B', 'BioGPT' / '-Large', 'Meditron' / '-70B', 'Med42' / '-70B'); they are joined without a space. No y-axis label is printed; the quantity (variance of pairwise cosine similarities over 10 runs, per the text) is named by the sub-caption '(a) Diagnostic lability'.",
+    "For Llama-3.1-405B and Mixtral-8x22B the notch extends past a quartile (notch end 0.1642 > Q3 0.1631; notch end 0.1078 < Q1 0.1102), as matplotlib draws notches wider than the box."
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    280,
+    0,
+    568,
+    131
+   ],
+   "title": "Signle-agent v.s. multi-agent",
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "ACC",
+      "CPL",
+      "ORG",
+      "CPH",
+      "SCI",
+      "CNS",
+      "FFH",
+      "FFB"
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      1,
+      5
+     ],
+     "ticks": [
+      1,
+      3,
+      5
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Signle-agent",
+     "color": "white fill, blue-grey outline (#345B7D)"
+    },
+    {
+     "name": "Multi-agent (this work)",
+     "color": "blue-grey fill (#345B7D)"
+    }
+   ],
+   "data": [
+    {
+     "category": "ACC",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.18,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "ACC",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CPL",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.46,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CPL",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "ORG",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "ORG",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CPH",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CPH",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "SCI",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.14,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "SCI",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CNS",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.45,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "CNS",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "FFH",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "FFH",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "FFB",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    },
+    {
+     "category": "FFB",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vector",
+     "confidence": 0.99
+    }
+   ],
+   "notes": [
+    "'Signle-agent' is spelled that way in the legend and in the sub-caption '(b) Signle-agent v.s. multi-agent'.",
+    "Read from the PDF path objects (pypdfium2): value = top edge of each bar rectangle; y calibrated on the three tick marks 1 / 3 / 5 at page y 644.87 / 675.095 / 705.32 pt (15.11 pt per unit, residual of the middle tick 0.0003). All 16 bar tops land within 0.001 of a multiple of 0.01. The y axis starts at 1 (bars are drawn from 0 and clipped by the frame); bars at 5.0 (FFB) touch the top frame line.",
+    "The legend box covers the lower part of the CNS, FFH and FFB bars (that region is rasterised in the PDF); the bar tops are above it and unaffected.",
+    "Cross-check: the 'Multi-agent (this work)' bars equal the ZODIAC row of the paper's results table (p. 8): ACC 4.4, CPL 4.5, ORG 4.7, CPH 4.9, SCI 4.4, CNS 4.5, FFH 4.8, FFB 5.0. No y-axis label is printed (1-5 rating scale)."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Panel a is kind 'box' (value = median, err_lo/err_hi = whiskers, quartiles and outliers in the notes, as the labelling rules prescribe); the scorer compares the medians only, normalised by the y range 0.418.",
+  "The bundle crop (images/picture_006.png) does not show panel a exactly as the PDF does: three small regions that the PDF stores as rasterised patches (around the ZODIAC box, the Mixtral-8x22B low outliers and the BioGPT-Large outliers) are drawn upside-down in the crop. For ZODIAC the crop therefore shows, besides the real box at about 0.005, a spurious thick black bar at about 0.04 with an inverted diamond under it; for Mixtral-8x22B the outlier markers are mirrored about the 0.0 line region and a black fragment sits below the axis. The truth follows the PDF (ZODIAC median 0.0036; vector paths and a pdfium render agree). A reader that takes the black bar for the ZODIAC box is off by 0.09 of the axis range. The crop also draws the dotted whiskers as solid lines. Panel b is not affected in its data marks.",
+  "Panel a outlier values are approximate (rasterised semi-transparent markers) and are in the notes only.",
+  "All axis text in this figure is drawn as glyph outlines (not in the PDF text layer); labels were read from an 8x render. Only the sub-captions '(a) Diagnostic lability' and '(b) Signle-agent v.s. multi-agent' are real text.",
+  "Neither panel prints a y-axis name; panel a's single series is named after its sub-caption.",
+  "bbox_px splits the crop at x = 280 px (between panel a's right end, 277 px, and panel b's y tick labels); both boxes include tick labels and the sub-caption line."
+ ]
+}

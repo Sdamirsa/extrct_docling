@@ -1,0 +1,77 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.2,
+        0.0,
+        754.0,
+        391.1
+      ],
+      "title": "System Architecture for ECG/PPG Diagnosis",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Value",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": [
+            "ECG",
+            "PPG",
+            "Reasoning",
+            "& Critic",
+            "Integrated"
+          ]
+        },
+        "y": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1000.0
+          ],
+          "ticks": [
+            "-M",
+            "Raw",
+            "ECG/PPG",
+            "Signal",
+            "Plot",
+            "Meta data"
+          ]
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

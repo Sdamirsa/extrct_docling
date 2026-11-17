@@ -1,0 +1,773 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+    "self_ref": "#/pictures/7",
+    "image_path": "images/picture_008.png",
+    "page": 15,
+    "bbox": [
+      55.28,
+      69.2,
+      542.4,
+      345.04
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [
+    {
+      "id": "a1",
+      "bbox_px": [
+        3.4,
+        0.0,
+        141.5,
+        200.9
+      ],
+      "title": "a. MedRisk-Qualitative",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Stroke/TIA",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            55.0,
+            80.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "RiskAgent-8B",
+          "color": "#5F9EA0"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "#5F9EA0"
+        },
+        {
+          "name": "o3-mini",
+          "color": "#5F9EA0"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": "",
+          "series": "RiskAgent-8B",
+          "value": 75.5,
+          "err_lo": 71.5,
+          "err_hi": 77.5,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "",
+          "series": "GPT-4o",
+          "value": 58.5,
+          "err_lo": 57.0,
+          "err_hi": 59.5,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": "",
+          "series": "o3-mini",
+          "value": 57.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "a2",
+      "bbox_px": [
+        164.6,
+        15.7,
+        435.3,
+        200.9
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Internal Medicine",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            80.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "RiskAgent-8B",
+          "color": "#5F9EA0"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "#5F9EA0"
+        },
+        {
+          "name": "o3-mini",
+          "color": "#5F9EA0"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": "RiskAgent-8B",
+          "value": 775.0,
+          "err_lo": 750.0,
+          "err_hi": 785.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": "RiskAgent-8B",
+          "value": 800.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 520.0,
+          "err_lo": 510.0,
+          "err_hi": 530.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 535.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": "o3-mini",
+          "value": 535.0,
+          "err_lo": 525.0,
+          "err_hi": 545.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": "o3-mini",
+          "value": 555.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "a3",
+      "bbox_px": [
+        458.3,
+        15.7,
+        582.1,
+        200.9
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            75.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "RiskAgent-8B",
+          "color": "#77B3B3"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "#77B3B3"
+        },
+        {
+          "name": "o3-mini",
+          "color": "#77B3B3"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": "RiskAgent-8B",
+          "value": 72.0,
+          "err_lo": 71.0,
+          "err_hi": 73.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": "o3-mini",
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "a4",
+      "bbox_px": [
+        592.0,
+        15.7,
+        729.0,
+        200.9
+      ],
+      "title": "Overall performance comparison of different models",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Overall",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            80.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Models",
+          "color": "blue/grey/greenish-grey (implied by bars, but no legend provided)"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": "",
+          "series": "Models",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "",
+          "series": "Models",
+          "value": 51.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": "",
+          "series": "Models",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b1",
+      "bbox_px": [
+        2.9,
+        211.2,
+        157.2,
+        412.7
+      ],
+      "title": "b. MedRisk-Quantitative",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Stroke/TIA",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            80.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "RiskAgent-8B",
+          "color": "#4c72b0"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "#c44e52"
+        },
+        {
+          "name": "o3-mini",
+          "color": "#55a868"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": "RiskAgent-8B",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 32.0,
+          "err_lo": 38.0,
+          "err_hi": 28.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": "o3-mini",
+          "value": 54.0,
+          "err_lo": 55.0,
+          "err_hi": 48.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b2",
+      "bbox_px": [
+        164.6,
+        225.5,
+        288.4,
+        412.2
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            80.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "RiskAgent-88",
+          "color": "black"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "gray"
+        },
+        {
+          "name": "o3-mini",
+          "color": "gray"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-88",
+          "x": null,
+          "series": "RiskAgent-88",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 38.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": "o3-mini",
+          "value": 59.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b3",
+      "bbox_px": [
+        298.7,
+        227.0,
+        435.3,
+        412.2
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Internal Medicine",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            85.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Internal Medicine",
+          "color": "blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": "",
+          "series": "Internal Medicine",
+          "value": 77.0,
+          "err_lo": 76.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "",
+          "series": "Internal Medicine",
+          "value": 39.0,
+          "err_lo": 38.0,
+          "err_hi": 40.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": "",
+          "series": "Internal Medicine",
+          "value": 57.0,
+          "err_lo": 56.0,
+          "err_hi": 58.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b4",
+      "bbox_px": [
+        446.1,
+        226.0,
+        582.1,
+        412.7
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Cardiac",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            40.0,
+            75.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Cardiac",
+          "color": "#5F9EA0"
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": "",
+          "series": "Cardiac",
+          "value": 71.0,
+          "err_lo": 70.0,
+          "err_hi": 72.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "",
+          "series": "Cardiac",
+          "value": 41.0,
+          "err_lo": 38.0,
+          "err_hi": 44.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": "",
+          "series": "Cardiac",
+          "value": 63.0,
+          "err_lo": 56.0,
+          "err_hi": 69.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b5",
+      "bbox_px": [
+        592.5,
+        226.5,
+        729.0,
+        411.7
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Overall",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            85.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Overall",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": "",
+          "series": "Overall",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "",
+          "series": "Overall",
+          "value": 39.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "o3-mini",
+          "x": "",
+          "series": "Overall",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

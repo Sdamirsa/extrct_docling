@@ -1,0 +1,202 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Cardiology",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 4,
+  "bbox": [
+   42.34874694793496,
+   631.1269062588351,
+   558.5089500724229,
+   742.074057993796
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    774.0,
+    167.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Did the AI help your assessment?",
+     "x": null,
+     "series": "Yes_Definitely",
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI help your assessment?",
+     "x": null,
+     "series": "Yes_Probably",
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI help your assessment?",
+     "x": null,
+     "series": "Neither_Yes_Nor_No",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI help your assessment?",
+     "x": null,
+     "series": "No_Probably_Not",
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI help your assessment?",
+     "x": null,
+     "series": "No_Definitely_Not",
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI make you more confident?",
+     "x": null,
+     "series": "Yes_Definitely",
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI make you more confident?",
+     "x": null,
+     "series": "Yes_Probably",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI make you more confident?",
+     "x": null,
+     "series": "Neither_Yes_Nor_No",
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI make you more confident?",
+     "x": null,
+     "series": "No_Probably_Not",
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI make you more confident?",
+     "x": null,
+     "series": "No_Definitely_Not",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI save you time?",
+     "x": null,
+     "series": "Yes_Definitely",
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI save you time?",
+     "x": null,
+     "series": "Yes_Probably",
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI save you time?",
+     "x": null,
+     "series": "Neither_Yes_Nor_No",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI save you time?",
+     "x": null,
+     "series": "No_Probably_Not",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Did the AI save you time?",
+     "x": null,
+     "series": "No_Definitely_Not",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

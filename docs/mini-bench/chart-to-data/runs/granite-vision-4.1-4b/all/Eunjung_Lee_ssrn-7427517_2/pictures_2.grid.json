@@ -1,0 +1,32 @@
+[
+ [
+  "Rating Domain",
+  "Favors Clinician-authored Summaries",
+  "Favors AI-generated Summaries"
+ ],
+ [
+  "Overall quality",
+  "-0.2",
+  "0.0"
+ ],
+ [
+  "Clarity",
+  "0.3",
+  "0.0"
+ ],
+ [
+  "Completeness",
+  "-0.8",
+  "0.0"
+ ],
+ [
+  "Accuracy",
+  "-0.3",
+  "0.0"
+ ],
+ [
+  "Readability",
+  "0.7",
+  "0.0"
+ ]
+]

@@ -1,0 +1,152 @@
+{
+  "model": "gemma4_26b-a4b-it-qat",
+  "judged_by": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "figures": [
+    {
+      "figure_id": "A1",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Deployment schematic: 0 values returned. Only an empty panel shell (kind=other, title 'Scenario of Cardiologent') whose 'axes' are diagram text and the step numbers 3 and 5 taken as x ticks."
+    },
+    {
+      "figure_id": "A2",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Pipeline diagram: 0 values returned; the single empty panel's title states it is 'a flowchart or architectural diagram ... rather than a traditional data chart'. Box labels ('ECG', 'PPG', 'Raw', 'Signal') were listed as axis ticks, no numbers."
+    },
+    {
+      "figure_id": "A3",
+      "verdict": "wrong",
+      "error_types": ["GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "All 3 point estimates are placed at the lower cap instead of the marker: truth 0.674 / 0.741 / 0.666 vs predicted 0.5 / 0.5999 / 0.5 (a near-constant offset of -0.14 to -0.17, 24-29 % of the 0.35-0.95 axis), so two centres lie below their own lower bound (0.5 < 0.5233). The CI bounds are right (0.5233-0.7915 vs printed 0.52-0.79) but measured, not copied; each category was also made its own series, which is why the scorer shows 3 missing + 3 extra (kind 'line' instead of an interval plot)."
+    },
+    {
+      "figure_id": "A4",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "Architecture schematic: 0 values returned, but the crop was split into 3 phantom panels and one box was typed kind=bar with a series 'Transformer Decoder'. The quoted 0.183 and 0.15 only appear inside a panel title, not as data."
+    },
+    {
+      "figure_id": "A5",
+      "verdict": "true_negative",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "ECG traces: nothing returned, but only because the figure was never read: 132.5 s against a 120 s budget, 0 model calls, 0 tokens, both panels noted 'not read'. The right outcome by default, not a judgement by the model."
+    },
+    {
+      "figure_id": "B1",
+      "verdict": "correct",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "All 12 printed counts returned exactly under the right category and legend entry (13/6/299/102, 25/25/255/115, 25/26/283/86). Only differences: kind 'bar' for grouped_bar and the legend circle glyph transcribed as a square."
+    },
+    {
+      "figure_id": "B2",
+      "verdict": "missed",
+      "error_types": ["NO_OUTPUT", "PANEL_STRUCTURE"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "0 of 180 values: the run hit the time budget (132.4 s, 0 model calls, 0 output tokens) and the only panel carries the note 'not read'. The three line panels were also boxed as one panel, bbox [2, 3, 584, 101]."
+    },
+    {
+      "figure_id": "B3",
+      "verdict": "correct",
+      "error_types": ["PANEL_STRUCTURE", "SERIES_NAMES", "OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 15 printed AUROC values are returned exactly (OnimiaNet 87.97/65.74/76.77 ... EchoONE 93.79/65.68/85.56) and each is attached to the right model and EF class; the scorer's 15 missing + 30 extra is purely structural: the 5 ROC panels are merged into one with the model as category and the EF class as series. Cosmetic flaws: the middle class is written '40%<=EF<=50%' for the printed '40%≤EF<50%', and 15 duplicate rows with value null precede the real ones."
+    },
+    {
+      "figure_id": "B4",
+      "verdict": "partial",
+      "error_types": ["INTERVAL_BOUNDS"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "The 5 centres are within 1.6 % of the axis range (truth -0.152 / 0.36 / -0.84 / -0.352 / 0.72 vs -0.2 / 0.35 / -0.85 / -0.4 / 0.7; model estimates rounded to 0.05, not measured). All 10 CI bounds are wrong as absolute values and are not a consistent half-width either: Overall quality [0.8, 0.8] vs [-0.865, 0.561], Completeness [0.65, 0.3] vs [-1.356, -0.325], Readability [0.1, 0.5] vs [0.204, 1.235]."
+    },
+    {
+      "figure_id": "B5",
+      "verdict": "partial",
+      "error_types": ["PANEL_STRUCTURE", "UNIT_OR_FORMAT", "SERIES_NAMES", "INTERVAL_BOUNDS", "GEOMETRY_MISMEASURED", "WRONG_KIND", "CATEGORY_LABELS"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "Row a: 'Shortness of Breath' and 'Internal Medicine' are merged into one panel labelled 'Internal Medicine' holding 6 rows ten times too large (775 / 520 / 535 for the Shortness-of-Breath medians 77.23 / 51.57 / 53.18, plus 800 / 535 / 555), so predicted panels a3 and a4 really hold Cardiac and Overall and the scorer pairs them with the wrong truth panels. Elsewhere the medians are eyeballed to the nearest 0.5-1 with scatter up to 7 % of the range (b4 GPT-4o 41 vs 38.21, o3-mini 63 vs 60.25; b2 GPT-4o 38 vs 35.09); 4 box panels are typed 'bar' with no whiskers, b1 has lower/upper swapped (38 / 28), the models are used as series names (scorer: 18 missing + 18 extra) and 'RiskAgent-8B' is read as 'RiskAgent-88' in b2."
+    },
+    {
+      "figure_id": "C1",
+      "verdict": "partial",
+      "error_types": ["GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "Only 4 of 12 bar tops are right (panel 2: 0.4884 / 0.6297 / 0.7982 vs 0.479 / 0.628 / 0.797; panel 1 third bar 0.8428 vs 0.84). The other marks sit inside the bars, with no common offset or scale: panel 1 gives 0.3798 / 0.5354 for 0.58 / 0.69, and panels 3 and 4 reverse the ranking (panel 3: 0.3579 / 0.306 / 0.1983 for 0.597 / 0.65 / 0.73, the tallest bar read below the axis minimum; panel 4: 0.4525 / 0.4317 / 0.3074 for 0.534 / 0.551 / 0.676). Three panels name the series 'Performance' instead of 'Accuracy' (harmless)."
+    },
+    {
+      "figure_id": "C2",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Inference-flow schematic: 0 values returned. One empty panel shell (kind=other, title 'RiskCalcs') lists JSON fragments such as '\"respiratory_rate\":', '28,', '110,' as axis ticks, but none is emitted as a data value."
+    },
+    {
+      "figure_id": "C3",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "The panel split found only the lower half of PACES and the legend box: GMCPQ (132 values), MXEKF (84) and two of the four PACES items are not read at all, 0 of 264 truth values matched. The 15 values returned for 'Showing Empathy' and 'Maintaining Patient Welfare' fit neither segment widths nor cumulative ends (truth AMIE 47.33 / 47.67 / 5.0 vs 86.67 / 93.86 / 4.54; one segment is 125.84 % on a 0-100 axis), and the series are invented colour names ('Showing Empathy (Red)', '(Hatched Blue)') instead of the six rating levels, with AMIE and PCP bars not separated."
+    },
+    {
+      "figure_id": "C4",
+      "verdict": "wrong",
+      "error_types": ["PANEL_STRUCTURE", "MISSING_VALUES", "SERIES_NAMES"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "One number out of 24: ZODIAC 0.0 (truth median 0.0036, fine); the other 7 box medians are rows with value null and no whiskers are given. The grouped-bar panel (b), 16 bars from 4.14 to 5.0, is swallowed into a single panel bbox [2, 1, 566, 130] and not read; each model is also made its own series. The crop defect on the ZODIAC box played no part."
+    },
+    {
+      "figure_id": "C5",
+      "verdict": "correct",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 15 printed percentages returned exactly with the right slice labels in 3 pie panels (16.8 / 40.2 / 30.8 / 8.4 / 3.7 etc.). Timing shows 0 model calls and 0.02 s: the values come from the engine's vector/text path, not from the model. Cosmetic: panel titles have scrambled word order ('Did the make confident? AI you more')."
+    }
+  ],
+  "summary": {
+    "verdict_counts": {
+      "correct": 3,
+      "partial": 3,
+      "wrong": 3,
+      "missed": 1,
+      "true_negative": 5,
+      "false_positive": 0
+    },
+    "error_type_counts": {
+      "SERIES_NAMES": 6,
+      "PANEL_STRUCTURE": 5,
+      "GEOMETRY_MISMEASURED": 4,
+      "OTHER": 4,
+      "INTERVAL_BOUNDS": 2,
+      "MISSING_VALUES": 2,
+      "NO_OUTPUT": 1,
+      "UNIT_OR_FORMAT": 1,
+      "WRONG_KIND": 1,
+      "CATEGORY_LABELS": 1
+    },
+    "usable_figures": 8,
+    "dominant_failure": "PANEL_STRUCTURE",
+    "assessment": "The model is safe on figures without data: none of the five diagrams or traces produced a value, although one of them (A5) was simply never read because the time budget ran out before any model call. It reads printed numbers exactly: B1's 12 bar labels and B3's 15 AUROC values are all right, and C5's pies are right too, but those came from the engine's vector path with no model call. Its typical failure is layout: on multi-panel figures the panels are merged, half found or shifted (B3, B5, C3, C4, and B2 where nothing came back), which loses most of the data or attaches it to the wrong panel, and it habitually repeats the category as the series name, which makes the automatic scorer under-count correct numbers (A3, B5). Values that must be read from mark positions are unreliable: marks land beside the data (A3 centres at the lower cap, C1 with 8 of 12 bars wrong and two panels in reversed order), box-plot medians are eyeballed to within 1 to 7 % of the range, and interval bounds are missing, swapped or meaningless (B4, B5). Trust it on a single-panel chart whose values are printed in the figure; do not take measured values, intervals or anything from a multi-panel figure without checking. Of the 10 data charts only 3 are usable as returned."
+  }
+}

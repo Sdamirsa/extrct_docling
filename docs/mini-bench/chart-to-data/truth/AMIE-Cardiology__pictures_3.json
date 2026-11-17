@@ -1,0 +1,260 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Cardiology",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 4,
+  "bbox": [
+   42.34874694793496,
+   742.074057993796,
+   558.5089500724229,
+   631.1269062588351
+  ]
+ },
+ "source_kind": "vector",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    6,
+    235,
+    167
+   ],
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "40.2%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "3.7%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges meet at the centre, page point (92.0, 676.4), radius 45.7 pt); slices listed in legend order top to bottom, fill colours salmon #FA8072, light pink #FFA0A0, light grey #E0E0E0, light blue #ADD8E6, dodger blue #1E90FF",
+    "wedge areas from the PDF paths as % of the disc (and as counts of n = 107): Yes, definitely: 16.82 % = 18/107, printed 16.8%; Yes, probably: 40.19 % = 43/107, printed 40.2%; Neither yes nor no: 30.84 % = 33/107, printed 30.8%; No, probably not: 8.41 % = 9/107, printed 8.4%; No, definitely not: 3.74 % = 4/107, printed 3.7%",
+    "printed slices sum to 99.9"
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    257,
+    7,
+    501,
+    167
+   ],
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "36.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32.7%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12.1%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges meet at the centre, page point (269.3, 676.4), radius 45.7 pt); slices listed in legend order top to bottom, fill colours salmon #FA8072, light pink #FFA0A0, light grey #E0E0E0, light blue #ADD8E6, dodger blue #1E90FF",
+    "wedge areas from the PDF paths as % of the disc (and as counts of n = 107): Yes, definitely: 15.89 % = 17/107, printed 15.9%; Yes, probably: 36.45 % = 39/107, printed 36.4%; Neither yes nor no: 32.71 % = 35/107, printed 32.7%; No, probably not: 12.15 % = 13/107, printed 12.1%; No, definitely not: 2.80 % = 3/107, printed 2.8%",
+    "printed slices sum to 99.9"
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    530,
+    7,
+    773,
+    167
+   ],
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Saved more than 50% of my time",
+     "x": null,
+     "series": null,
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "23.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Saved more than 10% of my time",
+     "x": null,
+     "series": null,
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "27.1%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Not sure",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Delayed me by more than 10%",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Delayed me by more than 50%",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "full pie (wedges meet at the centre, page point (441.8, 676.4), radius 45.7 pt); slices listed in legend order top to bottom, fill colours salmon #FA8072, light pink #FFA0A0, light grey #E0E0E0, light blue #ADD8E6, dodger blue #1E90FF",
+    "wedge areas from the PDF paths as % of the disc (and as counts of n = 107): Saved more than 50% of my time: 23.36 % = 25/107, printed 23.4%; Saved more than 10% of my time: 27.10 % = 29/107, printed 27.1%; Not sure: 30.84 % = 33/107, printed 30.8%; Delayed me by more than 10%: 15.89 % = 17/107, printed 15.9%; Delayed me by more than 50%: 2.80 % = 3/107, printed 2.8%",
+    "printed slices sum to 100.0"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "All 15 values are the percentages printed inside the slices (source 'printed'); each was matched to its legend entry by the wedge's fill colour and confirmed by the wedge area from the PDF paths: every slice equals k/107 (n = 107 per the caption) to within 0.05 percentage points of the printed label.",
+  "Printed slices sum to 99.9 (panels a, b) and 100.0 (panel c): rounding in the source, not a missing slice.",
+  "Pie panels carry no series (series: [], row series null), as the engine's pie reader emits them; the earlier truth file tests/data/figure_data/truth/F5.json named one series per panel after the panel title, which scores a correct series-less prediction 0 on series F1. Values, labels and categories are otherwise identical to F5.json.",
+  "This picture is the top row (three pies) of Fig. 2; the caption attached to it in document.json ('Extended Data Fig. 2. The pie charts display ... five questions related to AI use (n = 107) and the imaging question (n = 214)') is the tail of the Fig. 2 caption. The other three pies of the figure are separate pictures and are not part of this file.",
+  "Scorer hazard in panel c: 'Saved more than 50% of my time' / 'Saved more than 10% of my time' and 'Delayed me by more than 10%' / 'Delayed me by more than 50%' differ by one character and count as the same label for the scorer (Levenshtein <= 0.2 of the longer); matching is first-fit, so a prediction that lists the slices in another order than the legend (the order used here) can have these two pairs swapped (23.4 <-> 27.1, 15.9 <-> 2.8).",
+  "Panels have no printed letters; ids a-c are reading order (kept from F5.json). bbox_px spans title + pie + legend of each third; the crop's bottom edge cuts ~1 pt of the pies and the last legend line of panel c ('than 50%') is inside the crop."
+ ]
+}

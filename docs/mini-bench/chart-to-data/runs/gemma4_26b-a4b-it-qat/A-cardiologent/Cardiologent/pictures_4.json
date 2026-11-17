@@ -1,0 +1,147 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        394.0,
+        10.4,
+        464.4,
+        121.4
+      ],
+      "title": "Transformer Decoder",
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Transformer Decoder",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        17.9,
+        12.5,
+        303.5,
+        488.1
+      ],
+      "title": "Architecture diagram for a signal analysis system using Transformer and CLIP encoders",
+      "kind": "other",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Raw",
+            "Signal",
+            "You are",
+            "system ..."
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Transformer Encoder",
+          "color": "light blue"
+        },
+        {
+          "name": "CLIP Vision Encoder",
+          "color": "pink"
+        },
+        {
+          "name": "ECG Plot",
+          "color": "green"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        522.7,
+        332.7,
+        743.0,
+        388.0
+      ],
+      "title": "A: \"... The R-R CV of 0.183 substantially exceeds the 0.15 AF threshold, and ... significant beat-to-beat unpredictability. This global irregularity pattern is consistent with atrial fibrillation.\"",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

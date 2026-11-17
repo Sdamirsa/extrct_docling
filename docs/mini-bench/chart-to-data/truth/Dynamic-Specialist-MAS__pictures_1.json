@@ -1,0 +1,245 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Dynamic-Specialist-MAS",
+  "self_ref": "#/pictures/1",
+  "image_path": "images/picture_002.png",
+  "page": 5,
+  "bbox": [
+   318.1546325683594,
+   708.6175155639648,
+   557.4949951171875,
+   571.7991180419922
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    0,
+    359,
+    205
+   ],
+   "title": "Figure 2: Distribution of note-level prediction outcomes, grouped by clinical problem and by which methods were correct.",
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Clinical Problem",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Congestive Heart Failure",
+      "Acute Kidney Injury",
+      "Sepsis"
+     ]
+    },
+    "y": {
+     "name": "Number of Cases",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      350.0
+     ],
+     "ticks": [
+      0.0,
+      50.0,
+      100.0,
+      150.0,
+      200.0,
+      250.0,
+      300.0,
+      350.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+     "color": "green (#4CAF50)"
+    },
+    {
+     "name": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+     "color": "red (#F44336)"
+    },
+    {
+     "name": "Both Correct (○)",
+     "color": "blue (#2196F3)"
+    },
+    {
+     "name": "Both Incorrect (×)",
+     "color": "amber (#FFC107)"
+    }
+   ],
+   "data": [
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+     "value": 13.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "13",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+     "value": 6.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "6",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 299.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "299",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Incorrect (×)",
+     "value": 102.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "102",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 255.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "255",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Incorrect (×)",
+     "value": 115.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "115",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+     "value": 26.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "26",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 283.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "283",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Incorrect (×)",
+     "value": 86.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "86",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "Grouped vertical bar chart (matplotlib): 3 clinical problems on x, 4 outcome series per group in legend order (green, red, blue, amber), the count printed above every bar. All 12 values are the printed counts (source 'printed', confidence 1.0, label_printed verbatim).",
+    "Read from the PDF's embedded bitmap (page 5, one RGB image 1390 x 795 px, 5.79 px per PDF point; no vector paths or text layer in the figure). Y calibration: least squares through the 8 horizontal gridlines / frame lines at native y = 742, 638, 534, 430, 326, 223, 119, 15 px for 0, 50, ..., 350 -> 2.077 px per case; fit residual <= 0.5 px (0.25 cases).",
+    "Check that every label belongs to its bar: all 12 bar tops were measured (top edge of the bar's colour run on its centre column) and converted with the calibration; largest |measured - printed| = 0.38 cases (0.15% of the 0-350 axis), every bar within 0.4 of its label.",
+    "Congestive Heart Failure / MAS Correct, Baseline Incorrect: bar x 126-210, top edge y 715 -> 13.1 vs printed '13'",
+    "Congestive Heart Failure / MAS Incorrect, Baseline Correct: bar x 211-295, top edge y 729 -> 6.4 vs printed '6'",
+    "Congestive Heart Failure / Both Correct: bar x 296-381, top edge y 121 -> 299.2 vs printed '299'",
+    "Congestive Heart Failure / Both Incorrect: bar x 382-466, top edge y 530 -> 102.2 vs printed '102'",
+    "Acute Kidney Injury / MAS Correct, Baseline Incorrect: bar x 552-637, top edge y 690 -> 25.2 vs printed '25'",
+    "Acute Kidney Injury / MAS Incorrect, Baseline Correct: bar x 638-722, top edge y 690 -> 25.2 vs printed '25'",
+    "Acute Kidney Injury / Both Correct: bar x 723-807, top edge y 212 -> 255.4 vs printed '255'",
+    "Acute Kidney Injury / Both Incorrect: bar x 808-893, top edge y 503 -> 115.2 vs printed '115'",
+    "Sepsis / MAS Correct, Baseline Incorrect: bar x 979-1063, top edge y 690 -> 25.2 vs printed '25'",
+    "Sepsis / MAS Incorrect, Baseline Correct: bar x 1064-1149, top edge y 688 -> 26.1 vs printed '26'",
+    "Sepsis / Both Correct: bar x 1150-1234, top edge y 154 -> 283.3 vs printed '283'",
+    "Sepsis / Both Incorrect: bar x 1235-1319, top edge y 563 -> 86.3 vs printed '86'",
+    "Each group sums to 420 notes (13+6+299+102, 25+25+255+115, 25+26+283+86). Agreement with the paper text (page 5): for sepsis the text gives MAS TP 99 / FN 30 / FP 82 and baseline TP 96 / FN 33 / FP 78; with 420 notes that is 308 correct for MAS and 309 for the baseline, equal to 283+25 and 283+26 from the bars.",
+    "Legend glyphs: a small white circle (recorded as U+25CB) and a multiplication sign (recorded as U+00D7); the figure is a bitmap, so the exact code points are a reading of the glyph shapes. Y axis runs 0-350 (top frame line at 350), ticks every 50; x tick labels are the three clinical problems; axis titles 'Clinical Problem' and 'Number of Cases' are printed in bold."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "No printed panel title: panel.title carries the figure caption (as in the Cardiologent truth).",
+  "Series names are the legend entries verbatim, including the parenthesised marks; the circle and cross glyphs are transcribed as U+25CB and U+00D7 from a bitmap (a prediction using 'O'/'x' or other look-alikes differs by 2 characters and still matches under the scorer's 0.2 Levenshtein rule).",
+  "Scorer caveat: the legend names are pairwise within the scorer's fuzzy-match distance ('MAS Correct, Baseline Incorrect ...' vs 'MAS Incorrect, Baseline Correct ...': 6 of 47 characters = 0.13; 'Both Correct (○)' vs 'Both Incorrect (×)': 3 of 18 = 0.17; both <= 0.2, checked with evidence.same_label). scoring._match_values pairs each truth row with the first unused prediction row that passes, so a prediction listing the series in legend order (as the truth does) pairs correctly, but one listing red before green, or amber before blue, within a category can be cross-paired and scored as wrong although its values are right.",
+  "figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b with coord_origin BOTTOMLEFT, as in the existing truth files); bbox_px is in pixels of the bundle crop. The single panel is the whole 359 x 205 crop."
+ ]
+}

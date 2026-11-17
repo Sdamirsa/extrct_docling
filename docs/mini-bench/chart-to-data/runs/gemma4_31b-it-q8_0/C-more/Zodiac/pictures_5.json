@@ -1,0 +1,343 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "Diagnostic lability and Single-agent vs. multi-agent performance",
+      "kind": "grouped_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model/Metric",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Diagnostic",
+            "lability",
+            "(b)",
+            "Signle-agent",
+            "v.s.",
+            "multi-agent"
+          ]
+        },
+        "y": {
+          "name": "Value",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Single-agent",
+          "color": "light blue"
+        },
+        {
+          "name": "Multi-agent",
+          "color": "dark blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "ZODIAC",
+          "x": ":[], ",
+          "series": "Single-agent",
+          "value": 0.02,
+          "err_lo": 0.01,
+          "err_hi": 0.03,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.12,
+          "err_lo": 0.1,
+          "err_hi": 0.14,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.08,
+          "err_lo": 0.06,
+          "err_hi": 0.1,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.11,
+          "err_lo": 0.09,
+          "err_hi": 0.13,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.14,
+          "err_lo": 0.12,
+          "err_hi": 0.16,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.12,
+          "err_lo": 0.1,
+          "err_hi": 0.14,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Meditron-70B",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.04,
+          "err_lo": 0.03,
+          "err_hi": 0.05,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Med42-70B",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 0.04,
+          "err_lo": 0.03,
+          "err_hi": 0.05,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "ACC",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "ACC",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CPL",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CPL",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "ORG",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "ORG",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CPH",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CPH",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "SCI",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "SCI",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CNS",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "CNS",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "FFH",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "FFH",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "FFB",
+          "x": "[]",
+          "series": "Single-agent",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        },
+        {
+          "category": "FFB",
+          "x": "[]",
+          "series": "Multi-agent",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.0
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

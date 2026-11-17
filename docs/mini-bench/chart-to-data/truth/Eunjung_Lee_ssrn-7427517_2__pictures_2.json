@@ -1,0 +1,153 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Eunjung_Lee_ssrn-7427517_2",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 10,
+  "bbox": [
+   55.365936279296875,
+   449.6200866699219,
+   557.2493286132812,
+   192.50140380859375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    0,
+    0,
+    753,
+    385
+   ],
+   "title": "Figure 3. Paired physician-rating differences for overall quality and secondary quality domains. Points show model-estimated mean differences, and bars show 95% CIs. Positive values favor AI-generated summaries; negative values favor clinician-authored summaries.",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "unit": "points",
+     "scale": "linear",
+     "range": [
+      -1.6,
+      1.5
+     ],
+     "ticks": [
+      -1.5,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5
+     ]
+    },
+    "y": {
+     "name": "Rating domain",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Overall quality",
+      "Clarity",
+      "Completeness",
+      "Accuracy",
+      "Readability"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "color": "steel blue (#3F6BA7)"
+    }
+   ],
+   "data": [
+    {
+     "category": "Overall quality",
+     "x": null,
+     "series": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "value": -0.152,
+     "err_lo": -0.865,
+     "err_hi": 0.561,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Clarity",
+     "x": null,
+     "series": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "value": 0.36,
+     "err_lo": 0.072,
+     "err_hi": 0.647,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Completeness",
+     "x": null,
+     "series": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "value": -0.84,
+     "err_lo": -1.356,
+     "err_hi": -0.325,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Accuracy",
+     "x": null,
+     "series": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "value": -0.352,
+     "err_lo": -0.658,
+     "err_hi": -0.047,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Readability",
+     "x": null,
+     "series": "Difference in physician-rated score (AI-generated - clinician-authored)",
+     "value": 0.72,
+     "err_lo": 0.204,
+     "err_hi": 1.235,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Horizontal forest plot (matplotlib errorbar style): five rating domains on the y axis, top to bottom as listed; a filled blue circle = model-estimated mean paired difference (AI-generated minus clinician-authored), horizontal bar with end caps = 95% CI. A dashed blue vertical line marks 0 ('No difference'); dotted grey gridlines at the other x ticks. Nothing is printed beside the marks, so all 15 numbers are measured (source 'raster').",
+    "The grey diagonal text crossing the bundle crop is a page watermark (a separate PDF text object), not part of the figure: the figure's own embedded bitmap (page 10, 1540 x 861 px RGB, 3.06 px per PDF point) does not contain it, and all measurements were made on that bitmap.",
+    "X calibration: least squares through the 7 tick marks under the frame, centres at native x = 336.0, 531.0, 726.0, 921.0, 1116.0, 1310.5, 1505.5 px for -1.5 ... 1.5 -> value = -2.36225 + 0.00256528 * x (389.8 px per unit; 1 px = 0.0026). Fit residual at the ticks <= 0.0006.",
+    "Cross-check of the calibration on marks with a known value: the dashed 'no difference' line (centre native x 920.5) reads -0.0009; the dotted gridlines read -1.5003, -1.0001, -0.4999, +0.4993, +1.0008. Residual <= 0.001.",
+    "Centre = coverage-weighted centroid of the disc (21 px wide) after removing the 4.5 px bar; CI bounds = centre of each 2-3 px cap line. Estimated error: +/- 0.003 axis units (about 1 px). Each centre lies within 0.001 of the midpoint of its two caps (symmetric intervals).",
+    "Overall quality: centre native px (861.7, 45.5) = crop px (421.1, 17.5) -> -0.152; CI caps at native x 583.6 / 1139.4 -> -0.865 / +0.561; paper: -0.15 (-0.86 to +0.56); largest difference 0.005.",
+    "Clarity: centre native px (1061.2, 201.9) = crop px (519.0, 94.2) -> +0.360; CI caps at native x 948.8 / 1173.2 -> +0.072 / +0.647; paper: +0.36 (+0.07 to +0.65); largest difference 0.003.",
+    "Completeness: centre native px (593.3, 358.2) = crop px (289.3, 170.9) -> -0.840; CI caps at native x 392.3 / 794.1 -> -1.356 / -0.325; paper: -0.84 (-1.36 to -0.32); largest difference 0.005.",
+    "Accuracy: centre native px (783.7, 514.5) = crop px (382.8, 247.5) -> -0.352; CI caps at native x 664.5 / 902.4 -> -0.658 / -0.047; paper: -0.35 (-0.66 to -0.05); largest difference 0.003.",
+    "Readability: centre native px (1201.5, 670.8) = crop px (587.9, 324.2) -> +0.720; CI caps at native x 1000.4 / 1402.3 -> +0.204 / +1.235; paper: +0.72 (+0.20 to +1.24); largest difference 0.005.",
+    "Agreement with the paper: Table 1 (page 10) and the text on pages 9 and 11 state the same five mean differences and 95% CIs to 2 decimals; the measured values agree with all 15 numbers to within 0.005 (the three largest gaps, 0.005, are bounds that sit on a rounding boundary: -0.865 vs -0.86, -0.325 vs -0.32, 1.235 vs 1.24).",
+    "Axis: tick labels -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5 (minus printed as U+2212); the frame runs from -1.60 to 1.50 (measured), used as axes.x.range. Under the ticks: 'Favors clinician-authored summaries ←', 'No difference', '→ Favors AI-generated summaries'."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "kind 'forest', orientation 'horizontal': point estimate in value, CI ends in err_lo / err_hi as absolute x positions; the scorer takes x as the value axis for a forest panel (verify.value_axis), range -1.6..1.5 = 3.1 units, so 0.02 of the range is 0.062.",
+  "No legend: one series, named after the x-axis title; the scorer ignores series names when both sides have a single series.",
+  "No printed panel title: panel.title carries the figure caption. The unit 'points' comes from the paper text ('mean difference -0.15 points'), not from the axis; scores are on a 0-10 scale.",
+  "Values are the plotted positions to 3 decimals, not the paper's 2-decimal numbers; they agree to within 0.005 (see notes), so either rounding scores the same.",
+  "figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b with coord_origin BOTTOMLEFT, as in the existing truth files); bbox_px is in pixels of the bundle crop. The single panel is the whole 753 x 385 crop; the crop is a page render and so includes the watermark."
+ ]
+}

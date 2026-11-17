@@ -1,0 +1,341 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": "Not provided",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Showing Empathy (Red)",
+          "color": "#b30000"
+        },
+        {
+          "name": "Showing Empathy (Light Red)",
+          "color": "#e60000"
+        },
+        {
+          "name": "Showing Empathy (Dark Red)",
+          "color": "#ff4d4d"
+        },
+        {
+          "name": "Showing Empathy (Dark Blue)",
+          "color": "#1a5276"
+        },
+        {
+          "name": "Showing Empathy (Blue)",
+          "color": "#2980b9"
+        },
+        {
+          "name": "Showing Empathy (Light Blue)",
+          "color": "#85c1e9"
+        },
+        {
+          "name": "Showing Empathy (Hatched Blue)",
+          "color": "#aed6f1"
+        },
+        {
+          "name": "Showing Empathy (Hatched Red)",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Red)",
+          "color": "#b30000"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Light Red)",
+          "color": "#e60000"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Dark Red)",
+          "color": "#ff4d4d"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Dark Blue)",
+          "color": "#1a5276"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Blue)",
+          "color": "#2980b9"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Light Blue)",
+          "color": "#85c1e9"
+        },
+        {
+          "name": "Maintaining Patient Welfare (Hatched Blue)",
+          "color": "#aed6f1"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Red)",
+          "value": 86.6698,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Light Red)",
+          "value": 93.8607,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Dark Red)",
+          "value": 4.5416,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Dark Blue)",
+          "value": 39.9007,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Blue)",
+          "value": 66.0431,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Light Blue)",
+          "value": 58.1431,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Hatched Blue)",
+          "value": 18.9235,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Showing Empathy (Hatched Red)",
+          "value": 7.7586,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Red)",
+          "value": 125.8415,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Light Red)",
+          "value": 60.8441,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Dark Red)",
+          "value": 1.6134,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Dark Blue)",
+          "value": 79.1004,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Blue)",
+          "value": 63.5831,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Light Blue)",
+          "value": 38.4891,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Maintaining Patient Welfare (Hatched Blue)",
+          "value": 6.155,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": "GMCPQ; MXEKF; Being Polite; ***; N=100; Prioritization Of Preferences; ***; N=97; Constraints And Values; Making Patient; ***; N=100; Feel At Ease; Listening to Patient; ***; N=100; Shared Decision Making; Communication And; ***; N=100; Assessesing; ***; N=100; Medical Condition; Monitoring And Adjustment; ***; N=88; Of Management Plan; Explaining Condition; ***; N=99; and Treatment; Involving Patient in; ***; N=97; Managing Interplay Of; ***; N=88; Treatment Decisions; Competing Prioríties",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "PCP (bottom)",
+            "Very favorable"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#f8a694"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#a6d8ff"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

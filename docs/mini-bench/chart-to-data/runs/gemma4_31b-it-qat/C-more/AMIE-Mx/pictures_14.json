@@ -1,0 +1,271 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": "Consultation Performance Metrics",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Metric",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Negative/Low",
+          "color": "dark red"
+        },
+        {
+          "name": "Neutral/Medium",
+          "color": "red"
+        },
+        {
+          "name": "Positive/High",
+          "color": "light red"
+        },
+        {
+          "name": "Negative/Low",
+          "color": "dark blue"
+        },
+        {
+          "name": "Neutral/Medium",
+          "color": "blue"
+        },
+        {
+          "name": "Positive/High",
+          "color": "light blue"
+        },
+        {
+          "name": "Uncertain/Other",
+          "color": "hatched blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": "dark red",
+          "series": "Negative/Low",
+          "value": 49.2012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "red",
+          "series": "Neutral/Medium",
+          "value": 53.9272,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "light red",
+          "series": "Positive/High",
+          "value": 4.7261,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "dark blue",
+          "series": "Negative/Low",
+          "value": 24.154,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "blue",
+          "series": "Neutral/Medium",
+          "value": 36.4536,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "light blue",
+          "series": "Positive/High",
+          "value": 26.4929,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": "hatched blue",
+          "series": "Uncertain/Other",
+          "value": 20.0027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "dark red",
+          "series": "Negative/Low",
+          "value": 77.5865,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "red",
+          "series": "Neutral/Medium",
+          "value": 21.6828,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "light red",
+          "series": "Positive/High",
+          "value": 10.2763,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "dark blue",
+          "series": "Negative/Low",
+          "value": 34.0624,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "blue",
+          "series": "Neutral/Medium",
+          "value": 45.4165,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "light blue",
+          "series": "Positive/High",
+          "value": 23.6496,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "hatched blue",
+          "series": "Uncertain/Other",
+          "value": 2.8337,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": null,
+      "orientation": null,
+      "axes": null,
+      "series": [],
+      "data": [],
+      "notes": [
+        "not read"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

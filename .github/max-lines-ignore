@@ -9,6 +9,7 @@
 docs/examples/data/**
 tests/data/**
 showcase/**
+docs/mini-bench/**/*.json
 
 [warn]
 .plans/active/docling-slim.md

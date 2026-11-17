@@ -1,0 +1,374 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "HeartAgent",
+  "self_ref": "#/pictures/5",
+  "image_path": "images/picture_006.png",
+  "page": 12,
+  "bbox": [
+   56.29521179199219,
+   638.6383361816406,
+   552.7445678710938,
+   505.89288330078125
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    193.7,
+    199.0
+   ],
+   "title": "Top-1 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "HeartAgent",
+      "Expert",
+      "Expert + HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.58,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.69,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "one bar per condition, each with its own fill colour: HeartAgent = light teal (#C8E2E1), Expert = light lavender-grey (#CFCDDB), Expert + HeartAgent = blue-grey (#AFB9D2); no error bars, no printed values",
+    "y axis runs 0.2-0.9 (spine top at 0.900 by the calibration); the 'Accuracy' axis label is printed on the left-most panel only",
+    "measured on the PDF's embedded 1400x388 JPEG (pypdfium2): y fitted on the 4 tick marks 0.2/0.4/0.6/0.8 (69.95 px per 0.2, max residual 0.0001); bar top = sub-pixel edge of the fill averaged over the bar width; 1 px = 0.0029, estimated error +/-0.001"
+   ]
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    195.3,
+    0.0,
+    378.9,
+    199.0
+   ],
+   "title": "Top-1 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "HeartAgent",
+      "Expert",
+      "Expert + HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.479,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.628,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.797,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "one bar per condition, each with its own fill colour: HeartAgent = light teal (#C8E2E1), Expert = light lavender-grey (#CFCDDB), Expert + HeartAgent = blue-grey (#AFB9D2); no error bars, no printed values",
+    "y axis runs 0.2-0.9 (spine top at 0.900 by the calibration); the 'Accuracy' axis label is printed on the left-most panel only",
+    "measured on the PDF's embedded 1400x388 JPEG (pypdfium2): y fitted on the 4 tick marks 0.2/0.4/0.6/0.8 (69.95 px per 0.2, max residual 0.0003); bar top = sub-pixel edge of the fill averaged over the bar width; 1 px = 0.0029, estimated error +/-0.001"
+   ]
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    380.0,
+    0.0,
+    563.6,
+    199.0
+   ],
+   "title": "Top-3 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "HeartAgent",
+      "Expert",
+      "Expert + HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.597,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "one bar per condition, each with its own fill colour: HeartAgent = light teal (#C8E2E1), Expert = light lavender-grey (#CFCDDB), Expert + HeartAgent = blue-grey (#AFB9D2); no error bars, no printed values",
+    "y axis runs 0.2-0.9 (spine top at 0.900 by the calibration); the 'Accuracy' axis label is printed on the left-most panel only",
+    "measured on the PDF's embedded 1400x388 JPEG (pypdfium2): y fitted on the 4 tick marks 0.2/0.4/0.6/0.8 (69.95 px per 0.2, max residual 0.0002); bar top = sub-pixel edge of the fill averaged over the bar width; 1 px = 0.0029, estimated error +/-0.001"
+   ]
+  },
+  {
+   "id": "4",
+   "bbox_px": [
+    566.3,
+    0.0,
+    745.0,
+    199.0
+   ],
+   "title": "Top-3 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "HeartAgent",
+      "Expert",
+      "Expert + HeartAgent"
+     ]
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ],
+     "ticks": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Accuracy",
+     "color": null
+    }
+   ],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.534,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.551,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": "Accuracy",
+     "value": 0.676,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "one bar per condition, each with its own fill colour: HeartAgent = light teal (#C8E2E1), Expert = light lavender-grey (#CFCDDB), Expert + HeartAgent = blue-grey (#AFB9D2); no error bars, no printed values",
+    "y axis runs 0.2-0.9 (spine top at 0.900 by the calibration); the 'Accuracy' axis label is printed on the left-most panel only",
+    "measured on the PDF's embedded 1400x388 JPEG (pypdfium2): y fitted on the 4 tick marks 0.2/0.4/0.6/0.8 (69.95 px per 0.2, max residual 0.0001); bar top = sub-pixel edge of the fill averaged over the bar width; 1 px = 0.0029, estimated error +/-0.001"
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "All 12 values are raster measurements on the embedded JPEG (no numbers are printed in the figure); estimated error +/-0.001 accuracy units (0.35 px), i.e. 0.0015 of the 0.7 axis range.",
+  "Agreement with the paper text (p. 11-12): top-3 diagnosis Expert 0.650 / HeartAgent 0.597 and top-3 explanation HeartAgent 0.534 are reproduced within 0.0005. The text gives 0.554 for the Expert top-3 explanation bar, but the bar is drawn at 0.551 (1.1 px lower than 0.554 would be; the other bars of the same panel fit to 0.2 px); the plotted value is recorded. The four relative gains quoted in the text (21.7 %, 26.9 %, 12.3 %, 22.7 %) are reproduced by the measured bars (0.840/0.690, 0.797/0.628, 0.730/0.650, 0.676/0.551).",
+  "Series name 'Accuracy' is the y-axis label (there is no legend); x axis has no printed name.",
+  "bbox_px was mapped from the native bitmap to the crop through the PDF image placement (54.0-558.0 x 500.66-640.66 pt) and the picture bbox; the crop cuts ~6 px of the bitmap's left edge and ~15 px of its right and bottom edges (rotated tick labels of panel 4 are slightly clipped)."
+ ]
+}

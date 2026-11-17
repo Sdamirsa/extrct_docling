@@ -1,0 +1,163 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "Diagnostic lability and Single-agent vs. multi-agent performance",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Diagnostic",
+            "lability",
+            "(b)",
+            "Signle-agent",
+            "v.s.",
+            "multi-agent"
+          ]
+        },
+        "y": {
+          "name": "Diagnostic lability",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Diagnostic lability",
+          "color": "white/black"
+        }
+      ],
+      "data": [
+        {
+          "category": "ZODIAC",
+          "x": "ZODIAC",
+          "series": "Diagnostic lability",
+          "value": 0.0,
+          "err_lo": 0.0,
+          "err_hi": 0.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": "GPT-4o",
+          "series": "Diagnostic lability",
+          "value": 0.1,
+          "err_lo": 0.05,
+          "err_hi": 0.15,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": "Gemini-Pro",
+          "series": "Diagnostic lability",
+          "value": 0.07,
+          "err_lo": 0.03,
+          "err_hi": 0.11,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-405B",
+          "x": "Llama-405B",
+          "series": "Diagnostic lability",
+          "value": 0.08,
+          "err_lo": 0.04,
+          "err_hi": 0.12,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": "Mixtral-8x22B",
+          "series": "Diagnostic lability",
+          "value": 0.11,
+          "err_lo": 0.06,
+          "err_hi": 0.16,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": "BioGPT-Large",
+          "series": "Diagnostic lability",
+          "value": 0.1,
+          "err_lo": 0.05,
+          "err_hi": 0.15,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Meditron-70B",
+          "x": "Meditron-70B",
+          "series": "Diagnostic lability",
+          "value": 0.02,
+          "err_lo": 0.01,
+          "err_hi": 0.03,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Med42-70B",
+          "x": "Med42-70B",
+          "series": "Diagnostic lability",
+          "value": 0.02,
+          "err_lo": 0.01,
+          "err_hi": 0.03,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

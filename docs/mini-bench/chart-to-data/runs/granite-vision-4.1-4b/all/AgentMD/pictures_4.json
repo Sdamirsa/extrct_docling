@@ -1,0 +1,103 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AgentMD",
+  "self_ref": "#/pictures/4",
+  "image_path": "images/picture_005.png",
+  "page": 5,
+  "bbox": [
+   291.56055278271157,
+   540.1679526109853,
+   541.6111059533446,
+   718.7490305664023
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    375.0,
+    268.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Parameter Extraction",
+     "x": null,
+     "series": "Value",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Parameter Extraction",
+     "x": null,
+     "series": "Value",
+     "value": 110.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Parameter Extraction",
+     "x": null,
+     "series": "Value",
+     "value": 70.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Parameter Extraction",
+     "x": null,
+     "series": "Value",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Tool Computation",
+     "x": null,
+     "series": "Value",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Tool Computation",
+     "x": null,
+     "series": "Value",
+     "value": 0.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "(a) Diagnostic lability",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Diagnostic",
+            "lability",
+            "(b)",
+            "Signle-agent",
+            "v.s.",
+            "multi-agent"
+          ]
+        },
+        "y": {
+          "name": "Diagnostic lability",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "ZODIAC",
+          "color": "#000000"
+        },
+        {
+          "name": "GPT-4o",
+          "color": "#000000"
+        },
+        {
+          "name": "Gemini -Pro",
+          "color": "#000000"
+        },
+        {
+          "name": "Llama-3.1 -405B",
+          "color": "#000000"
+        },
+        {
+          "name": "Mixtral -8x22B",
+          "color": "#000000"
+        },
+        {
+          "name": "BioGPT -Large",
+          "color": "#000000"
+        },
+        {
+          "name": "Meditron -70B",
+          "color": "#000000"
+        },
+        {
+          "name": "Med42 -70B",
+          "color": "#000000"
+        }
+      ],
+      "data": [
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ZODIAC",
+          "value": 0.01,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": 0.08,
+          "err_lo": 0.05,
+          "err_hi": 0.12,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini -Pro",
+          "x": null,
+          "series": "Gemini -Pro",
+          "value": 0.06,
+          "err_lo": 0.04,
+          "err_hi": 0.1,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3.1 -405B",
+          "x": null,
+          "series": "Llama-3.1 -405B",
+          "value": 0.1,
+          "err_lo": 0.07,
+          "err_hi": 0.14,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral -8x22B",
+          "x": null,
+          "series": "Mixtral -8x22B",
+          "value": 0.09,
+          "err_lo": 0.06,
+          "err_hi": 0.13,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "BioGPT -Large",
+          "x": null,
+          "series": "BioGPT -Large",
+          "value": 0.09,
+          "err_lo": 0.06,
+          "err_hi": 0.14,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Meditron -70B",
+          "x": null,
+          "series": "Meditron -70B",
+          "value": 0.05,
+          "err_lo": 0.03,
+          "err_hi": 0.08,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Med42 -70B",
+          "x": null,
+          "series": "Med42 -70B",
+          "value": 0.03,
+          "err_lo": 0.02,
+          "err_hi": 0.05,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

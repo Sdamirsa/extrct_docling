@@ -1,0 +1,249 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "EchoAgent-EHM",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 6,
+    "bbox": [
+      317.49,
+      239.85,
+      552.22,
+      397.73
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.9,
+        2.9,
+        351.5,
+        235.6
+      ],
+      "title": "ROC curves for different models",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            "MemSAM",
+            "EchoONE"
+          ]
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            "OnimiaNet",
+            "MemSAM"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF ≥ 40%",
+          "color": "red"
+        },
+        {
+          "name": "40% ≥ SEF ≥ 50%",
+          "color": "blue"
+        },
+        {
+          "name": "EF ≥ 50%",
+          "color": "green"
+        }
+      ],
+      "data": [
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "EF ≥ 40%",
+          "value": 0.897,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.897",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "40% ≥ SEF ≥ 50%",
+          "value": 0.657,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.657",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "EF ≥ 50%",
+          "value": 0.767,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.767",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "EF ≥ 40%",
+          "value": 0.881,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.881",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "40% ≥ SEF ≥ 50%",
+          "value": 0.799,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.799",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "EF ≥ 50%",
+          "value": 0.76,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.760",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "EF ≥ 40%",
+          "value": 0.984,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.984",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "40% ≥ SEF ≥ 50%",
+          "value": 0.877,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.877",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "EF ≥ 50%",
+          "value": 0.856,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.856",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "EF ≥ 40%",
+          "value": 0.915,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.915",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "40% ≥ SEF ≥ 50%",
+          "value": 0.528,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.528",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "MemSAM",
+          "x": null,
+          "series": "EF ≥ 50%",
+          "value": 0.804,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.804",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "EF ≥ 40%",
+          "value": 0.937,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.937",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "40% ≥ SEF ≥ 50%",
+          "value": 0.658,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.658",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EchoONE",
+          "x": null,
+          "series": "EF ≥ 50%",
+          "value": 0.655,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.655",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:12b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

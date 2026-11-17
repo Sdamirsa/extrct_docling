@@ -1,0 +1,191 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "Diagnostic lability",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Diagnostic",
+            "lability",
+            "(b)",
+            "Signle-agent",
+            "v.s.",
+            "multi-agent"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "ZODIAC",
+          "color": null
+        },
+        {
+          "name": "GPT-4o",
+          "color": null
+        },
+        {
+          "name": "Gemini-Pro",
+          "color": null
+        },
+        {
+          "name": "Llama-3.1-405B",
+          "color": null
+        },
+        {
+          "name": "Mixtral-8x22B",
+          "color": null
+        },
+        {
+          "name": "BioGPT-Large",
+          "color": null
+        },
+        {
+          "name": "Meditron-70B",
+          "color": null
+        },
+        {
+          "name": "Med42-70B",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ZODIAC",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "GPT-4o",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "Gemini-Pro",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "Llama-3.1-405B",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "Mixtral-8x22B",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "BioGPT-Large",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "Meditron-70B",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "Med42-70B",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

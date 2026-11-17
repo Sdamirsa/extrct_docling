@@ -1,0 +1,203 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 18,
+    "bbox": [
+      55.96,
+      53.0,
+      292.86,
+      337.04
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        75.0,
+        4.4,
+        353.5,
+        55.9
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Time",
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Amplitude",
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "GT",
+          "color": "#008000"
+        }
+      ],
+      "data": [
+        {
+          "category": "1",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "3",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "5",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "6",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "7",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "8",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "9",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "10",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "11",
+          "x": null,
+          "series": "GT",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        18.1,
+        62.8,
+        353.5,
+        425.6
+      ],
+      "title": null,
+      "kind": null,
+      "orientation": null,
+      "axes": null,
+      "series": [],
+      "data": [],
+      "notes": [
+        "not read"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

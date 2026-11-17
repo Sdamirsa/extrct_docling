@@ -1,0 +1,142 @@
+{
+ "schema": "extrct.figure-data-testset/1",
+ "created": "2026-11-17",
+ "purpose": "Chart-to-data mini bench: 15 figures from 11 papers of samples/aca-papers. A1-A5 are every chart candidate of one paper (Cardiologent; one data chart, four figures without data). B1-B5 and C1-C5 were picked as data charts of different kinds from ten other papers; C2 turned out to be a schematic, so the set has 10 data charts and 5 figures without data.",
+ "figures": [
+  {
+   "id": "A1",
+   "bundle": "samples/aca-papers_out/Cardiologent",
+   "pdf": "samples/aca-papers/Cardiologent.pdf",
+   "self_ref": "#/pictures/0",
+   "image_path": "images/picture_001.png",
+   "expected_kind": "deployment diagram (no data)",
+   "truth_hint": "the five figures the figure typer passes as chart candidates in this paper"
+  },
+  {
+   "id": "A2",
+   "bundle": "samples/aca-papers_out/Cardiologent",
+   "pdf": "samples/aca-papers/Cardiologent.pdf",
+   "self_ref": "#/pictures/2",
+   "image_path": "images/picture_003.png",
+   "expected_kind": "architecture diagram (no data)",
+   "truth_hint": "the five figures the figure typer passes as chart candidates in this paper"
+  },
+  {
+   "id": "A3",
+   "bundle": "samples/aca-papers_out/Cardiologent",
+   "pdf": "samples/aca-papers/Cardiologent.pdf",
+   "self_ref": "#/pictures/3",
+   "image_path": "images/picture_004.png",
+   "expected_kind": "interval plot: 3 ICC points with printed CI bounds",
+   "truth_hint": "the five figures the figure typer passes as chart candidates in this paper"
+  },
+  {
+   "id": "A4",
+   "bundle": "samples/aca-papers_out/Cardiologent",
+   "pdf": "samples/aca-papers/Cardiologent.pdf",
+   "self_ref": "#/pictures/4",
+   "image_path": "images/picture_005.png",
+   "expected_kind": "encoder schematic (no data)",
+   "truth_hint": "the five figures the figure typer passes as chart candidates in this paper"
+  },
+  {
+   "id": "A5",
+   "bundle": "samples/aca-papers_out/Cardiologent",
+   "pdf": "samples/aca-papers/Cardiologent.pdf",
+   "self_ref": "#/pictures/5",
+   "image_path": "images/picture_006.png",
+   "expected_kind": "ECG traces with shaded spans (no data)",
+   "truth_hint": "the five figures the figure typer passes as chart candidates in this paper"
+  },
+  {
+   "id": "B1",
+   "bundle": "samples/aca-papers_out/Dynamic-Specialist-MAS",
+   "pdf": "samples/aca-papers/Dynamic-Specialist-MAS.pdf",
+   "self_ref": "#/pictures/1",
+   "image_path": "images/picture_002.png",
+   "expected_kind": "grouped bar chart, 3 categories x 4 series, count printed above each bar",
+   "truth_hint": "printed labels"
+  },
+  {
+   "id": "B2",
+   "bundle": "samples/aca-papers_out/Med-RwR",
+   "pdf": "samples/aca-papers/Med-RwR.pdf",
+   "self_ref": "#/pictures/6",
+   "image_path": "images/picture_007.png",
+   "expected_kind": "three line-chart panels, smoothed line plus raw points, no printed values",
+   "truth_hint": "measured against the y ticks"
+  },
+  {
+   "id": "B3",
+   "bundle": "samples/aca-papers_out/EchoAgent-EHM",
+   "pdf": "samples/aca-papers/EchoAgent-EHM.pdf",
+   "self_ref": "#/pictures/4",
+   "image_path": "images/picture_005.png",
+   "expected_kind": "five ROC panels, three curves each, AUROC printed in each legend",
+   "truth_hint": "printed AUROC values"
+  },
+  {
+   "id": "B4",
+   "bundle": "samples/aca-papers_out/Eunjung_Lee_ssrn-7427517_2",
+   "pdf": "samples/aca-papers/Eunjung Lee ssrn-7427517 (2).pdf",
+   "self_ref": "#/pictures/2",
+   "image_path": "images/picture_003.png",
+   "expected_kind": "horizontal forest plot, five domains, point and CI, watermark across the figure",
+   "truth_hint": "measured against the x ticks; the text states the differences"
+  },
+  {
+   "id": "B5",
+   "bundle": "samples/aca-papers_out/RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+   "pdf": "samples/aca-papers/RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for.pdf",
+   "self_ref": "#/pictures/7",
+   "image_path": "images/picture_008.png",
+   "expected_kind": "ten box-plot panels (2 x 5), three models each, own y axis per panel",
+   "truth_hint": "measured box statistics"
+  },
+  {
+   "id": "C1",
+   "bundle": "samples/aca-papers_out/HeartAgent",
+   "pdf": "samples/aca-papers/HeartAgent.pdf",
+   "self_ref": "#/pictures/5",
+   "image_path": "images/picture_006.png",
+   "expected_kind": "four bar panels, 3 bars each, accuracy 0.2-0.9, no printed values",
+   "truth_hint": "measured on the embedded bitmap"
+  },
+  {
+   "id": "C2",
+   "bundle": "samples/aca-papers_out/AgentMD",
+   "pdf": "samples/aca-papers/AgentMD.pdf",
+   "self_ref": "#/pictures/4",
+   "image_path": "images/picture_005.png",
+   "expected_kind": "inference flow schematic, right half of the paper's Fig. 3a (no data)",
+   "truth_hint": "no data"
+  },
+  {
+   "id": "C3",
+   "bundle": "samples/aca-papers_out/AMIE-Mx",
+   "pdf": "samples/aca-papers/AMIE-Mx.pdf",
+   "self_ref": "#/pictures/14",
+   "image_path": "images/picture_015.png",
+   "expected_kind": "three horizontal stacked-bar panels (22 items x 2 arms x 6 rating levels)",
+   "truth_hint": "segments measured; each bar sums to 100 %"
+  },
+  {
+   "id": "C4",
+   "bundle": "samples/aca-papers_out/Zodiac",
+   "pdf": "samples/aca-papers/Zodiac.pdf",
+   "self_ref": "#/pictures/5",
+   "image_path": "images/picture_006.png",
+   "expected_kind": "box-plot panel (8 models) and grouped-bar panel (8 metrics x 2 series), vector",
+   "truth_hint": "read from vector geometry"
+  },
+  {
+   "id": "C5",
+   "bundle": "samples/aca-papers_out/AMIE-Cardiology",
+   "pdf": "samples/aca-papers/AMIE-Cardiology.pdf",
+   "self_ref": "#/pictures/3",
+   "image_path": "images/picture_004.png",
+   "expected_kind": "three vector pies with printed percentages",
+   "truth_hint": "printed labels"
+  }
+ ]
+}

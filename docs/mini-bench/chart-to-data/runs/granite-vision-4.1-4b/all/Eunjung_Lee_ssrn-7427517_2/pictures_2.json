@@ -1,0 +1,147 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Eunjung_Lee_ssrn-7427517_2",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 10,
+  "bbox": [
+   55.365936279296875,
+   192.50140380859375,
+   557.2493286132812,
+   449.6200866699219
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    753.0,
+    385.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "Overall quality",
+     "x": null,
+     "series": "Favors Clinician-authored Summaries",
+     "value": -0.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Overall quality",
+     "x": null,
+     "series": "Favors AI-generated Summaries",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Clarity",
+     "x": null,
+     "series": "Favors Clinician-authored Summaries",
+     "value": 0.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Clarity",
+     "x": null,
+     "series": "Favors AI-generated Summaries",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Completeness",
+     "x": null,
+     "series": "Favors Clinician-authored Summaries",
+     "value": -0.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Completeness",
+     "x": null,
+     "series": "Favors AI-generated Summaries",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Accuracy",
+     "x": null,
+     "series": "Favors Clinician-authored Summaries",
+     "value": -0.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Accuracy",
+     "x": null,
+     "series": "Favors AI-generated Summaries",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Readability",
+     "x": null,
+     "series": "Favors Clinician-authored Summaries",
+     "value": 0.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "Readability",
+     "x": null,
+     "series": "Favors AI-generated Summaries",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

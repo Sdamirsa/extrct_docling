@@ -1,0 +1,34 @@
+[
+ [
+  "Category",
+  "Yes_Definitely",
+  "Yes_Probably",
+  "Neither_Yes_Nor_No",
+  "No_Probably_Not",
+  "No_Definitely_Not"
+ ],
+ [
+  "Did the AI help your assessment?",
+  "40.2",
+  "16.8",
+  "30.8",
+  "8.4",
+  "3.7"
+ ],
+ [
+  "Did the AI make you more confident?",
+  "36.4",
+  "15.9",
+  "32.7",
+  "12.1",
+  "2.8"
+ ],
+ [
+  "Did the AI save you time?",
+  "23.4",
+  "27.1",
+  "30.8",
+  "15.9",
+  "2.8"
+ ]
+]

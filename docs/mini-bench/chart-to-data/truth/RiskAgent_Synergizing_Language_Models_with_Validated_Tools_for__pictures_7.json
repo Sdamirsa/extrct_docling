@@ -1,0 +1,955 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+  "self_ref": "#/pictures/7",
+  "image_path": "images/picture_008.png",
+  "page": 15,
+  "bbox": [
+   55.2818717956543,
+   722.8007583618164,
+   542.4007568359375,
+   446.96185302734375
+  ]
+ },
+ "source_kind": "mixed",
+ "panels": [
+  {
+   "id": "a1",
+   "bbox_px": [
+    1.9,
+    12.7,
+    142.7,
+    201.9
+   ],
+   "title": "a. MedRisk-Qualitative: Stroke/TIA",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Stroke/TIA",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      52.5,
+      80.0
+     ],
+     "ticks": [
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Stroke/TIA",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 73.25,
+     "err_lo": 71.12,
+     "err_hi": 76.77,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 59.13,
+     "err_lo": 57.74,
+     "err_hi": 59.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 57.72,
+     "err_lo": 57.04,
+     "err_hi": 57.72,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "Box plot of 'Stroke/TIA' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'a. MedRisk-Qualitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (6 labelled major ticks 55-80, positions exact in PDF points): 4.186 pt per unit; linear fit residual <= 0.0034 units. The axis line spans 52.5-80.0 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.049 units; estimated error of a line position +/- 0.03 units, of an outlier centre +/- 0.05.",
+    "RiskAgent-8B: median 73.25 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q1 edge because that reproduces the Table 1 mean (74.09 vs 74.09; the other edge would give 74.65)); Q1 73.25, Q3 76.06; whisker ends 71.12 / 76.77; outliers (diamonds): none. Five-run check: mean 74.09, SD 2.06 of (low, Q1, median, Q3, high) vs Table 1 74.09 (2.06).",
+    "GPT-4o: median 59.13 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q3 edge because that reproduces the Table 1 mean (58.15 vs 58.17; the other edge would give 57.87)); Q1 57.74, Q3 59.13; whisker ends 57.74 / 59.84; outliers (diamonds): 54.90. No lower whisker (cap drawn on the Q1 edge). Five-run check: mean 58.15, SD 1.76 of (low, Q1, median, Q3, high) vs Table 1 58.17 (1.76).",
+    "o3-mini: median 57.72 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q3 edge because that reproduces the Table 1 mean (58.58 vs 58.59; the other edge would give 58.44)); Q1 57.04, Q3 57.72; whisker ends 57.04 / 57.72; outliers (diamonds): 63.37. No whiskers. Five-run check: mean 58.58, SD 2.41 of (low, Q1, median, Q3, high) vs Table 1 58.59 (2.41)."
+   ]
+  },
+  {
+   "id": "a2",
+   "bbox_px": [
+    148.5,
+    14.5,
+    289.5,
+    202.0
+   ],
+   "title": "a. MedRisk-Qualitative: Shortness of Breath",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Shortness of Breath",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      47.5,
+      82.5
+     ],
+     "ticks": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Shortness of Breath",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 77.23,
+     "err_lo": 75.33,
+     "err_hi": 78.17,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 51.57,
+     "err_lo": 51.26,
+     "err_hi": 53.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 53.18,
+     "err_lo": 52.84,
+     "err_hi": 53.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "Box plot of 'Shortness of Breath' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'a. MedRisk-Qualitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (7 labelled major ticks 50-80, positions exact in PDF points): 3.289 pt per unit; linear fit residual <= 0.0002 units. The axis line spans 47.5-82.5 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.062 units; estimated error of a line position +/- 0.04 units, of an outlier centre +/- 0.06.",
+    "RiskAgent-8B: median 77.23 (its own line); Q1 75.97, Q3 77.53; whisker ends 75.33 / 78.17; outliers (diamonds): none. Five-run check: mean 76.85, SD 1.05 of (low, Q1, median, Q3, high) vs Table 1 76.84 (1.05).",
+    "GPT-4o: median 51.57 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q1 edge because that reproduces the Table 1 mean (52.27 vs 52.28; the other edge would give 52.59)); Q1 51.57, Q3 53.16; whisker ends 51.26 / 53.79; outliers (diamonds): none. Five-run check: mean 52.27, SD 1.01 of (low, Q1, median, Q3, high) vs Table 1 52.28 (1.01).",
+    "o3-mini: median 53.18 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q1 edge because that reproduces the Table 1 mean (53.61 vs 53.61; the other edge would give 53.73)); Q1 53.18, Q3 53.79; whisker ends 52.84 / 53.79; outliers (diamonds): 55.06. No upper whisker. Five-run check: mean 53.61, SD 0.79 of (low, Q1, median, Q3, high) vs Table 1 53.61 (0.79)."
+   ]
+  },
+  {
+   "id": "a3",
+   "bbox_px": [
+    294.5,
+    14.4,
+    436.5,
+    201.9
+   ],
+   "title": "a. MedRisk-Qualitative: Internal Medicine",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Internal Medicine",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      47.5,
+      82.5
+     ],
+     "ticks": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Internal Medicine",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 78.19,
+     "err_lo": 77.83,
+     "err_hi": 78.3,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.18,
+     "err_lo": 49.95,
+     "err_hi": 50.18,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 52.05,
+     "err_lo": 51.33,
+     "err_hi": 53.09,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Internal Medicine' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'a. MedRisk-Qualitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (7 labelled major ticks 50-80, positions exact in PDF points): 3.289 pt per unit; linear fit residual <= 0.0002 units. The axis line spans 47.5-82.5 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.062 units; estimated error of a line position +/- 0.04 units, of an outlier centre +/- 0.06.",
+    "RiskAgent-8B: median 78.19 (its own line); Q1 77.83, Q3 78.30; whisker ends 77.83 / 78.30; outliers (diamonds): 77.02, 79.23. No whiskers; Q3 and median lines 4.5 px apart, read as the two ends of one 9.6 px black band. Five-run check: mean 78.11, SD 0.72 of (low, Q1, median, Q3, high) vs Table 1 78.11 (0.72).",
+    "GPT-4o: median 50.18 (not drawn as a separate line, i.e. it lies on or between the box edges, which are only 0.10 apart; recorded as the Q3 edge, the nearer to the Table 1 mean (50.16 vs 50.15; the other edge gives 50.14, so the table does not really separate them)); Q1 50.08, Q3 50.18; whisker ends 49.95 / 50.18; outliers (diamonds): 50.39. Box only 0.10 tall: Q3 edge, Q1 edge and lower cap form one 14 px black band; the upper outlier touches the band. Five-run check: mean 50.16, SD 0.14 of (low, Q1, median, Q3, high) vs Table 1 50.15 (0.16).",
+    "o3-mini: median 52.05 (its own line); Q1 51.80, Q3 52.49; whisker ends 51.33 / 53.09; outliers (diamonds): none. Five-run check: mean 52.15, SD 0.60 of (low, Q1, median, Q3, high) vs Table 1 52.16 (0.60)."
+   ]
+  },
+  {
+   "id": "a4",
+   "bbox_px": [
+    442.4,
+    14.4,
+    583.4,
+    201.9
+   ],
+   "title": "a. MedRisk-Qualitative: Cardiac",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Cardiac",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      50.0,
+      75.0
+     ],
+     "ticks": [
+      50.0,
+      60.0,
+      70.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Cardiac",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Cardiac",
+     "value": 71.79,
+     "err_lo": 70.66,
+     "err_hi": 72.59,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Cardiac",
+     "value": 53.65,
+     "err_lo": 52.11,
+     "err_hi": 54.43,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Cardiac",
+     "value": 52.1,
+     "err_lo": 51.74,
+     "err_hi": 54.43,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Cardiac' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'a. MedRisk-Qualitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (3 labelled major ticks 50-70, positions exact in PDF points): 4.604 pt per unit; linear fit residual <= 0.0001 units. The axis line spans 50.0-75.0 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.044 units; estimated error of a line position +/- 0.03 units, of an outlier centre +/- 0.05.",
+    "RiskAgent-8B: median 71.79 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q3 edge because that reproduces the Table 1 mean (71.50 vs 71.51; the other edge would give 71.27)); Q1 70.66, Q3 71.79; whisker ends 70.66 / 72.59; outliers (diamonds): none. No lower whisker. Five-run check: mean 71.50, SD 0.74 of (low, Q1, median, Q3, high) vs Table 1 71.51 (0.75).",
+    "GPT-4o: median 53.65 (its own line); Q1 52.11, Q3 54.04; whisker ends 52.11 / 54.43; outliers (diamonds): none. No lower whisker. Five-run check: mean 53.26, SD 0.98 of (low, Q1, median, Q3, high) vs Table 1 53.28 (0.98).",
+    "o3-mini: median 52.10 (its own line); Q1 51.74, Q3 52.88; whisker ends 51.74 / 54.43; outliers (diamonds): none. No lower whisker. Five-run check: mean 52.58, SD 1.02 of (low, Q1, median, Q3, high) vs Table 1 52.59 (1.02)."
+   ]
+  },
+  {
+   "id": "a5",
+   "bbox_px": [
+    590.6,
+    14.4,
+    729.9,
+    201.9
+   ],
+   "title": "a. MedRisk-Qualitative: Overall",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Overall",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      47.5,
+      82.5
+     ],
+     "ticks": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Overall",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Overall",
+     "value": 78.08,
+     "err_lo": 77.91,
+     "err_hi": 78.97,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Overall",
+     "value": 50.62,
+     "err_lo": 50.5,
+     "err_hi": 50.62,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Overall",
+     "value": 52.49,
+     "err_lo": 51.67,
+     "err_hi": 53.21,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Overall' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'a. MedRisk-Qualitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (7 labelled major ticks 50-80, positions exact in PDF points): 3.289 pt per unit; linear fit residual <= 0.0002 units. The axis line spans 47.5-82.5 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.062 units; estimated error of a line position +/- 0.04 units, of an outlier centre +/- 0.06.",
+    "RiskAgent-8B: median 78.08 (its own line); Q1 78.02, Q3 78.71; whisker ends 77.91 / 78.97; outliers (diamonds): none. Median, Q1 edge and lower cap form one 11.7 px black band (median and Q1 2.7 px apart). Five-run check: mean 78.34, SD 0.42 of (low, Q1, median, Q3, high) vs Table 1 78.34 (0.43).",
+    "GPT-4o: median 50.62 (not drawn as a separate line, i.e. it lies on or between the box edges, which are only 0.07 apart; recorded as the Q3 edge, the nearer to the Table 1 mean (50.66 vs 50.68; the other edge gives 50.65, so the table does not really separate them)); Q1 50.55, Q3 50.62; whisker ends 50.50 / 50.62; outliers (diamonds): 51.03. Box only 0.07 tall: Q3, Q1 and lower cap form one 9.9 px black band. Five-run check: mean 50.66, SD 0.19 of (low, Q1, median, Q3, high) vs Table 1 50.68 (0.20).",
+    "o3-mini: median 52.49 (its own line); Q1 52.10, Q3 53.16; whisker ends 51.67 / 53.21; outliers (diamonds): none. Upper cap sits 2 px above the Q3 edge. Five-run check: mean 52.52, SD 0.60 of (low, Q1, median, Q3, high) vs Table 1 52.55 (0.60)."
+   ]
+  },
+  {
+   "id": "b1",
+   "bbox_px": [
+    1.3,
+    226.0,
+    142.6,
+    413.5
+   ],
+   "title": "b. MedRisk-Quantitative: Stroke/TIA",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Stroke/TIA",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      20.0,
+      85.0
+     ],
+     "ticks": [
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Stroke/TIA",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 77.46,
+     "err_lo": 77.46,
+     "err_hi": 78.15,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 30.28,
+     "err_lo": 28.14,
+     "err_hi": 32.35,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 54.23,
+     "err_lo": 47.88,
+     "err_hi": 54.9,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Stroke/TIA' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'b. MedRisk-Quantitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (7 labelled major ticks 20-80, positions exact in PDF points): 1.771 pt per unit; linear fit residual <= 0.0077 units. The axis line spans 20.0-85.0 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.115 units; estimated error of a line position +/- 0.07 units, of an outlier centre +/- 0.12.",
+    "RiskAgent-8B: median 77.46 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q1 edge because that reproduces the Table 1 mean (77.74 vs 77.74; the other edge would give 77.88)); Q1 77.46, Q3 78.15; whisker ends 77.46 / 78.15; outliers (diamonds): 75.34, 80.28. No whiskers. Five-run check: mean 77.74, SD 1.58 of (low, Q1, median, Q3, high) vs Table 1 77.74 (1.58).",
+    "GPT-4o: median 30.28 (its own line); Q1 28.86, Q3 32.35; whisker ends 28.14 / 32.35; outliers (diamonds): 38.70. No upper whisker. Five-run check: mean 31.67, SD 3.80 of (low, Q1, median, Q3, high) vs Table 1 31.69 (3.80).",
+    "o3-mini: median 54.23 (its own line); Q1 47.88, Q3 54.90; whisker ends 47.88 / 54.90; outliers (diamonds): none. No whiskers. Five-run check: mean 51.96, SD 3.34 of (low, Q1, median, Q3, high) vs Table 1 51.97 (3.34)."
+   ]
+  },
+  {
+   "id": "b2",
+   "bbox_px": [
+    149.8,
+    224.0,
+    289.5,
+    413.2
+   ],
+   "title": "b. MedRisk-Quantitative: Shortness of Breath",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Shortness of Breath",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      30.0,
+      80.0
+     ],
+     "ticks": [
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Shortness of Breath",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 75.97,
+     "err_lo": 75.97,
+     "err_hi": 75.97,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 35.09,
+     "err_lo": 34.45,
+     "err_hi": 36.66,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 58.54,
+     "err_lo": 57.89,
+     "err_hi": 60.42,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "Box plot of 'Shortness of Breath' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'b. MedRisk-Quantitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (6 labelled major ticks 30-80, positions exact in PDF points): 2.302 pt per unit; linear fit residual <= 0.0003 units. The axis line spans 30.0-80.0 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.089 units; estimated error of a line position +/- 0.05 units, of an outlier centre +/- 0.09.",
+    "RiskAgent-8B: median 75.97 (its own line); Q1 75.97, Q3 75.97; whisker ends 75.97 / 75.97; outliers (diamonds): 75.61, 76.57. Box collapsed to a single line (Q1 = median = Q3); the lower outlier touches the line. Five-run check: mean 76.02, SD 0.31 of (low, Q1, median, Q3, high) vs Table 1 76.01 (0.31).",
+    "GPT-4o: median 35.09 (its own line); Q1 34.80, Q3 36.34; whisker ends 34.45 / 36.66; outliers (diamonds): none. Five-run check: mean 35.47, SD 0.87 of (low, Q1, median, Q3, high) vs Table 1 35.51 (0.88).",
+    "o3-mini: median 58.54 (not drawn as a separate line, i.e. it coincides with a box edge; taken as the Q1 edge because that reproduces the Table 1 mean (59.10 vs 59.11; the other edge would give 59.41)); Q1 58.54, Q3 60.10; whisker ends 57.89 / 60.42; outliers (diamonds): none. Five-run check: mean 59.10, SD 0.98 of (low, Q1, median, Q3, high) vs Table 1 59.11 (0.99)."
+   ]
+  },
+  {
+   "id": "b3",
+   "bbox_px": [
+    297.1,
+    225.6,
+    436.4,
+    413.1
+   ],
+   "title": "b. MedRisk-Quantitative: Internal Medicine",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Internal Medicine",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      35.0,
+      82.5
+     ],
+     "ticks": [
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Internal Medicine",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 75.25,
+     "err_lo": 74.84,
+     "err_hi": 77.14,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 39.4,
+     "err_lo": 39.29,
+     "err_hi": 39.63,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 55.05,
+     "err_lo": 54.46,
+     "err_hi": 56.82,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Internal Medicine' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'b. MedRisk-Quantitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (10 labelled major ticks 35-80, positions exact in PDF points): 2.424 pt per unit; linear fit residual <= 0.0057 units. The axis line spans 35.0-82.5 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.084 units; estimated error of a line position +/- 0.05 units, of an outlier centre +/- 0.08.",
+    "RiskAgent-8B: median 75.25 (its own line); Q1 74.92, Q3 75.95; whisker ends 74.84 / 77.14; outliers (diamonds): none. Lower cap 2.4 px below the Q1 edge. Five-run check: mean 75.62, SD 0.86 of (low, Q1, median, Q3, high) vs Table 1 75.61 (0.86).",
+    "GPT-4o: median 39.40 (its own line); Q1 39.29, Q3 39.63; whisker ends 39.29 / 39.63; outliers (diamonds): 38.70, 40.21. No whiskers; median and Q1 lines form one 7.5-9.4 px black band. Five-run check: mean 39.45, SD 0.49 of (low, Q1, median, Q3, high) vs Table 1 39.49 (0.49).",
+    "o3-mini: median 55.05 (its own line); Q1 54.72, Q3 56.56; whisker ends 54.46 / 56.82; outliers (diamonds): none. Five-run check: mean 55.52, SD 0.98 of (low, Q1, median, Q3, high) vs Table 1 55.54 (0.97)."
+   ]
+  },
+  {
+   "id": "b4",
+   "bbox_px": [
+    444.4,
+    224.2,
+    583.3,
+    413.4
+   ],
+   "title": "b. MedRisk-Quantitative: Cardiac",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Cardiac",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      35.0,
+      75.0
+     ],
+     "ticks": [
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Cardiac",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Cardiac",
+     "value": 70.67,
+     "err_lo": 69.11,
+     "err_hi": 71.82,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Cardiac",
+     "value": 38.21,
+     "err_lo": 37.84,
+     "err_hi": 42.86,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Cardiac",
+     "value": 60.25,
+     "err_lo": 56.76,
+     "err_hi": 67.57,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Cardiac' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'b. MedRisk-Quantitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (9 labelled major ticks 35-75, positions exact in PDF points): 2.877 pt per unit; linear fit residual <= 0.0050 units. The axis line spans 35.0-75.0 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.071 units; estimated error of a line position +/- 0.04 units, of an outlier centre +/- 0.07.",
+    "RiskAgent-8B: median 70.67 (its own line); Q1 69.90, Q3 71.04; whisker ends 69.11 / 71.82; outliers (diamonds): none. Five-run check: mean 70.51, SD 0.93 of (low, Q1, median, Q3, high) vs Table 1 70.50 (0.93).",
+    "GPT-4o: median 38.21 (its own line); Q1 37.84, Q3 40.90; whisker ends 37.84 / 42.86; outliers (diamonds): none. No lower whisker. Five-run check: mean 39.53, SD 2.02 of (low, Q1, median, Q3, high) vs Table 1 39.54 (2.02).",
+    "o3-mini: median 60.25 (its own line); Q1 57.15, Q3 66.81; whisker ends 56.76 / 67.57; outliers (diamonds): none. Five-run check: mean 61.71, SD 4.64 of (low, Q1, median, Q3, high) vs Table 1 61.70 (4.64)."
+   ]
+  },
+  {
+   "id": "b5",
+   "bbox_px": [
+    591.0,
+    225.3,
+    729.9,
+    412.8
+   ],
+   "title": "b. MedRisk-Quantitative: Overall",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "RiskAgent-8B",
+      "GPT-4o",
+      "o3-mini"
+     ]
+    },
+    "y": {
+     "name": "Overall",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      32.5,
+      82.5
+     ],
+     "ticks": [
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Overall",
+     "color": "teal (#669999)"
+    }
+   ],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": "Overall",
+     "value": 76.08,
+     "err_lo": 75.31,
+     "err_hi": 77.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": "Overall",
+     "value": 38.35,
+     "err_lo": 38.12,
+     "err_hi": 38.35,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.75
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": "Overall",
+     "value": 55.73,
+     "err_lo": 54.52,
+     "err_hi": 57.21,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    }
+   ],
+   "notes": [
+    "Box plot of 'Overall' accuracy over five runs for three models (x tick labels RiskAgent-8B, GPT-4o, o3-mini), row 'b. MedRisk-Quantitative'. Teal boxes with black outline, black median line, whiskers with caps, black diamonds for outliers.",
+    "Row convention (labelling README): value = median, err_lo / err_hi = the whisker ends (cap lines) as absolute axis values; where a side has no whisker the end is the box edge. Quartiles (the caption defines the box as Q1-Q3) and outliers are listed below, not in the rows.",
+    "Y calibration from the vector tick marks of this panel (10 labelled major ticks 35-80, positions exact in PDF points): 2.302 pt per unit; linear fit residual <= 0.0042 units. The axis line spans 32.5-82.5 (axes.y.range). The boxes are a raster layer (an embedded 307 px wide image with a mask, 4.9 px per point) under vector axes, so marks were measured on a 12 px/pt render: 1 native px = 0.089 units; estimated error of a line position +/- 0.05 units, of an outlier centre +/- 0.09.",
+    "RiskAgent-8B: median 76.08 (its own line); Q1 75.99, Q3 76.94; whisker ends 75.31 / 77.34; outliers (diamonds): none. Median and Q1 lines form one 7.7 px black band. Five-run check: mean 76.33, SD 0.72 of (low, Q1, median, Q3, high) vs Table 1 76.33 (0.73).",
+    "GPT-4o: median 38.35 (not drawn as a separate line, i.e. it lies on or between the box edges, which are only 0.23 apart; recorded as the Q3 edge, the nearer to the Table 1 mean (38.37 vs 38.39; the other edge gives 38.32, so the table does not really separate them)); Q1 38.12, Q3 38.35; whisker ends 38.12 / 38.35; outliers (diamonds): 37.30, 39.73. No whiskers; box 0.23 tall, Q3 and Q1 edges form one 11-12 px black band. Five-run check: mean 38.37, SD 0.78 of (low, Q1, median, Q3, high) vs Table 1 38.39 (0.79).",
+    "o3-mini: median 55.73 (its own line); Q1 55.09, Q3 56.87; whisker ends 54.52 / 57.21; outliers (diamonds): none. Five-run check: mean 55.88, SD 1.02 of (low, Q1, median, Q3, high) vs Table 1 55.91 (1.02)."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "kind 'box', orientation 'vertical': value = median, err_lo / err_hi = whisker ends (README convention); quartiles and outliers are in each panel's notes (the schema has no field for them). Each panel has its own y axis and range, used by the scorer to normalise.",
+  "Median not separately visible in 11 of 30 boxes: a1 RiskAgent-8B (Q1 edge, 73.25; box 73.25-76.06); a1 GPT-4o (Q3 edge, 59.13; box 57.74-59.13); a1 o3-mini (Q3 edge, 57.72; box 57.04-57.72); a2 GPT-4o (Q1 edge, 51.57; box 51.57-53.16); a2 o3-mini (Q1 edge, 53.18; box 53.18-53.79); a3 GPT-4o (Q3 edge, 50.18; box 50.08-50.18); a4 RiskAgent-8B (Q3 edge, 71.79; box 70.66-71.79); a5 GPT-4o (Q3 edge, 50.62; box 50.55-50.62); b1 RiskAgent-8B (Q1 edge, 77.46; box 77.46-78.15); b2 o3-mini (Q1 edge, 58.54; box 58.54-60.10); b5 GPT-4o (Q3 edge, 38.35; box 38.12-38.35). In these the median line coincides with the Q1 or Q3 edge (five runs, quartiles = 2nd and 4th value, ties are common because accuracies are k/N). Which edge was decided with the paper's Table 1 (mean over the same five runs), not from the pixels; these rows carry confidence 0.75. A model that reads only the figure cannot know the edge. Where the box is tall the table decides clearly: a1 RiskAgent-8B (73.25, the other edge is 76.06); a1 GPT-4o (59.13, the other edge is 57.74); a1 o3-mini (57.72, the other edge is 57.04); a2 GPT-4o (51.57, the other edge is 53.16); a2 o3-mini (53.18, the other edge is 53.79); a4 RiskAgent-8B (71.79, the other edge is 70.66); b1 RiskAgent-8B (77.46, the other edge is 78.15); b2 o3-mini (58.54, the other edge is 60.10). There a prediction of the box centre or of the other edge is off by up to 10% of the axis range (a1 RiskAgent-8B: 2.8 of 27.5 units) and should not be read as a misreading; set these values to null if only pixel-readable medians are to be scored. Where the box is thin (a3 GPT-4o (50.08-50.18); a5 GPT-4o (50.55-50.62); b5 GPT-4o (38.12-38.35)) the table cannot separate the edges, but either edge is within 0.25 units (under 0.5% of the axis range) of the recorded value.",
+  "Cross-check with Table 1 (page 5; mean and SD over five runs): taking (lower whisker end or lower outlier, Q1, median, Q3, upper whisker end or upper outlier) as the five runs, the mean of every one of the 30 boxes reproduces the table to within 0.04 (average gap 0.013) and the population SD to within 0.02. For the Stroke/TIA panels the measured lines also sit on multiples of 1/142 (e.g. 71.12, 73.25, 76.06, 76.77 = 101, 104, 108, 109 of 142) to within 0.04.",
+  "Thin boxes (a3 GPT-4o, a5 GPT-4o, b2 RiskAgent-8B, b3 GPT-4o, b5 GPT-4o) are 0-0.35 units tall; their lines merge into one black band and were separated by the stroke width (0.42 pt). The quartiles there are good to about +/- 0.05, which is far inside the scorer's tolerance.",
+  "Tick labels and model names are text objects without a usable Unicode map (the text layer returns blanks), so the y tick values were read from a 12x render and matched one-to-one to the vector major ticks; the y titles are printed vertically in blue. No unit is printed on the axes (the paper reports accuracy in %).",
+  "Series: no legend; one series per panel named after the y-axis title (the scorer ignores series names when both sides have one series). Category = the model name under each box. Panel titles combine the row heading and the y-axis title; neither is printed as a per-panel title.",
+  "Panel ids a1-a5, b1-b5 (row letter + column); bbox_px covers each panel's axes, tick labels and y title, not the row headings 'a. MedRisk-Qualitative' / 'b. MedRisk-Quantitative'. figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b with coord_origin BOTTOMLEFT, as in the existing truth files); bbox_px is in pixels of the bundle crop."
+ ]
+}

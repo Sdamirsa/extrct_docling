@@ -1,0 +1,113 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 7,
+    "bbox": [
+      342.68,
+      56.16,
+      533.68,
+      186.48
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        13.1,
+        1.4,
+        286.7,
+        195.1
+      ],
+      "title": "ICC(2,1), absolute agreement",
+      "kind": "scatter",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.4,
+            0.9
+          ],
+          "ticks": [
+            0.9,
+            0.8,
+            0.7,
+            0.6,
+            0.5,
+            0.4
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "R1 ↔ R2",
+          "color": "red"
+        },
+        {
+          "name": "Judge ↔ R1",
+          "color": "blue"
+        },
+        {
+          "name": "Judge ↔ R2",
+          "color": "blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "R1 ↔ R2",
+          "x": "R1 ↔ R2",
+          "series": "R1 ↔ R2",
+          "value": 0.6411,
+          "err_lo": 0.5233,
+          "err_hi": 0.7915,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Judge ↔ R1",
+          "x": "Judge ↔ R1",
+          "series": "Judge ↔ R1",
+          "value": 0.7296,
+          "err_lo": 0.6078,
+          "err_hi": 0.8428,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Judge ↔ R2",
+          "x": "Judge ↔ R2",
+          "series": "Judge ↔ R2",
+          "value": 0.6484,
+          "err_lo": 0.5153,
+          "err_hi": 0.7782,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

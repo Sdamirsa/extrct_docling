@@ -1,0 +1,47 @@
+[
+ [
+  "Category",
+  "Parameter",
+  "Value"
+ ],
+ [
+  "Parameter Extraction",
+  "confusion",
+  "False"
+ ],
+ [
+  "Parameter Extraction",
+  "uremia",
+  "False"
+ ],
+ [
+  "Parameter Extraction",
+  "respiratory_rate",
+  "28"
+ ],
+ [
+  "Parameter Extraction",
+  "systolic_bp",
+  "110"
+ ],
+ [
+  "Parameter Extraction",
+  "diastolic_bp",
+  "70"
+ ],
+ [
+  "Parameter Extraction",
+  "age",
+  "60"
+ ],
+ [
+  "Tool Computation",
+  "CURB-65 Score",
+  "0"
+ ],
+ [
+  "Tool Computation",
+  "Mortality",
+  "0.7%"
+ ]
+]

@@ -1,0 +1,171 @@
+{
+ "model": "granite-vision-4.1-4b",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-17",
+ "judged_on": "the model's raw CSV (pictures_<N>.grid.json), one <chart2csv> call on the whole figure; the scorer's zeros for this model come from the mechanical one-panel conversion (panel titles and header names do not pair) and are not used as evidence of wrong numbers. 'format_loss' lists what is lost only because a flat CSV cannot express panels or intervals; it is not counted in error_types.",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": ["OTHER"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "No usable output: the grid is [] for this deployment schematic, so nothing reaches a consumer. The run script writes [] both for an empty answer and for CSV that failed to parse, and the call took 5.89 s against 2.46 s for the header-only answer on A5, so this cannot be credited as a deliberate abstention.",
+   "format_loss": "none"
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": ["OTHER"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "No usable output: grid [] for the pipeline diagram. The call took 12.09 s, about as long as the 60-cell answer on B3 (13.68 s) and five times the header-only A5 (2.46 s), so the model very probably wrote text that the CSV parser rejected; the right outcome is reached by parse failure, not by the model declining.",
+   "format_loss": "none"
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "partial",
+   "error_types": ["INTERVAL_BOUNDS", "MISSING_VALUES", "SERIES_NAMES"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "The three point estimates are never returned: the ICC column holds the printed upper CI bound instead (0.79 / 0.84 / 0.78 vs plotted 0.674 / 0.741 / 0.666, an error of 0.10-0.12 = 17-19 % of the 0.35-0.95 axis). The six printed bounds are read exactly (0.52-0.79, 0.60-0.84, 0.51-0.78), but the unquoted comma in the header 'ICC(2,1)' splits it into 'ICC(2' and '1)', so every value sits one column left of its name (0.52 under '1)', 0.79 under 'Lower CI', 'Upper CI' empty).",
+   "format_loss": "none: the model itself chose Lower CI / Upper CI columns, so intervals were expressible; the scorer's series F1 0.0 is the broken header."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": ["OTHER"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "No usable output: grid [] for the encoder schematic after 9.28 s of generation (header-only A5 took 2.46 s, the 12-value tables 3.3-4.7 s), which points to generated text that failed CSV parsing rather than an empty answer; not credited as a deliberate true negative.",
+   "format_loss": "none"
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "The CSV is a single header row with the seven printed trace labels (Model, GT, Cardiologent, GPT-4o, Gemini-2.5-Pro, Qwen2.5-VL, MedGemma, Llama-3.2-Vision) and no data rows: labels transcribed correctly, no number invented for the ECG traces. A real, parsed true negative.",
+   "format_loss": "none"
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "partial",
+   "error_types": ["SERIES_NAMES", "PRINTED_LABEL_MISREAD"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "All four legend entries are invented: 'PAC-G', 'PAC-G (Baseline)', 'PAC-G (Current)', 'PAC-G (Current + 1)' for 'MAS Correct, Baseline Incorrect', 'MAS Incorrect, Baseline Correct', 'Both Correct', 'Both Incorrect'. Only 1 of 12 printed counts is reproduced (102); the rest are misread, three of them grossly: 299 -> 198, 255 -> 215, 115 -> 135 (also 13 -> 12, 6 -> 0, 25/25 -> 21/21, 25/26 -> 28/28, 283 -> 285, 86 -> 95). Categories and column order are right.",
+   "format_loss": "none (single panel); the scorer's 12 missing + 12 extra is the invented legend, 9 of 12 numbers would fall within 5 % of the 0-350 axis if names paired."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "wrong",
+   "error_types": ["INVENTED_VALUES", "OTHER", "MISSING_VALUES"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "Runaway generation: 409 rows for 30 points per panel, 185.85 s, last row cut off ('41.8, 0.8, <empty>'). Only the starting points are real (1.0 / 0.8 / 210 vs truth 1.02 / 0.82 / 209); after that the 'Accuracy Reward' column is a ramp 1.0, 1.1, ... 41.8 (axis top 2.74; truth point 4 is 1.62, not 1.3) and the other two are a period-24 sawtooth (Format Reward 0.8 -> 2.0 -> 0.8 where truth is 0.82, 0.78, 0.77, 0.86, 1.01, 1.43; Completion Length 210 -> 300 -> 210 where truth peaks at 282.5). None of the 90 line points or 90 raw dots is returned as measured.",
+   "format_loss": "the three panels become three columns and the raw-dot series has no place in the table; that part is format, the fabricated sawtooth is not."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "partial",
+   "error_types": ["INVENTED_VALUES", "PRINTED_LABEL_MISREAD", "CATEGORY_LABELS", "UNIT_OR_FORMAT"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "45 of 60 cells are invented columns the figure does not print (Threshold 0.80 on every row, Sensitivity, Specificity = copy of AUC). In the AUC column 10 of 15 printed AUROCs are within 0.02 after truncation to two decimals, 5 are wrong: MemSAM 40<=EF<50 0.80 vs 56.28 %, EchoONE 0.85 vs 65.68 %, OnimiaNet 0.97 / 0.76 vs 87.97 / 65.74 %, EchoAgent EF>=50 0.87 vs 93.88 % (rows 2 and 3 of each model carry the same number). The EF class of each row is not given and 'OnimiaNet' is read as 'OniumVet'; values are fractions with two decimals where the figure prints percentages with two.",
+   "format_loss": "the five panels are kept as the 'Model' column, so panel identity survives the CSV; the scorer's 15 missing + 60 extra is the missing panel split and the 'AUC' vs 'AUROC' / EF-class naming."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "partial",
+   "error_types": ["INTERVAL_BOUNDS", "INVENTED_VALUES", "SERIES_NAMES"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "The five centres are right to one decimal, all within 2 % of the -1.6..1.5 axis: -0.2 / 0.3 / -0.8 / -0.3 / 0.7 vs -0.152 / 0.360 / -0.840 / -0.352 / 0.720. None of the 10 CI bounds is returned, a second column of five 0.0 values is invented (the 'No difference' reference line), and the columns are named after the axis annotations, so positive centres (Clarity 0.3, Readability 0.7) sit under 'Favors Clinician-authored Summaries'.",
+   "format_loss": "none: bounds could have been two more columns (the model did that on A3). The scorer's 5 missing + 10 extra is the series name plus the invented zero column."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "wrong",
+   "error_types": ["INVENTED_VALUES", "GEOMETRY_MISMEASURED", "CATEGORY_LABELS", "INTERVAL_BOUNDS"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "Row block 'b' is a verbatim copy of block 'a' (GPT-4o Stroke/TIA 40 in both; truth 59.1 in a, 30.3 in b), and every value is a multiple of 5 with large scatter, no constant offset: RiskAgent-8B Shortness of Breath 55 vs 77.2, Internal Medicine 50 vs 78.2, o3-mini Stroke/TIA 45 vs 57.7. Only 6 of 30 medians fall within 5 % of their panel's axis range. Model names are misread ('RiskAssess-OB' for RiskAgent-8B, 'GPT-4o-mini' for o3-mini) and no whisker or box statistic is returned.",
+   "format_loss": "the 2 x 5 panel grid is expressed as Category a/b rows and five columns, which is a fair flat rendering; only whiskers and quartiles have no natural place. The scorer's 30 missing + 30 extra hides that the numbers are also wrong."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 bar heights are right, 11 within 2 % and all within 5 % of the 0.2-0.9 axis: Top-1 Diagnosis 0.58 / 0.68 / 0.85 vs 0.580 / 0.690 / 0.840, Top-1 Explanation 0.48 / 0.63 / 0.80 vs 0.479 / 0.628 / 0.797, Top-3 Diagnosis 0.60 / 0.65 / 0.73 vs 0.597 / 0.650 / 0.730, Top-3 Explanation 0.55 / 0.55 / 0.68 vs 0.534 / 0.551 / 0.676 (largest error 0.016 = 2.3 %). Categories and the four panel titles are verbatim; nothing invented.",
+   "format_loss": "the four panels are the four columns (header = panel title) and the y-axis name 'Accuracy' is dropped; the scorer's 0 of 12 is entirely this layout (series 'Accuracy' in four panels vs four title-named series in one)."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "false_positive",
+   "error_types": ["HALLUCINATED_ON_NON_CHART"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "A Category / Parameter / Value table is returned for a flow schematic: confusion False, uremia False, respiratory_rate 28, systolic_bp 110, diastolic_bp 70, age 60, CURB-65 Score 0, Mortality 0.7 %. Every value is a faithful transcription of the worked example's text (nothing made up), but it is example text presented as chart data, and Score / Mortality are filed under 'Tool Computation' where the figure has them in the 'Prediction' box.",
+   "format_loss": "none; the conversion additionally drops the parameter names and the two booleans, leaving six bare numbers."
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "wrong",
+   "error_types": ["MISSING_VALUES", "INVENTED_VALUES", "PRINTED_LABEL_MISREAD", "SERIES_NAMES"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "None of the 264 stacked-segment shares is returned (truth 'Being Polite - AMIE': 86.33 / 12.33 / 1 / 0 / 0 / 0.33). The model returns the printed 'N=' sample sizes as if they were the bar values: GMCPQ 100, 100, 100, 100, 99, 97, 88, 83, 83, 100, 100 (all 11 read correctly), MXEKF 100 seven times where the figure prints 97, 100, 88, 88, 95, 96, 99, and it fills 100 into the other panels' columns for every item (e.g. 'Being Polite': MXEKF 100, PACES 100). The six rating levels and the AMIE / PCP split do not appear; the columns are the panel titles ('GMCQP' for GMCPQ).",
+   "format_loss": "one row per item with a column per panel is a format choice; a long table (item, rater, level, share) was expressible, so the missing segments are the model's, not the format's."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "wrong",
+   "error_types": ["INVENTED_VALUES", "AXIS_CALIBRATION", "GEOMETRY_MISMEASURED", "CATEGORY_LABELS", "INTERVAL_BOUNDS", "PANEL_STRUCTURE"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "Panel (b): all 16 bars are returned as 0.35 where the figure shows 4.14-5.0 on a 1-5 axis (ACC 4.18 / 4.40, FFB 5.0 / 5.0), i.e. one made-up constant on panel (a)'s 0-0.4 scale. Panel (a): medians are quantised to 0.05 steps with scatter up to 0.05 = 12 % of the axis (Gemini-Pro 0.10 vs 0.050, Meditron-70B 0.10 vs 0.057; GPT-4o 0.10 vs 0.090 and Llama 0.10 vs 0.105 are fine, ZODIAC 0.05 agrees with the crop's defective patch at about 0.04), whiskers are absent, and names are misread ('Gemma' for Gemini-Pro, 'Medinon' for Meditron-70B). Each row repeats its value in all three columns, so box categories get 'Signle-agent' / 'Multi-agent' values and bar categories a 'Diagnostic Lability' value: 24 of 48 cells belong to no panel.",
+   "format_loss": "two panels with different axes in one table is forced by the format, but the cross-filled cells are the model's (it left cells blank on C3); whiskers have no natural column."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "partial",
+   "error_types": ["VALUE_ASSIGNMENT", "CATEGORY_LABELS"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "All 15 printed percentages are read exactly, but in pies a and b the two 'yes' wedges are swapped: 'Yes_Definitely' 40.2 and 'Yes_Probably' 16.8 where the figure has Yes, definitely 16.8 % and Yes, probably 40.2 % (pie b: 36.4 / 15.9 vs 15.9 / 36.4). Pie c's numbers (23.4, 27.1, 30.8, 15.9, 2.8) are in the right order but under pie a's legend, so 'Saved more than 50% of my time' is reported as 'Yes_Definitely' and 'Not sure' as 'Neither_Yes_Nor_No'. Row labels are the three pie titles, verbatim.",
+   "format_loss": "one header row cannot carry pie c's different legend in a wide table (a long table could); the swap of the two 'yes' wedges is not a format effect. The scorer's 15 missing + 15 extra is the panel split and header names."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 1,
+   "partial": 5,
+   "wrong": 4,
+   "missed": 0,
+   "true_negative": 4,
+   "false_positive": 1
+  },
+  "error_type_counts": {
+   "INVENTED_VALUES": 6,
+   "INTERVAL_BOUNDS": 4,
+   "SERIES_NAMES": 4,
+   "CATEGORY_LABELS": 4,
+   "OTHER": 4,
+   "MISSING_VALUES": 3,
+   "PRINTED_LABEL_MISREAD": 3,
+   "GEOMETRY_MISMEASURED": 2,
+   "HALLUCINATED_ON_NON_CHART": 1,
+   "PANEL_STRUCTURE": 1,
+   "AXIS_CALIBRATION": 1,
+   "VALUE_ASSIGNMENT": 1,
+   "UNIT_OR_FORMAT": 1
+  },
+  "usable_figures": 5,
+  "dominant_failure": "INVENTED_VALUES",
+  "assessment": "Judged on its raw CSV, Granite-Vision 4.1-4B gets one data chart of ten right: the four plain bar panels of C1 (12 of 12 values within 5 % of the axis, 11 within 2 %), which the automatic scorer shows as 0 of 12 only because a flat table has no panels; it also reads B4's five forest-plot centres within 2 % and all 15 pie percentages of C5. Its typical failure is filling the table with numbers the figure does not show: a constant 0.35 for sixteen bars on a 1-5 axis (C4), a second panel row copied from the first (B5), invented Threshold / Sensitivity / Specificity columns (B3), a zero column (B4), cross-panel cells of 100 (C3) and a 409-row sawtooth that ran to the token limit (B2). Printed numbers are not safe either (299 read as 198 in B1, the N= annotations returned as bar values in C3), legend and model names are invented or misread (the 'PAC-G' series in B1, 'OniumVet', 'RiskAssess-OB'), correct numbers land on the wrong label (C5's swapped 'yes' wedges, A3's upper CI bound in the estimate column), and interval bounds or whiskers come back only when printed (A3). Of the five no-data figures one is a clean header-only answer (A5), one is a transcription of example text (C2), and three are empty grids after 6-12 s of generation, which is most likely CSV that failed to parse rather than abstention, so its true-negative count overstates its ability to recognise non-charts. It can be trusted on a single-series bar chart with few, well separated bars and nothing else; on multi-panel, interval, box, stacked or line figures its output should not be taken without checking against the figure."
+ }
+}

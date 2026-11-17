@@ -1,0 +1,362 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        375.0,
+        268.0
+      ],
+      "title": null,
+      "kind": "scatter",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "\"respiratory_rate\":",
+            "28,",
+            "Tool",
+            "Score:",
+            "0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Selection",
+            "False,",
+            "\"respiratory_rate\":",
+            "110,",
+            "70,"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "RiskCalcs",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Selection",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Computation",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Tool",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "0",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "60",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Parameter",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "28,",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "RiskCalcs",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

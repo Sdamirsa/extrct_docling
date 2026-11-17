@@ -1,0 +1,152 @@
+[
+ {
+  "bundle": "samples/aca-papers_out/Cardiologent",
+  "self_ref": "#/pictures/0",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 0,
+  "seconds": 5.89,
+  "load_s": 50.26,
+  "gpu_bytes": 8172497920
+ },
+ {
+  "bundle": "samples/aca-papers_out/Cardiologent",
+  "self_ref": "#/pictures/2",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 0,
+  "seconds": 12.09,
+  "load_s": 0.0,
+  "gpu_bytes": 8352003584
+ },
+ {
+  "bundle": "samples/aca-papers_out/Cardiologent",
+  "self_ref": "#/pictures/3",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 9,
+  "seconds": 3.34,
+  "load_s": 0.0,
+  "gpu_bytes": 8352003584
+ },
+ {
+  "bundle": "samples/aca-papers_out/Cardiologent",
+  "self_ref": "#/pictures/4",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 0,
+  "seconds": 9.28,
+  "load_s": 0.0,
+  "gpu_bytes": 8371754496
+ },
+ {
+  "bundle": "samples/aca-papers_out/Cardiologent",
+  "self_ref": "#/pictures/5",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 0,
+  "seconds": 2.46,
+  "load_s": 0.0,
+  "gpu_bytes": 8371754496
+ },
+ {
+  "bundle": "samples/aca-papers_out/Dynamic-Specialist-MAS",
+  "self_ref": "#/pictures/1",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 12,
+  "seconds": 3.46,
+  "load_s": 0.0,
+  "gpu_bytes": 8371754496
+ },
+ {
+  "bundle": "samples/aca-papers_out/Med-RwR",
+  "self_ref": "#/pictures/6",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 817,
+  "seconds": 185.85,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/EchoAgent-EHM",
+  "self_ref": "#/pictures/4",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 60,
+  "seconds": 13.68,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/Eunjung_Lee_ssrn-7427517_2",
+  "self_ref": "#/pictures/2",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 10,
+  "seconds": 3.64,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+  "self_ref": "#/pictures/7",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 30,
+  "seconds": 6.26,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/HeartAgent",
+  "self_ref": "#/pictures/5",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 12,
+  "seconds": 4.7,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/AgentMD",
+  "self_ref": "#/pictures/4",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 6,
+  "seconds": 4.03,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/AMIE-Mx",
+  "self_ref": "#/pictures/14",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 59,
+  "seconds": 12.94,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/Zodiac",
+  "self_ref": "#/pictures/5",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 48,
+  "seconds": 11.86,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ },
+ {
+  "bundle": "samples/aca-papers_out/AMIE-Cardiology",
+  "self_ref": "#/pictures/3",
+  "mode": "chart2csv",
+  "model": "ibm-granite/granite-vision-4.1-4b",
+  "rows": 15,
+  "seconds": 5.32,
+  "load_s": 0.0,
+  "gpu_bytes": 8403260928
+ }
+]

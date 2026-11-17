@@ -1,0 +1,361 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "percent",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "GMCPQ",
+          "color": "#8B0000"
+        },
+        {
+          "name": "MXEKF",
+          "color": "#DC143C"
+        },
+        {
+          "name": "Being Polite",
+          "color": "#FF6347"
+        },
+        {
+          "name": "Prioritization Of Preferences",
+          "color": "#00008B"
+        },
+        {
+          "name": "Constraints And Values",
+          "color": "#1E90FF"
+        },
+        {
+          "name": "Making Patient",
+          "color": "#87CEFA"
+        },
+        {
+          "name": "Feel At Ease",
+          "color": "#F0F8FF"
+        },
+        {
+          "name": "Listening to Patient",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Shared Decision Making",
+          "color": "#000000"
+        },
+        {
+          "name": "Communication And",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Assessesing",
+          "color": "#000000"
+        },
+        {
+          "name": "Medical Condition",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Monitoring And Adjustment",
+          "color": "#000000"
+        },
+        {
+          "name": "Of Management Plan",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Explaining Condition",
+          "color": "#000000"
+        },
+        {
+          "name": "and Treatment",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Involving Patient in",
+          "color": "#000000"
+        },
+        {
+          "name": "Managing Interplay Of",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Treatment Decisions",
+          "color": "#000000"
+        },
+        {
+          "name": "Competing Prioríties",
+          "color": "#FFFFFF"
+        }
+      ],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "GMCPQ",
+          "value": 47.1381,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "MXEKF",
+          "value": 94.8259,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Being Polite",
+          "value": 107.2303,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Prioritization Of Preferences",
+          "value": 19.3675,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Constraints And Values",
+          "value": 57.2145,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Making Patient",
+          "value": 94.8259,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Feel At Ease",
+          "value": 94.8259,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "Listening to Patient",
+          "value": 94.8259,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "GMCPQ",
+          "value": 74.2457,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "MXEKF",
+          "value": 96.954,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Being Polite",
+          "value": 107.2303,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Prioritization Of Preferences",
+          "value": 38.291,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Constraints And Values",
+          "value": 87.4922,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Making Patient",
+          "value": 96.2042,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "Feel At Ease",
+          "value": 107.2303,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "PCP (bottom)",
+            "Very favorable"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#F08080"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#6495ED"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

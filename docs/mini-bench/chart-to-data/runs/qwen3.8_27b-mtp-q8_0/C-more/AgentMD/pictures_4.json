@@ -1,0 +1,164 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        375.0,
+        268.0
+      ],
+      "title": null,
+      "kind": "scatter",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Parameter",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "\"respiratory_rate\":",
+            "28,",
+            "Tool",
+            "Score:",
+            "0"
+          ]
+        },
+        "y": {
+          "name": "Value",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Selection",
+            "False,",
+            "\"respiratory_rate\":",
+            "110,",
+            "70,"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "CURB-65 Score",
+          "color": "#e74c3c"
+        }
+      ],
+      "data": [
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "False",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "False",
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 28.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "28",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 110.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "110",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "70",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "\"respiratory_rate\":",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "60",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Score:",
+          "x": null,
+          "series": "CURB-65 Score",
+          "value": 0.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.7%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

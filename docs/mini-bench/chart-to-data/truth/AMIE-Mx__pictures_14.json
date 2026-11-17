@@ -1,0 +1,3199 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Mx",
+  "self_ref": "#/pictures/14",
+  "image_path": "images/picture_015.png",
+  "page": 21,
+  "bbox": [
+   80.93602413873865,
+   745.3076600428508,
+   520.8691822845664,
+   405.4258137083572
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    5.2,
+    5.1,
+    323.8,
+    346.2
+   ],
+   "title": "GMCPQ",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Being Polite - AMIE",
+      "Being Polite - PCP",
+      "Making Patient Feel At Ease - AMIE",
+      "Making Patient Feel At Ease - PCP",
+      "Listening to Patient - AMIE",
+      "Listening to Patient - PCP",
+      "Assessesing Medical Condition - AMIE",
+      "Assessesing Medical Condition - PCP",
+      "Explaining Condition and Treatment - AMIE",
+      "Explaining Condition and Treatment - PCP",
+      "Involving Patient in Treatment Decisions - AMIE",
+      "Involving Patient in Treatment Decisions - PCP",
+      "Providing Appropriate Treatment Plan - AMIE",
+      "Providing Appropriate Treatment Plan - PCP",
+      "Patient Trusts Information is Confidential - AMIE",
+      "Patient Trusts Information is Confidential - PCP",
+      "Appearing Honest And Trustworthy - AMIE",
+      "Appearing Honest And Trustworthy - PCP",
+      "Patient Confident About Care Provided (Y/N) - AMIE",
+      "Patient Confident About Care Provided (Y/N) - PCP",
+      "Patient Happy to Return In Future (Y/N) - AMIE",
+      "Patient Happy to Return In Future (Y/N) - PCP"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Very favorable",
+     "color": "AMIE dark red #A70E10 / PCP dark blue #1A4EA6"
+    },
+    {
+     "name": "Favorable (or \"Yes\" for Y/N)",
+     "color": "AMIE red #DA3026 / PCP blue #1B73E9"
+    },
+    {
+     "name": "Neither favorable nor unfavorable",
+     "color": "AMIE salmon #EE675C / PCP light blue #659DF7"
+    },
+    {
+     "name": "Unfavorable (or \"No\" for Y/N)",
+     "color": "AMIE light salmon #F28B82 / PCP pale blue #8AB4F8, hatched '/'"
+    },
+    {
+     "name": "Very unfavorable",
+     "color": "AMIE pale pink #F6AFA9 / PCP very pale blue #ADCBFB, hatched 'x'"
+    },
+    {
+     "name": "Cannot rate / Does not apply",
+     "color": "light grey #DBDCE0"
+    }
+   ],
+   "data": [
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 86.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 12.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 50.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 29.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 7.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Being Polite - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 3.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 41.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 31.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 17.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 8.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Making Patient Feel At Ease - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 75.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 15.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 6.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 2.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 33.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 13.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Listening to Patient - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 70.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 23.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 5.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 45.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 31.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 14.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 7.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Assessesing Medical Condition - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 71.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 23.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 27.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 18.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 8.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 2.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Explaining Condition and Treatment - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 3.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 68.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 24.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 3.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 35.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 27.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 21.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 7.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 2.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 5.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 66.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 16.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 11.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 22.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 2.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 13.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 63.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 13.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 6.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 16.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 46.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 22.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 13.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 2.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Trusts Information is Confidential - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 16.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 63.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 17.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 2.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 16.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 45.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 24.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 11.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 3.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Appearing Honest And Trustworthy - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 15.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 99.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 90.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 9.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N) - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 98.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 81.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 18.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N) - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Each item has two stacked bars: AMIE (top, reds) and PCP (bottom, blues). One category per bar, named '<item label> - AMIE' / '<item label> - PCP' (item label as printed, line breaks as spaces; the legend calls the bars 'AMIE (top)' and 'PCP (bottom)'); categories are listed top to bottom. Segments are stacked left to right in legend order; every bar spans 0-100 %.",
+    "All 6 series are given for every bar; a class with no visible segment is 0.0.",
+    "Printed right of each item (significance mark, N): Being Polite: ***, N=100; Making Patient Feel At Ease: ***, N=100; Listening to Patient: ***, N=100; Assessesing Medical Condition: ***, N=100; Explaining Condition and Treatment: ***, N=99; Involving Patient in Treatment Decisions: ***, N=97; Providing Appropriate Treatment Plan: ***, N=88; Patient Trusts Information is Confidential: ***, N=83; Appearing Honest And Trustworthy: ***, N=83; Patient Confident About Care Provided (Y/N): **, N=100; Patient Happy to Return In Future (Y/N): ***, N=100",
+    "Item label 'Assessesing Medical Condition' is spelled that way in the figure. The two '(Y/N)' items have only 'Favorable (or \"Yes\" for Y/N)' and 'Unfavorable (or \"No\" for Y/N)' segments."
+   ]
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    334.3,
+    5.1,
+    658.8,
+    346.2
+   ],
+   "title": "MXEKF",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Prioritization Of Preferences Constraints And Values - AMIE",
+      "Prioritization Of Preferences Constraints And Values - PCP",
+      "Communication And Shared Decision Making - AMIE",
+      "Communication And Shared Decision Making - PCP",
+      "Monitoring And Adjustment Of Management Plan - AMIE",
+      "Monitoring And Adjustment Of Management Plan - PCP",
+      "Managing Interplay Of Competing Priorities - AMIE",
+      "Managing Interplay Of Competing Priorities - PCP",
+      "Acting As Patient Teacher And Salesperson - AMIE",
+      "Acting As Patient Teacher And Salesperson - PCP",
+      "Relationship Fostering - AMIE",
+      "Relationship Fostering - PCP",
+      "Organization Of The Clinical Encounter - AMIE",
+      "Organization Of The Clinical Encounter - PCP"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Very favorable",
+     "color": "AMIE dark red #A70E10 / PCP dark blue #1A4EA6"
+    },
+    {
+     "name": "Favorable (or \"Yes\" for Y/N)",
+     "color": "AMIE red #DA3026 / PCP blue #1B73E9"
+    },
+    {
+     "name": "Neither favorable nor unfavorable",
+     "color": "AMIE salmon #EE675C / PCP light blue #659DF7"
+    },
+    {
+     "name": "Unfavorable (or \"No\" for Y/N)",
+     "color": "AMIE light salmon #F28B82 / PCP pale blue #8AB4F8, hatched '/'"
+    },
+    {
+     "name": "Very unfavorable",
+     "color": "AMIE pale pink #F6AFA9 / PCP very pale blue #ADCBFB, hatched 'x'"
+    },
+    {
+     "name": "Cannot rate / Does not apply",
+     "color": "light grey #DBDCE0"
+    }
+   ],
+   "data": [
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 60.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 34.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 2.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 2.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 37.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 33.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 19.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 5.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 69.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 26.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 3.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 37.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 30.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 19.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 2.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Communication And Shared Decision Making - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 1.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 58.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 23.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 5.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 12.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 36.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 30.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 13.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 14.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 54.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 30.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 11.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 31.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 30.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 18.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 4.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 14.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 66.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 28.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 3.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 2.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 35.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 31.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 13.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 10.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 3.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 5.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 62.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 31.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 2.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 2.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 31.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 29.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 19.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 12.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 4.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Relationship Fostering - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 3.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 67.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 2.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 40.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 30.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 21.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Organization Of The Clinical Encounter - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Each item has two stacked bars: AMIE (top, reds) and PCP (bottom, blues). One category per bar, named '<item label> - AMIE' / '<item label> - PCP' (item label as printed, line breaks as spaces; the legend calls the bars 'AMIE (top)' and 'PCP (bottom)'); categories are listed top to bottom. Segments are stacked left to right in legend order; every bar spans 0-100 %.",
+    "All 6 series are given for every bar; a class with no visible segment is 0.0.",
+    "Printed right of each item (significance mark, N): Prioritization Of Preferences Constraints And Values: ***, N=97; Communication And Shared Decision Making: ***, N=100; Monitoring And Adjustment Of Management Plan: ***, N=88; Managing Interplay Of Competing Priorities: ***, N=88; Acting As Patient Teacher And Salesperson: ***, N=95; Relationship Fostering: ***, N=96; Organization Of The Clinical Encounter: ***, N=99"
+   ]
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    0.0,
+    375.9,
+    323.8,
+    510.0
+   ],
+   "title": "PACES",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Addressing Patient Concerns - AMIE",
+      "Addressing Patient Concerns - PCP",
+      "Understanding Patient Concerns - AMIE",
+      "Understanding Patient Concerns - PCP",
+      "Showing Empathy - AMIE",
+      "Showing Empathy - PCP",
+      "Maintaining Patient Welfare - AMIE",
+      "Maintaining Patient Welfare - PCP"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Very favorable",
+     "color": "AMIE dark red #A70E10 / PCP dark blue #1A4EA6"
+    },
+    {
+     "name": "Favorable (or \"Yes\" for Y/N)",
+     "color": "AMIE red #DA3026 / PCP blue #1B73E9"
+    },
+    {
+     "name": "Neither favorable nor unfavorable",
+     "color": "AMIE salmon #EE675C / PCP light blue #659DF7"
+    },
+    {
+     "name": "Unfavorable (or \"No\" for Y/N)",
+     "color": "AMIE light salmon #F28B82 / PCP pale blue #8AB4F8, hatched '/'"
+    },
+    {
+     "name": "Very unfavorable",
+     "color": "AMIE pale pink #F6AFA9 / PCP very pale blue #ADCBFB, hatched 'x'"
+    },
+    {
+     "name": "Cannot rate / Does not apply",
+     "color": "light grey #DBDCE0"
+    }
+   ],
+   "data": [
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 64.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 31.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 33.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 22.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 7.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Addressing Patient Concerns - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 38.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 8.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 28.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 22.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 11.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 9.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Understanding Patient Concerns - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 47.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 47.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 21.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 35.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 27.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 4.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Showing Empathy - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Very favorable",
+     "value": 66.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 29.67,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - AMIE",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Very favorable",
+     "value": 42.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Favorable (or \"Yes\" for Y/N)",
+     "value": 33.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Neither favorable nor unfavorable",
+     "value": 21.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Unfavorable (or \"No\" for Y/N)",
+     "value": 3.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Very unfavorable",
+     "value": 0.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Maintaining Patient Welfare - PCP",
+     "x": null,
+     "series": "Cannot rate / Does not apply",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Each item has two stacked bars: AMIE (top, reds) and PCP (bottom, blues). One category per bar, named '<item label> - AMIE' / '<item label> - PCP' (item label as printed, line breaks as spaces; the legend calls the bars 'AMIE (top)' and 'PCP (bottom)'); categories are listed top to bottom. Segments are stacked left to right in legend order; every bar spans 0-100 %.",
+    "All 6 series are given for every bar; a class with no visible segment is 0.0.",
+    "Printed right of each item (significance mark, N): Addressing Patient Concerns: ***, N=100; Understanding Patient Concerns: ***, N=100; Showing Empathy: ***, N=100; Maintaining Patient Welfare: ***, N=100",
+    "The first three items are bracketed by a rotated group label 'Managing Patient Concerns'."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Convention: kind 'stacked_bar', horizontal, value axis x (0-100 %), one category per bar ('<item> - AMIE', '<item> - PCP') so that every category's segments sum to 100 as the engine's stack check expects; series = the six rating classes of the legend. A prediction that keeps the item as category and folds the arm into the series name would not match these rows.",
+  "Values are raster measurements on the PDF's embedded 3661x2811 lossless bitmap (pypdfium2). x axis calibrated on the six tick marks 0-100 of each panel (8.309 px per %, max residual 0.006 %); every bar starts at 0.00-0.01 % and ends at 99.98-100.00 % (cross-check on the 100 % total: residual <= 0.02 %).",
+  "Segment widths are integer multiples of 1/300 of the bar (2.77 px; 204 measured widths: median deviation 0.05 count, max 0.21 count = 0.07 %), i.e. each bar is 300 consultations (100 scenarios x 3 visits). Values are count/3 rounded to 2 decimals (exact to the drawn geometry; a sub-pixel boundary reading alone would be +/-0.07 %). Each bar's six values sum to 100.00 +/- 0.02.",
+  "Four 1-count hatched slivers were resolved by per-pixel colour rather than by boundary position (confidence 0.9): 'Providing Appropriate Treatment Plan - AMIE' Unfavorable 3 + Very unfavorable 1 (0.33 %) before the grey segment; 'Communication And Shared Decision Making - AMIE' Unfavorable 1 at the bar end; 'Being Polite - PCP' and 'Assessesing Medical Condition - PCP' Very unfavorable 1. Other hatched segments of 1-2 counts (0.33-0.67 %) also carry confidence 0.9.",
+  "The N printed beside each item (83-100) is not the bar denominator: bars with N=100 still show up to 1-2 'Cannot rate / Does not apply' counts; N is recorded in the panel notes only.",
+  "Scorer hazard (docling/engines/figure_data/scoring.py, labels equal within a Levenshtein distance of 0.2 of the longer): the '- AMIE' and '- PCP' categories of the same item count as the same label for 21 of the 22 items (all but 'Being Polite'), and so do the series pairs 'Very favorable' / 'Very unfavorable' and 'Favorable (or \"Yes\" for Y/N)' / 'Unfavorable (or \"No\" for Y/N)'. Value matching takes the first unused prediction row that fits, so it is order dependent: rows here are in figure order (items top to bottom, AMIE before PCP, legend order); a prediction in another order, or one that leaves out rows, can be paired with the wrong bar or rating class. Any encoding of this figure (arm in the category or in the series) has the same problem.",
+  "The legend block (bottom right) is not a panel. Its first two entries 'AMIE (top)' / 'PCP (bottom)' identify the bars, not rating classes."
+ ]
+}

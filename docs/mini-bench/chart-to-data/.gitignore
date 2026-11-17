@@ -1,0 +1,6 @@
+# The figure crops, and the overlays and work images the engine draws on
+# them, are the papers' own artwork: kept locally for the bench, not
+# published. FIGURES.md says which figure of which paper each one is.
+figures/
+runs/**/*.png
+judge/inputs/

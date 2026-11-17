@@ -1,0 +1,378 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "HeartAgent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 12,
+    "bbox": [
+      56.3,
+      153.36,
+      552.74,
+      286.11
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.9,
+        2.5,
+        189.1,
+        198.9
+      ],
+      "title": "Top-1 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.8
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "HeartAgent",
+          "color": "light teal/greenish-grey"
+        },
+        {
+          "name": "Expert",
+          "color": "light purple/grey"
+        },
+        {
+          "name": "Expert + HeartAgent",
+          "color": "light blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": "HeartAgent",
+          "value": 0.6859,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": "Expert",
+          "value": 0.7377,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": "Expert + HeartAgent",
+          "value": 0.8428,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        197.9,
+        2.5,
+        373.7,
+        198.9
+      ],
+      "title": "Top-1 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Method",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert"
+          ]
+        },
+        "y": {
+          "name": "Performance",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.8
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "HeartAgent",
+          "color": "light teal/grey-blue"
+        },
+        {
+          "name": "Expert",
+          "color": "light purple/grey"
+        },
+        {
+          "name": "Expert + HeartAgent",
+          "color": "medium blue-grey"
+        }
+      ],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": "HeartAgent",
+          "value": 0.4013,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": "Expert",
+          "value": 0.6297,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": "Expert + HeartAgent",
+          "value": 0.7982,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        383.1,
+        2.5,
+        558.9,
+        198.9
+      ],
+      "title": "Top-3 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Performance",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.8
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "HeartAgent",
+          "color": "light teal (approx #B2DFDB)"
+        },
+        {
+          "name": "Expert",
+          "color": "light purple (approx #D1C4E9)"
+        },
+        {
+          "name": "Expert + HeartAgent",
+          "color": "light blue (approx #9FA8DA)"
+        }
+      ],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": "HeartAgent",
+          "value": 0.5999,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": "Expert",
+          "value": 0.6526,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": "Expert + HeartAgent",
+          "value": 0.7304,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        567.7,
+        2.5,
+        744.0,
+        198.9
+      ],
+      "title": "Top-3 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Method",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert"
+          ]
+        },
+        "y": {
+          "name": "Performance",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.8
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "HeartAgent",
+          "color": "light teal/grey-green"
+        },
+        {
+          "name": "Expert",
+          "color": "light purple/grey"
+        },
+        {
+          "name": "Expert + HeartAgent",
+          "color": "light blue/grey"
+        }
+      ],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": "HeartAgent",
+          "value": 0.5354,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": "Expert",
+          "value": 0.5522,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": "Expert + HeartAgent",
+          "value": 0.6766,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (qwen3.8:27b-mtp-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

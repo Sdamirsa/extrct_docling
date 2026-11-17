@@ -1,0 +1,367 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+  "self_ref": "#/pictures/7",
+  "image_path": "images/picture_008.png",
+  "page": 15,
+  "bbox": [
+   55.2818717956543,
+   446.96185302734375,
+   542.4007568359375,
+   722.8007583618164
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    731.0,
+    414.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [
+    {
+     "category": "a",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Cardiac",
+     "value": 70.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Overall",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Cardiac",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Overall",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Cardiac",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "a",
+     "x": null,
+     "series": "Overall",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Cardiac",
+     "value": 70.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Overall",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Cardiac",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Overall",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Stroke/TIA",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Shortness of Breath",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Internal Medicine",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Cardiac",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    },
+    {
+     "category": "b",
+     "x": null,
+     "series": "Overall",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": null
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

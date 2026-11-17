@@ -1,0 +1,11 @@
+{
+  "judge_model": "claude-fable-5-2",
+  "judge_agent": "one general-purpose sub-agent per model, fresh context, tools on, read-only on the repository",
+  "prompt": "judge/PROMPT.md (<MODEL> replaced by the run folder name)",
+  "inputs": "judge/inputs/<model>/<figure id>.md, written by scripts/judge_inputs.py from truth/ and runs/; the judge may also open the figure crop, the full truth and the model's full output",
+  "isolation": "a judge reads one model's outputs only and no other judge's file",
+  "output": "judge/<model>.json; aggregated by scripts/judge_summary.py into judge/summary.md and metrics/plots/error_types_by_model.png",
+  "truth_model": "claude-fable-5-2",
+  "truth_agent": "three general-purpose sub-agents (parts A, B, C), fresh context each, no access to model outputs; prompts in truth/PROMPT-*.md",
+  "date": "2026-11-17"
+}

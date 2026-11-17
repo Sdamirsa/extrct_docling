@@ -1,0 +1,36 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/0",
+  "image_path": "images/picture_001.png",
+  "page": 1,
+  "bbox": [
+   317.685302734375,
+   479.4557800292969,
+   558.3047485351562,
+   578.1922149658203
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    360.0,
+    148.0
+   ],
+   "title": null,
+   "kind": null,
+   "orientation": null,
+   "axes": null,
+   "series": [],
+   "data": [],
+   "notes": []
+  }
+ ],
+ "labeler": null,
+ "uncertain": []
+}

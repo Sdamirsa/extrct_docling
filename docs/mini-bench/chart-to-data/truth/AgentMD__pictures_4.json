@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AgentMD",
+  "self_ref": "#/pictures/4",
+  "image_path": "images/picture_005.png",
+  "page": 5,
+  "bbox": [
+   291.56055278271157,
+   718.7490305664023,
+   541.6111059533446,
+   540.1679526109853
+  ]
+ },
+ "source_kind": "vector",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Not a data chart: this is the right half of Fig. 3a ('a RiskQA (N = 350)': 'Example of a question in RiskQA and how AgentMD answers it'), the 'AgentMD Inference' flow schematic: RiskCalcs -> Tool Selection -> CURB-65 Score; Parameter Extraction (a JSON snippet: confusion False, uremia False, respiratory_rate 28, systolic_bp 110, diastolic_bp 70, age 60) -> Tool Computation -> Prediction (Score: 0, Mortality: 0.7%). Boxes, arrows and example text only; no axes, no plotted series, no heatmap cells. The numbers are one worked example's inputs and output, not chart data. Vector drawing with PDF text, no embedded bitmap. The picture has no caption attached in document.json; the caption 'Fig. 3 | Evaluations of AgentMD on RiskQA. a Example of a question in RiskQA and how AgentMD answers it. ...' is on the same page."
+ ]
+}

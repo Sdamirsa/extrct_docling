@@ -1,0 +1,27 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "google/gemini-3.8-flash",
+ "panel_split": "single",
+ "seconds": 6.39,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 6.24,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 5274,
+   "eval_tokens": 486,
+   "cut": false,
+   "cost_usd": 0.005778,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": []
+}

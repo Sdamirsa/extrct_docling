@@ -7,14 +7,18 @@
   ``amir__chart_data``; Docling's ``tabular_chart`` (a ``TableData``: first
   column category or x, one column per series, a panel column when there
   are several) built from the panels whose median confidence reaches
-  ``min_confidence_for_markdown`` — the markdown and the chunks show that
-  table under the figure, marked as model output (see
-  :mod:`docling.engines.serializers`), the HTML in its model-metadata box;
+  ``min_confidence_for_markdown``, its ``title`` the sentence that says a
+  model read it (:func:`docling.engines.figure_data.report.embed_note`).
+  The markdown and the chunks show note and table at the figure, after the
+  description a model wrote of it, marked as model output (see
+  :mod:`docling.engines.serializers`); the HTML in its model-metadata box;
 - ``figures.jsonl``: a ``chart_data`` key per row (and with it the HTML
-  manifest);
-- ``check.json``: the ``figure_data`` block (:mod:`docling.engines.export_check`);
-- for runs on existing bundles: ``<out>/<pictures_N>.json`` (the record)
-  and ``overlay_<pictures_N>.png`` (panels and read marks on the crop).
+  manifest). A figure that was looked at and holds no data has a record
+  without panels whose ``uncertain`` says why;
+- ``chunks.jsonl``: rebuilt, so that the tables can be retrieved;
+- ``run.json``: a ``figure_to_data`` block (which run of the step wrote
+  this); absent when the step never ran on the bundle;
+- ``check.json``: the ``figure_data`` block (:mod:`docling.engines.export_check`).
 """
 
 from __future__ import annotations
@@ -39,7 +43,6 @@ from PIL import Image, ImageDraw
 
 from docling.engines.figure_data.evidence import (
     FIGURES_FILENAME,
-    job_stem,
     picture_by_ref,
 )
 from docling.engines.figure_data.schema import (
@@ -49,11 +52,18 @@ from docling.engines.figure_data.schema import (
     Panel,
     Value,
 )
+from docling.engines.run_snapshot import (
+    RUN_JSON_FILENAME,
+    read_run_record,
+    write_text_atomic,
+)
 
 _log = logging.getLogger(__name__)
 
 _META_NAMESPACE, _META_NAME = CHART_DATA_META_KEY.split("__", 1)
-CREATED_BY = "extrct figure-data"
+CREATED_BY = "extrct figure-to-data"
+_LEGACY_CREATED_BY = "extrct figure-data"
+RUN_BLOCK_KEY = "figure_to_data"
 _PANEL_COLOURS = ("#d81b60", "#1e88e5", "#43a047", "#fb8c00", "#8e24aa", "#00897b")
 
 
@@ -115,74 +125,74 @@ def chart_table(chart: ChartData, min_confidence: float) -> TableData | None:
 
 
 def attach_chart_data(
-    picture: PictureItem, chart: ChartData, *, min_confidence: float, created_by: str
+    picture: PictureItem,
+    chart: ChartData,
+    *,
+    min_confidence: float,
+    created_by: str,
+    note: str,
 ) -> bool:
-    """Store *chart* on *picture*; True when a ``tabular_chart`` was set."""
+    """Store *chart* on *picture*; True when a ``tabular_chart`` was set.
+    *note* is the sentence the exports print at the figure: above the
+    table of the charts that reach *min_confidence*, or on its own, as a
+    pointer to the full reading, when none does. A figure without values
+    gets no ``tabular_chart``."""
     if picture.meta is None:
         picture.meta = PictureMeta()
     picture.meta.set_custom_field(_META_NAMESPACE, _META_NAME, chart.dump())
-    table = chart_table(chart, min_confidence)
-    if table is None:
-        # Drop a table an earlier figure-data run left; keep anyone else's.
+    with_data = [p for p in chart.panels if p.data]
+    if not with_data:
+        # Drop a table an earlier run of the step left; keep anyone else's.
         previous = picture.meta.tabular_chart
-        if previous is not None and (previous.created_by or "").startswith(CREATED_BY):
+        if previous is not None and (previous.created_by or "").startswith(
+            (CREATED_BY, _LEGACY_CREATED_BY)
+        ):
             picture.meta.tabular_chart = None
         return False
-    confidences = [c for p in chart.panels if (c := panel_confidence(p)) is not None]
+    table = chart_table(chart, min_confidence)
+    shown = sum((panel_confidence(p) or 0.0) >= min_confidence for p in with_data)
+    if table is None:
+        note += (
+            " The values are not shown here: they are under the confidence "
+            "threshold (a check failed, or nothing printed in the figure "
+            "confirms them)."
+        )
+    elif shown < len(with_data):
+        note += (
+            f" {len(with_data) - shown} of {len(with_data)} charts are not "
+            "shown here (under the confidence threshold)."
+        )
+    confidences = [c for p in with_data if (c := panel_confidence(p)) is not None]
     picture.meta.tabular_chart = TabularChartMetaField(
-        title="Chart data read by a model (extrct.figure-data/1)",
-        chart_data=table,
+        title=note,
+        chart_data=table or TableData(num_rows=0, num_cols=0, table_cells=[]),
         created_by=created_by,
         confidence=round(statistics.median(confidences), 3) if confidences else None,
     )
     return True
 
 
-def attach_results(
-    doc: DoclingDocument, results: list[FigureDataResult], *, min_confidence: float
-) -> int:
-    """Attach each result to its picture of *doc*; returns how many."""
-    attached = 0
-    for result in results:
-        figure = result.chart_data.figure
-        if figure is None:
-            continue
-        picture = picture_by_ref(doc, figure.self_ref)
-        if picture is None:
-            continue
-        attach_chart_data(
-            picture,
-            result.chart_data,
-            min_confidence=min_confidence,
-            created_by=f"{CREATED_BY} {result.mode} ({result.model or 'no model'})",
-        )
-        attached += 1
-    return attached
+def created_by(result: FigureDataResult) -> str:
+    return f"{CREATED_BY} {result.method} ({result.model or 'no model'})"
 
 
-def write_figure_outputs(
-    result: FigureDataResult, crop_path: Path, out_dir: Path
-) -> tuple[Path, Path]:
-    """``<out_dir>/<pictures_N>.json`` and ``overlay_<pictures_N>.png``."""
-    figure = result.chart_data.figure
-    stem = job_stem(figure.self_ref) if figure is not None else "figure"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    record = out_dir / f"{stem}.json"
-    record.write_text(
-        json.dumps(result.chart_data.dump(), indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-    overlay = out_dir / f"overlay_{stem}.png"
-    draw_overlay(crop_path, result, overlay)
-    return record, overlay
-
-
-def draw_overlay(crop_path: Path, result: FigureDataResult, target: Path) -> None:
-    with Image.open(crop_path) as crop:
-        image = crop.convert("RGB")
-    scale = max(1, round(1200 / max(image.size)))
-    if scale > 1:
-        image = image.resize((image.width * scale, image.height * scale))
+def draw_overlay(
+    image_path: Path,
+    result: FigureDataResult,
+    target: Path,
+    *,
+    px_per_crop: float = 1.0,
+) -> None:
+    """The panels and the marks the engine placed, drawn on the image they
+    were read from (*px_per_crop* image pixels per pixel of the bundle's
+    crop, in which the record is written)."""
+    with Image.open(image_path) as opened:
+        image = opened.convert("RGB")
+    scale = px_per_crop
+    if max(image.size) < 1200:
+        factor = max(1, round(1200 / max(image.size)))
+        image = image.resize((image.width * factor, image.height * factor))
+        scale *= factor
     draw = ImageDraw.Draw(image)
     colours = {
         p.id: _PANEL_COLOURS[i % len(_PANEL_COLOURS)]
@@ -190,6 +200,8 @@ def draw_overlay(crop_path: Path, result: FigureDataResult, target: Path) -> Non
     }
     for panel in result.chart_data.panels:
         box = [v * scale for v in panel.bbox_px]
+        if box[2] <= box[0] or box[3] <= box[1]:
+            continue
         draw.rectangle(box, outline=colours[panel.id], width=2)
         draw.text((box[0] + 3, box[1] + 2), panel.id, fill=colours[panel.id])
     for point in result.overlay:
@@ -200,31 +212,67 @@ def draw_overlay(crop_path: Path, result: FigureDataResult, target: Path) -> Non
     image.save(target)
 
 
-def publish_to_bundle(
+def embed_results(
     bundle_dir: Path,
-    results: list[FigureDataResult],
+    results: list[tuple[FigureDataResult, str]],
     *,
     min_confidence: float,
+    run_block: dict[str, Any],
     pdf_path: Path | None = None,
 ) -> int:
-    """Write *results* into an existing bundle: ``document.json``,
-    ``figures.jsonl``, the markdown files, the HTML and ``check.json``
-    (each when the bundle has it). ``chunks.jsonl`` is left as it is."""
-    # pdf_engine imports this package for the conversion-time stage.
+    """Write *results* (each with the note that goes above its table) into
+    an existing bundle: ``document.json``, ``figures.jsonl``, the markdown
+    files, ``chunks.jsonl``, the HTML, ``run.json`` and ``check.json`` (each
+    when the bundle has it). Returns how many figures carry a record."""
+    # These modules import this package.
+    from docling.engines.chunker import (
+        DEFAULT_MAX_TOKENS,
+        DEFAULT_TOKENIZER,
+        write_document_chunks,
+    )
     from docling.engines.export_check import check_bundle, write_bundle_check
     from docling.engines.html_export import rebuild_document_html
     from docling.engines.pdf_engine import rewrite_bundle_markdown
 
     doc = DoclingDocument.load_from_json(bundle_dir / "document.json")
-    attached = attach_results(doc, results, min_confidence=min_confidence)
+    attached = 0
+    for result, note in results:
+        figure = result.chart_data.figure
+        picture = picture_by_ref(doc, figure.self_ref) if figure is not None else None
+        if picture is None:
+            continue
+        attach_chart_data(
+            picture,
+            result.chart_data,
+            min_confidence=min_confidence,
+            created_by=created_by(result),
+            note=note,
+        )
+        attached += 1
     doc.save_as_json(bundle_dir / "document.json")
     update_figure_rows(bundle_dir / FIGURES_FILENAME, doc)
     rewrite_bundle_markdown(doc, bundle_dir)
+    record = read_run_record(bundle_dir)
+    if (bundle_dir / "chunks.jsonl").is_file():
+        config = record.engine_config if record is not None else {}
+        write_document_chunks(
+            doc,
+            bundle_dir,
+            tokenizer_repo=str(config.get("chunk_tokenizer") or DEFAULT_TOKENIZER),
+            max_tokens=int(config.get("chunk_max_tokens") or DEFAULT_MAX_TOKENS),
+        )
+    run_json = bundle_dir / RUN_JSON_FILENAME
+    if run_json.is_file():
+        snapshot = json.loads(run_json.read_text(encoding="utf-8"))
+        snapshot[RUN_BLOCK_KEY] = run_block
+        write_text_atomic(
+            run_json, json.dumps(snapshot, indent=2, ensure_ascii=False) + "\n"
+        )
     if (bundle_dir / f"{bundle_dir.name}.html").is_file():
         rebuild_document_html(bundle_dir)
     if (bundle_dir / "check.json").is_file():
         write_bundle_check(bundle_dir, check_bundle(bundle_dir, pdf_path=pdf_path))
-    _log.info("Published chart data of %d figure(s) into %s", attached, bundle_dir)
+    _log.info("Embedded figure data of %d figure(s) into %s", attached, bundle_dir)
     return attached
 
 

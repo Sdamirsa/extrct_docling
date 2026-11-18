@@ -1,5 +1,5 @@
 {
-  "_comment": "Ollama /api/chat responses (stream=false) for the synthetic bar chart of tests/test_engines/test_figure_data.py: bars A=0.3, B=0.55 (printed), C=0.8 on a 0-1 axis. The grounded read points 2-4 % off the bar tops and reads A and C wrong.",
+  "_comment": "Ollama /api/chat replies (one line each, as the last chunk of a stream) for the synthetic bar chart of tests/test_engines/test_figure_data.py: bars A=0.3, B=0.55 (printed), C=0.8 on a 0-1 axis. The grounded read points 2-4 % off the bar tops of B and C, deep into bar A, and reads A and C wrong; fields that do not apply are left out. The overview replies are the gate: one chart, a diagram, and two charts in one image.",
   "simple": {
     "model": "gemma4:e4b-it-qat",
     "created_at": "2026-11-09T12:00:00Z",
@@ -21,7 +21,7 @@
     "created_at": "2026-11-09T12:00:00Z",
     "message": {
       "role": "assistant",
-      "content": "{\"title\": null, \"kind\": \"bar\", \"orientation\": \"vertical\", \"x_axis\": {\"name\": null, \"unit\": null, \"scale\": \"categorical\", \"min\": null, \"max\": null}, \"y_axis\": {\"name\": \"Accuracy\", \"unit\": null, \"scale\": \"linear\", \"min\": 0.0, \"max\": 1.0}, \"series\": [{\"name\": \"Model\", \"color\": \"blue\"}], \"points\": [{\"category\": \"A\", \"x\": null, \"series\": \"Model\", \"px\": 317, \"py\": 612, \"start_pos\": null, \"lo_pos\": null, \"hi_pos\": null, \"value\": 0.25, \"err_lo\": null, \"err_hi\": null, \"label_printed\": null}, {\"category\": \"B\", \"x\": null, \"series\": \"Model\", \"px\": 483, \"py\": 425, \"start_pos\": null, \"lo_pos\": null, \"hi_pos\": null, \"value\": 0.5, \"err_lo\": null, \"err_hi\": null, \"label_printed\": \"0.55\"}, {\"category\": \"C\", \"x\": null, \"series\": \"Model\", \"px\": 650, \"py\": 255, \"start_pos\": null, \"lo_pos\": null, \"hi_pos\": null, \"value\": 0.85, \"err_lo\": null, \"err_hi\": null, \"label_printed\": null}]}"
+      "content": "{\"title\": null, \"kind\": \"bar\", \"orientation\": \"vertical\", \"x_axis\": {\"name\": null, \"unit\": null, \"scale\": \"categorical\", \"min\": null, \"max\": null}, \"y_axis\": {\"name\": \"Accuracy\", \"unit\": null, \"scale\": \"linear\", \"min\": 0.0, \"max\": 1.0}, \"series\": [{\"name\": \"Model\", \"color\": \"blue\"}], \"points\": [{\"category\": \"A\", \"x\": null, \"series\": \"Model\", \"px\": 317, \"py\": 700, \"value\": 0.25}, {\"category\": \"B\", \"x\": null, \"series\": \"Model\", \"px\": 483, \"py\": 425, \"value\": 0.5, \"label\": \"0.55\"}, {\"category\": \"C\", \"x\": null, \"series\": \"Model\", \"px\": 650, \"py\": 255, \"value\": 0.85}]}"
     },
     "done": true,
     "done_reason": "stop",
@@ -29,7 +29,55 @@
     "load_duration": 1200000000,
     "prompt_eval_count": 612,
     "prompt_eval_duration": 2100000000,
-    "eval_count": 455,
+    "eval_count": 180,
     "eval_duration": 6000000000
+  },
+  "overview": {
+    "model": "gemma4:e4b-it-qat",
+    "created_at": "2026-11-17T12:00:00Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"description\": \"A bar chart of accuracy for three methods.\", \"has_data\": true, \"charts\": [{\"id\": \"1\", \"kind\": \"bar\", \"box\": [20, 20, 980, 980]}]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3000000000,
+    "load_duration": 0,
+    "prompt_eval_count": 540,
+    "prompt_eval_duration": 1000000000,
+    "eval_count": 60,
+    "eval_duration": 2000000000
+  },
+  "overview_diagram": {
+    "model": "gemma4:e4b-it-qat",
+    "created_at": "2026-11-17T12:00:00Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"description\": \"A workflow diagram of a two-stage pipeline.\", \"has_data\": false, \"charts\": []}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3000000000,
+    "load_duration": 0,
+    "prompt_eval_count": 540,
+    "prompt_eval_duration": 1000000000,
+    "eval_count": 30,
+    "eval_duration": 2000000000
+  },
+  "overview_two_charts": {
+    "model": "gemma4:e4b-it-qat",
+    "created_at": "2026-11-17T12:00:00Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"description\": \"Two bar charts side by side.\", \"has_data\": true, \"charts\": [{\"id\": \"a\", \"kind\": \"bar\", \"box\": [0, 0, 500, 1000]}, {\"id\": \"b\", \"kind\": \"bar\", \"box\": [500, 0, 1000, 1000]}]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3000000000,
+    "load_duration": 0,
+    "prompt_eval_count": 540,
+    "prompt_eval_duration": 1000000000,
+    "eval_count": 80,
+    "eval_duration": 2000000000
   }
 }

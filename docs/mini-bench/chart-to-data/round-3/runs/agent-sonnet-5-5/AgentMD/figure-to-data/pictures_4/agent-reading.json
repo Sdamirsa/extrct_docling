@@ -1,0 +1,12 @@
+{
+ "panels": [],
+ "description": "A workflow diagram of the AgentMD pipeline showing RiskCalcs tool selection (CURB-65 score), parameter extraction, tool computation and a resulting prediction, with no chart data.",
+ "has_data": false,
+ "not_read": [
+  "Example patient parameters and the CURB-65 output (score 0, mortality 0.7%) are illustrative text in a diagram, not plotted data; not recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

@@ -1,0 +1,29 @@
+{
+  "mode": "measured",
+  "engine": "ollama",
+  "ollama_url": "http://127.0.0.1:11434",
+  "model": "gemma4:26b-a4b-it-q8_0",
+  "escalation_model": "gemma4:31b-it-q8_0",
+  "keep_alive": "10m",
+  "samples": 1,
+  "panel_split": "auto",
+  "crop_dpi": 220,
+  "min_confidence_for_markdown": 0.7,
+  "eligible_types": [
+    "bar_chart",
+    "box_plot",
+    "forest_plot",
+    "heatmap",
+    "kaplan_meier",
+    "line_chart",
+    "pie_chart",
+    "roc_curve",
+    "scatter_plot"
+  ],
+  "time_budget_s_per_figure": 600.0,
+  "time_budget_s_per_call": 120.0,
+  "num_ctx": 16384,
+  "max_output_tokens": 8192,
+  "vlm_max_side_px": 1600,
+  "request_timeout_s": 600.0
+}

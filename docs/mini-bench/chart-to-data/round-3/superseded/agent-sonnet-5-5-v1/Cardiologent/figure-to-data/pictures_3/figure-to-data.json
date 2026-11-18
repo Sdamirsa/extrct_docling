@@ -1,0 +1,105 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 7,
+    "bbox": [
+      342.68,
+      56.16,
+      533.68,
+      186.48
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        13.1,
+        1.4,
+        286.7,
+        195.1
+      ],
+      "title": "Rater agreement (ICC(2,1), absolute agreement, with 95% CI)",
+      "kind": "other",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Rater pair",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "ICC(2,1), absolute agreement",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.35,
+            0.95
+          ],
+          "ticks": [
+            0.9,
+            0.8,
+            0.7,
+            0.6,
+            0.5,
+            0.4
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "R1 ↔ R2 (human–human)",
+          "x": null,
+          "series": null,
+          "value": 0.67,
+          "err_lo": 0.52,
+          "err_hi": 0.79,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Judge ↔ R1",
+          "x": null,
+          "series": null,
+          "value": 0.74,
+          "err_lo": 0.6,
+          "err_hi": 0.84,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Judge ↔ R2",
+          "x": null,
+          "series": null,
+          "value": 0.66,
+          "err_lo": 0.51,
+          "err_hi": 0.78,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Centres read against axis and consistent with caption (0.67, 0.74, 0.66); CI end labels printed on the figure. Red = human-human, blue = judge-human."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Point estimates with 95% CIs of ICC(2,1) absolute agreement for R1–R2 (human–human), Judge–R1 and Judge–R2 on a 20-patient subset.",
+  "uncertain": [
+    "Centre values are not printed on the plot; I took them from the caption (0.67, 0.74, 0.66), and they agree with the marker positions."
+  ]
+}

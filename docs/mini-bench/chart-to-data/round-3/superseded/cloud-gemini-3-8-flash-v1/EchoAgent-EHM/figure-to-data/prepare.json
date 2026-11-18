@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "EchoAgent-EHM",
+  "pdf": "EchoAgent-EHM.pdf",
+  "prepared_at": "2026-11-18T11:32:56",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/4"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/4",
+      "status": "prepared",
+      "folder": "pictures_4",
+      "reason": null,
+      "page": 6,
+      "figure_type": "roc_curve",
+      "capture": "pdf-render",
+      "size_px": [
+        717,
+        482
+      ],
+      "source_kind": "raster",
+      "charts": 5,
+      "words": 102
+    }
+  ]
+}

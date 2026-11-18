@@ -1,0 +1,1278 @@
+{
+ "bench": [
+  {
+   "id": "A1",
+   "bundle": "Cardiologent",
+   "stem": "pictures_0",
+   "hasData": false,
+   "truth": 0,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "count": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    }
+   }
+  },
+  {
+   "id": "A2",
+   "bundle": "Cardiologent",
+   "stem": "pictures_2",
+   "hasData": false,
+   "truth": 0,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "count": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    }
+   }
+  },
+  {
+   "id": "A3",
+   "bundle": "Cardiologent",
+   "stem": "pictures_3",
+   "hasData": true,
+   "truth": 1,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.942
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.942
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.999
+     ]
+    },
+    "count": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.942
+     ]
+    }
+   }
+  },
+  {
+   "id": "A4",
+   "bundle": "Cardiologent",
+   "stem": "pictures_4",
+   "hasData": false,
+   "truth": 0,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "count": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    }
+   }
+  },
+  {
+   "id": "A5",
+   "bundle": "Cardiologent",
+   "stem": "pictures_5",
+   "hasData": false,
+   "truth": 0,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "gutters",
+     "found": 5,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 5,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "count": {
+     "method": "gutters",
+     "found": 5,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    }
+   }
+  },
+  {
+   "id": "B1",
+   "bundle": "Dynamic-Specialist-MAS",
+   "stem": "pictures_1",
+   "hasData": true,
+   "truth": 1,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.966
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.966
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.999
+     ]
+    },
+    "count": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.966
+     ]
+    }
+   }
+  },
+  {
+   "id": "B2",
+   "bundle": "Med-RwR",
+   "stem": "pictures_6",
+   "hasData": true,
+   "truth": 3,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "axes",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.928,
+      0.919,
+      0.903
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "axes",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.928,
+      0.919,
+      0.903
+     ]
+    }
+   }
+  },
+  {
+   "id": "B3",
+   "bundle": "EchoAgent-EHM",
+   "stem": "pictures_4",
+   "hasData": true,
+   "truth": 5,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "axes",
+     "found": 5,
+     "matched": 5,
+     "extra": 0,
+     "ious": [
+      0.946,
+      0.944,
+      0.944,
+      0.936,
+      0.936
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "axes",
+     "found": 5,
+     "matched": 5,
+     "extra": 0,
+     "ious": [
+      0.946,
+      0.944,
+      0.944,
+      0.936,
+      0.936
+     ]
+    }
+   }
+  },
+  {
+   "id": "B4",
+   "bundle": "Eunjung_Lee_ssrn-7427517_2",
+   "stem": "pictures_2",
+   "hasData": true,
+   "truth": 1,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.99
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.99
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.998
+     ]
+    },
+    "count": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.99
+     ]
+    }
+   }
+  },
+  {
+   "id": "B5",
+   "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+   "stem": "pictures_7",
+   "hasData": true,
+   "truth": 10,
+   "kind": "mixed",
+   "modes": {
+    "auto": {
+     "method": "axes",
+     "found": 10,
+     "matched": 10,
+     "extra": 0,
+     "ious": [
+      0.974,
+      0.974,
+      0.972,
+      0.972,
+      0.971,
+      0.971,
+      0.97,
+      0.968,
+      0.915,
+      0.877
+     ]
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 9,
+     "matched": 9,
+     "extra": 0,
+     "ious": [
+      0.972,
+      0.971,
+      0.968,
+      0.967,
+      0.915,
+      0.874,
+      0.867,
+      0.828,
+      0.514
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "axes",
+     "found": 10,
+     "matched": 10,
+     "extra": 0,
+     "ious": [
+      0.974,
+      0.974,
+      0.972,
+      0.972,
+      0.971,
+      0.971,
+      0.97,
+      0.968,
+      0.915,
+      0.877
+     ]
+    }
+   }
+  },
+  {
+   "id": "C1",
+   "bundle": "HeartAgent",
+   "stem": "pictures_5",
+   "hasData": true,
+   "truth": 4,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "axes",
+     "found": 4,
+     "matched": 4,
+     "extra": 0,
+     "ious": [
+      0.974,
+      0.949,
+      0.945,
+      0.945
+     ]
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 4,
+     "matched": 4,
+     "extra": 0,
+     "ious": [
+      0.974,
+      0.949,
+      0.945,
+      0.945
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "axes",
+     "found": 4,
+     "matched": 4,
+     "extra": 0,
+     "ious": [
+      0.974,
+      0.949,
+      0.945,
+      0.945
+     ]
+    }
+   }
+  },
+  {
+   "id": "C2",
+   "bundle": "AgentMD",
+   "stem": "pictures_4",
+   "hasData": false,
+   "truth": 0,
+   "kind": "vector",
+   "modes": {
+    "auto": {
+     "method": "none",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "gutters": {
+     "method": "none",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    },
+    "count": {
+     "method": "none",
+     "found": 1,
+     "matched": 0,
+     "extra": null,
+     "ious": []
+    }
+   }
+  },
+  {
+   "id": "C3",
+   "bundle": "AMIE-Mx",
+   "stem": "pictures_14",
+   "hasData": true,
+   "truth": 3,
+   "kind": "raster",
+   "modes": {
+    "auto": {
+     "method": "axes",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.979,
+      0.972,
+      0.531
+     ]
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 2,
+     "matched": 0,
+     "extra": 2,
+     "ious": []
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "axes",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.979,
+      0.972,
+      0.531
+     ]
+    }
+   }
+  },
+  {
+   "id": "C4",
+   "bundle": "Zodiac",
+   "stem": "pictures_5",
+   "hasData": true,
+   "truth": 2,
+   "kind": "vector",
+   "modes": {
+    "auto": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.501
+     ]
+    },
+    "gutters": {
+     "method": "single",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.501
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 1,
+     "extra": 0,
+     "ious": [
+      0.506
+     ]
+    },
+    "count": {
+     "method": "axes",
+     "found": 2,
+     "matched": 2,
+     "extra": 0,
+     "ious": [
+      0.972,
+      0.967
+     ]
+    }
+   }
+  },
+  {
+   "id": "C5",
+   "bundle": "AMIE-Cardiology",
+   "stem": "pictures_3",
+   "hasData": true,
+   "truth": 3,
+   "kind": "vector",
+   "modes": {
+    "auto": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.964,
+      0.924,
+      0.902
+     ]
+    },
+    "gutters": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.964,
+      0.924,
+      0.902
+     ]
+    },
+    "off": {
+     "method": "off",
+     "found": 1,
+     "matched": 0,
+     "extra": 1,
+     "ious": []
+    },
+    "count": {
+     "method": "gutters",
+     "found": 3,
+     "matched": 3,
+     "extra": 0,
+     "ious": [
+      0.964,
+      0.924,
+      0.902
+     ]
+    }
+   }
+  }
+ ],
+ "totals": {
+  "auto": {
+   "truth": 33,
+   "found": 32,
+   "matched": 32,
+   "extra": 0,
+   "figuresComplete": 9,
+   "meanIou": 0.922,
+   "minIou": 0.501
+  },
+  "count": {
+   "truth": 33,
+   "found": 33,
+   "matched": 33,
+   "extra": 0,
+   "figuresComplete": 10,
+   "meanIou": 0.938,
+   "minIou": 0.531
+  },
+  "gutters": {
+   "truth": 33,
+   "found": 24,
+   "matched": 20,
+   "extra": 4,
+   "figuresComplete": 5,
+   "meanIou": 0.894,
+   "minIou": 0.501
+  },
+  "off": {
+   "truth": 33,
+   "found": 10,
+   "matched": 4,
+   "extra": 6,
+   "figuresComplete": 3,
+   "meanIou": 0.875,
+   "minIou": 0.506
+  }
+ },
+ "wide": {
+  "figures": 41,
+  "papers": 14,
+  "byCharts": {
+   "1": 12,
+   "2": 10,
+   "3": 5,
+   "4": 4,
+   "5": 2,
+   "6": 2,
+   "8": 1,
+   "11": 1,
+   "12": 1,
+   "16": 2,
+   "17": 1
+  },
+  "byMethod": {
+   "axes": 20,
+   "single": 11,
+   "gutters": 7,
+   "letters": 2,
+   "none": 1
+  },
+  "byGuttersCharts": {
+   "1": 14,
+   "2": 7,
+   "3": 6,
+   "4": 6,
+   "5": 3,
+   "6": 1,
+   "11": 1,
+   "12": 1,
+   "13": 1,
+   "15": 1
+  },
+  "modesDisagree": 13,
+  "moreWithAxes": 9,
+  "fewerWithAxes": 4,
+  "shown": 41,
+  "byGrade": {
+   "clean": 7,
+   "minor": 4,
+   "wrong": 19,
+   "not_chart": 11
+  },
+  "dataFigures": 30,
+  "notPrepared": [
+   "CardAIc-Agents #/pictures/2: Error serializing to JSON: UnicodeEncodeError: 'utf-8' codec can't encode characters in position 23-24: surrogates not allowed",
+   "CardAIc-Agents #/pictures/3: Error serializing to JSON: UnicodeEncodeError: 'utf-8' codec can't encode characters in position 9-12: surrogates not allowed",
+   "Risk-Score-Interfaces_Supplementary #/pictures/1: Error serializing to JSON: UnicodeEncodeError: 'utf-8' codec can't encode characters in position 0-1: surrogates not allowed"
+  ]
+ },
+ "wideFigures": [
+  {
+   "key": "AInternDOCTor/pictures_1",
+   "page": 3,
+   "type": "heatmap",
+   "kind": "raster",
+   "charts": 4,
+   "method": "gutters",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "not_chart",
+   "flag": "Not a chart: a workflow diagram, typed as a heatmap upstream. Four boxes, one of them around the others."
+  },
+  {
+   "key": "AMIE-Cardiology/pictures_5",
+   "page": 5,
+   "type": "forest_plot",
+   "kind": "vector",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "minor",
+   "flag": "Both charts are boxed. The x-axis title of chart a (\"Preference proportion\") lands in chart b's box."
+  },
+  {
+   "key": "AMIE-Cardiology/pictures_6",
+   "page": 11,
+   "type": "scatter_plot",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: screenshots of a user interface, typed as a scatter plot upstream."
+  },
+  {
+   "key": "AMIE-Mx/pictures_4",
+   "page": 5,
+   "type": "line_chart",
+   "kind": "vector",
+   "charts": 16,
+   "method": "axes",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "15 line charts. 13 are boxed on their own; the last two of the bottom row share one box, and two strips of x-axis labels became boxes of their own."
+  },
+  {
+   "key": "AMIE-Mx/pictures_5",
+   "page": 6,
+   "type": "bar_chart",
+   "kind": "vector",
+   "charts": 17,
+   "method": "axes",
+   "gutters": 13,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "20 small bar charts in ten pairs. 17 boxes, several of them slivers or two charts wide; some charts of the bottom row are in no box. Only the leftmost chart of each row prints y tick labels."
+  },
+  {
+   "key": "AMIE-Mx/pictures_7",
+   "page": 14,
+   "type": "box_plot",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: an architecture diagram, typed as a box plot upstream."
+  },
+  {
+   "key": "AMIE-Mx/pictures_8",
+   "page": 15,
+   "type": "forest_plot",
+   "kind": "raster",
+   "charts": 6,
+   "method": "axes",
+   "gutters": 15,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "15 line charts in 3 rows of 5. The columns are separated, the rows are not: each box holds three charts, and a sixth box holds only y-axis labels. Tick labels are printed once per row and once per column."
+  },
+  {
+   "key": "AMIE-Mx/pictures_15",
+   "page": 22,
+   "type": "bar_chart",
+   "kind": "raster",
+   "charts": 3,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Three stacked-bar blocks. The tall left block is cut in two, and its upper half shares a box with the block at the top right."
+  },
+  {
+   "key": "AMIE-Mx/pictures_16",
+   "page": 24,
+   "type": "table_image",
+   "kind": "raster",
+   "charts": 2,
+   "method": "gutters",
+   "gutters": 2,
+   "guttersMethod": "gutters",
+   "grade": "clean",
+   "flag": "Two bar charts, two boxes."
+  },
+  {
+   "key": "AgentMD/pictures_2",
+   "page": 2,
+   "type": "heatmap",
+   "kind": "vector",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: a pipeline diagram, typed as a heatmap upstream."
+  },
+  {
+   "key": "AgentMD/pictures_3",
+   "page": 4,
+   "type": "bar_chart",
+   "kind": "vector",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "wrong",
+   "flag": "Two lettered panels, each a matrix beside a strip of bars, left in one box."
+  },
+  {
+   "key": "AgentMD/pictures_5",
+   "page": 5,
+   "type": "roc_curve",
+   "kind": "vector",
+   "charts": 3,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "clean",
+   "flag": "Three bar charts, three boxes."
+  },
+  {
+   "key": "AgentMD/pictures_7",
+   "page": 6,
+   "type": "heatmap",
+   "kind": "vector",
+   "charts": 5,
+   "method": "gutters",
+   "gutters": 5,
+   "guttersMethod": "gutters",
+   "grade": "minor",
+   "flag": "Both charts (stacked bars, heatmap) are boxed; the legend of the stacked bars is outside its box. The three other boxes are blocks of the pipeline diagram above them."
+  },
+  {
+   "key": "AgentMD/pictures_8",
+   "page": 7,
+   "type": "roc_curve",
+   "kind": "vector",
+   "charts": 11,
+   "method": "axes",
+   "gutters": 11,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "14 charts beside two diagrams. The four ROC charts are right. Of the eight small density charts five are boxed and three are in no box; the two large density charts share their boxes with a diagram."
+  },
+  {
+   "key": "Dynamic-Specialist-MAS/pictures_2",
+   "page": 8,
+   "type": "heatmap",
+   "kind": "raster",
+   "charts": 3,
+   "method": "axes",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "wrong",
+   "flag": "One heatmap, cut in two across its rows, plus its colour bar as a third box. The numbers printed in the cells were taken for tick labels."
+  },
+  {
+   "key": "EchoAgent-EHM/pictures_2",
+   "page": 5,
+   "type": "table_image",
+   "kind": "mixed",
+   "charts": 3,
+   "method": "axes",
+   "gutters": 2,
+   "guttersMethod": "letters",
+   "grade": "wrong",
+   "flag": "The donut chart is boxed right. The bar chart is cut from its own x axis: the tick labels 0 to 70 are a third box."
+  },
+  {
+   "key": "EchoAgent-EHM/pictures_3",
+   "page": 6,
+   "type": "bar_chart",
+   "kind": "mixed",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "clean",
+   "flag": "Two bar charts, two boxes."
+  },
+  {
+   "key": "EchoAgent-Guideline/pictures_4",
+   "page": 4,
+   "type": "box_plot",
+   "kind": "mixed",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: a framework diagram, typed as a box plot upstream."
+  },
+  {
+   "key": "Eunjung_Lee_ssrn-7427517_2/pictures_4",
+   "page": 19,
+   "type": "kaplan_meier",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: a screenshot of a review interface, typed as a Kaplan-Meier plot upstream. The one box is a block of sliders."
+  },
+  {
+   "key": "Eunjung_Lee_ssrn-7427517_2/pictures_5",
+   "page": 20,
+   "type": "forest_plot",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "clean",
+   "flag": "One forest plot, left whole."
+  },
+  {
+   "key": "HeartAgent/pictures_1",
+   "page": 6,
+   "type": "bar_chart",
+   "kind": "raster",
+   "charts": 12,
+   "method": "gutters",
+   "gutters": 12,
+   "guttersMethod": "gutters",
+   "grade": "clean",
+   "flag": "Nine bar charts and three stacked-bar charts, twelve boxes. The shared legend stays outside the boxes."
+  },
+  {
+   "key": "HeartAgent/pictures_2",
+   "page": 7,
+   "type": "forest_plot",
+   "kind": "raster",
+   "charts": 16,
+   "method": "axes",
+   "gutters": 6,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "18 charts. The nine bar charts and the three box plots are right. The six small stacked-bar charts at the bottom are not: four boxes of unequal width cover some of them and the rest are in no box."
+  },
+  {
+   "key": "HeartAgent/pictures_3",
+   "page": 8,
+   "type": "bar_chart",
+   "kind": "raster",
+   "charts": 4,
+   "method": "axes",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "minor",
+   "flag": "Four charts, four boxes. The title of the lower right chart lands in the box above it."
+  },
+  {
+   "key": "HeartAgent/pictures_4",
+   "page": 9,
+   "type": "heatmap",
+   "kind": "raster",
+   "charts": 4,
+   "method": "gutters",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "clean",
+   "flag": "Four confusion matrices, four boxes."
+  },
+  {
+   "key": "Med-RwR/pictures_2",
+   "page": 9,
+   "type": "heatmap",
+   "kind": "raster",
+   "charts": 2,
+   "method": "letters",
+   "gutters": 2,
+   "guttersMethod": "letters",
+   "grade": "wrong",
+   "flag": "Three charts (a stacked bars, b radar, c horizontal bars). Two boxes, from the panel letters: a and c share the left one."
+  },
+  {
+   "key": "Med-RwR/pictures_3",
+   "page": 15,
+   "type": "medical_illustration",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "wrong",
+   "flag": "Two pies left in one box. Pies print no tick labels, and their labels fill the gap between them."
+  },
+  {
+   "key": "Med-RwR/pictures_7",
+   "page": 21,
+   "type": "line_chart",
+   "kind": "raster",
+   "charts": 3,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Six line charts in three rows of two. Three boxes, one per row: the two charts of a row share a box."
+  },
+  {
+   "key": "Risk-Score-Interfaces/pictures_0",
+   "page": 1,
+   "type": "ecg",
+   "kind": "vector",
+   "charts": 5,
+   "method": "gutters",
+   "gutters": 5,
+   "guttersMethod": "gutters",
+   "grade": "not_chart",
+   "flag": "Not a chart: a journal logo, typed as an ECG upstream; the noise filter let it through."
+  },
+  {
+   "key": "Risk-Score-Interfaces/pictures_6",
+   "page": 9,
+   "type": "bar_chart",
+   "kind": "raster",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "clean",
+   "flag": "Screenshots of a chat with one bar chart in it. The one box is the chart."
+  },
+  {
+   "key": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for/pictures_1",
+   "page": 2,
+   "type": "bar_chart",
+   "kind": "vector",
+   "charts": 8,
+   "method": "axes",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Four pie-like charts, each with a colour bar. The ticks of the colour bars were taken for axes: the bars are boxes of their own, and the first chart is cut in half."
+  },
+  {
+   "key": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for/pictures_4",
+   "page": 7,
+   "type": "bar_chart",
+   "kind": "vector",
+   "charts": 1,
+   "method": "none",
+   "gutters": 1,
+   "guttersMethod": "none",
+   "grade": "not_chart",
+   "flag": "Not a chart: a crop of body text, typed as a bar chart upstream."
+  },
+  {
+   "key": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for/pictures_5",
+   "page": 7,
+   "type": "bar_chart",
+   "kind": "vector",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 2,
+   "guttersMethod": "gutters",
+   "grade": "minor",
+   "flag": "Two line charts, two boxes. The title and the legend of the lower chart land in the upper box."
+  },
+  {
+   "key": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for/pictures_6",
+   "page": 8,
+   "type": "line_chart",
+   "kind": "vector",
+   "charts": 6,
+   "method": "axes",
+   "gutters": 4,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Four charts with a second y axis on the right. The left y-axis labels are cut off every chart: two strips of labels are boxes of their own, the other two sets are in no box."
+  },
+  {
+   "key": "Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language/pictures_0",
+   "page": 5,
+   "type": "box_plot",
+   "kind": "raster",
+   "charts": 2,
+   "method": "gutters",
+   "gutters": 2,
+   "guttersMethod": "gutters",
+   "grade": "not_chart",
+   "flag": "Not a chart: an infographic, typed as a box plot upstream."
+  },
+  {
+   "key": "Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language/pictures_1",
+   "page": 27,
+   "type": "line_chart",
+   "kind": "raster",
+   "charts": 2,
+   "method": "letters",
+   "gutters": 2,
+   "guttersMethod": "letters",
+   "grade": "wrong",
+   "flag": "Six lettered panels with about twenty charts. Two boxes: panels a and b share the top one, everything else the other."
+  },
+  {
+   "key": "Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language/pictures_2",
+   "page": 28,
+   "type": "bar_chart",
+   "kind": "raster",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 5,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Five lettered panels. Two boxes: a and b share one; c, d and e the other."
+  },
+  {
+   "key": "Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language/pictures_3",
+   "page": 29,
+   "type": "heatmap",
+   "kind": "raster",
+   "charts": 4,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "A ring chart, a scatter plot and a heatmap. The scatter plot is right. The heatmap is cut in three, and its left columns share a box with the ring chart. The numbers printed in the cells were taken for tick labels."
+  },
+  {
+   "key": "Zodiac/pictures_1",
+   "page": 4,
+   "type": "box_plot",
+   "kind": "mixed",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: a framework diagram, typed as a box plot upstream."
+  },
+  {
+   "key": "Zodiac/pictures_3",
+   "page": 7,
+   "type": "roc_curve",
+   "kind": "mixed",
+   "charts": 1,
+   "method": "single",
+   "gutters": 1,
+   "guttersMethod": "single",
+   "grade": "not_chart",
+   "flag": "Not a chart: a deployment diagram, typed as a ROC curve upstream."
+  },
+  {
+   "key": "Zodiac/pictures_4",
+   "page": 9,
+   "type": "heatmap",
+   "kind": "mixed",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 2,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Three heatmaps and a radar chart. The radar chart is right; the three heatmaps share one box."
+  },
+  {
+   "key": "Zodiac/pictures_12",
+   "page": 19,
+   "type": "heatmap",
+   "kind": "mixed",
+   "charts": 2,
+   "method": "axes",
+   "gutters": 3,
+   "guttersMethod": "gutters",
+   "grade": "wrong",
+   "flag": "Five heatmaps in two rows. Two boxes, one per row."
+  }
+ ]
+}

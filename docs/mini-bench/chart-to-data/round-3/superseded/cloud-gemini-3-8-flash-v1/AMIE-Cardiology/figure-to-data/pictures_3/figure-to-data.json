@@ -1,0 +1,251 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Cardiology",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 4,
+    "bbox": [
+      42.35,
+      48.79,
+      558.51,
+      159.74
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "chart 1",
+      "bbox_px": [
+        0.0,
+        2.5,
+        243.8,
+        163.0
+      ],
+      "title": "Did the AI help your assessment?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": null,
+        "y": null
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Yes, definitely",
+          "x": null,
+          "series": null,
+          "value": 16.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "16.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Yes, probably",
+          "x": null,
+          "series": null,
+          "value": 40.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "40.2%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Neither yes nor no",
+          "x": null,
+          "series": null,
+          "value": 30.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, probably not",
+          "x": null,
+          "series": null,
+          "value": 8.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "8.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, definitely not",
+          "x": null,
+          "series": null,
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "3.7%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 2",
+      "bbox_px": [
+        251.6,
+        2.5,
+        507.0,
+        163.0
+      ],
+      "title": "Did the AI make you more confident?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": null,
+        "y": null
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Yes, definitely",
+          "x": null,
+          "series": null,
+          "value": 15.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "15.9%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Yes, probably",
+          "x": null,
+          "series": null,
+          "value": 36.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "36.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Neither yes nor no",
+          "x": null,
+          "series": null,
+          "value": 32.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "32.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, probably not",
+          "x": null,
+          "series": null,
+          "value": 12.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "12.1%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, definitely not",
+          "x": null,
+          "series": null,
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.8%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 3",
+      "bbox_px": [
+        526.3,
+        2.5,
+        774.0,
+        163.0
+      ],
+      "title": "Did the AI save you time?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": null,
+        "y": null
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Saved more than 50% of my time",
+          "x": null,
+          "series": null,
+          "value": 23.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "23.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Saved more than 10% of my time",
+          "x": null,
+          "series": null,
+          "value": 27.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "27.1%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Not sure",
+          "x": null,
+          "series": null,
+          "value": 30.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Delayed me by more than 10%",
+          "x": null,
+          "series": null,
+          "value": 15.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "15.9%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Delayed me by more than 50%",
+          "x": null,
+          "series": null,
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.8%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Three pie charts showing user survey responses on whether AI helped assessment, increased confidence, and saved time.",
+  "uncertain": []
+}

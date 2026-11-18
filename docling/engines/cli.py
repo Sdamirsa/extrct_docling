@@ -10,6 +10,16 @@ Usage:
     uv run amir-batch samples/ -o out/      # custom output root
     uv run amir-batch samples/ --compare    # full-page VLM A/B per PDF
     uv run amir-batch samples/ --check-only # re-check existing bundles
+    uv run amir-batch samples/ --figure-data ollama   # + the numbers behind the charts
+
+``--figure-data`` adds the figure-to-data step
+(:mod:`docling.engines.figure_data.step`) on the finished bundles: once the
+batch is converted (``--figure-data-when end``, the default: the conversion
+models are released first and the reading model loads once) or after each
+PDF (``each``). A bundle that already had the step with the same method and
+model is left alone, so an interrupted batch picks up where it stopped. The
+step never changes a conversion's status; ``amir-figdata step`` runs it on
+an output folder at any later time.
 
 The terminal report shows one row per PDF: status, duration, page count,
 extracted figures (with noise count), tables, chunks, the components of the
@@ -22,6 +32,7 @@ bundle checks found issues, else 0; 130 on Ctrl-C.
 from __future__ import annotations
 
 import functools
+import gc
 import logging
 import re
 import sys
@@ -56,7 +67,15 @@ from docling.engines.export_check import (
     check_bundle,
     write_bundle_check,
 )
-from docling.engines.figure_data.schema import FigureDataMode, FigureDataOptions
+from docling.engines.figure_data.cli import outcome_printer, runs_table
+from docling.engines.figure_data.methods import FigureReader, build_reader
+from docling.engines.figure_data.schema import (
+    Backend,
+    FigureDataChoice,
+    FigureDataOptions,
+    StepTiming,
+)
+from docling.engines.figure_data.step import StepRun, needs_step, run_step
 from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
 from docling.engines.run_snapshot import ENGINE_VERSION, RunRecord, read_run_record
 from docling.engines.schemas import PdfConversionOutput, RelatedDocument
@@ -230,20 +249,69 @@ def main(
         ),
     ] = True,
     figure_data: Annotated[
-        FigureDataMode,
+        FigureDataChoice,
         typer.Option(
             "--figure-data",
             help=(
-                "Read the numbers behind chart figures with a local VLM "
-                "(Ollama): 'simple' (one call per figure) or 'measured' "
-                "(panels, axis calibration, pointed marks). Default off."
+                "Read the numbers behind chart figures, as a step on the "
+                "finished bundles: 'ollama' (a local model, nothing leaves "
+                "the machine), 'cloud' (one call per figure to a model's "
+                "API endpoint, OpenRouter by default, key in "
+                "OPENROUTER_API_KEY or .env) or 'agent' (one agent session "
+                "per figure, through the Claude Code CLI). Default off."
             ),
         ),
     ] = "off",
     figure_data_model: Annotated[
+        str | None,
+        typer.Option(
+            "--figure-data-model",
+            help="Model for --figure-data; default: the method's own.",
+        ),
+    ] = None,
+    figure_data_backend: Annotated[
+        Backend | None,
+        typer.Option(
+            "--figure-data-backend",
+            help=(
+                "Where the --figure-data model runs: ollama, "
+                "openai-compatible (an API endpoint) or claude-cli (the "
+                "agent's runtime). "
+                "Default: the method's own."
+            ),
+        ),
+    ] = None,
+    figure_data_base_url: Annotated[
         str,
-        typer.Option("--figure-data-model", help="Ollama model for --figure-data."),
-    ] = FigureDataOptions().model,
+        typer.Option(
+            "--figure-data-base-url",
+            help=(
+                "--figure-data cloud: the chat-completions endpoint "
+                "(OpenAI-compatible). OpenRouter by default."
+            ),
+        ),
+    ] = FigureDataOptions().cloud_base_url,
+    figure_data_key_env: Annotated[
+        str,
+        typer.Option(
+            "--figure-data-key-env",
+            help=(
+                "--figure-data cloud: the environment variable (also read "
+                "from .env) that holds the endpoint's API key."
+            ),
+        ),
+    ] = FigureDataOptions().cloud_api_key_env,
+    figure_data_when: Annotated[
+        StepTiming,
+        typer.Option(
+            "--figure-data-when",
+            help=(
+                "'end': read the figures once the whole batch is converted "
+                "(the reading model loads once, beside no conversion "
+                "model). 'each': after each PDF."
+            ),
+        ),
+    ] = "end",
     skip_existing: Annotated[
         bool,
         typer.Option(
@@ -345,10 +413,29 @@ def main(
         ),
         picture_area_threshold=picture_area_threshold,
         figure_types=figure_types,
-        figure_data=FigureDataOptions(mode=figure_data, model=figure_data_model)
-        if figure_data != "off"
-        else None,
     )
+    figure_step = (
+        _FigureStep(
+            # Model and backend left out take the method's own.
+            FigureDataOptions.model_validate(
+                {
+                    "method": figure_data,
+                    "model": figure_data_model,
+                    "backend": figure_data_backend,
+                    "cloud_base_url": figure_data_base_url,
+                    "cloud_api_key_env": figure_data_key_env,
+                }
+            ),
+            console,
+        )
+        if figure_data != "off" and not compare
+        else None
+    )
+    if figure_data != "off" and compare:
+        console.print(
+            "[yellow]--figure-data is skipped with --compare; run "
+            "amir-figdata step on the bundle you keep.[/yellow]"
+        )
     vlm_engine = (
         build_full_page_vlm_engine(vlm_preset, figure_types=figure_types)
         if compare
@@ -406,6 +493,9 @@ def main(
                             pdf_path, pdf_dir, run, retries=retries, console=console
                         )
                     )
+                    del run
+                if figure_step is not None and figure_data_when == "each":
+                    figure_step.run(pdf_dir, pdf_path)
                 progress.advance(task_id)
     except KeyboardInterrupt:
         console.print(
@@ -415,8 +505,76 @@ def main(
         _render_summary(console, rows, mode=mode)
         raise typer.Exit(code=130) from None
 
+    if figure_step is not None:
+        try:
+            if figure_data_when == "end":
+                # Let go of the conversion engine and its models before a
+                # reading model is loaded beside them.
+                del engine
+                _release_gpu_memory()
+                for item in plan:
+                    figure_step.run(item.pdf_dir, item.path)
+        except KeyboardInterrupt:
+            console.print(
+                "[red]Interrupted[/red] during figure-to-data; the bundles "
+                "are complete, rerun to read the remaining figures."
+            )
+        finally:
+            figure_step.close()
+        if figure_step.runs:
+            console.print(runs_table(figure_step.runs))
     _render_summary(console, rows, mode=mode)
     _exit(rows)
+
+
+def _release_gpu_memory() -> None:
+    """Collect what is no longer referenced and hand torch's cached GPU
+    memory back, when torch was loaded at all."""
+    gc.collect()
+    torch = sys.modules.get("torch")
+    if torch is not None and torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
+class _FigureStep:
+    """The figure-to-data step on the bundles of a batch, with one reader
+    for all of them."""
+
+    def __init__(self, options: FigureDataOptions, console: Console) -> None:
+        self.options = options
+        self.console = console
+        self.runs: list[StepRun] = []
+        self._reader: FigureReader | None = None
+
+    def run(self, bundle: Path, pdf_path: Path) -> None:
+        if not (bundle / "document.json").is_file():
+            return
+        if not needs_step(bundle, self.options):
+            return
+        if self._reader is None:
+            self._reader = build_reader(self.options)
+        try:
+            self.runs.append(
+                run_step(
+                    bundle,
+                    pdf_path,
+                    self.options,
+                    reader=self._reader,
+                    on_result=outcome_printer(self.console, bundle.name),
+                )
+            )
+        except Exception as exc:
+            # The step reads finished bundles; whatever goes wrong in it
+            # leaves the conversion as it was.
+            _log.exception("figure-to-data failed on %s", bundle)
+            self.console.print(
+                f"[red]figure-to-data failed[/red] on {escape(bundle.name)}: "
+                f"{escape(type(exc).__name__)}: {escape(str(exc)[:200])}"
+            )
+
+    def close(self) -> None:
+        if self._reader is not None:
+            self._reader.close()
 
 
 def _exit(rows: list[BatchRow]) -> None:

@@ -1,0 +1,37 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "google/gemini-3.8-flash",
+ "panel_split": "axes",
+ "seconds": 160.76,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 160.67,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 8554,
+   "eval_tokens": 24631,
+   "cut": false,
+   "cost_usd": 0.0943713,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 2: 0.82 outside the axis range [1, 2] (1.0/)",
+  "panel 2: 0.78 outside the axis range [1, 2] (2.0/)",
+  "panel 2: 0.77 outside the axis range [1, 2] (3.0/)",
+  "panel 2: 0.86 outside the axis range [1, 2] (4.0/)",
+  "panel 3: 282 outside the axis range [200, 275] (18.0/)",
+  "panel 3: 281 outside the axis range [200, 275] (19.0/)",
+  "panel 3: 281 outside the axis range [200, 275] (20.0/)",
+  "panel 3: 281 outside the axis range [200, 275] (25.0/)",
+  "panel 3: 280 outside the axis range [200, 275] (26.0/)"
+ ]
+}

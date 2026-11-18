@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Architecture diagram of a Stage 1 time series encoder-decoder with a CLIP vision encoder, Llama-7B, a prompt template and an example ECG answer; it holds no data values.",
+  "uncertain": [
+    "not a data chart: Architecture diagram of a Stage 1 time series encoder-decoder with a CLIP vision encoder, Llama-7B, a prompt template and an example ECG answer; it holds no data values.",
+    "Nothing was recorded: the figure is a diagram with no plotted or tabulated data values.",
+    "The ECG trace with red R-peak markers is a raw signal trace, so it was not read as data.",
+    "The 0.183 and 0.15 values in the example answer are quoted text, not chart data."
+  ]
+}

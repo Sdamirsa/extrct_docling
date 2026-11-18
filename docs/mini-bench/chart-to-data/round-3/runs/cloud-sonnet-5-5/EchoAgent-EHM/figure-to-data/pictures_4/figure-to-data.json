@@ -1,0 +1,491 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "EchoAgent-EHM",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 6,
+    "bbox": [
+      317.49,
+      239.85,
+      552.22,
+      397.73
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.9,
+        2.9,
+        116.8,
+        117.8
+      ],
+      "title": "OnimiaNet",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF<40%",
+          "color": null
+        },
+        {
+          "name": "40%≤EF<50%",
+          "color": null
+        },
+        {
+          "name": "EF≥50%",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 87.97,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "87.97%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 65.74,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "65.74%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 76.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "76.77%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only the printed AUROC values are tabulated; curves are not traced."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        119.3,
+        2.9,
+        233.2,
+        117.8
+      ],
+      "title": "H2former",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF<40%",
+          "color": null
+        },
+        {
+          "name": "40%≤EF<50%",
+          "color": null
+        },
+        {
+          "name": "EF≥50%",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 89.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "89.81%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 77.99,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "77.99%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "76.00%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only the printed AUROC values are tabulated; curves are not traced."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        237.6,
+        61.9,
+        351.5,
+        176.7
+      ],
+      "title": "EchoAgent",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF<40%",
+          "color": null
+        },
+        {
+          "name": "40%≤EF<50%",
+          "color": null
+        },
+        {
+          "name": "EF≥50%",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 98.43,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "98.43%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 87.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "87.79%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 93.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "93.88%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only the printed AUROC values are tabulated; curves are not traced."
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        2.9,
+        120.8,
+        117.3,
+        235.6
+      ],
+      "title": "MemSAM",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF<40%",
+          "color": null
+        },
+        {
+          "name": "40%≤EF<50%",
+          "color": null
+        },
+        {
+          "name": "EF≥50%",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 91.56,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "91.56%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 56.28,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "56.28%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 80.46,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "80.46%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only the printed AUROC values are tabulated; curves are not traced."
+      ]
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        121.3,
+        120.8,
+        235.6,
+        235.6
+      ],
+      "title": "EchoONE",
+      "kind": "other",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "EF<40%",
+          "color": null
+        },
+        {
+          "name": "40%≤EF<50%",
+          "color": null
+        },
+        {
+          "name": "EF≥50%",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 93.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "93.79%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 65.68,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "65.68%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 85.56,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "85.56%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only the printed AUROC values are tabulated; curves are not traced."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "ROC curves (sensitivity vs 1 - specificity) for LVEF classes (EF<40%, 40%≤EF<50%, EF≥50%) on the CAMUS dataset for five segmentation models; the AUROC of each curve is printed in the legends.",
+  "uncertain": [
+    "The ROC curve shapes (sensitivity vs 1 - specificity points) of all 15 curves were not traced; only the printed AUROC values were recorded."
+  ]
+}

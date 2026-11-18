@@ -1,0 +1,197 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Top-1 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": null,
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.58,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.69,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "2",
+   "title": "Top-1 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": null,
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.48,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "3",
+   "title": "Top-3 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": null,
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "4",
+   "title": "Top-3 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": null,
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.535,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.55,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.68,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  }
+ ],
+ "description": "Four bar charts compare accuracy of HeartAgent, Expert, and Expert + HeartAgent on MIMIC for top-1 and top-3 diagnosis and explanation, with the combination highest in each.",
+ "has_data": true,
+ "not_read": [
+  "Bar values are not printed on the figure. I read them from the axis, to about ±0.01. I enlarged chart 1 only; charts 2–4 were read from the overview image."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 4
+}

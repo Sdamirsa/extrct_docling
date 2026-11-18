@@ -10,6 +10,7 @@
 from __future__ import annotations
 
 import json
+import os
 from collections import Counter
 from pathlib import Path
 
@@ -18,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BENCH = Path(__file__).resolve().parents[1]
+BENCH = Path(__file__).resolve().parents[1] / os.environ.get("BENCH_ROUND", "")
 VERDICTS = ["correct", "partial", "wrong", "missed", "true_negative", "false_positive"]
 
 

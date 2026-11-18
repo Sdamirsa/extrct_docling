@@ -1,0 +1,217 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Dynamic-Specialist-MAS",
+    "self_ref": "#/pictures/1",
+    "image_path": "images/picture_002.png",
+    "page": 5,
+    "bbox": [
+      318.15,
+      83.38,
+      557.49,
+      220.2
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.1,
+        3.4,
+        357.7,
+        203.2
+      ],
+      "title": null,
+      "kind": "grouped_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Clinical Problem",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Number of Cases",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            350.0
+          ],
+          "ticks": [
+            350.0,
+            250.0,
+            200.0,
+            150.0,
+            100.0,
+            50.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+          "color": null
+        },
+        {
+          "name": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+          "color": null
+        },
+        {
+          "name": "Both Correct (○)",
+          "color": null
+        },
+        {
+          "name": "Both Incorrect (×)",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "Congestive Heart Failure",
+          "x": null,
+          "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+          "value": 13.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "13",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Congestive Heart Failure",
+          "x": null,
+          "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+          "value": 6.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "6",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Congestive Heart Failure",
+          "x": null,
+          "series": "Both Correct (○)",
+          "value": 299.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "299",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Congestive Heart Failure",
+          "x": null,
+          "series": "Both Incorrect (×)",
+          "value": 102.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "102",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Acute Kidney Injury",
+          "x": null,
+          "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+          "value": 25.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Acute Kidney Injury",
+          "x": null,
+          "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+          "value": 25.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Acute Kidney Injury",
+          "x": null,
+          "series": "Both Correct (○)",
+          "value": 255.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "255",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Acute Kidney Injury",
+          "x": null,
+          "series": "Both Incorrect (×)",
+          "value": 115.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "115",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Sepsis",
+          "x": null,
+          "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ×)",
+          "value": 25.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Sepsis",
+          "x": null,
+          "series": "MAS Incorrect, Baseline Correct (MAS ×, Base ○)",
+          "value": 26.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "26",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Sepsis",
+          "x": null,
+          "series": "Both Correct (○)",
+          "value": 283.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "283",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Sepsis",
+          "x": null,
+          "series": "Both Incorrect (×)",
+          "value": 86.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "86",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Grouped bar chart showing the distribution of note-level prediction outcomes across three clinical problems, categorized by whether the Multi-Agent System (MAS) and baseline methods were correct or incorrect.",
+  "uncertain": []
+}

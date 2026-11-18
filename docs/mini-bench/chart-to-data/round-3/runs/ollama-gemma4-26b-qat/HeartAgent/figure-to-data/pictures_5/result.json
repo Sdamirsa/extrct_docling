@@ -1,0 +1,98 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 23.17,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 4.399,
+   "total_s": 4.398,
+   "load_s": 0.318,
+   "prompt_eval_s": 0.768,
+   "eval_s": 3.168,
+   "prompt_tokens": 962,
+   "eval_tokens": 205,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 4.77,
+   "total_s": 4.769,
+   "load_s": 0.37,
+   "prompt_eval_s": 0.526,
+   "eval_s": 3.727,
+   "prompt_tokens": 846,
+   "eval_tokens": 229,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "2",
+   "prompt": "grounded",
+   "wall_s": 4.599,
+   "total_s": 4.598,
+   "load_s": 0.35,
+   "prompt_eval_s": 0.514,
+   "eval_s": 3.645,
+   "prompt_tokens": 828,
+   "eval_tokens": 228,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "3",
+   "prompt": "grounded",
+   "wall_s": 4.592,
+   "total_s": 4.591,
+   "load_s": 0.349,
+   "prompt_eval_s": 0.482,
+   "eval_s": 3.63,
+   "prompt_tokens": 828,
+   "eval_tokens": 227,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "4",
+   "prompt": "grounded",
+   "wall_s": 4.738,
+   "total_s": 4.737,
+   "load_s": 0.399,
+   "prompt_eval_s": 0.514,
+   "eval_s": 3.736,
+   "prompt_tokens": 828,
+   "eval_tokens": 228,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:47:02.27937891+01:00"
+  }
+ ],
+ "issues": [
+  "4 charts found by their tick labels",
+  "panel 1: 0.8416 outside the axis range [0.2, 0.8] (Expert + HeartAgent/)"
+ ]
+}

@@ -1,0 +1,419 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        192.2,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": "",
+          "series": null,
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        192.2,
+        3.0,
+        385.7,
+        100.9
+      ],
+      "title": "Format Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.0
+          ],
+          "ticks": [
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.9152,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.08,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.87,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.68,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.68,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        385.7,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Completion Length",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            200.0,
+            275.0
+          ],
+          "ticks": [
+            275.0,
+            250.0,
+            225.0,
+            200.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Completion Length",
+          "color": "#b3a9c5"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": "",
+          "series": "Completion Length",
+          "value": 210.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

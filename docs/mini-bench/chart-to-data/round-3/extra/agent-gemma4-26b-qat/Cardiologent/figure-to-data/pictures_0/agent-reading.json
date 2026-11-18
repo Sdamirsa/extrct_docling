@@ -1,0 +1,10 @@
+{
+ "panels": [],
+ "description": "This figure depicts a deployment scenario for medical monitoring, showing two stages: Stage 1 involves daily PPG monitoring via a wearable device and detection of atrial fibrillation by a PPG agent, while Stage 2 involves ECG and PPG monitoring in a hospital setting where a cardiologist makes clinical decisions.",
+ "has_data": false,
+ "not_read": [],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

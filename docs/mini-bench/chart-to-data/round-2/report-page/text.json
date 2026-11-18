@@ -1,0 +1,52 @@
+{
+ "pick": "gemma4_26b-a4b-it-qat",
+ "ablationModel": "gemma4_26b-a4b-it-qat",
+ "ablationModelName": "Gemma 4 26B-A4B, 4-bit QAT",
+ "subline": "15 figures · 3 local models before and after · Sonnet as a blind reference · truth and judge by claude-fable-5-2 · 17 Nov 2026",
+ "lede": "Round 1 ended with every model failing the same ways. Most of that was the way our engine called the model, not the model. With the call path fixed, the recommended model reads 6 of 10 data charts usably instead of 3, in two thirds of the time. It is still not good enough to publish chart numbers unreviewed.",
+ "tiles": [
+  ["3 → 6", "data charts usable from Gemma 4 26B (4-bit), of 10, round 1 to round 2"],
+  ["4 → 2", "figures from that model that would mislead a reader"],
+  ["164 s → 24 s", "added to one paper's 379 s conversion by its five chart candidates"],
+  ["9 of 10", "data charts usable from Sonnet reading the same images by eye: the gap that is left"]
+ ],
+ "reco": [
+  ["The model", "Gemma 4 26B-A4B, 4-bit QAT.", "Most usable charts of the three, fastest, 16 GB. The 8-bit build of the same model is one figure behind and takes half as long again."],
+  ["Not the 31B", "Too slow for this job, not too weak.", "At about six tokens a second its replies run into the 120 s cut, and it lost a chart it had right in round 1. With a 300 s cut it gets that chart back (12 of 12 bars in 184 s), at minutes per figure."],
+  ["How to ship it", "As the fourth config, with review.", "Values under the confidence threshold stay out of the prose exports. Dense stacked bars and anything measured from thin marks still need a human look."]
+ ],
+ "scorenotes": "No data chart was declined by the round-2 engine. One paper: the five chart candidates of one paper (four of them are not charts), on top of a 379 s conversion. Round 1 let the 31B run as long as it liked per call; round 2 cuts every call at 120 s.",
+ "changes": [
+  ["The panel split missed packed panels", "Our code cut figures at white gaps at least 1 % of the image wide. Papers pack panels 4 px apart. Five ROC panels went to the model as one image, under a prompt that said \"one chart panel\".", "Charts are found by their tick labels and cut apart along the free band between them. All 33 panels of the 10 data charts are found."],
+  ["Printed text often never reached the model", "If the PDF held any text inside the figure box, a watermark or a panel letter, the engine used those few words and dropped the OCR. The ROC figure went in with 5 words while its 15 printed AUROC values sat unused.", "OCR runs on the high-resolution image and is merged with the PDF text. Tick labels give every panel a calibrated axis."],
+  ["A long reply was thrown away whole", "A reply that reached the token limit was cut mid-JSON and discarded, with every point already written. That was every \"no output\" on the three-panel line chart.", "Replies are streamed. A call is cut at 120 s or when it starts repeating itself, and its complete points are kept."],
+  ["The reply format was three times too long", "Twelve keys per point with every null spelled out: 133 tokens a point. Generation is nearly all of a call's time.", "Rare fields are left out when they do not apply. The same chart takes 20 s instead of 32 s."],
+  ["The model could not say \"not a chart\"", "Diagrams and ECG traces were sent in with a prompt that assumed a chart. One cost up to 11 minutes and came back as invented series.", "One short call first asks what the figure is. All five figures without data are declined, in 2 to 8 s each by the recommended model."],
+  ["A point inside a bar stayed inside it", "The engine looked for the bar's edge only within 4 % of the axis around the pointed position, so bars read up to 0.24 low.", "A point on a bar's fill is followed to where the fill ends. The four bar panels went from 4 of 12 right to 12 of 12."]
+ ],
+ "ablnote": "The same model through three engines. The prompt, context and reply-format changes halve the time and fix single charts; the splitter is what brings the multi-panel figures in. Names ignored pairs values without their labels and is an upper bound.",
+ "sonnet": [
+  ["What it is", "One Claude Sonnet 5.5 sub-agent, given only the 15 images under neutral names, with the truth folders unreadable while it ran and every tool call checked afterwards. It looked at each image once and wrote the values: 134 s for all 15."],
+  ["What it got", "9 of 10 data charts usable, none misleading, all five figures without data declined. It returned 290 of 560 values and 289 are within 5 % of the axis. What it left out it said it left out: the raw dots of the line chart and four of six rating levels of the stacked bars."],
+  ["Is that precision real?", "Checked. Two charts drawn from random numbers that exist nowhere else, read by a fresh Sonnet agent with nothing but its eyes: all 27 values within 0.3 % of the axis. It is the model's reading, not memory of the papers."],
+  ["What it is not", "A candidate. The figures would leave the machine, which the design rules out for unpublished or clinical papers. It marks how far a look at the image can go, and so how much the local models still leave on the table."]
+ ],
+ "findings": [
+  ["Printed numbers are now safe", "All three models return every printed value exactly: the 12 bar counts, the 15 AUROC values, the pie percentages, the interval bounds. In round 1 most models ignored or misread the AUROC values."],
+  ["Bars are right, thin marks scatter", "Bar heights are exact once the engine follows the fill to its end. Box medians, interval centres and line points have nothing to snap to and come back approximately right: within a few percent, sometimes not."],
+  ["Dense stacked bars are out of reach", "264 segments in three panels. Gemma sees each panel at about 270 image tokens and returns a fraction, with values above 100 on a 0 to 100 axis. Every local run is wrong here."],
+  ["Vector charts keep machine names", "On the one vector figure the bars are right to 0.005 but the series is called by its hex colour, half the bars are missing and tick labels are cut short. The numbers are there; a reader could not key them. This figure and the stacked bars are six of the seven misleading verdicts."]
+ ],
+ "limits": [
+  ["Tuned on the test set", "The engine was changed while looking at these 15 figures and then scored on them. The causes fixed are general, but the size of the gain will be smaller on other papers. The next round needs figures the engine has not seen."],
+  ["Small set, one judge per run", "Ten data charts: one figure is ten points. Each run was judged once, by a fresh agent that saw neither the other runs nor round 1."],
+  ["Automatic scores still mislead", "The scorer pairs by name, so right numbers under another label count as zero. It gives Sonnet 95 of 560. The verdicts are the judges'."],
+  ["Gemma is held to 270 tokens an image", "That is this Ollama version, not the model. Newer versions pick a larger budget for larger images. Not installed: it replaces the system service and is the maintainer's call."]
+ ],
+ "next": [
+  ["Build the step", "Figure-to-data as its own step of the conversion: capture the figure at high resolution and keep it, read it, write the result into every export, run per PDF or once at the end of a batch. The design is written; it is the fourth config, default-plusFigData."],
+  ["Then the two known gaps", "Cut dense panels into bands of rows so stacked bars get enough detail, and snap thin marks to pixels the way bars are."],
+  ["Decide on Ollama", "After an upgrade, re-measure the image tokens and rerun one model. If Gemma gets four times the detail per image, several of the remaining failures may go with it."],
+  ["Test on new figures", "A third round on figures from other papers, before any number from this bench is quoted outside it."]
+ ]
+}

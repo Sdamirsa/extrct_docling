@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 18,
+    "bbox": [
+      55.96,
+      53.0,
+      292.86,
+      337.04
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Seven stacked ECG traces of the same window (ground truth and six models) with shaded spans marking each model's localized abnormal region (a PAC), shown qualitatively with no numeric values.",
+  "uncertain": [
+    "not a data chart: Seven stacked ECG traces of the same window (ground truth and six models) with shaded spans marking each model's localized abnormal region (a PAC), shown qualitatively with no numeric values.",
+    "ECG waveforms: raw signal traces with no axes or values, not tabulated.",
+    "Shaded spans (ground truth, Cardiologent, and baselines): positions are shown only visually, with no printed numbers, so no span boundaries or IoU/MCC values were recorded."
+  ]
+}

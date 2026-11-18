@@ -1,0 +1,185 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "16.8%"
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "40.2%"
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "30.8%"
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "8.4%"
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "3.7%"
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "2",
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "15.9%"
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.4%"
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.7%"
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "12.1%"
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "2.8%"
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "3",
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": "Saved more than 50% of my time",
+     "x": null,
+     "series": null,
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "23.4%"
+    },
+    {
+     "category": "Saved more than 10% of my time",
+     "x": null,
+     "series": null,
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "27.1%"
+    },
+    {
+     "category": "Not sure",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "30.8%"
+    },
+    {
+     "category": "Delayed me by more than 10%",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "15.9%"
+    },
+    {
+     "category": "Delayed me by more than 50%",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "2.8%"
+    }
+   ],
+   "box": null,
+   "notes": []
+  }
+ ],
+ "description": "Three pie charts show the distribution of clinician responses on whether the AI helped their assessment, made them more confident, and saved them time.",
+ "has_data": true,
+ "not_read": [],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 3
+}

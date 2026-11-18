@@ -1,0 +1,13 @@
+{
+ "panels": [],
+ "description": "Seven ECG traces of window 4925_w0099 (ground-truth PAC), one per row (GT, Cardiologent, and five baseline models), each with a shaded span marking the localized abnormal region. It has no numeric values.",
+ "has_data": false,
+ "not_read": [
+  "Shaded span extents per row (GT and Cardiologent mark a short span at the right end, the baselines mark nearly the whole window): qualitative, not given as numbers, so not recorded.",
+  "ECG waveform traces: raw signal traces, not tabulated."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

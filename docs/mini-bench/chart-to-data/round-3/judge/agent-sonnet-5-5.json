@@ -1,0 +1,146 @@
+{
+ "model": "agent-sonnet-5-5",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-18",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (deployment schematic); the run returned no panels with 'not a data chart: A two-stage deployment diagram ...' in `uncertain`."
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (pipeline diagram); the run returned no panels with 'not a data chart: Schematic of the Cardiologent multi-agent framework ...' and named the small green ECG trace as a signal illustration without axes."
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 3 centres within 1 % of the 0.35-0.95 axis (0.67 / 0.74 / 0.66 vs truth 0.674 / 0.741 / 0.666) and all 6 printed CI bounds exact (0.52-0.79, 0.60-0.84, 0.51-0.78). Series F1 0.0 is only the truth's convention of naming the single unlabelled series after the y axis; the figure prints no legend and the run left the series unnamed."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (encoder schematic); the run returned no panels and explicitly declined the bait: 'The 0.183 and 0.15 values in the example answer are quoted text, not chart data.'"
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (seven ECG traces with shaded spans); the run returned no panels with 'not a data chart: Seven ECG traces ... It has no numeric values' and did not turn the span extents into numbers."
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "12 of 12 printed counts exact with the right series and category (CHF 13 / 6 / 299 / 102, AKI 25 / 25 / 255 / 115, Sepsis 25 / 26 / 283 / 86); the four legend entries are verbatim apart from the cross glyph (U+2715 for U+00D7), which still pairs."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "SERIES_NAMES"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "Half the truth is missing: the 90 raw dots (30 per panel) were not returned, declared in `uncertain` ('Faint raw scatter dots behind each smoothed line ... not recorded'). The 90 smoothed-line values are all right when paired by x index (max error 1.1 % of the axis, mean 0.2 %; e.g. Accuracy Reward x=20 2.45 vs 2.448, Completion Length x=18 282.5 vs 282.5), and the scorer's 0 matched / 180 missing / 90 extra is a name mismatch only: 'Smoothed accuracy reward' for 'Accuracy Reward' (no series name is printed in the figure)."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "15 of 15 printed AUROC values exact in the right panel and EF class (e.g. EchoAgent 98.43 / 87.79 / 93.88, MemSAM 91.56 / 56.28 / 80.46); the untraced ROC curves are declared and are not in the truth either."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 5 centres within 0.002 axis units of truth (-0.15 / 0.36 / -0.84 / -0.35 / 0.72 vs -0.152 / 0.360 / -0.840 / -0.352 / 0.720) and all 10 CI bounds within 0.005 (e.g. Completeness -1.36 to -0.33 vs -1.356 to -0.325). The series is unnamed (no legend in the figure) and the x range is given as -1.5..1.5 for a frame that starts at -1.6; neither changes a value."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "4 of 30 medians are null, declared in `uncertain` ('could not be told apart from box edges'): Qualitative Stroke/TIA RiskAgent-8B / GPT-4o / o3-mini (truth 73.25 / 59.13 / 57.72) and Qualitative Cardiac RiskAgent-8B (truth 71.79); their whiskers and quartiles are present and right. The other 26 medians are within 2.1 % of the axis (worst: Qualitative Shortness of Breath GPT-4o 52.3 vs 51.57, a mid-box guess where the median lies on the box edge) and all 60 whisker ends within 0.9 %."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "12 of 12 bar heights within 0.3 % of the 0.2-0.9 axis in four correctly titled panels (e.g. Top-1 Explanation 0.48 / 0.63 / 0.795 vs 0.479 / 0.628 / 0.797; Top-3 Explanation 0.533 / 0.55 / 0.675 vs 0.534 / 0.551 / 0.676). Series F1 0.0 is the truth naming the unlabelled series 'Accuracy'; the figure has no legend."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (inference flow schematic); the run returned no panels with 'not a data chart: A workflow diagram of the AgentMD pipeline ...' and left the worked example's numbers (score 0, mortality 0.7%) unrecorded as 'illustrative text in a diagram'."
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "correct",
+   "error_types": ["GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 264 segments returned with the truth's categories and series, 262 within 2 points and 264 within 5 points of the 0-100 axis (mean error 0.15 points). The error is scatter confined to the thin hatched tail, where the Unfavorable / Very unfavorable boundary is misplaced while the pair's sum stays right: Showing Empathy - PCP 9.5 / 7.4 vs truth 12.0 / 4.67, Addressing Patient Concerns - PCP 5.4 / 3.3 vs 7.0 / 1.67, and 10 classes that are 0 in truth carry slivers of 0.1-1.1 (Appearing Honest And Trustworthy - PCP 'Very unfavorable' 1.1 vs 0); the run declared this uncertainty."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE", "GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 24 values are within 1.3 % of their axis when paired by category, but the saved box of panel (a) spans the whole figure (bbox_px [2, 1, 566, 130] vs truth [0, 0, 280, 131], with panel (b)'s x ticks ACC..FFB attached), so the scorer leaves it unpaired and counts its 8 right medians (e.g. GPT-4o 0.09 vs 0.0904, BioGPT-Large 0.127 vs 0.1269) as 8 missing plus 8 extra. Panel (b) carries a constant offset of +0.02 to +0.05 on 14 of 16 bars (Multi-agent 4.45 / 4.55 / 4.75 / 4.95 vs truth 4.4 / 4.5 / 4.7 / 4.9), at most 1.25 % of the 1-5 axis."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "15 of 15 printed slice percentages exact with the right legend entry in three correctly titled pies (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8), including the two near-identical 'Saved more than 50% / 10%' and 'Delayed me by more than 10% / 50%' pairs."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 8,
+   "partial": 2,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 5,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "MISSING_VALUES": 2,
+   "GEOMETRY_MISMEASURED": 2,
+   "SERIES_NAMES": 1,
+   "PANEL_STRUCTURE": 1
+  },
+  "usable_figures": 15,
+  "dominant_failure": "MISSING_VALUES",
+  "assessment": "This run returned no wrong number of consequence: all 5 figures without data were declined with a stated reason, all 42 printed values (B1, B3, C5) are exact, and every value read from geometry that it returned is within 2.7 % of its axis range, most far closer (B2's 90 line points average 0.2 %, C3's 264 stacked segments 0.15 points, C1's bars 0.3 %). Its typical failure is omission, not misreading, and it says so in `uncertain`: it skipped the 90 raw dots behind B2's lines and nulled 4 of B5's 30 medians where the median line lies on a box edge. The remaining measurement error is small and local: the boundary between the two hatched classes of C3's stacked bars (up to 2.7 points, with 0.1-1.1 point slivers in classes that are empty) and a constant +0.05 on C4's bars. The two large penalties in the automatic score are not value errors: B2's series are named 'Smoothed ...' instead of the panel title, and the saved box of C4's panel (a) spans the whole figure, so correct values count as missing plus extra. It can be trusted on every chart kind in this set (printed-label bars and pies, plain bars, interval and forest plots, lines, box plots, stacked bars), provided a consumer reads `uncertain` for what was left out and treats sub-point stacked slivers and edge-coincident box medians as approximate."
+ }
+}

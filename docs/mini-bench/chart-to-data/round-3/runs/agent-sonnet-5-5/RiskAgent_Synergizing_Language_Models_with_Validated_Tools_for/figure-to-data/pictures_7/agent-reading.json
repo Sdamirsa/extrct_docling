@@ -1,0 +1,556 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "a. MedRisk-Qualitative - Stroke/TIA",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Stroke/TIA",
+    "unit": null,
+    "scale": "linear",
+    "min": 52.0,
+    "max": 80.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": null,
+     "err_lo": 71.2,
+     "err_hi": 76.8,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": null,
+     "err_lo": 57.7,
+     "err_hi": 59.8,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": null,
+     "err_lo": 57.0,
+     "err_hi": 57.7,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Median line not distinguishable (coincides with a box edge), so null. Q1/Q3: RA 73.3/76.1; GPT-4o 57.7/59.1; o3-mini 57.0/57.7. Outliers: GPT-4o 54.9; o3-mini 63.4. Values estimated from the axis."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "a. MedRisk-Qualitative - Shortness of Breath",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Shortness of Breath",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 77.2,
+     "err_lo": 75.3,
+     "err_hi": 78.2,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 52.3,
+     "err_lo": 51.2,
+     "err_hi": 53.7,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 53.4,
+     "err_lo": 52.8,
+     "err_hi": 53.7,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 76.0/77.5; GPT-4o 51.5/53.2; o3-mini 53.1/53.7. Outlier: o3-mini 55.0."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "a. MedRisk-Qualitative - Internal Medicine",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Internal Medicine",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 78.2,
+     "err_lo": 77.8,
+     "err_hi": 78.6,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 50.0,
+     "err_lo": 49.8,
+     "err_hi": 50.1,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.0,
+     "err_lo": 51.3,
+     "err_hi": 53.0,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 77.8/78.5; o3-mini 51.8/52.5. Outliers: RA 79.3 and 77.0; GPT-4o 50.3."
+   ]
+  },
+  {
+   "id": "4",
+   "title": "a. MedRisk-Qualitative - Cardiac",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Cardiac",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": null,
+     "err_lo": 70.7,
+     "err_hi": 72.7,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 53.6,
+     "err_lo": 52.1,
+     "err_hi": 54.4,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.1,
+     "err_lo": 51.8,
+     "err_hi": 54.4,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 70.7/71.8 (median not distinguishable); GPT-4o 52.1/54.0; o3-mini 51.8/52.9."
+   ]
+  },
+  {
+   "id": "5",
+   "title": "a. MedRisk-Qualitative - Overall",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Overall",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 78.2,
+     "err_lo": 77.9,
+     "err_hi": 78.9,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 50.6,
+     "err_lo": 50.5,
+     "err_hi": 50.7,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.5,
+     "err_lo": 51.7,
+     "err_hi": 53.2,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 78.0/78.7; o3-mini 52.0/53.1. Outlier: GPT-4o 51.0."
+   ]
+  },
+  {
+   "id": "6",
+   "title": "b. MedRisk-Quantitative - Stroke/TIA",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Stroke/TIA",
+    "unit": null,
+    "scale": "linear",
+    "min": 20.0,
+    "max": 85.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 77.8,
+     "err_lo": 77.5,
+     "err_hi": 78.3,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 30.2,
+     "err_lo": 28.1,
+     "err_hi": 32.3,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 54.4,
+     "err_lo": 47.9,
+     "err_hi": 55.0,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Q1/Q3: RA 77.5/78.3; GPT-4o 28.8/32.3; o3-mini 47.9/55.0. Outliers: RA 80.4 and 75.4; GPT-4o 38.7."
+   ]
+  },
+  {
+   "id": "7",
+   "title": "b. MedRisk-Quantitative - Shortness of Breath",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Shortness of Breath",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 76.0,
+     "err_lo": 76.0,
+     "err_hi": 76.0,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 35.2,
+     "err_lo": 34.4,
+     "err_hi": 36.6,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 59.3,
+     "err_lo": 57.8,
+     "err_hi": 60.3,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. RA box collapsed to a line at ~76; outliers 76.6 and 75.6. Q1/Q3: GPT-4o 34.8/36.3; o3-mini 58.5/60.0."
+   ]
+  },
+  {
+   "id": "8",
+   "title": "b. MedRisk-Quantitative - Internal Medicine",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Internal Medicine",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 75.3,
+     "err_lo": 74.8,
+     "err_hi": 77.1,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 39.4,
+     "err_lo": 39.2,
+     "err_hi": 39.6,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 55.1,
+     "err_lo": 54.5,
+     "err_hi": 56.7,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 75.0/76.0; o3-mini 54.8/56.5. Outliers: GPT-4o 40.2 and 38.7."
+   ]
+  },
+  {
+   "id": "9",
+   "title": "b. MedRisk-Quantitative - Cardiac",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Cardiac",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 70.6,
+     "err_lo": 69.2,
+     "err_hi": 71.8,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 38.1,
+     "err_lo": 37.8,
+     "err_hi": 42.8,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 60.3,
+     "err_lo": 56.7,
+     "err_hi": 67.6,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 70.0/71.0; GPT-4o 37.8/40.8; o3-mini 57.1/66.8."
+   ]
+  },
+  {
+   "id": "10",
+   "title": "b. MedRisk-Quantitative - Overall",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Overall",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 76.4,
+     "err_lo": 75.4,
+     "err_hi": 77.4,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 38.3,
+     "err_lo": 38.2,
+     "err_hi": 38.4,
+     "label": null
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 55.8,
+     "err_lo": 54.6,
+     "err_hi": 57.3,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Estimated from overview. Q1/Q3: RA 76.0/77.0; o3-mini 55.2/56.9. Outliers: GPT-4o 39.8 and 37.4."
+   ]
+  }
+ ],
+ "description": "Ten box plots (five risk categories × MedRisk-Qualitative and MedRisk-Quantitative) compare RiskAgent-8B, GPT-4o and o3-mini performance across runs.",
+ "has_data": true,
+ "not_read": [
+  "Charts 1 and 4: medians for RiskAgent-8B (and GPT-4o and o3-mini in chart 1) could not be told apart from box edges, so they are null.",
+  "Charts 2, 3, 5 and 7-10 were read from the overview image, not enlarged, so values are approximate (about ±0.3 on the 50-80 axes, about ±0.5 on the wider ones).",
+  "Quartiles and outliers are given in the chart notes, not as points.",
+  "Collapsed boxes (RiskAgent-8B in chart 7, GPT-4o in charts 3, 5, 8 and 10) have whiskers near the median; the small whisker differences are approximate."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 2,
+ "records": 10
+}

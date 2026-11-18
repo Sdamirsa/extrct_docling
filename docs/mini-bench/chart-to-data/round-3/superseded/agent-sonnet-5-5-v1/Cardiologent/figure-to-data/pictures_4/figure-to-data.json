@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Architecture diagram of a Stage 1 time series encoder-decoder pipeline feeding an ECG/PPG prompt template, CLIP vision encoder and Llama-7B, with no plotted data values.",
+  "uncertain": [
+    "not a data chart: Architecture diagram of a Stage 1 time series encoder-decoder pipeline feeding an ECG/PPG prompt template, CLIP vision encoder and Llama-7B, with no plotted data values.",
+    "Diagram blocks, colored token boxes, prompt template text, example answer text and the ECG trace with R-peak markers: no data values, so nothing was recorded."
+  ]
+}

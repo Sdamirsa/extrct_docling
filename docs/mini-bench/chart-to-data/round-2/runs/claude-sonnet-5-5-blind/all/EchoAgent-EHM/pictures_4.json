@@ -1,0 +1,457 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "EchoAgent-EHM",
+  "self_ref": "#/pictures/4",
+  "image_path": "images/picture_005.png",
+  "page": 6,
+  "bbox": [
+   317.4940490722656,
+   552.1538238525391,
+   552.2154541015625,
+   394.27459716796875
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    115.4,
+    115.4
+   ],
+   "title": "OnimiaNet",
+   "kind": "line",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": "1 - Specificity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    },
+    "y": {
+     "name": "Sensitivity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "EF<40%",
+     "color": "pink"
+    },
+    {
+     "name": "40%≤EF<50%",
+     "color": "dark blue"
+    },
+    {
+     "name": "EF≥50%",
+     "color": "teal"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": null,
+     "series": "EF<40%",
+     "value": 87.97,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "87.97",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "40%≤EF<50%",
+     "value": 65.74,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "65.74",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "EF≥50%",
+     "value": 76.77,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "76.77",
+     "source": "printed",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "ROC curves not traced; value = printed AUROC in percent."
+   ]
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    120.3,
+    0.0,
+    235.6,
+    115.4
+   ],
+   "title": "H2former",
+   "kind": "line",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": "1 - Specificity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    },
+    "y": {
+     "name": "Sensitivity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "EF<40%",
+     "color": "pink"
+    },
+    {
+     "name": "40%≤EF<50%",
+     "color": "dark blue"
+    },
+    {
+     "name": "EF≥50%",
+     "color": "teal"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": null,
+     "series": "EF<40%",
+     "value": 89.81,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "89.81",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "40%≤EF<50%",
+     "value": 77.99,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "77.99",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "EF≥50%",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "76.00",
+     "source": "printed",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "ROC curves not traced; value = printed AUROC in percent."
+   ]
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    0.0,
+    120.3,
+    115.4,
+    235.6
+   ],
+   "title": "MemSAM",
+   "kind": "line",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": "1 - Specificity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    },
+    "y": {
+     "name": "Sensitivity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "EF<40%",
+     "color": "pink"
+    },
+    {
+     "name": "40%≤EF<50%",
+     "color": "dark blue"
+    },
+    {
+     "name": "EF≥50%",
+     "color": "teal"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": null,
+     "series": "EF<40%",
+     "value": 91.56,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "91.56",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "40%≤EF<50%",
+     "value": 56.28,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "56.28",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "EF≥50%",
+     "value": 80.46,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "80.46",
+     "source": "printed",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "ROC curves not traced; value = printed AUROC in percent."
+   ]
+  },
+  {
+   "id": "4",
+   "bbox_px": [
+    120.3,
+    120.3,
+    235.6,
+    235.6
+   ],
+   "title": "EchoONE",
+   "kind": "line",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": "1 - Specificity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    },
+    "y": {
+     "name": "Sensitivity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "EF<40%",
+     "color": "pink"
+    },
+    {
+     "name": "40%≤EF<50%",
+     "color": "dark blue"
+    },
+    {
+     "name": "EF≥50%",
+     "color": "teal"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": null,
+     "series": "EF<40%",
+     "value": 93.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "93.79",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "40%≤EF<50%",
+     "value": 65.68,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "65.68",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "EF≥50%",
+     "value": 85.56,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "85.56",
+     "source": "printed",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "ROC curves not traced; value = printed AUROC in percent."
+   ]
+  },
+  {
+   "id": "5",
+   "bbox_px": [
+    238.1,
+    49.1,
+    351.0,
+    171.8
+   ],
+   "title": "EchoAgent",
+   "kind": "line",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": "1 - Specificity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    },
+    "y": {
+     "name": "Sensitivity",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      1.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "EF<40%",
+     "color": "pink"
+    },
+    {
+     "name": "40%≤EF<50%",
+     "color": "dark blue"
+    },
+    {
+     "name": "EF≥50%",
+     "color": "teal"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": null,
+     "series": "EF<40%",
+     "value": 98.43,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "98.43",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "40%≤EF<50%",
+     "value": 87.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "87.79",
+     "source": "printed",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "EF≥50%",
+     "value": 93.88,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "93.88",
+     "source": "printed",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "ROC curves not traced; value = printed AUROC in percent."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "ROC curves themselves not digitised."
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Diagram illustrating the two-stage deployment scenario of Cardiologent, showing daily wearable PPG monitoring (Stage 1) and in-hospital PPG and ECG monitoring (Stage 2) with agent diagnostic text excerpts.",
+  "uncertain": [
+    "not a data chart: Diagram illustrating the two-stage deployment scenario of Cardiologent, showing daily wearable PPG monitoring (Stage 1) and in-hospital PPG and ECG monitoring (Stage 2) with agent diagnostic text excerpts."
+  ]
+}

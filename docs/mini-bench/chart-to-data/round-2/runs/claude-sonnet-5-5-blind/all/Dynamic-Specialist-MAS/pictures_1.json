@@ -1,0 +1,209 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Dynamic-Specialist-MAS",
+  "self_ref": "#/pictures/1",
+  "image_path": "images/picture_002.png",
+  "page": 5,
+  "bbox": [
+   318.1546325683594,
+   708.6175155639648,
+   557.4949951171875,
+   571.7991180419922
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    16.8,
+    4.4,
+    357.7,
+    193.1
+   ],
+   "title": null,
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Clinical Problem",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": "Number of Cases",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.0,
+      350.0
+     ],
+     "ticks": null
+    }
+   },
+   "series": [
+    {
+     "name": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "color": "green"
+    },
+    {
+     "name": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "color": "red"
+    },
+    {
+     "name": "Both Correct (○)",
+     "color": "blue"
+    },
+    {
+     "name": "Both Incorrect (✕)",
+     "color": "yellow"
+    }
+   ],
+   "data": [
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 13.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "13",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 6.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "6",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 299.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "299",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 102.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "102",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 255.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "255",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 115.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "115",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 26.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "26",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 283.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "283",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 86.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "86",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": []
+}

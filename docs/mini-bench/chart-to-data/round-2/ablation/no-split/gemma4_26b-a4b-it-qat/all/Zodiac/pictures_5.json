@@ -1,0 +1,177 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "0.4 5",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "ACC",
+            "CPL",
+            "ORG",
+            "CPH",
+            "SCI",
+            "CNS",
+            "FFH",
+            "FFB"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": [
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#345b7d",
+          "color": "#345b7d"
+        }
+      ],
+      "data": [
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3373,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3479,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3689,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3899,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3373,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.036,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3479,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.3794,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "#345b7d",
+          "value": 0.4005,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

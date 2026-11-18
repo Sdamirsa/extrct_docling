@@ -1,0 +1,112 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 38.06,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 5.099,
+   "total_s": 5.098,
+   "load_s": 0.372,
+   "prompt_eval_s": 0.962,
+   "eval_s": 3.655,
+   "prompt_tokens": 1897,
+   "eval_tokens": 223,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 6.602,
+   "total_s": 6.601,
+   "load_s": 0.348,
+   "prompt_eval_s": 0.568,
+   "eval_s": 5.53,
+   "prompt_tokens": 1031,
+   "eval_tokens": 328,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "2",
+   "prompt": "grounded",
+   "wall_s": 6.564,
+   "total_s": 6.563,
+   "load_s": 0.431,
+   "prompt_eval_s": 0.584,
+   "eval_s": 5.423,
+   "prompt_tokens": 977,
+   "eval_tokens": 323,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "3",
+   "prompt": "grounded",
+   "wall_s": 6.764,
+   "total_s": 6.763,
+   "load_s": 0.42,
+   "prompt_eval_s": 0.586,
+   "eval_s": 5.622,
+   "prompt_tokens": 1030,
+   "eval_tokens": 324,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "4",
+   "prompt": "grounded",
+   "wall_s": 6.692,
+   "total_s": 6.691,
+   "load_s": 0.369,
+   "prompt_eval_s": 0.576,
+   "eval_s": 5.621,
+   "prompt_tokens": 1031,
+   "eval_tokens": 328,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "5",
+   "prompt": "grounded",
+   "wall_s": 6.278,
+   "total_s": 6.277,
+   "load_s": 0.321,
+   "prompt_eval_s": 0.573,
+   "eval_s": 5.262,
+   "prompt_tokens": 1031,
+   "eval_tokens": 314,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:46:28.311374429+01:00"
+  }
+ ],
+ "issues": [
+  "5 charts found by their tick labels"
+ ]
+}

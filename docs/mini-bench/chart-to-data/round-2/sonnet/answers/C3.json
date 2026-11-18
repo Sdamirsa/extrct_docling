@@ -1,0 +1,1091 @@
+{
+ "figure_id": "C3",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "GMCPQ",
+   "bbox_px": [
+    0,
+    0,
+    1600,
+    1600
+   ],
+   "title": "GMCPQ",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    }
+   },
+   "series": [
+    {
+     "name": "AMIE - Very favorable",
+     "color": "dark red"
+    },
+    {
+     "name": "AMIE - Favorable",
+     "color": "red"
+    },
+    {
+     "name": "PCP - Very favorable",
+     "color": "dark blue"
+    },
+    {
+     "name": "PCP - Favorable",
+     "color": "blue"
+    }
+   ],
+   "data": [
+    {
+     "category": "Being Polite",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 86.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Being Polite",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 12.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Being Polite",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 50.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Being Polite",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 29.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 75.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 20.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 40.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 31.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Listening to Patient",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 75.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Listening to Patient",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Listening to Patient",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 47.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Listening to Patient",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 33.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Assessesing Medical Condition",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 70.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Assessesing Medical Condition",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 23.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Assessesing Medical Condition",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 45.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Assessesing Medical Condition",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 31.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 71.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 23.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 27.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 68.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 24.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 35.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 27.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 66.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 22.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 63.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 13.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 46.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 22.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 63.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 17.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 45.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 24.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": null,
+     "series": "AMIE - Favorable (or Yes for Y/N)",
+     "value": 99.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": null,
+     "series": "PCP - Favorable (or Yes for Y/N)",
+     "value": 90.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": null,
+     "series": "AMIE - Favorable (or Yes for Y/N)",
+     "value": 98.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": null,
+     "series": "PCP - Favorable (or Yes for Y/N)",
+     "value": 81.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    }
+   ],
+   "notes": [
+    "N per row printed: 100,100,100,100,99,97,88,83,83,100,100; significance *** except ** for Patient Confident."
+   ]
+  },
+  {
+   "id": "MXEKF",
+   "bbox_px": [
+    1616,
+    0,
+    3200,
+    1600
+   ],
+   "title": "MXEKF",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    }
+   },
+   "series": [
+    {
+     "name": "AMIE - Very favorable",
+     "color": "dark red"
+    },
+    {
+     "name": "AMIE - Favorable",
+     "color": "red"
+    },
+    {
+     "name": "PCP - Very favorable",
+     "color": "dark blue"
+    },
+    {
+     "name": "PCP - Favorable",
+     "color": "blue"
+    }
+   ],
+   "data": [
+    {
+     "category": "Prioritization Of Preferences Constraints And Values",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 60.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Prioritization Of Preferences Constraints And Values",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 33.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Communication And Shared Decision Making",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 69.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Communication And Shared Decision Making",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 26.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Communication And Shared Decision Making",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 36.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Communication And Shared Decision Making",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 30.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 57.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Monitoring And Adjustment Of Management Plan",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 30.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 53.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 30.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 31.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Managing Interplay Of Competing Priorities",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 30.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 66.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 28.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 35.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Acting As Patient Teacher And Salesperson",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 30.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Relationship Fostering",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 62.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Relationship Fostering",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 31.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Relationship Fostering",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 31.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Relationship Fostering",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 29.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Organization Of The Clinical Encounter",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 66.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Organization Of The Clinical Encounter",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Organization Of The Clinical Encounter",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 40.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Organization Of The Clinical Encounter",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 30.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "N printed: 97,100,88,88,95,96,99."
+   ]
+  },
+  {
+   "id": "PACES",
+   "bbox_px": [
+    0,
+    1808,
+    1600,
+    2472
+   ],
+   "title": "PACES",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "% Consultations",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    }
+   },
+   "series": [
+    {
+     "name": "AMIE - Very favorable",
+     "color": "dark red"
+    },
+    {
+     "name": "AMIE - Favorable",
+     "color": "red"
+    },
+    {
+     "name": "PCP - Very favorable",
+     "color": "dark blue"
+    },
+    {
+     "name": "PCP - Favorable",
+     "color": "blue"
+    }
+   ],
+   "data": [
+    {
+     "category": "Addressing Patient Concerns",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 64.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Addressing Patient Concerns",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 31.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Addressing Patient Concerns",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 35.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Addressing Patient Concerns",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 33.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Understanding Patient Concerns",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 51.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Understanding Patient Concerns",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 38.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Understanding Patient Concerns",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Understanding Patient Concerns",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 28.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Showing Empathy",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 47.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Showing Empathy",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 47.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Showing Empathy",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 20.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Showing Empathy",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 35.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Maintaining Patient Welfare",
+     "x": null,
+     "series": "AMIE - Very favorable",
+     "value": 66.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Maintaining Patient Welfare",
+     "x": null,
+     "series": "AMIE - Favorable",
+     "value": 29.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "Maintaining Patient Welfare",
+     "x": null,
+     "series": "PCP - Very favorable",
+     "value": 41.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.6
+    },
+    {
+     "category": "Maintaining Patient Welfare",
+     "x": null,
+     "series": "PCP - Favorable",
+     "value": 33.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "N=100 for all rows."
+   ]
+  }
+ ],
+ "uncertain": [
+  "Only the two darkest/leading segments (Very favorable, Favorable) per bar recorded; the neither/unfavorable/very unfavorable/cannot-rate segments are not extracted.",
+  "Segment values read by eye from bar edges."
+ ],
+ "method": "Estimated segment edge positions by eye on the 0-100 axis and converted to segment widths."
+}

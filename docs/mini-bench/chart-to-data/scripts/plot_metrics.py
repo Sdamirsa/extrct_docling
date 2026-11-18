@@ -13,6 +13,7 @@ share of each figure's values each model got within 5 % of the axis range.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -20,7 +21,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-BENCH = Path(__file__).resolve().parents[1]
+BENCH = Path(__file__).resolve().parents[1] / os.environ.get("BENCH_ROUND", "")
 PLOTS = BENCH / "metrics" / "plots"
 # Okabe-Ito.
 BLUE, ORANGE, GREEN, VERMILLION, GREY = (

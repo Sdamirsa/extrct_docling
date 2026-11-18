@@ -1,0 +1,26 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": [
+    "not a data chart: A workflow diagram illustrating the process of tool selection, parameter extraction, and computation to predict a CURB-65 score and mortality risk."
+  ]
+}

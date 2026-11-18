@@ -1,0 +1,128 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": null,
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.0,
+            1.5
+          ],
+          "ticks": [
+            -1.0,
+            -0.5,
+            0.0,
+            0.5,
+            1.0,
+            1.5
+          ]
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Overall quality",
+            "Clarity",
+            "Completeness",
+            "Accuracy",
+            "Readability"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": null,
+          "series": null,
+          "value": -0.2752,
+          "err_lo": -0.88,
+          "err_hi": 0.42,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Clarity",
+          "x": null,
+          "series": null,
+          "value": 0.3398,
+          "err_lo": 0.05,
+          "err_hi": 0.65,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Completeness",
+          "x": null,
+          "series": null,
+          "value": -0.8119,
+          "err_lo": -1.38,
+          "err_hi": -0.32,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Accuracy",
+          "x": null,
+          "series": null,
+          "value": -0.3653,
+          "err_lo": -0.68,
+          "err_hi": -0.02,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Readability",
+          "x": null,
+          "series": null,
+          "value": 0.6532,
+          "err_lo": 0.15,
+          "err_hi": 1.25,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

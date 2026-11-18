@@ -1,0 +1,183 @@
+{
+ "model": "ollama-gemma4-26b-qat",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-18",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (two-box deployment schematic) and the run returned none, with the reason in `uncertain`: 'not a data chart: This figure is a workflow diagram illustrating a two-stage medical monitoring process ...'. The step numbers 1-5 of the diagram were not returned as data."
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (pipeline diagram) and the run returned none: 'not a data chart: This figure illustrates a multi-agent workflow for medical diagnosis, involving ECG and PPG specialists engaged in debates ...'. The diagram labels '7 tools', '9 tools', '9 class' and the small ECG trace were not turned into values."
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All three ICC centres are within 2 % of the 0.35-0.95 axis: 0.67 / 0.73 / 0.67 vs truth 0.674 / 0.741 / 0.666 (largest gap 0.011, Judge ↔ R1), and the six printed CI bounds are exact (0.52-0.79, 0.60-0.84, 0.51-0.78). Kind 'forest' for the truth's 'other' and the empty series name are the mismatches the truth notes call defensible, not data errors."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (encoder / reasoning-model schematic) and the run returned none: 'not a data chart: This figure illustrates a machine learning architecture for ECG/PPG signal analysis ...'. The 0.183 and 0.15 inside the quoted example answer and the unscaled ECG inset were not returned."
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (seven stacked ECG traces with shaded spans, no axes) and the run returned none: 'not a data chart: The figure compares several AI models' ECG waveform generation against a ground truth (GT) signal.' No trace was digitised."
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "correct",
+   "error_types": [
+    "OTHER"
+   ],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 12 printed counts are exact with the right series and categories (Congestive Heart Failure 13 / 6 / 299 / 102, Acute Kidney Injury 25 / 25 / 255 / 115, Sepsis 25 / 26 / 283 / 86). OTHER, cosmetic: the y range is recorded as [50, 350] (ticks 0 and 300 not read; truth [0, 350]), so the step's own check flagged the six correct values 13, 6, 25, 25, 25, 26 as 'outside the axis range' and cut their confidence to 0.7; legend glyphs ○ / × came back as ☐ / ✕ and the kind as 'bar'."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "partial",
+   "error_types": [
+    "MISSING_VALUES",
+    "CATEGORY_LABELS",
+    "GEOMETRY_MISMEASURED"
+   ],
+   "severity": 2,
+   "usable": false,
+   "evidence": "Each panel came back as one sequence with x null on all 81 values and 31 / 24 / 26 values where every panel has 30 points, so the scorer pairs 0 of 180: a keying failure, not 180 wrong numbers. The values follow the raw dots and the smoothed line's 90 values are not returned (Completion Length starts 210, 225, 244, 248, 271, 282 vs dots 209.1, 224.3, 244.5, 248.5, 271.0, 280.8 and line 209.2, 216.8, 234.5, 246.5, 259.8, 275.9); the reading is scatter, rounded to 0.1 (5 % of the Accuracy Reward axis) and slipping out of step (that panel's dips 1.486 at point 11 and 1.702 at point 18 appear as 1.5 at position 12 and 1.7 at position 20), so in order 72 of the 90 dots have a value within 5 %; nothing of this is declared in `uncertain`."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "correct",
+   "error_types": [
+    "OTHER"
+   ],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed AUROC values are exact in all five panels with the EF classes as printed (panel 3: 98.43 / 87.79 / 93.88; MemSAM 91.56 / 56.28 / 80.46; EchoONE 93.79 / 65.68 / 85.56). OTHER, cosmetic: panels 2 and 3 have title null where the figure prints the model names 'H2former' and 'EchoAgent', so those two tables carry no model name and must be identified by position."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "correct",
+   "error_types": [
+    "GEOMETRY_MISMEASURED",
+    "INTERVAL_BOUNDS"
+   ],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All five centres are within 5 % of the 3.1-wide axis but only three within 2 %: Overall quality -0.275 vs truth -0.152 (4.0 % of the range, the estimate nearly doubled) and Readability 0.653 vs 0.720 (2.2 %), against Clarity 0.340 vs 0.360, Completeness -0.812 vs -0.840, Accuracy -0.365 vs -0.352; the errors are scatter (-0.12, -0.02, +0.03, -0.01, -0.07), not an offset. CI bounds are within 0.06 except Overall quality's upper bound 0.42 vs 0.561 (4.5 %), which puts that centre off the middle of its own interval; no interval changes side of zero."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "partial",
+   "error_types": [
+    "GEOMETRY_MISMEASURED",
+    "INTERVAL_BOUNDS"
+   ],
+   "severity": 2,
+   "usable": false,
+   "evidence": "23 of 30 medians are within 5 % of their panel's axis and 13 within 2 %; the misses are scatter, with values snapped to whole numbers or tick values: b2 RiskAgent-8B 79.98 vs truth 75.97 (8.0 %), b4 o3-mini 63.0 vs 60.25 (6.9 %), b2 o3-mini 62.0 vs 58.54 (6.9 %), a5 RiskAgent-8B 80.00 vs 78.08 (5.5 %), a3 GPT-4o 52.0 vs 50.18 (5.2 %); the two others (a1 RiskAgent-8B 75.01 vs 73.25, a1 GPT-4o 57.59 vs 59.13) lie inside boxes where the truth says the median is not drawn separately. Whisker ends are unusable: null for 16 boxes, lo = hi (one point, not an interval) for 10 more, and in panel 1 not even around the median ([72.34, 72.34] for 75.01, truth 71.12-76.77); only four boxes carry two distinct ends and one of those is close (b2 GPT-4o [33.44, 35.82] vs [34.45, 36.66])."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [
+    "OTHER"
+   ],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 12 bar heights are within 0.3 % of the 0.2-0.9 axis with the four panel titles and the categories right (Top-1 Diagnosis 0.5818 / 0.6909 / 0.8416 vs truth 0.580 / 0.690 / 0.840; largest gap Top-3 Diagnosis Expert 0.6519 vs 0.650). OTHER, cosmetic: the y range is recorded as [0.2, 0.8] (last tick label; the spine reaches 0.9), so the step's own check flagged the correct 0.8416 as 'outside the axis range' and cut its confidence to 0.55."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (inference flow schematic) and the run returned none: 'not a data chart: This figure is a workflow diagram illustrating the process of using the RiskCalcs tool to calculate a CURB-65 score from extracted patient parameters to predict mortality.' The worked example's numbers (respiratory_rate 28, Score: 0, Mortality: 0.7%) were not returned."
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "wrong",
+   "error_types": [
+    "AXIS_CALIBRATION",
+    "GEOMETRY_MISMEASURED",
+    "SERIES_NAMES",
+    "MISSING_VALUES",
+    "PANEL_STRUCTURE"
+   ],
+   "severity": 3,
+   "usable": false,
+   "evidence": "None of the 264 segment shares came back: the run returned 58 numbers (43 / 7 / 8 per panel), 45 of them above 100 on a 0-100 % axis and none tied to a rating level (Making Patient Feel At Ease: 122.0, 112.4, 107.3, 90.1 where the AMIE bar is 76.0 / 20.0 / 3.33 / 0.33 / 0 / 0.33; Showing Empathy 'AMIE (top)' 182.3; panels 1-2 have no series, panel 3 uses the legend's 'AMIE (top)' / 'PCP (bottom)'). The run's overlay shows the panel-1 pointers on the '***' / 'N=' annotations right of the bars (not on segment ends: scatter, neither an offset nor a scale factor) and the panel-2 pointer for 'Prioritization Of Preferences ...' at about 63 % of the axis while 165.96 was returned; the x range is recorded as [20, 100] (tick 0 missed) and panel 3's box runs to 604 px, taking in the legend (truth 324 px); the step's own checks raised 61 issues and every value has confidence <= 0.55, but `uncertain` is empty."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "partial",
+   "error_types": [
+    "WRONG_KIND",
+    "MISSING_VALUES",
+    "SERIES_NAMES",
+    "CATEGORY_LABELS",
+    "INTERVAL_BOUNDS",
+    "INVENTED_VALUES"
+   ],
+   "severity": 3,
+   "usable": false,
+   "evidence": "The scorer's 0 of 24 is partly a naming mismatch: panel b's eight 'Multi-agent (this work)' bars are right to 0.005 (ACC 4.3964 vs 4.40, FFH 4.7958 vs 4.80, FFB 4.9955 vs 5.00) but stand under the series name '#345b7d', while the eight 'Signle-agent' bars (4.18, 4.46, 4.30, ...) are missing and CNS carries an invented second value 1.5375. Panel a, a box plot, came back as kind 'line', series '#000000', with five outline vertices per box at confidence 0.9 ('-Pro' 0.0042, 0.0105, 0.0493, 0.0881, 0.103 = Gemini-Pro's Q1, notch, median 0.0501, notch, Q3 0.1035), the median unmarked, no whisker ends, ZODIAC and GPT-4o absent and the tick labels truncated to '-Pro', '-405B', '-8x22B', '-Large', '-70B', '-70B' (Meditron-70B and Med42-70B indistinguishable); the panel titles are tick labels ('0.4', '5')."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "correct",
+   "error_types": [
+    "OTHER"
+   ],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed percentages are exact with their legend labels (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8). OTHER, cosmetic: the three panel titles have their words out of order ('Did the AI help assessment? your', 'Did the make confident? AI you more', 'Did the AI save time? you')."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 6,
+   "partial": 3,
+   "wrong": 1,
+   "missed": 0,
+   "true_negative": 5,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "GEOMETRY_MISMEASURED": 4,
+   "OTHER": 4,
+   "INTERVAL_BOUNDS": 3,
+   "MISSING_VALUES": 3,
+   "CATEGORY_LABELS": 2,
+   "SERIES_NAMES": 2,
+   "AXIS_CALIBRATION": 1,
+   "INVENTED_VALUES": 1,
+   "PANEL_STRUCTURE": 1,
+   "WRONG_KIND": 1
+  },
+  "usable_figures": 11,
+  "dominant_failure": "GEOMETRY_MISMEASURED",
+  "assessment": "The run never invents data for a non-chart (all five diagrams and ECG traces declined with a one-line reason) and it transcribes printed numbers without a single error (B1 12 of 12, B3 15 of 15, C5 15 of 15); simple charts with a handful of marks per panel are also read well (C1 12 bars within 0.3 % of the axis, A3 and B4 within tolerance). It fails where many values must be located on the marks: box medians snap to whole numbers or tick values and the whiskers are lost (B5: 7 of 30 medians beyond 5 %, whisker ends null or collapsed to one value in 26 of 30 boxes), a dense line chart comes back as an unkeyed, miscounted sequence of the raw dots without the smoothed line (B2), and the stacked bars of C3 yield 58 numbers of which 45 exceed 100 % and none is a segment share. The vector path of C4, used without a model reading, is geometrically exact but structurally wrong: box outline vertices returned as a 'line' series under truncated labels, colour codes for series names, and the white-filled series dropped. Labels and metadata are weak even on correct figures (panel titles missing or scrambled in B3 and C5; the axis range taken from the tick labels that were read, so correct values beyond the last tick are flagged in B1 and C1), and its own checks expose C3 (61 issues, all confidences <= 0.55) but not C4's box panel (confidence 0.9) or B2, with no partial reading declared in `uncertain`. Trust it on figures with printed values, pies, and simple bar or interval charts; do not take its numbers from box plots, stacked or multi-series bars or dense line charts. The 11 usable figures are the 6 correct data charts plus the 5 true negatives, and the 4 OTHER codes are cosmetic label or metadata defects."
+ }
+}

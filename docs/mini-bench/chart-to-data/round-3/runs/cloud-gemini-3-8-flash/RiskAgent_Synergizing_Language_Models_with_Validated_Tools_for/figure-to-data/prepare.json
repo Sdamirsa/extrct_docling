@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+  "pdf": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for.pdf",
+  "prepared_at": "2026-11-18T11:32:59",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/7"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/7",
+      "status": "prepared",
+      "folder": "pictures_7",
+      "reason": null,
+      "page": 15,
+      "figure_type": "box_plot",
+      "capture": "pdf-render",
+      "size_px": [
+        1488,
+        843
+      ],
+      "source_kind": "mixed",
+      "charts": 10,
+      "words": 122
+    }
+  ]
+}

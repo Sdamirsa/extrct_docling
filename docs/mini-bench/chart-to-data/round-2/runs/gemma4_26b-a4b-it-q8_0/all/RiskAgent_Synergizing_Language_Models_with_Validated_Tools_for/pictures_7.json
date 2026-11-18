@@ -1,0 +1,843 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "RiskAgent_Synergizing_Language_Models_with_Validated_Tools_for",
+    "self_ref": "#/pictures/7",
+    "image_path": "images/picture_008.png",
+    "page": 15,
+    "bbox": [
+      55.28,
+      69.2,
+      542.4,
+      345.04
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        3.4,
+        0.0,
+        141.5,
+        200.9
+      ],
+      "title": "a. MedRisk-Qualitative",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Stroke/TIA",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            55.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 58.5466,
+          "err_lo": 57.591,
+          "err_hi": 59.5022,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 62.6876,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: RiskAgent-8B"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        149.8,
+        15.7,
+        288.4,
+        200.9
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Shortness of Breath",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: RiskAgent-8B, GPT-4o, o3-mini"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        295.7,
+        15.7,
+        435.8,
+        200.9
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Internal Medicine",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 77.5749,
+          "err_lo": 77.5749,
+          "err_hi": 77.5749,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 49.9404,
+          "err_lo": 49.9404,
+          "err_hi": 49.9404,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: o3-mini"
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        443.6,
+        15.7,
+        582.6,
+        200.9
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Cardiac",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            70.0
+          ],
+          "ticks": [
+            70.0,
+            60.0,
+            50.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 71.4613,
+          "err_lo": 70.9266,
+          "err_hi": 71.9961,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 52.4777,
+          "err_lo": 51.9429,
+          "err_hi": 53.0124,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 52.344,
+          "err_lo": 51.8092,
+          "err_hi": 52.8787,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        592.0,
+        15.7,
+        729.0,
+        200.9
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Overall",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            50.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 78.6932,
+          "err_lo": 78.2066,
+          "err_hi": 79.1798,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 49.9459,
+          "err_lo": 49.9459,
+          "err_hi": 49.9459,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: o3-mini"
+      ]
+    },
+    {
+      "id": "6",
+      "bbox_px": [
+        2.9,
+        211.2,
+        148.4,
+        412.7
+      ],
+      "title": "b. MedRisk-Quantitative",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Stroke/TIA",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            70.0,
+            60.0,
+            50.0,
+            40.0,
+            30.0,
+            20.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 78.0894,
+          "err_lo": 78.0894,
+          "err_hi": 78.0894,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 31.8821,
+          "err_lo": 28.8521,
+          "err_hi": 34.9121,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 53.4708,
+          "err_lo": 48.547,
+          "err_hi": 54.607,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "7",
+      "bbox_px": [
+        151.3,
+        225.5,
+        288.4,
+        412.2
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Shortness of Breath",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            30.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            70.0,
+            60.0,
+            50.0,
+            40.0,
+            30.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 79.9779,
+          "err_lo": 79.9779,
+          "err_hi": 79.9779,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 35.0606,
+          "err_lo": 33.4429,
+          "err_hi": 36.6782,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 62.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: o3-mini"
+      ]
+    },
+    {
+      "id": "8",
+      "bbox_px": [
+        298.2,
+        227.0,
+        435.3,
+        412.2
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "03-mini"
+          ]
+        },
+        "y": {
+          "name": "Internal Medicine",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0,
+            45.0,
+            40.0,
+            35.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 75.2301,
+          "err_lo": 74.7235,
+          "err_hi": 75.7367,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 39.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 53.9516,
+          "err_lo": 53.4449,
+          "err_hi": 54.4582,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: GPT-4o"
+      ]
+    },
+    {
+      "id": "9",
+      "bbox_px": [
+        446.1,
+        226.0,
+        582.6,
+        412.7
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Cardiac",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            75.0
+          ],
+          "ticks": [
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0,
+            45.0,
+            40.0,
+            35.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 70.5715,
+          "err_lo": 69.7941,
+          "err_hi": 71.349,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 37.2291,
+          "err_lo": 35.9334,
+          "err_hi": 38.5248,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: o3-mini"
+      ]
+    },
+    {
+      "id": "10",
+      "bbox_px": [
+        592.5,
+        226.5,
+        729.0,
+        411.7
+      ],
+      "title": null,
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "RiskAgent-8B",
+            "GPT-40",
+            "o3-mini"
+          ]
+        },
+        "y": {
+          "name": "Overall",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            75.0,
+            70.0,
+            65.0,
+            60.0,
+            55.0,
+            50.0,
+            45.0,
+            40.0,
+            35.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "RiskAgent-8B",
+          "x": null,
+          "series": null,
+          "value": 76.7785,
+          "err_lo": 75.3322,
+          "err_hi": 78.2249,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 40.7267,
+          "err_lo": 40.191,
+          "err_hi": 41.2624,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "o3-mini",
+          "x": null,
+          "series": null,
+          "value": 56.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: o3-mini"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

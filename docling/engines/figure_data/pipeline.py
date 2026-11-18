@@ -1,11 +1,17 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
-"""Run one figure through ``simple`` or ``measured`` mode.
+"""The measured engine behind the ``ollama`` method: one figure through
+``simple`` or ``measured`` mode.
 
-``measured``, per panel: the vector reader when the figure is drawn with
-paths; otherwise one grounded VLM call whose pointed marks go through the
-panel's axis maps (bar ends snapped to pixel edges first), the model's own
+``measured``: the figure is split into its charts (:mod:`.panels`). Charts
+drawn with PDF paths are read by the vector reader. One overview call
+first says whether the figure holds data at all (a diagram or a signal
+trace is not read) and how many charts it sees:
+a figure with several charts that cannot be separated is not read, since a
+model given several charts in one image merges them. Each chart then gets
+one grounded VLM call on its own crop, whose pointed marks go through the
+chart's axis maps (bar ends snapped to pixel edges first), the model's own
 number kept where no axis map exists. Printed labels found among the
 figure's words then replace measured values, and :mod:`.verify` sets the
 confidence. ``simple``: one VLM call on the whole figure.
@@ -14,42 +20,39 @@ confidence. ``simple``: one VLM call on the whole figure.
 from __future__ import annotations
 
 import logging
-import tempfile
 import time
-from collections.abc import Callable
-from pathlib import Path
 
 import numpy as np
-from docling_core.types.doc import DoclingDocument
 from PIL import Image
 
-from docling.engines.figure_data.eligibility import is_eligible, rows_from_document
 from docling.engines.figure_data.evidence import (
     AxisMap,
-    BundleSource,
     PanelAxes,
-    build_job,
     find_axes,
     parse_number,
     words_in,
 )
-from docling.engines.figure_data.panels import PanelBox, split_panels
-from docling.engines.figure_data.publish import attach_results, write_figure_outputs
+from docling.engines.figure_data.panels import (
+    PanelBox,
+    PanelSplitResult,
+    background_colour,
+    split_panels,
+)
 from docling.engines.figure_data.readers.raster import refine_edge
 from docling.engines.figure_data.readers.vector import read_vector_panel
 from docling.engines.figure_data.readers.vlm import (
     GRID,
-    PANEL_BOXES_PROMPT,
     GroundedResponse,
     OllamaClient,
     OllamaError,
-    PanelBoxesResponse,
+    OverviewResponse,
     SimpleResponse,
     VlmAxis,
     VlmPanel,
     fit_image,
     grid_to_px,
     grounded_prompt,
+    overview_prompt,
     simple_prompt,
 )
 from docling.engines.figure_data.schema import (
@@ -78,87 +81,13 @@ from docling.engines.figure_data.verify import (
     pair_printed_labels,
     verify_panel,
 )
-from docling.engines.picture_filter import PictureNoiseFlag
 
 _log = logging.getLogger(__name__)
 
-FIGURE_DATA_DIRNAME = "figure_data"
 _BAR_KINDS = {"bar", "stacked_bar", "grouped_bar"}
 _XY_KINDS = {"line", "scatter", "kaplan_meier"}
 _SNAP_WINDOW = 0.04
-
-
-def eligible_refs(bundle: BundleSource, options: FigureDataOptions) -> list[str]:
-    return [ref for ref, row in bundle.rows.items() if is_eligible(row, options)]
-
-
-def read_bundle(
-    bundle: BundleSource,
-    refs: list[str],
-    options: FigureDataOptions,
-    *,
-    out_dir: Path,
-    client: OllamaClient | None,
-    work_dir: Path | None = None,
-    on_result: Callable[[FigureDataResult], None] | None = None,
-) -> list[FigureDataResult]:
-    """Read the figures *refs* of *bundle*; each record and overlay is
-    written to *out_dir* as soon as it is read, the work images to
-    *work_dir* (default *out_dir*)."""
-    results: list[FigureDataResult] = []
-    for ref in refs:
-        try:
-            job = build_job(
-                bundle, ref, work_dir=work_dir or out_dir, crop_dpi=options.crop_dpi
-            )
-        except ValueError as exc:
-            _log.warning("figure data: %s skipped: %s", ref, exc)
-            continue
-        result = read_figure(job, options, client)
-        if client is not None:
-            try:
-                result.ollama_ps = client.ps()
-            except OllamaError as exc:
-                result.issues.append(f"ollama ps failed: {exc}")
-        write_figure_outputs(result, job.crop_path, out_dir)
-        results.append(result)
-        if on_result is not None:
-            on_result(result)
-    return results
-
-
-def read_document(
-    doc: DoclingDocument,
-    pdf_dir: Path,
-    *,
-    picture_images: list[Path],
-    noise_flags: list[PictureNoiseFlag],
-    pdf_path: Path | None,
-    options: FigureDataOptions,
-) -> list[FigureDataResult]:
-    """The conversion-time stage: read the eligible figures of a document
-    whose crops are written, store the records under
-    ``<pdf_dir>/figure_data/`` and attach them to the pictures of *doc*."""
-    rows = rows_from_document(doc, pdf_dir, picture_images, noise_flags)
-    bundle = BundleSource(
-        dir=pdf_dir, doc=doc, rows={r.self_ref: r for r in rows}, pdf_path=pdf_path
-    )
-    client = OllamaClient(options.ollama_url, timeout_s=options.request_timeout_s)
-    # The work images (up to 3200 px renders) stay out of the bundle.
-    with tempfile.TemporaryDirectory(prefix="figure_data_") as work_dir:
-        try:
-            results = read_bundle(
-                bundle,
-                eligible_refs(bundle, options),
-                options,
-                out_dir=pdf_dir / FIGURE_DATA_DIRNAME,
-                client=client,
-                work_dir=Path(work_dir),
-            )
-        finally:
-            client.close()
-    attach_results(doc, results, min_confidence=options.min_confidence_for_markdown)
-    return results
+_POINTING_TOLERANCE = 0.05
 
 
 def read_figure(
@@ -187,13 +116,17 @@ def read_figure(
         panels=panels,
         labeler=Labeler(
             kind="engine",
-            name=f"extrct figure-data {options.mode} ({options.model})",
+            name=f"extrct figure-to-data ollama {options.mode} ({options.model})",
             date=time.strftime("%Y-%m-%d"),
         ),
+        description=reader.description,
+        uncertain=reader.uncertain,
     )
     return FigureDataResult(
         chart_data=chart,
         mode=options.mode,
+        method="ollama",
+        backend="ollama",
         model=options.model if client is not None else None,
         panel_split=reader.split_method,
         seconds=round(time.perf_counter() - started, 2),
@@ -212,8 +145,11 @@ class _Reader:
         self.client = client
         self.image = Image.open(job.image_path).convert("RGB")
         self.pixels = np.asarray(self.image)
+        self.background = background_colour(self.pixels)
         self.calls: list[CallTiming] = []
         self.issues: list[str] = []
+        self.uncertain: list[str] = []
+        self.description: str | None = None
         self.overlay: list[OverlayPoint] = []
         self.panel_regions: dict[str, Box] = {}
         self.split_method: str | None = None
@@ -278,12 +214,27 @@ class _Reader:
     # -- measured -------------------------------------------------------------
 
     def measured(self) -> list[Panel]:
+        mode = self.options.panel_split
         split = split_panels(
-            self.pixels,
-            self.job.words,
-            mode=self.options.panel_split,
-            box_reader=self._panel_boxes if self.client is not None else None,
+            self.pixels, self.job.words, mode="auto" if mode == "vlm" else mode
         )
+        drawn = {p.id: self._vector(p) for p in split.panels}
+        if self.client is not None:
+            overview = self._overview()
+            if overview is not None:
+                self.description = overview.description
+            if overview is not None and not overview.has_data:
+                self.uncertain.append(f"not a data chart: {overview.description}")
+                self.split_method = "overview"
+                return []
+            if overview is not None and mode != "gutters":
+                agreed = self._agree(split, overview)
+                if agreed is None:
+                    self.split_method = split.method
+                    return []
+                if agreed is not split:
+                    split = agreed
+                    drawn = {p.id: self._vector(p) for p in split.panels}
         self.split_method = split.method
         self.issues.extend(split.notes)
         inside = [w for p in split.panels for w in words_in(self.job.words, p.bbox)]
@@ -291,39 +242,75 @@ class _Reader:
         panels: list[Panel] = []
         for panel_box in split.panels:
             self.panel_regions[panel_box.id] = panel_box.bbox
-            panels.append(self._measure_panel(panel_box, shared))
+            panels.append(drawn[panel_box.id] or self._read_panel(panel_box, shared))
         return panels
 
-    def _panel_boxes(self) -> list[tuple[str, Box]]:
+    def _overview(self) -> OverviewResponse | None:
         assert self.client is not None
         full: Box = (0.0, 0.0, float(self.image.width), float(self.image.height))
         try:
             response, timing = self.client.chat_json(
-                PanelBoxesResponse,
+                OverviewResponse,
                 model=self.options.model,
-                prompt=PANEL_BOXES_PROMPT,
+                prompt=overview_prompt(self.job.words, full),
                 images=[fit_image(self.image, self.options.vlm_max_side_px)],
                 options=self._chat_options(0),
                 keep_alive=self.options.keep_alive,
-                label="panel_boxes",
+                label="overview",
+                deadline_s=self.options.time_budget_s_per_call,
             )
         except OllamaError as exc:
-            self.issues.append(f"panel boxes failed: {exc}")
-            return []
+            self.issues.append(f"overview failed: {exc}")
+            return None
         self.calls.append(timing)
-        return [(b.id, _grid_box(b.box, full)) for b in response.panels]
+        return response
 
-    def _measure_panel(self, panel_box: PanelBox, shared: list[str]) -> Panel:
+    def _agree(
+        self, split: PanelSplitResult, overview: OverviewResponse
+    ) -> PanelSplitResult | None:
+        """The split to read given the charts the model sees, or None when
+        the figure holds several charts that cannot be separated. Charts
+        found by their own tick labels stand whatever the model counts."""
+        full: Box = (0.0, 0.0, float(self.image.width), float(self.image.height))
+        seen, found = len(overview.charts), len(split.panels)
+        if self.options.panel_split == "vlm" and seen > 1:
+            boxes = [
+                PanelBox(id=f"{index + 1}", bbox=_grid_box(chart.box, full))
+                for index, chart in enumerate(overview.charts)
+            ]
+            return PanelSplitResult(panels=boxes, method="vlm")
+        if split.method == "axes" or seen == found:
+            if seen != found:
+                split.notes.append(f"the model sees {seen} chart(s)")
+            return split
+        if seen <= 1:
+            return PanelSplitResult(
+                panels=[PanelBox(id="1", bbox=full)],
+                method="single",
+                notes=[f"{found} blocks, one chart seen by the model: read whole"],
+            )
+        weak = split_panels(self.pixels, self.job.words, mode="auto", expect=seen)
+        if len(weak.panels) == seen:
+            return weak
+        self.uncertain.append(
+            f"not read: the model sees {seen} charts in this figure and the "
+            f"layout analysis separates {found}; one image of several charts "
+            "is not read reliably"
+        )
+        return None
+
+    def _vector(self, panel_box: PanelBox) -> Panel | None:
+        if self.job.source_kind not in ("vector", "mixed"):
+            return None
+        region = panel_box.bbox
+        axes = find_axes(words_in(self.job.words, region), region)
+        vector = read_vector_panel(self.job.marks, self.job.words, region, axes)
+        return self._from_vector(panel_box, vector, axes) if vector else None
+
+    def _read_panel(self, panel_box: PanelBox, shared: list[str]) -> Panel:
         region = panel_box.bbox
         words = words_in(self.job.words, region)
         axes = find_axes(words, region)
-        vector = (
-            read_vector_panel(self.job.marks, self.job.words, region, axes)
-            if self.job.source_kind in ("vector", "mixed")
-            else None
-        )
-        if vector is not None:
-            return self._from_vector(panel_box, vector, axes)
         grounded: list[GroundedResponse] = []
         if self.client is not None and not self._over_budget():
             for sample in range(self.options.samples):
@@ -363,11 +350,17 @@ class _Reader:
                 keep_alive=self.options.keep_alive,
                 label="grounded",
                 panel=panel_box.id,
+                deadline_s=self.options.time_budget_s_per_call,
             )
         except OllamaError as exc:
             self.issues.append(f"panel {panel_box.id}: grounded read failed: {exc}")
             return None
         self.calls.append(timing)
+        if timing.cut:
+            self.issues.append(
+                f"panel {panel_box.id}: reply cut at the time or length limit, "
+                f"{len(response.points)} points kept"
+            )
         return response
 
     def _from_grounded(
@@ -380,7 +373,20 @@ class _Reader:
         value_map = _numeric(axes.x if horizontal else axes.y)
         snap = g.kind in _BAR_KINDS and self.job.source_kind != "vector"
         data: list[Value] = []
+        disputed: list[str] = []
+        seen: set[str] = set()
         for point in g.points:
+            # One point per (category or x, series): a model caught in a
+            # loop writes the same point until the reply is cut.
+            named = point.category is not None or point.x is not None
+            written = (
+                f"{point.category}|{point.x}|{point.series}"
+                if named
+                else point.model_dump_json()
+            )
+            if written in seen:
+                continue
+            seen.add(written)
             px = grid_to_px(point.px, x0, width)
             py = grid_to_px(point.py, y0, height)
             value: float | None = None
@@ -417,6 +423,18 @@ class _Reader:
                         else far
                     )
                     basis = "raster_snapped" if snapped else "raster"
+                    span = value_map.value_range
+                    if (
+                        not snapped
+                        and point.value is not None
+                        and span is not None
+                        and abs(value - point.value)
+                        > _POINTING_TOLERANCE * (span[1] - span[0])
+                    ):
+                        # No pixel edge backs the pointed position, and the
+                        # model's own reading of the axis says otherwise.
+                        disputed.append(f"{point.category or point.x or '?'}")
+                        value = None
                 origin = x0 if horizontal else y0
                 size = width if horizontal else height
                 lo = grid_to_px(point.lo_pos, origin, size)
@@ -429,7 +447,7 @@ class _Reader:
                     )
                     if v is not None
                 ]
-                if len(ends) == 2:
+                if len(ends) == 2 and value is not None:
                     err_lo, err_hi = min(ends), max(ends)
             if value is None:
                 value = point.value
@@ -459,7 +477,7 @@ class _Reader:
                     value=_round(value),
                     err_lo=_round(err_lo),
                     err_hi=_round(err_hi),
-                    label_printed=point.label_printed,
+                    label_printed=point.label,
                     source="vlm" if basis == "vlm" else "raster",
                     confidence=BASE_CONFIDENCE[basis],
                 )
@@ -467,6 +485,11 @@ class _Reader:
         notes = []
         if value_map is None and g.kind != "pie":
             notes.append("no axis calibrated from tick labels; values are the model's")
+        if disputed:
+            notes.append(
+                "pointed position and read value disagree, read value kept: "
+                + ", ".join(disputed[:12])
+            )
         return Panel(
             id=panel_box.id,
             bbox_px=self.job.to_crop(region),
@@ -502,6 +525,7 @@ class _Reader:
             orientation,
             window=_SNAP_WINDOW * extent,
             inward=inward,
+            background=self.background,
         )
         return (edge, True) if edge is not None else (end, False)
 

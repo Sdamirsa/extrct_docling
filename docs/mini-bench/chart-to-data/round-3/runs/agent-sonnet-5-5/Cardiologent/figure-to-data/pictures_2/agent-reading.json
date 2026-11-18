@@ -1,0 +1,13 @@
+{
+ "panels": [],
+ "description": "Schematic of the Cardiologent multi-agent framework (ECG and PPG specialist agents, debate-based fusion, PubMed guideline retrieval, patient-level diagnosis) with no plotted data values.",
+ "has_data": false,
+ "not_read": [
+  "Whole figure is a workflow diagram; the layout-detected 'chart' is a set of agent labels and icons, not data, so nothing was recorded.",
+  "The small green ECG trace with a highlighted PVC beat is a raw signal illustration with no axes or values."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

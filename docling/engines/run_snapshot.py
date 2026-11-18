@@ -183,6 +183,8 @@ class RunRecord(BaseModel):
     engine_config: dict[str, Any] = Field(default_factory=dict)
     output_summary: RunOutputSummary = RunOutputSummary()
     errors: list[RunError] = Field(default_factory=list)
+    # Written by the figure-to-data step when it has run on the bundle.
+    figure_to_data: dict[str, Any] | None = None
 
     @property
     def conversion_status(self) -> ConversionStatus | None:

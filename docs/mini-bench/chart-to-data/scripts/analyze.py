@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from pathlib import Path
 from statistics import median
 
@@ -30,6 +31,9 @@ from docling.engines.figure_data.schema import SCHEMA_ID, ChartData
 from docling.engines.figure_data.scoring import match_panels, score_figure
 
 BENCH = Path(__file__).resolve().parents[1]
+# A later round keeps its runs, metrics and judge files in its own folder
+# (BENCH_ROUND=round-2); the figures, the test set and the truth are shared.
+ROUND = BENCH / os.environ.get("BENCH_ROUND", "")
 FIELDS = [
     "model", "figure_id", "bundle", "self_ref", "has_data", "predicted",
     "truth_panels", "pred_panels", "panels_matched", "kind_matches",
@@ -82,7 +86,7 @@ def main() -> None:
     truth = load_charts(BENCH / "truth")
     rows: list[dict] = []
     summary: dict[str, dict] = {}
-    for model_dir in sorted(p for p in (BENCH / "runs").iterdir() if p.is_dir()):
+    for model_dir in sorted(p for p in (ROUND / "runs").iterdir() if p.is_dir()):
         preds, timing = load_charts(model_dir), load_timing(model_dir)
         model_rows = []
         for key, chart in sorted(truth.items(), key=lambda kv: ids.get(kv[0], "")):
@@ -179,7 +183,7 @@ def main() -> None:
             "gpu_gb": max((r["gpu_gb"] or 0 for r in model_rows), default=None),
         }
 
-    metrics = BENCH / "metrics"
+    metrics = ROUND / "metrics"
     metrics.mkdir(exist_ok=True)
     with (metrics / "per_figure.csv").open("w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=FIELDS, extrasaction="ignore")

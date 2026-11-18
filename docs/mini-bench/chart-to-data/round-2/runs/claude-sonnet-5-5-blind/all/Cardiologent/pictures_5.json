@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/5",
+  "image_path": "images/picture_006.png",
+  "page": 18,
+  "bbox": [
+   55.957489013671875,
+   739.0027732849121,
+   292.86114501953125,
+   454.96075439453125
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Raw ECG signal traces without axes or values, shaded regions per method; not a data chart."
+ ]
+}

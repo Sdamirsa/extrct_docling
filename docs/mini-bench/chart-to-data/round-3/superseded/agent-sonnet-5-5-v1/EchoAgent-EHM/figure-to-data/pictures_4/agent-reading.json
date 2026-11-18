@@ -1,0 +1,283 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "OnimiaNet",
+   "kind": "line",
+   "orientation": null,
+   "x_axis": {
+    "name": "1 - Specificity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "y_axis": {
+    "name": "Sensitivity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "EF<40%",
+     "x": null,
+     "series": "AUROC",
+     "value": 87.97,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "87.97%"
+    },
+    {
+     "category": "40%≤EF<50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 65.74,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "65.74%"
+    },
+    {
+     "category": "EF≥50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 76.77,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "76.77%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "ROC curves; only printed AUROC recorded, curves not traced."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "H2former",
+   "kind": "line",
+   "orientation": null,
+   "x_axis": {
+    "name": "1 - Specificity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "y_axis": {
+    "name": "Sensitivity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "EF<40%",
+     "x": null,
+     "series": "AUROC",
+     "value": 89.81,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "89.81%"
+    },
+    {
+     "category": "40%≤EF<50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 77.99,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "77.99%"
+    },
+    {
+     "category": "EF≥50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "76.00%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "ROC curves; only printed AUROC recorded, curves not traced."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "EchoAgent",
+   "kind": "line",
+   "orientation": null,
+   "x_axis": {
+    "name": "1 - Specificity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "y_axis": {
+    "name": "Sensitivity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "EF<40%",
+     "x": null,
+     "series": "AUROC",
+     "value": 98.43,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "98.43%"
+    },
+    {
+     "category": "40%≤EF<50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 87.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "87.79%"
+    },
+    {
+     "category": "EF≥50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 93.88,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "93.88%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "ROC curves; only printed AUROC recorded, curves not traced."
+   ]
+  },
+  {
+   "id": "4",
+   "title": "MemSAM",
+   "kind": "line",
+   "orientation": null,
+   "x_axis": {
+    "name": "1 - Specificity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "y_axis": {
+    "name": "Sensitivity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "EF<40%",
+     "x": null,
+     "series": "AUROC",
+     "value": 91.56,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "91.56%"
+    },
+    {
+     "category": "40%≤EF<50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 56.28,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.28%"
+    },
+    {
+     "category": "EF≥50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 80.46,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "80.46%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "ROC curves; only printed AUROC recorded, curves not traced."
+   ]
+  },
+  {
+   "id": "5",
+   "title": "EchoONE",
+   "kind": "line",
+   "orientation": null,
+   "x_axis": {
+    "name": "1 - Specificity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "y_axis": {
+    "name": "Sensitivity",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 1.0
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "EF<40%",
+     "x": null,
+     "series": "AUROC",
+     "value": 93.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "93.79%"
+    },
+    {
+     "category": "40%≤EF<50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 65.68,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "65.68%"
+    },
+    {
+     "category": "EF≥50%",
+     "x": null,
+     "series": "AUROC",
+     "value": 85.56,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "85.56%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "ROC curves; only printed AUROC recorded, curves not traced."
+   ]
+  }
+ ],
+ "description": "ROC curves for three LVEF classes (EF<40%, 40%≤EF<50%, EF≥50%) on CAMUS for five segmentation models (OnimiaNet, H2former, EchoAgent, MemSAM, EchoONE), with AUROC printed in each legend.",
+ "has_data": true,
+ "not_read": [
+  "The ROC curve shapes (sensitivity vs 1 - specificity) in all 5 panels were not traced point by point. Only the printed AUROC per curve was recorded, 15 values in total. The curves are dense step lines with no markers."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 5
+}

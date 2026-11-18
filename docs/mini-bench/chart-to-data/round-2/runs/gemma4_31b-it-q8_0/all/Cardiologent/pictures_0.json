@@ -1,0 +1,26 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": [
+    "not a data chart: The figure illustrates a two-stage process for monitoring atrial fibrillation, moving from daily wearable PPG monitoring to hospital-based ECG and PPG monitoring."
+  ]
+}

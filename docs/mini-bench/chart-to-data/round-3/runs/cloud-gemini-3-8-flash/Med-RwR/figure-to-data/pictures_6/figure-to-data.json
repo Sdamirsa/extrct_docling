@@ -1,0 +1,1080 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        192.2,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            28.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": null,
+          "value": 1.02,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": null,
+          "value": 1.23,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": null,
+          "value": 1.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": null,
+          "value": 2.14,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": null,
+          "value": 2.13,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": null,
+          "value": 1.92,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": null,
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": null,
+          "value": 2.06,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": null,
+          "value": 1.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": null,
+          "value": 1.96,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": null,
+          "value": 2.17,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": null,
+          "value": 2.11,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": null,
+          "value": 2.04,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": null,
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": null,
+          "value": 2.22,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": null,
+          "value": 2.03,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": null,
+          "value": 2.02,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": null,
+          "value": 2.45,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": null,
+          "value": 2.03,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": null,
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": null,
+          "value": 1.89,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": null,
+          "value": 1.96,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": null,
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": null,
+          "value": 2.35,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": null,
+          "value": 2.26,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": null,
+          "value": 2.34,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": null,
+          "value": 2.25,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": null,
+          "value": 2.26,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        192.2,
+        3.0,
+        385.7,
+        100.9
+      ],
+      "title": "Format Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            28.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.0
+          ],
+          "ticks": [
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": null,
+          "value": 0.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": null,
+          "value": 0.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": null,
+          "value": 0.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": null,
+          "value": 0.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": null,
+          "value": 1.04,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": null,
+          "value": 1.46,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": null,
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": null,
+          "value": 1.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": null,
+          "value": 1.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": null,
+          "value": 1.76,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": null,
+          "value": 1.61,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": null,
+          "value": 1.71,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": null,
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": null,
+          "value": 1.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": null,
+          "value": 1.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": null,
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": null,
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": null,
+          "value": 1.76,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": null,
+          "value": 1.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": null,
+          "value": 1.87,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": null,
+          "value": 1.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": null,
+          "value": 1.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": null,
+          "value": 1.71,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": null,
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": null,
+          "value": 1.83,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": null,
+          "value": 1.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": null,
+          "value": 1.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": null,
+          "value": 1.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        385.7,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Completion Length",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            28.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            200.0,
+            275.0
+          ],
+          "ticks": [
+            275.0,
+            250.0,
+            225.0,
+            200.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": null,
+          "value": 210.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": null,
+          "value": 217.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": null,
+          "value": 236.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": null,
+          "value": 249.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": null,
+          "value": 260.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": null,
+          "value": 275.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": null,
+          "value": 269.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": null,
+          "value": 252.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": null,
+          "value": 243.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": null,
+          "value": 232.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": null,
+          "value": 222.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": null,
+          "value": 223.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": null,
+          "value": 227.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": null,
+          "value": 227.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": null,
+          "value": 234.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": null,
+          "value": 245.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": null,
+          "value": 262.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": null,
+          "value": 282.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": null,
+          "value": 281.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": null,
+          "value": 281.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": null,
+          "value": 278.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": null,
+          "value": 268.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": null,
+          "value": 268.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": null,
+          "value": 276.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": null,
+          "value": 281.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": null,
+          "value": 280.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": null,
+          "value": 268.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": null,
+          "value": 274.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Figure 7 displays training dynamics across iterations of the first stage, showing Accuracy Reward, Format Reward, and Completion Length with smoothed line curves and shaded areas.",
+  "uncertain": [
+    "Raw evaluation data points (28 faint dots per chart) plotted in the background of each smoothed line curve without a legend."
+  ]
+}

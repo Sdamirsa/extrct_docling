@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "This figure illustrates a multi-agent workflow for medical diagnosis, involving ECG and PPG specialists engaged in debates to identify Premature Ventricular Contractions (PVC).",
+  "uncertain": [
+    "not a data chart: This figure illustrates a multi-agent workflow for medical diagnosis, involving ECG and PPG specialists engaged in debates to identify Premature Ventricular Contractions (PVC)."
+  ]
+}

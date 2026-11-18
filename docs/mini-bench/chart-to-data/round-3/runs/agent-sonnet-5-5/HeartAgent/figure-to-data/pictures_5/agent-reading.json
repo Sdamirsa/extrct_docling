@@ -1,0 +1,229 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Top-1 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.58,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.69,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "No legend; values read from bar heights against axis."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Top-1 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.48,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.795,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "No legend; values read from bar heights against axis. Y axis label shared with chart 1."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Top-3 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.597,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "No legend; values read from bar heights against axis."
+   ]
+  },
+  {
+   "id": "4",
+   "title": "Top-3 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.2,
+    "max": 0.9
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.533,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.55,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.675,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "No legend; values read from bar heights against axis."
+   ]
+  }
+ ],
+ "description": "Four bar charts compare accuracy of HeartAgent, Expert, and Expert + HeartAgent on MIMIC notes for top-1 and top-3 diagnosis and explanation, with the combination highest in each.",
+ "has_data": true,
+ "not_read": [
+  "No printed value labels, error bars or legend exist; all 12 bar values are read from bar heights against the axis, so they are approximate (about ±0.005)."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 4,
+ "records": 4
+}

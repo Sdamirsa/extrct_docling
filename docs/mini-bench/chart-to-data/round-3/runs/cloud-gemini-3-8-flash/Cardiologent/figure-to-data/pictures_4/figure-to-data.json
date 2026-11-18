@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "System architecture diagram illustrating the workflow of a time series encoder and multimodal large language model for ECG/PPG signal analysis.",
+  "uncertain": [
+    "not a data chart: System architecture diagram illustrating the workflow of a time series encoder and multimodal large language model for ECG/PPG signal analysis."
+  ]
+}

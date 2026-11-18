@@ -1,0 +1,355 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        192.2,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": "।",
+          "series": null,
+          "value": 1.0031,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": null,
+          "value": 1.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": null,
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": null,
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": null,
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": null,
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": null,
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": null,
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": null,
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": null,
+          "value": 1.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": null,
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": null,
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": null,
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": null,
+          "value": 1.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": null,
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": null,
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": null,
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        192.2,
+        3.0,
+        385.7,
+        100.9
+      ],
+      "title": "Format Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.0
+          ],
+          "ticks": [
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": "।",
+          "series": null,
+          "value": 0.8295,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        385.7,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Completion Length",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            200.0,
+            275.0
+          ],
+          "ticks": [
+            275.0,
+            250.0,
+            225.0,
+            200.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": "।",
+          "series": null,
+          "value": 207.4187,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

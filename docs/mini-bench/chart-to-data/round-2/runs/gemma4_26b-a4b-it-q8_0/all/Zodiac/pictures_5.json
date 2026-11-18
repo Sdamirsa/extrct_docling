@@ -1,0 +1,557 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        277.6,
+        129.7
+      ],
+      "title": "0.4",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "-Pro",
+            "-405B",
+            "-8x22B",
+            "-Large",
+            "-70B",
+            "-70B"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": [
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#000000",
+          "color": "#000000"
+        }
+      ],
+      "data": [
+        {
+          "category": "-Pro",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0042,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Pro",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0105,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Pro",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0493,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Pro",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0881,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Pro",
+          "x": null,
+          "series": "#000000",
+          "value": 0.103,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-405B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0024,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-405B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0451,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-405B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1045,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-405B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1639,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-405B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1629,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-8x22B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1096,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-8x22B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1072,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-8x22B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1261,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-8x22B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1451,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-8x22B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1579,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Large",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0693,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Large",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0827,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Large",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1265,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Large",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1703,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-Large",
+          "x": null,
+          "series": "#000000",
+          "value": 0.1809,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0244,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0366,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0557,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0748,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0731,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0165,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0236,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0327,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0418,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "-70B",
+          "x": null,
+          "series": "#000000",
+          "value": 0.0396,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        281.1,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "5",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "ACC",
+            "CPL",
+            "ORG",
+            "CPH",
+            "SCI",
+            "CNS",
+            "FFH",
+            "FFB"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            3.0,
+            5.0
+          ],
+          "ticks": [
+            5.0,
+            3.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#345b7d",
+          "color": "#345b7d"
+        }
+      ],
+      "data": [
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.3964,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.4963,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.696,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.8956,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.3964,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "#345b7d",
+          "value": 1.5375,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.65
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.4963,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.7958,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "#345b7d",
+          "value": 4.9955,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

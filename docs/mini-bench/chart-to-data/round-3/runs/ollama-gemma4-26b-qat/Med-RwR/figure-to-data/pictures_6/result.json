@@ -1,0 +1,82 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 66.18,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.206,
+   "total_s": 3.205,
+   "load_s": 0.426,
+   "prompt_eval_s": 0.609,
+   "eval_s": 2.034,
+   "prompt_tokens": 648,
+   "eval_tokens": 137,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 23.933,
+   "total_s": 23.932,
+   "load_s": 0.407,
+   "prompt_eval_s": 0.745,
+   "eval_s": 22.702,
+   "prompt_tokens": 956,
+   "eval_tokens": 1385,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "2",
+   "prompt": "grounded",
+   "wall_s": 19.361,
+   "total_s": 19.359,
+   "load_s": 0.367,
+   "prompt_eval_s": 0.741,
+   "eval_s": 18.098,
+   "prompt_tokens": 934,
+   "eval_tokens": 1057,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "3",
+   "prompt": "grounded",
+   "wall_s": 19.566,
+   "total_s": 19.565,
+   "load_s": 0.411,
+   "prompt_eval_s": 0.76,
+   "eval_s": 18.285,
+   "prompt_tokens": 971,
+   "eval_tokens": 1111,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:48:08.489658625+01:00"
+  }
+ ],
+ "issues": [
+  "3 charts found by their tick labels"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "A workflow diagram of the RiskCalcs pipeline (tool selection, parameter extraction, tool computation, prediction) using a CURB-65 example. It has no plotted data.",
+  "uncertain": [
+    "not a data chart: A workflow diagram of the RiskCalcs pipeline (tool selection, parameter extraction, tool computation, prediction) using a CURB-65 example. It has no plotted data.",
+    "Example patient parameters (confusion False, uremia False, respiratory rate 28, systolic BP 110, diastolic BP 70, age 60) and the output (score 0, mortality 0.7%) are illustrative text in a diagram, not chart data, so none were recorded."
+  ]
+}

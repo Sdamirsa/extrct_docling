@@ -1,0 +1,58 @@
+{
+ "bench": "chart-to-data mini bench, round 2",
+ "date": "2026-11-17",
+ "question": "How much of round 1's failure was the model and how much the way the engine calls it? Same figures, truth, scorer and judge prompt; a reworked engine around three of the round-1 models.",
+ "figures": "the 15 of ../testset.json (10 data charts, 560 truth values in 33 panels; 5 without data)",
+ "truth": "../truth/ (unchanged from round 1)",
+ "bundles": "samples/aca-papers_out, converted with extrct_docling-v2.131.0-r4, default configuration (unchanged from round 1)",
+ "engine": {
+  "state": "docling/engines/figure_data as changed in this round (LOG.md section 3), on top of the round-1 commit; frozen before the three runs below",
+  "cli": "BENCH_ROUND=round-2 MODELS=\"<tags>\" bash docs/mini-bench/chart-to-data/scripts/run_ollama_models.sh",
+  "options": {
+   "mode": "measured",
+   "panel_split": "auto",
+   "samples": 1,
+   "crop_dpi": 220,
+   "vlm_max_side_px": 1600,
+   "num_ctx": 16384,
+   "max_output_tokens": 8192,
+   "time_budget_s_per_figure": 600.0,
+   "time_budget_s_per_call": 120.0,
+   "request_timeout_s": 600.0,
+   "temperature": 0,
+   "think": false
+  },
+  "ocr": "RapidOCR (onnxruntime, PP-OCRv6 small detection and recognition) on the work image, about 1 to 4 s per figure on CPU"
+ },
+ "models": {
+  "gemma4_31b-it-q8_0": {"ollama_tag": "gemma4:31b-it-q8_0", "parameters": "31.3B", "quantization": "Q8_0", "digest": "53dd8459790f"},
+  "gemma4_26b-a4b-it-q8_0": {"ollama_tag": "gemma4:26b-a4b-it-q8_0", "parameters": "25.2B", "quantization": "Q8_0", "digest": "0755fafe4094"},
+  "gemma4_26b-a4b-it-qat": {"ollama_tag": "gemma4:26b-a4b-it-qat", "parameters": "25.2B", "quantization": "Q4_0", "digest": "2dd70431afed"}
+ },
+ "reference_run": {
+  "name": "claude-sonnet-5-5-blind",
+  "what": "one claude-sonnet-5-5 sub-agent given the 15 work images only; not a model inside the engine and not a candidate (cloud)",
+  "prompt": "sonnet/PROMPT.md",
+  "isolation_and_tool_log": "sonnet/AUDIT.md",
+  "wall_seconds": 134,
+  "tokens": 89267
+ },
+ "ablation": {
+  "model": "gemma4:26b-a4b-it-qat",
+  "no_split": "the round-2 engine with --panel-split gutters (the round-1 splitter; the overview gate still runs, the agreement rule does not)",
+  "folder": "ablation/no-split/"
+ },
+ "hardware": {
+  "gpu": "NVIDIA GB10 (DGX Spark, unified memory), one model loaded at a time, nothing else on the GPU",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "ollama": "0.32.14 (image budget for Gemma 4 capped at about 270 tokens; see LOG.md F9)"
+ },
+ "scoring": "../scripts/analyze.py and ../scripts/compare_runs.py with BENCH_ROUND=round-2",
+ "judge": {
+  "judge_model": "claude-fable-5-2",
+  "judge_agent": "one general-purpose sub-agent per run, fresh context, tools on, read-only on the repository",
+  "prompt": "judge/PROMPT.md (the round-1 prompt with round-2 paths and a rule for figures the engine declines)",
+  "isolation": "a judge reads one run's outputs only, no other judge's file and nothing of round 1",
+  "output": "judge/<run>.json; aggregated by ../scripts/judge_summary.py into judge/summary.md"
+ }
+}

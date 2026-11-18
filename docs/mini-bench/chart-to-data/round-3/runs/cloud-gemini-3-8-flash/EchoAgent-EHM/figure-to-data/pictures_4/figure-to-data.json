@@ -1,0 +1,409 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "EchoAgent-EHM",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 6,
+    "bbox": [
+      317.49,
+      239.85,
+      552.22,
+      397.73
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "chart 1",
+      "bbox_px": [
+        2.8,
+        2.8,
+        116.9,
+        117.8
+      ],
+      "title": "OnimiaNet",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "AUROC",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 87.97,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "87.97%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 65.74,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "65.74%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 76.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "76.77%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 2",
+      "bbox_px": [
+        119.3,
+        2.8,
+        233.0,
+        117.8
+      ],
+      "title": "H2former",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "AUROC",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 89.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "89.81%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 77.99,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "77.99%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "76.00%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 3",
+      "bbox_px": [
+        237.6,
+        61.8,
+        351.6,
+        176.8
+      ],
+      "title": "EchoAgent",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "AUROC",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 98.43,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "98.43%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 87.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "87.79%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 93.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "93.88%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 4",
+      "bbox_px": [
+        2.8,
+        120.7,
+        117.2,
+        235.7
+      ],
+      "title": "MemSAM",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "AUROC",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 91.56,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "91.56%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 56.28,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "56.28%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 80.46,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "80.46%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 5",
+      "bbox_px": [
+        121.1,
+        120.7,
+        235.5,
+        235.7
+      ],
+      "title": "EchoONE",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "1 - Specificity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Sensitivity",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "AUROC",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "EF<40%",
+          "x": null,
+          "series": "AUROC",
+          "value": 93.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "93.79%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "40%≤EF<50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 65.68,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "65.68%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "EF≥50%",
+          "x": null,
+          "series": "AUROC",
+          "value": 85.56,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "85.56%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "ROC curves and AUROC performance metrics for LVEF categorization (EF<40%, 40%≤EF<50%, and EF≥50%) across five deep learning models.",
+  "uncertain": [
+    "ROC curve coordinate traces are not digitized because AUROC statistics are explicitly reported in the legend.",
+    "Diagonal reference lines (chance level, y = x) are not read as data series."
+  ]
+}

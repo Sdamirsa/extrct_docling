@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Architecture diagram of the Cardiologent multi-agent framework, in which ECG and PPG specialist agents, debate fusion with a devil's advocate and referee, PubMed guideline retrieval and a patient-level diagnosis stage are shown; it plots no quantitative data.",
+  "uncertain": [
+    "not a data chart: Architecture diagram of the Cardiologent multi-agent framework, in which ECG and PPG specialist agents, debate fusion with a devil's advocate and referee, PubMed guideline retrieval and a patient-level diagnosis stage are shown; it plots no quantitative data.",
+    "The figure is a workflow diagram. Its labels (agent names, ECG/PPG, debate stages) are not data values, so no chart was extracted.",
+    "The green ECG trace with the highlighted PVC beat is a raw signal illustration and was not digitised."
+  ]
+}

@@ -49,10 +49,15 @@ BASE_CONFIDENCE = {
     "printed": 0.85,
     "raster_snapped": 0.80,
     "raster": 0.70,
+    # A value a cloud model or an agent on one read against the axis: in the
+    # mini bench 289 of 290 such values were within 5 % of the axis range
+    # (docs/mini-bench/chart-to-data, rounds 2 and 3).
+    "vlm_cloud": 0.80,
     "vlm": 0.50,
 }
 PENALTY = 0.25
 _SPACE = re.compile(r"\s+")
+_TOKEN = re.compile(r"[^\W_]+")
 PRINTED_TOLERANCE = 0.05
 RANGE_SLACK = 0.05
 STACK_TOLERANCE = 0.03
@@ -153,9 +158,16 @@ def check_labels(panel: Panel, words: list[Word]) -> list[str]:
     invention, or junk from a degenerate read) lower their values'
     confidence when they are most of the panel's."""
     printed = _SPACE.sub(" ", " ".join(w.text for w in words)).casefold()
+    tokens = set(_TOKEN.findall(printed))
 
     def unprinted(label: str | None) -> bool:
-        return label is not None and _SPACE.sub(" ", label).casefold() not in printed
+        # A label that wraps over two lines is printed in two places: it
+        # counts as printed when the figure prints each of its words.
+        if label is None:
+            return False
+        text = _SPACE.sub(" ", label).casefold()
+        parts = set(_TOKEN.findall(text))
+        return text not in printed and not (parts and parts <= tokens)
 
     labels = {r.category for r in panel.data if r.category is not None}
     missing = {label for label in labels if unprinted(label)}
@@ -179,7 +191,7 @@ def verify_panel(panel: Panel) -> list[str]:
     for row in panel.data:
         if row.value is None:
             continue
-        if span is not None and panel.kind != "pie":
+        if span is not None and panel.kind != "pie" and not _is_statistic(panel, row):
             lo, hi = span
             slack = RANGE_SLACK * (hi - lo)
             low_limit = -slack if stacked else lo - slack
@@ -282,6 +294,16 @@ def merge_samples(samples: list[list[Panel]]) -> list[Panel]:
                 row.confidence = round(row.confidence * (0.5 + 0.5 * agreement), 3)
         merged.append(out)
     return merged
+
+
+def _is_statistic(panel: Panel, row: Value) -> bool:
+    """A number printed for a whole curve (the AUC of a ROC curve): it is
+    not a position on the chart's axes."""
+    return (
+        row.source == "printed"
+        and row.x is None
+        and panel.kind in {"line", "scatter", "kaplan_meier", "other"}
+    )
 
 
 def _penalise(row: Value) -> None:

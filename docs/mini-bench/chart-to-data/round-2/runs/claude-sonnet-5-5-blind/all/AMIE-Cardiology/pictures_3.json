@@ -1,0 +1,286 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "AMIE-Cardiology",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 4,
+  "bbox": [
+   42.34874694793496,
+   742.074057993796,
+   558.5089500724229,
+   631.1269062588351
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    24.5,
+    147.1,
+    166.3
+   ],
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "40.2%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "3.7%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    269.8,
+    24.5,
+    412.0,
+    166.3
+   ],
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "36.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32.7%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12.1%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    529.7,
+    24.5,
+    667.1,
+    166.3
+   ],
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null,
+     "ticks": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Saved more than 50% of my time",
+     "x": null,
+     "series": null,
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "23.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Saved more than 10% of my time",
+     "x": null,
+     "series": null,
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "27.1%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Not sure",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Delayed me by more than 10%",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Delayed me by more than 50%",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": []
+}

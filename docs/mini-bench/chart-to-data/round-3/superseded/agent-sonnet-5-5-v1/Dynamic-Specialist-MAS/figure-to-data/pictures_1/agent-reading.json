@@ -1,0 +1,149 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Distribution of note-level prediction outcomes by clinical problem",
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Clinical Problem",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Number of Cases",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 350.0
+   },
+   "series": [
+    "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+    "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+    "Both Correct (○)",
+    "Both Incorrect (✕)"
+   ],
+   "points": [
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 13.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "13"
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 6.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "6"
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 299.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "299"
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 102.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "102"
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25"
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25"
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 255.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "255"
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 115.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "115"
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS ○, Base ✕)",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25"
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS ✕, Base ○)",
+     "value": 26.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "26"
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Correct (○)",
+     "value": 283.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "283"
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Incorrect (✕)",
+     "value": 86.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "86"
+    }
+   ],
+   "box": null,
+   "notes": []
+  }
+ ],
+ "description": "Grouped bar chart of note-level outcome counts (MAS-only correct, baseline-only correct, both correct, both incorrect) for three clinical problems: CHF, AKI, and Sepsis.",
+ "has_data": true,
+ "not_read": [],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 1
+}

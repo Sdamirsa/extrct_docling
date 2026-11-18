@@ -1,0 +1,13 @@
+{
+ "panels": [],
+ "description": "A schematic of the Cardiologent framework showing ECG and PPG specialist agents, a debate among agents (devil's advocate and referee), PubMed guideline retrieval, and patient-level outputs, with an example ECG trace showing a premature ventricular contraction.",
+ "has_data": false,
+ "not_read": [
+  "The example ECG waveform trace: a raw signal illustration with no axes or data values, so nothing was tabulated.",
+  "Agent, tool and stage labels (ECG/PPG specialists, debate stages, PubMed): diagram text, not data values."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

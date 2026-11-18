@@ -13,7 +13,8 @@ On top of Docling's markdown serializer:
   only applies to items without ``meta``, and every picture of ours has meta
   (figure type, classification), so the description meta field is marked here,
   and so is the table of a figure's numbers a model read (``tabular_chart``,
-  ``<!--<annotation kind="chart_data">-->``; see :mod:`docling.engines.figure_data`);
+  ``<!--<annotation kind="chart_data">-->``, with a sentence above the table
+  that names the method and the model; see :mod:`docling.engines.figure_data`);
 - a table whose cells miss words printed in its box (``amir__pdf_text``, see
   :func:`~docling.engines.text_repair.attach_table_pdf_text`) is followed by
   a ``Table text from the PDF (cell recall 0.61): …`` paragraph, so the
@@ -109,9 +110,15 @@ class _MarkedMetaSerializer(MarkdownMetaSerializer):
         text = super()._serialize_meta_field(meta, name, mark_meta, **kwargs)
         if text and name == _DESCRIPTION_FIELD:
             return f"{DESCRIPTION_OPEN}{text}{ANNOTATION_CLOSE}"
-        if text and name == _CHART_DATA_FIELD:
+        if name == _CHART_DATA_FIELD:
+            # The field's title says who read the table and how far to
+            # trust it; it stands alone when the values are held back.
             # Blank lines around the table, or markdown does not render it.
-            return f"{CHART_DATA_OPEN}\n\n{text}\n\n{ANNOTATION_CLOSE}"
+            note = meta.tabular_chart.title if meta.tabular_chart else None
+            body = "\n\n".join(part for part in (note, text) if part)
+            return (
+                f"{CHART_DATA_OPEN}\n\n{body}\n\n{ANNOTATION_CLOSE}" if body else None
+            )
         return text
 
 

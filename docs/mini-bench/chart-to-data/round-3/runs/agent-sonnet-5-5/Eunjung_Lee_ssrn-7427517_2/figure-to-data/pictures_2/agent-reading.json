@@ -1,0 +1,83 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Paired physician-rating differences for overall quality and secondary quality domains",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Mean difference (positive favors AI-generated summaries)",
+    "unit": null,
+    "scale": "linear",
+    "min": -1.5,
+    "max": 1.5
+   },
+   "y_axis": {
+    "name": "Rating domain",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "Overall quality",
+     "x": null,
+     "series": null,
+     "value": -0.15,
+     "err_lo": -0.87,
+     "err_hi": 0.56,
+     "label": null
+    },
+    {
+     "category": "Clarity",
+     "x": null,
+     "series": null,
+     "value": 0.36,
+     "err_lo": 0.07,
+     "err_hi": 0.65,
+     "label": null
+    },
+    {
+     "category": "Completeness",
+     "x": null,
+     "series": null,
+     "value": -0.84,
+     "err_lo": -1.36,
+     "err_hi": -0.33,
+     "label": null
+    },
+    {
+     "category": "Accuracy",
+     "x": null,
+     "series": null,
+     "value": -0.35,
+     "err_lo": -0.66,
+     "err_hi": -0.05,
+     "label": null
+    },
+    {
+     "category": "Readability",
+     "x": null,
+     "series": null,
+     "value": 0.72,
+     "err_lo": 0.2,
+     "err_hi": 1.24,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Values read from pixel positions against axis ticks; no numbers printed. Bars are 95% CIs. Dashed line at 0 = no difference."
+   ]
+  }
+ ],
+ "description": "Forest plot of paired physician-rating mean differences (AI-generated minus clinician-authored summaries) with 95% CIs for five rating domains.",
+ "has_data": true,
+ "not_read": [],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 1
+}

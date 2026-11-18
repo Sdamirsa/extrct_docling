@@ -1,0 +1,98 @@
+{
+ "figure_id": "B4",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    295,
+    5,
+    1502,
+    690
+   ],
+   "title": null,
+   "kind": "forest",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Favors clinician-authored summaries <- No difference -> Favors AI-generated summaries",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      -1.5,
+      1.5
+     ]
+    },
+    "y": {
+     "name": "Rating domain",
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Overall quality",
+     "x": null,
+     "series": null,
+     "value": -0.154,
+     "err_lo": -0.868,
+     "err_hi": 0.562,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Clarity",
+     "x": null,
+     "series": null,
+     "value": 0.359,
+     "err_lo": 0.072,
+     "err_hi": 0.647,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Completeness",
+     "x": null,
+     "series": null,
+     "value": -0.842,
+     "err_lo": -1.358,
+     "err_hi": -0.326,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Accuracy",
+     "x": null,
+     "series": null,
+     "value": -0.354,
+     "err_lo": -0.66,
+     "err_hi": -0.049,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Readability",
+     "x": null,
+     "series": null,
+     "value": 0.719,
+     "err_lo": 0.203,
+     "err_hi": 1.237,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "uncertain": [
+  "Values read by eye against x ticks (-1.5..1.5, ~390 px per unit in displayed coordinates)."
+ ],
+ "method": "Calibrated x on tick labels by eye/pixel estimates and converted marker and cap positions."
+}

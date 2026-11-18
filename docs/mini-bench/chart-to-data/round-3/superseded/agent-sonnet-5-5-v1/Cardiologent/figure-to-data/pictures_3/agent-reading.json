@@ -1,0 +1,67 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Rater agreement (ICC(2,1), absolute agreement, with 95% CI)",
+   "kind": "forest",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Rater pair",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "ICC(2,1), absolute agreement",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.35,
+    "max": 0.95
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "R1 ↔ R2 (human–human)",
+     "x": null,
+     "series": null,
+     "value": 0.67,
+     "err_lo": 0.52,
+     "err_hi": 0.79,
+     "label": null
+    },
+    {
+     "category": "Judge ↔ R1",
+     "x": null,
+     "series": null,
+     "value": 0.74,
+     "err_lo": 0.6,
+     "err_hi": 0.84,
+     "label": null
+    },
+    {
+     "category": "Judge ↔ R2",
+     "x": null,
+     "series": null,
+     "value": 0.66,
+     "err_lo": 0.51,
+     "err_hi": 0.78,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Centres read against axis and consistent with caption (0.67, 0.74, 0.66); CI end labels printed on the figure. Red = human-human, blue = judge-human."
+   ]
+  }
+ ],
+ "description": "Point estimates with 95% CIs of ICC(2,1) absolute agreement for R1–R2 (human–human), Judge–R1 and Judge–R2 on a 20-patient subset.",
+ "has_data": true,
+ "not_read": [
+  "Centre values are not printed on the plot; I took them from the caption (0.67, 0.74, 0.66), and they agree with the marker positions."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 1
+}

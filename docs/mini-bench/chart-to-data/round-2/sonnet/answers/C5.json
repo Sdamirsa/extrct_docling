@@ -1,0 +1,263 @@
+{
+ "figure_id": "C5",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0,
+    50,
+    300,
+    339
+   ],
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "16.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "40.2%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "8.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "3.7%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    550,
+    50,
+    840,
+    339
+   ],
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Yes, definitely",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Yes, probably",
+     "x": null,
+     "series": null,
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "36.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Neither yes nor no",
+     "x": null,
+     "series": null,
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "32.7%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, probably not",
+     "x": null,
+     "series": null,
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "12.1%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "No, definitely not",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    1080,
+    50,
+    1360,
+    339
+   ],
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": null,
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Saved more than 50% of my time",
+     "x": null,
+     "series": null,
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "23.4%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Saved more than 10% of my time",
+     "x": null,
+     "series": null,
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "27.1%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Not sure",
+     "x": null,
+     "series": null,
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.8%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Delayed me by more than 10%",
+     "x": null,
+     "series": null,
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "15.9%",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Delayed me by more than 50%",
+     "x": null,
+     "series": null,
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "2.8%",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "uncertain": [],
+ "method": "Percentages printed on wedges."
+}

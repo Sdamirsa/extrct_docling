@@ -1,0 +1,132 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "chart_1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": null,
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.5,
+            1.5
+          ],
+          "ticks": [
+            -1.0,
+            -0.5,
+            0.0,
+            0.5,
+            1.0,
+            1.5
+          ]
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Overall quality",
+            "Clarity",
+            "Completeness",
+            "Accuracy",
+            "Readability"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": null,
+          "series": null,
+          "value": -0.12,
+          "err_lo": -0.89,
+          "err_hi": 0.65,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Clarity",
+          "x": null,
+          "series": null,
+          "value": 0.36,
+          "err_lo": 0.07,
+          "err_hi": 0.65,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Completeness",
+          "x": null,
+          "series": null,
+          "value": -0.84,
+          "err_lo": -1.35,
+          "err_hi": -0.33,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Accuracy",
+          "x": null,
+          "series": null,
+          "value": -0.35,
+          "err_lo": -0.66,
+          "err_hi": -0.04,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Readability",
+          "x": null,
+          "series": null,
+          "value": 0.73,
+          "err_lo": 0.22,
+          "err_hi": 1.24,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Points show model-estimated mean differences, and bars show 95% CIs.",
+        "Positive values favor AI-generated summaries; negative values favor clinician-authored summaries."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Forest plot of paired physician-rating differences showing model-estimated mean differences and 95% confidence intervals comparing AI-generated and clinician-authored summaries across five rating domains.",
+  "uncertain": []
+}

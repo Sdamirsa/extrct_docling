@@ -1,0 +1,26 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": [
+    "not a data chart: This figure illustrates a deep learning architecture for ECG/PPG signal analysis, utilizing a Transformer Encoder-Decoder structure and a CLIP Vision Encoder to process signal waveforms and generate clinical reasoning via a Llama-7B model."
+  ]
+}

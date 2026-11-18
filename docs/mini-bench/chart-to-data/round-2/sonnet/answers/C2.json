@@ -1,0 +1,9 @@
+{
+ "figure_id": "C2",
+ "is_data_chart": false,
+ "panels": [],
+ "uncertain": [
+  "Workflow diagram of RiskCalcs tool use (parameter extraction, CURB-65 score); printed score/mortality are example text, not plotted data."
+ ],
+ "method": "Visual inspection; diagram."
+}

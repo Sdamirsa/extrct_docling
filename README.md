@@ -51,6 +51,18 @@ Measured on an NVIDIA GB10 (DGX Spark, 128 GB unified memory) with Docling v2.13
 
 VLM runtime: HF `transformers` by default; if [vLLM](https://github.com/vllm-project/vllm) is installed it is picked up automatically (`picture_description_engine="vllm"` to force). No LLM API calls: everything runs locally. The outputs are shaped so *your* LLM can read them (chunks, tables, figures as JSONL).
 
+## 📊 Optional step: the numbers behind the charts (`default-plusFigData`)
+
+After the conversion, `--figure-data` reads the data out of every figure typed as a chart and writes it back at the figure, marked as read by a model. It is a step of its own on the finished bundle, so it can also be run later on any output folder (`amir-figdata step <out> --method ...`), and it never changes a conversion's status.
+
+| Method | What reads the figure | The figure goes to | Needs |
+|---|---|---|---|
+| `--figure-data ollama` | a local open model (default **Gemma 4 26B-A4B, 4-bit QAT**) inside a measuring engine: charts cut apart by their tick labels, axes calibrated, one call per chart, printed numbers preferred | nowhere | [Ollama](https://ollama.com), 16 GB GPU |
+| `--figure-data cloud` | one call per figure to a cloud model's API endpoint (default **Claude Sonnet 5.5 through [OpenRouter](https://openrouter.ai)**; any OpenAI-compatible endpoint with `--figure-data-base-url`) with the figure, a crop per chart and the printed text | the endpoint: OpenRouter and the model host it picks | an API key: `OPENROUTER_API_KEY` in the environment or in `.env` |
+| `--figure-data agent` | one agent session per figure: it looks closer where marks are dense, records chart by chart, and gets our checks back to correct itself | the model's provider (or nowhere, on a local model) | [Claude Code](https://claude.com/claude-code) CLI, logged in |
+
+Measured on 15 figures from 11 papers (10 data charts, 560 values). Sent to Claude Sonnet 5.5, a figure comes back usable either way: one API call per figure returned usable data for all 10 charts and all 560 values for 0.70 USD in 257 s; the agent returned usable data for all 10 and 470 values for 1.12 USD in 382 s. Gemini 3.8 Flash in the same call: 9 of 10 charts usable, 464 values, 0.73 USD, 1,181 s. The local model returned usable data for 6 of 10 charts and two readings that would mislead, so its output needs review. The prompts and checks were tuned on these same figures, so expect less elsewhere. All three are kept so you can choose by what may leave your machine, what you may spend and how good the numbers must be: **[results and evidence](docs/mini-bench/chart-to-data/round-3/README.md)**, how to run it in [RUN.md](RUN.md#figure-to-data-the-numbers-behind-the-charts).
+
 ## 📦 What you get per PDF
 
 ```
@@ -71,6 +83,8 @@ out/<pdf-name>/
 ├── run.json                🧾 engine release + git commit, models, options, timing, package versions, errors,
 │                              quality (label counts + warnings), structure_version, related PDFs
 ├── check.json              ✅ self-check: every item in the HTML, PDF text recall per page, export fidelity, issues
+├── figure-to-data/         📊 only with --figure-data: per chart figure the high-resolution image, the context a reader
+│                              was given, figure-to-data.md / .json (what a model read from it), and runs/ with each run's config
 └── images/                 🖼️ page renders + figure/table crops
 ```
 

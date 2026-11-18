@@ -1,0 +1,385 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 10,
+    "bbox": [
+      116.06,
+      84.0,
+      494.5,
+      171.52
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        566.0,
+        129.7
+      ],
+      "title": "(a) Diagnostic lability",
+      "kind": "box",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "ACC",
+            "CPL",
+            "ORG",
+            "CPH",
+            "SCI",
+            "CNS",
+            "FFH",
+            "FFB"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.4
+          ],
+          "ticks": [
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": null,
+          "value": 0.005,
+          "err_lo": 0.0,
+          "err_hi": 0.007,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": null,
+          "value": 0.091,
+          "err_lo": 0.0,
+          "err_hi": 0.218,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini -Pro",
+          "x": null,
+          "series": null,
+          "value": 0.048,
+          "err_lo": 0.0,
+          "err_hi": 0.155,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1 -405B",
+          "x": null,
+          "series": null,
+          "value": 0.107,
+          "err_lo": 0.0,
+          "err_hi": 0.193,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral -8x22B",
+          "x": null,
+          "series": null,
+          "value": 0.127,
+          "err_lo": 0.105,
+          "err_hi": 0.2,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT -Large",
+          "x": null,
+          "series": null,
+          "value": 0.13,
+          "err_lo": 0.014,
+          "err_hi": 0.223,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron -70B",
+          "x": null,
+          "series": null,
+          "value": 0.055,
+          "err_lo": 0.025,
+          "err_hi": 0.109,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42 -70B",
+          "x": null,
+          "series": null,
+          "value": 0.036,
+          "err_lo": 0.009,
+          "err_hi": 0.066,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Quartiles (Q1, Q3): ZODIAC (0.000, 0.007), GPT-4o (0.055, 0.136), Gemini -Pro (0.007, 0.105), Llama-3.1 -405B (0.000, 0.164), Mixtral -8x22B (0.114, 0.159), BioGPT -Large (0.070, 0.182), Meditron -70B (0.027, 0.073), Med42 -70B (0.018, 0.041).",
+        "Outliers: ZODIAC (0.016), Mixtral -8x22B (0.007), BioGPT -Large (0.359)."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        4.5,
+        64.9,
+        147.7,
+        131.2
+      ],
+      "title": "(b) Signle-agent v.s. multi-agent",
+      "kind": "grouped_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            5.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Signle-agent",
+          "color": null
+        },
+        {
+          "name": "Multi-agent (this work)",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.11,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ACC",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.39,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.41,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CPL",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.48,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.27,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ORG",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.73,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.93,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CPH",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.98,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.07,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "SCI",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.43,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.43,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "CNS",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 4.39,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "FFH",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 4.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "Signle-agent",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "FFB",
+          "x": null,
+          "series": "Multi-agent (this work)",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Evaluation of diagnostic lability across different models using notched box plots, and comparison between single-agent and multi-agent ZODIAC across various evaluation criteria using a grouped bar chart.",
+  "uncertain": []
+}

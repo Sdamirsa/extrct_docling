@@ -1,0 +1,50 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "single",
+ "seconds": 10.65,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 2.339,
+   "total_s": 2.338,
+   "load_s": 0.408,
+   "prompt_eval_s": 0.718,
+   "eval_s": 1.108,
+   "prompt_tokens": 759,
+   "eval_tokens": 70,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 8.199,
+   "total_s": 8.197,
+   "load_s": 0.383,
+   "prompt_eval_s": 0.842,
+   "eval_s": 6.869,
+   "prompt_tokens": 1165,
+   "eval_tokens": 411,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:46:39.043849539+01:00"
+  }
+ ],
+ "issues": []
+}

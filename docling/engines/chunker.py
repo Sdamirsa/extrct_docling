@@ -40,6 +40,8 @@ from docling_core.transforms.chunker.tokenizer.huggingface import HuggingFaceTok
 from docling.engines.serializers import build_serializer_provider
 
 if TYPE_CHECKING:
+    from docling_core.types.doc import DoclingDocument
+
     from docling.datamodel.document import ConversionResult
 
 _log = logging.getLogger(__name__)
@@ -75,7 +77,25 @@ def write_chunks(
     """Run HybridChunker over the DoclingDocument and persist ``chunks.jsonl``."""
     if result.document is None:
         raise ChunkerError("ConversionResult has no document.")
+    return write_document_chunks(
+        result.document,
+        pdf_dir,
+        tokenizer_repo=tokenizer_repo,
+        max_tokens=max_tokens,
+        merge_peers=merge_peers,
+    )
 
+
+def write_document_chunks(
+    document: DoclingDocument,
+    pdf_dir: Path,
+    *,
+    tokenizer_repo: str = DEFAULT_TOKENIZER,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
+    merge_peers: bool = True,
+) -> ChunkPaths:
+    """``chunks.jsonl`` of *document*: at conversion, and again by a step
+    that changes the document of a finished bundle (figure-to-data)."""
     pdf_dir.mkdir(parents=True, exist_ok=True)
     target = pdf_dir / _CHUNKS_FILENAME
 
@@ -90,7 +110,7 @@ def write_chunks(
 
     rows: list[dict] = []
     dropped = 0
-    for chunk in chunker.chunk(dl_doc=result.document):
+    for chunk in chunker.chunk(dl_doc=document):
         doc_chunk = DocChunk.model_validate(chunk)
         # A caption split off its table (to fit the token budget) serializes
         # to nothing: the table's own chunk renders it.

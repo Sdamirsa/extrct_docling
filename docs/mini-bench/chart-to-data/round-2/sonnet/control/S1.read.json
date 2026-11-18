@@ -1,0 +1,6 @@
+{"panels": [
+{"title": "Top-1 Recall on Set A", "bars": {"Baseline": 0.442, "Reviewer": 0.746, "Reviewer + Baseline": 0.751}},
+{"title": "Top-1 Precision on Set A", "bars": {"Baseline": 0.700, "Reviewer": 0.708, "Reviewer + Baseline": 0.418}},
+{"title": "Top-3 Recall on Set A", "bars": {"Baseline": 0.348, "Reviewer": 0.569, "Reviewer + Baseline": 0.708}},
+{"title": "Top-3 Precision on Set A", "bars": {"Baseline": 0.708, "Reviewer": 0.531, "Reviewer + Baseline": 0.461}}
+]}

@@ -1,0 +1,296 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "(a) Diagnostic lability",
+   "kind": "box",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Diagnostic lability",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 0.4
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "ZODIAC",
+     "x": null,
+     "series": null,
+     "value": 0.005,
+     "err_lo": 0.002,
+     "err_hi": 0.01,
+     "label": null
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 0.09,
+     "err_lo": 0.0,
+     "err_hi": 0.217,
+     "label": null
+    },
+    {
+     "category": "Gemini-Pro",
+     "x": null,
+     "series": null,
+     "value": 0.05,
+     "err_lo": 0.003,
+     "err_hi": 0.152,
+     "label": null
+    },
+    {
+     "category": "Llama-3.1-405B",
+     "x": null,
+     "series": null,
+     "value": 0.105,
+     "err_lo": 0.002,
+     "err_hi": 0.193,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x22B",
+     "x": null,
+     "series": null,
+     "value": 0.125,
+     "err_lo": 0.102,
+     "err_hi": 0.2,
+     "label": null
+    },
+    {
+     "category": "BioGPT-Large",
+     "x": null,
+     "series": null,
+     "value": 0.127,
+     "err_lo": 0.016,
+     "err_hi": 0.223,
+     "label": null
+    },
+    {
+     "category": "Meditron-70B",
+     "x": null,
+     "series": null,
+     "value": 0.055,
+     "err_lo": 0.007,
+     "err_hi": 0.106,
+     "label": null
+    },
+    {
+     "category": "Med42-70B",
+     "x": null,
+     "series": null,
+     "value": 0.03,
+     "err_lo": 0.007,
+     "err_hi": 0.065,
+     "label": null
+    }
+   ],
+   "box": [
+    0,
+    0,
+    500,
+    1000
+   ],
+   "notes": [
+    "Notched box plot; approximate quartiles (Q1-Q3): ZODIAC 0.003-0.008; GPT-4o 0.057-0.135; Gemini-Pro 0.005-0.103; Llama 0.003-0.163; Mixtral 0.11-0.158; BioGPT 0.07-0.18; Meditron 0.027-0.075; Med42 0.02-0.04.",
+    "Outliers (diamonds): ZODIAC ~0.02; Mixtral ~0.005; BioGPT ~0.357."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "(b) Signle-agent v.s. multi-agent",
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": null,
+    "unit": null,
+    "scale": "linear",
+    "min": 1.0,
+    "max": 5.0
+   },
+   "series": [
+    "Signle-agent",
+    "Multi-agent (this work)"
+   ],
+   "points": [
+    {
+     "category": "ACC",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "ACC",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.45,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CPL",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CPL",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.55,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "ORG",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.35,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "ORG",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.75,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CPH",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.93,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CPH",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "SCI",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.17,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "SCI",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.45,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CNS",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "CNS",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.55,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "FFH",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 4.45,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "FFH",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 4.85,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "FFB",
+     "x": null,
+     "series": "Signle-agent",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "FFB",
+     "x": null,
+     "series": "Multi-agent (this work)",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": [
+    500,
+    0,
+    1000,
+    1000
+   ],
+   "notes": []
+  }
+ ],
+ "description": "Two panels: (a) notched box plots of diagnostic lability for eight models, and (b) grouped bars comparing single-agent and multi-agent scores on eight categories (ACC to FFB).",
+ "has_data": true,
+ "not_read": [
+  "Panel (b) has no printed y-axis name and its bar values are estimated against the ticks at 1, 3 and 5.",
+  "Panel (a) quartiles and outliers are recorded only in the notes, not as separate points; all values are visual estimates."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 2
+}

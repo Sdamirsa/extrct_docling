@@ -1,0 +1,151 @@
+{
+  "model": "gemma4_31b-it-q8_0",
+  "judged_by": "claude-fable-5-2",
+  "date": "2026-11-17",
+  "figures": [
+    {
+      "figure_id": "A1",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Deployment diagram without data; the run returned no panels and gave the reason 'not a data chart: The figure illustrates a two-stage process for monitoring atrial fibrillation ...'."
+    },
+    {
+      "figure_id": "A2",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Architecture diagram without data; no panels returned, reason 'not a data chart: A workflow diagram illustrating a multi-agent AI system for analyzing ECG and PPG signals ...'."
+    },
+    {
+      "figure_id": "A3",
+      "verdict": "correct",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "All three ICC points and their printed CI bounds are back: 0.67 [0.52, 0.79], 0.73 [0.60, 0.84], 0.66 [0.51, 0.78] against truth 0.674 [0.52, 0.79], 0.741 [0.60, 0.84], 0.666 [0.51, 0.78]; the largest centre error is 0.011 (1.8 % of the 0.6 axis range). Kind 'forest' for the truth's 'other' and the empty series name (the figure has no legend) change nothing in how the values are read."
+    },
+    {
+      "figure_id": "A4",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Encoder schematic without data; no panels returned, reason 'not a data chart: The figure illustrates the architecture of a multimodal AI system for ECG/PPG signal analysis ...'. The '0.183' and '0.15' inside the quoted example answer were not taken as data."
+    },
+    {
+      "figure_id": "A5",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Seven stacked ECG traces without axes; no panels returned, reason 'not a data chart: The figure compares ECG signal traces from a ground truth (GT) and several AI models ...'."
+    },
+    {
+      "figure_id": "B1",
+      "verdict": "partial",
+      "error_types": ["MISSING_VALUES"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "7 of the 12 printed counts came back and all 7 are exact with the right legend names (Congestive Heart Failure 13 / 6 / 299 / 102, Acute Kidney Injury 25 / 25 / 255). The other 5 are missing because the reply was cut (timing notes: 'panel 1: reply cut at the time or length limit, 7 points kept'): Acute Kidney Injury 'Both Incorrect' 115 and the whole Sepsis group 25 / 26 / 283 / 86. The y range was given as 50-350 instead of 0-350, harmless here because the values are the printed labels."
+    },
+    {
+      "figure_id": "B2",
+      "verdict": "wrong",
+      "error_types": ["MISSING_VALUES", "GEOMETRY_MISMEASURED", "SERIES_NAMES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "15 values for 180 in the truth (90 if only the three smoothed lines count); all three replies were cut ('reply cut at the time or length limit' for panels 1, 2 and 3): 'Format Reward' and 'Completion Length' keep one point each (0.83 vs 0.816, 207.4 vs 209.2, both right), 'Accuracy Reward' stops at x = 14 of 30, and the raw-dot series is absent. The scorer's zero matches are a naming failure (series null against two truth series, first point keyed x = '।'), but pairing panel 1 by x shows the numbers are also wrong: one-decimal guesses with scatter of both signs, x=4 1.8 vs 1.619, x=8 1.7 vs 1.916, x=12 2.2 vs 1.885, x=14 1.7 vs 2.104 (up to 20 % of the 2.01 axis range, 8 of 12 beyond 5 %; the engine notes 'pointed position and read value disagree, read value kept')."
+    },
+    {
+      "figure_id": "B3",
+      "verdict": "partial",
+      "error_types": ["GEOMETRY_MISMEASURED", "OTHER"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "All 15 printed AUROC values are exact and keyed to the right EF class (e.g. EchoAgent 98.43 / 87.79 / 93.88). On top of them the run returned 16 curve points for two of the five panels only (H2former and MemSAM, both replies cut at the time or length limit), and several sit on the wrong curve: MemSAM 'EF<40%' at x = 0.2 is given 0.664 where the salmon curve is at about 0.90 (0.664 is the teal EF>=50% curve), H2former '40%<=EF<50%' at x = 0.2 is 0.39 vs about 0.66, H2former 'EF<40%' at 0.4 and 0.6 is 0.858 vs about 0.95. OTHER: panel 5 lost its model name, title 'ROC curves for different EF groups' instead of 'EchoONE', so its three AUROCs cannot be attributed from the output alone."
+    },
+    {
+      "figure_id": "B4",
+      "verdict": "partial",
+      "error_types": ["INTERVAL_BOUNDS", "GEOMETRY_MISMEASURED"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "All five domains are returned and every centre is within 5 % of the 3.1 axis range, but with scatter rather than a constant offset: Overall quality -0.252 vs -0.152, Clarity 0.301 vs 0.360, Completeness -0.808 vs -0.840, Readability 0.681 vs 0.720. The CI bounds are worse: Overall quality upper bound 0.332 vs 0.561 (7.4 % of the range, half-width 0.58 for 0.71) and Clarity lower bound -0.001 vs 0.072, which turns an interval that excludes zero into one that touches it."
+    },
+    {
+      "figure_id": "B5",
+      "verdict": "partial",
+      "error_types": ["GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS"],
+      "severity": 2,
+      "usable": false,
+      "evidence": "All 10 panels and 30 boxes are found with the right model labels; 27 of 30 medians are within 5 % of their panel's range but only 12 within 2 %, with scatter of both signs (typically 0.5-2 points), and three are further off: a1 RiskAgent-8B 76.0 vs 73.25 (+10 %), a3 GPT-4o 52.5 vs 50.18 (+6.6 %), a2 GPT-4o 53.53 vs 51.57 (+5.6 %). Whiskers: 9 of 30 boxes have none (rows the model read without a measurement), b1 GPT-4o has the interval [32.26, 37.56] that does not contain its own median 29.61 (truth 28.14-32.35), a4 o3-mini upper end 51.78 vs 54.43, b4 GPT-4o upper end 39.39 vs 42.86. Panels 3-5 have no title, the y-axis name still identifies them."
+    },
+    {
+      "figure_id": "C1",
+      "verdict": "correct",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "All 12 bars in the 4 panels with the right titles and categories; the largest difference is 0.002 (0.5818 vs 0.58, 0.6909 vs 0.69, 0.8416 vs 0.84 in panel 1; 0.5506 vs 0.551 in panel 4), i.e. 0.3 % of the 0.7 axis range. The series name is empty and the y range is given as 0.2-0.8 instead of 0.2-0.9, neither changes a value."
+    },
+    {
+      "figure_id": "C2",
+      "verdict": "true_negative",
+      "error_types": [],
+      "severity": 0,
+      "usable": true,
+      "evidence": "Inference flow schematic without data; no panels returned, reason 'not a data chart: A workflow diagram illustrating the process of tool selection, parameter extraction, and computation to predict a CURB-65 score and mortality risk.' The worked example's numbers (28, 110, 70, 60, 0.7 %) were not taken as data."
+    },
+    {
+      "figure_id": "C3",
+      "verdict": "wrong",
+      "error_types": ["MISSING_VALUES", "SERIES_NAMES", "GEOMETRY_MISMEASURED", "VALUE_ASSIGNMENT"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "9 values for 264 in the truth; the three panels are found but every reply was cut ('reply cut at the time or length limit, 11 / 11 / 10 points kept') and 3 rows per panel survive, covering 8 of 22 items. None carries a rating level (the six legend series are absent) and panels 1-2 carry no arm, so a row is one number per item that fits no segment: 'Being Polite' 54.8 vs AMIE 'Very favorable' 86.33 and PCP 50.67, 'Communication And Shared Decision Making' 107.4 on a 0-100 axis. In panel 3 'Addressing Patient Concerns' has 35.5 under 'AMIE (top)' and 68.8 under 'PCP (bottom)', which are the PCP bar's segment ends (36.0 and 69.3 cumulative), while AMIE's first segment is 64.33; only 'Understanding Patient Concerns' AMIE 51.5 vs 52.0 is right."
+    },
+    {
+      "figure_id": "C4",
+      "verdict": "partial",
+      "error_types": ["WRONG_KIND", "CATEGORY_LABELS", "SERIES_NAMES", "MISSING_VALUES", "INVENTED_VALUES"],
+      "severity": 3,
+      "usable": false,
+      "evidence": "The scorer's zero matches are mostly naming. Panel b: the filled 'Multi-agent (this work)' bars are right to 0.005 (4.396, 4.496, 4.696, 4.896, 4.396, 4.496, 4.796, 4.996 vs 4.4, 4.5, 4.7, 4.9, 4.4, 4.5, 4.8, 5.0) but under the series name '#345b7d', all 8 'Signle-agent' outline bars are missing, and an extra 'CNS' 1.5375 comes from the legend swatch. Panel a: the box plot is returned as kind 'line' with five rows per model that are the box outline (Q1, notch, median, notch, Q3: Gemini-Pro 0.0042, 0.0105, 0.0493, 0.0881, 0.103 vs median 0.0501, Q1 0.0053, Q3 0.1035), with no whiskers, series '#000000', categories cut to '-Pro', '-405B', '-8x22B', '-Large' and '-70B' twice (Meditron-70B and Med42-70B indistinguishable), and ZODIAC and GPT-4o absent."
+    },
+    {
+      "figure_id": "C5",
+      "verdict": "correct",
+      "error_types": ["OTHER"],
+      "severity": 1,
+      "usable": true,
+      "evidence": "All 15 printed percentages of the three pies are exact with the right slice labels (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8). OTHER, cosmetic: the panel titles have their words out of order, 'Did the AI help assessment? your' and 'Did the make confident? AI you more' for 'Did the AI help your assessment?' and 'Did the AI make you more confident?'."
+    }
+  ],
+  "summary": {
+    "verdict_counts": {
+      "correct": 3,
+      "partial": 5,
+      "wrong": 2,
+      "missed": 0,
+      "true_negative": 5,
+      "false_positive": 0
+    },
+    "error_type_counts": {
+      "GEOMETRY_MISMEASURED": 5,
+      "MISSING_VALUES": 4,
+      "SERIES_NAMES": 3,
+      "INTERVAL_BOUNDS": 2,
+      "OTHER": 2,
+      "WRONG_KIND": 1,
+      "CATEGORY_LABELS": 1,
+      "INVENTED_VALUES": 1,
+      "VALUE_ASSIGNMENT": 1
+    },
+    "usable_figures": 8,
+    "dominant_failure": "MISSING_VALUES",
+    "assessment": "The run is reliable on what it refuses and on what is printed: all five figures without data were declined with a correct one-line reason and nothing invented, and every printed number it returned is exact (the three pies, the 15 AUROC values, the 7 bar counts it got to, the CI bounds of the ICC plot). The most damaging failure is data lost to replies cut at the time or length limit: B1 stops after 7 of 12 bars, B2 keeps 15 of 180 points and C3 9 of 264, so the dense figures (long line series, stacked bars with many segments) come back as fragments, and the fragments of B2 and C3 are also wrong or unlabelled. The most frequent failure is mark positions read with scatter rather than a systematic shift: clean single-series bars are within 0.3 % of the range (C1), but forest and box plots land within 2-5 % for the centres with some outliers up to 10 % and with unreliable or missing interval bounds (B4, B5), and traced ROC points fall on the wrong curve (B3). On the vector figure C4 the measured numbers are right but arrive under colour codes, truncated categories and the wrong kind, with one of two bar series missing. It can be trusted for diagrams (as a filter), for charts whose values are printed, and for simple bar panels; it should not be used as is for interval plots, box plots, multi-series vector charts or any figure with more than a dozen marks per panel."
+  }
+}

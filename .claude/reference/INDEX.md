@@ -8,6 +8,7 @@
 |---|---|---|
 | (none in baseline) | | Subdirectories materialize as packs install or you create them. |
 | Structure pass | `reference/structure/RULES.md` | Before changing a labelling rule, heading-level inference, a `data-*` attribute of `<stem>.html`, or a quality warning code (bump `STRUCTURE_VERSION`). |
+| Figure-to-data | `reference/figure-data/STANDALONE-STEP.md` (the figure-to-data step as built: prepare / read / embed, the folder, the three methods `ollama` / `cloud` / `agent`, the agent's policy and confinement, reasons), `DESIGN.md` (the measured engine behind the local method: config, schema, round-2 rules), `RESULTS-2026-11-09.md` | Before changing a method's prompt, the agent's tools or policy, the reply format, the panel splitter, the embed or the budgets (rerun `docs/mini-bench/chart-to-data` after; results per round in its `round-N/` folders). |
 <!-- /managed:reference-catalog -->
 
 ## Subdirectories (populated by packs or by you)

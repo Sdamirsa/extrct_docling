@@ -18,7 +18,13 @@ from pathlib import Path
 from typing import Any, Literal
 
 from docling_core.types.doc.document import MetaUtils
-from pydantic import BaseModel, ConfigDict, Field, field_serializer
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    field_serializer,
+    model_validator,
+)
 
 SCHEMA_ID = "extrct.figure-data/1"
 CHART_DATA_META_KEY = MetaUtils.create_meta_field_name(
@@ -42,8 +48,33 @@ PanelKind = Literal[
 ValueSource = Literal["printed", "vector", "raster", "vlm", "human", "agent"]
 AxisScale = Literal["linear", "log", "categorical"]
 Orientation = Literal["vertical", "horizontal"]
-FigureDataMode = Literal["off", "simple", "measured"]
-PanelSplit = Literal["auto", "off", "vlm"]
+FigureDataMode = Literal["simple", "measured"]
+# How a figure is read: a local model through Ollama with the measured
+# engine, one call to a cloud model's API, or an agent that works through
+# the figure with tools.
+FigureMethod = Literal["ollama", "cloud", "agent"]
+FigureDataChoice = Literal["off", "ollama", "cloud", "agent"]
+# Where the model runs. ``ollama``: a local Ollama. ``openai-compatible``:
+# a chat-completions API endpoint with a key (OpenRouter by default).
+# ``claude-cli``: the Claude Code CLI with its own login, the agent's
+# runtime.
+Backend = Literal["ollama", "openai-compatible", "claude-cli"]
+StepTiming = Literal["each", "end"]
+DEFAULT_CLAUDE_MODEL = "claude-sonnet-5-5"
+# The same model as OpenRouter names it.
+DEFAULT_ENDPOINT_MODEL = "anthropic/claude-sonnet-5.5"
+DEFAULT_OLLAMA_MODEL = "gemma4:26b-a4b-it-qat"
+DEFAULT_BACKENDS: dict[str, str] = {
+    "ollama": "ollama",
+    "cloud": "openai-compatible",
+    "agent": "claude-cli",
+}
+DEFAULT_MODELS: dict[str, str] = {
+    "ollama": DEFAULT_OLLAMA_MODEL,
+    "openai-compatible": DEFAULT_ENDPOINT_MODEL,
+    "claude-cli": DEFAULT_CLAUDE_MODEL,
+}
+PanelSplit = Literal["auto", "gutters", "off", "vlm"]
 Box = tuple[float, float, float, float]
 
 DEFAULT_ELIGIBLE_TYPES = frozenset(
@@ -128,6 +159,8 @@ class ChartData(BaseModel):
     source_kind: SourceKind = "unknown"
     panels: list[Panel] = Field(default_factory=list)
     labeler: Labeler | None = None
+    # What the figure shows, in the reader's words.
+    description: str | None = None
     uncertain: list[str] = Field(default_factory=list)
 
     def dump(self) -> dict[str, Any]:
@@ -161,25 +194,70 @@ def inline_refs(schema: dict[str, Any]) -> dict[str, Any]:
 
 
 class FigureDataOptions(BaseModel):
-    """Configuration, recorded in ``run.json`` ``engine_config.figure_data``."""
+    """Configuration of the figure-to-data step, recorded with every run of
+    it (``figure-to-data/runs/``). ``model`` and ``backend`` default to the
+    method's own (:data:`DEFAULT_MODELS`, :data:`DEFAULT_BACKENDS`)."""
 
-    mode: FigureDataMode = "off"
-    engine: Literal["ollama"] = "ollama"
+    method: FigureMethod = "ollama"
+    backend: Backend = "ollama"
+    # Default: the backend's own (:data:`DEFAULT_MODELS`).
+    model: str = DEFAULT_OLLAMA_MODEL
+    # The Ollama method's engine: measured (panels, axes, pointed marks) or
+    # simple (one call on the whole figure).
+    mode: FigureDataMode = "measured"
     ollama_url: str = "http://127.0.0.1:11434"
-    model: str = "gemma4:26b-a4b-it-q8_0"
-    escalation_model: str | None = "gemma4:31b-it-q8_0"
     keep_alive: str = "10m"
+    # The cloud method's endpoint (any OpenAI-compatible chat-completions
+    # API) and the environment variable, also looked up in ``.env``, that
+    # holds its key. The key itself is never an option and never recorded.
+    cloud_base_url: str = "https://openrouter.ai/api/v1"
+    cloud_api_key_env: str = "OPENROUTER_API_KEY"
+    # The reply and the model's thinking share this limit. On the densest
+    # bench figure (264 values) Sonnet 5.5 used 24,000 tokens, 4,000 of
+    # them thinking; Gemini 3.8 Flash thought for 26,000 and was cut at
+    # 32,000 with a third of the values written.
+    cloud_max_output_tokens: int = 64000
+    # How hard the cloud model is asked to think, sent as
+    # ``reasoning_effort``; None leaves it to the endpoint's default.
+    cloud_reasoning_effort: str | None = "high"
+    # The Claude Code executable the agent method runs.
+    claude_command: str = "claude"
+    # Images sent to a cloud model are scaled down to this long side.
+    cloud_max_side_px: int = 2000
+    # Set on every session, so that a run does not depend on the effort
+    # level saved in the user's own Claude Code settings.
+    claude_effort: str = "high"
+    # A session is stopped past this spend (as the CLI reports it).
+    max_cost_usd_per_figure: float = 2.0
     samples: int = Field(default=1, ge=1)
     panel_split: PanelSplit = "auto"
     crop_dpi: int = 220
     min_confidence_for_markdown: float = 0.7
     eligible_types: frozenset[str] = DEFAULT_ELIGIBLE_TYPES
-    time_budget_s_per_figure: float = 120
+    # No new call starts once a figure has taken this long; a call that
+    # runs longer than the per-call budget is cut and keeps what it has.
+    time_budget_s_per_figure: float = 600
+    time_budget_s_per_call: float = 120
     num_ctx: int = 16384
     # A read caught in a loop stops here instead of filling the context.
     max_output_tokens: int = 8192
     vlm_max_side_px: int = 1600
     request_timeout_s: float = 600
+
+    @model_validator(mode="before")
+    @classmethod
+    def _method_defaults(cls, data: Any) -> Any:
+        if not isinstance(data, dict):
+            return data
+        filled = dict(data)
+        method = filled.get("method") or "ollama"
+        if filled.get("backend") is None:
+            filled["backend"] = DEFAULT_BACKENDS.get(method, "ollama")
+        if filled.get("model") is None:
+            filled["model"] = DEFAULT_MODELS.get(
+                filled["backend"], DEFAULT_OLLAMA_MODEL
+            )
+        return filled
 
     @field_serializer("eligible_types")
     def _sorted_types(self, types: frozenset[str]) -> list[str]:
@@ -253,7 +331,8 @@ class PanelRead(BaseModel):
 
 
 class CallTiming(BaseModel):
-    """One Ollama ``/api/chat`` call."""
+    """One model call (an Ollama ``/api/chat`` call, a cloud call) or one
+    agent session."""
 
     panel: str | None = None
     prompt: str
@@ -264,6 +343,12 @@ class CallTiming(BaseModel):
     eval_s: float | None = None
     prompt_tokens: int | None = None
     eval_tokens: int | None = None
+    # The reply was stopped by the deadline or the token limit.
+    cut: bool = False
+    # Cloud and agent runs: what the provider's CLI or API reported.
+    cost_usd: float | None = None
+    turns: int | None = None
+    tool_calls: int | None = None
 
 
 class RunningModel(BaseModel):
@@ -289,7 +374,9 @@ class FigureDataResult(BaseModel):
     """One figure's run: its chart data plus how it was obtained."""
 
     chart_data: ChartData
-    mode: FigureDataMode
+    mode: FigureDataMode = "measured"
+    method: FigureMethod = "ollama"
+    backend: Backend = "ollama"
     model: str | None = None
     panel_split: str | None = None
     seconds: float = 0.0
@@ -305,3 +392,8 @@ class FigureDataResult(BaseModel):
     @property
     def eval_tokens(self) -> int:
         return sum(c.eval_tokens or 0 for c in self.calls)
+
+    @property
+    def cost_usd(self) -> float | None:
+        costs = [c.cost_usd for c in self.calls if c.cost_usd is not None]
+        return round(sum(costs), 4) if costs else None

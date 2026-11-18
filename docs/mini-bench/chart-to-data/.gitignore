@@ -4,3 +4,23 @@
 figures/
 runs/**/*.png
 judge/inputs/
+round-*/runs/**/*.png
+round-*/ablation/**/*.png
+round-*/judge/inputs/
+round-*/sonnet/figures/
+**/runs/*.log
+round-*/ablation/*.log
+# Round 3: what a reader was given (the figure, its printed text, the PDF's
+# drawing paths) and the session traces that quote it stay local; the
+# readings and the run records are published.
+round-*/runs/**/figure.txt
+round-*/runs/**/evidence.json
+round-*/runs/**/trace.json
+round-*/superseded/**/*.png
+round-*/superseded/**/figure.txt
+round-*/superseded/**/evidence.json
+round-*/superseded/**/trace.json
+round-*/extra/**/*.png
+round-*/extra/**/figure.txt
+round-*/extra/**/evidence.json
+round-*/extra/**/trace.json

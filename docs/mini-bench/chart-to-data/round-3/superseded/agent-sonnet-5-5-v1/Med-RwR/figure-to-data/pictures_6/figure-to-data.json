@@ -1,0 +1,2161 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        192.2,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Training step (every five steps; no tick labels, index 1-30)",
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy Reward",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.75,
+            2.7
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Smoothed line",
+          "color": null
+        },
+        {
+          "name": "Raw points",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Smoothed line",
+          "value": 1.01,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Smoothed line",
+          "value": 1.11,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Smoothed line",
+          "value": 1.23,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Smoothed line",
+          "value": 1.61,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Smoothed line",
+          "value": 1.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Smoothed line",
+          "value": 2.145,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Smoothed line",
+          "value": 2.13,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Smoothed line",
+          "value": 1.92,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Smoothed line",
+          "value": 2.21,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Smoothed line",
+          "value": 2.05,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Smoothed line",
+          "value": 1.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Smoothed line",
+          "value": 1.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Smoothed line",
+          "value": 2.16,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Smoothed line",
+          "value": 2.095,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Smoothed line",
+          "value": 2.045,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Smoothed line",
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Smoothed line",
+          "value": 2.22,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Smoothed line",
+          "value": 2.05,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Smoothed line",
+          "value": 2.035,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Smoothed line",
+          "value": 2.445,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Smoothed line",
+          "value": 2.15,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Smoothed line",
+          "value": 1.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Smoothed line",
+          "value": 1.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Smoothed line",
+          "value": 1.96,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Smoothed line",
+          "value": 2.31,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Smoothed line",
+          "value": 2.37,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Smoothed line",
+          "value": 2.27,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Smoothed line",
+          "value": 2.35,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Smoothed line",
+          "value": 2.26,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Smoothed line",
+          "value": 2.265,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Raw points",
+          "value": 1.02,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Raw points",
+          "value": 1.195,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Raw points",
+          "value": 1.23,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Raw points",
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Raw points",
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Raw points",
+          "value": 2.53,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Raw points",
+          "value": 1.735,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Raw points",
+          "value": 2.09,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Raw points",
+          "value": 2.31,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Raw points",
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Raw points",
+          "value": 1.49,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Raw points",
+          "value": 2.28,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Raw points",
+          "value": 2.05,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Raw points",
+          "value": 2.155,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Raw points",
+          "value": 1.935,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Raw points",
+          "value": 2.06,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Raw points",
+          "value": 2.37,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Raw points",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Raw points",
+          "value": 2.36,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Raw points",
+          "value": 2.53,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Raw points",
+          "value": 1.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Raw points",
+          "value": 1.855,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Raw points",
+          "value": 1.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Raw points",
+          "value": 2.05,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Raw points",
+          "value": 2.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Raw points",
+          "value": 2.14,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Raw points",
+          "value": 2.39,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Raw points",
+          "value": 2.29,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Raw points",
+          "value": 2.21,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Raw points",
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "30 smoothed vertices and 30 faint raw dots; values read by pixel against ticks. Raw dots at index 1 and 22-23 overlap the line."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        192.2,
+        3.0,
+        385.7,
+        100.9
+      ],
+      "title": "Format Reward",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Training step (every five steps; no tick labels, index 1-30)",
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Format Reward",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.55,
+            2.1
+          ],
+          "ticks": [
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Smoothed line",
+          "color": null
+        },
+        {
+          "name": "Raw points",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Smoothed line",
+          "value": 0.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Smoothed line",
+          "value": 0.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Smoothed line",
+          "value": 0.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Smoothed line",
+          "value": 0.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Smoothed line",
+          "value": 1.01,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Smoothed line",
+          "value": 1.43,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Smoothed line",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Smoothed line",
+          "value": 1.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Smoothed line",
+          "value": 1.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Smoothed line",
+          "value": 1.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Smoothed line",
+          "value": 1.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Smoothed line",
+          "value": 1.69,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Smoothed line",
+          "value": 1.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Smoothed line",
+          "value": 1.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Smoothed line",
+          "value": 1.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Smoothed line",
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Smoothed line",
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Smoothed line",
+          "value": 1.755,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Smoothed line",
+          "value": 1.735,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Smoothed line",
+          "value": 1.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Smoothed line",
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Smoothed line",
+          "value": 1.625,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Smoothed line",
+          "value": 1.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Smoothed line",
+          "value": 1.695,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Smoothed line",
+          "value": 1.83,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Smoothed line",
+          "value": 1.85,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Smoothed line",
+          "value": 1.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Smoothed line",
+          "value": 1.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Smoothed line",
+          "value": 1.83,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Smoothed line",
+          "value": 1.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Raw points",
+          "value": 0.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Raw points",
+          "value": 0.74,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Raw points",
+          "value": 0.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Raw points",
+          "value": 0.93,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Raw points",
+          "value": 1.095,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Raw points",
+          "value": 1.76,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Raw points",
+          "value": 1.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Raw points",
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Raw points",
+          "value": 1.867,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Raw points",
+          "value": 1.673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Raw points",
+          "value": 1.55,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Raw points",
+          "value": 1.83,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Raw points",
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Raw points",
+          "value": 1.785,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Raw points",
+          "value": 1.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Raw points",
+          "value": 1.737,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Raw points",
+          "value": 1.89,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Raw points",
+          "value": 1.614,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Raw points",
+          "value": 1.854,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Raw points",
+          "value": 1.895,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Raw points",
+          "value": 1.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Raw points",
+          "value": 1.658,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Raw points",
+          "value": 1.64,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Raw points",
+          "value": 1.743,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Raw points",
+          "value": 1.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Raw points",
+          "value": 1.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Raw points",
+          "value": 1.856,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Raw points",
+          "value": 1.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Raw points",
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Raw points",
+          "value": 1.815,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "30 smoothed vertices and 30 faint raw dots; values read by pixel against ticks. Several raw dots hidden behind the line are approximate."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        385.7,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Completion Length",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Training step (every five steps; no tick labels, index 1-30)",
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Completion Length",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            195.0,
+            295.0
+          ],
+          "ticks": [
+            275.0,
+            250.0,
+            225.0,
+            200.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Smoothed line",
+          "color": null
+        },
+        {
+          "name": "Raw points",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Smoothed line",
+          "value": 209.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Smoothed line",
+          "value": 216.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Smoothed line",
+          "value": 234.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Smoothed line",
+          "value": 247.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Smoothed line",
+          "value": 259.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Smoothed line",
+          "value": 275.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Smoothed line",
+          "value": 268.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Smoothed line",
+          "value": 252.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Smoothed line",
+          "value": 243.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Smoothed line",
+          "value": 233.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Smoothed line",
+          "value": 222.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Smoothed line",
+          "value": 222.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Smoothed line",
+          "value": 227.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Smoothed line",
+          "value": 226.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Smoothed line",
+          "value": 233.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Smoothed line",
+          "value": 244.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Smoothed line",
+          "value": 265.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Smoothed line",
+          "value": 282.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Smoothed line",
+          "value": 281.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Smoothed line",
+          "value": 281.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Smoothed line",
+          "value": 279.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Smoothed line",
+          "value": 268.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Smoothed line",
+          "value": 268.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Smoothed line",
+          "value": 276.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Smoothed line",
+          "value": 279.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Smoothed line",
+          "value": 281.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Smoothed line",
+          "value": 280.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Smoothed line",
+          "value": 268.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Smoothed line",
+          "value": 266.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Smoothed line",
+          "value": 273.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Raw points",
+          "value": 209.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 2.0,
+          "series": "Raw points",
+          "value": 224.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Raw points",
+          "value": 244.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 4.0,
+          "series": "Raw points",
+          "value": 248.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Raw points",
+          "value": 271.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 6.0,
+          "series": "Raw points",
+          "value": 280.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 7.0,
+          "series": "Raw points",
+          "value": 255.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 8.0,
+          "series": "Raw points",
+          "value": 248.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 9.0,
+          "series": "Raw points",
+          "value": 238.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Raw points",
+          "value": 229.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 11.0,
+          "series": "Raw points",
+          "value": 215.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 12.0,
+          "series": "Raw points",
+          "value": 229.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Raw points",
+          "value": 223.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 14.0,
+          "series": "Raw points",
+          "value": 229.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Raw points",
+          "value": 237.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 16.0,
+          "series": "Raw points",
+          "value": 252.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 17.0,
+          "series": "Raw points",
+          "value": 278.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 18.0,
+          "series": "Raw points",
+          "value": 286.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 19.0,
+          "series": "Raw points",
+          "value": 276.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Raw points",
+          "value": 286.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 21.0,
+          "series": "Raw points",
+          "value": 271.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 22.0,
+          "series": "Raw points",
+          "value": 264.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 23.0,
+          "series": "Raw points",
+          "value": 271.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 24.0,
+          "series": "Raw points",
+          "value": 280.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 25.0,
+          "series": "Raw points",
+          "value": 277.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 26.0,
+          "series": "Raw points",
+          "value": 285.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 27.0,
+          "series": "Raw points",
+          "value": 275.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Raw points",
+          "value": 261.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 29.0,
+          "series": "Raw points",
+          "value": 271.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 30.0,
+          "series": "Raw points",
+          "value": 274.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "30 smoothed vertices and 30 faint raw dots; values read by pixel against ticks."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Three line panels showing accuracy reward, format reward and completion length over 30 logged training points of the first stage, each with a smoothed line and faint raw dots.",
+  "uncertain": [
+    "X axes have no tick labels, so the step index 1-30 is assumed, not read from the figure.",
+    "All values are estimated from pixel positions, since no numbers are printed. A few raw dots hidden behind the line are approximate."
+  ]
+}

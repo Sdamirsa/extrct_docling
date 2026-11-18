@@ -1,0 +1,12 @@
+{
+ "panels": [],
+ "description": "A two-stage deployment diagram: wearable PPG monitoring with a PPG agent flagging possible atrial fibrillation, then in-hospital ECG and PPG monitoring where Cardiologent recommends therapy and urgency.",
+ "has_data": false,
+ "not_read": [
+  "No data values are plotted or printed; the figure is a conceptual diagram with icons and text excerpts, so no chart was recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

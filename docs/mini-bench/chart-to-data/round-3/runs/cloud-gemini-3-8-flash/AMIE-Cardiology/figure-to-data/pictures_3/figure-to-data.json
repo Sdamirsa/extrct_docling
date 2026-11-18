@@ -1,0 +1,304 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Cardiology",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 4,
+    "bbox": [
+      42.35,
+      48.79,
+      558.51,
+      159.74
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        5.4,
+        234.9,
+        161.9
+      ],
+      "title": "Did the AI help your assessment?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "40.2%",
+            "Neither",
+            "yes",
+            "nor",
+            "no"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "AI",
+            "40.2%"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Yes, definitely",
+          "x": null,
+          "series": null,
+          "value": 16.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "16.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Yes, probably",
+          "x": null,
+          "series": null,
+          "value": 40.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "40.2%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Neither yes nor no",
+          "x": null,
+          "series": null,
+          "value": 30.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, probably not",
+          "x": null,
+          "series": null,
+          "value": 8.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "8.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, definitely not",
+          "x": null,
+          "series": null,
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "3.7%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        256.0,
+        6.4,
+        501.3,
+        152.5
+      ],
+      "title": "Did the AI make you more confident?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Neither",
+            "yes",
+            "nor",
+            "no"
+          ]
+        },
+        "y": null
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Yes, definitely",
+          "x": null,
+          "series": null,
+          "value": 15.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "15.9%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Yes, probably",
+          "x": null,
+          "series": null,
+          "value": 36.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "36.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Neither yes nor no",
+          "x": null,
+          "series": null,
+          "value": 32.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "32.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, probably not",
+          "x": null,
+          "series": null,
+          "value": 12.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "12.1%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "No, definitely not",
+          "x": null,
+          "series": null,
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.8%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        530.7,
+        7.4,
+        772.5,
+        156.0
+      ],
+      "title": "Did the AI save you time?",
+      "kind": "pie",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "30.8%",
+            "Delayed",
+            "me",
+            "by",
+            "more"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "save",
+            "23.4%"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Saved more than 50% of my time",
+          "x": null,
+          "series": null,
+          "value": 23.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "23.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Saved more than 10% of my time",
+          "x": null,
+          "series": null,
+          "value": 27.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "27.1%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Not sure",
+          "x": null,
+          "series": null,
+          "value": 30.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.8%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Delayed me by more than 10%",
+          "x": null,
+          "series": null,
+          "value": 15.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "15.9%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Delayed me by more than 50%",
+          "x": null,
+          "series": null,
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.8%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Three pie charts showing survey responses on whether AI helped assessment, increased confidence, and saved time.",
+  "uncertain": []
+}

@@ -1,0 +1,299 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        9.1,
+        6.4,
+        321.1,
+        344.8
+      ],
+      "title": "GMCPQ",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "percentage",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Being Polite",
+            "Making Patient",
+            "Feel At Ease",
+            "Listening to Patient",
+            "Assessesing",
+            "Medical Condition",
+            "Explaining Condition",
+            "and Treatment",
+            "Involving Patient in",
+            "Treatment Decisions",
+            "Providing Appropriate",
+            "Treatment Plan",
+            "Patient Trusts Information",
+            "is Confidential",
+            "Appearing Honest",
+            "And Trustworthy",
+            "Patient Confident About",
+            "Care Provided (Y/N)",
+            "Patient Happy to",
+            "Return In Future (Y/N)"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Being Polite",
+          "x": null,
+          "series": null,
+          "value": 54.8185,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Making Patient Feel At Ease",
+          "x": null,
+          "series": null,
+          "value": 45.1747,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Listening to Patient",
+          "x": null,
+          "series": null,
+          "value": 52.0631,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        337.2,
+        6.6,
+        657.7,
+        344.8
+      ],
+      "title": "MXEKF",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Prioritization Of Preferences",
+            "Constraints And Values",
+            "Communication And",
+            "Shared Decision Making",
+            "Monitoring And Adjustment",
+            "Of Management Plan",
+            "Managing Interplay Of",
+            "Competing Priorities",
+            "Acting As Patient",
+            "Teacher And Šalesperson",
+            "Relationship Fostering",
+            "Organization Of The",
+            "Člinical Encounter"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Prioritization Of Preferences Constraints And Values",
+          "x": null,
+          "series": null,
+          "value": 71.9456,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Communication And Shared Decision Making",
+          "x": null,
+          "series": null,
+          "value": 107.4146,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Monitoring And Adjustment Of Management Plan",
+          "x": null,
+          "series": null,
+          "value": 69.3233,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        1.0,
+        377.2,
+        603.9,
+        509.6
+      ],
+      "title": "PACES",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Managing Patient Concerns",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Addressing",
+            "Patient Concerns",
+            "Understanding",
+            "Patient Concerns",
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "red"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "Addressing Patient Concerns",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 35.5019,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Addressing Patient Concerns",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": 68.8051,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Understanding Patient Concerns",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 51.4654,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

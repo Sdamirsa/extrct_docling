@@ -9,8 +9,11 @@ paths drawn in it, and axis maps fitted to its tick labels.
   higher resolution than that, the bitmap itself (a 600 dpi chart pasted
   into a paper is common).
 - **Words.** The PDF text layer inside the box (pypdfium2 character boxes,
-  grouped into words), else the text items Docling's OCR put under the
-  picture in ``document.json``.
+  grouped into words) plus what OCR reads on the work image where the text
+  layer has nothing: a chart pasted as a bitmap keeps its tick labels in
+  the pixels even when the box also holds a few PDF words (a panel letter,
+  a watermark). Without RapidOCR, the text items Docling's OCR put under
+  the picture in ``document.json``.
 - **Marks.** PDF path objects inside the box with fill / stroke colour and
   vertices, form XObjects resolved; ``source_kind`` is ``raster`` when an
   image covers the box, ``vector`` when paths do the drawing.
@@ -21,6 +24,7 @@ paths drawn in it, and axis maps fitted to its tick labels.
 from __future__ import annotations
 
 import ctypes
+import functools
 import logging
 import math
 import re
@@ -57,7 +61,7 @@ _MAX_WORK_SIDE_PX = 3200
 _NATIVE_MIN_COVER = 0.9
 _RASTER_MIN_COVER = 0.6
 _VECTOR_MIN_PATHS = 8
-_PDF_MIN_WORD_CHARS = 3
+_OCR_MIN_SCORE = 0.5
 
 _NUMBER = re.compile(
     r"^\(?([+-]?(?:\d+(?:[.,]\d+)*|[.,]\d+)(?:[eE][+-]?\d+)?)\s*(%|[kKM])?\)?$"
@@ -242,7 +246,13 @@ def build_job(
     )
     crop_scale = crop_w / max(box[2] - box[0], 1e-6)
     if bundle.pdf_path is None:
-        job.words = list(_ocr_words(bundle.doc, picture, _Placement(box, crop_scale)))
+        with Image.open(crop_path) as crop:
+            read = image_words(crop)
+        job.words = (
+            read
+            if read is not None
+            else list(_ocr_words(bundle.doc, picture, _Placement(box, crop_scale)))
+        )
         return job
 
     import pypdfium2 as pdfium
@@ -276,10 +286,12 @@ def build_job(
             words = list(_pdf_words(textpage, frame, placement))
         finally:
             textpage.close()
-        job.words = (
-            words
-            if sum(len(w.text) for w in words) >= _PDF_MIN_WORD_CHARS
-            else list(_ocr_words(bundle.doc, picture, placement))
+        read = image_words(work)
+        job.words = merge_words(
+            words,
+            read
+            if read is not None
+            else list(_ocr_words(bundle.doc, picture, placement)),
         )
         job.marks = [
             obj.mark(placement) for obj in objects if obj.kind == "path" and obj.inside
@@ -510,6 +522,52 @@ def _pdf_words(
     yield from flush()
 
 
+@functools.lru_cache(maxsize=1)
+def _ocr_reader() -> Any:
+    from rapidocr import RapidOCR
+
+    return RapidOCR()
+
+
+def image_words(image: Image.Image) -> list[Word] | None:
+    """The text lines RapidOCR reads on *image*, in its pixels; None when
+    RapidOCR or its models are not available."""
+    try:
+        reader = _ocr_reader()
+    except Exception as exc:  # no rapidocr, or its models cannot be fetched
+        _log.warning("figure data: no OCR of the figure image (%s)", exc)
+        return None
+    result = reader(np.asarray(image.convert("RGB"))[:, :, ::-1])
+    if result.boxes is None:
+        return []
+    words: list[Word] = []
+    for quad, text, score in zip(result.boxes, result.txts, result.scores):
+        # OCR also "reads" bars and markers, as "_", "|" or a bullet.
+        if score < _OCR_MIN_SCORE or not any(c.isalnum() for c in text):
+            continue
+        xs, ys = [float(p[0]) for p in quad], [float(p[1]) for p in quad]
+        words.append(
+            Word(
+                text=text.strip(),
+                bbox=_round_box((min(xs), min(ys), max(xs), max(ys))),
+                source="ocr",
+            )
+        )
+    return words
+
+
+def merge_words(pdf: list[Word], ocr: list[Word]) -> list[Word]:
+    """The text-layer words plus the OCR lines that cover none of them."""
+    return pdf + [
+        line
+        for line in ocr
+        if not any(
+            _centre_inside(word.bbox, line.bbox) or _centre_inside(line.bbox, word.bbox)
+            for word in pdf
+        )
+    ]
+
+
 def _ocr_words(
     doc: DoclingDocument, picture: PictureItem, placement: _Placement
 ) -> Iterator[Word]:
@@ -737,15 +795,30 @@ def find_axes(words: list[Word], region: Box) -> PanelAxes:
     numeric_y = [w for w in y_group if parse_number(w.text) is not None]
     numeric_x = [w for w in x_group if parse_number(w.text) is not None]
     return PanelAxes(
-        y=fit_axis(
-            ((w.cy, w.text) for w in (numeric_y if len(numeric_y) >= 2 else y_group)),
+        y=_fit_ticks(
+            [(w.cy, w.text) for w in (numeric_y if len(numeric_y) >= 2 else y_group)],
             "y",
         ),
-        x=fit_axis(
-            ((w.cx, w.text) for w in (numeric_x if len(numeric_x) >= 2 else x_group)),
+        x=_fit_ticks(
+            [(w.cx, w.text) for w in (numeric_x if len(numeric_x) >= 2 else x_group)],
             "x",
         ),
     )
+
+
+def _fit_ticks(
+    ticks: list[tuple[float, str]], axis: Literal["x", "y"]
+) -> AxisMap | None:
+    """:func:`fit_axis`, forgiving one misread label among four or more
+    (OCR turns "300" into "30" now and then, which breaks the monotone run)."""
+    fitted = fit_axis(ticks, axis)
+    if fitted is not None or len(ticks) < 4:
+        return fitted
+    for skip in range(len(ticks)):
+        fitted = fit_axis(ticks[:skip] + ticks[skip + 1 :], axis)
+        if fitted is not None and fitted.scale != "categorical":
+            return fitted
+    return None
 
 
 def _largest_group(

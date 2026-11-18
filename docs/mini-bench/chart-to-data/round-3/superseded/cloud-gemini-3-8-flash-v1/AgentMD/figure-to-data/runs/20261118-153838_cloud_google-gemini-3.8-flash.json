@@ -1,0 +1,73 @@
+{
+  "schema": "extrct.figure-to-data-run/1",
+  "run_id": "20261118-153838_cloud_google-gemini-3.8-flash",
+  "step_version": "3",
+  "bundle": "AgentMD",
+  "method": "cloud",
+  "backend": "openai-compatible",
+  "model": "google/gemini-3.8-flash",
+  "started": "2026-11-18T15:38:38",
+  "seconds": 4.57,
+  "options": {
+    "method": "cloud",
+    "backend": "openai-compatible",
+    "model": "google/gemini-3.8-flash",
+    "mode": "measured",
+    "ollama_url": "http://127.0.0.1:11434",
+    "keep_alive": "10m",
+    "cloud_base_url": "https://openrouter.ai/api/v1",
+    "cloud_api_key_env": "OPENROUTER_API_KEY",
+    "cloud_max_output_tokens": 32000,
+    "cloud_reasoning_effort": "high",
+    "claude_command": "claude",
+    "cloud_max_side_px": 2000,
+    "claude_effort": "high",
+    "max_cost_usd_per_figure": 2.0,
+    "samples": 1,
+    "panel_split": "auto",
+    "crop_dpi": 220,
+    "min_confidence_for_markdown": 0.7,
+    "eligible_types": [
+      "bar_chart",
+      "box_plot",
+      "forest_plot",
+      "heatmap",
+      "kaplan_meier",
+      "line_chart",
+      "pie_chart",
+      "roc_curve",
+      "scatter_plot"
+    ],
+    "time_budget_s_per_figure": 600.0,
+    "time_budget_s_per_call": 120.0,
+    "num_ctx": 16384,
+    "max_output_tokens": 8192,
+    "vlm_max_side_px": 1600,
+    "request_timeout_s": 600.0
+  },
+  "reader": {
+    "runtime": "POST https://openrouter.ai/api/v1/chat/completions, key from OPENROUTER_API_KEY",
+    "calls_per_figure": 1,
+    "system_prompt": "You read the data out of one figure from a scientific paper and return it as tables.\n\nYou are given the figure image; when the figure holds several charts, one enlarged crop per chart after it; the paper's caption; the charts a layout analysis found; and the text printed in the figure (taken from the PDF or read by OCR; OCR can misread, the image decides). Read each chart from its own crop when it has one.\n\nAnswer once, for the whole figure: description (what it shows, one sentence), has_data, one entry in panels per chart, and not_read.\n\nHow a chart becomes points\n- One chart per plot with its own axes, and one per pie, also when charts sit in a grid, share a legend or stand under one panel letter. Use the chart ids you were given when they match what you see; otherwise number the charts 1, 2, 3, ... in reading order and give each a box.\n- One point per (category or x value, series), each once.\n- category = the tick label of the mark, exactly as printed (line breaks as spaces); null on a numeric x axis. x = the mark's position on a numeric x axis, as a number; null otherwise. series = the legend entry, exactly as printed; null only when the chart has no legend. Never repeat the category as the series.\n- value = the number the mark stands for, in axis units, read against the nearest tick labels to the precision the axis allows. Do not round to a tick.\n- label = the number printed at the mark, exactly as printed, when one is printed. A printed number is the value: it beats a reading against the axis.\n- Bar: the bar's end. Grouped bar: one point per bar, category = the tick label, series = the bar's legend entry.\n- Stacked bar: one point per segment, value = the segment's own length, not the cumulative edge. category names the bar, series the segment's legend entry. When one tick label carries several stacked bars (a pair per item, one per group), each bar is its own category, written \"<tick label> - <group>\". A segment the legend implies but the bar does not show is written with value 0.\n- Box plot: value = the median, err_lo and err_hi = the whisker ends; quartiles and outliers go into the chart's notes.\n- Interval, error bar or forest plot: value = the centre, err_lo and err_hi = the two ends as axis values, not as distances from the centre.\n- Line or scatter: one point per marker; a line without markers: one point per x tick. When the x axis prints no tick labels, x = 1, 2, 3, ... in order.\n- A curve with a statistic printed for it (a ROC curve with its AUC in the legend): one point per curve, category = the curve's name, series = the statistic's name (AUC, AUROC), value and label = the printed number. Do not trace the curve.\n- Pie: one point per slice, value = its percentage, series null.\n- Heatmap: one point per cell, category = the row label, series = the column label.\n\nWhat must hold\n- A figure that plots or prints no data values that could go into a table (a diagram, workflow, architecture, photo, screenshot, or a raw signal trace such as an ECG) has no data: has_data false, no charts. Never turn a diagram's labels into values.\n- Never invent a value. A value you cannot read is null. Anything the figure shows that you did not write down (a chart, a series, the individual dots behind a box) is named in not_read, with the reason and how much it is.\n- Completeness counts as much as precision: before you answer, count the marks of each chart and the points you wrote for it."
+  },
+  "figures": [
+    {
+      "folder": "pictures_4",
+      "self_ref": "#/pictures/4",
+      "status": "no_data",
+      "reason": "not a data chart: Workflow diagram illustrating the RiskCalcs process, including tool selection, parameter extraction, and computation for a CURB-65 score prediction.",
+      "charts": 0,
+      "values": 0,
+      "seconds": 4.57,
+      "calls": 1,
+      "tool_calls": null,
+      "input_tokens": 5199,
+      "output_tokens": 274,
+      "cost_usd": 0.0049,
+      "notes": [
+        "not a data chart: Workflow diagram illustrating the RiskCalcs process, including tool selection, parameter extraction, and computation for a CURB-65 score prediction."
+      ]
+    }
+  ],
+  "embedded": null
+}

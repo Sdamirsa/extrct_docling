@@ -1,0 +1,190 @@
+{
+ "figure_id": "B1",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    65,
+    17,
+    1380,
+    745
+   ],
+   "title": null,
+   "kind": "grouped_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Clinical Problem",
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Number of Cases",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0,
+      350
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u2715)",
+     "color": "green"
+    },
+    {
+     "name": "MAS Incorrect, Baseline Correct (MAS \u2715, Base \u25cb)",
+     "color": "red"
+    },
+    {
+     "name": "Both Correct (\u25cb)",
+     "color": "blue"
+    },
+    {
+     "name": "Both Incorrect (\u2715)",
+     "color": "yellow"
+    }
+   ],
+   "data": [
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u2715)",
+     "value": 13,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "13",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS \u2715, Base \u25cb)",
+     "value": 6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "6",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Correct (\u25cb)",
+     "value": 299,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "299",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Congestive Heart Failure",
+     "x": null,
+     "series": "Both Incorrect (\u2715)",
+     "value": 102,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "102",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u2715)",
+     "value": 25,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS \u2715, Base \u25cb)",
+     "value": 25,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Correct (\u25cb)",
+     "value": 255,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "255",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Acute Kidney Injury",
+     "x": null,
+     "series": "Both Incorrect (\u2715)",
+     "value": 115,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "115",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u2715)",
+     "value": 25,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "25",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "MAS Incorrect, Baseline Correct (MAS \u2715, Base \u25cb)",
+     "value": 26,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "26",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Correct (\u25cb)",
+     "value": 283,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "283",
+     "source": "printed",
+     "confidence": 0.97
+    },
+    {
+     "category": "Sepsis",
+     "x": null,
+     "series": "Both Incorrect (\u2715)",
+     "value": 86,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "86",
+     "source": "printed",
+     "confidence": 0.97
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "uncertain": [],
+ "method": "All bar values are printed above the bars."
+}

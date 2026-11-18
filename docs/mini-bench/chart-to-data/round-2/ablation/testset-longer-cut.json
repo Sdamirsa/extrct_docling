@@ -1,0 +1,25 @@
+{
+ "schema": "extrct.figure-data-testset/1",
+ "created": "2026-11-17",
+ "purpose": "Round 2, the 31B with a longer cut per call: the two figures whose replies the 120 s cut stopped while every point so far was right (B1) or plausible (B2).",
+ "figures": [
+  {
+   "id": "B1",
+   "bundle": "samples/aca-papers_out/Dynamic-Specialist-MAS",
+   "pdf": "samples/aca-papers/Dynamic-Specialist-MAS.pdf",
+   "self_ref": "#/pictures/1",
+   "image_path": "images/picture_002.png",
+   "expected_kind": "grouped bar chart, 3 categories x 4 series, count printed above each bar",
+   "truth_hint": "printed labels"
+  },
+  {
+   "id": "B2",
+   "bundle": "samples/aca-papers_out/Med-RwR",
+   "pdf": "samples/aca-papers/Med-RwR.pdf",
+   "self_ref": "#/pictures/6",
+   "image_path": "images/picture_007.png",
+   "expected_kind": "three line-chart panels, smoothed line plus raw points, no printed values",
+   "truth_hint": "measured against the y ticks"
+  }
+ ]
+}

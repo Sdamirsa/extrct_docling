@@ -1,0 +1,274 @@
+{
+ "figure_id": "C1",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0,
+    0,
+    380,
+    405
+   ],
+   "title": "Top-1 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.579,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.69,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "2",
+   "bbox_px": [
+    385,
+    0,
+    760,
+    405
+   ],
+   "title": "Top-1 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.478,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.629,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.797,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    770,
+    0,
+    1140,
+    405
+   ],
+   "title": "Top-3 Diagnosis Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.598,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "4",
+   "bbox_px": [
+    1150,
+    0,
+    1517,
+    405
+   ],
+   "title": "Top-3 Explanation Performance on MIMIC",
+   "kind": "bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Accuracy",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.2,
+      0.9
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.535,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert",
+     "x": null,
+     "series": null,
+     "value": 0.551,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    },
+    {
+     "category": "Expert + HeartAgent",
+     "x": null,
+     "series": null,
+     "value": 0.675,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.8
+    }
+   ],
+   "notes": []
+  }
+ ],
+ "uncertain": [
+  "Bar values estimated by eye; y axis starts at 0.2."
+ ],
+ "method": "Read bar tops against y ticks 0.2-0.8 by eye."
+}

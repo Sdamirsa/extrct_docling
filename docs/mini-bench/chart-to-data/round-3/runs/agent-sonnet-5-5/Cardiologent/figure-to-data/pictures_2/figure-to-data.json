@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Schematic of the Cardiologent multi-agent framework (ECG and PPG specialist agents, debate-based fusion, PubMed guideline retrieval, patient-level diagnosis) with no plotted data values.",
+  "uncertain": [
+    "not a data chart: Schematic of the Cardiologent multi-agent framework (ECG and PPG specialist agents, debate-based fusion, PubMed guideline retrieval, patient-level diagnosis) with no plotted data values.",
+    "Whole figure is a workflow diagram; the layout-detected 'chart' is a set of agent labels and icons, not data, so nothing was recorded.",
+    "The small green ECG trace with a highlighted PVC beat is a raw signal illustration with no axes or values."
+  ]
+}

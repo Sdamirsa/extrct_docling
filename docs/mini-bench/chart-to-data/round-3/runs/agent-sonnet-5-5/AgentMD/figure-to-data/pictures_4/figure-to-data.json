@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "A workflow diagram of the AgentMD pipeline showing RiskCalcs tool selection (CURB-65 score), parameter extraction, tool computation and a resulting prediction, with no chart data.",
+  "uncertain": [
+    "not a data chart: A workflow diagram of the AgentMD pipeline showing RiskCalcs tool selection (CURB-65 score), parameter extraction, tool computation and a resulting prediction, with no chart data.",
+    "Example patient parameters and the CURB-65 output (score 0, mortality 0.7%) are illustrative text in a diagram, not plotted data; not recorded."
+  ]
+}

@@ -1,0 +1,681 @@
+{
+ "figure_id": "B5",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "a1",
+   "bbox_px": [
+    55,
+    30,
+    287,
+    390
+   ],
+   "title": "Stroke/TIA (MedRisk-Qualitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Stroke/TIA",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 76.0,
+     "err_lo": 71.2,
+     "err_hi": 76.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 57.8,
+     "err_lo": 57.7,
+     "err_hi": 59.9,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 57.7,
+     "err_lo": 57.1,
+     "err_hi": 57.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box ~73.3-76.1; median uncertain",
+    "GPT-4o: box 57.7-59.2; outlier 54.9",
+    "o3-mini: outlier 63.4"
+   ]
+  },
+  {
+   "id": "a2",
+   "bbox_px": [
+    360,
+    30,
+    592,
+    390
+   ],
+   "title": "Shortness of Breath (MedRisk-Qualitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Shortness of Breath",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 77.2,
+     "err_lo": 75.4,
+     "err_hi": 78.2,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 52.5,
+     "err_lo": 51.2,
+     "err_hi": 53.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 53.4,
+     "err_lo": 52.8,
+     "err_hi": 53.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 75.9-77.5",
+    "GPT-4o: box 51.5-53.2",
+    "o3-mini: box 53.1-53.8; outlier 55.0"
+   ]
+  },
+  {
+   "id": "a3",
+   "bbox_px": [
+    655,
+    30,
+    887,
+    390
+   ],
+   "title": "Internal Medicine (MedRisk-Qualitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Internal Medicine",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 78.3,
+     "err_lo": 77.8,
+     "err_hi": 78.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 50.1,
+     "err_lo": 49.9,
+     "err_hi": 50.2,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.1,
+     "err_lo": 51.3,
+     "err_hi": 53.0,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 78.0-78.6; outliers 79.3, 77.0",
+    "GPT-4o: outlier 50.3",
+    "o3-mini: box 51.8-52.5"
+   ]
+  },
+  {
+   "id": "a4",
+   "bbox_px": [
+    955,
+    30,
+    1187,
+    390
+   ],
+   "title": "Cardiac (MedRisk-Qualitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Cardiac",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 70.7,
+     "err_lo": 70.7,
+     "err_hi": 72.6,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 53.7,
+     "err_lo": 52.1,
+     "err_hi": 54.3,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.1,
+     "err_lo": 51.8,
+     "err_hi": 54.4,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 70.7-71.9",
+    "GPT-4o: box 52.1-54.0",
+    "o3-mini: box 51.8-52.9"
+   ]
+  },
+  {
+   "id": "a5",
+   "bbox_px": [
+    1255,
+    30,
+    1487,
+    390
+   ],
+   "title": "Overall (MedRisk-Qualitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Overall",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 78.3,
+     "err_lo": 78.0,
+     "err_hi": 79.0,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 50.6,
+     "err_lo": 50.5,
+     "err_hi": 50.7,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 52.6,
+     "err_lo": 51.6,
+     "err_hi": 53.3,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 78.0-78.7",
+    "GPT-4o: outlier 51.0",
+    "o3-mini: box 52.0-53.2"
+   ]
+  },
+  {
+   "id": "b1",
+   "bbox_px": [
+    55,
+    455,
+    287,
+    820
+   ],
+   "title": "Stroke/TIA (MedRisk-Quantitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Stroke/TIA",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 77.8,
+     "err_lo": 77.5,
+     "err_hi": 78.6,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 30.3,
+     "err_lo": 28.0,
+     "err_hi": 32.9,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 54.3,
+     "err_lo": 47.9,
+     "err_hi": 55.2,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 77.6-78.5; outliers 80.4, 75.4",
+    "GPT-4o: box 28.7-32.4; outlier 38.7",
+    "o3-mini: box 48.0-55.0"
+   ]
+  },
+  {
+   "id": "b2",
+   "bbox_px": [
+    360,
+    455,
+    592,
+    820
+   ],
+   "title": "Shortness of Breath (MedRisk-Quantitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Shortness of Breath",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 76.0,
+     "err_lo": 76.0,
+     "err_hi": 76.0,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 35.2,
+     "err_lo": 34.5,
+     "err_hi": 36.6,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 59.3,
+     "err_lo": 57.9,
+     "err_hi": 60.4,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: flat; outliers 76.6, 75.6",
+    "GPT-4o: box 34.9-36.4",
+    "o3-mini: box 58.5-60.0"
+   ]
+  },
+  {
+   "id": "b3",
+   "bbox_px": [
+    655,
+    455,
+    887,
+    820
+   ],
+   "title": "Internal Medicine (MedRisk-Quantitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Internal Medicine",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 75.2,
+     "err_lo": 74.7,
+     "err_hi": 77.3,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 39.4,
+     "err_lo": 39.3,
+     "err_hi": 39.5,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 55.2,
+     "err_lo": 54.4,
+     "err_hi": 56.8,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 74.8-75.9",
+    "GPT-4o: outliers 40.2, 38.7",
+    "o3-mini: box 54.8-56.6"
+   ]
+  },
+  {
+   "id": "b4",
+   "bbox_px": [
+    955,
+    455,
+    1187,
+    820
+   ],
+   "title": "Cardiac (MedRisk-Quantitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Cardiac",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 70.6,
+     "err_lo": 69.2,
+     "err_hi": 71.9,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 38.2,
+     "err_lo": 37.7,
+     "err_hi": 42.9,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 60.2,
+     "err_lo": 56.8,
+     "err_hi": 67.6,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 69.9-71.2",
+    "GPT-4o: box 37.7-40.8",
+    "o3-mini: box 57.1-66.9"
+   ]
+  },
+  {
+   "id": "b5",
+   "bbox_px": [
+    1255,
+    455,
+    1487,
+    820
+   ],
+   "title": "Overall (MedRisk-Quantitative)",
+   "kind": "box",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "Overall",
+     "unit": null,
+     "scale": "linear",
+     "range": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "RiskAgent-8B",
+     "x": null,
+     "series": null,
+     "value": 76.4,
+     "err_lo": 75.5,
+     "err_hi": 77.6,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "GPT-4o",
+     "x": null,
+     "series": null,
+     "value": 38.3,
+     "err_lo": 38.2,
+     "err_hi": 38.4,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    },
+    {
+     "category": "o3-mini",
+     "x": null,
+     "series": null,
+     "value": 55.9,
+     "err_lo": 54.8,
+     "err_hi": 57.4,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.55
+    }
+   ],
+   "notes": [
+    "RiskAgent-8B: box 76.0-77.1",
+    "GPT-4o: outliers 39.8, 37.5",
+    "o3-mini: box 55.3-57.0"
+   ]
+  }
+ ],
+ "uncertain": [
+  "All box stats estimated by eye; median lines often overlap box edges so some medians are uncertain.",
+  "Panel y-ranges not recorded."
+ ],
+ "method": "Eyeballed medians, whiskers, quartiles and outliers against each panel's y ticks."
+}

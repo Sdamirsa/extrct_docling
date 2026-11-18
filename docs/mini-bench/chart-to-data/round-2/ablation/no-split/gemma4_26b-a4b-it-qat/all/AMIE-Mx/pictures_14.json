@@ -1,0 +1,137 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        37.9,
+        443.0,
+        321.1,
+        509.6
+      ],
+      "title": null,
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Showing Empathy",
+          "x": "",
+          "series": null,
+          "value": 106.4467,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": "",
+          "series": null,
+          "value": 92.4097,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        446.3,
+        387.1,
+        603.9,
+        490.5
+      ],
+      "title": null,
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "PCP (bottom)",
+            "Very favorable"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#f8a694"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#9ecdfa"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

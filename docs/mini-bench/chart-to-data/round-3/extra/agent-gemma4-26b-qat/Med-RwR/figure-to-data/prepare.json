@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Med-RwR",
+  "pdf": "Med-RwR.pdf",
+  "prepared_at": "2026-11-18T11:32:55",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/6"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/6",
+      "status": "prepared",
+      "folder": "pictures_6",
+      "reason": null,
+      "page": 21,
+      "figure_type": "line_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        3074,
+        535
+      ],
+      "source_kind": "raster",
+      "charts": 3,
+      "words": 14
+    }
+  ]
+}

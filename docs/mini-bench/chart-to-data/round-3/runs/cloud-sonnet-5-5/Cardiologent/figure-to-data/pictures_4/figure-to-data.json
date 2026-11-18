@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Architecture diagram of a time-series encoder-decoder (Stage 1) feeding patch embeddings, together with a text prompt and a CLIP vision encoder, into a Llama-7B model that outputs an ECG/PPG arrhythmia explanation; it contains no plotted data.",
+  "uncertain": [
+    "not a data chart: Architecture diagram of a time-series encoder-decoder (Stage 1) feeding patch embeddings, together with a text prompt and a CLIP vision encoder, into a Llama-7B model that outputs an ECG/PPG arrhythmia explanation; it contains no plotted data.",
+    "The diagram has no quantitative data. The only numbers are the quoted example text (R-R CV 0.183, AF threshold 0.15) and the prompt template, which are not chart values.",
+    "The ECG waveform with red R-peak markers is a raw signal trace and was not tabulated."
+  ]
+}

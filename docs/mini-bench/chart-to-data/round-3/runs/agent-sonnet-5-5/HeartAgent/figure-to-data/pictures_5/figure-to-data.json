@@ -1,0 +1,344 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "HeartAgent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 12,
+    "bbox": [
+      56.3,
+      153.36,
+      552.74,
+      286.11
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.9,
+        2.5,
+        189.1,
+        198.9
+      ],
+      "title": "Top-1 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert",
+            "Expert + HeartAgent"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.69,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "No legend; values read from bar heights against axis."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        197.9,
+        2.5,
+        373.7,
+        198.9
+      ],
+      "title": "Top-1 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert",
+            "Expert + HeartAgent"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.48,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.795,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "No legend; values read from bar heights against axis. Y axis label shared with chart 1."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        383.1,
+        2.5,
+        558.9,
+        198.9
+      ],
+      "title": "Top-3 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert",
+            "Expert + HeartAgent"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.597,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.73,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "No legend; values read from bar heights against axis."
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        567.7,
+        2.5,
+        744.0,
+        198.9
+      ],
+      "title": "Top-3 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "HeartAgent",
+            "Expert",
+            "Expert + HeartAgent"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": [
+            0.8,
+            0.6,
+            0.4,
+            0.2
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.533,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.55,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.675,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "No legend; values read from bar heights against axis."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Four bar charts compare accuracy of HeartAgent, Expert, and Expert + HeartAgent on MIMIC notes for top-1 and top-3 diagnosis and explanation, with the combination highest in each.",
+  "uncertain": [
+    "No printed value labels, error bars or legend exist; all 12 bar values are read from bar heights against the axis, so they are approximate (about ±0.005)."
+  ]
+}

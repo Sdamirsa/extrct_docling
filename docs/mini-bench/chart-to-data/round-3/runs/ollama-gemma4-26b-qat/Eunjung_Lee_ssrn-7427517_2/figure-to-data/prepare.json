@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Eunjung_Lee_ssrn-7427517_2",
+  "pdf": "Eunjung Lee ssrn-7427517 (2).pdf",
+  "prepared_at": "2026-11-18T11:32:58",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/2"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/2",
+      "status": "prepared",
+      "folder": "pictures_2",
+      "reason": null,
+      "page": 10,
+      "figure_type": "forest_plot",
+      "capture": "pdf-render",
+      "size_px": [
+        1534,
+        786
+      ],
+      "source_kind": "raster",
+      "charts": 1,
+      "words": 18
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Rater agreement (ICC(2,1), absolute agreement, with 95% CI)",
+   "kind": "forest",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": "R1 ↔ R2 (human-human)",
+     "x": null,
+     "series": null,
+     "value": 0.67,
+     "err_lo": 0.52,
+     "err_hi": 0.79,
+     "label": null
+    },
+    {
+     "category": "Judge ↔ R1",
+     "x": null,
+     "series": null,
+     "value": 0.74,
+     "err_lo": 0.6,
+     "err_hi": 0.84,
+     "label": null
+    },
+    {
+     "category": "Judge ↔ R2",
+     "x": null,
+     "series": null,
+     "value": 0.66,
+     "err_lo": 0.51,
+     "err_hi": 0.78,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Center values for the intervals are taken from the figure caption."
+   ]
+  }
+ ],
+ "description": "The figure shows the Rater agreement (ICC(2,1), absolute agreement, with 95% CI) on a 20-patient subset for three comparisons: R1 ↔ R2 (human-human), Judge ↔ R1, and Judge ↔ R2.",
+ "has_data": true,
+ "not_read": [],
+ "finished": true,
+ "warned": false,
+ "looks": 1,
+ "records": 1
+}

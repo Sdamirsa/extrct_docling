@@ -1,0 +1,12 @@
+{
+ "panels": [],
+ "description": "A workflow diagram of the RiskCalcs pipeline (tool selection, parameter extraction, tool computation, prediction) using a CURB-65 example. It has no plotted data.",
+ "has_data": false,
+ "not_read": [
+  "Example patient parameters (confusion False, uremia False, respiratory rate 28, systolic BP 110, diastolic BP 70, age 60) and the output (score 0, mortality 0.7%) are illustrative text in a diagram, not chart data, so none were recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

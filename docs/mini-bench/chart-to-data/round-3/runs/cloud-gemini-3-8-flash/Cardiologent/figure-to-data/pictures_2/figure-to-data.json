@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 4,
+    "bbox": [
+      53.77,
+      57.28,
+      556.95,
+      318.66
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "An architectural and workflow diagram of the Cardiologent framework depicting window-level and patient-level signal analysis, multi-agent debate, and clinical guideline integration.",
+  "uncertain": [
+    "not a data chart: An architectural and workflow diagram of the Cardiologent framework depicting window-level and patient-level signal analysis, multi-agent debate, and clinical guideline integration."
+  ]
+}

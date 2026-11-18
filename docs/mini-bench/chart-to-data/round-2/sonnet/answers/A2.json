@@ -1,0 +1,9 @@
+{
+ "figure_id": "A2",
+ "is_data_chart": false,
+ "panels": [],
+ "uncertain": [
+  "Architecture/workflow diagram of ECG and PPG specialist agents, debate and referee; contains an ECG trace thumbnail but no data values."
+ ],
+ "method": "Visual inspection; no plotted values."
+}

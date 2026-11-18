@@ -82,6 +82,70 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`), no conversion. |
 | `--pair-supplements / --no-pair-supplements` | **on** | A PDF named like another of the batch plus `Supplementary` (`supplement`, `supp`, `SI`, `appendix`, an optional number) is recorded as that manuscript's supplement: `run.json` of both gets `related` (role, file name, size, hash, bundle folder), the supplement `document_role: "supplement"`, and every element of its HTML `data-document-role`. |
 | `--supplement SUPP.pdf=MANUSCRIPT.pdf` | none | Pair two PDFs of the batch whose names do not say so (repeatable); recorded with `pairing: "explicit"`. |
+| `--figure-data` | `off` | Adds the figure-to-data step on the finished bundles: `ollama` (a local model, nothing leaves the machine), `cloud` (one call per figure to a cloud model's API endpoint) or `agent` (one agent session per figure). See [Figure-to-data](#figure-to-data-the-numbers-behind-the-charts). |
+| `--figure-data-model` | the backend's own | `gemma4:26b-a4b-it-qat` on Ollama, `anthropic/claude-sonnet-5.5` on the cloud endpoint (OpenRouter's name), `claude-sonnet-5-5` for the agent. |
+| `--figure-data-backend` | the method's own | Where the model runs. `cloud`: `openai-compatible` (an API endpoint). `agent`: `claude-cli` (the Claude Code CLI with its own login) or `ollama` (the agent on a local model). |
+| `--figure-data-base-url` | `https://openrouter.ai/api/v1` | `cloud`: the chat-completions endpoint, any that speaks the OpenAI format (a provider, a gateway, a local Ollama at `http://127.0.0.1:11434/v1`). |
+| `--figure-data-key-env` | `OPENROUTER_API_KEY` | `cloud`: the variable that holds the endpoint's API key, read from the environment, else from `.env`. |
+| `--figure-data-when` | `end` | `end`: read the figures once the whole batch is converted (the conversion models are released first, the reading model loads once). `each`: after each PDF. |
+
+## Figure-to-data: the numbers behind the charts
+
+An optional step after the conversion (`default-plusFigData` is the
+suggested default plus `--figure-data ollama`). It never changes a
+conversion's status, and it can be run on its own at any later time:
+
+```bash
+uv run amir-batch samples/ -o samples/out --figure-data ollama     # convert, then read the charts
+uv run amir-figdata step samples/out --pdf-dir samples --method agent   # on an existing output folder
+uv run amir-figdata prepare samples/out --pdf-dir samples         # or phase by phase
+uv run amir-figdata read samples/out --method cloud
+uv run amir-figdata embed samples/out
+```
+
+Three phases: **prepare** (no model: each chart candidate is captured from
+the PDF at high resolution with its printed text), **read** (one of three
+methods), **embed** (the reading is written at the figure in the markdown,
+the HTML, `chunks.jsonl`, `figures.jsonl`, `document.json`, with a note that
+a model read it; `run.json` gets a `figure_to_data` block, `check.json` the
+counts).
+
+| Method | The figure goes to | Needs | Use it when |
+|---|---|---|---|
+| `ollama` | nowhere | Ollama, a GPU with 16 GB for the default model | nothing may leave the machine; expect about half the charts usable and review them |
+| `cloud` | the endpoint: OpenRouter and the model host it picks | an API key in `.env` (below) | the papers may be sent out and you have an API key: with Sonnet 5.5 all ten bench charts usable and every value returned, in the least time and at the least cost |
+| `agent` | the model's provider (nowhere with `--figure-data-backend ollama`) | Claude Code CLI, logged in | the papers may be sent out and you have Claude Code but no API key: all ten bench charts usable; each reading is checked and corrected in the loop |
+
+Measured on 15 figures: [docs/mini-bench/chart-to-data/round-3](docs/mini-bench/chart-to-data/round-3/README.md).
+
+**The cloud method's API key.** Put it in a `.env` file in the folder you
+run from (or any folder above it), or export it; `.env` is git-ignored:
+
+```
+OPENROUTER_API_KEY=sk-or-...
+```
+
+The key is read at the first figure, sent only as the request's
+`Authorization` header, and never written into a run record. Without it
+the figures are recorded as failed with the reason, and nothing is sent.
+For another model on OpenRouter: `--figure-data-model
+google/gemini-3.8-flash` (measured: nine of ten bench charts usable, no
+cheaper and four and a half times slower than Sonnet 5.5). For another
+endpoint: `--figure-data-base-url <url> --figure-data-key-env <VARIABLE>
+--figure-data-model <its model name>`. An endpoint on this machine (a
+local Ollama's `/v1`) needs no key. The call asks the model to think
+(`reasoning_effort` high) and allows 64,000 output tokens; an endpoint
+that rejects the reply schema or the reasoning setting is asked again
+without it.
+
+Each paper gets a `figure-to-data/` folder: `prepare.json`, one folder per
+figure (`figure.png`, `figure.txt`, `evidence.json`, then
+`figure-to-data.md` and `figure-to-data.json` once read) and `runs/` with
+the config of every run. A bundle that already had the step with the same
+method and model is skipped, so an interrupted batch continues where it
+stopped. Values under the confidence threshold (0.7) stay out of the
+exports; the figure then carries a pointer to its `figure-to-data.md`.
+Design and reasons: `.claude/reference/figure-data/STANDALONE-STEP.md`.
 
 Defaults are VLM-heavy (`--granite-vision-tables` on, `--picture-description
 granite_vision_4b`) — expect first-run model downloads and a noticeably

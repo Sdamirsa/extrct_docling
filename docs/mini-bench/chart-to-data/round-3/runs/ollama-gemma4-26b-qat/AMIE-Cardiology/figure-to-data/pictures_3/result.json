@@ -1,0 +1,35 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "gutters",
+ "seconds": 3.67,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.632,
+   "total_s": 3.63,
+   "load_s": 0.362,
+   "prompt_eval_s": 0.923,
+   "eval_s": 2.252,
+   "prompt_tokens": 1553,
+   "eval_tokens": 146,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:43:40.500248747+01:00"
+  }
+ ],
+ "issues": []
+}

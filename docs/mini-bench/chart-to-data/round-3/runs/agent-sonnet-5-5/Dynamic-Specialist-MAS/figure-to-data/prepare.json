@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Dynamic-Specialist-MAS",
+  "pdf": "Dynamic-Specialist-MAS.pdf",
+  "prepared_at": "2026-11-18T11:32:54",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/1"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/1",
+      "status": "prepared",
+      "folder": "pictures_1",
+      "reason": null,
+      "page": 5,
+      "figure_type": "bar_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        1385,
+        792
+      ],
+      "source_kind": "raster",
+      "charts": 1,
+      "words": 29
+    }
+  ]
+}

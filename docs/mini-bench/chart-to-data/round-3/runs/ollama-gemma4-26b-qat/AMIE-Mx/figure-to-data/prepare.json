@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "AMIE-Mx",
+  "pdf": "AMIE-Mx.pdf",
+  "prepared_at": "2026-11-18T11:33:02",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/14"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/14",
+      "status": "prepared",
+      "folder": "pictures_14",
+      "reason": null,
+      "page": 21,
+      "figure_type": "bar_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        3200,
+        2472
+      ],
+      "source_kind": "raster",
+      "charts": 3,
+      "words": 93
+    }
+  ]
+}

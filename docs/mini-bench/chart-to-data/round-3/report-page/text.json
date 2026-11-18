@@ -1,0 +1,245 @@
+{
+ "pick": "cloud-sonnet-5-5",
+ "subline": "15 figures · 3 methods on the same prepared folders, the cloud method with 2 models · truth and judge by claude-fable-5-2 · 18 Nov 2026",
+ "lede": "Figure-to-data is now a step of its own with three ways to read a figure, and all three ran on the bench. Sent to Claude Sonnet 5.5, a figure comes back usable either way: one API call per figure returned all 560 values of the ten data charts for $0.70, the agent 470 for $1.12, neither with anything that would mislead. Gemini 3.8 Flash in the same call: nine of ten charts usable, at the same cost and four and a half times the time. The local model is where round 2 left it: six of ten usable, two that would mislead.",
+ "tiles": [
+  [
+   "10 of 10",
+   "data charts usable from Sonnet 5.5, by one API call per figure and by the agent; round 2's Sonnet run on bare images: 9"
+  ],
+  [
+   "560 of 560",
+   "values returned by the Sonnet call, 552 within 5 % of the axis; the agent: 470 and 458"
+  ],
+  [
+   "$0.70",
+   "for the 15 figures with the Sonnet call, in 257 s; the agent: $1.12 in 382 s; Gemini 3.8 Flash: $0.73 in 1,181 s"
+  ],
+  [
+   "6 of 10",
+   "data charts usable from the local model, two would mislead: unchanged from round 2"
+  ]
+ ],
+ "reco": [
+  [
+   "Nothing may leave the machine",
+   "ollama, with review.",
+   "Printed numbers, pies and simple bar or interval charts are right; box plots, dense lines and stacked bars are not. Its low-confidence readings stay out of the paper's exports and leave a pointer."
+  ],
+  [
+   "The figures may leave, and you have an API key",
+   "cloud, with Sonnet 5.5.",
+   "Every value of the bench, the least time and the least cost of the methods that send the figure out. One paper's five candidates: 18 s and $0.08. Gemini 3.8 Flash in the same call is no saving here: the same cost, four and a half times the time, one dense chart misread."
+  ],
+  [
+   "The figures may leave, and you have Claude Code but no API key",
+   "agent.",
+   "The same ten charts usable. It left 90 values out and said so, and each reading is checked and corrected in the loop. It runs through the Claude Code CLI on its own login."
+  ]
+ ],
+ "scorenotes": "Within 5 % is the automatic scorer with names ignored, an upper bound. The cloud calls cost what OpenRouter charged per request; the agent's cost is what the Claude Code CLI reports per session at list prices; the round-2 Sonnet run did not record one. Gemini's row is its second run, with one figure read again after an empty reply; its first run, cut at an output limit of 32,000 tokens, returned 299 values. The local method reproduces round 2 to the value, which is the check that restructuring the step left its engine alone.",
+ "sample": {
+  "title": "One figure's reading: figure-to-data.md (agent, interval plot A3)",
+  "file": "runs/agent-sonnet-5-5/Cardiologent/figure-to-data/pictures_3/figure-to-data.md"
+ },
+ "shapenote": "Figure-to-data is now a step of its own on a finished paper, with three ways to read a figure behind one folder. It runs after each PDF, at the end of a batch, or later on any output folder, and it cannot change a conversion's status.",
+ "phases": [
+  [
+   "Prepare (no model)",
+   "Each chart candidate is captured from the PDF at up to 3,200 px, its printed text is collected from the PDF and by OCR, and its charts are found by their tick labels. One folder per figure.",
+   "23 s for the 15 figures, CPU only. Every method starts from the same folder, so what a model was given can be looked at afterwards."
+  ],
+  [
+   "Read (one of three methods)",
+   "ollama: the round-2 engine around a local model. cloud: one call to a model's API endpoint with the figure, a crop per chart and the context. agent: one session per figure with three tools.",
+   "Each writes figure-to-data.md and its JSON twin into the figure's folder, and the run's options and prompts into runs/."
+  ],
+  [
+   "Embed",
+   "The reading is written at the figure in the markdown, the HTML, the chunks, figures.jsonl and document.json, under a sentence that says a model read it and names the method and the model.",
+   "Charts under the confidence threshold are left out; the figure then carries a pointer to its full reading instead of a table."
+  ]
+ ],
+ "tree": "<paper>/figure-to-data/\n├── README.md                what this folder is\n├── prepare.json             every picture: prepared, or why not\n├── runs/<run id>.json       one per run: method, model, options,\n│                            prompts, outcome per figure\n└── pictures_3/              one folder per figure\n    ├── figure.png           the figure, high resolution\n    ├── figure.txt           caption, charts found, printed text\n    ├── evidence.json        the same for code: word boxes, paths\n    ├── panel-1.png ...      a crop per chart, when there are several\n    ├── figure-to-data.md    the reading, for people and agents\n    ├── figure-to-data.json  the same, extrct.figure-data/1\n    ├── result.json          calls, seconds, tokens, cost, checks\n    ├── overlay.png          ollama: where marks were placed\n    ├── trace.json           cloud: the reply; agent: its events\n    └── agent-reading.json   agent: what it recorded",
+ "lessons": [
+  [
+   "Text printed in the figure must reach the reader",
+   "word list with positions in every prompt",
+   "figure.txt in the one message",
+   "figure.txt; look returns the text of the region it shows"
+  ],
+  [
+   "A model given several charts in one image merges them",
+   "charts cut apart by their tick labels, one call per chart",
+   "the figure plus one crop per chart, in the same call",
+   "look on one chart at a time; the charts found are listed"
+  ],
+  [
+   "A model sees an image at a fixed level of detail",
+   "each chart crop gets the whole image budget",
+   "each chart crop is its own image",
+   "look on a region enlarges it up to four times"
+  ],
+  [
+   "It must be able to say \"not a chart\"",
+   "one overview call first",
+   "has_data in the reply",
+   "step 1 of the policy; finish with has_data false"
+  ],
+  [
+   "A model leaves out what it may",
+   "naming fields required in the reply",
+   "every field of the reply schema required: Gemini left an optional one out",
+   "naming fields required; a reply without them is still read and the check says what is missing"
+  ],
+  [
+   "A long reply must not be lost",
+   "streamed, cut at 120 s, complete points kept",
+   "one reply of up to 64,000 tokens, shared with the model's thinking; a cut reply keeps its complete points, an empty one is asked for again",
+   "one chart per tool call, on disk at once"
+  ],
+  [
+   "A local model points worse than it reads",
+   "pointed and read value cross-checked",
+   "no positions asked for",
+   "no positions asked for"
+  ],
+  [
+   "Printed numbers beat measured ones",
+   "a printed label replaces the measured value",
+   "label, confirmed against the printed text",
+   "the same"
+  ],
+  [
+   "Nothing invented; say what was left out",
+   "uncertain",
+   "not_read",
+   "not_read; finish asks about charts not recorded"
+  ]
+ ],
+ "changes": [
+  [
+   "The agent started without its tools",
+   "The flag we used to shut a session off from the machine also switched off the server that carries the agent's three tools. The model then wrote tool calls as plain text.",
+   "Another set of flags keeps our server and nothing else. The model receives the same 599 tokens for a one-line prompt either way, and a planted CLAUDE.md is ignored."
+  ],
+  [
+   "Our tool refused a chart over a detail of form",
+   "The agent gave a chart's note as text where a list was expected. Five charts were refused and sent again.",
+   "The tool accepts a note as text, a legend as objects, a number where text is expected."
+  ],
+  [
+   "A check penalised printed AUROC values",
+   "\"87.97 outside the axis range 0 to 1\": a number printed for a whole curve is not on the axes. Its confidence fell under the threshold, so 15 right values would not have been embedded.",
+   "A printed statistic of a curve is not checked against the axes."
+  ],
+  [
+   "A check called wrapped labels \"not printed\"",
+   "A label on two lines is two OCR lines. \"9 of 11 categories are not printed in the figure\" took 76 right values under the threshold.",
+   "A label counts as printed when the figure prints each of its words."
+  ],
+  [
+   "The agent was told what was wrong, not what to do",
+   "\"5 points have neither a category nor an x\", \"Being Polite sums to 200\", then \"if they were right, leave it\". Its numbers were right, so it left pie slices under series and two bars under one category: 546 values right, 150 under the right name.",
+   "Naming problems come apart from value checks, each with how to name the points, and the policy says they are always the agent's to fix. Second run: 368 under the right name."
+  ],
+  [
+   "A low-confidence reading left no trace",
+   "The local model read an interval plot right at confidence 0.5. Nothing appeared at the figure, so a reader could not know a reading existed.",
+   "The figure carries the note as a pointer to its figure-to-data.md."
+  ],
+  [
+   "An enforced schema lost the upper bound of every interval",
+   "Gemini, given the reply schema as an enforced format, wrote the lower bound and left the upper one out of each point, three tries of three. With the schema only in the prompt it wrote both.",
+   "Every field of the schema sent is required; empty ones are written as null."
+  ],
+  [
+   "Anthropic refused our reply schema",
+   "An enforced format may hold 16 nullable fields there, and the reading has 22. Sonnet's first request came back as an error.",
+   "The fallback that was built took over: the schema stands in the prompt, and all 15 replies parsed. A second backend that relied on the enforced format was removed without ever having run."
+  ],
+  [
+   "Thinking ate the output limit",
+   "Gemini thought for 26,000 tokens on the dense stacked bars and was cut at 32,000 with 93 of 264 values written. In the repeat, one reply came back empty after 130 s.",
+   "The limit is 64,000, and an empty reply is asked for once more. Gemini's first run is kept beside the second."
+  ]
+ ],
+ "timenote": "Seconds for all 15 figures, with the cost under it. The dearest figure is the dense stacked-bar one: 112 s and $0.28 for the Sonnet call, 112 s and $0.35 for the agent, 331 s and $0.20 for Gemini. Gemini thinks for four fifths of its output tokens (138,000 of 173,000; Sonnet 7,000 of 50,000), so at less than half the price per token it costs the same. Preparing the 15 figures takes 23 s once, for all methods.",
+ "agentpolicy": [
+  [
+   "One session, one figure",
+   "The runner starts a fresh session for every figure folder. Nothing read in one figure is in the context of the next, and a figure that goes wrong costs one figure."
+  ],
+  [
+   "What it is given",
+   "A system prompt of about 900 words (the order of work, then the conventions), and one message: the figure image and figure.txt. No paper text, no other figure, none of the machine's settings or memory files."
+  ],
+  [
+   "What it can do",
+   "Three tools, served for one figure folder: look (an enlarged view of the figure, a chart or a region, with the text printed there), record_chart (one chart; the reply is what our checks found), finish (what the figure is, what was left unread). It has no file, shell or web tool."
+  ],
+  [
+   "How that was checked",
+   "Every session's event stream lists the tools it was offered and the tools it called. All 15 sessions: the three tools, nothing else. The same session runs on a local model through Ollama."
+  ]
+ ],
+ "findings": [
+  [
+   "cloud, Sonnet 5.5: every value",
+   "All 560 values within 5 % of the axis, 556 within 2 %; the four beyond are box medians the figure does not draw as a line of their own. What is wrong is cosmetic: its own series names on a chart without a legend, axis tick lists that disagree with the rows in three figures."
+  ],
+  [
+   "cloud, Gemini 3.8 Flash: one silent misread",
+   "Printed numbers 48 of 48, bars within about 1 % of the axis, nothing invented. On the dense stacked bars one segment boundary is 6 to 10 points off in 12 of 44 bars while every bar still sums to 100; a box median is taken at the wrong box edge; the line chart has 84 of 180 values."
+  ],
+  [
+   "agent: omits, and says so",
+   "Everything it returned is within 2.7 % of the axis; printed numbers 42 of 42; the 264 stacked segments off by 0.15 points on average. It skipped the 90 raw dots behind the lines and left 4 of 30 box medians empty where the median lies on a box edge. Both are in its not-read list."
+  ],
+  [
+   "ollama: as in round 2",
+   "Never invents data for a non-chart, printed numbers 42 of 42, simple charts right. Box medians snap to ticks, the line chart comes back unkeyed, the stacked bars as 58 numbers of which 45 exceed 100 %. The judge gave the counts round 2's judge gave."
+  ],
+  [
+   "The splitter does not travel",
+   "Checked on its own: 32 of the bench's 33 charts (round 2's 33 needed the model's chart count). On 30 data figures of other papers, judged by eye, 7 cut cleanly and 19 wrongly. All methods lean on it, the local one entirely."
+  ]
+ ],
+ "limits": [
+  [
+   "Tuned on the test set",
+   "The prompts, the conventions and the checks were written with these 15 figures and their truth in view, in this round as in round 2. One convention (one category per stacked bar) was worded with the figure it decides open. The gain will be smaller on other papers. The cloud call's schema and output limit were also settled on bench figures."
+  ],
+  [
+   "One run per method",
+   "The agent returned 180 values for the three-panel line chart in its first run and 90 in its second, leaving out the raw dots and saying so; Gemini 90 and then 84. The same model does not decide the same way twice."
+  ],
+  [
+   "One endpoint, and Gemini run twice",
+   "The cloud method ran through OpenRouter only, which picks the host of a model per request. Gemini's result is its second run with one figure read again. Both repeats were for defects of ours (an output limit, no retry for an empty reply), and both runs are kept."
+  ],
+  [
+   "Small set, one judge per run",
+   "Ten data charts: one figure is ten points. Each run was judged once, by a fresh agent that saw no other run and no earlier round. Cost is what OpenRouter charged for the cloud calls and what the CLI reports at list prices for the agent."
+  ]
+ ],
+ "next": [
+  [
+   "Test on figures nobody tuned on",
+   "A round on other papers, before any number here is quoted outside the bench. It should include figures a single call cannot hold, which is where the agent should earn its cost; on these figures one call returned more for less."
+  ],
+  [
+   "Showcase and release",
+   "A committed run of default-plusFigData beside the other three configs, then release r5."
+  ],
+  [
+   "Another endpoint",
+   "The cloud method through a provider's own endpoint instead of OpenRouter, and the output limit as a command-line option."
+  ],
+  [
+   "The local engine's known gaps",
+   "Dense stacked bars, thin marks and vector series names are as round 2 left them. Upgrading Ollama lifts the image budget and is still the maintainer's call."
+  ]
+ ],
+ "scoreintro": "All rows read the same prepared folders: the same image, the same context. Usable and misleading are the judges' verdicts. The two rows under the line are round 2, for comparison: the same local model before the step existed, and Sonnet reading bare images in one session."
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "AgentMD",
+  "pdf": "AgentMD.pdf",
+  "prepared_at": "2026-11-18T11:33:02",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/4"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/4",
+      "status": "prepared",
+      "folder": "pictures_4",
+      "reason": null,
+      "page": 5,
+      "figure_type": "heatmap",
+      "capture": "pdf-render",
+      "size_px": [
+        764,
+        546
+      ],
+      "source_kind": "vector",
+      "charts": 1,
+      "words": 26
+    }
+  ]
+}

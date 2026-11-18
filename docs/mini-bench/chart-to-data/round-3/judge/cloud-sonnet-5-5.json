@@ -1,0 +1,148 @@
+{
+ "model": "cloud-sonnet-5-5",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-18",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the deployment schematic; `uncertain` gives the reason 'not a data chart: A two-stage diagram of a deployment scenario ...' and adds that the layout analysis chart is a false detection."
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the pipeline diagram ('not a data chart: Architecture diagram of the Cardiologent multi-agent framework ...'); the green ECG trace under 'Grounding' is named as 'a raw signal illustration and was not digitised', and the diagram labels are not taken as data."
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Centres 0.67 / 0.74 / 0.66 against truth 0.674 / 0.741 / 0.666 (largest gap 0.006 = 1.0 % of the 0.35-0.95 axis; the third follows the caption's 0.66, not the plotted 0.666) and all six printed CI bounds exact (0.52-0.79, 0.60-0.84, 0.51-0.78). The scorer's series F1 of 0 is only the unlabelled single series being called 'ICC(2,1)' instead of 'ICC(2,1), absolute agreement'; the figure has no legend."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the encoder schematic ('not a data chart: Architecture diagram of a time-series encoder-decoder ...'); the quoted example numbers 0.183 and 0.15 are recognised as text ('not chart values') and the ECG inset 'was not tabulated'."
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the seven stacked ECG traces ('not a data chart: ECG traces of window 4925_w0099 ... It has no axes, tick values or printed numbers, so no values were extracted'); the seven rows are listed as left unread, nothing was digitised from the signal or the shaded spans."
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 printed counts exact and attached to the right legend entry in legend order (CHF 13 / 6 / 299 / 102, AKI 25 / 25 / 255 / 115, Sepsis 25 / 26 / 283 / 86), with label_printed kept; the only difference is the cross glyph in the legend names (U+2715 for U+00D7), which still pairs."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "correct",
+   "error_types": ["SERIES_NAMES"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 180 values (30 line vertices + 30 raw dots per panel, x = 1..30) are within 0.8 % of the panel's axis range when paired by position: worst are Accuracy Reward point 14, 2.12 for 2.104, and Completion Length raw point 26, 286.0 for 285.2 (panel c carries a constant +0.4 offset, 0.4 % of the range). The scorer nevertheless reports 0 matched, 180 missing and 180 extra, purely because the two unlabelled series are named 'Smoothed' / 'Raw' instead of the truth's '<title>' / '<title> (raw points)'; the figure has no legend and the run says the names 'are my own', so this is a naming-convention mismatch, not a wrong number."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "correct",
+   "error_types": ["SERIES_NAMES"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed AUROC values exact in the right panel and EF class (e.g. EchoAgent 98.43 / 87.79 / 93.88, MemSAM 56.28 for 40%≤EF<50%); the untraced ROC curves are declared in `uncertain` and are not in the truth either. Cosmetic: each panel's series list holds the three EF classes ('EF<40%', '40%≤EF<50%', 'EF≥50%') while every row carries series 'AUROC' with the EF class as category (hence series F1 0.4), and kind is 'other' instead of 'line', which does not change how the printed values are read."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Five centres -0.15 / 0.36 / -0.84 / -0.36 / 0.72 against truth -0.152 / 0.360 / -0.840 / -0.352 / 0.720 (largest gap 0.008 = 0.26 % of the -1.6..1.5 axis) and all ten CI bounds within 0.005 (e.g. Overall quality -0.87..0.56 for -0.865..0.561, Readability 0.20..1.24 for 0.204..1.235). The diagonal watermark did not disturb the reading; centre and bounds are not confused."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "correct",
+   "error_types": ["INTERVAL_BOUNDS", "CATEGORY_LABELS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 30 medians within 5 % of their panel's axis range and 26 within 2 %; the four beyond 2 % are boxes whose median is not drawn as a separate line, where the run put it on the other box edge or mid-box: a1 GPT-4o 57.8 for 59.13 (4.8 %, equal to its own lower bound 57.8), a4 RiskAgent-8B 70.8 for 71.79 (4.0 %), a1 o3-mini 57.1 for 57.72 (2.3 %, noted 'median not clearly distinguishable'), a2 GPT-4o 52.3 for 51.57 (2.1 %); the truth settled these with the paper's table. All 60 whisker ends are within 0.9 % (worst a3 RiskAgent-8B upper 78.6 for 78.3). Cosmetic: the x tick lists read 'GPT-40' in all ten panels and '03-mini' in panel 8, while the row categories are 'GPT-4o' / 'o3-mini'."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 bars in the right panel and category within 0.003 accuracy units (0.43 % of the 0.2-0.9 axis): 0.58 / 0.69 / 0.84 exact, 0.48 / 0.63 / 0.80 for 0.479 / 0.628 / 0.797, 0.60 / 0.65 / 0.73 for 0.597 / 0.650 / 0.730, 0.535 / 0.55 / 0.675 for 0.534 / 0.551 / 0.676. No series name is given (no legend in the figure), which is why the scorer shows series F1 0."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the inference flow schematic ('not a data chart: A workflow diagram of AgentMD's RiskCalcs pipeline ...'); the worked example's numbers (patient parameters, Score 0, mortality 0.7%) are named as 'example text in the workflow, not plotted data'."
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "correct",
+   "error_types": ["VALUE_ASSIGNMENT", "CATEGORY_LABELS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 264 segments are within 1.33 points of the 0-100 % axis (mean 0.09 %) and every one of the 44 bars sums to 100; the remaining error is thin slivers credited to a neighbouring rating class: 'Appearing Honest And Trustworthy - PCP' Unfavorable 2.0 / Very unfavorable 1.3 for 3.33 / 0.0, 'Maintaining Patient Welfare - PCP' 2.0 / 1.6 for 3.33 / 0.33, 'Patient Trusts Information is Confidential - PCP' 1.0 / 1.0 for 2.0 / 0.0, and the 0.33 % 'Cannot rate' sliver of four GMCPQ bars dropped or moved (Being Polite - AMIE: Unfavorable 0.3 / Cannot rate 0.0 for 0.0 / 0.33); the run declares the hatched slivers approximate in `uncertain`. Cosmetic: the y tick lists are line fragments of the item labels with OCR noise ('Making Patient', 'Feel At Ease', 'Teacher And Šalesperson', 'Člinical Encounter'), while the 44 row categories are correct."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE", "GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "Both panels were found with the right kind, but neither was located: each carries the full-figure box [0, 0, 568, 131] (the reply gave no box), so the scorer paired only panel b and counted panel a's 8 medians as missing plus extra although they are within 0.9 % of the axis (ZODIAC 0.005 for 0.0036, not the crop's spurious bar near 0.04; Med42-70B 0.03 for 0.0337; whisker ends within 0.7 %). Panel b's bars carry a small constant upward offset: 14 of 16 read high, 11 of them by exactly 0.05 (4.45 for 4.40, 4.75 for 4.70, 4.95 for 4.90), i.e. 1.25 % of the 1-5 axis; the printed 'Signle-agent' series name is kept."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "correct",
+   "error_types": ["CATEGORY_LABELS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed percentages exact with the right slice labels in legend order (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8), including the near-identical 'Saved more than 50% / 10%' and 'Delayed me by more than 10% / 50%' pairs. Cosmetic: the pie panels are given categorical axes they do not have, with tick lists made of word fragments and a slice label (panel 1 x ticks '40.2%', 'Neither', 'yes', 'nor', 'no', y ticks 'AI', '40.2%'; panel 3 y ticks 'save', '23.4%'), taken over from the layout pre-pass and not from the model's reply."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 10,
+   "partial": 0,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 5,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "CATEGORY_LABELS": 3,
+   "SERIES_NAMES": 2,
+   "PANEL_STRUCTURE": 1,
+   "INTERVAL_BOUNDS": 1,
+   "VALUE_ASSIGNMENT": 1,
+   "GEOMETRY_MISMEASURED": 1
+  },
+  "usable_figures": 15,
+  "dominant_failure": "CATEGORY_LABELS",
+  "assessment": "All ten data charts came back with every one of the 560 truth values within 5 % of the axis range (556 within 2 %), and all five diagrams and ECG figures were declined with a stated 'not a data chart' reason, so the run neither hallucinates nor misses a chart. Printed numbers (B1, B3, C5) are exact and values measured from marks are tight even on dense figures: 180 line and dot points in B2 within 0.8 %, 264 stacked segments in C3 within 1.3 %, forest centres and CI bounds in B4 within 0.3 %. The only values beyond 2 % are four box-plot medians in B5 that the figure does not draw as a separate line (up to 4.8 %), and in C3 hatched slivers of about one point are split between neighbouring rating classes. What goes wrong is labelling and structure metadata, at cosmetic level: categorical axis tick lists taken over from the layout/OCR pre-pass disagree with the correct row categories in three figures (the most frequent defect, hence the dominant code), and the run's own series names on a legend-less figure (B2) and a full-figure box for both panels (C4) defeat the scorer's pairing, so the automatic score reports 188 missing values that are in fact right. For the values themselves the run can be trusted on bar, grouped-bar, line, forest, pie, stacked-bar and box charts; medians of boxes whose median coincides with an edge and sub-1.5 % slivers should be treated as approximate, and a consumer should key on the row categories, not on the axis tick lists or the panel boxes."
+ }
+}

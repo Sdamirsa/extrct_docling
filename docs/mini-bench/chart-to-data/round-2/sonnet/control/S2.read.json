@@ -1,0 +1,7 @@
+{"rows": [
+{"label": "Overall quality", "value": 0.378, "lo": 0.089, "hi": 0.668},
+{"label": "Clarity", "value": 0.208, "lo": -0.073, "hi": 0.486},
+{"label": "Completeness", "value": -0.038, "lo": -0.192, "hi": 0.119},
+{"label": "Accuracy", "value": -0.700, "lo": -0.914, "hi": -0.489},
+{"label": "Readability", "value": -0.365, "lo": -0.708, "hi": -0.024}
+]}

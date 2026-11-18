@@ -1,0 +1,9 @@
+{
+ "figure_id": "A5",
+ "is_data_chart": false,
+ "panels": [],
+ "uncertain": [
+  "Raw ECG signal traces without axes or values, shaded regions per method; not a data chart."
+ ],
+ "method": "Visual inspection; no axes or printed values."
+}

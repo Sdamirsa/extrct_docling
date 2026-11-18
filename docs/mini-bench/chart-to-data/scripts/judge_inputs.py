@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from analyze import BENCH, load_charts, load_timing
+from analyze import BENCH, ROUND, load_charts, load_timing
 
 from docling.engines.figure_data.schema import ChartData
 from docling.engines.figure_data.scoring import score_figure
@@ -64,9 +64,9 @@ def describe(chart: ChartData | None) -> str:
 def main() -> None:
     testset = json.loads((BENCH / "testset.json").read_text(encoding="utf-8"))
     truth = load_charts(BENCH / "truth")
-    for model_dir in sorted(p for p in (BENCH / "runs").iterdir() if p.is_dir()):
+    for model_dir in sorted(p for p in (ROUND / "runs").iterdir() if p.is_dir()):
         preds, timing = load_charts(model_dir), load_timing(model_dir)
-        out = BENCH / "judge" / "inputs" / model_dir.name
+        out = ROUND / "judge" / "inputs" / model_dir.name
         out.mkdir(parents=True, exist_ok=True)
         for spec in testset["figures"]:
             key = (Path(spec["bundle"]).name, spec["self_ref"])
@@ -80,7 +80,7 @@ def main() -> None:
                 f"# {spec['id']} · {key[0]} {key[1]} · model {model_dir.name}\n\n"
                 f"- figure: `figures/{spec['id']}__{key[0]}__{stem}.png`\n"
                 f"- truth JSON: `truth/{key[0]}__{stem}.json`\n"
-                f"- prediction JSON: under `runs/{model_dir.name}/` (`{key[0]}/{stem}.json`)\n"
+                f"- prediction JSON: under `runs/{model_dir.name}/`, bundle `{key[0]}`, figure `{stem}`\n"
                 f"- expected: {spec['expected_kind']}\n"
                 f"- time: {clock.get('seconds')} s, calls {clock.get('calls')}, "
                 f"output tokens {clock.get('eval_tokens')}, engine issues {clock.get('issues')}\n\n"
@@ -93,10 +93,13 @@ def main() -> None:
                 f"mean error (share of axis range) {score.mean_norm_error}, printed MAPE {score.printed_mape}\n\n"
                 f"## Truth\n\n{describe(chart)}\n"
                 f"truth notes: {chart.uncertain}\n\n"
-                f"## Prediction\n\n{describe(pred)}"
+                f"## Prediction\n\n{describe(pred)}\n"
+                f"prediction description: {pred.description if pred else None}\n"
+                f"prediction notes (uncertain / not read): {pred.uncertain if pred else None}\n"
+                f"step checks: {clock.get('notes')}\n"
             )
             (out / f"{spec['id']}.md").write_text(sheet, encoding="utf-8")
-    print("sheets written under", BENCH / "judge" / "inputs")
+    print("sheets written under", ROUND / "judge" / "inputs")
 
 
 if __name__ == "__main__":

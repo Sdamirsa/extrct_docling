@@ -1,0 +1,422 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "GMCPQ",
+   "kind": "bar",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": "Being Polite",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Being Polite",
+     "x": "2",
+     "series": "Favorable",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Being Polite",
+     "x": "3",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": "2",
+     "series": "Favorable",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": "3",
+     "series": "Neither",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Making Patient Feel At Ease",
+     "x": "4",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Listening to Patient",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Listening to Patient",
+     "x": "2",
+     "series": "Favorable",
+     "value": 30.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Listening to Patient",
+     "x": "3",
+     "series": "Neither",
+     "value": 15.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Listening to Patient",
+     "x": "4",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Assessing Medical Condition",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Assessing Medical Condition",
+     "x": "2",
+     "series": "Favorable",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Assessing Medical Condition",
+     "x": "3",
+     "series": "Neither",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Assessing Medical Condition",
+     "x": "4",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Assessing Medical Condition",
+     "x": "5",
+     "series": "Very unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": "2",
+     "series": "Favorable",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Explaining Condition and Treatment",
+     "x": "3",
+     "series": "Unfavorable",
+     "value": 15.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 65.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": "2",
+     "series": "Favorable",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Involving Patient in Treatment Decisions",
+     "x": "3",
+     "series": "Unfavorable",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 70.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": "2",
+     "series": "Favorable",
+     "value": 15.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": "3",
+     "series": "Neither",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Providing Appropriate Treatment Plan",
+     "x": "4",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 80.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": "2",
+     "series": "Favorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": "3",
+     "series": "Unfavorable",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Trusts Information is Confidential",
+     "x": "4",
+     "series": "Cannot rate / Does not apply",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "1",
+     "series": "Very favorable",
+     "value": 75.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "2",
+     "series": "Favorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "3",
+     "series": "Neither",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "4",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "5",
+     "series": "Very unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Appearing Honest And Trustworthy",
+     "x": "6",
+     "series": "Cannot rate / Does not apply",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": "1",
+     "series": "Favorable",
+     "value": 85.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": "2",
+     "series": "Very favorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": "3",
+     "series": "Very unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Confident About Care Provided (Y/N)",
+     "x": "4",
+     "series": "Cannot rate / Does not apply",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": "1",
+     "series": "Favorable",
+     "value": 80.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": "2",
+     "series": "Very favorable",
+     "value": 10.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": "3",
+     "series": "Unfavorable",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Patient Happy to Return In Future (Y/N)",
+     "x": "4",
+     "series": "Cannot rate / Does not apply",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Horizontal stacked bar chart. Segments are stacked in the order they appear in the data: Very favorable (Red), Favorable (Blue), Neither (Light Blue), Unfavorable (Light Grey), Very unfavorable (Dark Grey), Cannot rate (Lightest Grey). The order of segments in each bar seems to depend on which categories have non-zero values, starting from Very favorable if it exists, then Favorable, etc. Wait, actually, looking at 'Patient Happy...', it starts with Favorable. Let's re-examine. Actually, if 'Being Polite' starts with Red, it's Very favorable. If 'Patient Happy...' starts with Blue, it's Favorable. It seems they stack from most favorable to least favorable? If so, 'Being Polite' should start with Very Favorable (Red). 'Patient Happy...' should start with Very Favorable (Red). But 'Patient Happy...' starts with Blue. This means they are stacking in the order of categories: Favorable, Very favorable? No, that's weird. Let's look at 'Patient Happy...' again. Is it Red then Blue? No, it's Blue then Red. So it's Favorable (Blue) then Very favorable (Red). This is the reverse of 'Being Polite' which is Red then Blue. This is very confusing. I will just read what I see."
+   ]
+  }
+ ],
+ "description": "",
+ "has_data": null,
+ "not_read": [],
+ "finished": false,
+ "warned": false,
+ "looks": 2,
+ "records": 1
+}

@@ -1,0 +1,841 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AMIE-Mx",
+    "self_ref": "#/pictures/14",
+    "image_path": "images/picture_015.png",
+    "page": 21,
+    "bbox": [
+      80.94,
+      45.56,
+      520.87,
+      385.44
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        9.1,
+        6.4,
+        321.1,
+        344.8
+      ],
+      "title": "GMCPQ",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Being Polite",
+            "Making Patient",
+            "Feel At Ease",
+            "Listening to Patient",
+            "Assessesing",
+            "Medical Condition",
+            "Explaining Condition",
+            "and Treatment",
+            "Involving Patient in",
+            "Treatment Decisions",
+            "Providing Appropriate",
+            "Treatment Plan",
+            "Patient Trusts Information",
+            "is Confidential",
+            "Appearing Honest",
+            "And Trustworthy",
+            "Patient Confident About",
+            "Care Provided (Y/N)",
+            "Patient Happy to",
+            "Return In Future (Y/N)"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Being Polite",
+          "x": 885.0,
+          "series": null,
+          "value": 95.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Being Polite",
+          "x": 855.0,
+          "series": null,
+          "value": 90.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Being Polite",
+          "x": 835.0,
+          "series": null,
+          "value": 85.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Being Polite",
+          "x": 815.0,
+          "series": null,
+          "value": 92.2652,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Making Patient Feel At Ease",
+          "x": 915.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Making Patient Feel At Ease",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Making Patient Feel At Ease",
+          "x": 855.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Making Patient Feel At Ease",
+          "x": 735.0,
+          "series": null,
+          "value": 90.0609,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Listening to Patient",
+          "x": 905.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Listening to Patient",
+          "x": 875.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Listening to Patient",
+          "x": 845.0,
+          "series": null,
+          "value": 107.5574,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Listening to Patient",
+          "x": 815.0,
+          "series": null,
+          "value": 98.8781,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Assessesing Medical Condition",
+          "x": 905.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Assessesing Medical Condition",
+          "x": 875.0,
+          "series": null,
+          "value": 112.6548,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Assessesing Medical Condition",
+          "x": 845.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Assessesing Medical Condition",
+          "x": 755.0,
+          "series": null,
+          "value": 93.6429,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Explaining Condition and Treatment",
+          "x": 915.0,
+          "series": null,
+          "value": 125.4673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Explaining Condition and Treatment",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Explaining Condition and Treatment",
+          "x": 855.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Explaining Condition and Treatment",
+          "x": 735.0,
+          "series": null,
+          "value": 86.0657,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Involving Patient in Treatment Decisions",
+          "x": 915.0,
+          "series": null,
+          "value": 125.4673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Involving Patient in Treatment Decisions",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Involving Patient in Treatment Decisions",
+          "x": 855.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Involving Patient in Treatment Decisions",
+          "x": 735.0,
+          "series": null,
+          "value": 84.5502,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Providing Appropriate Treatment Plan",
+          "x": 915.0,
+          "series": null,
+          "value": 125.4673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Providing Appropriate Treatment Plan",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Providing Appropriate Treatment Plan",
+          "x": 855.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Providing Appropriate Treatment Plan",
+          "x": 755.0,
+          "series": null,
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Patient Trusts Information is Confidential",
+          "x": 915.0,
+          "series": null,
+          "value": 125.4673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Trusts Information is Confidential",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Trusts Information is Confidential",
+          "x": 855.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Trusts Information is Confidential",
+          "x": 815.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Appearing Honest And Trustworthy",
+          "x": 915.0,
+          "series": null,
+          "value": 125.4673,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Appearing Honest And Trustworthy",
+          "x": 885.0,
+          "series": null,
+          "value": 112.3793,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Appearing Honest And Trustworthy",
+          "x": 855.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Appearing Honest And Trustworthy",
+          "x": 835.0,
+          "series": null,
+          "value": 107.2819,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Confident About Care Provided (Y/N)",
+          "x": 915.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Confident About Care Provided (Y/N)",
+          "x": 885.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Confident About Care Provided (Y/N)",
+          "x": 855.0,
+          "series": null,
+          "value": 85.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Patient Happy to Return In Future (Y/N)",
+          "x": 915.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Happy to Return In Future (Y/N)",
+          "x": 885.0,
+          "series": null,
+          "value": 122.0231,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Patient Happy to Return In Future (Y/N)",
+          "x": 855.0,
+          "series": null,
+          "value": 85.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Patient Happy to Return In Future (Y/N)",
+          "x": 815.0,
+          "series": null,
+          "value": 97.3626,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: Being Polite, Being Polite, Being Polite, Providing Appropriate Treatment Plan, Patient Confident About Care Provided (Y/N), Patient Happy to Return In Future (Y/N)"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        337.2,
+        6.6,
+        657.7,
+        344.8
+      ],
+      "title": "MXEKF",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Prioritization Of Preferences",
+            "Constraints And Values",
+            "Communication And",
+            "Shared Decision Making",
+            "Monitoring And Adjustment",
+            "Of Management Plan",
+            "Managing Interplay Of",
+            "Competing Priorities",
+            "Acting As Patient",
+            "Teacher And Šalesperson",
+            "Relationship Fostering",
+            "Organization Of The",
+            "Člinical Encounter"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Prioritization Of Preferences\nConstraints And Values",
+          "x": null,
+          "series": null,
+          "value": 165.9592,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Communication And\nShared Decision Making",
+          "x": null,
+          "series": null,
+          "value": 163.061,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Monitoring And Adjustment\nOf Management Plan",
+          "x": null,
+          "series": null,
+          "value": 142.6352,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Managing Interplay Of\nCompeting Priorities",
+          "x": null,
+          "series": null,
+          "value": 137.2528,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Acting As Patient\nTeacher And Salesperson",
+          "x": null,
+          "series": null,
+          "value": 156.5744,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Relationship Fostering",
+          "x": null,
+          "series": null,
+          "value": 156.2984,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Organization Of The\nClinical Encounter",
+          "x": null,
+          "series": null,
+          "value": 147.0516,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        1.0,
+        377.2,
+        603.9,
+        509.6
+      ],
+      "title": "PACES",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "% Consultations",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Managing Patient Concerns",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Addressing",
+            "Patient Concerns",
+            "Understanding",
+            "Patient Concerns",
+            "Showing Empathy",
+            "Maintaining",
+            "Patient Welfare"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AMIE (top)",
+          "color": "#e67e73"
+        },
+        {
+          "name": "PCP (bottom)",
+          "color": "#7fbfff"
+        }
+      ],
+      "data": [
+        {
+          "category": "Addressing Patient Concerns",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 174.567,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Addressing Patient Concerns",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": 137.5596,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Understanding Patient Concerns",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 173.1908,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Understanding Patient Concerns",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": 152.2736,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 182.2736,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Showing Empathy",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": 164.1721,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "AMIE (top)",
+          "value": 174.8422,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Maintaining Patient Welfare",
+          "x": null,
+          "series": "PCP (bottom)",
+          "value": 144.6732,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "This figure presents a comparison of patient satisfaction and communication metrics across three different assessment tools (GMCPQ, MXEKF, and PACES) for AMIE and PCP groups.",
+  "uncertain": []
+}

@@ -8,6 +8,17 @@ reference truth made by a frontier model and a judge pass that classifies how
 each model was wrong. Everything needed to check or repeat it is in this
 folder, except the figures themselves (see [Figures](#figures)).
 
+**This page is round 1.** Its main finding was that every model failed the
+same ways, which pointed at the engine around the model. Round 2, the same
+day, went after that: [`round-2/README.md`](round-2/README.md) (results),
+[`round-2/LOG.md`](round-2/LOG.md) (what was found and changed, in order).
+Round 3, a day later, made figure-to-data a step of its own after the
+conversion with three reading methods (a local model, one cloud call, an
+agent) and ran all three on the same prepared figures:
+[`round-3/README.md`](round-3/README.md), [`round-3/LOG.md`](round-3/LOG.md).
+The figures, the test set, the truth and the scripts are shared by all
+rounds; each round keeps its own runs, metrics and judge files.
+
 ## Answer
 
 No model is good enough to publish chart numbers unreviewed. The best one

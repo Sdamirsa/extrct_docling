@@ -1,0 +1,97 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 7,
+    "bbox": [
+      342.68,
+      56.16,
+      533.68,
+      186.48
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        13.1,
+        1.4,
+        286.7,
+        195.1
+      ],
+      "title": "Rater agreement (ICC(2,1), absolute agreement, with 95% CI)",
+      "kind": "forest",
+      "orientation": null,
+      "axes": {
+        "x": null,
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.4,
+            0.9
+          ],
+          "ticks": [
+            0.9,
+            0.8,
+            0.7,
+            0.6,
+            0.5,
+            0.4
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "R1 ↔ R2 (human-human)",
+          "x": null,
+          "series": null,
+          "value": 0.67,
+          "err_lo": 0.52,
+          "err_hi": 0.79,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.5
+        },
+        {
+          "category": "Judge ↔ R1",
+          "x": null,
+          "series": null,
+          "value": 0.74,
+          "err_lo": 0.6,
+          "err_hi": 0.84,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.5
+        },
+        {
+          "category": "Judge ↔ R2",
+          "x": null,
+          "series": null,
+          "value": 0.66,
+          "err_lo": 0.51,
+          "err_hi": 0.78,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "Center values for the intervals are taken from the figure caption."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "The figure shows the Rater agreement (ICC(2,1), absolute agreement, with 95% CI) on a 20-patient subset for three comparisons: R1 ↔ R2 (human-human), Judge ↔ R1, and Judge ↔ R2.",
+  "uncertain": []
+}

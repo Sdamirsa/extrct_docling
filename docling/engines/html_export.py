@@ -227,6 +227,18 @@ class _AgentMetaSerializer(HTMLMetaSerializer):
             text = text.replace(
                 ">description:</span>", ">description (VLM-generated):</span>", 1
             )
+        if name == "tabular_chart" and meta.tabular_chart is not None:
+            # Who read the table and how far to trust it; the note stands
+            # alone when the values are held back.
+            note = meta.tabular_chart.title
+            held_back = meta.tabular_chart.chart_data.num_rows == 0
+            parts = [
+                _meta_div("figure_data_note", "figure data (read by a model)", note)
+                if note
+                else "",
+                "" if held_back else (text or ""),
+            ]
+            text = "".join(parts) or None
         return text
 
 

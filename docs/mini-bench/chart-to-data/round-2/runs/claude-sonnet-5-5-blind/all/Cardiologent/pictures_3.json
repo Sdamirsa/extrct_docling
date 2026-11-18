@@ -1,0 +1,97 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 7,
+  "bbox": [
+   342.6832580566406,
+   735.8361587524414,
+   533.6847534179688,
+   605.5192108154297
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0.0,
+    0.0,
+    287.0,
+    195.9
+   ],
+   "title": null,
+   "kind": "forest",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": null
+    },
+    "y": {
+     "name": "ICC(2,1), absolute agreement",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.35,
+      0.95
+     ],
+     "ticks": null
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "R1 ↔ R2 (human–human)",
+     "x": null,
+     "series": null,
+     "value": 0.673,
+     "err_lo": 0.52,
+     "err_hi": 0.79,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    },
+    {
+     "category": "Judge ↔ R1",
+     "x": null,
+     "series": null,
+     "value": 0.741,
+     "err_lo": 0.6,
+     "err_hi": 0.84,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    },
+    {
+     "category": "Judge ↔ R2",
+     "x": null,
+     "series": null,
+     "value": 0.666,
+     "err_lo": 0.51,
+     "err_hi": 0.78,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "Interval ends are printed (0.79/0.52, 0.84/0.60, 0.78/0.51) and entered as err_lo/err_hi; centre dot values (not printed) were read by eye against gridlines."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Centre values are eyeballed; interval ends use printed labels (rounded to 2 decimals)."
+ ]
+}

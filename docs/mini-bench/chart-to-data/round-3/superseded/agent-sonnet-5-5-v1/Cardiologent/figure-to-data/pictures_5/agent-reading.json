@@ -1,0 +1,13 @@
+{
+ "panels": [],
+ "description": "Seven stacked ECG traces of the same window (ground truth and six models) with shaded spans marking each model's localized abnormal region (a PAC), shown qualitatively with no numeric values.",
+ "has_data": false,
+ "not_read": [
+  "ECG waveforms: raw signal traces with no axes or values, not tabulated.",
+  "Shaded spans (ground truth, Cardiologent, and baselines): positions are shown only visually, with no printed numbers, so no span boundaries or IoU/MCC values were recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

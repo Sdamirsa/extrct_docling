@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 5,
+    "bbox": [
+      291.56,
+      72.12,
+      541.61,
+      250.7
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "A workflow diagram illustrating the RiskCalcs process, including tool selection, parameter extraction, tool computation, and prediction using the CURB-65 score.",
+  "uncertain": [
+    "not a data chart: A workflow diagram illustrating the RiskCalcs process, including tool selection, parameter extraction, tool computation, and prediction using the CURB-65 score."
+  ]
+}

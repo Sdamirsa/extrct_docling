@@ -244,13 +244,18 @@ class GuardCheck(CheckBlock):
 
 
 class FigureDataCheck(CheckBlock):
-    """Chart data read from the figures (:mod:`docling.engines.figure_data`):
-    *verified* figures have every panel's median value confidence at the
-    markdown threshold, the others count as *low_confidence*."""
+    """Chart data read from the figures by the figure-to-data step
+    (:mod:`docling.engines.figure_data`). Of the *eligible* chart candidates,
+    *extracted* figures carry values and *no_data* figures were looked at
+    and hold none (a diagram typed as a chart, or a figure the reader
+    declined). *verified* figures have every panel's median value
+    confidence at the markdown threshold, the other extracted ones count as
+    *low_confidence*. *mode* is the method of the run that was embedded."""
 
     mode: str | None = None
     eligible: int = 0
     extracted: int = 0
+    no_data: int = 0
     verified: int = 0
     low_confidence: int = 0
 
@@ -435,34 +440,34 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
 
 
 def _check_figure_data(rows: list[FigureRow], run: RunRecord | None) -> FigureDataCheck:
-    configured = (
-        run.engine_config.get("figure_data") if run is not None else None
-    ) or None
-    if configured is None and not any(row.chart_data for row in rows):
-        return FigureDataCheck(skipped="figure data not run")
-    options = (
-        FigureDataOptions.model_validate(configured)
-        if configured is not None
-        else FigureDataOptions()
-    )
-    result = FigureDataCheck(mode=options.mode if configured is not None else None)
+    block = run.figure_to_data if run is not None else None
+    if block is None and not any(row.chart_data for row in rows):
+        return FigureDataCheck(skipped="figure-to-data not run")
+    options = FigureDataOptions()
+    result = FigureDataCheck(mode=str(block["method"]) if block else None)
+    looked_at = 0
     for row in rows:
-        result.eligible += is_eligible(row, options)
+        eligible = is_eligible(row, options)
+        result.eligible += eligible
         if not row.chart_data:
             continue
-        result.extracted += 1
+        looked_at += eligible
         chart = ChartData.model_validate(row.chart_data)
-        confidences = [panel_confidence(p) for p in chart.panels]
-        if chart.panels and all(
+        if not any(panel.data for panel in chart.panels):
+            result.no_data += 1
+            continue
+        result.extracted += 1
+        confidences = [panel_confidence(p) for p in chart.panels if p.data]
+        if all(
             c is not None and c >= options.min_confidence_for_markdown
             for c in confidences
         ):
             result.verified += 1
     result.low_confidence = result.extracted - result.verified
-    if configured is not None and result.extracted < result.eligible:
+    if block is not None and looked_at < result.eligible:
         result.issues.append(
-            f"{result.eligible - result.extracted} of {result.eligible} chart "
-            "figure(s) without chart data"
+            f"{result.eligible - looked_at} of {result.eligible} chart "
+            "figure(s) were not read by the figure-to-data step"
         )
     return result
 

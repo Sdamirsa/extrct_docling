@@ -1,0 +1,27 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "single",
+ "seconds": 15.77,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 15.65,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 9689,
+   "eval_tokens": 524,
+   "cut": false,
+   "cost_usd": null,
+   "turns": 3,
+   "tool_calls": 2
+  }
+ ],
+ "ollama_ps": [],
+ "issues": []
+}

@@ -1,0 +1,1134 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Med-RwR",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 21,
+    "bbox": [
+      110.56,
+      83.61,
+      501.0,
+      151.53
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.5,
+        3.0,
+        584.4,
+        100.9
+      ],
+      "title": "Accuracy Reward",
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            225.0
+          ],
+          "ticks": [
+            1.0,
+            225.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "ticks": [
+            2.5,
+            2.0,
+            1.5,
+            1.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Accuracy Reward",
+          "color": "#b3a28e"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": -200.7453,
+          "series": "Accuracy Reward",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -194.0112,
+          "series": "Accuracy Reward",
+          "value": 1.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -187.2772,
+          "series": "Accuracy Reward",
+          "value": 1.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -180.5431,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -173.809,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -167.0749,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -160.3408,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -153.6067,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -146.8726,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -140.1385,
+          "series": "Accuracy Reward",
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -133.4044,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -126.6703,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -119.9362,
+          "series": "Accuracy Reward",
+          "value": 1.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -113.2021,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -106.468,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -99.7339,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -92.9998,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -86.2657,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -79.5317,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -72.7976,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -66.0635,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": -59.3294,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": -5.4566,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.2775,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 8.0116,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 1.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 61.8843,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 68.6184,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 75.3525,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 82.0866,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 88.8207,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 95.5548,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 102.2889,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 109.023,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 115.7571,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 122.4912,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 129.2252,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 135.9593,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 142.6934,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 149.4275,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 156.1616,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 162.8957,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 225.0,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 284.1094,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 290.8435,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 297.5776,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 304.3117,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 311.0458,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 317.7799,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 324.514,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 331.2481,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 337.9821,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 344.7162,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 351.4503,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 358.1844,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 364.9185,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 371.6526,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 378.3867,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 385.1208,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 391.8549,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 398.589,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 405.3231,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 412.0572,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 418.7913,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 425.5254,
+          "series": "Accuracy Reward",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 432.2595,
+          "series": "Accuracy Reward",
+          "value": 2.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": 438.9936,
+          "series": "Accuracy Reward",
+          "value": 1.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

@@ -1,0 +1,298 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "HeartAgent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 12,
+    "bbox": [
+      56.3,
+      153.36,
+      552.74,
+      286.11
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "chart 1",
+      "bbox_px": [
+        3.0,
+        2.4,
+        189.2,
+        198.9
+      ],
+      "title": "Top-1 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.69,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 2",
+      "bbox_px": [
+        198.2,
+        2.4,
+        374.0,
+        198.9
+      ],
+      "title": "Top-1 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.48,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 3",
+      "bbox_px": [
+        382.9,
+        2.4,
+        558.8,
+        198.9
+      ],
+      "title": "Top-3 Diagnosis Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.73,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chart 4",
+      "bbox_px": [
+        567.7,
+        2.4,
+        744.3,
+        198.9
+      ],
+      "title": "Top-3 Explanation Performance on MIMIC",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.2,
+            0.9
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.53,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert",
+          "x": null,
+          "series": null,
+          "value": 0.55,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert + HeartAgent",
+          "x": null,
+          "series": null,
+          "value": 0.67,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Bar charts showing cardiology differential diagnosis and explanation performance on the MIMIC dataset comparing HeartAgent, Expert, and Expert + HeartAgent across Top-1 and Top-3 metrics.",
+  "uncertain": []
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "extrct.figure-to-data-run/1",
+  "run_id": "20261118-113639_ollama_gemma4-26b-a4b-it-qat",
+  "step_version": "3",
+  "bundle": "HeartAgent",
+  "method": "ollama",
+  "backend": "ollama",
+  "model": "gemma4:26b-a4b-it-qat",
+  "started": "2026-11-18T11:36:39",
+  "seconds": 23.2,
+  "options": {
+    "method": "ollama",
+    "backend": "ollama",
+    "model": "gemma4:26b-a4b-it-qat",
+    "mode": "measured",
+    "ollama_url": "http://127.0.0.1:11434",
+    "keep_alive": "10m",
+    "claude_command": "claude",
+    "cloud_max_side_px": 2000,
+    "claude_effort": "high",
+    "max_cost_usd_per_figure": 2.0,
+    "samples": 1,
+    "panel_split": "auto",
+    "crop_dpi": 220,
+    "min_confidence_for_markdown": 0.7,
+    "eligible_types": [
+      "bar_chart",
+      "box_plot",
+      "forest_plot",
+      "heatmap",
+      "kaplan_meier",
+      "line_chart",
+      "pie_chart",
+      "roc_curve",
+      "scatter_plot"
+    ],
+    "time_budget_s_per_figure": 600.0,
+    "time_budget_s_per_call": 120.0,
+    "num_ctx": 16384,
+    "max_output_tokens": 8192,
+    "vlm_max_side_px": 1600,
+    "request_timeout_s": 600.0
+  },
+  "reader": {
+    "runtime": "Ollama /api/chat, JSON-schema replies, temperature 0",
+    "calls_per_figure": "one overview call, then one call per chart",
+    "overview_prompt": "This is a figure from a scientific paper. Say what it is, decide whether it shows numeric data, and list its charts.\n- description: what the figure shows, in one short sentence.\n- has_data: true only when the figure plots or prints data values that could go into a table: bars, lines, points, boxes, intervals, pie slices, heatmap cells, or curves with a printed statistic. A diagram, workflow, architecture, photo, screenshot or raw signal trace (ECG, waveform) has no such values: has_data false and no charts.\n- charts: one entry per separate chart, in reading order. Every plot with its own axes, and every pie, is its own chart, also when they sit in a grid, share a legend, or stand under one panel letter. id = the chart's printed letter when each chart has its own, else 1, 2, 3, ...; kind = the chart type; box = [x0, y0, x1, y1] on a 0-1000 grid of the image (x from the left, y from the top).\nText printed in the figure (text @ x,y on the 0-1000 grid):\n{words}",
+    "chart_prompt": "You read one chart from a scientific paper. Give its structure and locate every data mark.\n- kind, orientation, axes (name, unit, scale, axis min and max). series = the legend entries with their colours; none when the chart has a single unnamed series.\n- points: one per (category or x value, series), each once. category = the tick label of the mark, exactly as printed (null on a numeric x axis); x = its position on a numeric x axis (null otherwise); series = its legend entry, exactly as printed (null only when the chart has no legend). Never repeat the category as the series.\n- px, py = where the mark is on a 0-1000 grid of this image (x from the left, y from the top):\n  bar: the middle of the bar's end edge (the top edge of a vertical bar, the right edge of a horizontal one), not a point inside the bar;\n  stacked bar: the far end of the segment, with start_pos = the grid position of its near end along the value axis;\n  line or scatter: the marker;\n  box plot: the median line, with lo_pos and hi_pos = the grid positions of the two whisker ends along the value axis;\n  interval or forest plot: the centre marker, with lo_pos and hi_pos = the grid positions of the two ends of the interval along the value axis;\n  pie: null.\n  start_pos, lo_pos and hi_pos are positions on the same 0-1000 grid (y for a vertical value axis, x for a horizontal one), never axis values.\n- value = the number the mark stands for, read against the axis (pie: the slice's percentage). label = the number printed at the mark, exactly as printed. err_lo, err_hi = the interval's ends as numbers, when they are printed.\n- A curve with a statistic printed for it (a ROC curve with its AUC in the legend): one point per curve with category = the curve's name, series = the statistic's name (AUC, AUROC), value and label = the printed number, px and py null. Do not trace the curve.\n- A line chart: one point per marker; without markers, one point per x tick. When the x axis has no tick labels, x = 1, 2, 3, ... in order.\n- Leave out start_pos, lo_pos, hi_pos, err_lo, err_hi and label where they do not apply. Use null for a value you cannot read and never invent one. If this image is not a data chart, return no points.\nText printed in this chart (text @ x,y on the 0-1000 grid):\n{words}{context}"
+  },
+  "figures": [
+    {
+      "folder": "pictures_5",
+      "self_ref": "#/pictures/5",
+      "status": "read",
+      "reason": null,
+      "charts": 4,
+      "values": 12,
+      "seconds": 23.17,
+      "calls": 5,
+      "tool_calls": null,
+      "input_tokens": 4292,
+      "output_tokens": 1117,
+      "cost_usd": null,
+      "notes": [
+        "4 charts found by their tick labels",
+        "panel 1: 0.8416 outside the axis range [0.2, 0.8] (Expert + HeartAgent/)"
+      ]
+    }
+  ],
+  "embedded": null
+}

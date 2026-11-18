@@ -3,6 +3,13 @@
 
 """Split a figure into its panels (sub-charts).
 
+0. **Axes.** A chart has tick labels: a run of at least three numbers in a
+   column (right edges aligned) or in a row (same baseline) whose values
+   are linear or logarithmic in their position is an axis. Two or more
+   charts found this way are separated by cutting the figure, recursively,
+   along the widest ink-free band between them. Papers pack panels far
+   closer than any fixed gutter width, so this comes first; the steps
+   below apply when fewer than two axes are found (pies, a single chart).
 1. **Gutters.** The background colour is the median of the image border;
    rows (then columns, recursively) whose ink stays near zero for at least
    :data:`GUTTER_FRACTION` of the image side cut the figure into blocks
@@ -27,11 +34,13 @@ from __future__ import annotations
 
 import re
 from collections.abc import Callable
+from typing import Literal, NamedTuple
 
 import numpy as np
 from pydantic import BaseModel
 from scipy import ndimage
 
+from docling.engines.figure_data.evidence import fit_axis, parse_number
 from docling.engines.figure_data.schema import Box, PanelSplit, Word
 
 GUTTER_FRACTION = 0.01
@@ -43,6 +52,9 @@ _GRAPHIC_MIN_SIDE = 0.06
 _MIN_PANEL_AREA = 0.02
 _MAX_ASPECT = 10.0
 _SOLID = 0.85
+_ALIGN = 0.75
+_BAND_MAX_INK = 0.01
+_BOX_MARGIN = 0.15
 _LETTER = re.compile(r"^\(?([a-hA-H])\)?\.?$")
 
 BoxReader = Callable[[], list[tuple[str, Box]]]
@@ -67,9 +79,13 @@ def split_panels(
     *,
     mode: PanelSplit = "auto",
     box_reader: BoxReader | None = None,
+    expect: int | None = None,
 ) -> PanelSplitResult:
     """Panels of *image* (H x W x 3, uint8); a single full-image panel when
-    nothing splits it."""
+    nothing splits it. With *expect* (the number of charts a model sees),
+    axes of only two tick labels count too, provided they give exactly that
+    many charts: weak evidence is taken when a second witness agrees.
+    Mode ``gutters`` is the splitter without the axes step."""
     height, width = image.shape[:2]
     full: Box = (0.0, 0.0, float(width), float(height))
     if mode == "off":
@@ -78,6 +94,17 @@ def split_panels(
         return _from_reader(box_reader, full, "vlm")
 
     mask = ink_mask(image)
+    if mode == "auto":
+        charts = split_by_axes(mask, words)
+        if expect is not None and (charts is None or len(charts) != expect):
+            weak = split_by_axes(mask, words, min_ticks=2)
+            charts = weak if weak is not None and len(weak) == expect else charts
+        if charts is not None:
+            return PanelSplitResult(
+                panels=_name(charts, []),
+                method="axes",
+                notes=[f"{len(charts)} charts found by their tick labels"],
+            )
     blocks = _xy_cut(mask, (0, 0, width, height), depth=0)
     graphic = [b for b in blocks if _is_graphic(mask, b, width, height)]
     graphic = [b for b in graphic if _area(b) >= _MIN_PANEL_AREA * width * height]
@@ -127,13 +154,269 @@ def split_panels(
     )
 
 
+def split_by_axes(
+    mask: np.ndarray, words: list[Word], *, min_ticks: int = 3
+) -> list[Box] | None:
+    """The boxes of the charts whose axes the tick labels show, or None
+    when fewer than two are found or they cannot be told apart by straight
+    cuts (one chart inside another)."""
+    height, width = mask.shape
+    seeds, size = _chart_seeds(words, min_ticks)
+    if len(seeds) < 2:
+        return None
+    cells = _cut_between(seeds, (0.0, 0.0, float(width), float(height)), mask, size)
+    if cells is None:
+        return None
+    boxes = [_ink_box(mask, cell) for cell in cells]
+    boxes = [b for b in boxes if _area(b) >= _MIN_PANEL_AREA * width * height]
+    return boxes if len(boxes) >= 2 else None
+
+
+class _Seed(NamedTuple):
+    """The tick labels of one chart; ``spans`` says along which image axes
+    (0 = x, 1 = y) the box covers the plot, not only a line of labels."""
+
+    box: Box
+    spans: tuple[bool, bool]
+
+
+def _chart_seeds(words: list[Word], min_ticks: int) -> tuple[list[_Seed], float]:
+    """One seed per chart: its tick labels (a y run and the x run that
+    starts at its foot together; either alone otherwise), a y run widened
+    by the rotated axis title left of it. Also the labels' text height."""
+    numeric = [
+        w for w in words if len(w.text) <= 8 and parse_number(w.text) is not None
+    ]
+    if len(numeric) < min_ticks:
+        return [], 0.0
+    size = float(np.median([w.bbox[3] - w.bbox[1] for w in numeric]))
+    # A label is a tick of one axis: the longer run keeps it (two numbers
+    # that happen to share a row are no x axis when each heads a column).
+    runs = [
+        (axis, run)
+        for axis in ("y", "x")
+        for run in _tick_runs(numeric, axis, tol=_ALIGN * size, min_ticks=min_ticks)
+    ]
+    taken: set[int] = set()
+    boxes: dict[str, list[Box]] = {"y": [], "x": []}
+    for axis, run in sorted(runs, key=lambda r: -len(r[1])):
+        if taken.isdisjoint(id(w) for w in run):
+            taken.update(id(w) for w in run)
+            boxes[axis].append(_bounds(run))
+    seeds: list[_Seed] = []
+    free = boxes["x"]
+    for y_run in sorted(boxes["y"]):
+        for word in words:
+            tall = word.bbox[3] - word.bbox[1] > 1.5 * (word.bbox[2] - word.bbox[0])
+            if (
+                tall
+                and y_run[0] - 4 * size <= word.bbox[2] <= y_run[0]
+                and y_run[1] <= word.cy <= y_run[3]
+            ):
+                y_run = (min(y_run[0], word.bbox[0]), *y_run[1:])
+        foot = [
+            x
+            for x in free
+            if abs(x[1] - y_run[3]) <= 4 * size and -2 * size <= x[0] - y_run[2]
+            if x[0] - y_run[2] <= 6 * size
+        ]
+        if foot:
+            x_run = min(foot, key=lambda x: abs(x[0] - y_run[2]) + abs(x[1] - y_run[3]))
+            free.remove(x_run)
+            box = (y_run[0], y_run[1], max(y_run[2], x_run[2]), max(y_run[3], x_run[3]))
+            seeds.append(_Seed(box, (True, True)))
+        else:
+            seeds.append(_Seed(y_run, (False, True)))
+    return seeds + [_Seed(x_run, (True, False)) for x_run in free], size
+
+
+def _bounds(words: list[Word]) -> Box:
+    return (
+        min(w.bbox[0] for w in words),
+        min(w.bbox[1] for w in words),
+        max(w.bbox[2] for w in words),
+        max(w.bbox[3] for w in words),
+    )
+
+
+def _tick_runs(
+    numeric: list[Word], axis: str, *, tol: float, min_ticks: int
+) -> list[list[Word]]:
+    """The tick-label runs along *axis*: labels aligned on their right
+    edge (y) or centre line (x), strictly monotone, at least *min_ticks*,
+    on a line or a log scale."""
+    key, pos = (
+        (lambda w: w.bbox[2], lambda w: w.cy)
+        if axis == "y"
+        else (lambda w: w.cy, lambda w: w.cx)
+    )
+    lines: list[list[Word]] = []
+    for word in sorted(numeric, key=key):
+        if lines and key(word) - key(lines[-1][-1]) <= tol:
+            lines[-1].append(word)
+        else:
+            lines.append([word])
+    runs: list[list[Word]] = []
+    for line in lines:
+        run: list[Word] = []
+        for word in [*sorted(line, key=pos), None]:
+            if word is not None and _continues(run, word):
+                run.append(word)
+                continue
+            ticks = _fitted(run, pos, "y" if axis == "y" else "x", min_ticks)
+            if ticks:
+                runs.append(ticks)
+            run = [word] if word is not None else []
+    return runs
+
+
+def _continues(run: list[Word], word: Word) -> bool:
+    """*word* is the next tick of *run*: its value keeps the run's direction."""
+    if not run:
+        return True
+    value, last = parse_number(word.text), parse_number(run[-1].text)
+    assert value is not None and last is not None
+    if value == last:
+        return False
+    if len(run) == 1:
+        return True
+    first = parse_number(run[0].text)
+    assert first is not None
+    return (value > last) == (last > first)
+
+
+def _fitted(
+    run: list[Word],
+    pos: Callable[[Word], float],
+    axis: Literal["x", "y"],
+    min_ticks: int,
+) -> list[Word]:
+    """The labels of *run* that lie on one numeric axis: all of them, or
+    all but one (OCR reads "0.8" as "80" now and then); empty when fewer
+    than three do."""
+    candidates = [run, *(run[:i] + run[i + 1 :] for i in range(len(run)))]
+    for ticks in candidates:
+        if len(ticks) < min_ticks:
+            continue
+        fitted = fit_axis(((pos(w), w.text) for w in ticks), axis)
+        if fitted is not None and fitted.scale != "categorical":
+            return ticks
+    return []
+
+
+def _cut_between(
+    seeds: list[_Seed], region: Box, mask: np.ndarray, size: float
+) -> list[Box] | None:
+    """Cut *region* into one cell per seed: among the straight lines that
+    separate the seeds into two groups, the one through the widest free
+    band (:func:`_free_band`), then the same within each side."""
+    if len(seeds) == 1:
+        return [region]
+    best: tuple[float, int, float, list[_Seed], list[_Seed]] | None = None
+    for axis in (0, 1):
+        order = sorted(seeds, key=lambda s: s.box[axis])
+        reach = order[0].box[axis + 2]
+        for index in range(1, len(order)):
+            start = order[index].box[axis]
+            if start > reach:
+                near, far = order[:index], order[index:]
+                # Tick labels stand left of and below their plot: a seed
+                # that is only a line of labels has its plot between itself
+                # and the next chart (side by side) or the one before
+                # (stacked), and the cut belongs on the other side of it.
+                side = (
+                    1
+                    if axis == 0 and not all(s.spans[0] for s in near)
+                    else -1
+                    if axis == 1 and not all(s.spans[1] for s in far)
+                    else 0
+                )
+                # An OCR box is a little larger than its glyphs: the band
+                # may reach into the far labels' box.
+                band = _free_band(
+                    mask, region, axis, reach, start + _BOX_MARGIN * size, side, size
+                )
+                if best is None or band[1] > best[0]:
+                    best = (band[1], axis, band[0], near, far)
+            reach = max(reach, order[index].box[axis + 2])
+    if best is None:
+        return None
+    _, axis, at, near, far = best
+    near_region = list(region)
+    far_region = list(region)
+    near_region[axis + 2] = far_region[axis] = at
+    first = _cut_between(near, tuple(near_region), mask, size)  # type: ignore[arg-type]
+    second = _cut_between(far, tuple(far_region), mask, size)  # type: ignore[arg-type]
+    return None if first is None or second is None else first + second
+
+
+def _free_band(
+    mask: np.ndarray,
+    region: Box,
+    axis: int,
+    lo: float,
+    hi: float,
+    side: int,
+    size: float,
+) -> tuple[float, float]:
+    """``(centre, width)`` of the band of *region* to cut along between
+    *lo* and *hi*: a run of columns (*axis* 0) or rows (1) with next to no
+    ink (an axis line may cross it). With *side* 0 the widest run. With
+    *side* +1 / -1 a plot lies between the two charts, and a plot has free
+    runs of its own: the run next to the labels at the far / near end that
+    is at least half a text height (*size*) wide, the widest when there is
+    none. The midpoint with width 0 when nothing is free."""
+    x0, y0, x1, y1 = (round(v) for v in region)
+    a, b = round(lo), max(round(hi), round(lo) + 1)
+    sub = mask[y0:y1, a:b] if axis == 0 else mask[a:b, x0:x1]
+    profile = sub.sum(axis=axis)
+    free = np.flatnonzero(profile <= max(1, _BAND_MAX_INK * sub.shape[axis]))
+    if free.size == 0:
+        return (lo + hi) / 2, 0.0
+    breaks = np.flatnonzero(np.diff(free) > 1)
+    starts = free[np.concatenate(([0], breaks + 1))]
+    ends = free[np.concatenate((breaks, [free.size - 1]))]
+    widths = ends - starts + 1
+    wide = np.flatnonzero(widths >= 0.5 * size)
+    if side == 0 or wide.size == 0:
+        pick = int(widths.argmax())
+        return a + (starts[pick] + ends[pick] + 1) / 2, float(widths[pick])
+    # The run may continue into the plot (columns that hold nothing but an
+    # axis line): cut at its labels' end, not in its middle.
+    pick = int(wide[-1] if side > 0 else wide[0])
+    inset = min(float(widths[pick]), size) / 2
+    at = ends[pick] + 1 - inset if side > 0 else starts[pick] + inset
+    return a + at, float(widths[pick])
+
+
+def _ink_box(mask: np.ndarray, cell: Box) -> Box:
+    """*cell* shrunk to the ink inside it."""
+    x0, y0, x1, y1 = (round(v) for v in cell)
+    sub = mask[y0:y1, x0:x1]
+    if not sub.any():
+        return cell
+    rows = np.flatnonzero(sub.any(axis=1))
+    cols = np.flatnonzero(sub.any(axis=0))
+    return (
+        float(x0 + cols[0]),
+        float(y0 + rows[0]),
+        float(x0 + cols[-1] + 1),
+        float(y0 + rows[-1] + 1),
+    )
+
+
 def ink_mask(image: np.ndarray) -> np.ndarray:
-    """Pixels that differ from the background (the median border colour)."""
+    """Pixels that differ from the background."""
+    difference = np.abs(image.astype(int) - background_colour(image))
+    return difference.max(axis=2) > _INK_DIFF
+
+
+def background_colour(image: np.ndarray) -> np.ndarray:
+    """The median colour of the image border."""
     border = np.concatenate(
         [image[0], image[-1], image[:, 0], image[:, -1]], axis=0
     ).astype(int)
-    background = np.median(border, axis=0)
-    return np.abs(image.astype(int) - background).max(axis=2) > _INK_DIFF
+    return np.median(border, axis=0)
 
 
 def _xy_cut(mask: np.ndarray, box: tuple[int, int, int, int], depth: int) -> list[Box]:

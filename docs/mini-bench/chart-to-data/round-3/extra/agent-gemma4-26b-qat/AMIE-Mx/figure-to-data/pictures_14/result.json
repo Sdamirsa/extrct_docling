@@ -1,0 +1,30 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 300.26,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 300.06,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 0,
+   "eval_tokens": 0,
+   "cut": true,
+   "cost_usd": null,
+   "turns": 0,
+   "tool_calls": 4
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "agent session: stopped after 300 s",
+  "the session ended before finish: what was recorded is kept"
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "model": "claude-sonnet-5-5-blind",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-17",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the deployment schematic; uncertain says 'Workflow diagram (two-stage PPG/ECG monitoring with icons and text); no data.', which is what the truth records."
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the pipeline diagram; the reason given ('contains an ECG trace thumbnail but no data values') matches the truth, and the diagram labels ('7 tools', 'x3', '9 class') were not turned into values."
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Centres 0.673 / 0.741 / 0.666 against truth 0.674 / 0.741 / 0.666 (largest gap 0.001 = 0.2 % of the 0.35-0.95 axis); the six printed CI bounds 0.52-0.79, 0.60-0.84, 0.51-0.78 are exact. Kind 'forest' with orientation 'vertical' instead of 'other' is the synonym the truth README allows; the missing series name does not change any number."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the encoder schematic ('Model architecture schematic ... no axes or values'); the '0.183' and '0.15' inside the quoted example answer were not reported as data."
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the seven ECG rows ('Raw ECG signal traces without axes or values, shaded regions per method; not a data chart.'), as in the truth."
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 printed counts are exact (CHF 13 / 6 / 299 / 102, AKI 25 / 25 / 255 / 115, Sepsis 25 / 26 / 283 / 86) under the four legend names and three categories; the only difference is the cross glyph in the legend names (U+2715 for U+00D7)."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "SERIES_NAMES"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "The 30 raw dots of each panel (90 of 180 truth values, e.g. Accuracy Reward point 4 raw 2.001 next to line 1.619) are not returned; the run says so ('faint raw dots not extracted'). The 90 smoothed-line values it does return are right when paired by ordinal x (mean error 0.3 %, largest 1.6 % of the axis range: 1.90 vs 1.878, 1.45 vs 1.430, 245 vs 243.4), but the series is called 'smoothed' instead of the panel title, which is the only reason the scorer shows 0 of 180 matched and 90 extra."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "correct",
+   "error_types": ["CATEGORY_LABELS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed AUROC values are exact in the right model panel (OnimiaNet 87.97 / 65.74 / 76.77, EchoAgent 98.43 / 87.79 / 93.88, MemSAM 91.56 / 56.28 / 80.46 ...). The EF class ('EF<40%', '40%≤EF<50%', 'EF≥50%') is stored as the series with category null, where the truth has it as category under one series 'AUROC'; the scorer's 15 missing + 15 extra come from that layout alone, no number is wrong. label_printed drops the '%' ('87.97' for '87.97%')."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Five centres -0.154 / 0.359 / -0.842 / -0.354 / 0.719 against truth -0.152 / 0.360 / -0.840 / -0.352 / 0.720 (all within 0.1 % of the 3.1-unit axis); the ten CI bounds agree within 0.003 (e.g. -0.868..0.562 vs -0.865..0.561). The watermark did not disturb the reading; axis range given as -1.5..1.5 instead of -1.6..1.5 shifts nothing."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "partial",
+   "error_types": ["INTERVAL_BOUNDS"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "Four medians sit on the wrong box edge where the median line is not drawn separately: a1 RiskAgent-8B 76.0 vs truth 73.25 (10.0 % of the axis, box 73.25-76.06), a1 GPT-4o 57.8 vs 59.13 (4.8 %), a4 RiskAgent-8B 70.7 vs 71.79 (4.4 %), a2 GPT-4o 52.5 vs 51.57 (2.7 %); the run flags 'median uncertain' and the truth lists these rows as not decidable from the pixels. The other 26 medians are within 1.6 % and all 60 whisker ends within 1.4 % (e.g. 71.2 / 76.8 vs 71.12 / 76.77), all ten panels and three models are present; the per-panel y ranges are not recorded."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 unlabelled bar heights are within 0.001 (0.2 % of the 0.2-0.9 axis): Top-1 diagnosis 0.579 / 0.690 / 0.840 vs 0.580 / 0.690 / 0.840, Top-3 explanation 0.535 / 0.551 / 0.675 vs 0.534 / 0.551 / 0.676; four panels, titles and the three category names are exact."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "No panels returned for the inference flow schematic; uncertain says 'printed score/mortality are example text, not plotted data', so the CURB-65 inputs (28, 110, 70, 60) and 'Mortality: 0.7%' were correctly left out."
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "SERIES_NAMES"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "Only the 'Very favorable' and 'Favorable / Yes' segments of the 44 bars are returned (84 of 264 truth values); the four other rating levels are absent, including non-zero segments such as Showing Empathy PCP 'Neither' 27.33 and 'Unfavorable' 12.0 or the Y/N 'No' shares 9.67 and 18.33, as the run states ('the neither/unfavorable/very unfavorable/cannot-rate segments are not extracted'). The 84 returned values are right (mean gap 0.12, largest 0.37 percentage points: 37.3 vs 37.67), but the arm is folded into the series name ('AMIE - Very favorable' under category 'Being Polite' instead of category 'Being Polite - AMIE', series 'Very favorable'), so the scorer pairs 0 of 264."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "correct",
+   "error_types": ["GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "Panel b bar tops carry a small constant offset of about +0.02 (0.5 % of the 1-5 axis, largest +0.04): ACC multi 4.42 vs 4.40, ORG 4.33 / 4.72 vs 4.30 / 4.70, CPH 4.94 / 4.94 vs 4.90 / 4.90, FFH 4.83 vs 4.80, so the values no longer equal the paper's table to two decimals but all 16 stay within 1 %. Panel a's eight medians are within 0.9 % of the axis (ZODIAC 0.002 vs 0.0036, Med42-70B 0.030 vs 0.0337) with whiskers within 0.003; the run took the real ZODIAC box, not the spurious bar at 0.04 that the crop shows."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 15 printed percentages are exact under the right slice labels in the three pies (16.8 / 40.2 / 30.8 / 8.4 / 3.7; 15.9 / 36.4 / 32.7 / 12.1 / 2.8; 23.4 / 27.1 / 30.8 / 15.9 / 2.8). The panel boxes cover the pie disc only, without title and legend (panel c x 530-667 against truth 530-773, IoU 0.4995 under the scorer's 0.5), which is why the scorer reports 5 missing + 5 extra for 'Did the AI save you time?'; no value is wrong or absent."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 7,
+   "partial": 3,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 5,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "MISSING_VALUES": 2,
+   "SERIES_NAMES": 2,
+   "CATEGORY_LABELS": 1,
+   "INTERVAL_BOUNDS": 1,
+   "GEOMETRY_MISMEASURED": 1,
+   "PANEL_STRUCTURE": 1
+  },
+  "usable_figures": 14,
+  "dominant_failure": "MISSING_VALUES",
+  "assessment": "The run rejects all five figures without data and returns nothing invented: paired by meaning, 290 of the 560 truth values come back, 289 within 5 % and 286 within 2 % of the axis range, with every printed number (B1, B3, C5, the A3 bounds) exact and unlabelled marks (C1 bars, B4 forest, C4 boxes, B2 line) typically within 0.5 %. Its typical failure is leaving out part of a dense figure and saying so: the 90 raw dots of B2 and four of the six rating levels in C3 (180 values) account for all 270 values not returned, and only C3 is unusable as it stands. The one real misreading is in B5, where the median of boxes without a separately drawn median line was put on the wrong box edge (76.0 for 73.25), a case the truth itself calls undecidable from the pixels. The automatic scorer understates this run badly (0 matches on B2, B3 and C3, 10 of 15 on C5) because of layout choices only: series named 'smoothed', the EF class or the arm placed in the series field, pie boxes without legend. It can be trusted on printed-label charts, single-series bars, forest and interval plots and for the decision chart versus diagram; multi-series stacked bars and overlaid raw points need a completeness check. One caveat for whoever compares runs: the agreement on unlabelled marks is finer than one pixel of the supplied crops (B2 about 0.25 px, C4 whiskers about 0.3 px) although the notes say 'by eye', so the values were evidently measured rather than estimated; the B5 edge choices show they were not copied from the truth."
+ }
+}

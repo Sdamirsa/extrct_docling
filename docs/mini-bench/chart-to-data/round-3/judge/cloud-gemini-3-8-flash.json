@@ -1,0 +1,147 @@
+{
+ "model": "cloud-gemini-3-8-flash",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-18",
+ "figures": [
+  {
+   "figure_id": "A1",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (deployment schematic) and the run returned none, with the reason 'not a data chart: Diagram illustrating the two-stage deployment scenario of Cardiologent, showing daily wearable PPG monitoring (Stage 1) and in-hospital PPG and ECG monitoring (Stage 2) ...'."
+  },
+  {
+   "figure_id": "A2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (pipeline diagram; '7 tools', 'x3', '9 class' are diagram labels) and the run returned none: 'not a data chart: An architectural and workflow diagram of the Cardiologent framework ...'."
+  },
+  {
+   "figure_id": "A3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "The 3 centres are 0.67 / 0.74 / 0.66 against 0.674 / 0.741 / 0.666 (largest gap 0.006 = 1.0 % of the 0.6 axis span; the panel note says they were taken from the caption) and the six printed CI bounds are exact (0.52-0.79, 0.60-0.84, 0.51-0.78). The series is left unnamed where the truth names it after the y axis; no legend is printed, so that is a convention, not an error."
+  },
+  {
+   "figure_id": "A4",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (encoder schematic; '0.183' and '0.15' sit inside a quoted example answer) and the run returned none: 'not a data chart: System architecture diagram illustrating the workflow of a time series encoder and multimodal large language model for ECG/PPG signal analysis.'"
+  },
+  {
+   "figure_id": "A5",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (seven ECG traces with shaded spans, no axes) and the run returned none: 'not a data chart: ECG signal traces showing grounding/localization of an abnormal span across different models compared to the ground truth.'"
+  },
+  {
+   "figure_id": "B1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 printed counts are exact and attached to the right legend entry and clinical problem (Congestive Heart Failure 13 / 6 / 299 / 102, Acute Kidney Injury 25 / 25 / 255 / 115, Sepsis 25 / 26 / 283 / 86); the four legend names are verbatim, including the circle and cross marks."
+  },
+  {
+   "figure_id": "B2",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "VALUE_ASSIGNMENT"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "The scorer pairs 0 of 180 because the rows carry no series name while the truth has two named series per panel (no legend is printed): a keying mismatch, not wrong numbers, since in sequence the 84 returned values are the smoothed-line vertices within 0.5-0.7 % of the axis range on average (Accuracy Reward 1.02, 1.23, 1.62, 2.14 = truth vertices 1, 3, 4, 6 at 1.018, 1.215, 1.619, 2.143). What is wrong: only 28 of the 30 vertices per panel came back (truth points 2 and 5, 21 and 29, 25 and 29 dropped, undeclared), so every later value sits 1-2 positions too early (panel 1: 19 of 28 points differ by more than 5 % of the range when compared at equal x), and the 90 raw dots are not returned, which is declared ('Raw evaluation data points (28 faint dots per chart) plotted in the background ...'); the step's 9 'outside the axis range [1, 2]' issues are correct values (0.77-0.86, 280-282) against a range that was set to the tick span."
+  },
+  {
+   "figure_id": "B3",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 15 printed AUROC values are exact in the five model panels (OnimiaNet 87.97 / 65.74 / 76.77, EchoAgent 98.43 / 87.79 / 93.88, MemSAM 91.56 / 56.28 / 80.46) with the EF classes as printed. The curves are not traced, which the run declares ('ROC curve coordinate traces are not digitized because AUROC statistics are explicitly reported in the legend') and the truth does not hold either."
+  },
+  {
+   "figure_id": "B4",
+   "verdict": "correct",
+   "error_types": ["INTERVAL_BOUNDS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "The 5 centres are within 0.3 % of the 3.1 axis span (-0.15 / 0.36 / -0.85 / -0.35 / 0.73 against -0.152 / 0.360 / -0.840 / -0.352 / 0.720) and 8 of the 10 CI bounds within 0.8 %. The Overall quality interval is widened to -0.95..0.65 against -0.865..0.561 (0.085 and 0.089 off, 2.8 % of the span on each side; the crop shows the caps at -0.865 and 0.562)."
+  },
+  {
+   "figure_id": "B5",
+   "verdict": "partial",
+   "error_types": ["INTERVAL_BOUNDS"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "29 of 30 medians are within 5 % and every whisker end within 2.3 % of its panel's range, but in boxes whose median is not drawn apart from the box the run took the other box edge: qualitative Stroke/TIA RiskAgent-8B 76.1 (its own Q3) against 73.25 (10.4 % of the range), GPT-4o 57.8 against 59.13 (4.8 %), Shortness of Breath GPT-4o 53.1 against 51.57 (4.4 %), Cardiac RiskAgent-8B 70.8 against 71.79 (4.0 %). The truth lists exactly these boxes as not decidable from the figure alone (settled with the paper's table), and nothing is flagged in uncertain."
+  },
+  {
+   "figure_id": "C1",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 12 bar heights are within 0.6 % of the 0.7 axis span with titles and categories exact: Top-1 Diagnosis 0.58 / 0.69 / 0.84 (truth identical), Top-1 Explanation 0.48 / 0.63 / 0.80 against 0.479 / 0.628 / 0.797, Top-3 Explanation 0.53 / 0.55 / 0.68 against 0.534 / 0.551 / 0.676."
+  },
+  {
+   "figure_id": "C2",
+   "verdict": "true_negative",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "Truth has no panels (inference flow schematic whose numbers are one worked CURB-65 example) and the run returned none: 'not a data chart: A workflow diagram illustrating the RiskCalcs process, including tool selection, parameter extraction, tool computation, and prediction using the CURB-65 score.'"
+  },
+  {
+   "figure_id": "C3",
+   "verdict": "partial",
+   "error_types": ["GEOMETRY_MISMEASURED"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "241 of 264 segments are within 5 points (237 within 2), all 44 bars and 6 rating classes are named exactly and every bar sums to 100, but in the first six GMCPQ items one segment boundary is placed 6-10 points too far left, a constant offset local to that block: AMIE 'Very favorable' 70 / 69 / 64 / 65 / 62 against 76.0 / 75.67 / 70.33 / 71.33 / 68.0 (items 2-6), and for PCP 'Favorable' 19 / 25 / 26 / 25 / 21 against 29.67 / 31.67 / 33.33 / 31.67 / 27.33 with 'Neither' 23 / 24 / 21 / 21 / 25 against 12.0 / 17.33 / 13.67 / 14.67 / 18.33 (items 1-5; the crop shows Being Polite - PCP changing colour at 50 %, 80 % and 92 %). The same slip occurs in MXEKF 'Monitoring And Adjustment Of Management Plan - PCP' (Favorable 22 against 30.33, Neither 22 against 13.67) and PACES 'Understanding Patient Concerns - PCP' (Favorable 35 against 28.33): 23 values in 12 of 44 bars are off by 6-11 points, with uncertain empty and no step issue."
+  },
+  {
+   "figure_id": "C4",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE", "INTERVAL_BOUNDS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "The scorer reports 0 of 24 matched only because the two panel boxes are given as the top and bottom halves of the crop ([11, 1, 557, 65] and [11, 65, 557, 130]) while the panels sit side by side ([0, 0, 280, 131] and [280, 0, 568, 131]), so no box reaches IoU 0.5; the numbers are right: 8 medians within 0.5 % of the 0.418 range (ZODIAC 0.005 against 0.0036, Mixtral-8x22B 0.128 against 0.1265) and 16 bars within 2.5 % of the 1-5 range (worst CPH multi-agent 5.0 against 4.9, ORG multi-agent 4.76 against 4.7). One whisker is put at the quartile: Meditron-70B lower end 0.025 (Q1 is 0.0254) against 0.0058, 4.6 % of the range."
+  },
+  {
+   "figure_id": "C5",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 15 printed percentages are exact with titles and slice labels verbatim ('Did the AI help your assessment?' 16.8 / 40.2 / 30.8 / 8.4 / 3.7; 'Did the AI save you time?' 23.4 / 27.1 / 30.8 / 15.9 / 2.8, the two near-identical 'Saved more than 50 % / 10 %' labels not swapped). The only blemish touches no value: stray words are stored as axis ticks of the pie panels (x ticks ['40.2%', 'Neither', 'yes', 'nor', 'no'])."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 7,
+   "partial": 3,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 5,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "INTERVAL_BOUNDS": 3,
+   "GEOMETRY_MISMEASURED": 1,
+   "MISSING_VALUES": 1,
+   "VALUE_ASSIGNMENT": 1,
+   "PANEL_STRUCTURE": 1
+  },
+  "usable_figures": 14,
+  "dominant_failure": "INTERVAL_BOUNDS",
+  "assessment": "The run never returns values for a figure without data (5 of 5 true negatives, each with a 'not a data chart' reason) and reads printed numbers without one error (B1, B3, C5 and the CI labels of A3: 48 of 48), with legend, category and panel names verbatim. Bar heights and point estimates read from mark positions are within about 1 % of the axis range (A3, B4, C1, C4), and no figure is wrong, missed or hallucinated. Its recurring weakness is the secondary statistics of a mark: a box median taken at the wrong box edge when no median line is visible (B5, one value 10 % of the range off), a CI widened by 2.8 % (B4), a whisker put at the quartile (C4). Its most damaging single failure is different and silent: in the 264-segment stacked chart C3 one segment boundary is shifted 6-10 points in 12 of 44 bars while every bar still sums to 100 and nothing is declared. The two automatic zeros are not reading errors: B2 traces the line within 0.7 % but leaves the series unnamed, drops 2 of 30 vertices per panel (shifting the later points) and omits the raw dots, and C4 has correct numbers under mislocated panel boxes; axis ranges and panel boxes are the weak part of the record, not the values. It can be trusted on printed-value charts, simple bars, forest plots and pies; dense stacked bars, box-plot medians and the point count of long unlabelled lines need a check."
+ }
+}

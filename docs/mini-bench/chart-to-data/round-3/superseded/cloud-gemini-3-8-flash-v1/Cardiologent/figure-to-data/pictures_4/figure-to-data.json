@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 13,
+    "bbox": [
+      62.64,
+      67.61,
+      558.2,
+      401.39
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Architecture diagram illustrating the workflow of the model with a Transformer Encoder-Decoder, prompt template, ECG trace with CLIP Vision Encoder, and Llama-7B language model.",
+  "uncertain": [
+    "not a data chart: Architecture diagram illustrating the workflow of the model with a Transformer Encoder-Decoder, prompt template, ECG trace with CLIP Vision Encoder, and Llama-7B language model."
+  ]
+}

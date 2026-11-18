@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Zodiac",
+  "pdf": "Zodiac.pdf",
+  "prepared_at": "2026-11-18T11:33:06",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/5"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/5",
+      "status": "prepared",
+      "folder": "pictures_5",
+      "reason": null,
+      "page": 10,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        1156,
+        267
+      ],
+      "source_kind": "vector",
+      "charts": 1,
+      "words": 29
+    }
+  ]
+}

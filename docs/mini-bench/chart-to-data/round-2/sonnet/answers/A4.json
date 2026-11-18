@@ -1,0 +1,9 @@
+{
+ "figure_id": "A4",
+ "is_data_chart": false,
+ "panels": [],
+ "uncertain": [
+  "Model architecture schematic (transformer encoder/decoder, CLIP, Llama-7B, prompt box, ECG trace with R-peak markers); no axes or values."
+ ],
+ "method": "Visual inspection; no plotted values."
+}

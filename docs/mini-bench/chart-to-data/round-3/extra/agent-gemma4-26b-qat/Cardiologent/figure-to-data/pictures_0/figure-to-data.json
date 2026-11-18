@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "This figure depicts a deployment scenario for medical monitoring, showing two stages: Stage 1 involves daily PPG monitoring via a wearable device and detection of atrial fibrillation by a PPG agent, while Stage 2 involves ECG and PPG monitoring in a hospital setting where a cardiologist makes clinical decisions.",
+  "uncertain": [
+    "not a data chart: This figure depicts a deployment scenario for medical monitoring, showing two stages: Stage 1 involves daily PPG monitoring via a wearable device and detection of atrial fibrillation by a PPG agent, while Stage 2 involves ECG and PPG monitoring in a hospital setting where a cardiologist makes clinical decisions."
+  ]
+}

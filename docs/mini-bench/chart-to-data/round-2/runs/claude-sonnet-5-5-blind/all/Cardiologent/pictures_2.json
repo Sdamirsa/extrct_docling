@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 4,
+  "bbox": [
+   53.771663665771484,
+   734.717945098877,
+   556.9486694335938,
+   473.3359375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Architecture/workflow diagram of ECG and PPG specialist agents, debate and referee; contains an ECG trace thumbnail but no data values."
+ ]
+}

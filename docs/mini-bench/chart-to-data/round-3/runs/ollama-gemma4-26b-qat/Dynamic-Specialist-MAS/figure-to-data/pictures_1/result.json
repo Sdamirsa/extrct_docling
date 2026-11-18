@@ -1,0 +1,57 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "single",
+ "seconds": 20.96,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 2.673,
+   "total_s": 2.672,
+   "load_s": 0.396,
+   "prompt_eval_s": 0.785,
+   "eval_s": 1.365,
+   "prompt_tokens": 916,
+   "eval_tokens": 85,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 18.205,
+   "total_s": 18.204,
+   "load_s": 0.367,
+   "prompt_eval_s": 0.98,
+   "eval_s": 16.765,
+   "prompt_tokens": 1322,
+   "eval_tokens": 983,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-18T11:45:50.226583549+01:00"
+  }
+ ],
+ "issues": [
+  "panel 1: 13 outside the axis range [50, 350] (Congestive Heart Failure/MAS Correct, Baseline Incorrect (MAS ☐, Base ✕))",
+  "panel 1: 6 outside the axis range [50, 350] (Congestive Heart Failure/MAS Incorrect, Baseline Correct (MAS ✕, Base ☐))",
+  "panel 1: 25 outside the axis range [50, 350] (Acute Kidney Injury/MAS Correct, Baseline Incorrect (MAS ☐, Base ✕))",
+  "panel 1: 25 outside the axis range [50, 350] (Acute Kidney Injury/MAS Incorrect, Baseline Correct (MAS ✕, Base ☐))",
+  "panel 1: 25 outside the axis range [50, 350] (Sepsis/MAS Correct, Baseline Incorrect (MAS ☐, Base ✕))",
+  "panel 1: 26 outside the axis range [50, 350] (Sepsis/MAS Incorrect, Baseline Correct (MAS ✕, Base ☐))"
+ ]
+}

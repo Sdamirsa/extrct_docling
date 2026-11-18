@@ -1,0 +1,912 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Accuracy Reward",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Training step (index, unlabeled; every five steps)",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy Reward",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.75,
+    "max": 2.7
+   },
+   "series": [
+    "Smoothed accuracy reward"
+   ],
+   "points": [
+    {
+     "category": null,
+     "x": "1",
+     "series": "Smoothed accuracy reward",
+     "value": 1.01,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "2",
+     "series": "Smoothed accuracy reward",
+     "value": 1.11,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "3",
+     "series": "Smoothed accuracy reward",
+     "value": 1.23,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "4",
+     "series": "Smoothed accuracy reward",
+     "value": 1.62,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "5",
+     "series": "Smoothed accuracy reward",
+     "value": 1.88,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "6",
+     "series": "Smoothed accuracy reward",
+     "value": 2.14,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "7",
+     "series": "Smoothed accuracy reward",
+     "value": 2.13,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "8",
+     "series": "Smoothed accuracy reward",
+     "value": 1.92,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "9",
+     "series": "Smoothed accuracy reward",
+     "value": 2.21,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "10",
+     "series": "Smoothed accuracy reward",
+     "value": 2.05,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "11",
+     "series": "Smoothed accuracy reward",
+     "value": 1.64,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "12",
+     "series": "Smoothed accuracy reward",
+     "value": 1.88,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "13",
+     "series": "Smoothed accuracy reward",
+     "value": 2.17,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "14",
+     "series": "Smoothed accuracy reward",
+     "value": 2.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "15",
+     "series": "Smoothed accuracy reward",
+     "value": 2.05,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "16",
+     "series": "Smoothed accuracy reward",
+     "value": 2.01,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "17",
+     "series": "Smoothed accuracy reward",
+     "value": 2.22,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "18",
+     "series": "Smoothed accuracy reward",
+     "value": 2.05,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "19",
+     "series": "Smoothed accuracy reward",
+     "value": 2.04,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "20",
+     "series": "Smoothed accuracy reward",
+     "value": 2.45,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "21",
+     "series": "Smoothed accuracy reward",
+     "value": 2.15,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "22",
+     "series": "Smoothed accuracy reward",
+     "value": 1.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "23",
+     "series": "Smoothed accuracy reward",
+     "value": 1.86,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "24",
+     "series": "Smoothed accuracy reward",
+     "value": 1.96,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "25",
+     "series": "Smoothed accuracy reward",
+     "value": 2.31,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "26",
+     "series": "Smoothed accuracy reward",
+     "value": 2.37,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "27",
+     "series": "Smoothed accuracy reward",
+     "value": 2.27,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "28",
+     "series": "Smoothed accuracy reward",
+     "value": 2.35,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "29",
+     "series": "Smoothed accuracy reward",
+     "value": 2.26,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "30",
+     "series": "Smoothed accuracy reward",
+     "value": 2.27,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "30 smoothed-line vertices read; raw faint dots not recorded. X axis has no tick labels, so x = index."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Format Reward",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Training step (index, unlabeled; every five steps)",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Format Reward",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.65,
+    "max": 2.1
+   },
+   "series": [
+    "Smoothed format reward"
+   ],
+   "points": [
+    {
+     "category": null,
+     "x": "1",
+     "series": "Smoothed format reward",
+     "value": 0.81,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "2",
+     "series": "Smoothed format reward",
+     "value": 0.78,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "3",
+     "series": "Smoothed format reward",
+     "value": 0.77,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "4",
+     "series": "Smoothed format reward",
+     "value": 0.86,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "5",
+     "series": "Smoothed format reward",
+     "value": 1.01,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "6",
+     "series": "Smoothed format reward",
+     "value": 1.43,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "7",
+     "series": "Smoothed format reward",
+     "value": 1.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "8",
+     "series": "Smoothed format reward",
+     "value": 1.72,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "9",
+     "series": "Smoothed format reward",
+     "value": 1.84,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "10",
+     "series": "Smoothed format reward",
+     "value": 1.77,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "11",
+     "series": "Smoothed format reward",
+     "value": 1.61,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "12",
+     "series": "Smoothed format reward",
+     "value": 1.69,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "13",
+     "series": "Smoothed format reward",
+     "value": 1.81,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "14",
+     "series": "Smoothed format reward",
+     "value": 1.79,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "15",
+     "series": "Smoothed format reward",
+     "value": 1.77,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "16",
+     "series": "Smoothed format reward",
+     "value": 1.75,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "17",
+     "series": "Smoothed format reward",
+     "value": 1.82,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "18",
+     "series": "Smoothed format reward",
+     "value": 1.75,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "19",
+     "series": "Smoothed format reward",
+     "value": 1.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "20",
+     "series": "Smoothed format reward",
+     "value": 1.88,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "21",
+     "series": "Smoothed format reward",
+     "value": 1.74,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "22",
+     "series": "Smoothed format reward",
+     "value": 1.62,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "23",
+     "series": "Smoothed format reward",
+     "value": 1.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "24",
+     "series": "Smoothed format reward",
+     "value": 1.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "25",
+     "series": "Smoothed format reward",
+     "value": 1.83,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "26",
+     "series": "Smoothed format reward",
+     "value": 1.85,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "27",
+     "series": "Smoothed format reward",
+     "value": 1.82,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "28",
+     "series": "Smoothed format reward",
+     "value": 1.86,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "29",
+     "series": "Smoothed format reward",
+     "value": 1.83,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "30",
+     "series": "Smoothed format reward",
+     "value": 1.81,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "30 smoothed-line vertices read; raw faint dots not recorded. X axis has no tick labels, so x = index."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Completion Length",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Training step (index, unlabeled; every five steps)",
+    "unit": null,
+    "scale": "linear",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Completion Length",
+    "unit": null,
+    "scale": "linear",
+    "min": 195.0,
+    "max": 295.0
+   },
+   "series": [
+    "Smoothed completion length"
+   ],
+   "points": [
+    {
+     "category": null,
+     "x": "1",
+     "series": "Smoothed completion length",
+     "value": 209.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "2",
+     "series": "Smoothed completion length",
+     "value": 216.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "3",
+     "series": "Smoothed completion length",
+     "value": 234.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "4",
+     "series": "Smoothed completion length",
+     "value": 246.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "5",
+     "series": "Smoothed completion length",
+     "value": 259.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "6",
+     "series": "Smoothed completion length",
+     "value": 275.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "7",
+     "series": "Smoothed completion length",
+     "value": 268.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "8",
+     "series": "Smoothed completion length",
+     "value": 252.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "9",
+     "series": "Smoothed completion length",
+     "value": 243.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "10",
+     "series": "Smoothed completion length",
+     "value": 233.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "11",
+     "series": "Smoothed completion length",
+     "value": 222.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "12",
+     "series": "Smoothed completion length",
+     "value": 222.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "13",
+     "series": "Smoothed completion length",
+     "value": 227.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "14",
+     "series": "Smoothed completion length",
+     "value": 226.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "15",
+     "series": "Smoothed completion length",
+     "value": 233.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "16",
+     "series": "Smoothed completion length",
+     "value": 244.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "17",
+     "series": "Smoothed completion length",
+     "value": 265.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "18",
+     "series": "Smoothed completion length",
+     "value": 282.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "19",
+     "series": "Smoothed completion length",
+     "value": 281.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "20",
+     "series": "Smoothed completion length",
+     "value": 281.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "21",
+     "series": "Smoothed completion length",
+     "value": 279.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "22",
+     "series": "Smoothed completion length",
+     "value": 268.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "23",
+     "series": "Smoothed completion length",
+     "value": 268.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "24",
+     "series": "Smoothed completion length",
+     "value": 275.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "25",
+     "series": "Smoothed completion length",
+     "value": 279.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "26",
+     "series": "Smoothed completion length",
+     "value": 281.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "27",
+     "series": "Smoothed completion length",
+     "value": 280.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "28",
+     "series": "Smoothed completion length",
+     "value": 268.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "29",
+     "series": "Smoothed completion length",
+     "value": 266.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": null,
+     "x": "30",
+     "series": "Smoothed completion length",
+     "value": 273.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "30 smoothed-line vertices read; raw faint dots not recorded. X axis has no tick labels, so x = index."
+   ]
+  }
+ ],
+ "description": "Three line panels of training curves over the first stage: smoothed Accuracy Reward, Format Reward and Completion Length, each with faint raw dots behind the line.",
+ "has_data": true,
+ "not_read": [
+  "Faint raw scatter dots behind each smoothed line (about 30 per panel, 90 total): not recorded, because the smoothed line was taken as the series. Their values are visible but were not read.",
+  "X axes print no tick labels, so the step positions are given only as an index 1-30. The caption says every five steps.",
+  "Values are read from the plotted line against the gridlines, so they are approximate (about ±0.02 for rewards, ±1 for length)."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 3,
+ "records": 3
+}

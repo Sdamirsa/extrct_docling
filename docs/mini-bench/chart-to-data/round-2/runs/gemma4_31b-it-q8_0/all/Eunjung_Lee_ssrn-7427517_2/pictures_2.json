@@ -1,0 +1,128 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": "Forest plot of rating domains comparing clinician-authored and AI-generated summaries",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Difference in rating",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.0,
+            1.5
+          ],
+          "ticks": [
+            -1.0,
+            -0.5,
+            0.0,
+            0.5,
+            1.0,
+            1.5
+          ]
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Overall quality",
+            "Clarity",
+            "Completeness",
+            "Accuracy",
+            "Readability"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": null,
+          "series": null,
+          "value": -0.2517,
+          "err_lo": -0.8354,
+          "err_hi": 0.332,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Clarity",
+          "x": null,
+          "series": null,
+          "value": 0.3006,
+          "err_lo": -0.001,
+          "err_hi": 0.6023,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Completeness",
+          "x": null,
+          "series": null,
+          "value": -0.808,
+          "err_lo": -1.3055,
+          "err_hi": -0.3105,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Accuracy",
+          "x": null,
+          "series": null,
+          "value": -0.3379,
+          "err_lo": -0.6396,
+          "err_hi": -0.0363,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Readability",
+          "x": null,
+          "series": null,
+          "value": 0.6806,
+          "err_lo": 0.1831,
+          "err_hi": 1.1781,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-data measured (gemma4:31b-it-q8_0)",
+    "date": "2026-11-17",
+    "time_minutes": null
+  },
+  "uncertain": []
+}

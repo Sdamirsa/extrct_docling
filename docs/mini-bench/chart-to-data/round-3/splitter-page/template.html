@@ -1,0 +1,335 @@
+<title>Panel Splitter Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column read top-down. The answer and three numbers; the 15 bench
+   figures scored against the truth, as a table; the three modes of the splitter as
+   one bar each; every bench figure with its boxes drawn; the wider set by eye; limits.
+   One control row above the galleries switches which boxes are drawn on every image. */
+:root {
+  --page: #f3f5f8; --surface: #ffffff; --surface-2: #e9edf2; --line: #d8dee6;
+  --ink: #0e1217; --ink-2: #454e5b; --muted: #77808d;
+  --accent: #2a78d6; --series-1: #2a78d6; --series-2: #eb6834;
+  --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  /* Boxes sit on the figures, which are always printed on white. */
+  --box-found: #2a78d6; --box-truth: #eb6834;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+    --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+    --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+  --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+  --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 18px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.bar .sub { color: var(--muted); font-size: 12px; }
+.seg { display: flex; gap: 4px; background: var(--surface-2); padding: 3px; border-radius: 999px; }
+.seg button { border: 0; background: transparent; padding: 5px 14px; border-radius: 999px; cursor: pointer; font-weight: 500; color: var(--ink-2); font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-left: auto; }
+.controls .lab { font-size: 12px; color: var(--muted); }
+
+main { padding-block: 24px 56px; display: flex; flex-direction: column; gap: 32px; }
+section { display: flex; flex-direction: column; gap: 12px; }
+.lede { font-size: 16px; max-width: 70ch; }
+.note { max-width: 80ch; color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.scroll { overflow-x: auto; }
+.private { padding: 10px 14px; border-left: 3px solid var(--serious); color: var(--ink-2); }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.tile { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile .big { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.1; }
+.tile .lab { color: var(--ink-2); font-size: 13px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { font-weight: 600; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; }
+tr.nodata td { color: var(--muted); }
+tr.total td { font-weight: 600; border-top: 2px solid var(--line); }
+.dots { display: inline-flex; flex-wrap: wrap; gap: 3px; vertical-align: middle; margin-right: 8px; max-width: 76px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line); }
+.dots i.on { background: var(--series-1); border-color: var(--series-1); }
+.tag { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: 11px; font-weight: 600; background: var(--surface-2); color: var(--ink-2); }
+.fid { font-family: var(--font-mono); font-size: 12px; font-weight: 500; }
+
+.bars { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.brow { display: grid; grid-template-columns: minmax(150px, 280px) 1fr minmax(120px, auto); gap: 12px; align-items: center; }
+.brow .name { display: flex; flex-direction: column; line-height: 1.25; }
+.brow .name span + span { color: var(--muted); font-size: 12px; }
+.brow .track { height: 18px; background: var(--surface-2); border-radius: 0 4px 4px 0; }
+.brow .fill { height: 100%; background: var(--series-1); border-radius: 0 4px 4px 0; min-width: 2px; }
+.brow .val { color: var(--ink-2); text-align: right; }
+@media (max-width: 640px) { .brow { grid-template-columns: 1fr; gap: 2px; } .brow .val { text-align: left; } }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12px; color: var(--ink-2); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.key { width: 22px; height: 14px; border-radius: 2px; display: inline-block; background: #fff; }
+.key.found { border: 2px solid var(--box-found); }
+.key.truth { border: 2px dashed var(--box-truth); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 12px; align-items: start; }
+.card { padding: 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.card header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.card header .grow { margin-left: auto; color: var(--muted); font-size: 12px; }
+.card .what { color: var(--ink-2); font-size: 13px; }
+.card .flag { font-size: 13px; color: var(--ink); border-left: 3px solid var(--serious); padding-left: 8px; }
+.shot { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; line-height: 0; }
+.shot img { width: 100%; height: auto; display: block; }
+.box { position: absolute; pointer-events: auto; }
+.box.found { border: 2px solid var(--box-found); }
+.box.truth { border: 2px dashed var(--box-truth); }
+.box b { position: absolute; left: 0; top: 0; background: var(--box-found); color: #fff; font: 600 10px/1 var(--font-mono); padding: 2px 4px; border-radius: 0 0 3px 0; }
+.gdot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: baseline; }
+.g-clean { background: var(--good); }
+.g-minor { background: var(--warn); }
+.g-wrong { background: var(--crit); }
+.g-not_chart { background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--muted); }
+.filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.filter .lab { font-size: 12px; color: var(--muted); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.cols .panel { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.cols p, .cols li { color: var(--ink-2); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--page); padding: 6px 9px; border-radius: 6px; font-size: 12px; max-width: 300px; line-height: 1.35; }
+@media (prefers-reduced-motion: no-preference) { .seg button { transition: background-color .12s, color .12s; } }
+</style>
+
+<div class="bar"><div class="wrap">
+  <div><h1>Panel Splitter Check</h1><div class="sub" id="subline"></div></div>
+  <div class="controls">
+    <span class="lab">Boxes drawn on every figure</span>
+    <div class="seg" role="group" aria-label="Which splitter's boxes are drawn">
+      <button id="mode-auto" data-mode="auto" aria-pressed="true">Splitter</button>
+      <button id="mode-count" data-mode="count" aria-pressed="false">Splitter + chart count</button>
+      <button id="mode-gutters" data-mode="gutters" aria-pressed="false">Round-1 splitter</button>
+    </div>
+    <div class="seg" role="group" aria-label="Truth boxes">
+      <button id="truth-toggle" data-truth="1" aria-pressed="true">Truth boxes</button>
+    </div>
+  </div>
+</div></div>
+
+<div class="wrap">
+<main>
+  <section>
+    <p class="lede" id="lede"></p>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section>
+    <h2>Scored: the 15 bench figures</h2>
+    <p class="note">The truth names the box of every chart in a figure. A chart counts as found when a splitter box overlaps its truth box by at least half (intersection over union of 0.5 or more), the rule the bench's scorer uses; a figure with one chart on both sides always pairs. One dot per chart in the truth, filled when it was found.</p>
+    <div class="panel scroll"><table id="scored"></table></div>
+    <p class="note" id="scorednote"></p>
+  </section>
+
+  <section>
+    <h2>Four ways to cut, on the 10 figures that hold data</h2>
+    <p class="note" id="modenote"></p>
+    <div class="panel bars" id="modes"></div>
+  </section>
+
+  <section>
+    <h2>Every bench figure with its boxes</h2>
+    <p class="panel private">The figure images are the papers' own artwork, shown here for private review. Keep this page unshared.</p>
+    <div class="legend"><span><i class="key found"></i>box the splitter cut (numbered in reading order)</span><span><i class="key truth"></i>chart box in the truth</span><span class="muted">Switch the boxes with the controls in the bar at the top.</span></div>
+    <div class="grid" id="benchgrid"></div>
+  </section>
+
+  <section>
+    <h2 id="widehead"></h2>
+    <p class="note" id="widenote"></p>
+    <div class="two">
+      <div class="panel scroll"><table id="bygrade"></table></div>
+      <div class="panel scroll"><table id="bycharts"></table></div>
+      <div class="panel scroll"><table id="bymethod"></table></div>
+    </div>
+    <p class="note" id="widelook"></p>
+    <div class="filter">
+      <span class="lab">Show</span>
+      <div class="seg" role="group" aria-label="Which figures of the wider set are shown" id="gradefilter"></div>
+    </div>
+    <div class="grid" id="widegrid"></div>
+  </section>
+
+  <section>
+    <h2>What the look by eye found</h2>
+    <div class="cols" id="findings"></div>
+  </section>
+
+  <section>
+    <h2>Known limits of the splitter</h2>
+    <div class="cols" id="limits"></div>
+  </section>
+</main>
+</div>
+<div id="tip" hidden></div>
+<script id="page-data" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('page-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const state = { mode: 'auto', truth: true, grade: 'all' };
+  const MODE = {
+    auto: ['Splitter', 'tick-label axes first, then white gutters; no model'],
+    count: ['Splitter + chart count', 'the same, told how many charts the figure holds'],
+    gutters: ['Round-1 splitter', 'white gutters only'],
+    off: ['No split', 'the whole figure as one chart'],
+  };
+  const GRADE = {
+    clean: 'Cut cleanly',
+    minor: 'Cut, with a title or legend in the wrong box',
+    wrong: 'Cut wrongly',
+    not_chart: 'Not a chart',
+  };
+  const gradeTag = (g) => (g ? `<span class="tag"><i class="gdot g-${g}"></i>${esc(GRADE[g])}</span>` : '');
+  const METHOD = { axes: 'tick-label axes', gutters: 'white gutters', single: 'one block', none: 'nothing to cut', letters: 'panel letters', off: 'off' };
+  const data = D.bench.filter((f) => f.hasData);
+  const T = D.totals;
+  const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+  const cards = (items) => items.map(([h, p]) => `<div class="panel"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('');
+
+  function boxes(list, size, cls, label) {
+    return list.map((b, i) => `<div class="box ${cls}" style="left:${(100 * b[0]) / size[0]}%;top:${(100 * b[1]) / size[1]}%;width:${(100 * (b[2] - b[0])) / size[0]}%;height:${(100 * (b[3] - b[1])) / size[1]}%" data-tip="${esc(label(i))}">${cls === 'found' ? `<b>${i + 1}</b>` : ''}</div>`).join('');
+  }
+
+  function shot(img, alt, size, found, truth) {
+    return `<div class="shot"><img src="${img}" alt="${esc(alt)}" loading="lazy">${state.truth && truth ? boxes(truth, size, 'truth', (i) => `Truth: chart ${i + 1}`) : ''}${boxes(found, size, 'found', (i) => `${MODE[state.mode][0]}: box ${i + 1}`)}</div>`;
+  }
+
+  function renderGalleries() {
+    $('benchgrid').innerHTML = D.bench.map((f) => {
+      const m = f.modes[state.mode] || f.modes.auto;
+      const verdict = f.hasData ? `${m.matched} of ${f.truth} charts found${m.extra ? `, ${plural(m.extra, 'extra box')}` : ''}` : `${plural(m.found, 'box')}, no truth (no data in this figure)`;
+      const ious = m.ious.length ? `overlap with the truth: ${m.ious.map((v) => v.toFixed(2)).join(', ')}` : '';
+      return `<article class="panel card"><header><h3><span class="fid">${f.id}</span> ${esc(f.figure)}</h3><span class="tag">${esc(METHOD[m.method] || m.method)}</span><span class="grow num">${esc(verdict)}</span></header>
+        <p class="what">${esc(f.shows)}</p>
+        ${shot(f.img, `${f.id}: ${f.shows}`, f.size, m.boxes, f.hasData ? f.truthBoxes : null)}
+        ${ious ? `<p class="muted num">${esc(ious)}</p>` : ''}</article>`;
+    }).join('');
+    const old = state.mode === 'gutters';
+    const wide = D.gallery.filter((w) => state.grade === 'all' || w.grade === state.grade);
+    $('widegrid').innerHTML = wide.map((w) => {
+      const found = old ? w.guttersBoxes : w.boxes;
+      const method = old ? w.guttersMethod : w.method;
+      return `<article class="panel card"><header><h3>${esc(w.bundle.length > 26 ? w.bundle.slice(0, 24) + '…' : w.bundle)} <span class="fid">${esc(w.stem)}</span></h3>${gradeTag(w.grade)}<span class="grow num">${plural(found.length, 'box')} by ${esc(METHOD[method] || method)} · page ${w.page}</span></header>
+        ${w.flag ? `<p class="what">${esc(w.flag)}</p>` : ''}
+        ${shot(w.img, `${w.bundle} ${w.stem}`, w.size, found, null)}
+        <p class="muted">Typed as ${esc((w.type || 'chart').replace(/_/g, ' '))} by the conversion.${old ? '' : ' The verdict is on the splitter\'s boxes.'}</p></article>`;
+    }).join('') || '<p class="panel card muted">No figure with this verdict.</p>';
+    $('gradefilter').innerHTML = [['all', `All ${D.gallery.length}`]].concat(Object.entries(D.wide.byGrade).map(([g, n]) => [g, `${GRADE[g]} (${n})`]))
+      .map(([g, label]) => `<button data-grade="${g}" aria-pressed="${state.grade === g}">${esc(label)}</button>`).join('');
+  }
+
+  function render() {
+    const a = T.auto, c = T.count, g = T.gutters;
+    const G = D.wide.byGrade;
+    $('subline').textContent = D.text.subline;
+    $('lede').textContent = D.text.lede;
+    $('tiles').innerHTML = [
+      [`${a.matched} of ${a.truth}`, `charts found in the ${data.length} bench figures that hold data, by the splitter on its own`],
+      [`${c.matched} of ${c.truth}`, 'once it is told how many charts a figure holds, as the local method tells it'],
+      [`${g.matched} of ${g.truth}`, 'by the round-1 splitter, which cuts only at white gutters'],
+      [`${G.clean || 0} of ${D.wide.dataFigures}`, `further data figures from the same papers cut cleanly, judged by eye; ${G.wrong || 0} cut wrongly`],
+    ].map(([big, lab]) => `<div class="panel tile"><div class="big num">${esc(big)}</div><div class="lab">${esc(lab)}</div></div>`).join('');
+
+    const dots = (f, m) => `<span class="dots" aria-hidden="true">${Array.from({ length: f.truth }, (_, i) => `<i class="${i < m.matched ? 'on' : ''}"></i>`).join('')}</span>`;
+    const cell = (f, m) => (f.hasData
+      ? `<td>${dots(f, m)}<span class="num">${m.matched} of ${f.truth}</span>${m.extra ? ` <span class="muted">+${m.extra} extra</span>` : ''}</td>`
+      : `<td class="num">${plural(m.found, 'box')}</td>`);
+    $('scored').innerHTML = `<thead><tr><th>Figure</th><th>What it shows</th><th class="r">Charts in the truth</th><th>Splitter</th><th>Cut by</th><th class="r">Overlap, mean</th><th>With chart count</th><th>Round-1 splitter</th><th>Cut by</th></tr></thead><tbody>` +
+      D.bench.map((f) => {
+        const m = f.modes.auto, r = f.modes.gutters, k = f.modes.count;
+        const mean = m.ious.length ? (m.ious.reduce((s, v) => s + v, 0) / m.ious.length).toFixed(2) : '';
+        return `<tr class="${f.hasData ? '' : 'nodata'}"><td><span class="fid">${f.id}</span></td><td>${esc(f.shows)}</td><td class="r num">${f.hasData ? f.truth : 'no data'}</td>${cell(f, m)}<td>${esc(METHOD[m.method] || m.method)}</td><td class="r num">${mean}</td>${cell(f, k)}${cell(f, r)}<td>${esc(METHOD[r.method] || r.method)}</td></tr>`;
+      }).join('') +
+      `<tr class="total"><td colspan="2">The ${data.length} figures with data</td><td class="r num">${a.truth}</td><td class="num">${a.matched} of ${a.truth}${a.extra ? ` <span class="muted">+${a.extra} extra</span>` : ''}</td><td></td><td class="r num">${a.meanIou.toFixed(2)}</td><td class="num">${c.matched} of ${c.truth}</td><td class="num">${g.matched} of ${g.truth}${g.extra ? ` <span class="muted">+${g.extra} extra</span>` : ''}</td><td></td></tr></tbody>`;
+
+    $('scorednote').textContent = D.text.scorednote;
+    $('modenote').textContent = D.text.modenote;
+    $('modes').innerHTML = ['off', 'gutters', 'auto', 'count'].map((key) => {
+      const t = T[key];
+      return `<div class="brow"><span class="name"><span>${esc(MODE[key][0])}</span><span>${esc(MODE[key][1])}</span></span>
+        <div class="track"><div class="fill" style="width:${(100 * t.matched) / t.truth}%" tabindex="0" data-tip="${esc(`${MODE[key][0]}: ${t.matched} of ${t.truth} charts found, ${t.figuresComplete} of ${data.length} figures cut exactly, ${plural(t.extra, 'extra box')}`)}"></div></div>
+        <span class="val num"><strong>${t.matched} of ${t.truth}</strong> charts<br><span class="muted">${t.figuresComplete} of ${data.length} figures exact${t.extra ? `, ${t.extra} extra` : ''}</span></span></div>`;
+    }).join('');
+
+    $('widehead').textContent = `A wider look: ${D.wide.figures} more chart candidates, no truth`;
+    $('widenote').textContent = D.text.widenote;
+    const rows = (obj, head, name) => `<thead><tr><th>${esc(head)}</th><th class="r">Figures</th></tr></thead><tbody>${Object.entries(obj).map(([k, n]) => `<tr><td>${esc(name(k))}</td><td class="r num">${n}</td></tr>`).join('')}</tbody>`;
+    $('bygrade').innerHTML = `<thead><tr><th>By eye</th><th class="r">Figures</th></tr></thead><tbody>${Object.entries(G).map(([k, n]) => `<tr><td><i class="gdot g-${k}"></i>${esc(GRADE[k])}</td><td class="r num">${n}</td></tr>`).join('')}</tbody>`;
+    $('bycharts').innerHTML = rows(D.wide.byCharts, 'Charts the splitter found in a figure', (k) => (k === '1' ? '1 (left whole)' : k));
+    $('bymethod').innerHTML = rows(D.wide.byMethod, 'Cut by', (k) => METHOD[k] || k);
+    $('widelook').textContent = D.text.widelook;
+    $('findings').innerHTML = cards(D.text.findings);
+    $('limits').innerHTML = cards(D.text.limits);
+    renderGalleries();
+  }
+
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    if (t.dataset.mode) {
+      state.mode = t.dataset.mode;
+      document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === state.mode)));
+      renderGalleries();
+    } else if (t.dataset.grade) {
+      state.grade = t.dataset.grade;
+      renderGalleries();
+    } else if (t.dataset.truth) {
+      state.truth = !state.truth;
+      t.setAttribute('aria-pressed', String(state.truth));
+      renderGalleries();
+    }
+  });
+
+  const tip = $('tip');
+  function showTip(el, x, y) {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = tip.getBoundingClientRect();
+    tip.style.left = Math.max(8, Math.min(x + 12, window.innerWidth - r.width - 8)) + 'px';
+    tip.style.top = Math.max(8, y + 16 + r.height > window.innerHeight ? y - r.height - 10 : y + 16) + 'px';
+  }
+  document.addEventListener('pointermove', (e) => {
+    const el = e.target.closest('[data-tip]');
+    if (el) showTip(el, e.clientX, e.clientY); else tip.hidden = true;
+  });
+  document.addEventListener('focusin', (e) => {
+    const el = e.target.closest('[data-tip]');
+    if (el) { const r = el.getBoundingClientRect(); showTip(el, r.left, r.bottom); } else tip.hidden = true;
+  });
+  document.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+
+  render();
+})();
+</script>

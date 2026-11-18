@@ -1,0 +1,94 @@
+{
+ "bench": "chart-to-data mini bench, round 3",
+ "date": "2026-11-18",
+ "question": "The figure-to-data step as its own part after the conversion, with three reading methods behind one folder contract: a local open model (ollama), one call to a cloud model's API (cloud), one agent session per figure (agent). How good is each on the same prepared figures, and what does it cost? The cloud method was run with two models through OpenRouter.",
+ "figures": "the 15 of ../testset.json (10 data charts, 560 truth values in 33 panels; 5 without data)",
+ "truth": "../truth/ (unchanged from round 1)",
+ "bundles": "samples/aca-papers_out, converted with extrct_docling-v2.131.0-r4, default configuration (unchanged from round 1)",
+ "step": {
+  "version": "3",
+  "code": "docling/engines/figure_data: prepare.py, methods/, reading.py, report.py, step.py, publish.py",
+  "design": ".claude/reference/figure-data/STANDALONE-STEP.md",
+  "prepare": "amir-figdata prepare --testset ../testset.json --out <work>/prepared (once, no model; 220 dpi PDF render or the embedded bitmap, capped at 3,200 px; PDF text merged with RapidOCR; charts found by tick labels, then gutters)",
+  "read": "one copy of the prepared folders per method; amir-figdata read <work>/<label> --method <method> (scripts/run_round3.sh)",
+  "collect": "scripts/collect_round3.py <work>/<label> <label> --audit",
+  "options_recorded_in": "runs/<label>/<bundle>/figure-to-data/runs/<run id>.json (options, prompts, outcome per figure)"
+ },
+ "runs": {
+  "ollama-gemma4-26b-qat": {
+   "method": "ollama",
+   "model": "gemma4:26b-a4b-it-qat (25.2B, Q4_0, digest 2dd70431afed)",
+   "backend": "Ollama 0.32.14, /api/chat",
+   "engine": "the round-2 measured engine, unchanged (round-2/LOG.md); temperature 0, think false, 120 s per call, 600 s per figure"
+  },
+  "cloud-sonnet-5-5": {
+   "method": "cloud",
+   "backend": "openai-compatible: POST https://openrouter.ai/api/v1/chat/completions, one request per figure, key from OPENROUTER_API_KEY in .env",
+   "input": "the figure (long side at most 2,000 px), one crop per chart when several were found, figure.txt",
+   "reasoning_effort": "high",
+   "model": "anthropic/claude-sonnet-5.5",
+   "max_output_tokens": "32,000 (largest reply 24,192; not reached)",
+   "reply_schema": "in the system prompt only: Anthropic refused it as response_format (limit of 16 nullable fields, the reading has 22) and the method asked again without the field"
+  },
+  "cloud-gemini-3-8-flash": {
+   "method": "cloud",
+   "backend": "openai-compatible: POST https://openrouter.ai/api/v1/chat/completions, one request per figure, key from OPENROUTER_API_KEY in .env",
+   "input": "the figure (long side at most 2,000 px), one crop per chart when several were found, figure.txt",
+   "reasoning_effort": "high",
+   "model": "google/gemini-3.8-flash",
+   "max_output_tokens": "64,000",
+   "reply_schema": "enforced as response_format, every field required",
+   "note": "second run. The first, with the limit at 32,000, was cut on the dense stacked bars and is in superseded/cloud-gemini-3-8-flash-v1. In this run the line chart B2 came back as an empty reply after 130 s and was read again on its own after the retry for empty replies was added; seconds and cost count that second reading (LOG.md section 10)"
+  },
+  "agent-sonnet-5-5": {
+   "method": "agent",
+   "model": "claude-sonnet-5-5",
+   "backend": "claude-cli: Claude Code 2.1.326 headless, one session per figure, effort high",
+   "tools": [
+    "mcp__figure__look",
+    "mcp__figure__record_chart",
+    "mcp__figure__finish"
+   ],
+   "input": "the figure and figure.txt; everything else through look",
+   "note": "second run; the first, with check feedback that did not say how to fix a naming problem, is in superseded/agent-sonnet-5-5-v1 (LOG.md section 4)"
+  }
+ },
+ "isolation": {
+  "ollama": "local; the model sees one chart crop and its words per call",
+  "cloud": "one HTTP request per figure; the model gets the system prompt and one message and has no tool and no file access",
+  "agent": "a session whose only tools are the three of one MCP server bound to one figure folder; no file, shell or web tool. Checked per session from its event stream: runs/<label>/AUDIT.md",
+  "lock": "the truth and judge folders were unreadable (chmod 000) during the first wave, the Sonnet cloud run and the first Gemini run (scripts/run_round3.sh); the agent reruns and the second Gemini run ran without the lock, their models having no file tool"
+ },
+ "hardware": {
+  "gpu": "NVIDIA GB10 (DGX Spark, unified memory); the local model alone on the GPU",
+  "platform": "Linux-7.0.0-1019-nvidia-aarch64-with-glibc2.39",
+  "ollama": "0.32.14 (image budget for Gemma 4 capped at about 270 tokens; round-2/LOG.md F9)"
+ },
+ "cost": "USD. agent: as the Claude Code CLI reports per session (total_cost_usd, list prices). cloud: usage.cost as OpenRouter returns it with each reply. Not reported for local runs",
+ "scoring": "../scripts/analyze.py, ../scripts/judge_inputs.py and ../scripts/compare_runs.py with BENCH_ROUND=round-3",
+ "judge": {
+  "judge_model": "claude-fable-5-2",
+  "judge_agent": "one general-purpose sub-agent per run, fresh context, tools on, read-only on the repository",
+  "prompt": "judge/PROMPT.md (the round-2 prompt with round-3 paths)",
+  "isolation": "a judge reads one run's outputs only, no other judge's file, nothing of rounds 1 and 2, not this round's README or LOG",
+  "output": "judge/<run>.json; aggregated by ../scripts/judge_summary.py into judge/summary.md"
+ },
+ "not_in_the_results": {
+  "extra/agent-gemma4-26b-qat": {
+   "method": "agent",
+   "model": "gemma4:26b-a4b-it-qat",
+   "backend": "the same session through Ollama's Anthropic-compatible endpoint; 300 s per figure",
+   "note": "an extra, in extra/: stopped by hand after 7 of 15 figures and 887 s; it shows that the agent runs on a local model, it is not one of the three methods compared and was not judged"
+  },
+  "superseded/cloud-gemini-3-8-flash-v1": {
+   "method": "cloud",
+   "model": "google/gemini-3.8-flash",
+   "note": "first Gemini run, output limit 32,000: 299 values, 939 s, 0.62 USD; scored automatically, not judged"
+  },
+  "superseded/agent-sonnet-5-5-v1": {
+   "method": "agent",
+   "model": "claude-sonnet-5-5",
+   "note": "first agent run, before the check feedback said how to fix a naming problem"
+  }
+ }
+}

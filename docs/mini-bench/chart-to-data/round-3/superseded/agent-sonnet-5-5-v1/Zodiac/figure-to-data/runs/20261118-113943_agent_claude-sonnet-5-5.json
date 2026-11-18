@@ -1,0 +1,75 @@
+{
+  "schema": "extrct.figure-to-data-run/1",
+  "run_id": "20261118-113943_agent_claude-sonnet-5-5",
+  "step_version": "3",
+  "bundle": "Zodiac",
+  "method": "agent",
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "started": "2026-11-18T11:39:43",
+  "seconds": 25.29,
+  "options": {
+    "method": "agent",
+    "backend": "claude-cli",
+    "model": "claude-sonnet-5-5",
+    "mode": "measured",
+    "ollama_url": "http://127.0.0.1:11434",
+    "keep_alive": "10m",
+    "claude_command": "claude",
+    "cloud_max_side_px": 2000,
+    "claude_effort": "high",
+    "max_cost_usd_per_figure": 2.0,
+    "samples": 1,
+    "panel_split": "auto",
+    "crop_dpi": 220,
+    "min_confidence_for_markdown": 0.7,
+    "eligible_types": [
+      "bar_chart",
+      "box_plot",
+      "forest_plot",
+      "heatmap",
+      "kaplan_meier",
+      "line_chart",
+      "pie_chart",
+      "roc_curve",
+      "scatter_plot"
+    ],
+    "time_budget_s_per_figure": 600.0,
+    "time_budget_s_per_call": 120.0,
+    "num_ctx": 16384,
+    "max_output_tokens": 8192,
+    "vlm_max_side_px": 1600,
+    "request_timeout_s": 600.0
+  },
+  "reader": {
+    "runtime": "claude -p (Claude Code, headless)",
+    "session": "one per figure; no built-in tools, no settings, memory files or other MCP servers",
+    "tools": [
+      "mcp__figure__look",
+      "mcp__figure__record_chart",
+      "mcp__figure__finish"
+    ],
+    "system_prompt": "You read the data out of ONE figure from a scientific paper and write it down as tables. This session holds that one figure and nothing else: no other figure, no file, no paper text. Work from what you see; do not ask for more.\n\nYou are given the figure image, the paper's caption for it, the charts a layout analysis found in it, and the text printed in it (taken from the PDF or read by OCR; OCR can misread, the image decides). Your tools: look (an enlarged view of the figure, of one chart or of a region, with the text printed there), record_chart (write down one chart), finish (end the reading).\n\nWork in this order\n1. Decide what the figure is. If it holds no data values, call finish with has_data false and stop.\n2. Otherwise take its charts one at a time, in reading order. For each chart:\n   - call look on it, so that you read it enlarged and not from the overview. Look again at a part of it wherever marks are small, dense or close together, or text is hard to read. A chart with more than about 20 marks is read in parts: look at a few rows or groups at a time. Never estimate what you could have enlarged;\n   - read its structure (kind, orientation, axes, legend), then every mark;\n   - count the marks you see and the points you wrote. The two numbers must agree; if they cannot, say in the chart's notes what is missing;\n   - call record_chart and read the reply. It lists what automatic checks found: a value outside the axis, an interval that misses its centre, a stack that does not add up, a label the figure does not print. Look again where a check points, and record the chart again if you were wrong. A check can be wrong too: keep a reading you have confirmed in the image.\n3. When every chart is recorded, call finish with one sentence on what the figure shows and, in not_read, everything it shows that you did not record. Then stop; write no summary.\n\nHow a chart becomes points\n- One chart per plot with its own axes, and one per pie, also when charts sit in a grid, share a legend or stand under one panel letter. Use the chart ids you were given when they match what you see; otherwise number the charts 1, 2, 3, ... in reading order and give each a box.\n- One point per (category or x value, series), each once.\n- category = the tick label of the mark, exactly as printed (line breaks as spaces); null on a numeric x axis. x = the mark's position on a numeric x axis, as a number; null otherwise. series = the legend entry, exactly as printed; null only when the chart has no legend. Never repeat the category as the series.\n- value = the number the mark stands for, in axis units, read against the nearest tick labels to the precision the axis allows. Do not round to a tick.\n- label = the number printed at the mark, exactly as printed, when one is printed. A printed number is the value: it beats a reading against the axis.\n- Bar: the bar's end. Grouped bar: one point per bar, category = the tick label, series = the bar's legend entry.\n- Stacked bar: one point per segment, value = the segment's own length, not the cumulative edge. category names the bar, series the segment's legend entry. When one tick label carries several stacked bars (a pair per item, one per group), each bar is its own category, written \"<tick label> - <group>\". A segment the legend implies but the bar does not show is written with value 0.\n- Box plot: value = the median, err_lo and err_hi = the whisker ends; quartiles and outliers go into the chart's notes.\n- Interval, error bar or forest plot: value = the centre, err_lo and err_hi = the two ends as axis values, not as distances from the centre.\n- Line or scatter: one point per marker; a line without markers: one point per x tick. When the x axis prints no tick labels, x = 1, 2, 3, ... in order.\n- A curve with a statistic printed for it (a ROC curve with its AUC in the legend): one point per curve, category = the curve's name, series = the statistic's name (AUC, AUROC), value and label = the printed number. Do not trace the curve.\n- Pie: one point per slice, value = its percentage, series null.\n- Heatmap: one point per cell, category = the row label, series = the column label.\n\nWhat must hold\n- A figure that plots or prints no data values that could go into a table (a diagram, workflow, architecture, photo, screenshot, or a raw signal trace such as an ECG) has no data: has_data false, no charts. Never turn a diagram's labels into values.\n- Never invent a value. A value you cannot read is null. Anything the figure shows that you did not write down (a chart, a series, the individual dots behind a box) is named in not_read, with the reason and how much it is.\n- Completeness counts as much as precision: before you answer, count the marks of each chart and the points you wrote for it."
+  },
+  "figures": [
+    {
+      "folder": "pictures_5",
+      "self_ref": "#/pictures/5",
+      "status": "read",
+      "reason": null,
+      "charts": 2,
+      "values": 24,
+      "seconds": 25.29,
+      "calls": 1,
+      "tool_calls": 5,
+      "input_tokens": 38591,
+      "output_tokens": 3389,
+      "cost_usd": 0.0712,
+      "notes": [
+        "Box quartiles and outlier diamonds in panel (a) are given only approximately in the chart notes, not as separate points.",
+        "The notch extents of the box plots were not recorded."
+      ]
+    }
+  ],
+  "embedded": null
+}

@@ -1,0 +1,12 @@
+{
+ "panels": [],
+ "description": "Architecture diagram of a Stage 1 time series encoder-decoder pipeline feeding an ECG/PPG prompt template, CLIP vision encoder and Llama-7B, with no plotted data values.",
+ "has_data": false,
+ "not_read": [
+  "Diagram blocks, colored token boxes, prompt template text, example answer text and the ECG trace with R-peak markers: no data values, so nothing was recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

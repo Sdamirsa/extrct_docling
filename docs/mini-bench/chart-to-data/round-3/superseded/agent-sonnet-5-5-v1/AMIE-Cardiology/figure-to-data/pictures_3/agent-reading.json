@@ -1,0 +1,203 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Did the AI help your assessment?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": null,
+     "x": null,
+     "series": "Yes, definitely",
+     "value": 16.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "16.8%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Yes, probably",
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "40.2%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Neither yes nor no",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "30.8%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "No, probably not",
+     "value": 8.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "8.4%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "No, definitely not",
+     "value": 3.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "3.7%"
+    }
+   ],
+   "box": [
+    0,
+    32,
+    304,
+    973
+   ],
+   "notes": []
+  },
+  {
+   "id": "2",
+   "title": "Did the AI make you more confident?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": null,
+     "x": null,
+     "series": "Yes, definitely",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "15.9%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Yes, probably",
+     "value": 36.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.4%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Neither yes nor no",
+     "value": 32.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.7%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "No, probably not",
+     "value": 12.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "12.1%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "No, definitely not",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "2.8%"
+    }
+   ],
+   "box": [
+    331,
+    38,
+    648,
+    917
+   ],
+   "notes": []
+  },
+  {
+   "id": "3",
+   "title": "Did the AI save you time?",
+   "kind": "pie",
+   "orientation": null,
+   "x_axis": null,
+   "y_axis": null,
+   "series": [],
+   "points": [
+    {
+     "category": null,
+     "x": null,
+     "series": "Saved more than 50% of my time",
+     "value": 23.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "23.4%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Saved more than 10% of my time",
+     "value": 27.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "27.1%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Not sure",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "30.8%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Delayed me by more than 10%",
+     "value": 15.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "15.9%"
+    },
+    {
+     "category": null,
+     "x": null,
+     "series": "Delayed me by more than 50%",
+     "value": 2.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "2.8%"
+    }
+   ],
+   "box": [
+    686,
+    44,
+    998,
+    938
+   ],
+   "notes": []
+  }
+ ],
+ "description": "Three pie charts of reader survey responses on whether the AI helped their assessment, made them more confident, and saved time.",
+ "has_data": true,
+ "not_read": [
+  "Pie slices are identified by series (legend entry) only, with category null; the checker's warning about missing categories is expected for pies.",
+  "The caption mentions an imaging question (n = 214) and two further AI-use questions; the figure shows only three pies, so those are not recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 3,
+ "records": 3
+}

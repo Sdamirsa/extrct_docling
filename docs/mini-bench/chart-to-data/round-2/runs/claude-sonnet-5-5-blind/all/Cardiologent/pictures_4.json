@@ -1,0 +1,26 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Cardiologent",
+  "self_ref": "#/pictures/4",
+  "image_path": "images/picture_005.png",
+  "page": 13,
+  "bbox": [
+   62.64481735229492,
+   724.3929290771484,
+   558.1983642578125,
+   390.61474609375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-sonnet-5-5 sub-agent, blind, image only",
+  "date": "2026-11-17",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Model architecture schematic (transformer encoder/decoder, CLIP, Llama-7B, prompt box, ECG trace with R-peak markers); no axes or values."
+ ]
+}

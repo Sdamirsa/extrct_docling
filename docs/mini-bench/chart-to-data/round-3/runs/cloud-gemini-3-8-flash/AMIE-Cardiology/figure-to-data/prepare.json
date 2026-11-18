@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "AMIE-Cardiology",
+  "pdf": "AMIE-Cardiology.pdf",
+  "prepared_at": "2026-11-18T11:33:06",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/3"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/3",
+      "status": "prepared",
+      "folder": "pictures_3",
+      "reason": null,
+      "page": 4,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        1578,
+        339
+      ],
+      "source_kind": "vector",
+      "charts": 3,
+      "words": 90
+    }
+  ]
+}

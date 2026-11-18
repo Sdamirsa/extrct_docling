@@ -1,0 +1,14 @@
+{
+ "panels": [],
+ "description": "Architecture diagram of a Stage 1 time series encoder-decoder with a CLIP vision encoder, Llama-7B, a prompt template and an example ECG answer; it holds no data values.",
+ "has_data": false,
+ "not_read": [
+  "Nothing was recorded: the figure is a diagram with no plotted or tabulated data values.",
+  "The ECG trace with red R-peak markers is a raw signal trace, so it was not read as data.",
+  "The 0.183 and 0.15 values in the example answer are quoted text, not chart data."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

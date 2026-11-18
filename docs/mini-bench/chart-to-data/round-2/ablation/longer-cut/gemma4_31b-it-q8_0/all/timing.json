@@ -1,0 +1,50 @@
+[
+  {
+    "bundle": "samples/aca-papers_out/Dynamic-Specialist-MAS",
+    "self_ref": "#/pictures/1",
+    "mode": "measured",
+    "model": "gemma4:31b-it-q8_0",
+    "source_kind": "raster",
+    "panel_split": "single",
+    "panels": 1,
+    "rows": 12,
+    "seconds": 183.82,
+    "calls": 2,
+    "prompt_tokens": 2238,
+    "eval_tokens": 1039,
+    "load_s": 9.4,
+    "gpu_bytes": 36535911055,
+    "model_bytes": 36535911055,
+    "issues": 6,
+    "notes": [
+      "panel 1: 13 outside the axis range [50, 350] (Congestive Heart Failure/MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u00d7))",
+      "panel 1: 6 outside the axis range [50, 350] (Congestive Heart Failure/MAS Incorrect, Baseline Correct (MAS \u00d7, Base \u25cb))",
+      "panel 1: 25 outside the axis range [50, 350] (Acute Kidney Injury/MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u00d7))",
+      "panel 1: 25 outside the axis range [50, 350] (Acute Kidney Injury/MAS Incorrect, Baseline Correct (MAS \u00d7, Base \u25cb))",
+      "panel 1: 25 outside the axis range [50, 350] (Sepsis/MAS Correct, Baseline Incorrect (MAS \u25cb, Base \u00d7))",
+      "panel 1: 26 outside the axis range [50, 350] (Sepsis/MAS Incorrect, Baseline Correct (MAS \u00d7, Base \u25cb))"
+    ]
+  },
+  {
+    "bundle": "samples/aca-papers_out/Med-RwR",
+    "self_ref": "#/pictures/6",
+    "mode": "measured",
+    "model": "gemma4:31b-it-q8_0",
+    "source_kind": "raster",
+    "panel_split": "axes",
+    "panels": 3,
+    "rows": 19,
+    "seconds": 511.11,
+    "calls": 4,
+    "prompt_tokens": 3509,
+    "eval_tokens": 3084,
+    "load_s": 1.55,
+    "gpu_bytes": 36535911055,
+    "model_bytes": 36535911055,
+    "issues": 2,
+    "notes": [
+      "3 charts found by their tick labels",
+      "panel 2: 0.8295 outside the axis range [1, 2] (\u0964/)"
+    ]
+  }
+]

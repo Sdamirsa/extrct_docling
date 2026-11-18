@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 18,
+    "bbox": [
+      55.96,
+      53.0,
+      292.86,
+      337.04
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "ECG signal traces comparing the localized abnormal span across ground truth, Cardiologent, and various vision-language baseline models.",
+  "uncertain": [
+    "not a data chart: ECG signal traces comparing the localized abnormal span across ground truth, Cardiologent, and various vision-language baseline models."
+  ]
+}

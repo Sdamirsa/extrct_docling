@@ -1,0 +1,78 @@
+{
+ "figure_id": "A3",
+ "is_data_chart": true,
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    0,
+    0,
+    3200,
+    2184
+   ],
+   "title": null,
+   "kind": "forest",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null
+    },
+    "y": {
+     "name": "ICC(2,1), absolute agreement",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      0.35,
+      0.95
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "R1 \u2194 R2 (human\u2013human)",
+     "x": null,
+     "series": null,
+     "value": 0.673,
+     "err_lo": 0.52,
+     "err_hi": 0.79,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    },
+    {
+     "category": "Judge \u2194 R1",
+     "x": null,
+     "series": null,
+     "value": 0.741,
+     "err_lo": 0.6,
+     "err_hi": 0.84,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    },
+    {
+     "category": "Judge \u2194 R2",
+     "x": null,
+     "series": null,
+     "value": 0.666,
+     "err_lo": 0.51,
+     "err_hi": 0.78,
+     "label_printed": null,
+     "source": "vlm",
+     "confidence": 0.75
+    }
+   ],
+   "notes": [
+    "Interval ends are printed (0.79/0.52, 0.84/0.60, 0.78/0.51) and entered as err_lo/err_hi; centre dot values (not printed) were read by eye against gridlines."
+   ]
+  }
+ ],
+ "uncertain": [
+  "Centre values are eyeballed; interval ends use printed labels (rounded to 2 decimals)."
+ ],
+ "method": "Interval ends from printed labels; centre dot by eye against y gridlines."
+}

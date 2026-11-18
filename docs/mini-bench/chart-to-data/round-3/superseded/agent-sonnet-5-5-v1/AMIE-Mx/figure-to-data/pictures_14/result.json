@@ -1,0 +1,31 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "axes",
+ "seconds": 107.33,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 107.06,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 135882,
+   "eval_tokens": 18959,
+   "cut": false,
+   "cost_usd": 0.3390927,
+   "turns": 8,
+   "tool_calls": 7
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: stacked segments do not sum to 100: Being Polite sums to 199.7; Making Patient Feel At Ease sums to 200; Listening to Patient sums to 200; Assessesing Medical Condition sums to 200; Explaining Condition and Treatment sums to 200",
+  "panel 2: stacked segments do not sum to 100: Prioritization Of Preferences Constraints And Values sums to 200; Communication And Shared Decision Making sums to 200; Monitoring And Adjustment Of Management Plan sums to 200; Managing Interplay Of Competing Priorities sums to 200; Acting As Patient Teacher And Salesperson sums to 200",
+  "panel 3: stacked segments do not sum to 100: Addressing Patient Concerns sums to 200; Understanding Patient Concerns sums to 200; Showing Empathy sums to 200; Maintaining Patient Welfare sums to 200"
+ ]
+}

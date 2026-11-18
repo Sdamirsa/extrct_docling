@@ -1,0 +1,133 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Eunjung_Lee_ssrn-7427517_2",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 10,
+    "bbox": [
+      55.37,
+      342.38,
+      557.25,
+      599.5
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        1.0,
+        751.0,
+        385.8
+      ],
+      "title": "Paired physician-rating differences by domain",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Mean difference (AI minus clinician)",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            -1.5,
+            1.5
+          ],
+          "ticks": [
+            -1.0,
+            -0.5,
+            0.0,
+            0.5,
+            1.0,
+            1.5
+          ]
+        },
+        "y": {
+          "name": "Rating domain",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Overall quality",
+            "Clarity",
+            "Completeness",
+            "Accuracy",
+            "Readability"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Overall quality",
+          "x": null,
+          "series": null,
+          "value": -0.15,
+          "err_lo": -0.87,
+          "err_hi": 0.56,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Clarity",
+          "x": null,
+          "series": null,
+          "value": 0.36,
+          "err_lo": 0.07,
+          "err_hi": 0.65,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Completeness",
+          "x": null,
+          "series": null,
+          "value": -0.84,
+          "err_lo": -1.36,
+          "err_hi": -0.33,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Accuracy",
+          "x": null,
+          "series": null,
+          "value": -0.35,
+          "err_lo": -0.66,
+          "err_hi": -0.05,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Readability",
+          "x": null,
+          "series": null,
+          "value": 0.72,
+          "err_lo": 0.2,
+          "err_hi": 1.24,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "95% CIs; positive favors AI-generated summaries. Values read from the axis."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "Forest plot of paired physician-rating mean differences (AI vs clinician summaries) with 95% CIs for five rating domains.",
+  "uncertain": [
+    "Watermark text in the background (not data)."
+  ]
+}

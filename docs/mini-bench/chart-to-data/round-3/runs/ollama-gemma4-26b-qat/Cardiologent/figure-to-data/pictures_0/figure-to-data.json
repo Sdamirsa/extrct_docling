@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "This figure is a workflow diagram illustrating a two-stage medical monitoring process: Stage 1 involves daily PPG monitoring via a wearable device by a patient, where a PPG Agent detects an irregular rhythm suggesting atrial fibrillation; Stage 2 involves hospital-based ECG and PPG monitoring, where a cardiologist confirms sustained atrial fibrillation and recommends anticoagulation therapy.",
+  "uncertain": [
+    "not a data chart: This figure is a workflow diagram illustrating a two-stage medical monitoring process: Stage 1 involves daily PPG monitoring via a wearable device by a patient, where a PPG Agent detects an irregular rhythm suggesting atrial fibrillation; Stage 2 involves hospital-based ECG and PPG monitoring, where a cardiologist confirms sustained atrial fibrillation and recommends anticoagulation therapy."
+  ]
+}

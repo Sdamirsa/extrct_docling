@@ -1,0 +1,51 @@
+{
+ "S1": {
+  "Top-1 Recall on Set A": {
+   "Baseline": 0.44,
+   "Reviewer": 0.746,
+   "Reviewer + Baseline": 0.751
+  },
+  "Top-1 Precision on Set A": {
+   "Baseline": 0.698,
+   "Reviewer": 0.706,
+   "Reviewer + Baseline": 0.416
+  },
+  "Top-3 Recall on Set A": {
+   "Baseline": 0.346,
+   "Reviewer": 0.567,
+   "Reviewer + Baseline": 0.706
+  },
+  "Top-3 Precision on Set A": {
+   "Baseline": 0.707,
+   "Reviewer": 0.529,
+   "Reviewer + Baseline": 0.459
+  }
+ },
+ "S2": {
+  "Overall quality": {
+   "value": 0.378,
+   "lo": 0.086,
+   "hi": 0.67
+  },
+  "Clarity": {
+   "value": 0.206,
+   "lo": -0.076,
+   "hi": 0.488
+  },
+  "Completeness": {
+   "value": -0.04,
+   "lo": -0.197,
+   "hi": 0.117
+  },
+  "Accuracy": {
+   "value": -0.708,
+   "lo": -0.922,
+   "hi": -0.494
+  },
+  "Readability": {
+   "value": -0.371,
+   "lo": -0.716,
+   "hi": -0.026
+  }
+ }
+}

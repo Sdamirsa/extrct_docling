@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Cardiologent",
+    "self_ref": "#/pictures/0",
+    "image_path": "images/picture_001.png",
+    "page": 1,
+    "bbox": [
+      317.69,
+      213.81,
+      558.3,
+      312.54
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-18",
+    "time_minutes": null
+  },
+  "description": "A two-stage deployment diagram: wearable PPG monitoring with a PPG agent flagging possible atrial fibrillation, then in-hospital ECG and PPG reading by Cardiologent to decide therapy and urgency.",
+  "uncertain": [
+    "not a data chart: A two-stage deployment diagram: wearable PPG monitoring with a PPG agent flagging possible atrial fibrillation, then in-hospital ECG and PPG reading by Cardiologent to decide therapy and urgency.",
+    "Nothing recorded: the figure is a workflow diagram with icons and text boxes and has no plotted data values. The layout analysis chart was a false detection."
+  ]
+}

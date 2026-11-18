@@ -1,5 +1,12 @@
-<!-- last-reviewed: 2026-11-09 -->
-# Figure-to-data: design, wiring and configs (v1)
+<!-- last-reviewed: 2026-11-18 -->
+# Figure-to-data: the measured engine (design, wiring and configs)
+
+Since 2026-11-18 this engine is the `ollama` method of the
+figure-to-data step. The step itself (prepare, three reading methods,
+embed, the folder, the agent) is described in `STANDALONE-STEP.md`; this
+file covers what happens inside the local method. The maintainer lifted
+"local models only" that day: a cloud call and an agent are methods beside
+this one, chosen by the user.
 
 Approved direction (maintainer, 2026-11-09): measurement-first pipeline
 (proposal: https://claude.ai/code/artifact/74a18144-3313-4896-b3b1-8bb78054c6a9),
@@ -24,9 +31,10 @@ hour.
 ```
 PictureItem (after noise filter, BiomedCLIP type)
   └─ eligibility ──► FigureJob(crop at native resolution, page bbox, words-in-box, paths-in-box)
-        └─ panel_split ──► [Panel(bbox_px, letter)]           (letters + gutters; VLM boxes as fallback)
-              └─ evidence ──► words with coords (text layer | OCR), ticks → axis maps, vector marks | raster marks
-                    └─ read ──► ChartData draft      (vector reader | grounded VLM via Ollama | simple VLM)
+        └─ evidence ──► words with coords (text layer + OCR of the work image), ticks → axis maps, vector marks
+              └─ panel_split ──► [Panel(bbox_px, letter)]     (tick-label axes first; else letters + gutters)
+                    └─ overview ──► one VLM call: is it data at all, how many charts (gate + check on the split)
+                    └─ read ──► ChartData draft      (vector reader | grounded VLM per chart via Ollama | simple VLM)
                           └─ verify ──► ChartData + per-value source/confidence + issues
                                 └─ publish ──► figures.jsonl[chart_data], meta.amir__chart_data,
                                                meta.tabular_chart (Docling TableData), md marked table,
@@ -35,24 +43,26 @@ PictureItem (after noise filter, BiomedCLIP type)
 
 Module layout (all under `docling/engines/figure_data/`):
 `schema.py` (pydantic: ChartData, Panel, Axis, Series, Value, FigureJob),
-`eligibility.py`, `panels.py`, `evidence.py` (pdfium words/paths, OCR words
-from picture children, axis calibration), `readers/vector.py`,
+`eligibility.py`, `panels.py`, `evidence.py` (pdfium words/paths, RapidOCR
+on the work image, axis calibration), `readers/vector.py`,
 `readers/vlm.py` (Ollama client + prompts + JSON schema), `readers/raster.py`
 (bar/segment pixel measurement), `verify.py`, `publish.py`, `scoring.py`
 (truth vs prediction), `cli.py` (`amir-figdata`: run on bundles, score, time).
-Engine hook: `PdfEngine(figure_data="off|simple|measured", figure_data_model=...)`;
-CLI `amir-batch --figure-data ... --figure-data-model ...`. Standalone runs on
-existing bundles (no reconversion): `amir-figdata run <bundle...> --mode measured`.
+Entry point: `pipeline.read_figure(job, options, client)`, called by
+`methods/ollama.py` on a prepared figure folder. The conversion engine has no
+figure-data hook any more: `amir-batch --figure-data ollama` and
+`amir-figdata step` run the step on the finished bundle (`step.py`).
 
-## Config (pydantic, recorded in run.json engine_config.figure_data)
+## Config (pydantic, recorded with every run in figure-to-data/runs/)
+
+The fields the local method reads (the step's own are in `schema.py`):
 
 ```python
 class FigureDataOptions(BaseModel):
-    mode: Literal["off", "simple", "measured"] = "off"
-    engine: Literal["ollama"] = "ollama"
+    method: Literal["ollama", "cloud", "agent"] = "ollama"
+    mode: Literal["simple", "measured"] = "measured"
     ollama_url: str = "http://127.0.0.1:11434"
-    model: str = "gemma4:26b-a4b-it-q8_0"
-    escalation_model: str | None = "gemma4:31b-it-q8_0"   # local; None disables
+    model: str = "gemma4:26b-a4b-it-qat"     # the bench's pick (round 2)
     keep_alive: str = "10m"
     samples: int = 1                     # N-sample agreement when > 1
     panel_split: Literal["auto", "off", "vlm"] = "auto"
@@ -60,8 +70,41 @@ class FigureDataOptions(BaseModel):
     min_confidence_for_markdown: float = 0.7
     eligible_types: frozenset[str] = {"bar_chart","line_chart","scatter_plot","box_plot",
                                       "forest_plot","kaplan_meier","roc_curve","heatmap","pie_chart"}
-    time_budget_s_per_figure: float = 120
+    time_budget_s_per_figure: float = 600   # no new call once a figure took this long
+    time_budget_s_per_call: float = 120     # a call is cut here and keeps its complete points
 ```
+`panel_split` also takes `gutters` (the splitter without the axes step, for comparison).
+
+## Round 2 (2026-11-17): what the mini bench changed
+
+Round 1 of `docs/mini-bench/chart-to-data/` showed every model failing the
+same ways; most of it was the call path, not the model. The findings,
+the changes and the numbers are in `docs/mini-bench/chart-to-data/round-2/`
+(`LOG.md` in order, `README.md` for results). What holds from now on:
+
+- **Words = text layer + OCR of the work image.** A bitmap chart keeps its
+  tick labels in the pixels even when the box holds a few PDF words.
+- **Charts are found by their tick labels** (a run of three aligned numbers,
+  linear or log in position), then separated along the free band between
+  them. Gutter width is not a usable signal: papers pack panels 4 px apart.
+- **One overview call per figure**: not data → not read; several charts
+  that the code cannot separate → not read, with the reason in `uncertain`.
+  The model's count is trusted, its boxes are not.
+- **One grounded call per chart, on its own crop.** Through Ollama 0.32
+  Gemma 4 spends at most about 270 tokens on an image of any size; the
+  crop is what gives it detail.
+- **Reply format:** the fields a model may leave out are only those that
+  are rare and harmless to lose (`start_pos`, `lo_pos`, `hi_pos`, `err_lo`,
+  `err_hi`, `label`). It leaves out anything it is allowed to. Position
+  fields carry `_pos` in their name or get filled with axis values.
+- **Replies are streamed**, cut at the per-call budget or when they repeat
+  themselves, and the complete points of a cut reply are kept.
+- **Pixels beat pointing, reading beats pointing.** A bar end is followed
+  to where the fill stops. Where nothing in the pixels backs a pointed
+  position and the model's own reading differs by more than 5 % of the
+  axis, the reading is kept.
+
+Next: the step as its own part of the conversion, `STANDALONE-STEP.md`.
 
 ## Schema v1 (`extrct.figure-data/1`) — used by predictions AND ground truth
 

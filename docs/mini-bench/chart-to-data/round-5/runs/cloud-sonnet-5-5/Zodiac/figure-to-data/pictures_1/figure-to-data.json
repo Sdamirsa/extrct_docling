@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/1",
+    "image_path": "images/picture_002.png",
+    "page": 4,
+    "bbox": [
+      136.99,
+      83.8,
+      474.45,
+      189.79
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Workflow diagram of the ZODIAC multi-agent framework, in which patient metrics and ECG tracings pass through LLM agents (M2F, T2F, F2I) with guidelines to produce a clinical report validated by a cardiologist.",
+  "uncertain": [
+    "not a data chart: Workflow diagram of the ZODIAC multi-agent framework, in which patient metrics and ECG tracings pass through LLM agents (M2F, T2F, F2I) with guidelines to produce a clinical report validated by a cardiologist.",
+    "The figure is a diagram with no plotted or tabulated data values, so no charts were extracted. The layout analysis's 'chart' is only a set of diagram labels."
+  ]
+}

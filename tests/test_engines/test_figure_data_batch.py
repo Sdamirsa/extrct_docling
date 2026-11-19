@@ -49,6 +49,13 @@ _BATCH_READING = {
     ],
     "not_read": [],
 }
+# What the cloud stand-in answers when the method first asks which charts
+# the figure holds.
+_BATCH_LIST = {
+    "description": "Accuracy of three models",
+    "has_data": True,
+    "charts": [{"id": "1", "kind": "bar", "box": [20, 20, 980, 980]}],
+}
 
 # Stands in for `claude -p`: starts the one MCP server the session is given,
 # records the chart through its tools, prints a finished session's stream.
@@ -120,7 +127,11 @@ def model_hosts(tmp_path: Path) -> Iterator[_ModelHosts]:
             body = json.loads(self.rfile.read(length))
             requests.append((self.path, body))
             if self.path == "/v1/chat/completions":
-                message = {"content": json.dumps(_BATCH_READING)}
+                schema = body["response_format"]["json_schema"]["schema"]
+                listing = "charts" in schema["properties"]
+                message = {
+                    "content": json.dumps(_BATCH_LIST if listing else _BATCH_READING)
+                }
                 self._reply(
                     {
                         "model": body["model"],

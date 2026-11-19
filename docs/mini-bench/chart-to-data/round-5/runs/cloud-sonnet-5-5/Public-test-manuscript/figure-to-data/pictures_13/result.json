@@ -1,0 +1,48 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "axes",
+ "seconds": 62.1,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud list",
+   "wall_s": 3.63,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 4479,
+   "eval_tokens": 223,
+   "cut": false,
+   "cost_usd": 0.011188,
+   "turns": 1,
+   "tool_calls": null
+  },
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 57.85,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 9702,
+   "eval_tokens": 12171,
+   "cut": false,
+   "cost_usd": 0.141114,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "4 charts found by their tick labels",
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 33.3; GPT-3.5 API sums to 29.3; GPT-4 Web sums to 49.3; GPT-4 API sums to 46.7; GPT-4o API sums to 58.7",
+  "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 46.7; GPT-3.5 API sums to 48; GPT-4 Web sums to 61.3; GPT-4 API sums to 58.7; GPT-4o API sums to 69.3",
+  "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 54.7; GPT-3.5 API sums to 50.7; GPT-4 Web sums to 74.7; GPT-4 API sums to 74.7; GPT-4o API sums to 78.7",
+  "panel 4: stacked segments do not sum to 100: GPT-3.5 Web sums to 56; GPT-3.5 API sums to 56; GPT-4 Web sums to 78.7; GPT-4 API sums to 82.7; GPT-4o API sums to 88"
+ ]
+}

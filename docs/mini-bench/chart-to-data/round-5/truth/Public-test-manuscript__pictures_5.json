@@ -1,0 +1,391 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/5",
+  "image_path": "images/picture_006.png",
+  "page": 21,
+  "bbox": [
+   73.41152954101562,
+   562.3851013183594,
+   537.0247802734375,
+   369.852783203125
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    2.8,
+    1.8,
+    312.5,
+    286.7
+   ],
+   "title": "Figure 6 (a): Historical performance of GPT models on gastroenterology MCQ: three ACG datasets published in 2021, 2022, and 2023.",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "ACG Self-Assessment Version",
+     "unit": null,
+     "scale": "linear",
+     "range": [
+      2020.9,
+      2023.1
+     ],
+     "ticks": [
+      2021.0,
+      2022.0,
+      2023.0
+     ]
+    },
+    "y": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      40.0,
+      80.0
+     ],
+     "ticks": [
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "GPT-3.5 Turbo 0125",
+     "color": "blue (markers #0000FF, line #1027FF; legend handle: #1F77B4 line with a #0000FF marker)"
+    },
+    {
+     "name": "GPT-4 0613",
+     "color": "orange (line and markers #FFA500; legend handle #FF7F0E)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 2021.0,
+     "series": "GPT-3.5 Turbo 0125",
+     "value": 71.59,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "71.59%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": null,
+     "x": 2022.0,
+     "series": "GPT-3.5 Turbo 0125",
+     "value": 63.58,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "63.58%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": null,
+     "x": 2023.0,
+     "series": "GPT-3.5 Turbo 0125",
+     "value": 70.35,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "70.35%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": null,
+     "x": 2021.0,
+     "series": "GPT-4 0613",
+     "value": 44.57,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "44.57%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": null,
+     "x": 2022.0,
+     "series": "GPT-4 0613",
+     "value": 46.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "46.30%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": null,
+     "x": 2023.0,
+     "series": "GPT-4 0613",
+     "value": 53.49,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "53.49%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "Line chart (matplotlib): two lines with a round marker at the x ticks 2021, 2022, 2023 and the accuracy printed in bold above every marker. Legend (lower right): 'GPT-3.5 Turbo 0125' with a blue handle, 'GPT-4 0613' with an orange handle. All 6 values are the printed numbers (source 'printed', confidence 1.0, label_printed verbatim); x is the tick value as a number, category is null.",
+    "Series are named as the legend prints them, paired with the lines by colour: the blue line (71.59, 63.58, 70.35) is 'GPT-3.5 Turbo 0125', the orange line (44.57, 46.30, 53.49) is 'GPT-4 0613'. The paper's text reads the same numbers the other way round (page 21: 'GPT-4 scoring 71.59%, 65.38%, and 70.35%, respectively, while GPT-3.5 scoring 44.57%, 46.30%, and 53.49%'), and so does panel b (GPT4-0613 63.58 % and GPT3.5-0125 46.30 % on the 2022 questions): the legend of this panel appears to have its two names swapped. The truth keeps the figure as printed.",
+    "Check that every label belongs to its marker, on the figure's embedded bitmap (page 21: one RGB image of 1430 x 592 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white): y calibration by least squares through the 8 tick marks at the left spine (rows 32, 94.2, 157, 219, 281, 344, 406, 468 for 80, 75, ..., 45) -> 12.46 px per unit, 1 px = 0.080; fit residual at the ticks <= 0.03. Marker centres (circle fit) read 71.59, 63.50, 70.40 (blue) and 44.52, 46.29, 53.48 (orange): largest |measured - printed| = 0.08 (one pixel).",
+    "The text of page 21 gives 65.38 % for the 2022 value of the upper line where the figure prints 63.58 % (and plots the marker at 63.5; panel b prints 63.58 % as well): the truth keeps the printed 63.58.",
+    "Axes: y frame from 40 to 80 (the 80 tick is the top edge, the bottom spine reads 39.96), tick labels 45 ... 80; x tick marks at columns 112, 348.5, 585 for 2021, 2022, 2023, the frame reaching 0.1 beyond them on either side. X-axis title 'ACG Self-Assessment Version', y-axis title 'Accuracy (%)'."
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    321.4,
+    1.8,
+    695.9,
+    286.7
+   ],
+   "title": "Figure 6 (b): Historical performance of GPT models on gastroenterology MCQ: training data cutoff dates of GPT models.",
+   "kind": "scatter",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Training Data Cutoff Date",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "2021-09",
+      "2023-12",
+      "2023-04",
+      "2023-09"
+     ]
+    },
+    "y": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      5.94,
+      79.24
+     ],
+     "ticks": [
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "GPT3: babbage-002 (2021-09)",
+     "color": "brown (#AF8260)"
+    },
+    {
+     "name": "GPT3: davinci-002 (2021-09)",
+     "color": "brown (#AF8260)"
+    },
+    {
+     "name": "GPT3.5-Instruct (2021-09)",
+     "color": "orange (#FFA500)"
+    },
+    {
+     "name": "GPT3.5-0125 (2023-12)",
+     "color": "orange (#FFA500)"
+    },
+    {
+     "name": "GPT3.5-0613 (2021-09)",
+     "color": "orange (#FFA500)"
+    },
+    {
+     "name": "GPT3.5-1106 (2023-04)",
+     "color": "orange (#FFA500)"
+    },
+    {
+     "name": "GPT4-0613 (2021-09)",
+     "color": "blue (#0000FF)"
+    },
+    {
+     "name": "GPT4-1106 (2023-04)",
+     "color": "blue (#0000FF)"
+    },
+    {
+     "name": "GPT4-0125 (2023-12)",
+     "color": "blue (#0000FF)"
+    },
+    {
+     "name": "GPT4o-20240513 (2023-09)",
+     "color": "purple (#640D6B)"
+    },
+    {
+     "name": "GPT4omini-20240718 (2023-09)",
+     "color": "purple (#640D6B)"
+    }
+   ],
+   "data": [
+    {
+     "category": "2021-09",
+     "x": null,
+     "series": "GPT3: babbage-002 (2021-09)",
+     "value": null,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "printed",
+     "confidence": 0.0
+    },
+    {
+     "category": "2021-09",
+     "x": null,
+     "series": "GPT3: davinci-002 (2021-09)",
+     "value": null,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "printed",
+     "confidence": 0.0
+    },
+    {
+     "category": "2021-09",
+     "x": null,
+     "series": "GPT3.5-Instruct (2021-09)",
+     "value": null,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "printed",
+     "confidence": 0.0
+    },
+    {
+     "category": "2023-12",
+     "x": null,
+     "series": "GPT3.5-0125 (2023-12)",
+     "value": 46.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "46.30%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2021-09",
+     "x": null,
+     "series": "GPT3.5-0613 (2021-09)",
+     "value": null,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "printed",
+     "confidence": 0.0
+    },
+    {
+     "category": "2023-04",
+     "x": null,
+     "series": "GPT3.5-1106 (2023-04)",
+     "value": 48.15,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "48.15%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2021-09",
+     "x": null,
+     "series": "GPT4-0613 (2021-09)",
+     "value": 63.58,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "63.58%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2023-04",
+     "x": null,
+     "series": "GPT4-1106 (2023-04)",
+     "value": 65.43,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "65.43%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2023-12",
+     "x": null,
+     "series": "GPT4-0125 (2023-12)",
+     "value": 62.35,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "62.35%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2023-09",
+     "x": null,
+     "series": "GPT4o-20240513 (2023-09)",
+     "value": 75.93,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "75.93%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "2023-09",
+     "x": null,
+     "series": "GPT4omini-20240718 (2023-09)",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "56.0%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "Scatter plot (matplotlib) over a categorical x axis: one round marker per model release, placed at its training-data cutoff date (tick labels, left to right as printed: 2021-09, 2023-12, 2023-04, 2023-09, which is not chronological) with the accuracy printed in bold beside it. 11 markers and 11 legend entries (lower right), coloured by model family: brown GPT3 (2), orange GPT3.5 (4), blue GPT4 (3), purple GPT4o (2). category = the tick label, series = the legend entry as printed, value = the printed number (source 'printed', confidence 1.0, label_printed verbatim). Rows are in legend order.",
+    "A marker is tied to its legend entry by colour and by the date in the entry's name. That settles seven: orange at 2023-12 = GPT3.5-0125 (46.30%), orange at 2023-04 = GPT3.5-1106 (48.15%), blue at 2021-09 = GPT4-0613 (63.58%), blue at 2023-04 = GPT4-1106 (65.43%), blue at 2023-12 = GPT4-0125 (62.35%), and the two purple markers at 2023-09, of which the upper (75.93%) is GPT4o-20240513 and the lower (56.0%) GPT4omini-20240718: the two share colour and date, and the text of page 17 gives GPT-4o 75.9 % on the questions without images.",
+    "Four markers cannot be tied to one entry: at 2021-09 the two brown markers (printed 12.35% and 9.26%) belong to 'GPT3: babbage-002 (2021-09)' and 'GPT3: davinci-002 (2021-09)', and the two orange markers (printed 43.83% and 39.51%) to 'GPT3.5-Instruct (2021-09)' and 'GPT3.5-0613 (2021-09)', in an order that neither the figure (identical colours #AF8260 and #FFA500, same x) nor the paper's text or tables give. These four rows are kept with value null (confidence 0), so that they pair with a prediction's rows without being scored.",
+    "Check that every label belongs to its marker, on the figure's embedded bitmap (page 21: one RGB image of 1430 x 592 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white): y calibration by least squares through the 7 tick marks at the left spine (rows 95, 162, 228, 295, 362, 428, 495 for 70, 60, ..., 10) -> 6.664 px per unit, 1 px = 0.150; fit residual at the ticks <= 0.05. Marker centres (circle fit, radius 8 px) read 63.58, 43.83, 39.51, 12.35, 9.26 (2021-09), 62.35, 46.30 (2023-12), 65.44, 48.15 (2023-04), 75.93 and 56.79 (2023-09): ten of the eleven agree with their printed label within 0.01.",
+    "The lower purple marker is plotted at 56.79 (92 of 162 questions) while its label reads '56.0%' (one decimal, unlike the other labels). The truth takes the printed number, 56.0; the plotted position is 0.79 higher (1.1 % of the axis range).",
+    "All plotted values are n/162 in per cent (the 162 questions of the 2022 self-assessment without an image; markers in the order above): 103, 71, 64, 20, 15, 101, 75, 106, 78, 123 and 92 of 162.",
+    "Axes: y frame from 5.94 to 79.24 (plot area rows 33.5 to 522; the limits are the data range with 5 % margins), used as axes.y.range; tick labels 10 ... 70, white gridlines drawn over the markers. X tick positions at columns 785.3, 983.9, 1182.4, 1381.0. X-axis title 'Model Training Data Cutoff Date', y-axis title 'Accuracy (%)'."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-19",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Data chart with two panels: a line chart (a, 2 series x 3 points) and a scatter plot (b, 11 markers). Every marker has its value printed beside it: 13 values are 'printed' (confidence 1.0); 4 rows of panel b have value null (see below). The marker positions, measured on the embedded bitmap, confirm the labels within 0.08 (a) and 0.01 (b), except the '56.0%' label, whose marker sits at 56.79.",
+  "Panel a, series names: taken from the legend as printed (blue = 'GPT-3.5 Turbo 0125', orange = 'GPT-4 0613'). The paper's text and panel b attribute the upper, blue line to GPT-4 and the lower, orange line to GPT-3.5, i.e. the legend seems to be swapped. A prediction that follows the text instead of the legend is scored as wrong on all six values.",
+  "Panel a, keying: the x axis prints 2021, 2022, 2023, read as a numeric axis: x = 2021.0, 2022.0, 2023.0 and category null, as the conventions ask for a line chart. A prediction that writes the year as category ('2021') does not pair with these rows (the scorer compares '2021.0' with '2021'), although its values may be right.",
+  "Panel a: the text of page 21 says 65.38 % where the figure prints 63.58 % (2022, upper line); the truth keeps the printed number.",
+  "Panel b, left out: which of 12.35% / 9.26% belongs to babbage-002 and which to davinci-002, and which of 43.83% / 39.51% belongs to GPT3.5-Instruct and which to GPT3.5-0613, cannot be read from the figure (same colour, same date) and is not stated in the paper. Their four rows carry value null instead of a guess; a prediction's numbers for them are paired but not scored.",
+  "Panel b: GPT4o-20240513 = 75.93 and GPT4omini-20240718 = 56.0 rests on the paper's text for GPT-4o (page 17), not on the figure alone (both markers are purple at 2023-09).",
+  "Panel b: the label '56.0%' and its marker (56.79) disagree; the truth takes the printed number.",
+  "Kinds: a is 'line', b is 'scatter' (points without lines over a categorical axis), both 'vertical': the scorer normalises by axes.y.range, 40 (a) and 73.3 (b), so 2 % is 0.8 and 1.47. Panel b is keyed category = x tick label, series = legend entry; a prediction that puts the model name in category and leaves series null does not pair.",
+  "Scorer name matching (names within 0.2 normalised edit distance count as equal, pairing is first-fit in row order): in panel b the legend entries 'GPT3.5-0613 (2021-09)' / 'GPT4-0613 (2021-09)', 'GPT3.5-1106 (2023-04)' / 'GPT4-1106 (2023-04)' and 'GPT3.5-0125 (2023-12)' / 'GPT4-0125 (2023-12)' collide, as do the categories '2021-09' / '2023-09' and '2023-04' / '2023-09'. The truth lists the rows in legend order; a prediction that lists a GPT4 entry before the GPT3.5 entry of the same date can be cross-paired and scored as wrong although its values are right.",
+  "No panel has a printed title (only the letters a and b): panel.title carries the panel's part of the caption.",
+  "bbox_px is the ink box of each panel (letter, labels, axes, the value labels that reach beyond the frame) mapped from the native bitmap to the bundle crop (1.5 px per PDF point from the picture bbox: crop_x = 0.4909 u - 2.12, crop_y = 0.4904 v - 1.16, checked on the plot-area edges within 0.5 px). figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b, origin bottom-left)."
+ ]
+}

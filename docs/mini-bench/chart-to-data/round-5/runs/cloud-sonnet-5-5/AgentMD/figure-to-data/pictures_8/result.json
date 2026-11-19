@@ -1,0 +1,49 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "listed",
+ "seconds": 25.78,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud list",
+   "wall_s": 4.29,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 5251,
+   "eval_tokens": 464,
+   "cut": false,
+   "cost_usd": 0.015142,
+   "turns": 1,
+   "tool_calls": null
+  },
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 21.0,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 14996,
+   "eval_tokens": 3998,
+   "cut": false,
+   "cost_usd": 0.069972,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "the rule splitter finds 11 chart(s), the model lists 14: cut between the listed charts",
+  "panel e1: 0.055 outside the axis range [0, 0.05] (28.0/Density)",
+  "panel e2: 0.128 outside the axis range [0, 0.12] (90.0/Density)",
+  "panel e3: 0.046 outside the axis range [0, 0.04] (82.0/Density)",
+  "panel e4: 0.026 outside the axis range [0, 0.02] (92.0/Density)",
+  "panel e7: 0.033 outside the axis range [0, 0.03] (49.0/Density)"
+ ]
+}

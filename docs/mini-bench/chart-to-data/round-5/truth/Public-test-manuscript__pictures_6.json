@@ -1,0 +1,912 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/6",
+  "image_path": "images/picture_007.png",
+  "page": 22,
+  "bbox": [
+   70.67131805419922,
+   684.873664855957,
+   493.43402099609375,
+   357.6940612792969
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    2.0,
+    0.4,
+    323.5,
+    248.0
+   ],
+   "title": "Raw Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.7,
+      94.9
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "grey-blue #8AB2C0"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "grey-blue band, semi-transparent (#B6C6CB on the grey background)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 0.0,
+     "series": "Average",
+     "value": 73.17,
+     "err_lo": 72.23,
+     "err_hi": 75.02,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.1,
+     "series": "Average",
+     "value": 75.95,
+     "err_lo": 75.03,
+     "err_hi": 77.78,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.2,
+     "series": "Average",
+     "value": 77.8,
+     "err_lo": 66.66,
+     "err_hi": 86.16,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.4,
+     "series": "Average",
+     "value": 75.01,
+     "err_lo": 72.23,
+     "err_hi": 77.83,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.6,
+     "series": "Average",
+     "value": 71.32,
+     "err_lo": 69.47,
+     "err_hi": 72.24,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.8,
+     "series": "Average",
+     "value": 75.01,
+     "err_lo": 69.48,
+     "err_hi": 83.36,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.9,
+     "series": "Average",
+     "value": 75.02,
+     "err_lo": 69.47,
+     "err_hi": 77.81,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Average",
+     "value": 80.57,
+     "err_lo": 75.06,
+     "err_hi": 83.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.2,
+     "series": "Average",
+     "value": 78.69,
+     "err_lo": 75.06,
+     "err_hi": 83.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.4,
+     "series": "Average",
+     "value": 79.64,
+     "err_lo": 72.23,
+     "err_hi": 91.68,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 1.6,
+     "series": "Average",
+     "value": 73.19,
+     "err_lo": 69.46,
+     "err_hi": 77.78,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.8,
+     "series": "Average",
+     "value": 73.17,
+     "err_lo": 66.67,
+     "err_hi": 86.17,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Average",
+     "value": 48.15,
+     "err_lo": 41.64,
+     "err_hi": 52.8,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel a of a 2 x 2 grid, title 'Raw Prompt - Without Determining Seed'. A grey-blue line with a filled circle at each of the 13 temperatures (legend 'Average') over a semi-transparent band of the same hue (legend 'Range (Min to Max)'). One row per marker: x = the temperature of the tick, value = the marker's height, err_lo / err_hi = the band's lower and upper edge at that tick, as absolute axis values.",
+    "The x axis is labelled with the temperatures 0, 0.1, 0.2, 0.4, 0.6, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8, 2 at EVEN spacing (43.67 native px per tick), so it is an ordinal axis with numeric labels: scale 'categorical', ticks as printed, and x in the data is the printed number. The axis title is printed 'Model Tempreature' (sic).",
+    "Y tick labels 25, 33, 41, 50, 58, 66, 75, 83, 91 are truncated: the nine tick marks and gridlines are evenly spaced (44.1 native px), i.e. they stand at 25, 33.33, 41.67, 50, 58.33, 66.67, 75, 83.33, 91.67. Calibration: least squares through the nine tick marks at those values, value = 102.875 -0.18900 * y_native (5.291 px per point); residual <= 0.09 points (the tick marks are pixel-snapped). A fit on the three exact labels 25 / 50 / 75 alone gives the same values within 0.1; a straight line through the nine printed integers would leave residuals up to 0.47. axes.y.range is the drawn axis (21.7 to 94.9).",
+    "Measurement on the PDF's embedded bitmap of page 22 (1284 x 1003 px RGB for the four panels, lossless). Marker: centroid of the disc's pixels (of the coloured ring for an outlined marker). Band: each edge is a straight line between neighbouring ticks; it was fitted on the columns between two ticks (19 to 37 columns, residual <= 0.6 px) and evaluated at the tick, where the two neighbouring fits agree within 0.10 points (rms 0.03). The band is drawn with an outline stroke of its own colour that widens it by 0.61 px (0.12 points on a flat edge, more on a steep one); this half-width, estimated from the agreement of the two fits at each vertex, is removed. The vertices stand on an even x grid fitted to the 13 marker centres (the tick marks are pixel-snapped and up to 0.4 px off it).",
+    "Estimated error: +/- 0.1 points for value, err_lo and err_hi. Cross-check on a pattern the measurement did not assume: all 52 averages of the figure lie within 0.07 points of a multiple of 1/108 (rms 0.02) and all 104 band edges within 0.11 of a multiple of 1/36 = 2.78 points (rms 0.02), i.e. three runs on 36 questions; every average lies between its minimum and maximum. The paper gives no table for this figure.",
+    "Marker outlines (decoration, not a series; caption: red = highest accuracy, orange = most consistent): red at temperature 1; orange at 0, 0.6.",
+    "Crop px of the first and last marker: [50.1, 77.5], [307.3, 142.3].",
+    "The legend box (semi-transparent white) covers the band's peak at temperature 1.4: err_hi there (91.68) is the meeting point of the two adjoining edge lines, each fitted on the 19 to 25 columns where the edge runs clear of the box, confirmed by the band showing faintly through the box up to that height. Confidence 0.9 for that row."
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    323.5,
+    0.4,
+    632.3,
+    248.0
+   ],
+   "title": "Best Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.7,
+      94.9
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "blue #00ACE6"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "blue band, semi-transparent (#93C7D9 on the grey background)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 0.0,
+     "series": "Average",
+     "value": 75.95,
+     "err_lo": 75.11,
+     "err_hi": 77.81,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.1,
+     "series": "Average",
+     "value": 76.86,
+     "err_lo": 75.06,
+     "err_hi": 80.57,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.2,
+     "series": "Average",
+     "value": 74.14,
+     "err_lo": 69.46,
+     "err_hi": 77.81,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.4,
+     "series": "Average",
+     "value": 75.93,
+     "err_lo": 72.23,
+     "err_hi": 80.57,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.6,
+     "series": "Average",
+     "value": 71.31,
+     "err_lo": 66.67,
+     "err_hi": 77.81,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.8,
+     "series": "Average",
+     "value": 78.69,
+     "err_lo": 72.24,
+     "err_hi": 91.7,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.9,
+     "series": "Average",
+     "value": 75.02,
+     "err_lo": 63.89,
+     "err_hi": 80.58,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Average",
+     "value": 79.64,
+     "err_lo": 75.02,
+     "err_hi": 83.36,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.2,
+     "series": "Average",
+     "value": 75.94,
+     "err_lo": 66.68,
+     "err_hi": 80.57,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.4,
+     "series": "Average",
+     "value": 73.16,
+     "err_lo": 69.46,
+     "err_hi": 75.02,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.6,
+     "series": "Average",
+     "value": 59.27,
+     "err_lo": 52.76,
+     "err_hi": 66.71,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.8,
+     "series": "Average",
+     "value": 49.09,
+     "err_lo": 44.46,
+     "err_hi": 52.82,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Average",
+     "value": 36.1,
+     "err_lo": 24.98,
+     "err_hi": 44.44,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel b of a 2 x 2 grid, title 'Best Prompt - Without Determining Seed'. A blue line with a filled circle at each of the 13 temperatures (legend 'Average') over a semi-transparent band of the same hue (legend 'Range (Min to Max)'). One row per marker: x = the temperature of the tick, value = the marker's height, err_lo / err_hi = the band's lower and upper edge at that tick, as absolute axis values.",
+    "The x axis is labelled with the temperatures 0, 0.1, 0.2, 0.4, 0.6, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8, 2 at EVEN spacing (43.67 native px per tick), so it is an ordinal axis with numeric labels: scale 'categorical', ticks as printed, and x in the data is the printed number. The axis title is printed 'Model Tempreature' (sic). This panel prints no y-axis title ('Accuracy %' stands left of the left-hand panels only).",
+    "Y tick labels 25, 33, 41, 50, 58, 66, 75, 83, 91 are truncated: the nine tick marks and gridlines are evenly spaced (44.1 native px), i.e. they stand at 25, 33.33, 41.67, 50, 58.33, 66.67, 75, 83.33, 91.67. Calibration: least squares through the nine tick marks at those values, value = 102.875 -0.18900 * y_native (5.291 px per point); residual <= 0.09 points (the tick marks are pixel-snapped). A fit on the three exact labels 25 / 50 / 75 alone gives the same values within 0.1; a straight line through the nine printed integers would leave residuals up to 0.47. axes.y.range is the drawn axis (21.7 to 94.9).",
+    "Measurement on the PDF's embedded bitmap of page 22 (1284 x 1003 px RGB for the four panels, lossless). Marker: centroid of the disc's pixels (of the coloured ring for an outlined marker). Band: each edge is a straight line between neighbouring ticks; it was fitted on the columns between two ticks (19 to 37 columns, residual <= 0.6 px) and evaluated at the tick, where the two neighbouring fits agree within 0.10 points (rms 0.03). The band is drawn with an outline stroke of its own colour that widens it by 0.61 px (0.12 points on a flat edge, more on a steep one); this half-width, estimated from the agreement of the two fits at each vertex, is removed. The vertices stand on an even x grid fitted to the 13 marker centres (the tick marks are pixel-snapped and up to 0.4 px off it).",
+    "Estimated error: +/- 0.1 points for value, err_lo and err_hi. Cross-check on a pattern the measurement did not assume: all 52 averages of the figure lie within 0.07 points of a multiple of 1/108 (rms 0.02) and all 104 band edges within 0.11 of a multiple of 1/36 = 2.78 points (rms 0.02), i.e. three runs on 36 questions; every average lies between its minimum and maximum. The paper gives no table for this figure.",
+    "Marker outlines (decoration, not a series; caption: red = highest accuracy, orange = most consistent): red at temperature 1; orange at 0.",
+    "Crop px of the first and last marker: [361.8, 70.2], [619.0, 173.6]."
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    2.0,
+    248.0,
+    323.5,
+    490.0
+   ],
+   "title": "Raw Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.7,
+      95.0
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "grey-green #6BA17F"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "grey-green band, semi-transparent (#A9BFB1 on the grey background)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 0.0,
+     "series": "Average",
+     "value": 83.29,
+     "err_lo": 80.54,
+     "err_hi": 88.89,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.1,
+     "series": "Average",
+     "value": 76.87,
+     "err_lo": 74.99,
+     "err_hi": 77.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.2,
+     "series": "Average",
+     "value": 71.3,
+     "err_lo": 69.44,
+     "err_hi": 74.98,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.4,
+     "series": "Average",
+     "value": 77.77,
+     "err_lo": 72.24,
+     "err_hi": 83.33,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.6,
+     "series": "Average",
+     "value": 74.05,
+     "err_lo": 72.24,
+     "err_hi": 75.0,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.8,
+     "series": "Average",
+     "value": 81.48,
+     "err_lo": 77.76,
+     "err_hi": 86.12,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.9,
+     "series": "Average",
+     "value": 79.63,
+     "err_lo": 77.76,
+     "err_hi": 83.33,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Average",
+     "value": 75.93,
+     "err_lo": 72.21,
+     "err_hi": 77.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.2,
+     "series": "Average",
+     "value": 70.37,
+     "err_lo": 66.66,
+     "err_hi": 72.22,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.4,
+     "series": "Average",
+     "value": 72.21,
+     "err_lo": 72.21,
+     "err_hi": 72.21,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.6,
+     "series": "Average",
+     "value": 76.87,
+     "err_lo": 66.65,
+     "err_hi": 83.33,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.8,
+     "series": "Average",
+     "value": 74.99,
+     "err_lo": 66.64,
+     "err_hi": 80.55,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Average",
+     "value": 50.01,
+     "err_lo": 41.65,
+     "err_hi": 58.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel c of a 2 x 2 grid, title 'Raw Prompt - After Determining Seed'. A grey-green line with a filled circle at each of the 13 temperatures (legend 'Average') over a semi-transparent band of the same hue (legend 'Range (Min to Max)'). One row per marker: x = the temperature of the tick, value = the marker's height, err_lo / err_hi = the band's lower and upper edge at that tick, as absolute axis values.",
+    "The x axis is labelled with the temperatures 0, 0.1, 0.2, 0.4, 0.6, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8, 2 at EVEN spacing (43.67 native px per tick), so it is an ordinal axis with numeric labels: scale 'categorical', ticks as printed, and x in the data is the printed number. The axis title is printed 'Model Tempreature' (sic).",
+    "Y tick labels 25, 33, 41, 50, 58, 66, 75, 83, 91 are truncated: the nine tick marks and gridlines are evenly spaced (44.1 native px), i.e. they stand at 25, 33.33, 41.67, 50, 58.33, 66.67, 75, 83.33, 91.67. Calibration: least squares through the nine tick marks at those values, value = 198.843 -0.18880 * y_native (5.296 px per point); residual <= 0.09 points (the tick marks are pixel-snapped). A fit on the three exact labels 25 / 50 / 75 alone gives the same values within 0.1; a straight line through the nine printed integers would leave residuals up to 0.47. axes.y.range is the drawn axis (21.7 to 95.0).",
+    "Measurement on the PDF's embedded bitmap of page 22 (1284 x 1003 px RGB for the four panels, lossless). Marker: centroid of the disc's pixels (of the coloured ring for an outlined marker). Band: each edge is a straight line between neighbouring ticks; it was fitted on the columns between two ticks (19 to 37 columns, residual <= 0.6 px) and evaluated at the tick, where the two neighbouring fits agree within 0.10 points (rms 0.03). The band is drawn with an outline stroke of its own colour that widens it by 0.61 px (0.11 points on a flat edge, more on a steep one); this half-width, estimated from the agreement of the two fits at each vertex, is removed. The vertices stand on an even x grid fitted to the 13 marker centres (the tick marks are pixel-snapped and up to 0.4 px off it).",
+    "Estimated error: +/- 0.1 points for value, err_lo and err_hi. Cross-check on a pattern the measurement did not assume: all 52 averages of the figure lie within 0.07 points of a multiple of 1/108 (rms 0.02) and all 104 band edges within 0.11 of a multiple of 1/36 = 2.78 points (rms 0.02), i.e. three runs on 36 questions; every average lies between its minimum and maximum. The paper gives no table for this figure.",
+    "Marker outlines (decoration, not a series; caption: red = highest accuracy, orange = most consistent): red at temperature 0; orange at 1.4.",
+    "Crop px of the first and last marker: [50.1, 300.4], [307.3, 386.8].",
+    "At temperature 1.4 the band collapses to a point (measured edges 72.23 / 72.21 around the marker at 72.20): the three runs agree, and value, err_lo and err_hi carry the same number."
+   ]
+  },
+  {
+   "id": "d",
+   "bbox_px": [
+    323.5,
+    248.0,
+    632.3,
+    490.0
+   ],
+   "title": "Best Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "0",
+      "0.1",
+      "0.2",
+      "0.4",
+      "0.6",
+      "0.8",
+      "0.9",
+      "1",
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2"
+     ]
+    },
+    "y": {
+     "name": null,
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      21.7,
+      95.0
+     ],
+     "ticks": [
+      25,
+      33,
+      41,
+      50,
+      58,
+      66,
+      75,
+      83,
+      91
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Average",
+     "color": "green #20CE60"
+    },
+    {
+     "name": "Range (Min to Max)",
+     "color": "green band, semi-transparent (#9DD1B0 on the grey background)"
+    }
+   ],
+   "data": [
+    {
+     "category": null,
+     "x": 0.0,
+     "series": "Average",
+     "value": 77.79,
+     "err_lo": 75.0,
+     "err_hi": 80.53,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.1,
+     "series": "Average",
+     "value": 75.93,
+     "err_lo": 72.21,
+     "err_hi": 80.53,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.2,
+     "series": "Average",
+     "value": 77.81,
+     "err_lo": 74.99,
+     "err_hi": 80.54,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.4,
+     "series": "Average",
+     "value": 74.08,
+     "err_lo": 66.67,
+     "err_hi": 77.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.6,
+     "series": "Average",
+     "value": 69.46,
+     "err_lo": 66.64,
+     "err_hi": 72.22,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.8,
+     "series": "Average",
+     "value": 74.99,
+     "err_lo": 66.65,
+     "err_hi": 83.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 0.9,
+     "series": "Average",
+     "value": 81.48,
+     "err_lo": 77.77,
+     "err_hi": 83.34,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.0,
+     "series": "Average",
+     "value": 84.24,
+     "err_lo": 80.54,
+     "err_hi": 86.11,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.2,
+     "series": "Average",
+     "value": 82.37,
+     "err_lo": 74.97,
+     "err_hi": 91.66,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.4,
+     "series": "Average",
+     "value": 85.12,
+     "err_lo": 83.33,
+     "err_hi": 88.89,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": null,
+     "x": 1.6,
+     "series": "Average",
+     "value": 74.99,
+     "err_lo": 69.45,
+     "err_hi": 80.57,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 1.8,
+     "series": "Average",
+     "value": 72.19,
+     "err_lo": 66.67,
+     "err_hi": 77.79,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": null,
+     "x": 2.0,
+     "series": "Average",
+     "value": 65.73,
+     "err_lo": 63.88,
+     "err_hi": 66.68,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel d of a 2 x 2 grid, title 'Best Prompt - After Determining Seed'. A green line with a filled circle at each of the 13 temperatures (legend 'Average') over a semi-transparent band of the same hue (legend 'Range (Min to Max)'). One row per marker: x = the temperature of the tick, value = the marker's height, err_lo / err_hi = the band's lower and upper edge at that tick, as absolute axis values.",
+    "The x axis is labelled with the temperatures 0, 0.1, 0.2, 0.4, 0.6, 0.8, 0.9, 1, 1.2, 1.4, 1.6, 1.8, 2 at EVEN spacing (43.67 native px per tick), so it is an ordinal axis with numeric labels: scale 'categorical', ticks as printed, and x in the data is the printed number. The axis title is printed 'Model Tempreature' (sic). This panel prints no y-axis title ('Accuracy %' stands left of the left-hand panels only).",
+    "Y tick labels 25, 33, 41, 50, 58, 66, 75, 83, 91 are truncated: the nine tick marks and gridlines are evenly spaced (44.1 native px), i.e. they stand at 25, 33.33, 41.67, 50, 58.33, 66.67, 75, 83.33, 91.67. Calibration: least squares through the nine tick marks at those values, value = 198.843 -0.18880 * y_native (5.296 px per point); residual <= 0.09 points (the tick marks are pixel-snapped). A fit on the three exact labels 25 / 50 / 75 alone gives the same values within 0.1; a straight line through the nine printed integers would leave residuals up to 0.47. axes.y.range is the drawn axis (21.7 to 95.0).",
+    "Measurement on the PDF's embedded bitmap of page 22 (1284 x 1003 px RGB for the four panels, lossless). Marker: centroid of the disc's pixels (of the coloured ring for an outlined marker). Band: each edge is a straight line between neighbouring ticks; it was fitted on the columns between two ticks (19 to 37 columns, residual <= 0.6 px) and evaluated at the tick, where the two neighbouring fits agree within 0.10 points (rms 0.03). The band is drawn with an outline stroke of its own colour that widens it by 0.61 px (0.11 points on a flat edge, more on a steep one); this half-width, estimated from the agreement of the two fits at each vertex, is removed. The vertices stand on an even x grid fitted to the 13 marker centres (the tick marks are pixel-snapped and up to 0.4 px off it).",
+    "Estimated error: +/- 0.1 points for value, err_lo and err_hi. Cross-check on a pattern the measurement did not assume: all 52 averages of the figure lie within 0.07 points of a multiple of 1/108 (rms 0.02) and all 104 band edges within 0.11 of a multiple of 1/36 = 2.78 points (rms 0.02), i.e. three runs on 36 questions; every average lies between its minimum and maximum. The paper gives no table for this figure.",
+    "Marker outlines (decoration, not a series; caption: red = highest accuracy, orange = most consistent): red at temperature 1.4; orange at 2.",
+    "Crop px of the first and last marker: [361.9, 314.7], [619.0, 346.0].",
+    "The legend box (semi-transparent white) covers the band's upper vertex at temperature 1.4: err_hi there (88.89) is the meeting point of the two adjoining edge lines, each fitted on the 20 to 25 columns where the edge runs clear of the box. Confidence 0.9 for that row."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-19",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Convention: kind 'line', orientation 'vertical' (value axis y, normalised by axes.y.range, the drawn axis of about 73 points). One row per marker and panel (4 x 13 = 52 rows), series 'Average', value = the average line, err_lo / err_hi = lower and upper edge of the shaded range at that temperature (absolute values). The scorer compares 'value' only; the 104 range bounds are in the truth but not scored.",
+  "Keying: x = the temperature as a number (0.0, 0.1, ... 2.0), category null, as CONVENTIONS asks for an x axis with numeric labels. A prediction with the same numbers in x pairs on all 13 points. One that writes the tick label into category pairs on 10 of 13 per panel only: the scorer compares str(x) with the category, and '0.0' / '1.0' / '2.0' are not within its edit distance of '0' / '1' / '2'. That is a keying difference, not a reading error.",
+  "panel.series lists both legend entries ('Average', 'Range (Min to Max)'), but every row belongs to 'Average'; the range is carried in err_lo / err_hi. A prediction that writes separate rows for the range series gets them counted as extra values.",
+  "The y tick labels are truncated integers (33, 41, 58, 66, 83, 91 for 33.33, 41.67, 58.33, 66.67, 83.33, 91.67). A reader that calibrates on the printed integers is off by up to 0.7 points, well inside the scorer's 2 % band (1.46 points).",
+  "All values are raster measurements (no number is printed at any mark), good to about +/- 0.1 points; see the panel notes for the calibration, the outline-stroke correction and the 1/36 pattern check. Two upper bounds lie under a legend box (panel a and panel d, temperature 1.4): they are fixed by the visible parts of both adjoining edges, confidence 0.9.",
+  "The paper states no number for this figure (page 21 says only that a fixed seed, temperature 0 and simpler prompts are most consistent); the caption explains the red (highest accuracy) and orange (lowest range) outlines, which agree with the measured values in all four panels. In panel a three temperatures share the lowest range (2.78 points at 0, 0.1 and 0.6) and two of them are outlined.",
+  "Panel boxes are the four quadrants of the crop (title, tick labels and axis titles included), split at crop x = 323.5 and y = 248. figure.bbox is copied from the picture's prov in document.json (l, t, r, b with a bottom-left origin, as stored there)."
+ ]
+}

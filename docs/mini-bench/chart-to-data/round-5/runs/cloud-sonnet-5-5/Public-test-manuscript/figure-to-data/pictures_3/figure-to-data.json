@@ -1,0 +1,545 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 18,
+    "bbox": [
+      127.38,
+      79.1,
+      483.24,
+      581.09
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        534.0,
+        753.0
+      ],
+      "title": "All 2022 ACG questions (N = 300)",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 Web",
+            "GPT-3.5 API-",
+            "GPT-4 Web-",
+            "GPT-4 API-",
+            "GPT-4o API-",
+            "GPT-4omini API-",
+            "Claude3-Hiaku Web-",
+            "Claude3-Haiku API-",
+            "Claude3-Sonnet Web-",
+            "Claude3-Sonnet API-",
+            "Claude3-Opus Web-",
+            "Claude3-Opus API.",
+            "Claude3.5-Sonnet API.",
+            "Mistralv2-7b Poe-",
+            "Mistralv2-7b-Q8 Local-",
+            "Mistral-Large Poe-",
+            "Mixtral-8x7b Poe-",
+            "Llama2-7b Poe",
+            "Llama2-7b-Q8 Local",
+            "medicineLLM-7b-Q8 Local-",
+            "Llama2-13b Poe-",
+            "Llama2-13b-Q5 Local-",
+            "Llama2-70b Poe-",
+            "Llama3-8b Poe-",
+            "Llama3-8b-Q8 Local-",
+            "OpenBioLLM-8b-Q8 Local-",
+            "Llama3-70b Poe-",
+            "Llama3.1-8b Poe-",
+            "Llama3.1-70b Poe-",
+            "Llama3.1-405b Poe-",
+            "Gemini Web",
+            "GeminiAdvanced Web-",
+            "Gemma2-9b Poe-",
+            "Gemma2-9b-Q8 Local-",
+            "Gemma2-27b Poe-",
+            "Phi3-3b-Q16 Local-",
+            "Phi3-14b-Q6 Local",
+            "0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 47.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "47.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "46.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 66.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "66.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 66.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "66.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 73.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "73.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 56.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "56.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3-Hiaku Web",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "50.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude3-Haiku API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "50.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3-Sonnet Web",
+          "x": null,
+          "series": "Correct",
+          "value": 55.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "55.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 52.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "52.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3-Opus Web",
+          "x": null,
+          "series": "Correct",
+          "value": 65.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "65.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3-Opus API",
+          "x": null,
+          "series": "Correct",
+          "value": 66.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "66.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3.5-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "74.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mistralv2-7b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 40.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "40.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mistralv2-7b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 37.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "37.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mistral-Large Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 60.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "60.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mixtral-8x7b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 54.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "54.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-7b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 30.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-7b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 30.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "medicineLLM-7b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 27.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "27.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-13b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 33.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-13b-Q5 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 33.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.4%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-70b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 37.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "37.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3-8b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "43.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3-8b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 31.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "31.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "OpenBioLLM-8b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 29.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "29.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3-70b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 54.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "54.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3.1-8b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 43.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "43.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3.1-70b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 58.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "58.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3.1-405b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 64.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "64.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "Correct",
+          "value": 41.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "41.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GeminiAdvanced Web",
+          "x": null,
+          "series": "Correct",
+          "value": 51.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "51.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Gemma2-9b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 44.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "44.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Gemma2-9b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 45.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "45.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Gemma2-27b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "50.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Phi3-3b-Q16 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 42.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "42.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Phi3-14b-Q6 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 48.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.7%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "Rows are grouped by model family (GPT, Claude, Mistral, Llama, Gemini/Gemma/Phi). Pink Q markers flag quantized models and blue book markers flag fine-tuned models (medicineLLM-7b-Q8 Local, OpenBioLLM-8b-Q8 Local).",
+        "Only the Correct segment is tabulated; it is the only one with a printed value."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Horizontal stacked bars showing, for 37 LLM configurations on the 300 text-only 2022 ACG gastroenterology questions, the percentage of answers that were correct, 2OP, EOP, NOP, error or incorrect.",
+  "uncertain": [
+    "The 2OP, EOP, NOP, Error and Incorrect segments of all 37 bars carry no printed values and were not read; 2OP, EOP, NOP and Error are mostly very thin slivers, and the Incorrect segment runs from the end of the other segments to 100%.",
+    "The Quantized Model and Fine-tuned Model markers on the right edge are not tabulated."
+  ]
+}

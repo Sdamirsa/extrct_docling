@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/4",
+    "image_path": "images/picture_005.png",
+    "page": 9,
+    "bbox": [
+      114.95,
+      228.89,
+      494.46,
+      329.44
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure compares the performance of various large language models across three clinical classes using heatmaps and an ablation study radar chart.",
+  "uncertain": [
+    "not read: the model sees 4 charts in this figure and the layout analysis separates 2; one image of several charts is not read reliably"
+  ]
+}

@@ -1,0 +1,1238 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/8",
+    "image_path": "images/picture_009.png",
+    "page": 7,
+    "bbox": [
+      57.09,
+      49.37,
+      535.42,
+      562.74
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "c",
+      "bbox_px": [
+        6.4,
+        2.9,
+        694.9,
+        209.4
+      ],
+      "title": "Calculators per patient",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "# Calculators / Patient",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            20.0
+          ],
+          "ticks": [
+            "MEDICAL",
+            "MEDICAL",
+            "HISTORY:",
+            "HISTORY:",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "MEDICAL",
+            "MEDICAL",
+            "HISTORY:",
+            "HISTORY:",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "0.04"
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            0.14
+          ],
+          "ticks": [
+            "Admission",
+            "Note",
+            "Note",
+            "Note",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "F",
+            ".",
+            "F",
+            "ILLNESS:",
+            ".",
+            "F",
+            "yo",
+            ".",
+            "F",
+            "yo",
+            ".",
+            ".",
+            "HISTORY:",
+            ".",
+            "HISTORY:",
+            ".",
+            "HISTORY:"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0,
+          "series": "Density",
+          "value": 0.05,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 3.0,
+          "series": "Density",
+          "value": 0.137,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 5.0,
+          "series": "Density",
+          "value": 0.12,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Density",
+          "value": 0.04,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 15.0,
+          "series": "Density",
+          "value": 0.004,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Density",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "KDE curve; peak about 0.137 near x=3; values at ticks approximate"
+      ]
+    },
+    {
+      "id": "d",
+      "bbox_px": [
+        6.4,
+        209.4,
+        697.9,
+        400.7
+      ],
+      "title": "Patients per calculator",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "# Patients / Calculator",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            400.0
+          ],
+          "ticks": [
+            ".",
+            ".",
+            ".",
+            ".",
+            ".",
+            "."
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            0.012
+          ],
+          "ticks": [
+            "by",
+            "Sepsis",
+            "X",
+            "Y",
+            "Z",
+            "O",
+            "."
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0,
+          "series": "Density",
+          "value": 0.0113,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Density",
+          "value": 0.0121,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 100.0,
+          "series": "Density",
+          "value": 0.0018,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 200.0,
+          "series": "Density",
+          "value": 0.0004,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 300.0,
+          "series": "Density",
+          "value": 0.0003,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 400.0,
+          "series": "Density",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "KDE curve; approximate"
+      ]
+    },
+    {
+      "id": "e1",
+      "bbox_px": [
+        6.4,
+        410.0,
+        232.5,
+        505.1
+      ],
+      "title": "Specificity - Short-term Mortality of AE CHF",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.05
+          ],
+          "ticks": [
+            0.04,
+            0.02,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 28.0,
+          "series": "Density",
+          "value": 0.055,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "KDE with main peak ~0.055 at ~28, secondary peaks at ~21 (0.022), ~39 (0.024), ~50 (0.018)"
+      ]
+    },
+    {
+      "id": "e2",
+      "bbox_px": [
+        241.8,
+        416.4,
+        391.8,
+        505.1
+      ],
+      "title": "Urgency - Short-term Mortality of AE CHF",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.12
+          ],
+          "ticks": [
+            0.1,
+            0.05,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 90.0,
+          "series": "Density",
+          "value": 0.128,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Single peak near 90"
+      ]
+    },
+    {
+      "id": "e3",
+      "bbox_px": [
+        400.7,
+        416.4,
+        550.7,
+        505.1
+      ],
+      "title": "Severity - Short-term Mortality of AE CHF",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.04
+          ],
+          "ticks": [
+            0.04,
+            0.02,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 50.0,
+          "series": "Density",
+          "value": 0.02,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 82.0,
+          "series": "Density",
+          "value": 0.046,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Two peaks"
+      ]
+    },
+    {
+      "id": "e4",
+      "bbox_px": [
+        560.1,
+        416.4,
+        709.6,
+        505.1
+      ],
+      "title": "Absence - Short-term Mortality of AE CHF",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.02
+          ],
+          "ticks": [
+            0.02,
+            0.01,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 10.0,
+          "series": "Density",
+          "value": 0.0115,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 92.0,
+          "series": "Density",
+          "value": 0.026,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Two peaks"
+      ]
+    },
+    {
+      "id": "e5",
+      "bbox_px": [
+        19.6,
+        514.9,
+        232.5,
+        586.5
+      ],
+      "title": "Specificity - 4-year Mortality Score",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.04
+          ],
+          "ticks": [
+            0.04,
+            0.02,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 32.0,
+          "series": "Density",
+          "value": 0.042,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 87.0,
+          "series": "Density",
+          "value": 0.008,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Two peaks"
+      ]
+    },
+    {
+      "id": "e6",
+      "bbox_px": [
+        247.2,
+        514.9,
+        391.8,
+        586.5
+      ],
+      "title": "Urgency - 4-year Mortality Score",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.3
+          ],
+          "ticks": [
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 20.0,
+          "series": "Density",
+          "value": 0.31,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Sharp peak at 20; minor bumps at 30 and 50"
+      ]
+    },
+    {
+      "id": "e7",
+      "bbox_px": [
+        400.7,
+        514.9,
+        550.7,
+        586.5
+      ],
+      "title": "Severity - 4-year Mortality Score",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.03
+          ],
+          "ticks": [
+            0.02,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 13.0,
+          "series": "Density",
+          "value": 0.0095,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": null,
+          "x": 49.0,
+          "series": "Density",
+          "value": 0.033,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": null,
+          "x": 67.0,
+          "series": "Density",
+          "value": 0.017,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Three peaks"
+      ]
+    },
+    {
+      "id": "e8",
+      "bbox_px": [
+        565.5,
+        514.9,
+        709.6,
+        586.5
+      ],
+      "title": "Absence - 4-year Mortality Score",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            25.0,
+            50.0,
+            75.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.2
+          ],
+          "ticks": [
+            0.2,
+            0.1,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 90.0,
+          "series": "Density",
+          "value": 0.205,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Single sharp peak near 90"
+      ]
+    },
+    {
+      "id": "f1",
+      "bbox_px": [
+        5.4,
+        603.2,
+        190.3,
+        767.5
+      ],
+      "title": "High-risk Varices Calculator",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "False Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": "True Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AgentMD",
+          "color": null
+        },
+        {
+          "name": "GPT-4",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "AgentMD",
+          "x": null,
+          "series": "AUC",
+          "value": 0.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.86",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4",
+          "x": null,
+          "series": "AUC",
+          "value": 0.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.62",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "ROC curves not traced; AUC from legend"
+      ]
+    },
+    {
+      "id": "f2",
+      "bbox_px": [
+        200.1,
+        608.1,
+        366.8,
+        767.5
+      ],
+      "title": "Functional Morbidity Index",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "False Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": "True Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AgentMD",
+          "color": null
+        },
+        {
+          "name": "GPT-4",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "AgentMD",
+          "x": null,
+          "series": "AUC",
+          "value": 0.77,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.77",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4",
+          "x": null,
+          "series": "AUC",
+          "value": 0.58,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.58",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "ROC curves not traced; AUC from legend"
+      ]
+    },
+    {
+      "id": "f3",
+      "bbox_px": [
+        376.6,
+        608.1,
+        543.4,
+        767.5
+      ],
+      "title": "NSTEMI Risk Calculator",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "False Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": "True Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AgentMD",
+          "color": null
+        },
+        {
+          "name": "GPT-4",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "AgentMD",
+          "x": null,
+          "series": "AUC",
+          "value": 0.97,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.97",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4",
+          "x": null,
+          "series": "AUC",
+          "value": 0.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.79",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "ROC curves not traced; AUC from legend"
+      ]
+    },
+    {
+      "id": "f4",
+      "bbox_px": [
+        553.2,
+        608.1,
+        717.0,
+        767.5
+      ],
+      "title": "IFD Risk Score",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "False Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": "True Positive Rate",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "AgentMD",
+          "color": null
+        },
+        {
+          "name": "GPT-4",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "AgentMD",
+          "x": null,
+          "series": "AUC",
+          "value": 0.79,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.79",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4",
+          "x": null,
+          "series": "AUC",
+          "value": 0.61,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.61",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "ROC curves not traced; AUC from legend"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "AgentMD applied to MIMIC-III admission notes: workflow diagrams (a, b), density plots of calculators per patient (c) and patients per calculator (d), density distributions of LLM-rated calculator scores (specificity, urgency, severity, absence) for two example calculators (e), and ROC curves comparing AgentMD with GPT-4 for four calculators (f).",
+  "uncertain": [
+    "Panels a and b are workflow diagrams with no data.",
+    "KDE density curves in c, d and e are only sampled at peaks and a few ticks, not fully traced.",
+    "ROC curve shapes in f not traced; only legend AUCs recorded."
+  ]
+}

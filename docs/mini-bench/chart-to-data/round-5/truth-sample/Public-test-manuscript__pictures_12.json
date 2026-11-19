@@ -1,0 +1,399 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/12",
+  "image_path": "images/picture_013.png",
+  "page": 64,
+  "bbox": [
+   72.3198013305664,
+   688.3621368408203,
+   251.22216796875,
+   91.16497802734375
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    3.0,
+    3.4,
+    266.8,
+    176.6
+   ],
+   "title": "Question type: Complication (N = 55)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "GPT-3.5 Web",
+      "GPT-3.5 API",
+      "GPT-4 Web",
+      "GPT-4 API",
+      "GPT-4o API",
+      "GPT-4omini API",
+      "Claude3-Hiaku Web",
+      "Claude3-Haiku API",
+      "Claude3-Sonnet Web",
+      "Claude3-Sonnet API",
+      "Claude3-Opus Web",
+      "Claude3-Opus API",
+      "Claude3.5-Sonnet API",
+      "Mistralv2-7b Poe",
+      "Mistralv2-7b-Q8 Local",
+      "Mistral-Large Poe",
+      "Mixtral-8x7b Poe",
+      "Llama2-7b Poe",
+      "Llama2-7b-Q8 Local",
+      "medicineLLM-7b-Q8 Local",
+      "Llama2-13b Poe",
+      "Llama2-13b-Q5 Local",
+      "Llama2-70b Poe",
+      "Llama3-8b Poe",
+      "Llama3-8b-Q8 Local",
+      "OpenBioLLM-8b-Q8 Local",
+      "Llama3-70b Poe",
+      "Llama3.1-8b Poe",
+      "Llama3.1-70b Poe",
+      "Llama3.1-405b Poe",
+      "Gemini Web",
+      "GeminiAdvanced Web",
+      "Gemma2-9b Poe",
+      "Gemma2-9b-Q8 Local",
+      "Gemma2-27b Poe",
+      "Phi3-3b-Q16 Local",
+      "Phi3-14b-Q6 Local"
+     ]
+    },
+    "y": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Correct",
+     "color": "green #008000"
+    },
+    {
+     "name": "2OP",
+     "color": "light green #90EE90"
+    },
+    {
+     "name": "EOP",
+     "color": "light grey #D3D3D3 (the colour of the plot background)"
+    },
+    {
+     "name": "NOP",
+     "color": "grey #A9A9A9"
+    },
+    {
+     "name": "Error",
+     "color": "orange #FFA500"
+    },
+    {
+     "name": "Incorrect",
+     "color": "red #FF0000"
+    }
+   ],
+   "data": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 56.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 52.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 34.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 30.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 58.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel 1 of 5 in reading order. 37 bars, one per model, in groups of 6, 7, 4, 13, 5 and 2 separated by an empty slot; every bar is a stack of the six legend classes (Correct at the bottom, Incorrect on top) that sums to 100 %.",
+    "Sample only: the bars at positions 1, 8, 15, 22, 29 and 36 from the left, the top of the Correct segment measured against the y axis. The other 31 bars and the other five classes are not recorded.",
+    "Worked on the bitmap embedded in the PDF page (547 x 1824 px, 220 ppi, lossless (FlateDecode)); the bundle crop is that bitmap at 0.49 px per px. Panel box and plot area found there and mapped to the crop (map fitted on the bar blocks of both images, residual <= 0.8 px). Plot area in the crop: [17.7, 9.7, 266.3, 133.4].",
+    "y axis: tick labels 0 to 100 in steps of 20; the axis line runs on to 105. Calibrated on 4 ticks of the bitmap (0 at row 269, 60 at row 126, 80 at row 78, 100 at row 30): 2.39 px per 1 %, largest residual 0.10 %.",
+    "The shares printed in these bars cannot be read: the digits are about 5 px high in the bitmap and 3, 5, 6, 8, 9 and 0 cannot be told apart on any enlargement tried (14x to 22x). The values are therefore measured (source raster, label_printed null): the top edge of the green Correct segment in the middle columns of the bar, to a fraction of a pixel from the colour mix of the edge row, read on the calibration above. Good to +-0.3: on the 24 bars of pictures 10 and 14 whose printed share can be read, the same measurement is within 0.19 of the print.",
+    "Measured twice. First on the bitmap (the values); then on a fresh render of the PDF page at scale 6 with its own calibration (2 points from the gridlines and base line, largest residual 0.00 %) and another edge rule (plain green walked up from the base, the mixed rows over it added by their share of green). First / second: GPT-3.5 Web 56.34 / 56.25; Claude3-Haiku API 52.71 / 52.62; Mistralv2-7b-Q8 Local 34.57 / 34.49; Llama2-13b-Q5 Local 30.81 / 30.73; Llama3.1-70b Poe 58.43 / 58.29; Phi3-3b-Q16 Local 41.69 / 41.61. Largest difference 0.14; none over 0.5."
+   ]
+  },
+  {
+   "id": "5",
+   "bbox_px": [
+    3.0,
+    720.0,
+    266.8,
+    892.7
+   ],
+   "title": "Question type: Treatment (N = 217)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "GPT-3.5 Web",
+      "GPT-3.5 API",
+      "GPT-4 Web",
+      "GPT-4 API",
+      "GPT-4o API",
+      "GPT-4omini API",
+      "Claude3-Hiaku Web",
+      "Claude3-Haiku API",
+      "Claude3-Sonnet Web",
+      "Claude3-Sonnet API",
+      "Claude3-Opus Web",
+      "Claude3-Opus API",
+      "Claude3.5-Sonnet API",
+      "Mistralv2-7b Poe",
+      "Mistralv2-7b-Q8 Local",
+      "Mistral-Large Poe",
+      "Mixtral-8x7b Poe",
+      "Llama2-7b Poe",
+      "Llama2-7b-Q8 Local",
+      "medicineLLM-7b-Q8 Local",
+      "Llama2-13b Poe",
+      "Llama2-13b-Q5 Local",
+      "Llama2-70b Poe",
+      "Llama3-8b Poe",
+      "Llama3-8b-Q8 Local",
+      "OpenBioLLM-8b-Q8 Local",
+      "Llama3-70b Poe",
+      "Llama3.1-8b Poe",
+      "Llama3.1-70b Poe",
+      "Llama3.1-405b Poe",
+      "Gemini Web",
+      "GeminiAdvanced Web",
+      "Gemma2-9b Poe",
+      "Gemma2-9b-Q8 Local",
+      "Gemma2-27b Poe",
+      "Phi3-3b-Q16 Local",
+      "Phi3-14b-Q6 Local"
+     ]
+    },
+    "y": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Correct",
+     "color": "green #008000"
+    },
+    {
+     "name": "2OP",
+     "color": "light green #90EE90"
+    },
+    {
+     "name": "EOP",
+     "color": "light grey #D3D3D3 (the colour of the plot background)"
+    },
+    {
+     "name": "NOP",
+     "color": "grey #A9A9A9"
+    },
+    {
+     "name": "Error",
+     "color": "orange #FFA500"
+    },
+    {
+     "name": "Incorrect",
+     "color": "red #FF0000"
+    }
+   ],
+   "data": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 49.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 51.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 40.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.9
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 33.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 57.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 43.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Panel 5 of 5 in reading order. 37 bars, one per model, in groups of 6, 7, 4, 13, 5 and 2 separated by an empty slot; every bar is a stack of the six legend classes (Correct at the bottom, Incorrect on top) that sums to 100 %.",
+    "Sample only: the bars at positions 1, 8, 15, 22, 29 and 36 from the left, the top of the Correct segment measured against the y axis. The other 31 bars and the other five classes are not recorded.",
+    "Worked on the bitmap embedded in the PDF page (547 x 1824 px, 220 ppi, lossless (FlateDecode)); the bundle crop is that bitmap at 0.49 px per px. Panel box and plot area found there and mapped to the crop (map fitted on the bar blocks of both images, residual <= 0.8 px). Plot area in the crop: [17.7, 725.9, 266.3, 850.0].",
+    "y axis: tick labels 0 to 100 in steps of 20; the axis line runs on to 105. Calibrated on 6 ticks of the bitmap (0 at row 1729, 20 at row 1681, 40 at row 1633, 60 at row 1585, 80 at row 1537, 100 at row 1489): 2.40 px per 1 %, largest residual 0.00 %.",
+    "The shares printed in these bars cannot be read: the digits are about 5 px high in the bitmap and 3, 5, 6, 8, 9 and 0 cannot be told apart on any enlargement tried (14x to 22x). The values are therefore measured (source raster, label_printed null): the top edge of the green Correct segment in the middle columns of the bar, to a fraction of a pixel from the colour mix of the edge row, read on the calibration above. Good to +-0.3: on the 24 bars of pictures 10 and 14 whose printed share can be read, the same measurement is within 0.19 of the print.",
+    "Measured twice. First on the bitmap (the values); then on a fresh render of the PDF page at scale 6 with its own calibration (4 points from the tick marks, largest residual 0.02 %) and another edge rule (plain green walked up from the base, the mixed rows over it added by their share of green). First / second: GPT-3.5 Web 49.37 / 49.37; Claude3-Haiku API 51.23 / 51.33; Mistralv2-7b-Q8 Local 40.21 / 39.93; Llama2-13b-Q5 Local 33.12 / 33.10; Llama3.1-70b Poe 57.71 / 57.70; Phi3-3b-Q16 Local 43.60 / 43.53. Largest difference 0.28; none over 0.5."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-19"
+ },
+ "description": "Supplementary Figure S6. Performance stratified by patient care phase: 5 panels of stacked bars (5 rows x 1 column), 37 models per panel, six classes per bar (Correct, 2OP, EOP, NOP, Error, Incorrect) as percentages that sum to 100; the share of Correct is printed in the bar. Sample truth: the first and the last panel, six bars each. The printed shares cannot be read at the resolution of the embedded bitmap; the sample holds the Correct segments measured against the y axis.",
+ "uncertain": [
+  "sample: 6 bars of 2 panels, the Correct segment measured against the y axis (its printed share is unreadable in the bitmap)",
+  "None of the 12 sampled shares printed in this figure could be read: their digits are about 5 px high in the bitmap embedded in the PDF (547 x 1824 px, 220 ppi, lossless (FlateDecode)) and half that in the bundle crop. On enlargements of 14x to 22x (Lanczos, bicubic or nearest-neighbour resampling) and as single pixels they stay blobs of a few dark pixels. By the coordinator's decision of 2026-11-19 the 12 values are the measured tops of the Correct segments instead (source raster, +-0.3), not readings of the labels. The 12 bars follow one by one. A printed share, where a method can read one, may differ from these values by up to 0.3.",
+  "panel 1 'Question type: Complication (N = 55)', bar 1 'GPT-3.5 Web': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 56.3 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 56.2); the nearest multiple of 1/55 is 56.4.",
+  "panel 1 'Question type: Complication (N = 55)', bar 8 'Claude3-Haiku API': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 52.7 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 52.6); the nearest multiple of 1/55 is 52.7.",
+  "panel 1 'Question type: Complication (N = 55)', bar 15 'Mistralv2-7b-Q8 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 34.6 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 34.5); the nearest multiple of 1/55 is 34.5.",
+  "panel 1 'Question type: Complication (N = 55)', bar 22 'Llama2-13b-Q5 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 30.8 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 30.7); the nearest multiple of 1/55 is 30.9.",
+  "panel 1 'Question type: Complication (N = 55)', bar 29 'Llama3.1-70b Poe': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 58.4 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 58.3); the nearest multiple of 1/55 is 58.2.",
+  "panel 1 'Question type: Complication (N = 55)', bar 36 'Phi3-3b-Q16 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 41.7 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 41.6); the nearest multiple of 1/55 is 41.8.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 1 'GPT-3.5 Web': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 49.4 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 49.4); the nearest multiple of 1/217 is 49.3.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 8 'Claude3-Haiku API': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 51.2 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 51.3); the nearest multiple of 1/217 is 51.1.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 15 'Mistralv2-7b-Q8 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 40.2 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 39.9); the nearest multiple of 1/217 is 40.1. The top of this segment lies against the gridline of 40: the gridline row is green under the line (its colour is green mixed with white only), so the edge is put above it, at 40.2; a scan that stops under the gridline gives 39.9.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 22 'Llama2-13b-Q5 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 33.1 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 33.1); the nearest multiple of 1/217 is 33.2.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 29 'Llama3.1-70b Poe': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 57.7 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 57.7); the nearest multiple of 1/217 is 57.6.",
+  "panel 5 'Question type: Treatment (N = 217)', bar 36 'Phi3-3b-Q16 Local': the share printed in the bar cannot be read (digits about 5 px high in the PDF's bitmap). Value 43.6 is the top of the Correct segment measured against the y axis (+-0.3; second measurement 43.5); the nearest multiple of 1/217 is 43.8.",
+  "The x tick labels are blurred at this resolution; they are recognisable as the same 37 names in the same order as in pictures 10 and 14, where every one is legible. The list in axes.x.ticks is that reading.",
+  "Scorer hazard (docling/engines/figure_data/scoring.py: labels count as equal within a Levenshtein distance of 0.2 of the longer, values pair first-fit in prediction order). By that rule, computed here on lower-cased labels, these tick labels are the same: 'Llama2-13b-Q5 Local' (bar 22) and 'Llama2-7b-Q8 Local' (bar 19): 0.16; 'Llama3.1-70b Poe' (bar 29) and 'Llama2-70b Poe' (bar 23): 0.19; 'Llama3.1-70b Poe' (bar 29) and 'Llama3-70b Poe' (bar 27): 0.12; 'Llama3.1-70b Poe' (bar 29) and 'Llama3.1-8b Poe' (bar 28): 0.12; 'Llama3.1-70b Poe' (bar 29) and 'Llama3.1-405b Poe' (bar 30): 0.12; 'Phi3-3b-Q16 Local' (bar 36) and 'Phi3-14b-Q6 Local' (bar 37): 0.18. Against a prediction that lists all 37 bars from left to right the truth rows are then paired with an earlier bar instead of their own: bar 22 with bar 19 'Llama2-7b-Q8 Local'; bar 29 with bar 23 'Llama2-70b Poe'. Pair by exact tick label when scoring this sample.",
+  "The legend sits inside the plot area (top right) and covers the upper part of the last two bars; it is not a panel. Bar 36's Correct segment and its label lie below it."
+ ]
+}

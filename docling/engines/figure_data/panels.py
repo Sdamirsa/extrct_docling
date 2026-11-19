@@ -24,8 +24,11 @@
    the panels: a panel takes the alphabetically last letter above-left of
    its centre, several panels under one letter become ``a1, a2, ...``.
 4. **Grid fit.** When letters and gutters disagree (fewer panels than
-   letters), the letters' own grid splits the figure, or the VLM's panel
-   boxes do when a box reader is given.
+   letters), the letters' own grid splits the figure.
+
+When a vision model has listed the charts of the figure,
+:func:`cut_from_list` decides between this split and a cut made from the
+model's list.
 
 Everything is in work-image pixels.
 """
@@ -56,8 +59,20 @@ _ALIGN = 0.75
 _BAND_MAX_INK = 0.01
 _BOX_MARGIN = 0.15
 _LETTER = re.compile(r"^\(?([a-hA-H])\)?\.?$")
-
-BoxReader = Callable[[], list[tuple[str, Box]]]
+# The longest chart id of a model that names a chart and its crop (a, B2, 12).
+_ID_LENGTH = 4
+# More listed charts than this is a reply that repeats itself.
+_MAX_LISTED = 64
+# The shortest side of a chart, of the image's: under it a box is a sliver.
+_MIN_SIDE = 0.02
+# Listed boxes that touch or overlap a little are tried again this much
+# smaller on every side before they count as not separable.
+_LIST_SHRINK = (0.0, 0.03, 0.08)
+# The text height taken for a figure without words, of its height.
+_TEXT_HEIGHT = 0.015
+# A run of tick labels this long is an axis. Two were tried as weak
+# evidence when a model lists that many charts: no gain on 51 figures.
+_MIN_TICKS = 3
 
 
 class PanelBox(BaseModel):
@@ -71,6 +86,10 @@ class PanelSplitResult(BaseModel):
     method: str
     letters: list[str] = []
     notes: list[str] = []
+    # Set by :func:`cut_from_list`: the charts the rule splitter found and
+    # the charts the model listed.
+    rule_charts: int | None = None
+    listed_charts: int | None = None
 
 
 def split_panels(
@@ -78,27 +97,18 @@ def split_panels(
     words: list[Word],
     *,
     mode: PanelSplit = "auto",
-    box_reader: BoxReader | None = None,
-    expect: int | None = None,
 ) -> PanelSplitResult:
-    """Panels of *image* (H x W x 3, uint8); a single full-image panel when
-    nothing splits it. With *expect* (the number of charts a model sees),
-    axes of only two tick labels count too, provided they give exactly that
-    many charts: weak evidence is taken when a second witness agrees.
-    Mode ``gutters`` is the splitter without the axes step."""
+    """Panels of *image* (H x W x 3, uint8) as the rules alone find them;
+    a single full-image panel when nothing splits it. Mode ``gutters`` is
+    the splitter without the axes step."""
     height, width = image.shape[:2]
     full: Box = (0.0, 0.0, float(width), float(height))
     if mode == "off":
         return PanelSplitResult(panels=[PanelBox(id="1", bbox=full)], method="off")
-    if mode == "vlm" and box_reader is not None:
-        return _from_reader(box_reader, full, "vlm")
 
     mask = ink_mask(image)
-    if mode == "auto":
+    if mode != "gutters":
         charts = split_by_axes(mask, words)
-        if expect is not None and (charts is None or len(charts) != expect):
-            weak = split_by_axes(mask, words, min_ticks=2)
-            charts = weak if weak is not None and len(weak) == expect else charts
         if charts is not None:
             return PanelSplitResult(
                 panels=_name(charts, []),
@@ -135,10 +145,6 @@ def split_panels(
             f"letters {''.join(sorted(c for c, _ in letters))} and "
             f"{len(graphic)} gutter block(s) disagree"
         )
-        if box_reader is not None:
-            result = _from_reader(box_reader, full, "vlm")
-            result.notes = notes + result.notes
-            return result
         if len(graphic) < len(letters):
             return PanelSplitResult(
                 panels=_letter_grid(letters, width, height),
@@ -154,14 +160,147 @@ def split_panels(
     )
 
 
-def split_by_axes(
-    mask: np.ndarray, words: list[Word], *, min_ticks: int = 3
-) -> list[Box] | None:
+def cut_from_list(
+    image: np.ndarray,
+    words: list[Word],
+    listed: list[tuple[str, Box]],
+    *,
+    rules: PanelSplitResult | None = None,
+) -> PanelSplitResult:
+    """The charts of *image* given the charts a vision model lists, each
+    ``(id, box)`` with the box in pixels.
+
+    A model has the number of charts right far more often than the rules,
+    and their edges far less often (51 figures, 2026-11-19: the count right
+    on 42 to 51 against 26, the chart whole in its box for 53 to 145 of 236
+    against 220 once the rules are told where the charts are). So the
+    model's count decides and the rules draw the edges:
+
+    - the rule splitter's own cut (*rules*; made here when not given)
+      stands when it has as many charts as the model lists;
+    - when it has not, the image is cut between the listed boxes along the
+      widest ink-free bands and every cell is trimmed to its ink
+      (``method`` ``listed``); one listed chart is the whole image;
+    - when no straight cut separates the listed boxes, they are returned as
+      they are (``listed-boxes``) and the caller decides whether to read
+      from them.
+    """
+    height, width = image.shape[:2]
+    full: Box = (0.0, 0.0, float(width), float(height))
+    if rules is None:
+        rules = split_panels(image, words)
+    charts = [
+        (
+            name,
+            (
+                max(0.0, min(b[0], b[2])),
+                max(0.0, min(b[1], b[3])),
+                min(float(width), max(b[0], b[2])),
+                min(float(height), max(b[1], b[3])),
+            ),
+        )
+        for name, b in listed
+    ]
+    counts = {"rule_charts": len(rules.panels), "listed_charts": len(charts)}
+    if not charts or len(charts) == len(rules.panels):
+        return rules.model_copy(update=counts)
+    note = (
+        f"the rule splitter finds {len(rules.panels)} chart(s), the model "
+        f"lists {len(charts)}"
+    )
+    if len(charts) > _MAX_LISTED:
+        # A reply that repeats itself, not a figure.
+        return rules.model_copy(
+            update={**counts, "notes": [*rules.notes, f"{note}: too many, not taken"]}
+        )
+    # The count is the model's whatever its boxes are worth; a box without
+    # width or height says a chart is there and not where.
+    seeds = [(name, b) for name, b in charts if _wide_enough(b, width, height)]
+    if len(seeds) < len(charts):
+        note += f" ({len(charts) - len(seeds)} without a usable box)"
+    if not seeds:
+        return rules.model_copy(
+            update={**counts, "notes": [*rules.notes, f"{note}: no box to cut by"]}
+        )
+    if len(seeds) == 1:
+        return PanelSplitResult(
+            panels=[PanelBox(id="1", bbox=full)],
+            method="listed",
+            notes=[f"{note}: read whole"],
+            **counts,
+        )
+    mask = ink_mask(image)
+    heights = [w.bbox[3] - w.bbox[1] for w in words]
+    size = float(np.median(heights)) if heights else _TEXT_HEIGHT * height
+    for shrink in _LIST_SHRINK:
+        shrunk = [
+            _Seed(
+                (
+                    b[0] + shrink * (b[2] - b[0]),
+                    b[1] + shrink * (b[3] - b[1]),
+                    b[2] - shrink * (b[2] - b[0]),
+                    b[3] - shrink * (b[3] - b[1]),
+                ),
+                (True, True),
+            )
+            for _, b in seeds
+        ]
+        cells = _cut_between(shrunk, full, mask, size)
+        if cells is not None:
+            trimmed = [_ink_box(mask, cell) for cell in cells]
+            kept = [b for b in trimmed if _wide_enough(b, width, height)]
+            return PanelSplitResult(
+                panels=_named_as_listed(kept or trimmed, seeds),
+                method="listed",
+                notes=[f"{note}: cut between the listed charts"],
+                **counts,
+            )
+    return PanelSplitResult(
+        panels=_named_as_listed([b for _, b in seeds], seeds),
+        method="listed-boxes",
+        notes=[f"{note}; no straight cut separates them"],
+        **counts,
+    )
+
+
+def _wide_enough(box: Box, width: int, height: int) -> bool:
+    """A chart is never a sliver: both sides reach :data:`_MIN_SIDE` of the
+    image's."""
+    return (
+        box[2] - box[0] >= _MIN_SIDE * width and box[3] - box[1] >= _MIN_SIDE * height
+    )
+
+
+def _named_as_listed(boxes: list[Box], charts: list[tuple[str, Box]]) -> list[PanelBox]:
+    """*boxes* in reading order, each under the id of the listed chart it
+    overlaps most, else 1, 2, 3, ...: the ids are kept when each, without
+    its brackets and dots, is a short word of its own (a, B2, 12). A chart's
+    crop is named by its id, and a model sometimes writes a title where an
+    id is asked."""
+    ordered = _reading_order(boxes)
+    names = []
+    for box in ordered:
+        overlap = [
+            max(0.0, min(box[2], b[2]) - max(box[0], b[0]))
+            * max(0.0, min(box[3], b[3]) - max(box[1], b[1]))
+            for _, b in charts
+        ]
+        names.append(re.sub(r"[\W_]+", "", charts[int(np.argmax(overlap))][0]))
+    distinct = len({name.casefold() for name in names}) == len(names)
+    if not distinct or not all(0 < len(name) <= _ID_LENGTH for name in names):
+        names = [str(index + 1) for index in range(len(ordered))]
+    return [
+        PanelBox(id=name, bbox=box, letter=name if _LETTER.match(name) else None)
+        for name, box in zip(names, ordered)
+    ]
+
+
+def split_by_axes(mask: np.ndarray, words: list[Word]) -> list[Box] | None:
     """The boxes of the charts whose axes the tick labels show, or None
     when fewer than two are found or they cannot be told apart by straight
     cuts (one chart inside another)."""
     height, width = mask.shape
-    seeds, size = _chart_seeds(words, min_ticks)
+    seeds, size = _chart_seeds(words, _MIN_TICKS)
     if len(seeds) < 2:
         return None
     cells = _cut_between(seeds, (0.0, 0.0, float(width), float(height)), mask, size)
@@ -658,32 +797,6 @@ def _letter_grid(
                 )
             )
     return panels
-
-
-def _from_reader(reader: BoxReader, full: Box, method: str) -> PanelSplitResult:
-    boxes = reader()
-    width, height = full[2], full[3]
-    panels = [
-        PanelBox(
-            id=panel_id,
-            bbox=(
-                max(0.0, min(b[0], b[2])),
-                max(0.0, min(b[1], b[3])),
-                min(width, max(b[0], b[2])),
-                min(height, max(b[1], b[3])),
-            ),
-            letter=panel_id if _LETTER.match(panel_id) else None,
-        )
-        for panel_id, b in boxes
-        if abs(b[2] - b[0]) > 0.05 * width and abs(b[3] - b[1]) > 0.05 * height
-    ]
-    if not panels:
-        return PanelSplitResult(
-            panels=[PanelBox(id="1", bbox=full)],
-            method=method,
-            notes=["VLM returned no usable panel box"],
-        )
-    return PanelSplitResult(panels=panels, method=method)
 
 
 def _ink_density(mask: np.ndarray, box: Box) -> float:

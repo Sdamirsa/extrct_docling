@@ -1,0 +1,1101 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/7",
+    "image_path": "images/picture_008.png",
+    "page": 6,
+    "bbox": [
+      124.39,
+      54.39,
+      478.65,
+      326.51
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "a",
+      "bbox_px": [
+        2.0,
+        0.5,
+        529.0,
+        152.5
+      ],
+      "title": "a",
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Admission",
+            "(N=698)",
+            "Note",
+            "Note",
+            "Note",
+            "Note",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "F",
+            ".",
+            "F",
+            "yo",
+            ".",
+            "F",
+            "yo",
+            ".",
+            "F",
+            "yo",
+            "HISTORY:",
+            ".",
+            "HISTORY:",
+            ".",
+            "HISTORY:"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "CURB-65 Score",
+          "color": "pink"
+        }
+      ],
+      "data": [
+        {
+          "category": "Patient X",
+          "x": 855.0,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Patient Y",
+          "x": 815.0,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Patient Z",
+          "x": 795.0,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Patient O",
+          "x": 785.0,
+          "series": "CURB-65 Score",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "b",
+      "bbox_px": [
+        2.0,
+        175.5,
+        252.5,
+        390.8
+      ],
+      "title": "b",
+      "kind": "stacked_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            0.0,
+            20.0,
+            40.0,
+            60.0,
+            80.0,
+            100.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Patient",
+            "Eligible",
+            "Process",
+            "Correct",
+            "Result",
+            "Useful"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#4da985",
+          "color": "#4da985"
+        },
+        {
+          "name": "#f4cd4d",
+          "color": "#f4cd4d"
+        },
+        {
+          "name": "#cd615a",
+          "color": "#cd615a"
+        },
+        {
+          "name": "#4ca883",
+          "color": "#4ca883"
+        },
+        {
+          "name": "#f3cc4c",
+          "color": "#f3cc4c"
+        },
+        {
+          "name": "#cd6059",
+          "color": "#cd6059"
+        }
+      ],
+      "data": [
+        {
+          "category": "Patient",
+          "x": null,
+          "series": "#4da985",
+          "value": 80.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "80.6%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Patient",
+          "x": null,
+          "series": "#f4cd4d",
+          "value": 8.7429,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "Patient",
+          "x": null,
+          "series": "#cd615a",
+          "value": 10.6159,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "Process",
+          "x": null,
+          "series": "#4da985",
+          "value": 52.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "52.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Process",
+          "x": null,
+          "series": "#f4cd4d",
+          "value": 28.4378,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "Process",
+          "x": null,
+          "series": "#cd615a",
+          "value": 19.2144,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "Result",
+          "x": null,
+          "series": "#4da985",
+          "value": 68.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "68.6%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Result",
+          "x": null,
+          "series": "#f4cd4d",
+          "value": 29.045,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "Result",
+          "x": null,
+          "series": "#cd615a",
+          "value": 2.3238,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "#4ca883",
+          "value": 22.6443,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "#f3cc4c",
+          "value": 22.6443,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "#cd6059",
+          "value": 22.6443,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "c",
+      "bbox_px": [
+        290.3,
+        178.0,
+        529.0,
+        407.9
+      ],
+      "title": "c",
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Paitent Eligibility",
+          "color": "#2ca02c"
+        },
+        {
+          "name": "Process Correctness",
+          "color": "#ff7f0e"
+        },
+        {
+          "name": "Result Usefulness",
+          "color": "#1f77b4"
+        },
+        {
+          "name": "Average",
+          "color": "#2ca02c"
+        }
+      ],
+      "data": [
+        {
+          "category": "PERC",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PERC",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PERC",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PERC",
+          "x": null,
+          "series": "Average",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "SIRS Criteria",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "SIRS Criteria",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "SIRS Criteria",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "SIRS Criteria",
+          "x": null,
+          "series": "Average",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GBS",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.80",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GBS",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.92,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.92",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GBS",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.92,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.92",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GBS",
+          "x": null,
+          "series": "Average",
+          "value": 0.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.88",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "qSOFA",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.95,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.95",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "qSOFA",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.75",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "qSOFA",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.88",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "qSOFA",
+          "x": null,
+          "series": "Average",
+          "value": 0.86,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.86",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CURB-65 Score",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.90",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CURB-65 Score",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.81",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CURB-65 Score",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.81,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.81",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CURB-65 Score",
+          "x": null,
+          "series": "Average",
+          "value": 0.84,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.84",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GCS",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GCS",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.55,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.55",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GCS",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.92,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.92",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GCS",
+          "x": null,
+          "series": "Average",
+          "value": 0.82,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.82",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' DVT",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.95,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.95",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' DVT",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.55,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.55",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' DVT",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.83,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.83",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' DVT",
+          "x": null,
+          "series": "Average",
+          "value": 0.78,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.78",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Ankle Rules",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.70",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Ankle Rules",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.67,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.67",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Ankle Rules",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.88,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.88",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Ankle Rules",
+          "x": null,
+          "series": "Average",
+          "value": 0.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.75",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CHADS2 Score",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.60",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CHADS2 Score",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.62",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CHADS2 Score",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CHADS2 Score",
+          "x": null,
+          "series": "Average",
+          "value": 0.74,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.74",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Knee Rules",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.85,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.85",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Knee Rules",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.69,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.69",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Knee Rules",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.67,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.67",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ottawa Knee Rules",
+          "x": null,
+          "series": "Average",
+          "value": 0.73,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.73",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCHR",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.80",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCHR",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.69,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.69",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCHR",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.67,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.67",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCHR",
+          "x": null,
+          "series": "Average",
+          "value": 0.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.72",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' PE",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.95,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.95",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' PE",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.45,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.45",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' PE",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.75",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Wells' PE",
+          "x": null,
+          "series": "Average",
+          "value": 0.72,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.72",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PECARN Algorithm",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.90",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PECARN Algorithm",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.56,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.56",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PECARN Algorithm",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.50",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "PECARN Algorithm",
+          "x": null,
+          "series": "Average",
+          "value": 0.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.65",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Centor Criteria",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.75,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.75",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Centor Criteria",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.45,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.45",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Centor Criteria",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.62,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.62",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Centor Criteria",
+          "x": null,
+          "series": "Average",
+          "value": 0.61,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.61",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "HEART Score",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.65,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.65",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "HEART Score",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.42,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.42",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "HEART Score",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.50",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "HEART Score",
+          "x": null,
+          "series": "Average",
+          "value": 0.52,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.52",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCR",
+          "x": null,
+          "series": "Paitent Eligibility",
+          "value": 0.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.80",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCR",
+          "x": null,
+          "series": "Process Correctness",
+          "value": 0.42,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.42",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCR",
+          "x": null,
+          "series": "Result Usefulness",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CCR",
+          "x": null,
+          "series": "Average",
+          "value": 0.41,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.41",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure illustrates the workflow of AgentMD, showing how admission notes are processed into risk summaries and then evaluated by clinicians, alongside performance metrics.",
+  "uncertain": []
+}

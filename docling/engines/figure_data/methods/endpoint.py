@@ -38,10 +38,22 @@ DOTENV_FILENAME = ".env"
 _RETRIED = {408, 409, 429, 500, 502, 503, 504, 529}
 _LOCAL_HOSTS = {"localhost", "127.0.0.1", "::1", "0.0.0.0"}
 _FENCE = re.compile(r"^```(?:json)?\s*|\s*```$")
+_FENCED = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
 
 class EndpointError(RuntimeError):
     """The endpoint is unreachable, refused the request, or returned no JSON."""
+
+
+class ReplyError(EndpointError):
+    """The endpoint answered, and the answer holds no JSON object. The call
+    was made and paid for: what it took and what it said come with the
+    error."""
+
+    def __init__(self, message: str, *, text: str, reply: EndpointReply) -> None:
+        super().__init__(message)
+        self.text = text
+        self.reply = reply
 
 
 class EndpointReply(BaseModel):
@@ -177,8 +189,9 @@ class EndpointClient:
             "messages": [
                 {
                     "role": "system",
-                    "content": f"{system}\n\nReply with one JSON object of this "
-                    f"JSON schema and nothing else:\n{json.dumps(schema)}",
+                    "content": f"{system}\n\nYou have no tools in this "
+                    "conversation: write no tool call. Reply with one JSON "
+                    f"object of this JSON schema and nothing else:\n{json.dumps(schema)}",
                 },
                 {"role": "user", "content": content},
             ],
@@ -200,10 +213,9 @@ class EndpointClient:
                 f"{choice.get('finish_reason')!r})"
             )
         cut = choice.get("finish_reason") == "length"
-        data = _json_object(text, cut)
         usage = payload.get("usage") or {}
-        return EndpointReply(
-            data=data,
+        reply = EndpointReply(
+            data={},
             seconds=round(time.perf_counter() - started, 2),
             prompt_tokens=usage.get("prompt_tokens"),
             completion_tokens=usage.get("completion_tokens"),
@@ -213,6 +225,11 @@ class EndpointClient:
             usage=usage,
             asked_with=[name for name in optional if name in body],
         )
+        try:
+            reply.data = _json_object(text, cut)
+        except EndpointError as exc:
+            raise ReplyError(str(exc), text=text, reply=reply) from exc
+        return reply
 
     def _answer(
         self, body: dict[str, Any], optional: dict[str, Any]
@@ -280,18 +297,32 @@ def _text(content: object) -> str:
 
 
 def _json_object(text: str, cut: bool) -> dict[str, Any]:
+    """The JSON object of a reply. A model asked for JSON alone still writes
+    a sentence before it, fences it, or (seen with many images at high
+    reasoning effort) writes tool calls it does not have around it: the
+    object is looked for as the whole reply, then inside a code fence, then
+    from the first brace to the last."""
     stripped = _FENCE.sub("", text.strip())
-    try:
-        value = json.loads(stripped)
-    except json.JSONDecodeError as exc:
-        # A reply that ran into the token limit: keep its complete items.
-        kept = salvage_json(stripped) if cut else None
-        if kept is None:
-            raise EndpointError(f"no JSON object in the reply: {text[:200]!r}") from exc
-        return kept
-    if not isinstance(value, dict):
+    fenced = _FENCED.search(text)
+    first, last = text.find("{"), text.rfind("}")
+    candidates = [stripped]
+    if fenced is not None:
+        candidates.append(fenced.group(1))
+    if 0 <= first < last:
+        candidates.append(text[first : last + 1])
+    for candidate in candidates:
+        try:
+            value = json.loads(candidate)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict):
+            return value
         raise EndpointError(f"the reply is not a JSON object: {text[:200]!r}")
-    return value
+    # A reply that ran into the token limit: keep its complete items.
+    kept = salvage_json(text[first:] if first >= 0 else stripped) if cut else None
+    if kept is None:
+        raise EndpointError(f"no JSON object in the reply: {text[:200]!r}")
+    return kept
 
 
 def _refusal(response: httpx.Response) -> str:

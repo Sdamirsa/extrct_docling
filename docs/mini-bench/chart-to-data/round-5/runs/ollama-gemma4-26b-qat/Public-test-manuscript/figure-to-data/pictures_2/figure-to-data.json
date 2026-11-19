@@ -1,0 +1,1103 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 16,
+    "bbox": [
+      73.98,
+      310.45,
+      538.46,
+      610.95
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        3.9,
+        2.9,
+        349.2,
+        135.6
+      ],
+      "title": "a",
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            70.0
+          ],
+          "ticks": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0
+          ]
+        },
+        "y": {
+          "name": "Response Generation",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Langchain",
+            "Function Call -",
+            "Standard Output",
+            "0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "GPT3-API",
+          "color": "#4f81bd"
+        },
+        {
+          "name": "GPT4-API",
+          "color": "#ffa500"
+        }
+      ],
+      "data": [
+        {
+          "category": "Standard Output",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 39.9431,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Standard Output",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 54.9715,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Function Call",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 43.2827,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Function Call",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 43.2827,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "LangChain",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 39.9431,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "LangChain",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 39.9431,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        362.0,
+        2.9,
+        696.0,
+        135.6
+      ],
+      "title": "b",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            38.0,
+            52.0
+          ],
+          "ticks": [
+            38.0,
+            40.0,
+            42.0,
+            44.0,
+            46.0,
+            48.0,
+            50.0,
+            52.0
+          ]
+        },
+        "y": {
+          "name": "Temperature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Default (temp=1)",
+            "Default - 10%",
+            "Default - 40%",
+            "Default - 60%",
+            "Default - 90%",
+            "temp=0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "best prompt",
+          "color": "dark blue"
+        },
+        {
+          "name": "raw prompt",
+          "color": "light blue"
+        }
+      ],
+      "data": [
+        {
+          "category": "Default (temp=1)",
+          "x": null,
+          "series": "best prompt",
+          "value": 48.0194,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default (temp=1)",
+          "x": null,
+          "series": "raw prompt",
+          "value": 51.5595,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default - 10%",
+          "x": null,
+          "series": "best prompt",
+          "value": 44.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Default - 10%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 51.5595,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default - 40%",
+          "x": null,
+          "series": "best prompt",
+          "value": 42.6053,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default - 40%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Default - 60%",
+          "x": null,
+          "series": "best prompt",
+          "value": 45.9995,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default - 60%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 48.0194,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Default - 90%",
+          "x": null,
+          "series": "best prompt",
+          "value": 44.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Default - 90%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "temp=0",
+          "x": null,
+          "series": "best prompt",
+          "value": 45.9995,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "temp=0",
+          "x": null,
+          "series": "raw prompt",
+          "value": 45.9995,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: Default - 10%, Default - 40%, Default - 90%, Default - 90%"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        3.9,
+        147.4,
+        348.7,
+        450.9
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            50.0
+          ],
+          "ticks": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0
+          ]
+        },
+        "y": {
+          "name": "Experiment Setting",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Best Prompt (candidate 4)",
+            "Give Model Time to Think",
+            "Consensus Technique",
+            "Expert Mimicry",
+            "Confidence Scoring",
+            "Contextual Embedding",
+            "Comparative Analysis",
+            "Elimination Method",
+            "Answer Justification",
+            "Chain of Thought",
+            "Option Analysis",
+            "Direct Question",
+            "Raw",
+            "0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "MT: 512",
+          "color": "#337ab7"
+        },
+        {
+          "name": "MT: 1024",
+          "color": "#87ceeb"
+        },
+        {
+          "name": "MT: 512plus",
+          "color": "#00008b"
+        }
+      ],
+      "data": [
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 512",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 19.9052,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        362.0,
+        146.9,
+        696.0,
+        450.9
+      ],
+      "title": "d",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            35.0,
+            52.5
+          ],
+          "ticks": [
+            35.0,
+            40.0,
+            42.5,
+            45.0,
+            47.5,
+            50.0,
+            52.5
+          ]
+        },
+        "y": {
+          "name": "Function",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Candidate 6",
+            "Candidate 5",
+            "Candidate 4",
+            "Candidate 3",
+            "Candidate 2",
+            "Candidate 1",
+            "Give Model Time to Think",
+            "Consensus Technique",
+            "Expert Mimicry",
+            "Confidence Scoring",
+            "Contextual Embedding",
+            "Comparative Analysis",
+            "Elimination Method",
+            "Answer Justification",
+            "Chain of Thought",
+            "Option Analysis",
+            "Direct Question-",
+            "Raw"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Candidate 6",
+          "x": null,
+          "series": null,
+          "value": 47.7795,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Candidate 5",
+          "x": null,
+          "series": null,
+          "value": 47.7795,
+          "err_lo": 45.4138,
+          "err_hi": 50.1452,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Candidate 4",
+          "x": null,
+          "series": null,
+          "value": 48.7148,
+          "err_lo": 45.4138,
+          "err_hi": 52.5109,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Candidate 3",
+          "x": null,
+          "series": null,
+          "value": 44.0384,
+          "err_lo": 43.0756,
+          "err_hi": 44.9737,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Candidate 2",
+          "x": null,
+          "series": null,
+          "value": 47.7795,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Candidate 1",
+          "x": null,
+          "series": null,
+          "value": 37.1613,
+          "err_lo": 35.3182,
+          "err_hi": 38.9768,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": null,
+          "value": 44.0384,
+          "err_lo": 40.3523,
+          "err_hi": 46.129,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": null,
+          "value": 39.4995,
+          "err_lo": 37.6839,
+          "err_hi": 41.3426,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": null,
+          "value": 45.4138,
+          "err_lo": 44.1209,
+          "err_hi": 46.6792,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": null,
+          "value": 45.4138,
+          "err_lo": 44.1209,
+          "err_hi": 46.6792,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": null,
+          "value": 46.129,
+          "err_lo": 43.1856,
+          "err_hi": 49.0724,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": null,
+          "value": 43.0756,
+          "err_lo": 42.1678,
+          "err_hi": 44.0384,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": null,
+          "value": 44.0384,
+          "err_lo": 40.3523,
+          "err_hi": 46.129,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": null,
+          "value": 47.0643,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": null,
+          "value": 47.0643,
+          "err_lo": 44.1209,
+          "err_hi": 50.7229,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": null,
+          "value": 44.0384,
+          "err_lo": 43.1856,
+          "err_hi": 44.9186,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": null,
+          "value": 47.0643,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": null,
+          "value": 44.0384,
+          "err_lo": 43.1856,
+          "err_hi": 44.9186,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure presents a comparative analysis of different LLM response generation methods, temperature settings, experiment settings, and functions across various accuracy metrics.",
+  "uncertain": []
+}

@@ -41,6 +41,7 @@ from docling.engines.figure_data.prepare import (
     PrepareManifest,
     load_manifest,
     prepare_bundle,
+    unlist,
 )
 from docling.engines.figure_data.publish import RUN_BLOCK_KEY, embed_results
 from docling.engines.figure_data.report import (
@@ -207,7 +208,9 @@ def read_step(
             if row.folder is None or (only is not None and row.folder not in only):
                 continue
             figure_dir = step_dir / row.folder
-            prepared = PreparedFigure.load(figure_dir)
+            # Every run starts from the rule splitter's cut: an earlier run
+            # with a cloud model may have cut this folder by its chart list.
+            prepared = unlist(PreparedFigure.load(figure_dir), figure_dir)
             result = _read_one(active, prepared, figure_dir, options)
             outcome = _outcome(row.folder, result)
             write_reading(

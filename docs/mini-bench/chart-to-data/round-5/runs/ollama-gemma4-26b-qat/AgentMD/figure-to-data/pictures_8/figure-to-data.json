@@ -1,0 +1,1447 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/8",
+    "image_path": "images/picture_009.png",
+    "page": 7,
+    "bbox": [
+      57.09,
+      49.37,
+      535.42,
+      562.74
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "c",
+      "bbox_px": [
+        6.4,
+        2.9,
+        689.5,
+        157.9
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.02,
+            0.14
+          ],
+          "ticks": [
+            "Admission",
+            "Note",
+            "Note",
+            "Note",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "COMPLAINT:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "ILLNESS:",
+            "F",
+            ".",
+            "F",
+            "ILLNESS:",
+            ".",
+            "F",
+            "yo",
+            ".",
+            "F",
+            "yo",
+            ".",
+            ".",
+            "HISTORY:",
+            ".",
+            "HISTORY:",
+            ".",
+            "HISTORY:"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Density",
+          "color": "#B9D1E6"
+        }
+      ],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "d",
+      "bbox_px": [
+        6.4,
+        157.9,
+        697.9,
+        400.7
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "# Calculators / Patient",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            20.0
+          ],
+          "ticks": [
+            "Patient",
+            "B",
+            "Patient",
+            "Y",
+            ".",
+            ".",
+            "."
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            0.012
+          ],
+          "ticks": [
+            "by",
+            "Sepsis",
+            "X",
+            "Y",
+            "Z",
+            "O",
+            "."
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 15.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 20.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 100.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 200.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 300.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 400.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "e1",
+      "bbox_px": [
+        6.4,
+        410.0,
+        225.6,
+        490.9
+      ],
+      "title": "Specificity",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "of",
+            "AE",
+            "CHF"
+          ]
+        },
+        "y": {
+          "name": "Density",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.02,
+            0.04
+          ],
+          "ticks": [
+            0.04,
+            0.02
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.064,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "e2",
+      "bbox_px": [
+        241.8,
+        416.4,
+        384.5,
+        490.9
+      ],
+      "title": "Urgency",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.05,
+            0.1
+          ],
+          "ticks": [
+            0.1,
+            0.05
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.1394,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.45
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "e3",
+      "bbox_px": [
+        400.7,
+        416.4,
+        543.4,
+        490.9
+      ],
+      "title": "Severity",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.02,
+            0.04
+          ],
+          "ticks": [
+            0.04,
+            0.02
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.02,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.7
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.045,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?, ?"
+      ]
+    },
+    {
+      "id": "e4",
+      "bbox_px": [
+        560.1,
+        416.4,
+        702.8,
+        490.9
+      ],
+      "title": "Absence",
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.01,
+            0.02
+          ],
+          "ticks": [
+            0.02,
+            0.01
+          ]
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": []
+    },
+    {
+      "id": "e5",
+      "bbox_px": [
+        19.6,
+        490.9,
+        232.5,
+        579.2
+      ],
+      "title": "0.00",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Mortality",
+            "0.02"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.04
+          ],
+          "ticks": [
+            0.04,
+            0.02,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#1f77b4",
+          "color": "#1f77b4"
+        }
+      ],
+      "data": [
+        {
+          "category": "0.02",
+          "x": null,
+          "series": "#1f77b4",
+          "value": 0.0001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "0.02",
+          "x": null,
+          "series": "#1f77b4",
+          "value": 0.0001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "0.02",
+          "x": null,
+          "series": "#1f77b4",
+          "value": 0.0001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "0.02",
+          "x": null,
+          "series": "#1f77b4",
+          "value": 0.0001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": "0.02",
+          "x": null,
+          "series": "#1f77b4",
+          "value": 0.0001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "e6",
+      "bbox_px": [
+        241.8,
+        490.9,
+        391.8,
+        579.2
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.2
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 25.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": 100.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "e7",
+      "bbox_px": [
+        400.7,
+        490.9,
+        550.7,
+        579.2
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.04
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "e8",
+      "bbox_px": [
+        560.1,
+        490.9,
+        709.6,
+        579.2
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            0.2
+          ],
+          "ticks": [
+            0.2,
+            0.1,
+            0.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": null,
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "f1",
+      "bbox_px": [
+        5.4,
+        579.7,
+        190.8,
+        767.5
+      ],
+      "title": "0 25 50",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#ff0000",
+          "color": "#ff0000"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.25,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.063,
+          "series": "#ff0000",
+          "value": 0.25,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.1877,
+          "series": "#ff0000",
+          "value": 0.7512,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.4373,
+          "series": "#ff0000",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "f2",
+      "bbox_px": [
+        190.8,
+        579.7,
+        366.8,
+        767.5
+      ],
+      "title": "75 100 0 25 50 75",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#ff0000",
+          "color": "#ff0000"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0007,
+          "series": "#ff0000",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0304,
+          "series": "#ff0000",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0304,
+          "series": "#ff0000",
+          "value": 0.1442,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.1049,
+          "series": "#ff0000",
+          "value": 0.1442,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.3135,
+          "series": "#ff0000",
+          "value": 0.8583,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.7902,
+          "series": "#ff0000",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "f3",
+      "bbox_px": [
+        376.6,
+        579.7,
+        550.7,
+        767.5
+      ],
+      "title": "100 0 25 50 75 100",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#ff0000",
+          "color": "#ff0000"
+        },
+        {
+          "name": "#0000ff",
+          "color": "#0000ff"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.6",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.1503,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.3,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.8989,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#ff0000",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#0000ff",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0505,
+          "series": "#0000ff",
+          "value": 0.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.4",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.3998,
+          "series": "#0000ff",
+          "value": 0.8012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.6992,
+          "series": "#0000ff",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#0000ff",
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1.0",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "f4",
+      "bbox_px": [
+        553.2,
+        579.7,
+        717.0,
+        767.5
+      ],
+      "title": "0 25 50 75 100",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "#ff0000",
+          "color": "#ff0000"
+        },
+        {
+          "name": "#0000ff",
+          "color": "#0000ff"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#ff0000",
+          "value": 0.309,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.0671,
+          "series": "#ff0000",
+          "value": 0.309,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.0671,
+          "series": "#ff0000",
+          "value": 0.4628,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.1337,
+          "series": "#ff0000",
+          "value": 0.4628,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.3333,
+          "series": "#ff0000",
+          "value": 0.6935,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.3333,
+          "series": "#ff0000",
+          "value": 0.8473,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.8656,
+          "series": "#ff0000",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#ff0000",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.0006,
+          "series": "#0000ff",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.00",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": null,
+          "x": 0.1337,
+          "series": "#0000ff",
+          "value": 0.309,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.5329,
+          "series": "#0000ff",
+          "value": 0.6166,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.7325,
+          "series": "#0000ff",
+          "value": 0.8473,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.7325,
+          "series": "#0000ff",
+          "value": 0.9242,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.8656,
+          "series": "#0000ff",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        },
+        {
+          "category": null,
+          "x": 0.9987,
+          "series": "#0000ff",
+          "value": 1.0012,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vector",
+          "confidence": 0.9
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure illustrates the workflow and performance evaluation of AgentMD, a system that extracts risk summaries from patient notes and compares its performance against GPT-4 across various medical risk calculators.",
+  "uncertain": []
+}

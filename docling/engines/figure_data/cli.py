@@ -84,7 +84,7 @@ _Out = Annotated[
 ]
 _Method = Annotated[
     FigureMethod,
-    typer.Option(help="ollama (local), cloud (one API call per figure) or agent."),
+    typer.Option(help="ollama (local), cloud (a model behind an API) or agent."),
 ]
 _Model = Annotated[
     str | None,
@@ -144,7 +144,10 @@ def prepare(
     pdf_dir: _PdfDir = None,
     out: _Out = None,
     panel_split: Annotated[
-        PanelSplit, typer.Option(help="auto, gutters (no axes step) or off.")
+        PanelSplit,
+        typer.Option(
+            help="auto or rules (the same here), gutters (no axes step), off."
+        ),
     ] = "auto",
     force: Annotated[
         bool, typer.Option(help="Prepare again what is already prepared.")
@@ -197,7 +200,12 @@ def read(
         float, typer.Option(help="ollama: a call is cut after this many seconds.")
     ] = FigureDataOptions().time_budget_s_per_call,
     panel_split: Annotated[
-        PanelSplit, typer.Option(help="ollama: auto, gutters, off or vlm.")
+        PanelSplit,
+        typer.Option(
+            help="auto: the model lists the charts and the rules cut by its "
+            "list (ollama, cloud). rules: the rule splitter alone. ollama "
+            "also: gutters, off, vlm."
+        ),
     ] = "auto",
     effort: Annotated[
         str,

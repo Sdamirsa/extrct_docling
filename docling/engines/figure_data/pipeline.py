@@ -7,9 +7,11 @@
 ``measured``: the figure is split into its charts (:mod:`.panels`). Charts
 drawn with PDF paths are read by the vector reader. One overview call
 first says whether the figure holds data at all (a diagram or a signal
-trace is not read) and how many charts it sees:
-a figure with several charts that cannot be separated is not read, since a
-model given several charts in one image merges them. Each chart then gets
+trace is not read) and lists its charts: the rule splitter's cut stands
+when it has that many, else the figure is cut between the listed charts
+(:func:`.panels.cut_from_list`). A figure whose listed charts no straight
+cut separates is not read, since a model given several charts in one image
+merges them. Each chart then gets
 one grounded VLM call on its own crop, whose pointed marks go through the
 chart's axis maps (bar ends snapped to pixel edges first), the model's own
 number kept where no axis map exists. Printed labels found among the
@@ -36,6 +38,7 @@ from docling.engines.figure_data.panels import (
     PanelBox,
     PanelSplitResult,
     background_colour,
+    cut_from_list,
     split_panels,
 )
 from docling.engines.figure_data.readers.raster import refine_edge
@@ -227,14 +230,17 @@ class _Reader:
                 self.uncertain.append(f"not a data chart: {overview.description}")
                 self.split_method = "overview"
                 return []
-            if overview is not None and mode != "gutters":
+            if overview is not None and mode in ("auto", "vlm"):
                 agreed = self._agree(split, overview)
                 if agreed is None:
                     self.split_method = split.method
                     return []
-                if agreed is not split:
-                    split = agreed
-                    drawn = {p.id: self._vector(p) for p in split.panels}
+                if agreed.panels != split.panels:
+                    # The charts changed: read the PDF's paths again, and
+                    # drop the marks drawn for the charts that are gone.
+                    self.overlay.clear()
+                    drawn = {p.id: self._vector(p) for p in agreed.panels}
+                split = agreed
         self.split_method = split.method
         self.issues.extend(split.notes)
         inside = [w for p in split.panels for w in words_in(self.job.words, p.bbox)]
@@ -268,9 +274,11 @@ class _Reader:
     def _agree(
         self, split: PanelSplitResult, overview: OverviewResponse
     ) -> PanelSplitResult | None:
-        """The split to read given the charts the model sees, or None when
-        the figure holds several charts that cannot be separated. Charts
-        found by their own tick labels stand whatever the model counts."""
+        """The split to read given the charts the model lists
+        (:func:`cut_from_list`), or None when it lists several that no
+        straight cut separates: this engine reads one crop per chart, and
+        the model's own boxes are not crops to read from (0 of 5 such
+        figures cut right, 2026-11-19)."""
         full: Box = (0.0, 0.0, float(self.image.width), float(self.image.height))
         seen, found = len(overview.charts), len(split.panels)
         if self.options.panel_split == "vlm" and seen > 1:
@@ -279,25 +287,20 @@ class _Reader:
                 for index, chart in enumerate(overview.charts)
             ]
             return PanelSplitResult(panels=boxes, method="vlm")
-        if split.method == "axes" or seen == found:
-            if seen != found:
-                split.notes.append(f"the model sees {seen} chart(s)")
-            return split
-        if seen <= 1:
-            return PanelSplitResult(
-                panels=[PanelBox(id="1", bbox=full)],
-                method="single",
-                notes=[f"{found} blocks, one chart seen by the model: read whole"],
-            )
-        weak = split_panels(self.pixels, self.job.words, mode="auto", expect=seen)
-        if len(weak.panels) == seen:
-            return weak
-        self.uncertain.append(
-            f"not read: the model sees {seen} charts in this figure and the "
-            f"layout analysis separates {found}; one image of several charts "
-            "is not read reliably"
+        agreed = cut_from_list(
+            self.pixels,
+            self.job.words,
+            [(chart.id, _grid_box(chart.box, full)) for chart in overview.charts],
+            rules=split,
         )
-        return None
+        if agreed.method == "listed-boxes":
+            self.uncertain.append(
+                f"not read: the model sees {seen} charts in this figure and the "
+                f"layout analysis separates {found}; one image of several charts "
+                "is not read reliably"
+            )
+            return None
+        return agreed
 
     def _vector(self, panel_box: PanelBox) -> Panel | None:
         if self.job.source_kind not in ("vector", "mixed"):

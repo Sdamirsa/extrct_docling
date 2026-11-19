@@ -1,0 +1,271 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/5",
+    "image_path": "images/picture_006.png",
+    "page": 5,
+    "bbox": [
+      61.13,
+      262.42,
+      528.0,
+      431.95
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.5,
+        249.9,
+        252.3
+      ],
+      "title": "Accuracy on RiskQA",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Random",
+            "CoT",
+            "AgentMD"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Random",
+          "x": null,
+          "series": null,
+          "value": 0.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.200",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CoT (GPT-3.5)",
+          "x": null,
+          "series": null,
+          "value": 0.321,
+          "err_lo": 0.3,
+          "err_hi": 0.343,
+          "label_printed": "0.321",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "AgentMD (GPT-3.5)",
+          "x": null,
+          "series": null,
+          "value": 0.546,
+          "err_lo": 0.521,
+          "err_hi": 0.572,
+          "label_printed": "0.546",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "Error bars estimated from the image; Random has no error bar."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        256.7,
+        0.5,
+        484.0,
+        252.3
+      ],
+      "title": "Accuracy on RiskQA",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Random",
+            "CoT",
+            "AgentMD"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Random",
+          "x": null,
+          "series": null,
+          "value": 0.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0.200",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "CoT (GPT-4)",
+          "x": null,
+          "series": null,
+          "value": 0.409,
+          "err_lo": 0.385,
+          "err_hi": 0.433,
+          "label_printed": "0.409",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "AgentMD (GPT-4)",
+          "x": null,
+          "series": null,
+          "value": 0.877,
+          "err_lo": 0.862,
+          "err_hi": 0.894,
+          "label_printed": "0.877",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "Error bars estimated from the image; Random has no error bar."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        502.2,
+        29.0,
+        700.0,
+        252.3
+      ],
+      "title": "Accuracy of AgentMD Tool Selection",
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "MedCPT",
+            "AgentMD",
+            "AgentMD"
+          ]
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            1.0
+          ],
+          "ticks": [
+            1.0,
+            0.8,
+            0.6,
+            0.4,
+            0.2,
+            0.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "MedCPT",
+          "x": null,
+          "series": null,
+          "value": 0.723,
+          "err_lo": 0.698,
+          "err_hi": 0.747,
+          "label_printed": "0.723",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "AgentMD (GPT-3.5)",
+          "x": null,
+          "series": null,
+          "value": 0.663,
+          "err_lo": 0.638,
+          "err_hi": 0.687,
+          "label_printed": "0.663",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "AgentMD (GPT-4)",
+          "x": null,
+          "series": null,
+          "value": 0.823,
+          "err_lo": 0.802,
+          "err_hi": 0.843,
+          "label_printed": "0.823",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "Error bars estimated from the image."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Three bar charts of accuracy: AgentMD vs CoT and random baselines on RiskQA with GPT-3.5 (b) and GPT-4 (c), and accuracy of AgentMD tool selection compared with MedCPT (d), each with error bars.",
+  "uncertain": [
+    "Panel a (example question) is not part of the supplied image."
+  ]
+}

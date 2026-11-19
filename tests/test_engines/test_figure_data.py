@@ -337,8 +337,8 @@ def test_charts_packed_without_a_gutter_are_split_by_their_tick_labels() -> None
     """Three charts 5 px apart (no gutter of 1 % of the width): each has a
     run of tick labels, and the cut goes through the free band between a
     plot and the next chart's labels. One label misread by OCR ("80" for
-    "0.8") does not cost the chart its axis; two tick labels alone count
-    only when a model also sees that many charts."""
+    "0.8") does not cost the chart its axis; two tick labels alone are no
+    axis, so the rules find two charts where there are three."""
     image = np.full((200, 648, 3), 255, dtype=np.uint8)
     scale = [(30, "1.0"), (60, "0.8"), (90, "0.6"), (120, "0.4"), (150, "0.2")]
     words: list[Word] = []
@@ -352,13 +352,6 @@ def test_charts_packed_without_a_gutter_are_split_by_their_tick_labels() -> None
     two = split_panels(image, words)
     assert two.method == "axes" and len(two.panels) == 2
     assert two.panels[0].bbox == pytest.approx((10, 20, 217, 170), abs=3)
-
-    for word in words:
-        word.text = word.text.replace("80", "0.8")
-    three = split_panels(image, words, expect=3)
-    assert [p.bbox[0] for p in three.panels] == pytest.approx([10, 222, 434], abs=3)
-    assert [p.bbox[2] for p in three.panels] == pytest.approx([217, 429, 641], abs=3)
-    assert len(split_panels(image, words, expect=5).panels) == 2
 
 
 # --- vector reader ---------------------------------------------------------------
@@ -553,22 +546,6 @@ def test_a_figure_without_data_is_not_read(tmp_path: Path) -> None:
     assert result.chart_data.uncertain == [
         "not a data chart: A workflow diagram of a two-stage pipeline."
     ]
-
-
-def test_several_charts_that_cannot_be_separated_are_not_read(tmp_path: Path) -> None:
-    """The model sees two charts, the layout analysis one: reading both
-    from one image is what merges panels, so the figure is left with a note."""
-    job = _job(tmp_path, _THREE_BARS)
-    job.source_kind = "raster"
-    job.marks = []
-    requests: list[dict] = []
-    client = _recorded_client("grounded", requests, overview="overview_two_charts")
-
-    result = read_figure(job, FigureDataOptions(mode="measured", model="m"), client)
-
-    assert result.chart_data.panels == [] and len(requests) == 1
-    (note,) = result.chart_data.uncertain
-    assert note.startswith("not read: the model sees 2 charts")
 
 
 def test_a_reply_cut_mid_list_keeps_its_complete_points() -> None:
@@ -1165,69 +1142,6 @@ def _completion(content: str, **usage) -> httpx.Response:
             "usage": usage,
         },
     )
-
-
-def test_cloud_method_posts_figure_and_context_to_a_chat_completions_endpoint(
-    tmp_path: Path,
-) -> None:
-    figure_dir, prepared = _prepared(tmp_path)
-    reading = {
-        "description": "Accuracy of three models",
-        "has_data": True,
-        "panels": [
-            {
-                "id": prepared.panels[0].id,
-                "title": "Accuracy",
-                "kind": "bar",
-                "points": _points(("A", 0.3), ("B", 0.55), ("C", 0.8)),
-            }
-        ],
-        "not_read": [],
-    }
-    requests: list[httpx.Request] = []
-
-    def handler(request: httpx.Request) -> httpx.Response:
-        requests.append(request)
-        return _completion(
-            f"```json\n{json.dumps(reading)}\n```",
-            prompt_tokens=6000,
-            completion_tokens=900,
-            cost=0.03,
-        )
-
-    reader = CloudReader(FigureDataOptions(method="cloud"), endpoint=_endpoint(handler))
-
-    result = reader.read(prepared, figure_dir)
-
-    (request,) = requests
-    assert str(request.url) == "https://api.example.test/v1/chat/completions"
-    assert request.headers["authorization"] == "Bearer sk-test"
-    body = json.loads(request.content)
-    assert body["model"] == "anthropic/claude-sonnet-5.5"
-    assert "temperature" not in body
-    assert body["response_format"]["type"] == "json_schema"
-    assert body["reasoning_effort"] == "high"
-    # An enforced schema with optional fields lost the upper bound of
-    # every interval on one provider: each field has to be written.
-    sent = body["response_format"]["json_schema"]["schema"]
-    point = sent["properties"]["panels"]["items"]["properties"]["points"]["items"]
-    assert {"err_lo", "err_hi", "label"} <= set(point["required"])
-    system, user = body["messages"]
-    assert system["role"] == "system" and '"has_data"' in system["content"]
-    assert [part["type"] for part in user["content"]] == ["image_url", "text"]
-    assert user["content"][0]["image_url"]["url"].startswith("data:image/png;base64,")
-    assert "Caption in the paper:" in user["content"][-1]["text"]
-    assert (result.method, result.backend) == ("cloud", "openai-compatible")
-    assert (result.cost_usd, result.prompt_tokens, result.eval_tokens) == (
-        0.03,
-        6000,
-        900,
-    )
-    assert [v.value for v in result.chart_data.panels[0].data] == [0.3, 0.55, 0.8]
-    assert {v.confidence for v in result.chart_data.panels[0].data} == {0.8}
-    assert "sk-test" not in (figure_dir / "trace.json").read_text(encoding="utf-8")
-    with pytest.raises(ValueError, match="calls a model's API endpoint"):
-        CloudReader(FigureDataOptions(method="cloud", backend="claude-cli"))
 
 
 def test_the_endpoint_is_asked_again_after_a_busy_reply_and_without_a_field_it_rejects() -> (

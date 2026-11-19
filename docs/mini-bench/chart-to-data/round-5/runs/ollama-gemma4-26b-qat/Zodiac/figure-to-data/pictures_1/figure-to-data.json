@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/1",
+    "image_path": "images/picture_002.png",
+    "page": 4,
+    "bbox": [
+      136.99,
+      83.8,
+      474.45,
+      189.79
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure illustrates the ZODIAC workflow, showing how patient data (metrics, tracings, and ectopics) is processed by M2F and T2F agents into findings, which are then interpreted by an F2I agent based on guidelines to produce a clinical report for a cardiologist.",
+  "uncertain": [
+    "not a data chart: This figure illustrates the ZODIAC workflow, showing how patient data (metrics, tracings, and ectopics) is processed by M2F and T2F agents into findings, which are then interpreted by an F2I agent based on guidelines to produce a clinical report for a cardiologist."
+  ]
+}

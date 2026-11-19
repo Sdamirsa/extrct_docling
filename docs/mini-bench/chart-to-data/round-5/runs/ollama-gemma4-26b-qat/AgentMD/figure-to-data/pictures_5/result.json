@@ -1,0 +1,37 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 3.81,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.771,
+   "total_s": 3.77,
+   "load_s": 0.378,
+   "prompt_eval_s": 0.834,
+   "eval_s": 2.464,
+   "prompt_tokens": 1275,
+   "eval_tokens": 162,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:19:20.172805828+01:00"
+  }
+ ],
+ "issues": [
+  "3 charts found by their tick labels"
+ ]
+}

@@ -6,6 +6,11 @@ their charts.
         --wide <prepared folders of other papers> --out <page.html> \\
         [--flags flags.json]
 
+This is the check of round 3 and runs with the engine of that time
+(release ``extrct_docling-v2.131.0-r4`` or earlier): it calls
+``split_panels`` with ``expect``, which the chart list of release r5
+replaced (``panels.cut_from_list``; ``round-4-plus-splitter/`` measures it).
+
 Scored part: the 15 bench figures. Each prepared figure (``evidence.json``
 and ``figure.png``, as ``amir-figdata prepare`` writes them) is split in the
 three modes of the splitter, ``auto`` (tick-label axes, then gutters),

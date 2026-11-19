@@ -79,5 +79,21 @@
     "prompt_eval_duration": 1000000000,
     "eval_count": 80,
     "eval_duration": 2000000000
+  },
+  "overview_nested_charts": {
+    "model": "gemma4:e4b-it-qat",
+    "created_at": "2026-11-19T12:00:00Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"description\": \"A bar chart with an inset chart.\", \"has_data\": true, \"charts\": [{\"id\": \"1\", \"kind\": \"bar\", \"box\": [0, 0, 1000, 1000]}, {\"id\": \"2\", \"kind\": \"bar\", \"box\": [300, 300, 700, 700]}]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 3000000000,
+    "load_duration": 0,
+    "prompt_eval_count": 540,
+    "prompt_eval_duration": 1000000000,
+    "eval_count": 80,
+    "eval_duration": 2000000000
   }
 }

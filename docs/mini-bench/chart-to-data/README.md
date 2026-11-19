@@ -23,6 +23,10 @@ A side check after round 4 measured the cut of a figure into its charts
 alone, on 51 figures, for the rule splitter, two detectors and three
 vision models:
 [`round-4-plus-splitter/README.md`](round-4-plus-splitter/README.md).
+Round 5 built what that check decided (the model that reads a figure lists
+its charts, the rules cut by the list) and ran the pipeline on three
+papers with a local and a cloud model:
+[`round-5/README.md`](round-5/README.md).
 The figures, the test set, the truth and the scripts are shared by rounds
 1 to 3; round 4 is on another paper and brings its own test set and
 truth. Each round keeps its own runs, metrics and judge files.

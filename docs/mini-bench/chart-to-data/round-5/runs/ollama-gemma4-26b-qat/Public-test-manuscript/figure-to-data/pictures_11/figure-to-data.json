@@ -1,0 +1,2502 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/11",
+    "image_path": "images/picture_012.png",
+    "page": 63,
+    "bbox": [
+      71.15,
+      101.67,
+      480.06,
+      707.83
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        1.5,
+        2.9,
+        309.0,
+        232.4
+      ],
+      "title": "Question type: COLON (N = 49)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "80",
+            "doy"
+          ]
+        },
+        "y": {
+          "name": "percentage",
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "green"
+        },
+        {
+          "name": "ROP",
+          "color": "red"
+        },
+        {
+          "name": "KGP",
+          "color": "orange"
+        },
+        {
+          "name": "DOP",
+          "color": "blue"
+        },
+        {
+          "name": "Incorrect",
+          "color": "grey"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Claude-3-Haiku Web",
+          "x": null,
+          "series": "Correct",
+          "value": 65.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku API",
+          "x": null,
+          "series": "Correct",
+          "value": 65.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet Web",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-8x7B-v015",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama2-70b-chat",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama2-70b-chat-API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama2-13b-chat",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama2-13b-chat-API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-local",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-3.5-Turbo-local",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-3.5-Turbo-API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        309.4,
+        4.9,
+        610.5,
+        232.4
+      ],
+      "title": "Question type: ENDOSCOPY (N = 26)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            10.0
+          ],
+          "ticks": [
+            10.0,
+            0.0
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#2ca02c"
+        },
+        {
+          "name": "TOP",
+          "color": "#98df8a"
+        },
+        {
+          "name": "HOP",
+          "color": "#ff7f0e"
+        },
+        {
+          "name": "Error",
+          "color": "#d62728"
+        },
+        {
+          "name": "Incorrect",
+          "color": "#f7b6d2"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPF3_Web",
+          "x": null,
+          "series": "Correct",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPF3_AP1",
+          "x": null,
+          "series": "Correct",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPF3_AP1",
+          "x": null,
+          "series": "TOP",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "3.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPF3_AP1",
+          "x": null,
+          "series": "HOP",
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPF3_AP1",
+          "x": null,
+          "series": "Error",
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPF3_AP1",
+          "x": null,
+          "series": "Incorrect",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "G2",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "50.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "G2",
+          "x": null,
+          "series": "TOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "G2",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "G2",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "G2",
+          "x": null,
+          "series": "Incorrect",
+          "value": 30.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Caude3 Sonrat Aps",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "35.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Caude3 Sonrat Aps",
+          "x": null,
+          "series": "TOP",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "5.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Caude3 Sonrat Aps",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Caude3 Sonrat Aps",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Caude3 Sonrat Aps",
+          "x": null,
+          "series": "Incorrect",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "40.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistrel Lange fh.e",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "41.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistrel Lange fh.e",
+          "x": null,
+          "series": "TOP",
+          "value": 9.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "9.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistrel Lange fh.e",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mistrel Lange fh.e",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Mistrel Lange fh.e",
+          "x": null,
+          "series": "Incorrect",
+          "value": 30.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá3.3-70è Pre",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "41.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá3.3-70è Pre",
+          "x": null,
+          "series": "TOP",
+          "value": 9.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "9.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá3.3-70è Pre",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Liamá3.3-70è Pre",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Liamá3.3-70è Pre",
+          "x": null,
+          "series": "Incorrect",
+          "value": 30.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Ph3-30-G1ELa]",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "41.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Ph3-30-G1ELa]",
+          "x": null,
+          "series": "TOP",
+          "value": 9.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "9.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Ph3-30-G1ELa]",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ph3-30-G1ELa",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Ph3-30-G1ELa",
+          "x": null,
+          "series": "Incorrect",
+          "value": 30.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá2.3-70è Pre",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "41.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá2.3-70è Pre",
+          "x": null,
+          "series": "TOP",
+          "value": 9.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "9.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Liamá2.3-70è Pre",
+          "x": null,
+          "series": "HOP",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Liamá2.3-70è Pre",
+          "x": null,
+          "series": "Error",
+          "value": 10.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "10.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Liamá2.3-70è Pre",
+          "x": null,
+          "series": "Incorrect",
+          "value": 30.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "30.0%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        2.9,
+        232.4,
+        307.5,
+        455.1
+      ],
+      "title": "Question type: IBS (N = 14)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-35 Wel",
+            "1357T-41A",
+            "Chouse3 Holhs APY",
+            "CMudeS-Opus API",
+            "Pia3-14b-QA12c0)"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "DGP",
+          "color": "#F44336"
+        },
+        {
+          "name": "DGP",
+          "color": "#FF9800"
+        },
+        {
+          "name": "DGP",
+          "color": "#FFEB3B"
+        },
+        {
+          "name": "DGP",
+          "color": "#9C27B0"
+        },
+        {
+          "name": "DGP",
+          "color": "#00BCD4"
+        },
+        {
+          "name": "DGP",
+          "color": "#795548"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 80.0235,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-3.5-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 80.0235,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4-API",
+          "x": null,
+          "series": "Correct",
+          "value": 44.2844,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4-API",
+          "x": null,
+          "series": "DGP",
+          "value": 44.2844,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Claude-3-Haiku-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Haiku-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Haiku-API",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Haiku-API",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Opus-API",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Opus-API",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Pro-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 43.7588,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Pro-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 43.7588,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Pro-API",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Pro-API",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70b-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 21.1591,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70b-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 21.1591,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70b-API",
+          "x": null,
+          "series": "Correct",
+          "value": 22.2102,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70b-API",
+          "x": null,
+          "series": "DGP",
+          "value": 22.2102,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-7B-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-7B-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-7B-API",
+          "x": null,
+          "series": "Correct",
+          "value": 21.1591,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-7B-API",
+          "x": null,
+          "series": "DGP",
+          "value": 21.1591,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Mini-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 22.2102,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Mini-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 22.2102,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Mini-API",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Mini-API",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-72B-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-72B-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-72B-API",
+          "x": null,
+          "series": "Correct",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-72B-API",
+          "x": null,
+          "series": "DGP",
+          "value": 29.5683,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3.1-405B-Web",
+          "x": null,
+          "series": "Correct",
+          "value": 74.2422,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3.1-405B-Web",
+          "x": null,
+          "series": "DGP",
+          "value": 74.2422,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3.1-405B-API",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3.1-405B-API",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3.1-405B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3.1-405B-Local",
+          "x": null,
+          "series": "DGP",
+          "value": 20.1079,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        309.0,
+        232.4,
+        610.5,
+        455.1
+      ],
+      "title": "Question type: LIVER (N = 52)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 v9b",
+            "(SHT-3 5 API",
+            "SPI-4 Wel",
+            "Ci60043-Hau AP",
+            "Liams2-75",
+            "P7y3-3b-016 Locol"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#2ca02c"
+        },
+        {
+          "name": "DOP",
+          "color": "#ff7f0e"
+        },
+        {
+          "name": "FOP",
+          "color": "#98df8a"
+        },
+        {
+          "name": "NOP",
+          "color": "#d62728"
+        },
+        {
+          "name": "Error",
+          "color": "#f7b6d2"
+        },
+        {
+          "name": "Neutral",
+          "color": "#1f77b4"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 tWinb",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "SPI-4 Wel",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ci60043-Hau AP",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Liams2-75",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "P7y3-3b-016 Locol",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemaséz-z75 Phe",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ph314b-5Locel",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "DOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "FOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "NOP",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "Error",
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 v9b",
+          "x": null,
+          "series": "Neutral",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        1.5,
+        457.5,
+        307.5,
+        686.6
+      ],
+      "title": "Question type: MISCELLANEOUS (N = 19)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "100",
+            "dnz",
+            "Core::"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "green"
+        },
+        {
+          "name": "DJP",
+          "color": "red"
+        },
+        {
+          "name": "BOP",
+          "color": "yellow"
+        },
+        {
+          "name": "KOP",
+          "color": "blue"
+        },
+        {
+          "name": "Fnr",
+          "color": "purple"
+        },
+        {
+          "name": "Incorrect",
+          "color": "red"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Wel",
+          "x": null,
+          "series": "Correct",
+          "value": 49.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 Wel",
+          "x": null,
+          "series": "Incorrect",
+          "value": 50.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 AP",
+          "x": null,
+          "series": "Correct",
+          "value": 48.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 AP",
+          "x": null,
+          "series": "Incorrect",
+          "value": 51.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 AP]",
+          "x": null,
+          "series": "Correct",
+          "value": 48.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 AP]",
+          "x": null,
+          "series": "Incorrect",
+          "value": 51.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Claude3-Ous API",
+          "x": null,
+          "series": "Correct",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Claude3-Ous API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Mistyal-Larte Poc",
+          "x": null,
+          "series": "Correct",
+          "value": 46.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Mistyal-Larte Poc",
+          "x": null,
+          "series": "Incorrect",
+          "value": 53.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "6",
+      "bbox_px": [
+        307.5,
+        457.5,
+        610.5,
+        686.6
+      ],
+      "title": "Question type: NUTRITION (N = 3)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "EOP",
+          "color": "#8BC34A"
+        },
+        {
+          "name": "NOP",
+          "color": "#CDDC39"
+        },
+        {
+          "name": "ERROR",
+          "color": "#FFEB3B"
+        },
+        {
+          "name": "Incorrect",
+          "color": "#F44336"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-2 5 web",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4 Turbo",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude-3 Opus",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude-3 Sonnet",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude-3 Haiku",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Gemini Pro",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistral-Large",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Llama-3 70B",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Llama-3 8B",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistral-7B",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Mistral-8B",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Gemini 1.5 Pro",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Gemini 1.5 Flash",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4o mini",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "7",
+      "bbox_px": [
+        2.9,
+        686.6,
+        305.0,
+        908.2
+      ],
+      "title": null,
+      "kind": null,
+      "orientation": null,
+      "axes": null,
+      "series": [],
+      "data": [],
+      "notes": [
+        "not read"
+      ]
+    },
+    {
+      "id": "8",
+      "bbox_px": [
+        317.3,
+        686.6,
+        610.5,
+        758.2
+      ],
+      "title": null,
+      "kind": "bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GP755wkt",
+            "GPT-3.5 A57",
+            "[4PT-S0 AP]",
+            "Caude3-Somnt AP",
+            "Code3-Opus W",
+            "Ctaude3-Ogus AP",
+            "Mistralv7-7b Pos",
+            "13amso3.1-70 Poé",
+            "Gsmma?-27b Fo0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": [
+            0.0,
+            20.0
+          ],
+          "ticks": [
+            "Mistralv7-7b Pos",
+            "Ctaude3-Ogus AP",
+            "Code3-Opus W",
+            "Caude3-Somnt AP"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "GPT-3.5 wkt",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 A57",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "[4PT-S0 AP]",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Caude3-Somnt AP",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Code3-Opus W",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Ctaude3-Ogus AP",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Mistralv7-7b Pos",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "13amso3.1-70 Poé",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gsmma?-27b Fo0",
+          "x": null,
+          "series": null,
+          "value": 18.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure presents a series of stacked bar charts comparing the performance (Correct, Partially Correct, Incorrect) of various large language models across different medical question types.",
+  "uncertain": []
+}

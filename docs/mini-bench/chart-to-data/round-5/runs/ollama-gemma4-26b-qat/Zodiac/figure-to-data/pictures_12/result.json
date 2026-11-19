@@ -1,0 +1,112 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "listed",
+ "seconds": 128.62,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 4.65,
+   "total_s": 4.649,
+   "load_s": 0.407,
+   "prompt_eval_s": 0.938,
+   "eval_s": 3.196,
+   "prompt_tokens": 1495,
+   "eval_tokens": 209,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "a",
+   "prompt": "grounded",
+   "wall_s": 46.359,
+   "total_s": 46.357,
+   "load_s": 0.386,
+   "prompt_eval_s": 0.531,
+   "eval_s": 45.271,
+   "prompt_tokens": 945,
+   "eval_tokens": 2871,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "b",
+   "prompt": "grounded",
+   "wall_s": 2.21,
+   "total_s": 2.209,
+   "load_s": 0.315,
+   "prompt_eval_s": 0.475,
+   "eval_s": 1.314,
+   "prompt_tokens": 804,
+   "eval_tokens": 86,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "c",
+   "prompt": "grounded",
+   "wall_s": 2.295,
+   "total_s": 2.293,
+   "load_s": 0.342,
+   "prompt_eval_s": 0.487,
+   "eval_s": 1.358,
+   "prompt_tokens": 843,
+   "eval_tokens": 86,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "d",
+   "prompt": "grounded",
+   "wall_s": 40.636,
+   "total_s": 40.635,
+   "load_s": 0.453,
+   "prompt_eval_s": 0.527,
+   "eval_s": 39.575,
+   "prompt_tokens": 919,
+   "eval_tokens": 2517,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "e",
+   "prompt": "grounded",
+   "wall_s": 32.379,
+   "total_s": 32.378,
+   "load_s": 0.373,
+   "prompt_eval_s": 0.514,
+   "eval_s": 31.352,
+   "prompt_tokens": 867,
+   "eval_tokens": 2015,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:23:49.592621414+01:00"
+  }
+ ],
+ "issues": [
+  "the rule splitter finds 2 chart(s), the model lists 5: cut between the listed charts"
+ ]
+}

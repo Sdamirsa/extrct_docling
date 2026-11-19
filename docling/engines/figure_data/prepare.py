@@ -17,6 +17,11 @@ bundle for a reader. No model is involved.
 Every reading method works from this folder alone, so a method can be
 swapped or rerun without touching the PDF again, and what a model was
 given can be looked at afterwards.
+
+The charts found here are the rule splitter's. A method whose model first
+lists the charts of the figure (the cloud method) cuts the prepared figure
+again by that list (:func:`relist`): the crops, ``evidence.json`` and
+``figure.txt`` then hold that cut, and ``listed_by`` names the model.
 """
 
 from __future__ import annotations
@@ -42,7 +47,11 @@ from docling.engines.figure_data.evidence import (
     job_stem,
     words_in,
 )
-from docling.engines.figure_data.panels import split_panels
+from docling.engines.figure_data.panels import (
+    PanelSplitResult,
+    cut_from_list,
+    split_panels,
+)
 from docling.engines.figure_data.readers.vlm import words_block
 from docling.engines.figure_data.schema import (
     Box,
@@ -100,6 +109,11 @@ class PreparedFigure(BaseModel):
     caption: str | None = None
     split_method: str = "single"
     split_notes: list[str] = Field(default_factory=list)
+    # Set when a reading model listed the charts (:func:`relist`): how many
+    # the rule splitter found, how many the model listed, and which model.
+    rule_charts: int | None = None
+    listed_charts: int | None = None
+    listed_by: str | None = None
     panels: list[PreparedPanel] = Field(default_factory=list)
     words: list[Word] = Field(default_factory=list)
     marks: list[VectorMark] = Field(default_factory=list)
@@ -275,24 +289,7 @@ def prepare_figure(
         image = opened.convert("RGB")
     mode = "auto" if options.panel_split == "vlm" else options.panel_split
     split = split_panels(np.asarray(image), job.words, mode=mode)
-    several = len(split.panels) > 1
-    panels: list[PreparedPanel] = []
-    for box in split.panels:
-        axes = find_axes(words_in(job.words, box.bbox), box.bbox)
-        name: str | None = None
-        if several:
-            name = f"panel-{_UNSAFE.sub('_', box.id)}.png"
-            x0, y0, x1, y1 = (round(v) for v in box.bbox)
-            image.crop((x0, y0, x1, y1)).save(figure_dir / name)
-        panels.append(
-            PreparedPanel(
-                id=box.id,
-                bbox=box.bbox,
-                image=name,
-                x_axis=_axis_line(axes.x),
-                y_axis=_axis_line(axes.y),
-            )
-        )
+    panels = _panels(image, split, job.words, figure_dir)
     prepared = PreparedFigure(
         figure=job.figure,
         width=image.width,
@@ -309,11 +306,96 @@ def prepare_figure(
         marks=job.marks,
         image_objects=job.image_objects,
     )
+    _write(prepared, figure_dir)
+    return prepared
+
+
+def relist(
+    prepared: PreparedFigure,
+    figure_dir: Path,
+    listed: list[tuple[str, Box]],
+    *,
+    by: str,
+) -> PreparedFigure:
+    """Cut the prepared figure again by the charts the model *by* lists
+    (``(id, box in pixels of figure.png)``; :func:`.panels.cut_from_list`)
+    and rewrite its crops, ``evidence.json`` and ``figure.txt``. The rule
+    splitter runs afresh, so the outcome does not depend on an earlier
+    list."""
+    with Image.open(figure_dir / prepared.image) as opened:
+        image = opened.convert("RGB")
+    split = cut_from_list(np.asarray(image), prepared.words, listed)
+    return _recut(prepared, figure_dir, image, split, by=by)
+
+
+def unlist(prepared: PreparedFigure, figure_dir: Path) -> PreparedFigure:
+    """The prepared figure under the rule splitter's own cut again, when a
+    model's list had replaced it. A figure folder is reused by later runs
+    with another method or model, and each starts from the rules' cut."""
+    if prepared.listed_by is None:
+        return prepared
+    with Image.open(figure_dir / prepared.image) as opened:
+        image = opened.convert("RGB")
+    split = split_panels(np.asarray(image), prepared.words)
+    return _recut(prepared, figure_dir, image, split, by=None)
+
+
+def _recut(
+    prepared: PreparedFigure,
+    figure_dir: Path,
+    image: Image.Image,
+    split: PanelSplitResult,
+    *,
+    by: str | None,
+) -> PreparedFigure:
+    for crop in figure_dir.glob("panel-*.png"):
+        crop.unlink()
+    recut = prepared.model_copy(
+        update={
+            "panels": _panels(image, split, prepared.words, figure_dir),
+            "split_method": split.method,
+            "split_notes": split.notes,
+            "rule_charts": split.rule_charts,
+            "listed_charts": split.listed_charts,
+            "listed_by": by,
+        }
+    )
+    _write(recut, figure_dir)
+    return recut
+
+
+def _panels(
+    image: Image.Image, split: PanelSplitResult, words: list[Word], figure_dir: Path
+) -> list[PreparedPanel]:
+    """The charts of *split* with their axes, and one crop per chart in
+    *figure_dir* when there are several."""
+    several = len(split.panels) > 1
+    panels: list[PreparedPanel] = []
+    for box in split.panels:
+        axes = find_axes(words_in(words, box.bbox), box.bbox)
+        name: str | None = None
+        x0, y0, x1, y1 = (round(v) for v in box.bbox)
+        # A box without width or height (a model can list one) has no crop.
+        if several and x1 > x0 and y1 > y0:
+            name = f"panel-{_UNSAFE.sub('_', box.id)}.png"
+            image.crop((x0, y0, x1, y1)).save(figure_dir / name)
+        panels.append(
+            PreparedPanel(
+                id=box.id,
+                bbox=box.bbox,
+                image=name,
+                x_axis=_axis_line(axes.x),
+                y_axis=_axis_line(axes.y),
+            )
+        )
+    return panels
+
+
+def _write(prepared: PreparedFigure, figure_dir: Path) -> None:
     (figure_dir / EVIDENCE_FILENAME).write_text(
         prepared.model_dump_json(indent=1) + "\n", encoding="utf-8"
     )
     (figure_dir / CONTEXT_FILENAME).write_text(context_text(prepared), encoding="utf-8")
-    return prepared
 
 
 def context_text(prepared: PreparedFigure) -> str:
@@ -331,8 +413,13 @@ def context_text(prepared: PreparedFigure) -> str:
     ]
     several = len(prepared.panels) > 1
     if several:
+        found = (
+            "Charts as a model listed them, cut by layout analysis"
+            if prepared.split_method.startswith("listed")
+            else "Charts found by layout analysis"
+        )
         lines.append(
-            f"Charts found by layout analysis: {len(prepared.panels)} "
+            f"{found}: {len(prepared.panels)} "
             "(box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from "
             "the left, y from the top). The analysis can be wrong: trust the "
             "image."

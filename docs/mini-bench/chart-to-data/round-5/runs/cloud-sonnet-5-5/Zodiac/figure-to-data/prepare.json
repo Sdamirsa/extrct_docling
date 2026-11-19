@@ -1,0 +1,196 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Zodiac",
+  "pdf": "Zodiac.pdf",
+  "prepared_at": "2026-11-19T18:07:11",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": null,
+  "figures": [
+    {
+      "self_ref": "#/pictures/0",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (flow_diagram)",
+      "page": null,
+      "figure_type": "flow_diagram",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/1",
+      "status": "prepared",
+      "folder": "pictures_1",
+      "reason": null,
+      "page": 4,
+      "figure_type": "box_plot",
+      "capture": "pdf-render",
+      "size_px": [
+        1031,
+        324
+      ],
+      "source_kind": "mixed",
+      "charts": 1,
+      "words": 65
+    },
+    {
+      "self_ref": "#/pictures/2",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (table_image)",
+      "page": null,
+      "figure_type": "table_image",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/3",
+      "status": "prepared",
+      "folder": "pictures_3",
+      "reason": null,
+      "page": 7,
+      "figure_type": "roc_curve",
+      "capture": "pdf-render",
+      "size_px": [
+        689,
+        157
+      ],
+      "source_kind": "mixed",
+      "charts": 1,
+      "words": 12
+    },
+    {
+      "self_ref": "#/pictures/4",
+      "status": "prepared",
+      "folder": "pictures_4",
+      "reason": null,
+      "page": 9,
+      "figure_type": "heatmap",
+      "capture": "pdf-render",
+      "size_px": [
+        1160,
+        308
+      ],
+      "source_kind": "mixed",
+      "charts": 2,
+      "words": 74
+    },
+    {
+      "self_ref": "#/pictures/5",
+      "status": "prepared",
+      "folder": "pictures_5",
+      "reason": null,
+      "page": 10,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        1156,
+        267
+      ],
+      "source_kind": "vector",
+      "charts": 1,
+      "words": 29
+    },
+    {
+      "self_ref": "#/pictures/6",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (ecg)",
+      "page": null,
+      "figure_type": "ecg",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/7",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (table_image)",
+      "page": null,
+      "figure_type": "table_image",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/8",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (table_image)",
+      "page": null,
+      "figure_type": "table_image",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/9",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (ecg)",
+      "page": null,
+      "figure_type": "ecg",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/10",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (table_image)",
+      "page": null,
+      "figure_type": "table_image",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/11",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (table_image)",
+      "page": null,
+      "figure_type": "table_image",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/12",
+      "status": "prepared",
+      "folder": "pictures_12",
+      "reason": null,
+      "page": 19,
+      "figure_type": "heatmap",
+      "capture": "pdf-render",
+      "size_px": [
+        1157,
+        804
+      ],
+      "source_kind": "mixed",
+      "charts": 2,
+      "words": 79
+    }
+  ]
+}

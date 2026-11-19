@@ -1,0 +1,38 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "listed",
+ "seconds": 2.72,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 2.695,
+   "total_s": 2.694,
+   "load_s": 0.374,
+   "prompt_eval_s": 0.555,
+   "eval_s": 1.66,
+   "prompt_tokens": 809,
+   "eval_tokens": 110,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:21:40.951713724+01:00"
+  }
+ ],
+ "issues": [
+  "the rule splitter finds 1 chart(s), the model lists 2: cut between the listed charts",
+  "panel b: 1.5375 outside the axis range [3, 5] (CNS/#345b7d)"
+ ]
+}

@@ -50,8 +50,8 @@ AxisScale = Literal["linear", "log", "categorical"]
 Orientation = Literal["vertical", "horizontal"]
 FigureDataMode = Literal["simple", "measured"]
 # How a figure is read: a local model through Ollama with the measured
-# engine, one call to a cloud model's API, or an agent that works through
-# the figure with tools.
+# engine, a cloud model's API (the charts listed, then the figure read in
+# one call), or an agent that works through the figure with tools.
 FigureMethod = Literal["ollama", "cloud", "agent"]
 FigureDataChoice = Literal["off", "ollama", "cloud", "agent"]
 # Where the model runs. ``ollama``: a local Ollama. ``openai-compatible``:
@@ -74,7 +74,11 @@ DEFAULT_MODELS: dict[str, str] = {
     "openai-compatible": DEFAULT_ENDPOINT_MODEL,
     "claude-cli": DEFAULT_CLAUDE_MODEL,
 }
-PanelSplit = Literal["auto", "gutters", "off", "vlm"]
+# auto: the reading model lists the charts and the rules cut by that list
+# (``panels.cut_from_list``); rules: the rule splitter alone; gutters: the
+# rule splitter without its axes step; off: one chart; vlm (ollama): the
+# model's boxes as they are.
+PanelSplit = Literal["auto", "rules", "gutters", "off", "vlm"]
 Box = tuple[float, float, float, float]
 
 DEFAULT_ELIGIBLE_TYPES = frozenset(
@@ -220,6 +224,10 @@ class FigureDataOptions(BaseModel):
     # How hard the cloud model is asked to think, sent as
     # ``reasoning_effort``; None leaves it to the endpoint's default.
     cloud_reasoning_effort: str | None = "high"
+    # The same for the cloud method's first call, which only lists the
+    # charts of the figure. Gemini 3.8 Flash thought for four minutes about
+    # that at "high" and lists as well at "low".
+    cloud_list_reasoning_effort: str | None = "low"
     # The Claude Code executable the agent method runs.
     claude_command: str = "claude"
     # Images sent to a cloud model are scaled down to this long side.

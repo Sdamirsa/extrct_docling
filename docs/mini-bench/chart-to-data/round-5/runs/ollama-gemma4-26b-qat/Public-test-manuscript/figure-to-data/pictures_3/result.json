@@ -1,0 +1,72 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "listed",
+ "seconds": 71.81,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.18,
+   "total_s": 3.179,
+   "load_s": 0.369,
+   "prompt_eval_s": 1.061,
+   "eval_s": 1.598,
+   "prompt_tokens": 1982,
+   "eval_tokens": 99,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 68.497,
+   "total_s": 68.495,
+   "load_s": 0.409,
+   "prompt_eval_s": 1.232,
+   "eval_s": 66.648,
+   "prompt_tokens": 2388,
+   "eval_tokens": 4134,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:26:50.927364964+01:00"
+  }
+ ],
+ "issues": [
+  "the rule splitter finds 2 chart(s), the model lists 1: read whole",
+  "panel 1: printed 46.0% vs measured 39.8965 (GPT-3.5 API/Correct)",
+  "panel 1: printed 66.0% vs measured 59.8249 (GPT-4 Web/Correct)",
+  "panel 1: printed 66.0% vs measured 59.8249 (GPT-4 API/Correct)",
+  "panel 1: printed 50.3% vs measured 43.2394 (Claude3-Haiku API/Correct)",
+  "panel 1: printed 52.3% vs measured 45.1679 (Claude3-Sonnet API/Correct)",
+  "panel 1: printed 65.7% vs measured 59.8249 (Claude3-Opus Web/Correct)",
+  "panel 1: printed 66.0% vs measured 58.9249 (Claude3-Opus API/Correct)",
+  "panel 1: printed 30.3% vs measured 23.4396 (Llama2-7b-Q8 Local/Correct)",
+  "panel 1: printed 27.0% vs measured 19.9682 (medicineLLM-7b-Q8 Local/Correct)",
+  "panel 1: printed 33.4% vs measured 26.7824 (Llama2-13b-Q5 Local/Correct)",
+  "panel 1: printed 43.3% vs measured 36.168 (Llama3-8b Poe/Correct)",
+  "panel 1: printed 29.0% vs measured 21.8967 (OpenBioLLM-8b-Q8 Local/Correct)",
+  "panel 1: printed 54.7% vs measured 47.4822 (Llama3-70b Poe/Correct)",
+  "panel 1: printed 58.3% vs measured 51.2107 (Llama3.1-70b Poe/Correct)",
+  "panel 1: printed 64.0% vs measured 57.1249 (Llama3.1-405b Poe/Correct)",
+  "panel 1: printed 41.3% vs measured 34.2395 (Gemini Web/Correct)",
+  "panel 1: printed 45.3% vs measured 38.2251 (Gemma2-9b-Q8 Local/Correct)",
+  "panel 1: printed 50.0% vs measured 42.9822 (Gemma2-27b Poe/Correct)",
+  "panel 1: printed 42.7% vs measured 35.5252 (Phi3-3b-Q16 Local/Correct)",
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 147.51; GPT-3.5 API sums to 145.81; GPT-4 Web sums to 165.81; GPT-4 API sums to 165.81; GPT-4o API sums to 173.51"
+ ]
+}

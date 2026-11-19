@@ -31,7 +31,7 @@ READING_MD = "figure-to-data.md"
 READING_JSON = "figure-to-data.json"
 _METHODS = {
     "ollama": "a local model through the measured engine",
-    "cloud": "one call to a cloud model's API",
+    "cloud": "a cloud model's API, asked once for the figure",
     "agent": "an agent session on this figure",
 }
 

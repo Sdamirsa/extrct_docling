@@ -1,0 +1,858 @@
+{
+ "ollama": {
+  "exit": 0,
+  "papers": {
+   "AgentMD": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "no_data": 2,
+     "read": 4
+    },
+    "charts": 22,
+    "values": 498,
+    "seconds": 381.38,
+    "cost_usd": 0,
+    "calls": 19,
+    "run_block": {
+     "method": "ollama",
+     "model": "gemma4:26b-a4b-it-qat",
+     "figures": {
+      "no_data": 2,
+      "read": 4
+     }
+    },
+    "tables_in_markdown": 4,
+    "chunks_with_data": 4,
+    "data_badges_in_viewer": 4,
+    "figures": {
+     "pictures_2": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "overview",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 8.14,
+      "cost_usd": null,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: This figure illustrates the AgentMD workflow, showing the process from patient note input to tool selection, computation, and summarization."
+     },
+     "pictures_3": {
+      "status": "read",
+      "charts": 2,
+      "values": 342,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 244.19,
+      "cost_usd": null,
+      "issues": 4,
+      "verdict": "split check W07: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_4": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "overview",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 1.94,
+      "cost_usd": null,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: This figure is a workflow diagram illustrating the process of using the RiskCalcs tool to calculate a CURB-65 score from extracted patient parameters to predict mortality."
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 3,
+      "values": 9,
+      "cut": "axes",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 3.81,
+      "cost_usd": null,
+      "issues": 1,
+      "verdict": "split check W08: truth 3, cut right",
+      "reason": null
+     },
+     "pictures_7": {
+      "status": "read",
+      "charts": 3,
+      "values": 80,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 71.72,
+      "cost_usd": null,
+      "issues": 2,
+      "verdict": "split check W09: truth 2, cut wrong (3 boxes)",
+      "reason": null
+     },
+     "pictures_8": {
+      "status": "read",
+      "charts": 14,
+      "values": 67,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 51.58,
+      "cost_usd": null,
+      "issues": 17,
+      "verdict": "split check W10: truth 14, cut wrong (14 boxes)",
+      "reason": null
+     }
+    }
+   },
+   "Public-test-manuscript": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "read": 11,
+     "not_read": 1
+    },
+    "charts": 37,
+    "values": 1523,
+    "seconds": 2022.93,
+    "cost_usd": 0,
+    "calls": 48,
+    "run_block": {
+     "method": "ollama",
+     "model": "gemma4:26b-a4b-it-qat",
+     "figures": {
+      "read": 11,
+      "not_read": 1
+     }
+    },
+    "tables_in_markdown": 11,
+    "chunks_with_data": 11,
+    "data_badges_in_viewer": 11,
+    "figures": {
+     "pictures_2": {
+      "status": "read",
+      "charts": 4,
+      "values": 75,
+      "cut": "axes",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 75.2,
+      "cost_usd": null,
+      "issues": 1,
+      "verdict": "split check S02: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_3": {
+      "status": "read",
+      "charts": 1,
+      "values": 74,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 71.81,
+      "cost_usd": null,
+      "issues": 21,
+      "verdict": "split check S03: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_4": {
+      "status": "read",
+      "charts": 1,
+      "values": 64,
+      "cut": "single",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 61.29,
+      "cost_usd": null,
+      "issues": 15,
+      "verdict": "split check S04: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 2,
+      "values": 17,
+      "cut": "gutters",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 37.17,
+      "cost_usd": null,
+      "issues": 6,
+      "verdict": "split check S05: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_6": {
+      "status": "read",
+      "charts": 4,
+      "values": 104,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 88.18,
+      "cost_usd": null,
+      "issues": 92,
+      "verdict": "split check S06: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_8": {
+      "status": "read",
+      "charts": 1,
+      "values": 27,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 26.64,
+      "cost_usd": null,
+      "issues": 1,
+      "verdict": "split check S08: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_9": {
+      "status": "not_read",
+      "charts": 1,
+      "values": 0,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 5.74,
+      "cost_usd": null,
+      "issues": 1,
+      "verdict": "",
+      "reason": "no values returned"
+     },
+     "pictures_10": {
+      "status": "read",
+      "charts": 3,
+      "values": 122,
+      "cut": "axes",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 132.49,
+      "cost_usd": null,
+      "issues": 56,
+      "verdict": "split check S10: truth 3, cut right",
+      "reason": null
+     },
+     "pictures_11": {
+      "status": "read",
+      "charts": 8,
+      "values": 183,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 585.88,
+      "cost_usd": null,
+      "issues": 19,
+      "verdict": "split check S11: truth 11, cut wrong (8 boxes)",
+      "reason": null
+     },
+     "pictures_12": {
+      "status": "read",
+      "charts": 5,
+      "values": 297,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 366.97,
+      "cost_usd": null,
+      "issues": 139,
+      "verdict": "split check S12: truth 5, cut right",
+      "reason": null
+     },
+     "pictures_13": {
+      "status": "read",
+      "charts": 4,
+      "values": 302,
+      "cut": "axes",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 293.31,
+      "cost_usd": null,
+      "issues": 18,
+      "verdict": "split check S13: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_14": {
+      "status": "read",
+      "charts": 3,
+      "values": 258,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 278.25,
+      "cost_usd": null,
+      "issues": 178,
+      "verdict": "split check S14: truth 3, cut right",
+      "reason": null
+     }
+    }
+   },
+   "Zodiac": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "no_data": 2,
+     "not_read": 1,
+     "read": 2
+    },
+    "charts": 7,
+    "values": 172,
+    "seconds": 139.18,
+    "cost_usd": 0,
+    "calls": 10,
+    "run_block": {
+     "method": "ollama",
+     "model": "gemma4:26b-a4b-it-qat",
+     "figures": {
+      "no_data": 2,
+      "not_read": 1,
+      "read": 2
+     }
+    },
+    "tables_in_markdown": 2,
+    "chunks_with_data": 2,
+    "data_badges_in_viewer": 2,
+    "figures": {
+     "pictures_1": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "overview",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 2.27,
+      "cost_usd": null,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: This figure illustrates the ZODIAC workflow, showing how patient data (metrics, tracings, and ectopics) is processed by M2F and T2F agents into findings, which are then interpreted by an F2I agent based on guidelines to produce a clinical report for a cardiologist."
+     },
+     "pictures_3": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "overview",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 1.7,
+      "cost_usd": null,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: The figure illustrates a workflow architecture for a medical AI system involving a cardiologist, AWS services (API Gateway, Lambda, SageMaker), and data/report flows."
+     },
+     "pictures_4": {
+      "status": "not_read",
+      "charts": 0,
+      "values": 0,
+      "cut": "axes",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 3.87,
+      "cost_usd": null,
+      "issues": 0,
+      "verdict": "split check W30: truth 4, no boxes",
+      "reason": "not read: the model sees 4 charts in this figure and the layout analysis separates 2; one image of several charts is not read reliably"
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 2,
+      "values": 39,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 2.72,
+      "cost_usd": null,
+      "issues": 2,
+      "verdict": "split check C4: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_12": {
+      "status": "read",
+      "charts": 5,
+      "values": 133,
+      "cut": "listed",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 128.62,
+      "cost_usd": null,
+      "issues": 1,
+      "verdict": "split check W29: truth 5, cut right",
+      "reason": null
+     }
+    }
+   }
+  }
+ },
+ "cloud": {
+  "exit": 0,
+  "papers": {
+   "AgentMD": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "no_data": 2,
+     "read": 4
+    },
+    "charts": 23,
+    "values": 415,
+    "seconds": 180.88,
+    "cost_usd": 0.472,
+    "calls": 12,
+    "run_block": {
+     "method": "cloud",
+     "model": "anthropic/claude-sonnet-5.5",
+     "figures": {
+      "read": 1
+     }
+    },
+    "tables_in_markdown": 4,
+    "chunks_with_data": 4,
+    "data_badges_in_viewer": 4,
+    "figures": {
+     "pictures_2": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "single",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 9.9,
+      "cost_usd": 0.0225,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: Workflow diagram of AgentMD tool selection, computation and summarization, in which a patient note is embedded, a relevant calculator (CURB-65) is selected, an LLM and Python interpreter compute the score, and a summary is generated. It contains no plotted data."
+     },
+     "pictures_3": {
+      "status": "read",
+      "charts": 4,
+      "values": 300,
+      "cut": "listed-boxes",
+      "counts": [
+       1,
+       4
+      ],
+      "seconds": 105.49,
+      "cost_usd": 0.2484,
+      "issues": 1,
+      "verdict": "split check W07: truth 2, cut wrong (4 boxes)",
+      "reason": null
+     },
+     "pictures_4": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "none",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 4.94,
+      "cost_usd": 0.0131,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: A workflow diagram of the RiskCalcs pipeline: tool selection (CURB-65 score), parameter extraction, tool computation, and prediction (score 0, mortality 0.7%). It plots no chart data."
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 3,
+      "values": 9,
+      "cut": "axes",
+      "counts": [
+       3,
+       3
+      ],
+      "seconds": 9.65,
+      "cost_usd": 0.0297,
+      "issues": 1,
+      "verdict": "split check W08: truth 3, cut right",
+      "reason": null
+     },
+     "pictures_7": {
+      "status": "read",
+      "charts": 2,
+      "values": 73,
+      "cut": "listed",
+      "counts": [
+       5,
+       2
+      ],
+      "seconds": 25.12,
+      "cost_usd": 0.0733,
+      "issues": 1,
+      "verdict": "split check W09: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_8": {
+      "status": "read",
+      "charts": 14,
+      "values": 33,
+      "cut": "listed",
+      "counts": [
+       11,
+       14
+      ],
+      "seconds": 25.78,
+      "cost_usd": 0.0851,
+      "issues": 6,
+      "verdict": "split check W10: truth 14, cut wrong (14 boxes)",
+      "reason": null
+     }
+    }
+   },
+   "Public-test-manuscript": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "read": 11,
+     "no_data": 1
+    },
+    "charts": 39,
+    "values": 891,
+    "seconds": 420.81,
+    "cost_usd": 1.059,
+    "calls": 24,
+    "run_block": {
+     "method": "cloud",
+     "model": "anthropic/claude-sonnet-5.5",
+     "figures": {
+      "read": 2
+     }
+    },
+    "tables_in_markdown": 11,
+    "chunks_with_data": 11,
+    "data_badges_in_viewer": 11,
+    "figures": {
+     "pictures_2": {
+      "status": "read",
+      "charts": 4,
+      "values": 75,
+      "cut": "axes",
+      "counts": [
+       4,
+       4
+      ],
+      "seconds": 25.9,
+      "cost_usd": 0.0734,
+      "issues": 1,
+      "verdict": "split check S02: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_3": {
+      "status": "read",
+      "charts": 1,
+      "values": 37,
+      "cut": "listed",
+      "counts": [
+       2,
+       1
+      ],
+      "seconds": 22.43,
+      "cost_usd": 0.0608,
+      "issues": 2,
+      "verdict": "split check S03: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_4": {
+      "status": "read",
+      "charts": 1,
+      "values": 144,
+      "cut": "single",
+      "counts": [
+       1,
+       1
+      ],
+      "seconds": 60.41,
+      "cost_usd": 0.1366,
+      "issues": 0,
+      "verdict": "split check S04: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 2,
+      "values": 17,
+      "cut": "gutters",
+      "counts": [
+       2,
+       2
+      ],
+      "seconds": 18.02,
+      "cost_usd": 0.0368,
+      "issues": 0,
+      "verdict": "split check S05: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_6": {
+      "status": "read",
+      "charts": 4,
+      "values": 52,
+      "cut": "listed",
+      "counts": [
+       6,
+       4
+      ],
+      "seconds": 19.05,
+      "cost_usd": 0.056,
+      "issues": 1,
+      "verdict": "split check S06: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_8": {
+      "status": "read",
+      "charts": 1,
+      "values": 63,
+      "cut": "listed",
+      "counts": [
+       3,
+       1
+      ],
+      "seconds": 18.02,
+      "cost_usd": 0.0477,
+      "issues": 1,
+      "verdict": "split check S08: truth 1, cut right",
+      "reason": null
+     },
+     "pictures_9": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "listed",
+      "counts": [
+       5,
+       1
+      ],
+      "seconds": 6.84,
+      "cost_usd": 0.0269,
+      "issues": 1,
+      "verdict": "",
+      "reason": "not a data chart: A heatmap-style strip plot showing per-question correctness (green correct, red incorrect, other colors partial or other) for many LLMs across questions sorted by difficulty, with strips below for difficulty quartile, length tertile, taxonomy and organ-system category membership."
+     },
+     "pictures_10": {
+      "status": "read",
+      "charts": 3,
+      "values": 111,
+      "cut": "axes",
+      "counts": [
+       3,
+       3
+      ],
+      "seconds": 46.77,
+      "cost_usd": 0.1305,
+      "issues": 4,
+      "verdict": "split check S10: truth 3, cut right",
+      "reason": null
+     },
+     "pictures_11": {
+      "status": "read",
+      "charts": 11,
+      "values": 13,
+      "cut": "listed",
+      "counts": [
+       7,
+       11
+      ],
+      "seconds": 31.91,
+      "cost_usd": 0.0757,
+      "issues": 3,
+      "verdict": "split check S11: truth 11, cut right",
+      "reason": null
+     },
+     "pictures_12": {
+      "status": "read",
+      "charts": 5,
+      "values": 120,
+      "cut": "listed",
+      "counts": [
+       1,
+       5
+      ],
+      "seconds": 55.39,
+      "cost_usd": 0.1299,
+      "issues": 11,
+      "verdict": "split check S12: truth 5, cut right",
+      "reason": null
+     },
+     "pictures_13": {
+      "status": "read",
+      "charts": 4,
+      "values": 148,
+      "cut": "axes",
+      "counts": [
+       4,
+       4
+      ],
+      "seconds": 62.1,
+      "cost_usd": 0.1523,
+      "issues": 5,
+      "verdict": "split check S13: truth 4, cut right",
+      "reason": null
+     },
+     "pictures_14": {
+      "status": "read",
+      "charts": 3,
+      "values": 111,
+      "cut": "listed",
+      "counts": [
+       8,
+       3
+      ],
+      "seconds": 53.97,
+      "cost_usd": 0.1329,
+      "issues": 4,
+      "verdict": "split check S14: truth 3, cut right",
+      "reason": null
+     }
+    }
+   },
+   "Zodiac": {
+    "check_ok": true,
+    "check_issues": [],
+    "statuses": {
+     "no_data": 2,
+     "read": 3
+    },
+    "charts": 11,
+    "values": 568,
+    "seconds": 180.33,
+    "cost_usd": 0.442,
+    "calls": 10,
+    "run_block": {
+     "method": "cloud",
+     "model": "anthropic/claude-sonnet-5.5",
+     "figures": {
+      "no_data": 2,
+      "read": 3
+     }
+    },
+    "tables_in_markdown": 3,
+    "chunks_with_data": 3,
+    "data_badges_in_viewer": 3,
+    "figures": {
+     "pictures_1": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "single",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 3.91,
+      "cost_usd": 0.0148,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: Workflow diagram of the ZODIAC multi-agent framework, in which patient metrics and ECG tracings pass through LLM agents (M2F, T2F, F2I) with guidelines to produce a clinical report validated by a cardiologist."
+     },
+     "pictures_3": {
+      "status": "no_data",
+      "charts": 0,
+      "values": 0,
+      "cut": "single",
+      "counts": [
+       null,
+       null
+      ],
+      "seconds": 3.17,
+      "cost_usd": 0.0099,
+      "issues": 0,
+      "verdict": "",
+      "reason": "not a data chart: Workflow diagram showing a cardiologist sending data through AWS API Gateway and Lambda to SageMaker, with reports returned along the same path."
+     },
+     "pictures_4": {
+      "status": "read",
+      "charts": 4,
+      "values": 224,
+      "cut": "listed-boxes",
+      "counts": [
+       2,
+       4
+      ],
+      "seconds": 68.2,
+      "cost_usd": 0.1623,
+      "issues": 1,
+      "verdict": "split check W30: truth 4, cut wrong (4 boxes)",
+      "reason": null
+     },
+     "pictures_5": {
+      "status": "read",
+      "charts": 2,
+      "values": 24,
+      "cut": "listed",
+      "counts": [
+       1,
+       2
+      ],
+      "seconds": 11.97,
+      "cost_usd": 0.0318,
+      "issues": 1,
+      "verdict": "split check C4: truth 2, cut right",
+      "reason": null
+     },
+     "pictures_12": {
+      "status": "read",
+      "charts": 5,
+      "values": 320,
+      "cut": "listed",
+      "counts": [
+       2,
+       5
+      ],
+      "seconds": 93.08,
+      "cost_usd": 0.223,
+      "issues": 1,
+      "verdict": "split check W29: truth 5, cut right",
+      "reason": null
+     }
+    }
+   }
+  }
+ }
+}

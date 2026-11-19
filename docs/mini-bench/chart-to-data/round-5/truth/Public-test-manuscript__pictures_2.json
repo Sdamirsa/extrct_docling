@@ -1,0 +1,1186 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 16,
+  "bbox": [
+   73.98133850097656,
+   481.5528869628906,
+   538.4624633789062,
+   181.05401611328125
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "a",
+   "bbox_px": [
+    3.9,
+    3.5,
+    349.0,
+    135.5
+   ],
+   "title": "Figure 3 (a): Accuracy comparison of different structured output strategies (LangChain, Function Call, Standard Output).",
+   "kind": "grouped_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0.0,
+      71.75
+     ],
+     "ticks": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0,
+      60.0,
+      70.0
+     ]
+    },
+    "y": {
+     "name": "Response Generation",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "LangChain",
+      "Function Call",
+      "Standard Output"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "GPT3-API",
+     "color": "blue (#1F77B4)"
+    },
+    {
+     "name": "GPT4-API",
+     "color": "orange (#FFA500)"
+    }
+   ],
+   "data": [
+    {
+     "category": "LangChain",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 39.99,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "LangChain",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 66.73,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Function Call",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 43.34,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Function Call",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 68.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Standard Output",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 39.99,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Standard Output",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 55.04,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Grouped horizontal bar chart (matplotlib barh): three response-generation settings on the y axis (top to bottom: LangChain, Function Call, Standard Output), two bars each, GPT4-API (orange) above GPT3-API (blue), the tick label at the line between the two bars. Legend (lower right): GPT3-API, GPT4-API. No number is printed at a bar: all 6 values are measured (source 'raster'). Rows are listed top to bottom, the two series in legend order.",
+    "Measured on the figure's embedded bitmap (page 16: one RGB image of 1430 x 949 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white). X calibration: least squares through the 8 tick marks under the axis (1 px wide, columns 243, 309, 375, 441, 507, 572, 638, 704 for 0, 10, ..., 70; a tick at column c is taken at c + 0.5) -> 6.582 px per unit, 1 px = 0.152; fit residual at the ticks <= 0.07 (0.47 px).",
+    "Bar end = the last fully covered pixel column plus the coverage of the next one, the same on every pixel row of the bar. Estimated error +/- 0.08 (half a pixel; the bar edges sit on whole pixels).",
+    "LangChain / GPT3-API: bar rows y 65-86, end x 507.0 -> 39.99 (Table S2: 40.00)",
+    "LangChain / GPT4-API: bar rows y 42-63, end x 683.0 -> 66.73 (Table S2: 66.67)",
+    "Function Call / GPT3-API: bar rows y 140-161, end x 529.0 -> 43.34 (Table S2: 43.33)",
+    "Function Call / GPT4-API: bar rows y 117-138, end x 694.0 -> 68.40 (Table S2: 68.33)",
+    "Standard Output / GPT3-API: bar rows y 215-236, end x 507.0 -> 39.99 (Table S2: 40.00)",
+    "Standard Output / GPT4-API: bar rows y 192-214, end x 606.0 -> 55.04 (Table S2: 55.00)",
+    "Cross-checks: every bar starts at the 0 tick (the spine, column 243); the white dashed gridlines stand at the tick columns; Supplementary Table S2 (page 42) states the same six accuracies (24, 40, 26, 41, 24 and 33 of 60 questions), largest |measured - table| = 0.07.",
+    "Axis: the frame runs from 0 to 71.75 (right edge of the plot area at x 716.0 = 1.05 x the longest bar), used as axes.x.range; tick labels 0 ... 70. Y-axis title 'Response Generation', x-axis title 'Accuracy (%)'."
+   ]
+  },
+  {
+   "id": "b",
+   "bbox_px": [
+    361.8,
+    3.5,
+    695.6,
+    135.5
+   ],
+   "title": "Figure 3 (b): Accuracy results at various temperature settings, highlighting the optimal default setting and the consistency observed at lower temperatures.",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      37.8,
+      52.25
+     ],
+     "ticks": [
+      38.0,
+      40.0,
+      42.0,
+      44.0,
+      46.0,
+      48.0,
+      50.0,
+      52.0
+     ]
+    },
+    "y": {
+     "name": "Temperature",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Default (temp=1)",
+      "Default - 10%",
+      "Default - 40%",
+      "Default - 60%",
+      "Default - 90%",
+      "temp=0"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "best prompt",
+     "color": "steel blue (#3A85B9, i.e. #1F77B4 at about 85 % opacity), filled circle"
+    },
+    {
+     "name": "raw prompt",
+     "color": "light teal (#A9E1D6), small star"
+    }
+   ],
+   "data": [
+    {
+     "category": "Default (temp=1)",
+     "x": null,
+     "series": "best prompt",
+     "value": 47.78,
+     "err_lo": 44.9,
+     "err_hi": 50.66,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default (temp=1)",
+     "x": null,
+     "series": "raw prompt",
+     "value": 48.33,
+     "err_lo": 45.06,
+     "err_hi": 51.61,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 10%",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.0,
+     "err_lo": 38.45,
+     "err_hi": 51.53,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 10%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.0,
+     "err_lo": 41.75,
+     "err_hi": 48.27,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 40%",
+     "x": null,
+     "series": "best prompt",
+     "value": 42.78,
+     "err_lo": 38.84,
+     "err_hi": 46.71,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 40%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 42.78,
+     "err_lo": 41.69,
+     "err_hi": 43.86,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 60%",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.55,
+     "err_lo": 42.67,
+     "err_hi": 48.43,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 60%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.0,
+     "err_lo": 43.1,
+     "err_hi": 46.89,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 90%",
+     "x": null,
+     "series": "best prompt",
+     "value": 46.11,
+     "err_lo": 43.92,
+     "err_hi": 48.3,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Default - 90%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.56,
+     "err_lo": 44.48,
+     "err_hi": 46.65,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "temp=0",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.56,
+     "err_lo": 44.48,
+     "err_hi": 46.65,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "temp=0",
+     "x": null,
+     "series": "raw prompt",
+     "value": 43.89,
+     "err_lo": 42.79,
+     "err_hi": 44.98,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Interval plot (matplotlib errorbar, horizontal): six temperature settings on the y axis (top to bottom: Default (temp=1), Default - 10%, Default - 40%, Default - 60%, Default - 90%, temp=0), and on each row two series drawn on the same line: 'best prompt' (blue filled circle, blue bar with caps) and, on top of it, 'raw prompt' (light teal star, teal bar with caps). Legend (lower left): best prompt, raw prompt. No number is printed: all 12 centres and 24 interval ends are measured (source 'raster'). value = the marker centre, err_lo / err_hi = the two caps as absolute x values. Rows are listed top to bottom, the two series in legend order.",
+    "Measured on the figure's embedded bitmap (page 16: one RGB image of 1430 x 949 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white). X calibration: least squares through the 8 tick marks under the axis (columns 956, 1021, 1087, 1152, 1217, 1283, 1348, 1413 for 38, 40, ..., 52) -> 32.66 px per unit, 1 px = 0.031; fit residual at the ticks <= 0.012 (0.4 px). The white dashed gridlines stand at the tick columns.",
+    "Caps: centroid of each cap (2 to 2.4 px wide, 11 px tall) on the pixel rows above and below the bar, where the two series do not cover each other; colours separate the series (blue: B well above G and R; teal: G above B and R). Blue circle: mean midpoint of its row chords (7 px wide); teal star: mean of its centroid and its top point. Estimated error +/- 0.015 (half a pixel).",
+    "Default (temp=1) / best prompt: row y 41, caps at x 1182.0 / 1370.0, marker at x 1276.0 -> 47.78 [44.90, 50.66]",
+    "Default (temp=1) / raw prompt: row y 41, caps at x 1187.2 / 1401.0, marker at x 1294.0 -> 48.33 [45.06, 51.61]",
+    "Default - 10% / best prompt: row y 80, caps at x 971.3 / 1398.5, marker at x 1185.2 -> 45.00 [38.45, 51.53]",
+    "Default - 10% / raw prompt: row y 80, caps at x 1078.8 / 1292.0, marker at x 1185.3 -> 45.00 [41.75, 48.27]",
+    "Default - 40% / best prompt: row y 120, caps at x 984.0 / 1241.0, marker at x 1112.5 -> 42.78 [38.84, 46.71]",
+    "Default - 40% / raw prompt: row y 120, caps at x 1077.0 / 1148.0, marker at x 1112.7 -> 42.78 [41.69, 43.86]",
+    "Default - 60% / best prompt: row y 159, caps at x 1109.0 / 1297.0, marker at x 1203.2 -> 45.55 [42.67, 48.43]",
+    "Default - 60% / raw prompt: row y 159, caps at x 1123.2 / 1247.0, marker at x 1185.0 -> 45.00 [43.10, 46.89]",
+    "Default - 90% / best prompt: row y 198, caps at x 1150.0 / 1293.0, marker at x 1221.4 -> 46.11 [43.92, 48.30]",
+    "Default - 90% / raw prompt: row y 198, caps at x 1168.0 / 1239.0, marker at x 1203.4 -> 45.56 [44.48, 46.65]",
+    "temp=0 / best prompt: row y 237, caps at x 1168.0 / 1239.0, marker at x 1203.4 -> 45.56 [44.48, 46.65]",
+    "temp=0 / raw prompt: row y 237, caps at x 1113.0 / 1184.4, marker at x 1149.0 -> 43.89 [42.79, 44.98]",
+    "At 'Default - 10%' and 'Default - 40%' the two markers sit on the same spot (45.00 and 42.78): the teal star is drawn inside the blue circle.",
+    "Cross-check with Supplementary Table S5 (page 49, 'Average ± SD [95CI]' for temperature 1, 0.9, 0.6, 0.4, 0.1 and 0, which are the rows Default (temp=1), Default - 10%, - 40%, - 60%, - 90% and temp=0): all 36 numbers (12 means, 24 CI bounds) agree, largest |measured - table| = 0.013. Each centre also lies within 0.01 of the midpoint of its two caps and within 0.01 of n/180 in per cent (three runs of 60 questions).",
+    "Axis: the plot area runs from 37.80 to 52.25 (x 950.0 to 1422.0), used as axes.x.range; tick labels 38 ... 52. Y-axis title 'Temperature', x-axis title 'Accuracy (%)'."
+   ]
+  },
+  {
+   "id": "c",
+   "bbox_px": [
+    3.9,
+    147.8,
+    349.0,
+    450.0
+   ],
+   "title": "Figure 3 (c): Accuracy of various max-token lengths (512 tokens, 1024 tokens, and input token length plus 512 tokens), illustrating the benefits of fair token allocation across questions.",
+   "kind": "grouped_bar",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0.0,
+      56.0
+     ],
+     "ticks": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0,
+      50.0
+     ]
+    },
+    "y": {
+     "name": "Experiment Setting",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Best Prompt (candidate 4)",
+      "Give Model Time to Think",
+      "Consensus Technique",
+      "Expert Mimicry",
+      "Confidence Scoring",
+      "Contextual Embedding",
+      "Comparative Analysis",
+      "Elimination Method",
+      "Answer Justification",
+      "Chain of Thought",
+      "Option Analysis",
+      "Direct Question",
+      "Raw"
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "MT: 512",
+     "color": "blue (#1F77B4)"
+    },
+    {
+     "name": "MT: 1024",
+     "color": "light blue (#ADD8E6)"
+    },
+    {
+     "name": "MT: 512plus",
+     "color": "dark blue (#00008B)"
+    }
+   ],
+   "data": [
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 512",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 512",
+     "value": 38.31,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 512",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 512",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 53.37,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 53.37,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 512",
+     "value": 48.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 46.65,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 512",
+     "value": 48.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 49.93,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 49.93,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 512",
+     "value": 52.54,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 512",
+     "value": 44.95,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 512",
+     "value": 49.93,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 48.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 48.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 512",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 41.63,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.29,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Grouped horizontal bar chart (matplotlib barh): 13 experiment settings on the y axis (top to bottom as listed in axes.y.ticks), three bars each, from the top: MT: 512 (blue), MT: 1024 (light blue), MT: 512plus (dark blue); the tick label sits at the first (MT: 512) bar and a gap separates the groups. Legend (right, inside the plot): MT: 512, MT: 1024, MT: 512plus. No number is printed at a bar: all 39 values are measured (source 'raster'). Rows are listed top to bottom, the three series in legend order, which is also their order in each group.",
+    "Measured on the figure's embedded bitmap (page 16: one RGB image of 1430 x 949 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white). X calibration: least squares through the 6 tick marks under the axis (columns 243, 328, 412, 496, 581, 665 for 0, 10, ..., 50) -> 8.437 px per unit, 1 px = 0.119; fit residual at the ticks <= 0.05 (0.39 px).",
+    "Bar end = the last column of the bar's colour on a pixel row plus the coverage of the next column, median over the bar's 10 pixel rows (white dashed gridlines cross the bars, so each row was scanned from the right). In the rows of 'Comparative Analysis' the legend's colour patches (x 612-634) lie to the right of the bars; the bar ends there are at x 595.0, left of the legend box, and are fully visible. Estimated error +/- 0.06 (half a pixel).",
+    "Best Prompt (candidate 4): MT: 512 rows y 339-348 end x 637.4 -> 46.65; MT: 1024 rows y 350-359 end x 623.0 -> 44.95; MT: 512plus rows y 360-369 end x 623.0 -> 44.95 (Table S4: 46.67 / 45.00 / 48.33)",
+    "Give Model Time to Think: MT: 512 rows y 381-390 end x 595.0 -> 41.63; MT: 1024 rows y 391-400 end x 637.4 -> 46.65; MT: 512plus rows y 401-411 end x 637.4 -> 46.65 (Table S4: 41.67 / 46.67 / 45.00)",
+    "Consensus Technique: MT: 512 rows y 422-431 end x 567.0 -> 38.31; MT: 1024 rows y 433-442 end x 609.0 -> 43.29; MT: 512plus rows y 443-452 end x 609.0 -> 43.29 (Table S4: 38.33 / 43.33 / 45.00)",
+    "Expert Mimicry: MT: 512 rows y 464-473 end x 623.0 -> 44.95; MT: 1024 rows y 474-483 end x 623.0 -> 44.95; MT: 512plus rows y 484-494 end x 623.0 -> 44.95 (Table S4: 45.00 / 45.00 / 45.00)",
+    "Confidence Scoring: MT: 512 rows y 505-514 end x 637.4 -> 46.65; MT: 1024 rows y 515-524 end x 694.0 -> 53.37; MT: 512plus rows y 526-535 end x 694.0 -> 53.37 (Table S4: 46.67 / 53.33 / 50.00)",
+    "Contextual Embedding: MT: 512 rows y 547-556 end x 651.2 -> 48.29; MT: 1024 rows y 557-566 end x 609.0 -> 43.29; MT: 512plus rows y 567-576 end x 609.0 -> 43.29 (Table S4: 48.33 / 43.33 / 43.33)",
+    "Comparative Analysis: MT: 512 rows y 588-597 end x 595.0 -> 41.63; MT: 1024 rows y 598-607 end x 595.0 -> 41.63; MT: 512plus rows y 609-618 end x 595.0 -> 41.63 (Table S4: 41.67 / 41.67 / 43.33)",
+    "Elimination Method: MT: 512 rows y 629-638 end x 595.0 -> 41.63; MT: 1024 rows y 640-649 end x 637.4 -> 46.65; MT: 512plus rows y 650-659 end x 637.4 -> 46.65 (Table S4: 41.67 / 46.67 / 48.33)",
+    "Answer Justification: MT: 512 rows y 671-680 end x 651.2 -> 48.29; MT: 1024 rows y 681-690 end x 665.0 -> 49.93; MT: 512plus rows y 692-701 end x 665.0 -> 49.93 (Table S4: 48.33 / 50.00 / 50.00)",
+    "Chain of Thought: MT: 512 rows y 712-721 end x 687.0 -> 52.54; MT: 1024 rows y 723-732 end x 623.0 -> 44.95; MT: 512plus rows y 733-742 end x 623.0 -> 44.95 (Table S4: 52.54 / 45.00 / 41.67)",
+    "Option Analysis: MT: 512 rows y 754-763 end x 623.0 -> 44.95; MT: 1024 rows y 764-773 end x 609.0 -> 43.29; MT: 512plus rows y 774-784 end x 609.0 -> 43.29 (Table S4: 45.00 / 43.33 / 43.33)",
+    "Direct Question: MT: 512 rows y 795-804 end x 665.0 -> 49.93; MT: 1024 rows y 806-815 end x 651.2 -> 48.29; MT: 512plus rows y 816-825 end x 651.2 -> 48.29 (Table S4: 50.00 / 48.33 / 46.67)",
+    "Raw: MT: 512 rows y 837-846 end x 609.0 -> 43.29; MT: 1024 rows y 847-856 end x 595.0 -> 41.63; MT: 512plus rows y 857-867 end x 609.0 -> 43.29 (Table S4: 43.33 / 41.67 / 45.00)",
+    "Cross-check with Supplementary Table S4 (page 48; its rows are named Direct Questioning and Answer and Justify where the figure prints Direct Question and Answer Justification): the 26 MT: 512 and MT: 1024 bars equal the table's columns 'Max_token = 512' and '= 1024', largest |measured - table| = 0.07, including the one value that is not a multiple of 1/60 (Chain of Thought, 52.54 % = 31 of 59). All 39 measured values lie within 0.08 of n/60 in per cent (31/59 for that one bar).",
+    "The MT: 512plus bars do NOT follow the table's '512plus' column: in 12 of the 13 groups the dark bar is drawn exactly as long as the MT: 1024 bar above it (in 'Raw' it equals the MT: 512 bar). It agrees with the table in 4 rows (Expert Mimicry (44.95 vs 45.00); Contextual Embedding (43.29 vs 43.33); Answer Justification (49.93 vs 50.00); Option Analysis (43.29 vs 43.33)) and differs in 9 (Best Prompt (candidate 4) (44.95 vs 48.33); Give Model Time to Think (46.65 vs 45.00); Consensus Technique (43.29 vs 45.00); Confidence Scoring (53.37 vs 50.00); Comparative Analysis (41.63 vs 43.33); Elimination Method (46.65 vs 48.33); Chain of Thought (44.95 vs 41.67); Direct Question (48.29 vs 46.67); Raw (43.29 vs 45.00)). The truth records the bars as drawn.",
+    "Axis: the frame runs from 0 to 56.0 (right edge of the plot area at x 716.0 = 1.05 x the longest bar), used as axes.x.range; tick labels 0 ... 50. Y-axis title 'Experiment Setting', x-axis title 'Accuracy (%)'."
+   ]
+  },
+  {
+   "id": "d",
+   "bbox_px": [
+    361.8,
+    147.3,
+    695.6,
+    450.0
+   ],
+   "title": "Figure 3 (d): Accuracy (average and 95% CI) of different individual and combined (candidate) prompt engineering techniques.",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "axes": {
+    "x": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      34.12,
+      53.21
+     ],
+     "ticks": [
+      35.0,
+      37.5,
+      40.0,
+      42.5,
+      45.0,
+      47.5,
+      50.0,
+      52.5
+     ]
+    },
+    "y": {
+     "name": "Function",
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "Candidate 6",
+      "Candidate 5",
+      "Candidate 4",
+      "Candidate 3",
+      "Candidate 2",
+      "Candidate 1",
+      "Give Model Time to Think",
+      "Consensus Technique",
+      "Expert Mimicry",
+      "Confidence Scoring",
+      "Contextual Embedding",
+      "Comparative Analysis",
+      "Elimination Method",
+      "Answer Justification",
+      "Chain of Thought",
+      "Option Analysis",
+      "Direct Question",
+      "Raw"
+     ]
+    }
+   },
+   "series": [],
+   "data": [
+    {
+     "category": "Candidate 6",
+     "x": null,
+     "series": null,
+     "value": 48.89,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Candidate 5",
+     "x": null,
+     "series": null,
+     "value": 47.78,
+     "err_lo": 45.86,
+     "err_hi": 49.69,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Candidate 4",
+     "x": null,
+     "series": null,
+     "value": 48.89,
+     "err_lo": 45.41,
+     "err_hi": 52.36,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Candidate 3",
+     "x": null,
+     "series": null,
+     "value": 43.89,
+     "err_lo": 42.94,
+     "err_hi": 44.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Candidate 2",
+     "x": null,
+     "series": null,
+     "value": 48.33,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Candidate 1",
+     "x": null,
+     "series": null,
+     "value": 38.33,
+     "err_lo": 34.99,
+     "err_hi": 41.67,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": null,
+     "value": 43.89,
+     "err_lo": 41.33,
+     "err_hi": 46.43,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": null,
+     "value": 40.0,
+     "err_lo": 37.12,
+     "err_hi": 42.9,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": null,
+     "value": 45.56,
+     "err_lo": 44.6,
+     "err_hi": 46.5,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": null,
+     "value": 45.56,
+     "err_lo": 43.63,
+     "err_hi": 47.47,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": null,
+     "value": 46.66,
+     "err_lo": 43.77,
+     "err_hi": 49.53,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": null,
+     "value": 42.22,
+     "err_lo": 41.25,
+     "err_hi": 43.18,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": null,
+     "value": 44.17,
+     "err_lo": 40.64,
+     "err_hi": 47.71,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": null,
+     "value": 48.33,
+     "err_lo": 46.67,
+     "err_hi": 49.99,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": null,
+     "value": 47.5,
+     "err_lo": 43.96,
+     "err_hi": 51.03,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": null,
+     "value": 43.89,
+     "err_lo": 42.94,
+     "err_hi": 44.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": null,
+     "value": 48.33,
+     "err_lo": 46.66,
+     "err_hi": 50.0,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": null,
+     "value": 43.89,
+     "err_lo": 42.94,
+     "err_hi": 44.84,
+     "label_printed": null,
+     "source": "raster",
+     "confidence": 0.95
+    }
+   ],
+   "notes": [
+    "Interval plot (matplotlib errorbar, horizontal): 18 prompts on the y axis (top to bottom as listed in axes.y.ticks: six 'best prompt' candidates, then eleven single techniques, then Raw), one blue (#1F77B4) filled circle per row with a horizontal bar and caps. No legend (one unnamed series: series is null) and no printed numbers: all 18 centres and 32 interval ends are measured (source 'raster'). value = the dot centre, err_lo / err_hi = the two caps as absolute x values. Rows are listed top to bottom.",
+    "Measured on the figure's embedded bitmap (page 16: one RGB image of 1430 x 949 px with a soft mask, 3.06 px per PDF point, decoded from the PDF stream and composited on white). X calibration: least squares through the 8 tick marks under the axis (columns 971, 1033, 1095, 1157, 1218, 1280, 1342, 1404 for 35.0, 37.5, ..., 52.5) -> 24.72 px per unit, 1 px = 0.040; fit residual at the ticks <= 0.016 (0.4 px). The white dashed gridlines stand at the tick columns.",
+    "Dot centre: circle fit to the dot's column chords and, independently, the mean midpoint of its row chords (10 px wide); the two agree within 0.007. Caps: centroid of each cap (2 to 2.3 px wide, 11 px tall). Estimated error: centres +/- 0.01, caps +/- 0.02 (half a pixel).",
+    "Candidate 6: row y 339, dot at x 1315.0 -> 48.89; no bar and no caps are drawn",
+    "Candidate 5: row y 370, caps at x 1240.1 / 1334.9, dot at x 1287.6 -> 47.78 [45.86, 49.69] (half-width 1.92)",
+    "Candidate 4: row y 401, caps at x 1229.1 / 1400.9, dot at x 1315.0 -> 48.89 [45.41, 52.36] (half-width 3.48)",
+    "Candidate 3: row y 432, caps at x 1168.1 / 1214.9, dot at x 1191.5 -> 43.89 [42.94, 44.84] (half-width 0.95)",
+    "Candidate 2: row y 463, dot at x 1301.2 -> 48.33; no bar and no caps are drawn",
+    "Candidate 1: row y 494, caps at x 971.4 / 1136.6, dot at x 1054.0 -> 38.33 [34.99, 41.67] (half-width 3.34)",
+    "Give Model Time to Think: row y 525, caps at x 1128.2 / 1254.2, dot at x 1191.4 -> 43.89 [41.33, 46.43] (half-width 2.55)",
+    "Consensus Technique: row y 556, caps at x 1024.1 / 1166.9, dot at x 1095.2 -> 40.00 [37.12, 42.90] (half-width 2.89)",
+    "Expert Mimicry: row y 587, caps at x 1209.1 / 1256.1, dot at x 1232.8 -> 45.56 [44.60, 46.50] (half-width 0.95)",
+    "Confidence Scoring: row y 618, caps at x 1185.1 / 1280.1, dot at x 1232.7 -> 45.56 [43.63, 47.47] (half-width 1.92)",
+    "Contextual Embedding: row y 649, caps at x 1188.4 / 1331.0, dot at x 1259.9 -> 46.66 [43.77, 49.53] (half-width 2.88)",
+    "Comparative Analysis: row y 681, caps at x 1126.3 / 1173.9, dot at x 1150.1 -> 42.22 [41.25, 43.18] (half-width 0.96)",
+    "Elimination Method: row y 712, caps at x 1111.1 / 1285.9, dot at x 1198.3 -> 44.17 [40.64, 47.71] (half-width 3.53)",
+    "Answer Justification: row y 743, caps at x 1260.1 / 1342.4, dot at x 1301.2 -> 48.33 [46.67, 49.99] (half-width 1.66)",
+    "Chain of Thought: row y 774, caps at x 1193.1 / 1367.9, dot at x 1280.6 -> 47.50 [43.96, 51.03] (half-width 3.54)",
+    "Option Analysis: row y 805, caps at x 1168.1 / 1214.9, dot at x 1191.5 -> 43.89 [42.94, 44.84] (half-width 0.95)",
+    "Direct Question: row y 836, caps at x 1260.1 / 1342.4, dot at x 1301.2 -> 48.33 [46.66, 50.00] (half-width 1.67)",
+    "Raw: row y 867, caps at x 1168.1 / 1214.9, dot at x 1191.5 -> 43.89 [42.94, 44.84] (half-width 0.95)",
+    "'Candidate 6' and 'Candidate 2' are drawn as a dot only: the pixel row through the dot holds no bar on either side. A zero-length bar would be hidden by the dot (its caps are as tall as the dot), so err_lo / err_hi are null there.",
+    "Cross-check with the text and Supplementary Table S3 (pages 43-46, 'Average ± SD [95 CI]'): the centres of 15 rows equal the table's averages (largest difference 0.003); the plotted half-widths equal the table's SD (largest difference 0.012), not its 95 % CI, which is wider by a factor 1.13 (e.g. Raw: bar 42.94-44.84, table SD 0.96 and CI 42.8-44.98). The text of page 16 states the gains over Raw that the centres show: +4.44 (Direct Question, Answer Justification), +2.77 (Contextual Embedding), +1.67 (Confidence Scoring, Expert Mimicry), +5.00 (Candidate 4, the best prompt). Each centre lies within 0.01 of n/360 in per cent (two or three runs of 60 questions).",
+    "Rows where figure and table differ (the truth keeps what is plotted): Elimination Method (figure 44.17 ± 3.53, table 43.34 ± 2.89); Chain of Thought (figure 47.50 ± 3.54, table 48.89 ± 3.47). 'Give Model Time to Think' has no average in the table (mean difference to Raw 0.0, which the centre 43.89 matches). For Candidate 6 the table gives SD 2.55 but the figure draws no bar; for Candidate 2 the table gives SD 0.0.",
+    "Axis: the plot area runs from 34.12 to 53.21 (x 950.0 to 1422.0), used as axes.x.range; tick labels 35.0 ... 52.5. Y-axis title 'Function', x-axis title 'Accuracy (%)'."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-19",
+  "time_minutes": null
+ },
+ "uncertain": [
+  "Data chart with four panels (a-d), 75 rows: 6 + 39 bar ends, 12 + 18 interval centres with 24 + 32 interval ends. Nothing is printed at the marks, so every number is a raster measurement on the embedded bitmap; estimated error +/- 0.08 (a), 0.015 (b), 0.06 (c), 0.01-0.02 (d) axis units, far below 2 % of the axis ranges (1.4, 0.29, 1.1, 0.38).",
+  "Kinds: a and c are 'grouped_bar', b and d are 'forest' (a dot with a horizontal interval per row, as in the earlier truth for such plots); all four are 'horizontal', so the scorer normalises by axes.x.range, the measured extent of the plot area. A prediction that calls b or d 'scatter' or 'other' loses the kind match only. The scorer compares 'value' (bar end, interval centre); err_lo / err_hi are not scored.",
+  "Panel d has no legend: series is null and panel.series is empty, as the reading conventions ask; the scorer ignores series names when both sides have at most one. Panel b has two series on every row.",
+  "Panel d: the bars are drawn as mean ± SD although the legend text of the figure calls them 95 % CI; the truth records the drawn bar ends. Candidate 6 and Candidate 2 have no visible bar (err_lo / err_hi null).",
+  "Panel c: the dark MT: 512plus bars repeat the MT: 1024 bars in 12 of 13 groups and disagree with Supplementary Table S4 in 9; panel d: Chain of Thought and Elimination Method are plotted at other values than Supplementary Table S3 states. The truth keeps the plotted values (see the panel notes).",
+  "Values are the measured positions to 2 decimals, not rounded to the underlying fractions (n/60, n/180 or n/360 in per cent); the difference is at most 0.08.",
+  "Scorer name matching (names within 0.2 normalised edit distance count as equal, pairing is first-fit in row order): 'GPT3-API' and 'GPT4-API' (a) collide, the four categories 'Default - 10%' ... 'Default - 90%' (b) collide with each other, and the six 'Candidate N' (d) collide with each other. The truth lists rows top to bottom and series in legend order; a prediction in another order (GPT4-API before GPT3-API within a category, candidates 1 to 6 ascending) can be cross-paired and scored as wrong although its values are right.",
+  "No panel has a printed title (only the letters a-d): panel.title carries the panel's sentence of the figure legend printed under the caption on page 16.",
+  "bbox_px is the ink box of each panel (letter, labels, axes) mapped from the native bitmap to the bundle crop (1.5 px per PDF point from the picture bbox: crop_x = 0.4909 u - 2.97, crop_y = 0.4908 v - 4.83, checked on the plot-area edges within 0.5 px) and clipped to the 697 x 450 crop, which cuts the lower half of the x-axis titles of c and d. figure.bbox is copied verbatim from the picture's prov in document.json (l, t, r, b, origin bottom-left)."
+ ]
+}

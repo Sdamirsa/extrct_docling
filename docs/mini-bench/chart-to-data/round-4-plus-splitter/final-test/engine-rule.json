@@ -1,0 +1,102 @@
+{
+ "gemma4-26b-qat": {
+  "all": {
+   "figures": 51,
+   "right": 37,
+   "count_right": 41,
+   "charts": 236,
+   "found": 169,
+   "held": 138,
+   "extra": 57
+  },
+  "taken": {
+   "rules": {
+    "figures": 22,
+    "right": 22
+   },
+   "listed": {
+    "figures": 24,
+    "right": 15
+   },
+   "listed-boxes": {
+    "figures": 5,
+    "right": 0
+   }
+  },
+  "check": 37
+ },
+ "sonnet-5-5": {
+  "all": {
+   "figures": 51,
+   "right": 46,
+   "count_right": 50,
+   "charts": 236,
+   "found": 218,
+   "held": 193,
+   "extra": 15
+  },
+  "taken": {
+   "rules": {
+    "figures": 26,
+    "right": 24
+   },
+   "listed": {
+    "figures": 22,
+    "right": 20
+   },
+   "listed-boxes": {
+    "figures": 3,
+    "right": 2
+   }
+  },
+  "check": 46
+ },
+ "sonnet-5-5-low": {
+  "all": {
+   "figures": 51,
+   "right": 46,
+   "count_right": 50,
+   "charts": 236,
+   "found": 222,
+   "held": 192,
+   "extra": 10
+  },
+  "taken": {
+   "rules": {
+    "figures": 26,
+    "right": 24
+   },
+   "listed": {
+    "figures": 22,
+    "right": 19
+   },
+   "listed-boxes": {
+    "figures": 3,
+    "right": 3
+   }
+  },
+  "check": null
+ },
+ "gemini-3-8-flash": {
+  "all": {
+   "figures": 51,
+   "right": 46,
+   "count_right": 50,
+   "charts": 236,
+   "found": 228,
+   "held": 213,
+   "extra": 10
+  },
+  "taken": {
+   "rules": {
+    "figures": 26,
+    "right": 24
+   },
+   "listed": {
+    "figures": 25,
+    "right": 22
+   }
+  },
+  "check": 46
+ }
+}

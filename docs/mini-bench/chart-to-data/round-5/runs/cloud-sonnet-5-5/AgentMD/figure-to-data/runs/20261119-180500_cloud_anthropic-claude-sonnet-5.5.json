@@ -1,0 +1,173 @@
+{
+  "schema": "extrct.figure-to-data-run/1",
+  "run_id": "20261119-180500_cloud_anthropic-claude-sonnet-5.5",
+  "step_version": "3",
+  "bundle": "AgentMD",
+  "method": "cloud",
+  "backend": "openai-compatible",
+  "model": "anthropic/claude-sonnet-5.5",
+  "started": "2026-11-19T18:05:00",
+  "seconds": 127.99,
+  "options": {
+    "method": "cloud",
+    "backend": "openai-compatible",
+    "model": "anthropic/claude-sonnet-5.5",
+    "mode": "measured",
+    "ollama_url": "http://127.0.0.1:11434",
+    "keep_alive": "10m",
+    "cloud_base_url": "https://openrouter.ai/api/v1",
+    "cloud_api_key_env": "OPENROUTER_API_KEY",
+    "cloud_max_output_tokens": 64000,
+    "cloud_reasoning_effort": "high",
+    "cloud_list_reasoning_effort": "low",
+    "claude_command": "claude",
+    "cloud_max_side_px": 2000,
+    "claude_effort": "high",
+    "max_cost_usd_per_figure": 2.0,
+    "samples": 1,
+    "panel_split": "auto",
+    "crop_dpi": 220,
+    "min_confidence_for_markdown": 0.7,
+    "eligible_types": [
+      "bar_chart",
+      "box_plot",
+      "forest_plot",
+      "heatmap",
+      "kaplan_meier",
+      "line_chart",
+      "pie_chart",
+      "roc_curve",
+      "scatter_plot"
+    ],
+    "time_budget_s_per_figure": 600.0,
+    "time_budget_s_per_call": 120.0,
+    "num_ctx": 16384,
+    "max_output_tokens": 8192,
+    "vlm_max_side_px": 1600,
+    "request_timeout_s": 600.0
+  },
+  "reader": {
+    "runtime": "POST https://openrouter.ai/api/v1/chat/completions, key from OPENROUTER_API_KEY",
+    "calls_per_figure": 2,
+    "system_prompt": "You read the data out of one figure from a scientific paper and return it as tables.\n\nYou are given the figure image; when the figure holds several charts, one enlarged crop per chart after it; the paper's caption; the charts a layout analysis found; and the text printed in the figure (taken from the PDF or read by OCR; OCR can misread, the image decides). Read each chart from its own crop when it has one.\n\nAnswer once, for the whole figure: description (what it shows, one sentence), has_data, one entry in panels per chart, and not_read.\n\nHow a chart becomes points\n- One chart per plot with its own axes, and one per pie, also when charts sit in a grid, share a legend or stand under one panel letter. Use the chart ids you were given when they match what you see; otherwise number the charts 1, 2, 3, ... in reading order and give each a box.\n- One point per (category or x value, series), each once.\n- category = the tick label of the mark, exactly as printed (line breaks as spaces); null on a numeric x axis. x = the mark's position on a numeric x axis, as a number; null otherwise. series = the legend entry, exactly as printed; null only when the chart has no legend. Never repeat the category as the series.\n- value = the number the mark stands for, in axis units, read against the nearest tick labels to the precision the axis allows. Do not round to a tick.\n- label = the number printed at the mark, exactly as printed, when one is printed. A printed number is the value: it beats a reading against the axis.\n- Bar: the bar's end. Grouped bar: one point per bar, category = the tick label, series = the bar's legend entry.\n- Stacked bar: one point per segment, value = the segment's own length, not the cumulative edge. category names the bar, series the segment's legend entry. When one tick label carries several stacked bars (a pair per item, one per group), each bar is its own category, written \"<tick label> - <group>\". A segment the legend implies but the bar does not show is written with value 0.\n- Box plot: value = the median, err_lo and err_hi = the whisker ends; quartiles and outliers go into the chart's notes.\n- Interval, error bar or forest plot: value = the centre, err_lo and err_hi = the two ends as axis values, not as distances from the centre.\n- Line or scatter: one point per marker; a line without markers: one point per x tick. When the x axis prints no tick labels, x = 1, 2, 3, ... in order.\n- A curve with a statistic printed for it (a ROC curve with its AUC in the legend): one point per curve, category = the curve's name, series = the statistic's name (AUC, AUROC), value and label = the printed number. Do not trace the curve.\n- Pie: one point per slice, value = its percentage, series null.\n- Heatmap: one point per cell, category = the row label, series = the column label.\n\nWhat must hold\n- A figure that plots or prints no data values that could go into a table (a diagram, workflow, architecture, photo, screenshot, or a raw signal trace such as an ECG) has no data: has_data false, no charts. Never turn a diagram's labels into values.\n- Never invent a value. A value you cannot read is null. Anything the figure shows that you did not write down (a chart, a series, the individual dots behind a box) is named in not_read, with the reason and how much it is.\n- Completeness counts as much as precision: before you answer, count the marks of each chart and the points you wrote for it."
+  },
+  "figures": [
+    {
+      "folder": "pictures_2",
+      "self_ref": "#/pictures/2",
+      "status": "no_data",
+      "reason": "not a data chart: Workflow diagram of AgentMD tool selection, computation and summarization, in which a patient note is embedded, a relevant calculator (CURB-65) is selected, an LLM and Python interpreter compute the score, and a summary is generated. It contains no plotted data.",
+      "charts": 0,
+      "values": 0,
+      "seconds": 9.9,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 9844,
+      "output_tokens": 283,
+      "cost_usd": 0.0225,
+      "notes": [
+        "not a data chart: Workflow diagram of AgentMD tool selection, computation and summarization, in which a patient note is embedded, a relevant calculator (CURB-65) is selected, an LLM and Python interpreter compute the score, and a summary is generated. It contains no plotted data.",
+        "The figure is a diagram. The RiskCalcs embedding scatter is an illustration with no axes or values. The only numbers (CURB-65 score 0 or 1, 0.7% and 3.2% mortality risk) appear in the example text and are not chart data."
+      ]
+    },
+    {
+      "folder": "pictures_3",
+      "self_ref": "#/pictures/3",
+      "status": "failed",
+      "reason": "cloud read failed: no JSON object in the reply: 'Only the citation bars and the Logic/Interp. correctness cells are tabulated; the unit-test and coverage cells are summarised in notes (see `not_read`).\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"command'",
+      "charts": 0,
+      "values": 0,
+      "seconds": 52.55,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 5670,
+      "output_tokens": 131,
+      "cost_usd": 0.0126,
+      "notes": [
+        "the rule splitter finds 1 chart(s), the model lists 2: cut between the listed charts",
+        "cloud read failed: no JSON object in the reply: 'Only the citation bars and the Logic/Interp. correctness cells are tabulated; the unit-test and coverage cells are summarised in notes (see `not_read`).\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"command'",
+        "not read: the model returned no reading"
+      ]
+    },
+    {
+      "folder": "pictures_4",
+      "self_ref": "#/pictures/4",
+      "status": "no_data",
+      "reason": "not a data chart: A workflow diagram of the RiskCalcs pipeline: tool selection (CURB-65 score), parameter extraction, tool computation, and prediction (score 0, mortality 0.7%). It plots no chart data.",
+      "charts": 0,
+      "values": 0,
+      "seconds": 4.94,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 5294,
+      "output_tokens": 248,
+      "cost_usd": 0.0131,
+      "notes": [
+        "not a data chart: A workflow diagram of the RiskCalcs pipeline: tool selection (CURB-65 score), parameter extraction, tool computation, and prediction (score 0, mortality 0.7%). It plots no chart data.",
+        "The layout analysis proposed one chart, but the figure is a workflow diagram with no axes or plotted data. The input parameters and the output (Score 0, Mortality 0.7%) are example text in boxes, so no table was made."
+      ]
+    },
+    {
+      "folder": "pictures_5",
+      "self_ref": "#/pictures/5",
+      "status": "read",
+      "reason": null,
+      "charts": 3,
+      "values": 9,
+      "seconds": 9.65,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 8331,
+      "output_tokens": 1306,
+      "cost_usd": 0.0297,
+      "notes": [
+        "3 charts found by their tick labels",
+        "Panel a (example question) is not part of the supplied image."
+      ]
+    },
+    {
+      "folder": "pictures_7",
+      "self_ref": "#/pictures/7",
+      "status": "read",
+      "reason": null,
+      "charts": 2,
+      "values": 73,
+      "seconds": 25.12,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 12337,
+      "output_tokens": 4863,
+      "cost_usd": 0.0733,
+      "notes": [
+        "the rule splitter finds 5 chart(s), the model lists 2: cut between the listed charts",
+        "Panel a is a workflow diagram with no data values (the bars in the CURB-65 mock-up are illustrative)."
+      ]
+    },
+    {
+      "folder": "pictures_8",
+      "self_ref": "#/pictures/8",
+      "status": "read",
+      "reason": null,
+      "charts": 14,
+      "values": 33,
+      "seconds": 25.78,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 20247,
+      "output_tokens": 4462,
+      "cost_usd": 0.0851,
+      "notes": [
+        "the rule splitter finds 11 chart(s), the model lists 14: cut between the listed charts",
+        "panel e1: 0.055 outside the axis range [0, 0.05] (28.0/Density)",
+        "panel e2: 0.128 outside the axis range [0, 0.12] (90.0/Density)",
+        "panel e3: 0.046 outside the axis range [0, 0.04] (82.0/Density)",
+        "panel e4: 0.026 outside the axis range [0, 0.02] (92.0/Density)",
+        "panel e7: 0.033 outside the axis range [0, 0.03] (49.0/Density)",
+        "Panels a and b are workflow diagrams with no data.",
+        "KDE density curves in c, d and e are only sampled at peaks and a few ticks, not fully traced.",
+        "ROC curve shapes in f not traced; only legend AUCs recorded."
+      ]
+    }
+  ],
+  "embedded": 6
+}

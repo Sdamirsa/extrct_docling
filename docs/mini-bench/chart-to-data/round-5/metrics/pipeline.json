@@ -1,0 +1,812 @@
+{
+ "paper": "showcase/Public-test-manuscript.pdf",
+ "runs": {
+  "ollama-gemma4-26b-qat": {
+   "label": "ollama-gemma4-26b-qat",
+   "method": "ollama",
+   "model": "gemma4:26b-a4b-it-qat",
+   "backend": "ollama",
+   "engine": {
+    "name": "extrct_docling",
+    "version": "2.131.0-r4",
+    "release": null,
+    "repository": "https://github.com/Sdamirsa/extrct_docling",
+    "git_commit": null,
+    "git_dirty": null
+   },
+   "exit_code": 0,
+   "seconds": {
+    "command": 2694.0,
+    "conversion": 609.7,
+    "reading": 2024.3,
+    "rest": 60.0
+   },
+   "figures": {
+    "read": 11,
+    "no_data": 0,
+    "not_read": 1,
+    "failed": 0
+   },
+   "charts": 37,
+   "values": 1523,
+   "calls": 48,
+   "tool_calls": 0,
+   "input_tokens": 65502,
+   "output_tokens": 67686,
+   "cost_usd": null,
+   "check": {
+    "skipped": null,
+    "issues": [],
+    "mode": "ollama",
+    "eligible": 12,
+    "extracted": 11,
+    "no_data": 1,
+    "verified": 6,
+    "low_confidence": 5
+   },
+   "check_ok": true,
+   "exports": {
+    "tables_at_the_figure": 8,
+    "pointer_only": 3,
+    "chunks": 165,
+    "chunks_with_figure_data": 11,
+    "markdown_bytes": 232558
+   },
+   "against_truth": {
+    "figures": 6,
+    "truth_values": 573,
+    "returned": 361,
+    "matched": 270,
+    "within_5": 137,
+    "within_5_by_name": 148,
+    "within_5_by_name_after_fix": 148,
+    "within_5_names_ignored": 183
+   },
+   "against_sample": {
+    "figures": 5,
+    "sampled_values": 60,
+    "matched": 31,
+    "within_5": 9
+   }
+  },
+  "cloud-sonnet-5-5": {
+   "label": "cloud-sonnet-5-5",
+   "method": "cloud",
+   "model": "anthropic/claude-sonnet-5.5",
+   "backend": "openai-compatible",
+   "engine": {
+    "name": "extrct_docling",
+    "version": "2.131.0-r4",
+    "release": null,
+    "repository": "https://github.com/Sdamirsa/extrct_docling",
+    "git_commit": null,
+    "git_dirty": null
+   },
+   "exit_code": 0,
+   "seconds": {
+    "command": 1091.0,
+    "conversion": 609.7,
+    "reading": 94.43,
+    "rest": 386.9
+   },
+   "figures": {
+    "read": 2,
+    "no_data": 0,
+    "not_read": 0,
+    "failed": 0
+   },
+   "charts": 15,
+   "values": 161,
+   "calls": 4,
+   "tool_calls": 0,
+   "input_tokens": 33620,
+   "output_tokens": 16072,
+   "cost_usd": 0.228,
+   "check": {
+    "skipped": null,
+    "issues": [],
+    "mode": "cloud",
+    "eligible": 12,
+    "extracted": 11,
+    "no_data": 1,
+    "verified": 9,
+    "low_confidence": 2
+   },
+   "check_ok": true,
+   "exports": {
+    "tables_at_the_figure": 9,
+    "pointer_only": 2,
+    "chunks": 169,
+    "chunks_with_figure_data": 11,
+    "markdown_bytes": 238928
+   },
+   "against_truth": {
+    "figures": 6,
+    "truth_values": 573,
+    "returned": 0,
+    "matched": 376,
+    "within_5": 366,
+    "within_5_by_name": 378,
+    "within_5_by_name_after_fix": 378,
+    "within_5_names_ignored": 378
+   },
+   "against_sample": {
+    "figures": 5,
+    "sampled_values": 60,
+    "matched": 46,
+    "within_5": 46
+   }
+  }
+ },
+ "figures": [
+  {
+   "id": "S02",
+   "self_ref": "#/pictures/2",
+   "folder": "pictures_2",
+   "what": "Figure 3, page 16: four panels (a-d), horizontal bars and interval plots",
+   "truth_values": 75,
+   "truth_charts": 4,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 4,
+     "values": 75,
+     "seconds": 75.2,
+     "cost_usd": null,
+     "output_tokens": 4396,
+     "score": {
+      "charts_matched": 4,
+      "matched": 75,
+      "within_2": 15,
+      "within_5": 23,
+      "mean_error": 0.2752,
+      "matched_by_name": 75,
+      "within_2_by_name": 15,
+      "within_5_by_name": 23,
+      "within_5_names_ignored": 28,
+      "worst": [
+       "c / Confidence Scoring / MT: 512plus: truth 53.37, read 19.9052",
+       "c / Confidence Scoring / MT: 1024: truth 53.37, read 19.9052",
+       "c / Chain of Thought / MT: 512: truth 52.54, read 19.9052",
+       "c / Direct Question / MT: 512: truth 49.93, read 19.9052",
+       "c / Answer Justification / MT: 512plus: truth 49.93, read 19.9052",
+       "c / Answer Justification / MT: 1024: truth 49.93, read 19.9052",
+       "c / Direct Question / MT: 512plus: truth 48.29, read 19.9052",
+       "c / Direct Question / MT: 1024: truth 48.29, read 19.9052",
+       "c / Contextual Embedding / MT: 512: truth 48.29, read 19.9052",
+       "c / Answer Justification / MT: 512: truth 48.29, read 19.9052",
+       "c / Give Model Time to Think / MT: 512plus: truth 46.65, read 19.9052",
+       "c / Give Model Time to Think / MT: 1024: truth 46.65, read 19.9052"
+      ]
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 4,
+      "matched": 75,
+      "within_2": 68,
+      "within_5": 69,
+      "mean_error": 0.0013,
+      "matched_by_name": 75,
+      "within_2_by_name": 68,
+      "within_5_by_name": 69,
+      "within_5_names_ignored": 69,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.267
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.28
+    }
+   }
+  },
+  {
+   "id": "S03",
+   "self_ref": "#/pictures/3",
+   "folder": "pictures_3",
+   "what": "Figure 4, page 18: one horizontal stacked bar per model (37 bars, 6 segment classes), share of Correct printed",
+   "truth_values": 222,
+   "truth_charts": 1,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 1,
+     "values": 74,
+     "seconds": 71.81,
+     "cost_usd": null,
+     "output_tokens": 4233,
+     "score": {
+      "charts_matched": 1,
+      "matched": 74,
+      "within_2": 37,
+      "within_5": 37,
+      "mean_error": 0.2546,
+      "matched_by_name": 74,
+      "within_2_by_name": 37,
+      "within_5_by_name": 37,
+      "within_5_names_ignored": 37,
+      "worst": [
+       "1 / Claude3.5-Sonnet API / Incorrect: truth 25.67, read 99.8102",
+       "1 / GPT-4o API / Incorrect: truth 26.33, read 99.8102",
+       "1 / GeminiAdvanced Web / Incorrect: truth 30.67, read 99.8102",
+       "1 / Claude3-Opus Web / Incorrect: truth 31.67, read 99.8102",
+       "1 / Claude3-Opus API / Incorrect: truth 32, read 99.8102",
+       "1 / GPT-4 Web / Incorrect: truth 33.33, read 99.8102",
+       "1 / GPT-4 API / Incorrect: truth 34, read 99.8102",
+       "1 / Llama3.1-405b Poe / Incorrect: truth 35.33, read 99.8102",
+       "1 / Mistral-Large Poe / Incorrect: truth 38.33, read 99.8102",
+       "1 / Claude3-Sonnet Web / Incorrect: truth 41, read 99.8102",
+       "1 / Llama3.1-70b Poe / Incorrect: truth 41.33, read 99.8102",
+       "1 / Llama3-70b Poe / Incorrect: truth 42.67, read 99.8102"
+      ]
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 1,
+      "matched": 37,
+      "within_2": 37,
+      "within_5": 37,
+      "mean_error": 0.0,
+      "matched_by_name": 37,
+      "within_2_by_name": 37,
+      "within_5_by_name": 37,
+      "within_5_names_ignored": 37,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.5
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 1.0
+    }
+   }
+  },
+  {
+   "id": "S04",
+   "self_ref": "#/pictures/4",
+   "folder": "pictures_4",
+   "what": "Figure 5, page 20: horizontal stacked bars per model and image setting (24 bars, 6 segment classes), share of Correct printed",
+   "truth_values": 144,
+   "truth_charts": 1,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 1,
+     "values": 64,
+     "seconds": 61.29,
+     "cost_usd": null,
+     "output_tokens": 3607,
+     "score": {
+      "charts_matched": 1,
+      "matched": 64,
+      "within_2": 24,
+      "within_5": 24,
+      "mean_error": 0.3863,
+      "matched_by_name": 64,
+      "within_2_by_name": 24,
+      "within_5_by_name": 24,
+      "within_5_names_ignored": 29,
+      "worst": [
+       "1 / GeminiAdvanced Web - human hint / NOP: truth 0, read 88.6148",
+       "1 / Claude3Opus API - human hint / Incorrect: truth 19.59, read 99.8823",
+       "1 / GeminiAdvanced Web - no image / Error: truth 0, read 79.9881",
+       "1 / GeminiAdvanced Web- direct image / NOP: truth 0, read 78.2275",
+       "1 / GeminiAdvanced Web - human hint / Error: truth 10.91, read 88.6148",
+       "1 / GeminiAdvanced Web - LLM caption / NOP: truth 1.41, read 78.2275",
+       "1 / Claude3Opus Web - human hint / Incorrect: truth 23.17, read 99.8823",
+       "1 / GeminiAdvanced Web - human hint / EOP: truth 2.11, read 78.2275",
+       "1 / Claude3Sonnet API - direct image / Incorrect: truth 24.69, read 99.8823",
+       "1 / GeminiAdvanced Web - no image / NOP: truth 4.68, read 79.812",
+       "1 / Claude3Opus API - LLM caption / Incorrect: truth 26.1, read 99.8823",
+       "1 / GPT4 Web - human hint / Incorrect: truth 26.81, read 99.8823"
+      ]
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 1,
+      "matched": 144,
+      "within_2": 144,
+      "within_5": 144,
+      "mean_error": 0.0007,
+      "matched_by_name": 144,
+      "within_2_by_name": 144,
+      "within_5_by_name": 144,
+      "within_5_names_ignored": 144,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.375
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.167
+    }
+   }
+  },
+  {
+   "id": "S05",
+   "self_ref": "#/pictures/5",
+   "folder": "pictures_5",
+   "what": "Figure 6, page 21: two panels of points with printed percentages",
+   "truth_values": 17,
+   "truth_charts": 2,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 2,
+     "values": 17,
+     "seconds": 37.17,
+     "cost_usd": null,
+     "output_tokens": 2098,
+     "score": {
+      "charts_matched": 2,
+      "matched": 17,
+      "within_2": 13,
+      "within_5": 13,
+      "mean_error": 0.0,
+      "matched_by_name": 17,
+      "within_2_by_name": 13,
+      "within_5_by_name": 13,
+      "within_5_names_ignored": 13,
+      "worst": []
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 2,
+      "matched": 17,
+      "within_2": 13,
+      "within_5": 13,
+      "mean_error": 0.0,
+      "matched_by_name": 17,
+      "within_2_by_name": 13,
+      "within_5_by_name": 13,
+      "within_5_names_ignored": 13,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 1.0
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 1.0
+    }
+   }
+  },
+  {
+   "id": "S06",
+   "self_ref": "#/pictures/6",
+   "folder": "pictures_6",
+   "what": "Figure 7, page 22: four line panels (a-d), an average line with a shaded range over model temperature",
+   "truth_values": 52,
+   "truth_charts": 4,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 4,
+     "values": 104,
+     "seconds": 88.18,
+     "cost_usd": null,
+     "output_tokens": 5237,
+     "score": {
+      "charts_matched": 4,
+      "matched": 40,
+      "within_2": 23,
+      "within_5": 40,
+      "mean_error": 0.0188,
+      "matched_by_name": 52,
+      "within_2_by_name": 29,
+      "within_5_by_name": 51,
+      "within_5_names_ignored": 51,
+      "worst": [
+       "d / Average / 1.0: truth 84.24, read 80"
+      ]
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 4,
+      "matched": 40,
+      "within_2": 40,
+      "within_5": 40,
+      "mean_error": 0.0026,
+      "matched_by_name": 52,
+      "within_2_by_name": 52,
+      "within_5_by_name": 52,
+      "within_5_names_ignored": 52,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.106
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.962
+    }
+   }
+  },
+  {
+   "id": "S08",
+   "self_ref": "#/pictures/8",
+   "folder": "pictures_8",
+   "what": "page 58: confusion matrix of the answer extraction, a printed count in every cell",
+   "truth_values": 63,
+   "truth_charts": 1,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 1,
+     "values": 27,
+     "seconds": 26.64,
+     "cost_usd": null,
+     "output_tokens": 1477,
+     "score": {
+      "charts_matched": 1,
+      "matched": 0,
+      "within_2": 0,
+      "within_5": 0,
+      "mean_error": null,
+      "matched_by_name": 0,
+      "within_2_by_name": 0,
+      "within_5_by_name": 0,
+      "within_5_names_ignored": 25,
+      "worst": []
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "score": {
+      "charts_matched": 1,
+      "matched": 63,
+      "within_2": 63,
+      "within_5": 63,
+      "mean_error": 0.0,
+      "matched_by_name": 63,
+      "within_2_by_name": 63,
+      "within_5_by_name": 63,
+      "within_5_names_ignored": 63,
+      "worst": []
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.519
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.0
+    }
+   }
+  },
+  {
+   "id": "S09",
+   "self_ref": "#/pictures/9",
+   "folder": "pictures_9",
+   "what": "page 61: one coloured strip per model over 300 questions, with annotation tracks (about 11,000 cells)",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": null,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "not_read",
+     "reason": "no values returned",
+     "charts": 1,
+     "values": 0,
+     "seconds": 5.74,
+     "cost_usd": null,
+     "output_tokens": 165
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": null
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": null
+    }
+   }
+  },
+  {
+   "id": "S10",
+   "self_ref": "#/pictures/10",
+   "folder": "pictures_10",
+   "what": "page 62: three panels of 37 stacked bars, one bar per model",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": 12,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 3,
+     "values": 122,
+     "seconds": 132.49,
+     "cost_usd": null,
+     "output_tokens": 5517,
+     "sample": {
+      "matched": 8,
+      "within_5": 2
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "sample": {
+      "matched": 12,
+      "within_5": 12
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.205
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.234
+    }
+   }
+  },
+  {
+   "id": "S11",
+   "self_ref": "#/pictures/11",
+   "folder": "pictures_11",
+   "what": "page 63: eleven panels of 37 stacked bars, one bar per model",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": 12,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 8,
+     "values": 183,
+     "seconds": 585.88,
+     "cost_usd": null,
+     "output_tokens": 839,
+     "sample": {
+      "matched": 2,
+      "within_5": 0
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "read",
+     "reason": null,
+     "charts": 11,
+     "values": 13,
+     "seconds": 31.91,
+     "cost_usd": 0.0757,
+     "output_tokens": 3678,
+     "sample": {
+      "matched": 2,
+      "within_5": 2
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.011
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.154
+    }
+   }
+  },
+  {
+   "id": "S12",
+   "self_ref": "#/pictures/12",
+   "folder": "pictures_12",
+   "what": "page 64: five panels of 37 stacked bars, one bar per model",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": 12,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 5,
+     "values": 297,
+     "seconds": 366.97,
+     "cost_usd": null,
+     "output_tokens": 7270,
+     "sample": {
+      "matched": 5,
+      "within_5": 0
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "sample": {
+      "matched": 8,
+      "within_5": 8
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.013
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.042
+    }
+   }
+  },
+  {
+   "id": "S13",
+   "self_ref": "#/pictures/13",
+   "folder": "pictures_13",
+   "what": "page 65: four panels of 37 stacked bars, one bar per model",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": 12,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 4,
+     "values": 302,
+     "seconds": 293.31,
+     "cost_usd": null,
+     "output_tokens": 16924,
+     "sample": {
+      "matched": 7,
+      "within_5": 2
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "read",
+     "reason": null,
+     "charts": 4,
+     "values": 148,
+     "seconds": 62.1,
+     "cost_usd": 0.1523,
+     "output_tokens": 12394,
+     "sample": {
+      "matched": 12,
+      "within_5": 12
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.046
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.122
+    }
+   }
+  },
+  {
+   "id": "S14",
+   "self_ref": "#/pictures/14",
+   "folder": "pictures_14",
+   "what": "page 66: three panels of 37 stacked bars, one bar per model",
+   "truth_values": null,
+   "truth_charts": null,
+   "sample_values": 12,
+   "runs": {
+    "ollama-gemma4-26b-qat": {
+     "status": "read",
+     "reason": null,
+     "charts": 3,
+     "values": 258,
+     "seconds": 278.25,
+     "cost_usd": null,
+     "output_tokens": 15923,
+     "sample": {
+      "matched": 9,
+      "within_5": 5
+     }
+    },
+    "cloud-sonnet-5-5": {
+     "status": "not prepared",
+     "reason": null,
+     "charts": 0,
+     "values": 0,
+     "seconds": null,
+     "cost_usd": null,
+     "output_tokens": null,
+     "sample": {
+      "matched": 12,
+      "within_5": 12
+     }
+    }
+   },
+   "agreement": {
+    "ollama-gemma4-26b-qat": {
+     "cloud-sonnet-5-5": 0.128
+    },
+    "cloud-sonnet-5-5": {
+     "ollama-gemma4-26b-qat": 0.333
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,804 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 22,
+    "bbox": [
+      70.67,
+      107.13,
+      493.43,
+      434.31
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "a",
+      "bbox_px": [
+        2.0,
+        0.5,
+        320.4,
+        240.9
+      ],
+      "title": "Raw Prompt - Without Determining Seed",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": 72.0,
+          "err_hi": 74.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 75.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 78.0,
+          "err_lo": 66.0,
+          "err_hi": 86.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 72.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 71.0,
+          "err_lo": 69.0,
+          "err_hi": 72.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 69.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 69.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 80.0,
+          "err_lo": 75.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": 75.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 79.5,
+          "err_lo": 72.0,
+          "err_hi": 90.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": 69.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": 65.0,
+          "err_hi": 86.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 48.0,
+          "err_lo": 41.0,
+          "err_hi": 53.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Highlighted points: 0 and 0.6 (yellow), 1 (red, best)",
+        "Band values are approximate"
+      ]
+    },
+    {
+      "id": "b",
+      "bbox_px": [
+        326.8,
+        0.5,
+        632.5,
+        240.9
+      ],
+      "title": "Best Prompt - Without Determining Seed",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 75.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": 75.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": 69.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 72.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 71.0,
+          "err_lo": 66.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 78.5,
+          "err_lo": 72.0,
+          "err_hi": 91.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 63.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 79.5,
+          "err_lo": 75.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 66.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": 69.0,
+          "err_hi": 75.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 59.0,
+          "err_lo": 52.0,
+          "err_hi": 66.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 49.0,
+          "err_lo": 44.0,
+          "err_hi": 53.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 35.5,
+          "err_lo": 25.0,
+          "err_hi": 44.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Highlighted points: 0 (yellow), 1 (red, best)",
+        "Band values are approximate"
+      ]
+    },
+    {
+      "id": "c",
+      "bbox_px": [
+        2.0,
+        250.3,
+        320.9,
+        490.7
+      ],
+      "title": "Raw Prompt - After Determining Seed",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 83.0,
+          "err_lo": 80.0,
+          "err_hi": 88.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": 75.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 71.0,
+          "err_lo": 69.0,
+          "err_hi": 75.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 78.0,
+          "err_lo": 72.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": 72.0,
+          "err_hi": 75.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 81.0,
+          "err_lo": 78.0,
+          "err_hi": 86.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 79.5,
+          "err_lo": 78.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 72.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": 66.0,
+          "err_hi": 72.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 72.0,
+          "err_lo": 66.0,
+          "err_hi": 72.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": 66.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 66.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 50.0,
+          "err_lo": 41.0,
+          "err_hi": 58.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Highlighted points: 0 (red, best), 1.4 (yellow)",
+        "Band values are approximate"
+      ]
+    },
+    {
+      "id": "d",
+      "bbox_px": [
+        326.3,
+        250.8,
+        632.5,
+        490.7
+      ],
+      "title": "Best Prompt - After Determining Seed",
+      "kind": "line",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 77.5,
+          "err_lo": 75.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": 72.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 77.5,
+          "err_lo": 75.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": 66.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 69.0,
+          "err_lo": 66.0,
+          "err_hi": 72.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 66.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 81.0,
+          "err_lo": 78.0,
+          "err_hi": 83.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 84.0,
+          "err_lo": 80.0,
+          "err_hi": 86.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 82.0,
+          "err_lo": 75.0,
+          "err_hi": 91.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 84.5,
+          "err_lo": 83.0,
+          "err_hi": 88.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": 69.0,
+          "err_hi": 80.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 72.0,
+          "err_lo": 66.0,
+          "err_hi": 78.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 65.0,
+          "err_lo": 63.0,
+          "err_hi": 66.0,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Highlighted points: 1.4 (red, best), 2 (yellow)",
+        "Band values are approximate"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Four line charts of GPT-3.5 accuracy (%) against model temperature (0 to 2) for a raw prompt and a best prompt, each without and with a determined seed. Each chart shows the average with a min-to-max range band, and some points are highlighted.",
+  "uncertain": []
+}

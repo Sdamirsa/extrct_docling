@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/3",
+    "image_path": "images/picture_004.png",
+    "page": 7,
+    "bbox": [
+      194.12,
+      361.12,
+      419.7,
+      412.21
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Workflow diagram showing a cardiologist sending data through AWS API Gateway and Lambda to SageMaker, with reports returned along the same path.",
+  "uncertain": [
+    "not a data chart: Workflow diagram showing a cardiologist sending data through AWS API Gateway and Lambda to SageMaker, with reports returned along the same path."
+  ]
+}

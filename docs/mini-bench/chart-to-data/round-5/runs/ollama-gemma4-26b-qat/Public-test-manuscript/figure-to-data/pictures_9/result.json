@@ -1,0 +1,52 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "listed",
+ "seconds": 5.74,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 2.609,
+   "total_s": 2.607,
+   "load_s": 0.359,
+   "prompt_eval_s": 0.867,
+   "eval_s": 1.21,
+   "prompt_tokens": 1332,
+   "eval_tokens": 78,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 2.958,
+   "total_s": 2.956,
+   "load_s": 0.407,
+   "prompt_eval_s": 0.974,
+   "eval_s": 1.434,
+   "prompt_tokens": 1676,
+   "eval_tokens": 87,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:30:30.379696152+01:00"
+  }
+ ],
+ "issues": [
+  "the rule splitter finds 5 chart(s), the model lists 1: read whole"
+ ]
+}

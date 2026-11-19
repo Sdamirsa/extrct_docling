@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/9",
+    "image_path": "images/picture_010.png",
+    "page": 61,
+    "bbox": [
+      76.01,
+      183.02,
+      536.91,
+      697.01
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "A heatmap-style strip plot showing per-question correctness (green correct, red incorrect, other colors partial or other) for many LLMs across questions sorted by difficulty, with strips below for difficulty quartile, length tertile, taxonomy and organ-system category membership.",
+  "uncertain": [
+    "not a data chart: A heatmap-style strip plot showing per-question correctness (green correct, red incorrect, other colors partial or other) for many LLMs across questions sorted by difficulty, with strips below for difficulty quartile, length tertile, taxonomy and organ-system category membership.",
+    "Per-question color strips for about 37 LLM rows (green correct, red incorrect, yellow and light shades other outcomes) are not tabulated: there are hundreds of question columns with no numeric values or axis scale.",
+    "Difficulty quartile, length tertile, taxonomy (Integrated, Diagnosis, Treatment, Investigation, Complications) and organ-system (Liver, Colon, Esophagus, IBD, Pancreatico-biliary) membership strips are not tabulated: they are categorical marks with no numeric values."
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/8",
+    "image_path": "images/picture_009.png",
+    "page": 58,
+    "bbox": [
+      72.85,
+      208.3,
+      351.35,
+      460.75
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        418.0,
+        379.2
+      ],
+      "title": "GPT-3.5 Extracted Option from LLM Textual Response",
+      "kind": "heatmap",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Blinded Human Validation",
+          "unit": null,
+          "scale": null,
+          "range": null,
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "A",
+          "x": "A",
+          "series": null,
+          "value": 16.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "16",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "B",
+          "x": "B",
+          "series": null,
+          "value": 25.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "25",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "C",
+          "x": "C",
+          "series": null,
+          "value": 24.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "24",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "D",
+          "x": "D",
+          "series": null,
+          "value": 13.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "13",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "E",
+          "x": "E",
+          "series": null,
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "4",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "2OP",
+          "x": "2OP",
+          "series": null,
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "EOP",
+          "x": "EOP",
+          "series": null,
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "5",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "NOP",
+          "x": "NOP",
+          "series": null,
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "5",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Error",
+          "x": "Error",
+          "series": null,
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "3",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "A",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "B",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "C",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "D",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "E",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "2OP",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "EOP",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "5",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "NOP",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "5",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Error",
+          "x": "GPT: Require Evaluation",
+          "series": null,
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "3",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "A",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "B",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 2.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "2",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "C",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 1.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "1",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "D",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "E",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "2OP",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "EOP",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "NOP",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Error",
+          "x": "Parsing Failed",
+          "series": null,
+          "value": 0.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "0",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure is a confusion matrix comparing GPT-3.5 extracted options from LLM textual responses against blinded human validation.",
+  "uncertain": []
+}

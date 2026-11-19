@@ -1,0 +1,3930 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Zodiac",
+    "self_ref": "#/pictures/12",
+    "image_path": "images/picture_013.png",
+    "page": 19,
+    "bbox": [
+      115.83,
+      337.86,
+      494.65,
+      600.87
+    ]
+  },
+  "source_kind": "mixed",
+  "panels": [
+    {
+      "id": "a",
+      "bbox_px": [
+        2.0,
+        1.5,
+        217.0,
+        191.5
+      ],
+      "title": "(a) Adult 22-54",
+      "kind": "heatmap",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(a)",
+            "Adult",
+            "22-54"
+          ]
+        },
+        "y": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4o",
+            "Gemini-Pro",
+            "Llama-3.1-405B",
+            "Mixtral-8x22B",
+            "BioGPT-Large",
+            "Meditron-70B",
+            "Med42-70B",
+            "ZODIAC"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ACC",
+          "color": null
+        },
+        {
+          "name": "CPL",
+          "color": null
+        },
+        {
+          "name": "ORG",
+          "color": null
+        },
+        {
+          "name": "CPH",
+          "color": null
+        },
+        {
+          "name": "SCI",
+          "color": null
+        },
+        {
+          "name": "CNS",
+          "color": null
+        },
+        {
+          "name": "FFH",
+          "color": null
+        },
+        {
+          "name": "FFB",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ACC",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPL",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ORG",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPH",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "SCI",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CNS",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFH",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFB",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ACC",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPL",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ORG",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "SCI",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFH",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFB",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ACC",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ORG",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ACC",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ORG",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ACC",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPL",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ORG",
+          "value": 2.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPH",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "SCI",
+          "value": 3.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CNS",
+          "value": 2.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFH",
+          "value": 1.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFB",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 2.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 2.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ACC",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ORG",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "SCI",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CNS",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFB",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Values estimated from colour against the 1-5 colourbar."
+      ]
+    },
+    {
+      "id": "b",
+      "bbox_px": [
+        231.7,
+        1.5,
+        378.0,
+        191.5
+      ],
+      "title": "(b) Middle Aged 55-64",
+      "kind": "heatmap",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(b)",
+            "Middle",
+            "Aged",
+            "55-64"
+          ]
+        },
+        "y": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "CPL",
+            "(b)"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ACC",
+          "color": null
+        },
+        {
+          "name": "CPL",
+          "color": null
+        },
+        {
+          "name": "ORG",
+          "color": null
+        },
+        {
+          "name": "CPH",
+          "color": null
+        },
+        {
+          "name": "SCI",
+          "color": null
+        },
+        {
+          "name": "CNS",
+          "color": null
+        },
+        {
+          "name": "FFH",
+          "color": null
+        },
+        {
+          "name": "FFB",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ACC",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPL",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ORG",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CNS",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFB",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ACC",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPL",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ORG",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "SCI",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CNS",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFH",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFB",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ACC",
+          "value": 2.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPL",
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ORG",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPH",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "SCI",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CNS",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFB",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ACC",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPL",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ORG",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPH",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CNS",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFH",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFB",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Row labels shared with panel a. Values estimated from colour against the 1-5 colourbar."
+      ]
+    },
+    {
+      "id": "c",
+      "bbox_px": [
+        392.7,
+        1.5,
+        567.0,
+        191.5
+      ],
+      "title": "(c) Geriatric ≥65",
+      "kind": "heatmap",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(c)",
+            "Geriatric",
+            "≥65"
+          ]
+        },
+        "y": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "ORG",
+            "(c)"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ACC",
+          "color": null
+        },
+        {
+          "name": "CPL",
+          "color": null
+        },
+        {
+          "name": "ORG",
+          "color": null
+        },
+        {
+          "name": "CPH",
+          "color": null
+        },
+        {
+          "name": "SCI",
+          "color": null
+        },
+        {
+          "name": "CNS",
+          "color": null
+        },
+        {
+          "name": "FFH",
+          "color": null
+        },
+        {
+          "name": "FFB",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ACC",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPL",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ORG",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CNS",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFH",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFB",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ACC",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPL",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFB",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ACC",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPL",
+          "value": 2.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPH",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "SCI",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CNS",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFB",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ACC",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ORG",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPH",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "SCI",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CNS",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFH",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFB",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Row labels shared with panel a. Values estimated from colour against the 1-5 colourbar."
+      ]
+    },
+    {
+      "id": "d",
+      "bbox_px": [
+        83.0,
+        205.7,
+        297.5,
+        394.7
+      ],
+      "title": "(d) Female",
+      "kind": "heatmap",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(d)",
+            "Female"
+          ]
+        },
+        "y": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4o",
+            "Gemini-Pro",
+            "Llama-3.1-405B",
+            "Mixtral-8x22B",
+            "BioGPT-Large",
+            "Meditron-70B",
+            "Med42-70B",
+            "ZODIAC"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ACC",
+          "color": null
+        },
+        {
+          "name": "CPL",
+          "color": null
+        },
+        {
+          "name": "ORG",
+          "color": null
+        },
+        {
+          "name": "CPH",
+          "color": null
+        },
+        {
+          "name": "SCI",
+          "color": null
+        },
+        {
+          "name": "CNS",
+          "color": null
+        },
+        {
+          "name": "FFH",
+          "color": null
+        },
+        {
+          "name": "FFB",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ACC",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ORG",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "SCI",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CNS",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFB",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ACC",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ORG",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "SCI",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CNS",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFB",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ORG",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ACC",
+          "value": 2.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPL",
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ORG",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPH",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "SCI",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CNS",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFH",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFB",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 2.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ACC",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPL",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ORG",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPH",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "SCI",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CNS",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFH",
+          "value": 4.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFB",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Values estimated from colour against the 1-5 colourbar."
+      ]
+    },
+    {
+      "id": "e",
+      "bbox_px": [
+        315.7,
+        205.7,
+        489.9,
+        394.7
+      ],
+      "title": "(e) Male",
+      "kind": "heatmap",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Category",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "(e)",
+            "Male"
+          ]
+        },
+        "y": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "CPH",
+            "(e)"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "ACC",
+          "color": null
+        },
+        {
+          "name": "CPL",
+          "color": null
+        },
+        {
+          "name": "ORG",
+          "color": null
+        },
+        {
+          "name": "CPH",
+          "color": null
+        },
+        {
+          "name": "SCI",
+          "color": null
+        },
+        {
+          "name": "CNS",
+          "color": null
+        },
+        {
+          "name": "FFH",
+          "color": null
+        },
+        {
+          "name": "FFB",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ACC",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPL",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "ORG",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CPH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "SCI",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFH",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "FFB",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ACC",
+          "value": 3.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPL",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "ORG",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "SCI",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "CNS",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFH",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "FFB",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPL",
+          "value": 4.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "ORG",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Llama-3.1-405B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "ORG",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CPH",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "SCI",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFH",
+          "value": 4.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Mixtral-8x22B",
+          "x": null,
+          "series": "FFB",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ACC",
+          "value": 2.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPL",
+          "value": 2.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "ORG",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CPH",
+          "value": 3.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "SCI",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "CNS",
+          "value": 2.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFH",
+          "value": 2.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "BioGPT-Large",
+          "x": null,
+          "series": "FFB",
+          "value": 3.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 2.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 3.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Meditron-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ACC",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPL",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "ORG",
+          "value": 3.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CPH",
+          "value": 3.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "SCI",
+          "value": 3.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "CNS",
+          "value": 4.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFH",
+          "value": 3.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "Med42-70B",
+          "x": null,
+          "series": "FFB",
+          "value": 3.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ACC",
+          "value": 4.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPL",
+          "value": 4.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "ORG",
+          "value": 4.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CPH",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "SCI",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "CNS",
+          "value": 4.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFH",
+          "value": 4.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "ZODIAC",
+          "x": null,
+          "series": "FFB",
+          "value": 5.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Row labels shared with panel d. Values estimated from colour against the 1-5 colourbar."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Five heatmaps of scores (colour scale 1-5) for eight language models (rows) across eight categories ACC, CPL, ORG, CPH, SCI, CNS, FFH, FFB (columns), split by age group (a-c) and gender (d-e).",
+  "uncertain": [
+    "No numeric values are printed in the cells; all 320 values are visual estimates from colour (about ±0.3).",
+    "The colourbar has no axis title, so the measured quantity is not named in the figure."
+  ]
+}

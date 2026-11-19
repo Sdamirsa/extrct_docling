@@ -1,0 +1,932 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/11",
+    "image_path": "images/picture_012.png",
+    "page": 63,
+    "bbox": [
+      71.15,
+      101.67,
+      480.06,
+      707.83
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.9,
+        2.9,
+        307.5,
+        151.5
+      ],
+      "title": "Question type: COLON (N = 49)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4 Wnb",
+            "GPF-40",
+            "Caute3-Hlaku Wetb",
+            "Craude3-Halko APs",
+            "Caude3-Sonnel Apt",
+            "Mixtrol-8.71: 9oe",
+            "1ania2-70t fre",
+            "Gemura2-27u Poe",
+            "Plu3-30-016 tocal",
+            "P013-14b-G6 1xal"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "categorical",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            "10€",
+            "ae",
+            "prcentagé",
+            "0",
+            "2z"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 44.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 46.9,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 55.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 67.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 75.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 49.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Haiku Web",
+          "x": null,
+          "series": "Correct",
+          "value": 49.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Haiku API",
+          "x": null,
+          "series": "Correct",
+          "value": 55.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Sonnet Web",
+          "x": null,
+          "series": "Correct",
+          "value": 59.2,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 57.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus Web",
+          "x": null,
+          "series": "Correct",
+          "value": 57.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus API",
+          "x": null,
+          "series": "Correct",
+          "value": 67.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3.5-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 69.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Values are estimated from small, hard-to-read labels.",
+        "Models are grouped GPT, Claude, Mistral, Llama, Gemini/Gemma, Phi-3."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        309.4,
+        4.9,
+        610.5,
+        151.5
+      ],
+      "title": "Question type: ENDOSCOPY (N = 26)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPF35 AP1",
+            "G 2",
+            "Caude3 Sonrat Aps",
+            "Mistrel Lange fh.e",
+            "Liamá3.3-70è Pre",
+            "Ph3-30-G1ELa]"
+          ]
+        },
+        "y": null
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        1.5,
+        154.5,
+        309.0,
+        303.6
+      ],
+      "title": "Question type: ESOPHAGUS (N = 36)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "E140",
+            "GPT-4 Wab",
+            "E3T-4 AP",
+            "GUE-44AP",
+            "Lona3.1-791 Poe"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "log",
+          "range": [
+            20.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            50.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        309.4,
+        156.4,
+        610.5,
+        303.6
+      ],
+      "title": "Question type: IBD (N = 30)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 tWinb",
+            "GPF35 AP",
+            "Gemaséz-z75 Phe",
+            "Ph314b-5Locel"
+          ]
+        },
+        "y": null
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        2.9,
+        306.0,
+        307.5,
+        455.1
+      ],
+      "title": "Question type: IBS (N = 14)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-35 Wel",
+            "1357T-41A",
+            "Chouse3 Holhs APY",
+            "CMudeS-Opus API",
+            "Pia3-14b-QA12c0)"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            80.0
+          ],
+          "ticks": [
+            80.0,
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "6",
+      "bbox_px": [
+        309.0,
+        308.0,
+        610.5,
+        455.1
+      ],
+      "title": "Question type: LIVER (N = 52)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 v9b",
+            "(SHT-3 5 API",
+            "SPI-4 Wel",
+            "Ci60043-Hau AP",
+            "Liams2-75",
+            "P7y3-3b-016 Locol"
+          ]
+        },
+        "y": null
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "7",
+      "bbox_px": [
+        1.5,
+        457.5,
+        309.0,
+        606.6
+      ],
+      "title": "Question type: MISCELLANEOUS (N = 19)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "G97-3.5 Wel",
+            "GPT3.5 AP",
+            "GPT-4 AP]",
+            "Clsude3-Ous API",
+            "Mistyal-Larte Poc"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            21.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            60.0,
+            40.0,
+            21.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "8",
+      "bbox_px": [
+        310.4,
+        460.5,
+        610.5,
+        606.6
+      ],
+      "title": "Question type: NUTRITION (N = 3)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-2 5 1eb",
+            "3FT-3.5 API",
+            "10体,-140",
+            "GPTSAPI",
+            "Mistrai-Large Foo",
+            "Pear-14t-061.0c0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read. With N = 3 the Correct values are only 0, 33.3, 66.7 or 100."
+      ]
+    },
+    {
+      "id": "9",
+      "bbox_px": [
+        2.9,
+        609.6,
+        307.5,
+        758.2
+      ],
+      "title": "Question type: PANCREATICO-BILIARY (N = 31)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPY-3.5 Wet",
+            "G5T4 viket",
+            "CPT-40 API",
+            "Clounes-Sonner AM",
+            "Cacte3-Opus AP7",
+            "Lora3-2b Po0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            21.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            41.0,
+            21.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "10",
+      "bbox_px": [
+        309.4,
+        611.5,
+        610.5,
+        758.2
+      ],
+      "title": "Question type: SMALL BOWEL (N = 22)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GP755wkt",
+            "GPT-3.5 A57",
+            "[4PT-S0 AP]",
+            "Caude3-Somnt AP",
+            "Code3-Opus W",
+            "Ctaude3-Ogus AP",
+            "Mistralv7-7b Pos",
+            "13amso3.1-70 Poé",
+            "Gsmma?-27b Fo0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            41.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    },
+    {
+      "id": "11",
+      "bbox_px": [
+        2.9,
+        763.6,
+        305.0,
+        908.2
+      ],
+      "title": "Question type: STOMACH (N = 17)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Ciaude3 Niak u ts",
+            "159m162-13b Poe",
+            "(ama2-700 P",
+            "1ams3.1-700 Pon",
+            "1927 974E0"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            7.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            7.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Not read."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Eleven small stacked-bar panels, one per clinical question subject (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach). Each shows the percentage of answers per LLM that were Correct, 2OP, EOP, NOP, Error or Incorrect. Only the Correct segments for the first 13 models of the colon panel were read.",
+  "uncertain": [
+    "Colon panel: Correct values for the Mistral, Llama, Gemini/Gemma and Phi-3 bars (about 22 bars) were not read.",
+    "Colon panel: the 2OP, EOP, NOP, Error and Incorrect segments of every bar were not read.",
+    "Panels 2-11 (about 35 bars each, all six segments per bar) were not read, because the labels are too small to read reliably."
+  ]
+}

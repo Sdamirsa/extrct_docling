@@ -1,0 +1,292 @@
+{
+  "schema": "extrct.figure-to-data-run/1",
+  "run_id": "20261119-181112_cloud_anthropic-claude-sonnet-5.5",
+  "step_version": "3",
+  "bundle": "Public-test-manuscript",
+  "method": "cloud",
+  "backend": "openai-compatible",
+  "model": "anthropic/claude-sonnet-5.5",
+  "started": "2026-11-19T18:11:12",
+  "seconds": 758.57,
+  "options": {
+    "method": "cloud",
+    "backend": "openai-compatible",
+    "model": "anthropic/claude-sonnet-5.5",
+    "mode": "measured",
+    "ollama_url": "http://127.0.0.1:11434",
+    "keep_alive": "10m",
+    "cloud_base_url": "https://openrouter.ai/api/v1",
+    "cloud_api_key_env": "OPENROUTER_API_KEY",
+    "cloud_max_output_tokens": 64000,
+    "cloud_reasoning_effort": "high",
+    "cloud_list_reasoning_effort": "low",
+    "claude_command": "claude",
+    "cloud_max_side_px": 2000,
+    "claude_effort": "high",
+    "max_cost_usd_per_figure": 2.0,
+    "samples": 1,
+    "panel_split": "auto",
+    "crop_dpi": 220,
+    "min_confidence_for_markdown": 0.7,
+    "eligible_types": [
+      "bar_chart",
+      "box_plot",
+      "forest_plot",
+      "heatmap",
+      "kaplan_meier",
+      "line_chart",
+      "pie_chart",
+      "roc_curve",
+      "scatter_plot"
+    ],
+    "time_budget_s_per_figure": 600.0,
+    "time_budget_s_per_call": 120.0,
+    "num_ctx": 16384,
+    "max_output_tokens": 8192,
+    "vlm_max_side_px": 1600,
+    "request_timeout_s": 600.0
+  },
+  "reader": {
+    "runtime": "POST https://openrouter.ai/api/v1/chat/completions, key from OPENROUTER_API_KEY",
+    "calls_per_figure": 2,
+    "system_prompt": "You read the data out of one figure from a scientific paper and return it as tables.\n\nYou are given the figure image; when the figure holds several charts, one enlarged crop per chart after it; the paper's caption; the charts a layout analysis found; and the text printed in the figure (taken from the PDF or read by OCR; OCR can misread, the image decides). Read each chart from its own crop when it has one.\n\nAnswer once, for the whole figure: description (what it shows, one sentence), has_data, one entry in panels per chart, and not_read.\n\nHow a chart becomes points\n- One chart per plot with its own axes, and one per pie, also when charts sit in a grid, share a legend or stand under one panel letter. Use the chart ids you were given when they match what you see; otherwise number the charts 1, 2, 3, ... in reading order and give each a box.\n- One point per (category or x value, series), each once.\n- category = the tick label of the mark, exactly as printed (line breaks as spaces); null on a numeric x axis. x = the mark's position on a numeric x axis, as a number; null otherwise. series = the legend entry, exactly as printed; null only when the chart has no legend. Never repeat the category as the series.\n- value = the number the mark stands for, in axis units, read against the nearest tick labels to the precision the axis allows. Do not round to a tick.\n- label = the number printed at the mark, exactly as printed, when one is printed. A printed number is the value: it beats a reading against the axis.\n- Bar: the bar's end. Grouped bar: one point per bar, category = the tick label, series = the bar's legend entry.\n- Stacked bar: one point per segment, value = the segment's own length, not the cumulative edge. category names the bar, series the segment's legend entry. When one tick label carries several stacked bars (a pair per item, one per group), each bar is its own category, written \"<tick label> - <group>\". A segment the legend implies but the bar does not show is written with value 0.\n- Box plot: value = the median, err_lo and err_hi = the whisker ends; quartiles and outliers go into the chart's notes.\n- Interval, error bar or forest plot: value = the centre, err_lo and err_hi = the two ends as axis values, not as distances from the centre.\n- Line or scatter: one point per marker; a line without markers: one point per x tick. When the x axis prints no tick labels, x = 1, 2, 3, ... in order.\n- A curve with a statistic printed for it (a ROC curve with its AUC in the legend): one point per curve, category = the curve's name, series = the statistic's name (AUC, AUROC), value and label = the printed number. Do not trace the curve.\n- Pie: one point per slice, value = its percentage, series null.\n- Heatmap: one point per cell, category = the row label, series = the column label.\n\nWhat must hold\n- A figure that plots or prints no data values that could go into a table (a diagram, workflow, architecture, photo, screenshot, or a raw signal trace such as an ECG) has no data: has_data false, no charts. Never turn a diagram's labels into values.\n- Never invent a value. A value you cannot read is null. Anything the figure shows that you did not write down (a chart, a series, the individual dots behind a box) is named in not_read, with the reason and how much it is.\n- Completeness counts as much as precision: before you answer, count the marks of each chart and the points you wrote for it."
+  },
+  "figures": [
+    {
+      "folder": "pictures_2",
+      "self_ref": "#/pictures/2",
+      "status": "read",
+      "reason": null,
+      "charts": 4,
+      "values": 75,
+      "seconds": 25.9,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 11711,
+      "output_tokens": 4993,
+      "cost_usd": 0.0734,
+      "notes": [
+        "4 charts found by their tick labels"
+      ]
+    },
+    {
+      "folder": "pictures_3",
+      "self_ref": "#/pictures/3",
+      "status": "read",
+      "reason": null,
+      "charts": 1,
+      "values": 37,
+      "seconds": 22.43,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 10835,
+      "output_tokens": 3912,
+      "cost_usd": 0.0608,
+      "notes": [
+        "the rule splitter finds 2 chart(s), the model lists 1: read whole",
+        "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 47.7; GPT-3.5 API sums to 46; GPT-4 Web sums to 66; GPT-4 API sums to 66; GPT-4o API sums to 73.7",
+        "The 2OP, EOP, NOP, Error and Incorrect segments of all 37 bars carry no printed values and were not read; 2OP, EOP, NOP and Error are mostly very thin slivers, and the Incorrect segment runs from the end of the other segments to 100%.",
+        "The Quantized Model and Fine-tuned Model markers on the right edge are not tabulated."
+      ]
+    },
+    {
+      "folder": "pictures_4",
+      "self_ref": "#/pictures/4",
+      "status": "read",
+      "reason": null,
+      "charts": 1,
+      "values": 144,
+      "seconds": 60.41,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 9907,
+      "output_tokens": 11679,
+      "cost_usd": 0.1366,
+      "notes": [
+        "Significance markers (ref, ns, *, **, ****) are only in the notes, not as table points."
+      ]
+    },
+    {
+      "folder": "pictures_5",
+      "self_ref": "#/pictures/5",
+      "status": "read",
+      "reason": null,
+      "charts": 2,
+      "values": 17,
+      "seconds": 18.02,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 8696,
+      "output_tokens": 1942,
+      "cost_usd": 0.0368,
+      "notes": []
+    },
+    {
+      "folder": "pictures_6",
+      "self_ref": "#/pictures/6",
+      "status": "read",
+      "reason": null,
+      "charts": 4,
+      "values": 52,
+      "seconds": 19.05,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 11331,
+      "output_tokens": 3334,
+      "cost_usd": 0.056,
+      "notes": [
+        "the rule splitter finds 6 chart(s), the model lists 4: cut between the listed charts"
+      ]
+    },
+    {
+      "folder": "pictures_8",
+      "self_ref": "#/pictures/8",
+      "status": "read",
+      "reason": null,
+      "charts": 1,
+      "values": 63,
+      "seconds": 18.02,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 6952,
+      "output_tokens": 3378,
+      "cost_usd": 0.0477,
+      "notes": [
+        "the rule splitter finds 3 chart(s), the model lists 1: read whole"
+      ]
+    },
+    {
+      "folder": "pictures_9",
+      "self_ref": "#/pictures/9",
+      "status": "no_data",
+      "reason": "not a data chart: A heatmap-style strip plot showing per-question correctness (green correct, red incorrect, other colors partial or other) for many LLMs across questions sorted by difficulty, with strips below for difficulty quartile, length tertile, taxonomy and organ-system category membership.",
+      "charts": 0,
+      "values": 0,
+      "seconds": 6.84,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 11411,
+      "output_tokens": 406,
+      "cost_usd": 0.0269,
+      "notes": [
+        "the rule splitter finds 5 chart(s), the model lists 1: read whole",
+        "not a data chart: A heatmap-style strip plot showing per-question correctness (green correct, red incorrect, other colors partial or other) for many LLMs across questions sorted by difficulty, with strips below for difficulty quartile, length tertile, taxonomy and organ-system category membership.",
+        "Per-question color strips for about 37 LLM rows (green correct, red incorrect, yellow and light shades other outcomes) are not tabulated: there are hundreds of question columns with no numeric values or axis scale.",
+        "Difficulty quartile, length tertile, taxonomy (Integrated, Diagnosis, Treatment, Investigation, Complications) and organ-system (Liver, Colon, Esophagus, IBD, Pancreatico-biliary) membership strips are not tabulated: they are categorical marks with no numeric values."
+      ]
+    },
+    {
+      "folder": "pictures_10",
+      "self_ref": "#/pictures/10",
+      "status": "read",
+      "reason": null,
+      "charts": 3,
+      "values": 111,
+      "seconds": 46.77,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 17093,
+      "output_tokens": 9631,
+      "cost_usd": 0.1305,
+      "notes": [
+        "3 charts found by their tick labels",
+        "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 47.7; GPT-3.5 API sums to 46; GPT-4 Web sums to 66; GPT-4 API sums to 66; GPT-4o API sums to 73.7",
+        "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 50.6; GPT-3.5 API sums to 46.9; GPT-4 Web sums to 66.7; GPT-4 API sums to 63.6; GPT-4o API sums to 75.9",
+        "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 44.2; GPT-3.5 API sums to 44.9; GPT-4 Web sums to 65.2; GPT-4 API sums to 68.8; GPT-4o API sums to 71",
+        "In all three charts, the unlabelled stacked segments (2OP, EOP, NOP, Error, Incorrect) of all 37 bars were not tabulated. They are small slivers except Incorrect, which fills the rest of each bar up to 100.",
+        "Some printed labels are partly overlapped by neighbouring labels, so those values come from the most plausible reading."
+      ]
+    },
+    {
+      "folder": "pictures_11",
+      "self_ref": "#/pictures/11",
+      "status": "failed",
+      "reason": "cloud read failed: no JSON object in the reply: 'The figure holds 11 stacked-bar charts, one per question subject, each with about 39 model bars; I transcribed only the green \"Correct\" segment of each bar, and those readings are approximate.\\n\\n```jso'",
+      "charts": 0,
+      "values": 0,
+      "seconds": 153.13,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 5903,
+      "output_tokens": 403,
+      "cost_usd": 0.0158,
+      "notes": [
+        "the rule splitter finds 7 chart(s), the model lists 11: cut between the listed charts",
+        "cloud read failed: no JSON object in the reply: 'The figure holds 11 stacked-bar charts, one per question subject, each with about 39 model bars; I transcribed only the green \"Correct\" segment of each bar, and those readings are approximate.\\n\\n```jso'",
+        "not read: the model returned no reading"
+      ]
+    },
+    {
+      "folder": "pictures_12",
+      "self_ref": "#/pictures/12",
+      "status": "read",
+      "reason": null,
+      "charts": 5,
+      "values": 120,
+      "seconds": 55.39,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 12052,
+      "output_tokens": 10578,
+      "cost_usd": 0.1299,
+      "notes": [
+        "the rule splitter finds 1 chart(s), the model lists 5: cut between the listed charts",
+        "panel 1: 13 of 24 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+        "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 56.4; GPT-3.5 API sums to 52.7; GPT-4 Web sums to 67; GPT-4 API sums to 60; GPT-4o API sums to 74.5",
+        "panel 2: 13 of 24 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+        "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.2; GPT-3.5 API sums to 40.7; GPT-4 Web sums to 73.2; GPT-4 API sums to 76; GPT-4o API sums to 79.7",
+        "panel 3: 13 of 24 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+        "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 47.4; GPT-3.5 API sums to 44; GPT-4 Web sums to 66; GPT-4 API sums to 65; GPT-4o API sums to 73.9",
+        "panel 4: 13 of 24 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+        "panel 4: stacked segments do not sum to 100: GPT-3.5 Web sums to 33.3; GPT-3.5 API sums to 0; GPT-4omini API sums to 33.3; Claude3-haiku Web sums to 66.7; Claude3-Haiku API sums to 66.7",
+        "panel 5: 13 of 24 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+        "panel 5: stacked segments do not sum to 100: GPT-3.5 Web sums to 49.8; GPT-3.5 API sums to 50; GPT-4 Web sums to 64.5; GPT-4 API sums to 67; GPT-4o API sums to 73.7",
+        "In all five charts the ZOP, EOP, NOP, Error and Incorrect segments are not tabulated. Incorrect is roughly 100 minus Correct minus small segments, and small segments are visible only on a few bars (e.g. Gemini Web).",
+        "Llama-family bars (about 14 per chart: Llama2, meditron, Llama3, OpenBioLLM, Llama3.1) are not tabulated because labels are illegible.",
+        "Printed percentage labels on bars are largely unreadable, so values are estimated from bar heights."
+      ]
+    },
+    {
+      "folder": "pictures_13",
+      "self_ref": "#/pictures/13",
+      "status": "failed",
+      "reason": "cloud read failed: no JSON object in the reply: '\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">echo skip</parameter>\\n</invoke>\\n\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">echo skip</parameter>\\n</invoke>\\n\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">'",
+      "charts": 0,
+      "values": 0,
+      "seconds": 278.62,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 4462,
+      "output_tokens": 213,
+      "cost_usd": 0.0111,
+      "notes": [
+        "4 charts found by their tick labels",
+        "cloud read failed: no JSON object in the reply: '\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">echo skip</parameter>\\n</invoke>\\n\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">echo skip</parameter>\\n</invoke>\\n\\n\\n\\n<invoke name=\"bash\">\\n<parameter name=\"cmd\">'",
+        "not read: the model returned no reading"
+      ]
+    },
+    {
+      "folder": "pictures_14",
+      "self_ref": "#/pictures/14",
+      "status": "read",
+      "reason": null,
+      "charts": 3,
+      "values": 111,
+      "seconds": 53.97,
+      "calls": 2,
+      "tool_calls": null,
+      "input_tokens": 15700,
+      "output_tokens": 10149,
+      "cost_usd": 0.1329,
+      "notes": [
+        "the rule splitter finds 8 chart(s), the model lists 3: cut between the listed charts",
+        "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 42.4; GPT-3.5 API sums to 42.4; GPT-4 Web sums to 62.6; GPT-4 API sums to 71.7; GPT-4o API sums to 76.8",
+        "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.5; GPT-3.5 API sums to 46.5; GPT-4 Web sums to 70.7; GPT-4 API sums to 67.7; GPT-4o API sums to 75.8",
+        "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 49; GPT-3.5 API sums to 49; GPT-4 Web sums to 64.7; GPT-4 API sums to 58.8; GPT-4o API sums to 68",
+        "In all three charts, the 2OP, EOP, NOP, Error and Incorrect segments of all 37 bars were not tabulated. The Incorrect segment is roughly 100 minus the top of the other segments. The small 2OP/EOP/NOP/Error slivers are only a few percent each, and Gemini and Gemma bars show larger ones.",
+        "Some Correct values were read from partly overlapped labels, so a few bar-to-label assignments are uncertain."
+      ]
+    }
+  ],
+  "embedded": 12
+}

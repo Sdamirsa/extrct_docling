@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "AgentMD",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 2,
+    "bbox": [
+      59.83,
+      482.72,
+      541.07,
+      688.91
+    ]
+  },
+  "source_kind": "vector",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Workflow diagram of AgentMD tool selection, computation and summarization, in which a patient note is embedded, a relevant calculator (CURB-65) is selected, an LLM and Python interpreter compute the score, and a summary is generated. It contains no plotted data.",
+  "uncertain": [
+    "not a data chart: Workflow diagram of AgentMD tool selection, computation and summarization, in which a patient note is embedded, a relevant calculator (CURB-65) is selected, an LLM and Python interpreter compute the score, and a summary is generated. It contains no plotted data.",
+    "The figure is a diagram. The RiskCalcs embedding scatter is an illustration with no axes or values. The only numbers (CURB-65 score 0 or 1, 0.7% and 3.2% mortality risk) appear in the example text and are not chart data."
+  ]
+}

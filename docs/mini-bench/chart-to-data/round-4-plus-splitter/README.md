@@ -64,8 +64,9 @@ Three figures of the showcase paper with their cuts drawn as diagrams are
 in [`examples/README.md`](examples/README.md). The private page of the
 check shows every figure with every cut.
 
-Nothing of this is built yet. The sections below are the check as it was
-run, in order.
+The rule is built since release r5 (`panels.cut_from_list`); round 5
+([`../round-5/README.md`](../round-5/README.md)) tests it in the pipeline.
+The sections below are the check as it was run, in order.
 
 ## The answer
 
@@ -402,7 +403,7 @@ Points 2 and 3 did not stand. The one rule above reaches 37 of 51 locally
 without Heron, and the maintainer took Heron out. What holds is in "The
 decision" at the top and in [`final-test/README.md`](final-test/README.md).
 
-None of this is built. The check changes no engine code.
+The check itself changed no engine code; the rule was built after it.
 
 ## Limits
 
@@ -434,6 +435,8 @@ None of this is built. The check changes no engine code.
 | `extra/` | the stopped Gemini run at effort high; FigEx2's captioning model asked for values; the one rule (`one-rule.json`) |
 | `scripts/` | `build_set.py`, `truth_parts.py`, `draw_boxes.py`, `run_heron.py`, `run_vlm.py`, `run_figex2.py`, `cutter.py`, `score.py`, `score_one_rule.py`, the two FigEx2 reader scripts, and for the final test `final_sample.py`, `run_ruling.py`, `score_final.py` |
 | `examples/` | three figures of the showcase paper, each with its cuts as box diagrams (`scripts/make_examples.py`) |
+| `scripts/check_engine_rule.py`, `final-test/engine-rule.json` | the rule as built into the engine, run on the 51 figures with the stored chart lists: the same cuts as the check scored |
+| `candidates/sonnet-5-5-low.json` | Sonnet's chart list at low reasoning effort, the setting the cloud method uses: 46 of 51 figures cut right, as at high |
 | `final-test/` | the final test: the caption in the list call, both cuts, a ruling call; its own README |
 | `report-page/` | builds the private page of the check: every splitter on every figure, with the truth and each splitter's boxes drawn on the figure (`build.py`) |
 | `figures/` | the figure images: the papers' artwork, git-ignored |

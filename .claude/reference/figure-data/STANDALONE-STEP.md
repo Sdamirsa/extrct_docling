@@ -43,6 +43,35 @@ bundle and its PDF. That gives one code path for the three ways it is
 started (after each PDF, at the end of a batch, later on any output
 folder), and a failure in it cannot take a conversion with it.
 
+### Which charts a figure holds (since r5)
+
+The prepare phase cuts a figure into its charts by rules (`panels.py`,
+`split_panels`). The rules alone cut 24 of 51 figures right
+(`docs/mini-bench/chart-to-data/round-4-plus-splitter/`). A vision model
+has the number of charts right far more often and their edges far less
+often, so with `panel_split = "auto"` (the default) the model that reads
+the figure lists its charts first and `panels.cut_from_list` decides:
+
+- the rule splitter's cut stands when it has as many charts as the model
+  lists;
+- when it has not, the figure is cut between the listed boxes along the
+  widest ink-free bands, each cell trimmed to its ink (`split_method`
+  `listed`);
+- when no straight cut separates the listed boxes they are kept as they
+  are (`listed-boxes`): the cloud method reads from them, the local engine
+  does not read the figure.
+
+`ollama` lists in the overview call it always made. `cloud` makes one
+extra call (`cloud_list_reasoning_effort`, default `low`) and cuts the
+prepared folder again (`prepare.relist`: crops, `evidence.json`,
+`figure.txt`; `listed_by`, `rule_charts`, `listed_charts` record it).
+`agent` works from the rules' cut. Every run starts from the rules' cut
+(`prepare.unlist`), so a folder cut by one model's list does not leak into
+a later run. `panel_split = "rules"` leaves the list out. On the 51
+figures: 37 cut right with Gemma 4 26B, 46 with Sonnet 5.5 or Gemini 3.8
+Flash. Tested and left out: the figure's caption in the list call, a
+second call ruling between two cuts, Docling's layout detector, FigEx2.
+
 ## 3. The folder
 
 ```
@@ -94,10 +123,10 @@ same record.
 
 | | `ollama` | `cloud` | `agent` |
 |---|---|---|---|
-| What reads | a local open-weight model inside the measured engine | one call to a cloud model's API endpoint | one agent session |
+| What reads | a local open-weight model inside the measured engine | a cloud model's API endpoint: a short call that lists the charts, then one call for the figure | one agent session |
 | Default model | `gemma4:26b-a4b-it-qat` | `anthropic/claude-sonnet-5.5` on OpenRouter | `claude-sonnet-5-5` |
 | The figure goes to | nowhere | the endpoint (OpenRouter and the model host it picks) | the model's provider (nowhere with `--figure-data-backend ollama`) |
-| Calls per figure | one overview call, then one per chart | one | one session, several tool calls |
+| Calls per figure | one overview call, then one per chart | two (one with `panel_split = "rules"`) | one session, several tool calls |
 | Needs | Ollama and a GPU | an API key in the environment or `.env` | Claude Code CLI, logged in |
 | Code | `methods/ollama.py`, `pipeline.py` | `methods/cloud.py`, `methods/endpoint.py` | `methods/agent.py`, `methods/toolbox.py`, `methods/claude_cli.py` |
 
@@ -268,10 +297,10 @@ amir-figdata prepare | read | embed ...      # phase by phase
 ## 10. Not done
 
 - Seen on one whole paper (round 4, `docs/mini-bench/chart-to-data/round-4/LOG.md`)
-  and open: the chart splitter was wrong on six of eleven chart figures
-  (one chart in blocks cut in two, grids of bar charts miscounted); a
-  reading's chart takes the box of the prepared chart with the same id,
-  also after a wrong split; the agent leaves the unlabelled segments of
+  and open: a reading's chart takes the box of the prepared chart with
+  the same id, also after a wrong split (the split itself is addressed by
+  the chart list of section 2; grids of 14 to 18 small charts are still
+  cut wrong); the agent leaves the unlabelled segments of
   some stacked bars out though the conventions ask for every segment;
   the vector reader takes a bar that fills 90 % of its chart's box for a
   frame; the batch process still held 8.7 GiB of GPU memory while the

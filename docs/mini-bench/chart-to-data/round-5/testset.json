@@ -1,0 +1,115 @@
+{
+ "schema": "extrct.figure-data-testset/1",
+ "created": "2026-11-19",
+ "purpose": "Chart-to-data mini bench, round 4: every chart candidate of one paper (the showcase paper, 68 pages, 15 figures), as the figure-to-data step picks them inside amir-batch. None of these figures was used to tune a method. S02-S08 are the figures of the bench's kind and have a truth file; S10-S14 are supplementary figures with thousands of values each and have a sample of 12 bars each (truth-sample/); S09 has none.",
+ "figures": [
+  {
+   "id": "S02",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/2",
+   "image_path": "images/picture_003.png",
+   "expected_kind": "Figure 3, page 16: four panels (a-d), horizontal bars and interval plots",
+   "truth": true
+  },
+  {
+   "id": "S03",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/3",
+   "image_path": "images/picture_004.png",
+   "expected_kind": "Figure 4, page 18: one horizontal stacked bar per model (37 bars, 6 segment classes), share of Correct printed",
+   "truth": true
+  },
+  {
+   "id": "S04",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/4",
+   "image_path": "images/picture_005.png",
+   "expected_kind": "Figure 5, page 20: horizontal stacked bars per model and image setting (24 bars, 6 segment classes), share of Correct printed",
+   "truth": true
+  },
+  {
+   "id": "S05",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/5",
+   "image_path": "images/picture_006.png",
+   "expected_kind": "Figure 6, page 21: two panels of points with printed percentages",
+   "truth": true
+  },
+  {
+   "id": "S06",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/6",
+   "image_path": "images/picture_007.png",
+   "expected_kind": "Figure 7, page 22: four line panels (a-d), an average line with a shaded range over model temperature",
+   "truth": true
+  },
+  {
+   "id": "S08",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/8",
+   "image_path": "images/picture_009.png",
+   "expected_kind": "page 58: confusion matrix of the answer extraction, a printed count in every cell",
+   "truth": true
+  },
+  {
+   "id": "S09",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/9",
+   "image_path": "images/picture_010.png",
+   "expected_kind": "page 61: one coloured strip per model over 300 questions, with annotation tracks (about 11,000 cells)",
+   "truth": false
+  },
+  {
+   "id": "S10",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/10",
+   "image_path": "images/picture_011.png",
+   "expected_kind": "page 62: three panels of 37 stacked bars, one bar per model",
+   "truth": false
+  },
+  {
+   "id": "S11",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/11",
+   "image_path": "images/picture_012.png",
+   "expected_kind": "page 63: eleven panels of 37 stacked bars, one bar per model",
+   "truth": false
+  },
+  {
+   "id": "S12",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/12",
+   "image_path": "images/picture_013.png",
+   "expected_kind": "page 64: five panels of 37 stacked bars, one bar per model",
+   "truth": false
+  },
+  {
+   "id": "S13",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/13",
+   "image_path": "images/picture_014.png",
+   "expected_kind": "page 65: four panels of 37 stacked bars, one bar per model",
+   "truth": false
+  },
+  {
+   "id": "S14",
+   "bundle": "showcase/default/Public-test-manuscript",
+   "pdf": "showcase/Public-test-manuscript.pdf",
+   "self_ref": "#/pictures/14",
+   "image_path": "images/picture_015.png",
+   "expected_kind": "page 66: three panels of 37 stacked bars, one bar per model",
+   "truth": false
+  }
+ ]
+}

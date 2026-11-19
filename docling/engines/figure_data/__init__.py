@@ -6,8 +6,9 @@
 A step of its own on a finished bundle (:mod:`.step`): prepare each chart
 candidate (:mod:`.prepare`), read it with one of three methods
 (:mod:`.methods`: ``ollama``, a local model inside the measured engine;
-``cloud``, one call to a cloud model's API; ``agent``, one agent session
-per figure), embed the reading at the figure (:mod:`.publish`).
+``cloud``, a cloud model's API, which lists the charts and then reads the
+figure in one call; ``agent``, one agent session per figure), embed the
+reading at the figure (:mod:`.publish`).
 Design: ``.claude/reference/figure-data/STANDALONE-STEP.md``. Only the
 schema is imported here, so the serializers can use its meta key without a
 cycle.

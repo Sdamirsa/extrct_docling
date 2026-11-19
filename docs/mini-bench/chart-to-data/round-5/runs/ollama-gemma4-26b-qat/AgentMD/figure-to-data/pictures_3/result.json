@@ -1,0 +1,70 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "listed",
+ "seconds": 244.19,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.742,
+   "total_s": 3.74,
+   "load_s": 0.342,
+   "prompt_eval_s": 1.272,
+   "eval_s": 1.953,
+   "prompt_tokens": 2385,
+   "eval_tokens": 121,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "a",
+   "prompt": "grounded",
+   "wall_s": 120.013,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": null,
+   "eval_tokens": null,
+   "cut": true,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "b",
+   "prompt": "grounded",
+   "wall_s": 120.016,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": null,
+   "eval_tokens": null,
+   "cut": true,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T18:19:14.277732994+01:00"
+  }
+ ],
+ "issues": [
+  "the rule splitter finds 1 chart(s), the model lists 2: cut between the listed charts",
+  "panel a: reply cut at the time or length limit, 173 points kept",
+  "panel b: reply cut at the time or length limit, 169 points kept",
+  "panel b: 120 outside the axis range [0, 100] (mCRC Liver/citation)"
+ ]
+}

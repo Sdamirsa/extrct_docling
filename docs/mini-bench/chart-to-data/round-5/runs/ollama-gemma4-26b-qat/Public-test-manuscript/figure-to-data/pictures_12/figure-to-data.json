@@ -1,0 +1,3709 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/12",
+    "image_path": "images/picture_013.png",
+    "page": 64,
+    "bbox": [
+      72.32,
+      103.64,
+      251.22,
+      700.84
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "a",
+      "bbox_px": [
+        0.0,
+        0.0,
+        266.5,
+        176.1
+      ],
+      "title": "Question type: Complication (N = 55)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "0",
+            "GP-40 A",
+            "GPT-4scridni AP)",
+            "Ctoutied Hraku Welt",
+            "C",
+            "Llemm83.3-70 Poe",
+            "Llante3.1 -4050 Po",
+            "GeniniAdvanoed Web",
+            "Geinina2-9u Po",
+            "Genira2-9-Q8 Local",
+            "Gemma2",
+            "270 Poe",
+            "Pii3-14t-05 10al"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "log",
+          "range": [
+            5.0,
+            400.0
+          ],
+          "ticks": [
+            5.0,
+            53.0,
+            400.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#2e7d32"
+        },
+        {
+          "name": "OF",
+          "color": "#4caf50"
+        },
+        {
+          "name": "ect",
+          "color": "#8bc34a"
+        },
+        {
+          "name": "5",
+          "color": "#cddc39"
+        },
+        {
+          "name": "GD",
+          "color": "#dce775"
+        },
+        {
+          "name": "Peruenlaye",
+          "color": "#f4ff81"
+        },
+        {
+          "name": "53",
+          "color": "#ffeb3b"
+        },
+        {
+          "name": "4D",
+          "color": "#fbc02d"
+        },
+        {
+          "name": "400",
+          "color": "#fdd835"
+        },
+        {
+          "name": "20",
+          "color": "#ffc107"
+        },
+        {
+          "name": "0",
+          "color": "#ffb300"
+        },
+        {
+          "name": "270 Poe",
+          "color": "#ff9800"
+        },
+        {
+          "name": "GP-40 A",
+          "color": "#ff8f00"
+        },
+        {
+          "name": "GPT-4scridni AP)",
+          "color": "#f57c00"
+        },
+        {
+          "name": "Gerinv Web",
+          "color": "#ef6c00"
+        },
+        {
+          "name": "Ctoutied Hraku Welt",
+          "color": "#e65100"
+        },
+        {
+          "name": "C",
+          "color": "#e64a19"
+        },
+        {
+          "name": "Llemm83.3-70 Poe",
+          "color": "#ef5350"
+        },
+        {
+          "name": "Llante3.1 -4050 Po",
+          "color": "#e53935"
+        },
+        {
+          "name": "Geinina2-9u Po",
+          "color": "#d32f2f"
+        },
+        {
+          "name": "Pii3-14t-05 10al",
+          "color": "#c62828"
+        },
+        {
+          "name": "GeniniAdvanoed Web",
+          "color": "#c62828"
+        },
+        {
+          "name": "Genira2-9-Q8 Local",
+          "color": "#c62828"
+        },
+        {
+          "name": "Gemma2",
+          "color": "#b71c1c"
+        },
+        {
+          "name": "Incorrect",
+          "color": "#d32f2f"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3-tech",
+          "x": null,
+          "series": "Correct",
+          "value": 0.0479,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3-API",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4-API",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Claude-3-Opus",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Sonnet",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Haiku",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-Pro",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-Ultra",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-8B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-7B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistral-Large",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mixtral-8x7B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Mini",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Medium",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Phi-3-Small",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-72B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Qwen-2-7B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemma-2-9B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemma-2-27B",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4o",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o-mini",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4-Turbo",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4-Vision",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Opus-API",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Sonnet-API",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude-3-Haiku-API",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Pro",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini-1.5-Flash",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-70B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 0.027,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama-3-8B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-Large-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x7B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Mini-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Medium-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Small-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-72B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-7B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-9B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-27B-Instruct",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Turbo-API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Vision-API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Opus-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-70B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-8B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-Large-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x7B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Mini-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Medium-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Small-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-72B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-7B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-9B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-27B-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Turbo-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Vision-Local",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Opus-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-70B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-8B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-Large-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x7B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Mini-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Medium-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Small-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-72B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-7B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-9B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-27B-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Turbo-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Vision-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Opus-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-70B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-8B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-Large-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x7B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Mini-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Medium-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Small-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-72B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-7B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-9B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-27B-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Turbo-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Vision-Final",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Opus-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-70B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-8B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-Large-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mixtral-8x7B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Mini-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Medium-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-Small-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-72B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen-2-7B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-9B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemma-2-27B-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Turbo-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4-Vision-Local-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Opus-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Sonnet-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude-3-Haiku-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama-3-70B-Final-Test",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: Llama-3-8B-Instruct, Mistral-7B-Instruct, Mistral-Large-Instruct, Mixtral-8x7B-Instruct, Phi-3-Mini-Instruct, Phi-3-Medium-Instruct, Phi-3-Small-Instruct, Qwen-2-72B-Instruct, Qwen-2-7B-Instruct, Gemma-2-9B-Instruct, Gemma-2-27B-Instruct, GPT-4o-mini-API"
+      ]
+    },
+    {
+      "id": "b",
+      "bbox_px": [
+        1.0,
+        179.5,
+        266.5,
+        355.6
+      ],
+      "title": "Question type: Diagnosis (N = 123)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "[PF-3.5AP]",
+            "GPT-4 Web",
+            "G",
+            "GPT-40 AP]",
+            "Mistraly2-7b Poe",
+            "Llemaz-130 Poe",
+            "Lleme'3 3-70b Poe",
+            "Gemini Web"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            20.0,
+            60.0
+          ],
+          "ticks": [
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correc.",
+          "color": "green"
+        },
+        {
+          "name": "OP",
+          "color": "red"
+        },
+        {
+          "name": "a0",
+          "color": "blue"
+        },
+        {
+          "name": "ar",
+          "color": "gray"
+        },
+        {
+          "name": "int",
+          "color": "lightgray"
+        },
+        {
+          "name": "ro",
+          "color": "lightgray"
+        },
+        {
+          "name": "ert",
+          "color": "lightgray"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 39.0227,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "OP",
+          "value": 58.7084,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "a0",
+          "value": 80.4883,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "ar",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "int",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "ro",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "ert",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "OP",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "a0",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "ar",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "int",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "ro",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "ert",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "Correc.",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "OP",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "a0",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "ar",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "int",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "ro",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o AP]",
+          "x": null,
+          "series": "ert",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 53.6822,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "OP",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "a0",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "ar",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "int",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "ro",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Sonnet Web",
+          "x": null,
+          "series": "ert",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 42.3735,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "OP",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "a0",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "ar",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "int",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "ro",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude 3 Opus Web",
+          "x": null,
+          "series": "ert",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "Correc.",
+          "value": 45.3054,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "OP",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "a0",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "ar",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "int",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "ro",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Mistral AI 7B Poe",
+          "x": null,
+          "series": "ert",
+          "value": 100.5928,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "Correc.",
+          "value": 105.2001,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "OP",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "a0",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "ar",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "int",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "ro",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-2 70b Poe",
+          "x": null,
+          "series": "ert",
+          "value": 105.6189,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "Correc.",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "OP",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "a0",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "ar",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "int",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "ro",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 70b Poe",
+          "x": null,
+          "series": "ert",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "Correc.",
+          "value": 43.63,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "OP",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "a0",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "ar",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "int",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "ro",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama-3 8b Poe",
+          "x": null,
+          "series": "ert",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 40.6981,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.8
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "OP",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "a0",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "ar",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "int",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "ro",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Web",
+          "x": null,
+          "series": "ert",
+          "value": 100.174,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "Correc.",
+          "value": 75.0433,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "OP",
+          "value": 98.0797,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "a0",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "ar",
+          "value": 83.4202,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "int",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "ro",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini Advanced Web",
+          "x": null,
+          "series": "ert",
+          "value": 78.8129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "Correc.",
+          "value": 75.0433,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "OP",
+          "value": 96.7545,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "a0",
+          "value": 80.2604,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "ar",
+          "value": 82.5096,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "int",
+          "value": 78.4611,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "ro",
+          "value": 78.0112,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        },
+        {
+          "category": "Pali-3b-016",
+          "x": null,
+          "series": "ert",
+          "value": 78.0112,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.2
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "c",
+      "bbox_px": [
+        1.0,
+        359.0,
+        266.5,
+        535.0
+      ],
+      "title": "Question type: Investigation (N = 211)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4 Wets",
+            "GPT40 AP",
+            "GPT-4omind AP",
+            "Claude3-Hlainy Wetb",
+            "Claude3-Haki AM",
+            "Sone AP",
+            "Llam42-7b Hoe",
+            "U4m2-13b-05 Lacal",
+            "Llamaz-70b Poe",
+            "Gemimi Weo",
+            "Phi3-3b-016 Locai",
+            "Pts3-14b-06 Locad"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": null,
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "green"
+        },
+        {
+          "name": "Incorrect",
+          "color": "red"
+        },
+        {
+          "name": "ECF",
+          "color": "blue"
+        },
+        {
+          "name": "RCP",
+          "color": "orange"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-4 AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Claude3-Haiku AM",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Claude3-Sonnet AM",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Claude3-Opus AM",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "Gemini Pro Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini Pro AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama3-8b-Instruct Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Llama3-70b-Instruct Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-7B-v0.1 Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Mistral-8B-v0.1 Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Phi-3-mini-4k-Instruct Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen2-7B-Instruct Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Qwen2-72B-Instruct Locai",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Flash AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "Gemini-1.5-Pro AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o-mini AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "GPT-4o AP",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "d",
+      "bbox_px": [
+        0.0,
+        538.0,
+        266.5,
+        672.7
+      ],
+      "title": "Qucstion typc: Pathophisiology (N = 3)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            5.0033,
+            20.0
+          ],
+          "ticks": [
+            20.0,
+            5.0033
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#008000"
+        },
+        {
+          "name": "Incorrect",
+          "color": "#FF0000"
+        }
+      ],
+      "data": [
+        {
+          "category": "20",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "20",
+          "x": null,
+          "series": "Incorrect",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "5.0033",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "5.0033",
+          "x": null,
+          "series": "Incorrect",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "null",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "null",
+          "x": null,
+          "series": "Incorrect",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "e",
+      "bbox_px": [
+        1.0,
+        674.2,
+        266.5,
+        894.0
+      ],
+      "title": "Question type: Treatment (N = 217)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "D",
+            "GPY-3.5",
+            "Whgl",
+            "GFT-40 API",
+            "Claude3-Sonnet Weu",
+            "Claude3-Sunnet AP",
+            "Chode3-Opus AP",
+            "caude3. S-Sunnet AP",
+            "Mistrelv2-7h Poe",
+            "SAxtrél-x71, Poe",
+            "3.701 Pod",
+            "Cornera2-0 Poe",
+            "Phr2-30-Q16 tacat"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            21.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            80.0,
+            21.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "Incorrect",
+          "color": "#F44336"
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 134.703,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 141.6714,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 134.703,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Haiku Web",
+          "x": null,
+          "series": "Correct",
+          "value": 129.7841,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Haiku API",
+          "x": null,
+          "series": "Correct",
+          "value": 143.311,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Sonnet Web",
+          "x": null,
+          "series": "Correct",
+          "value": 131.0138,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 133.4732,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus API",
+          "x": null,
+          "series": "Correct",
+          "value": 135.5228,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistralv2-7b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 138.3921,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistralv2-7b API",
+          "x": null,
+          "series": "Correct",
+          "value": 138.3921,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama3-8B Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 138.802,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-8B API",
+          "x": null,
+          "series": "Correct",
+          "value": 140.4417,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-70B Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 140.8516,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-70B API",
+          "x": null,
+          "series": "Correct",
+          "value": 140.8516,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemma2-9B Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 141.6714,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemma2-9B API",
+          "x": null,
+          "series": "Correct",
+          "value": 141.2615,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini-Pro Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 135.9327,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini-Pro API",
+          "x": null,
+          "series": "Correct",
+          "value": 140.4417,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Phi-3-Mini Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 144.9506,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Phi-3-Mini API",
+          "x": null,
+          "series": "Correct",
+          "value": 135.1129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 137.5723,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o Web",
+          "x": null,
+          "series": "Correct",
+          "value": 144.5407,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Sonnet Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 135.5228,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 62.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Incorrect",
+          "value": 134.703,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 141.6714,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 151.0992,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Haiku Web",
+          "x": null,
+          "series": "Incorrect",
+          "value": 145.3605,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Haiku API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 143.311,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Sonnet Web",
+          "x": null,
+          "series": "Incorrect",
+          "value": 151.0992,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Sonnet API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 151.0992,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 147.0002,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistralv2-7b Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 147.4101,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Mistralv2-7b API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 142.4912,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Llama3-8B Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 138.802,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-8B API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 140.4417,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-70B Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 138.3921,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Llama3-70B API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 140.8516,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemma2-9B Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 141.6714,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemma2-9B API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 139.2119,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini-Pro Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 135.9327,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Gemini-Pro API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 139.6218,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Phi-3-Mini Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 144.9506,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Phi-3-Mini API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 135.1129,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Incorrect",
+          "value": 142.0813,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "GPT-4o Web",
+          "x": null,
+          "series": "Incorrect",
+          "value": 142.0813,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.3
+        },
+        {
+          "category": "Claude3-Sonnet Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 138.802,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "raster",
+          "confidence": 0.55
+        },
+        {
+          "category": "Claude3-Opus Poe",
+          "x": null,
+          "series": "Incorrect",
+          "value": 38.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: Claude3-Opus Poe, Claude3-Opus Poe"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure displays the performance of various large language models across five different question types: Complication, Diagnosis, Investigation, Pathophysiology, and Treatment, categorized by correctness (Correct, EDP, Error, Incorrect).",
+  "uncertain": []
+}

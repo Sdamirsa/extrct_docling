@@ -1,0 +1,44 @@
+{
+ "id": "W25",
+ "charts": [
+  {
+   "label": "a. MedRisk-Qualitative",
+   "box": [
+    0.0,
+    0.0,
+    500.0,
+    497.0
+   ]
+  },
+  {
+   "label": "a. MedRisk-Quantitative",
+   "box": [
+    513.0,
+    0.0,
+    1000.0,
+    497.0
+   ]
+  },
+  {
+   "label": "b. MedRisk-Qualitative",
+   "box": [
+    0.0,
+    518.0,
+    500.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "b. MedRisk-Quantitative",
+   "box": [
+    513.0,
+    526.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Panel letters a. and b. each cover a row of two charts; the letter sits in the corner of the left chart (beside its legend, above its y-axis title) and cannot be kept out of that chart's box, so it is inside the left box of each row.",
+ "drawn_as": "T49"
+}

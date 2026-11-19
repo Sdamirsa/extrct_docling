@@ -1,0 +1,53 @@
+{
+ "id": "S12",
+ "charts": [
+  {
+   "label": "Question type: Complication (N = 55)",
+   "box": [
+    6.0,
+    0.0,
+    997.0,
+    198.0
+   ]
+  },
+  {
+   "label": "Question type: Diagnosis (N = 123)",
+   "box": [
+    6.0,
+    200.0,
+    997.0,
+    398.0
+   ]
+  },
+  {
+   "label": "Question type: Investigation (N = 211)",
+   "box": [
+    6.0,
+    400.0,
+    997.0,
+    598.0
+   ]
+  },
+  {
+   "label": "Question type: Pathophisiology (N = 3)",
+   "box": [
+    6.0,
+    600.0,
+    997.0,
+    798.0
+   ]
+  },
+  {
+   "label": "Question type: Treatment (N = 217)",
+   "box": [
+    6.0,
+    800.0,
+    997.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T35"
+}

@@ -1,0 +1,30 @@
+{
+ "note": "The rule that came out of the check: the model lists the charts; the rules' cut is taken when it has that many, else the rules' cutter is started from the model's boxes. The final test put two additions against it. The figure's caption was added to the call that lists the charts. The raw rule split was kept beside the cut made from the list, and where the two differ a second call showed the model both and asked for a number of charts and a boolean. Gemma ran on all 51 figures, Sonnet and Gemini on the 34 that some splitter cuts wrong today. Neither addition moved a result by more than one or two figures, in either direction.",
+ "decision": [
+  {
+   "title": "Recommended, fully local",
+   "text": "Gemma 4 26B lists the charts in the overview call the local engine already makes, then the one rule. 37 of 51 figures cut right, against 24 today. No caption in that call and no ruling call."
+  },
+  {
+   "title": "Recommended, cloud",
+   "text": "One extra call to the reading model, then the same rule. With Sonnet 5.5, the step's default: 46 of 51, 3 seconds and 1 cent a figure. Gemini 3.8 Flash at low effort reaches the same 46 for a third of the cost and leaves more charts whole (213 against 193 of 236)."
+  },
+  {
+   "title": "The caption does not improve the count",
+   "text": "47 of the 51 figures have one, and the readers already get it when they read values. Added to the list call, the number of charts comes out right on 41 figures instead of 42 for Gemma, on 32 of 34 instead of 34 for Sonnet, and on 33 either way for Gemini. Captions name panels, and a panel is often several charts."
+  },
+  {
+   "title": "The ruling call has almost nothing left to win",
+   "text": "One of the two cuts is right on 39 figures locally and on 47 with a cloud model. The number of charts already picks it on 37 and 46. The cloud models rule well, the right cut on 20 of 22 and 22 of 23, for a second call on three figures in four. Gemma's boolean is right on 20 of 22 without the caption and 17 of 25 with it."
+  },
+  {
+   "title": "What stays wrong",
+   "text": "Figures on which neither cut is right: grids of 14 to 18 small charts (W05, W06, W10, W16), and W02 and W07. The ruling does not flag them: its number fits one of the two wrong cuts on all but one or two."
+  }
+ ],
+ "picked": {
+  "Local: Gemma 4 26B": "one_rule",
+  "Cloud: Sonnet 5.5": "one_rule",
+  "Cloud: Gemini 3.8 Flash": "one_rule"
+ }
+}

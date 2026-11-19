@@ -1,0 +1,62 @@
+{
+ "id": "W26",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    2.0,
+    1.0,
+    496.0,
+    199.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    497.0,
+    0.0,
+    1000.0,
+    196.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    11.0,
+    201.0,
+    1000.0,
+    396.0
+   ]
+  },
+  {
+   "label": "d",
+   "box": [
+    11.0,
+    397.0,
+    1000.0,
+    596.0
+   ]
+  },
+  {
+   "label": "e",
+   "box": [
+    11.0,
+    599.0,
+    1000.0,
+    794.0
+   ]
+  },
+  {
+   "label": "f",
+   "box": [
+    11.0,
+    799.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Six charts. Panels c and d each show four model blocks (each block with its own small legend and its own 1-5 tick run) but on a single y axis and one continuous x-axis line, so each is counted as one chart, as are e (bars) and f (violins); a splitter that cuts c and d into four blocks each would give 12 instead of 6. Boxes cannot be made fully clean: the panel letters c, d and e are printed on the row of the tick labels of the chart above, so letter c lies inside box a, letter d is cut between boxes c and d, and letter e lies in the corner of box d; boxes c, d, e start just under the tick labels of the chart above and do not hold their own letter.",
+ "drawn_as": "T23"
+}

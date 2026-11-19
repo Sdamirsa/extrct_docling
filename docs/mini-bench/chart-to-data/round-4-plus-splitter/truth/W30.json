@@ -1,0 +1,44 @@
+{
+ "id": "W30",
+ "charts": [
+  {
+   "label": "(a) Class I: Normal",
+   "box": [
+    2.0,
+    16.0,
+    293.0,
+    995.0
+   ]
+  },
+  {
+   "label": "(b) Class II: Clinically Significant",
+   "box": [
+    287.0,
+    16.0,
+    506.0,
+    995.0
+   ]
+  },
+  {
+   "label": "(c) Class III: Life-Threatening",
+   "box": [
+    507.0,
+    16.0,
+    711.0,
+    995.0
+   ]
+  },
+  {
+   "label": "(d) Ablation Study",
+   "box": [
+    749.0,
+    5.0,
+    1000.0,
+    995.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Four charts: three heatmaps and one radar chart (counted as a chart: a plot on its own polar axes, with its own legend). The colour bar stands once, right of heatmap (c), and serves all three heatmaps, so it is left out as shared; it could also be read as part of (c), whose box would then reach x=743. The row labels (model names) are printed only at heatmap (a) and are kept in its box. Boxes (a) and (b) overlap by 6 grid units (x 287-293): the caption '(b) Class II: Clinically Significant' is wider than its heatmap and its opening bracket starts under the last column of heatmap (a), so box (b) takes in a strip of about 5 px of heatmap (a) and box (a) takes in that bracket.",
+ "drawn_as": "T51"
+}

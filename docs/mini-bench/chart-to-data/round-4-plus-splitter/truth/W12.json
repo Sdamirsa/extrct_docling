@@ -1,0 +1,26 @@
+{
+ "id": "W12",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    3.0,
+    448.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    396.0,
+    70.0,
+    1000.0,
+    992.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Boxes overlap between x 396 and 448: the legend entry 'Resting Segmental Wall Motion' of (a) runs to the right under the panel letter and the slanted row labels of (b). Each box holds its whole chart, so (a) takes in the letter '(b)' and the starts of a few of (b)'s row labels, and (b) takes in the tail of that legend entry.",
+ "drawn_as": "T08"
+}

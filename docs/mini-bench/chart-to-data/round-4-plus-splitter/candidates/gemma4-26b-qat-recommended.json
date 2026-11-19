@@ -1,0 +1,2411 @@
+{
+ "candidate": "gemma4-26b-qat-recommended",
+ "about": "The recommended cut with Local: Gemma 4 26B: the rule splitter's cut when it has the number of charts the model lists (no caption), else the rules' cutter started from the model's boxes.",
+ "figures": {
+  "A3": {
+   "boxes": [
+    [
+     45.6,
+     7.3,
+     999.1,
+     995.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure shows the Intraclass Correlation Coefficient (ICC) for absolute agreement between different pairs of raters: human-human (R1 ↔ R2), Judge ↔ R1, and Judge ↔ R2.",
+    "kinds": [
+     "line"
+    ],
+    "seconds": 8.769,
+    "cost_usd": null
+   }
+  },
+  "B1": {
+   "boxes": [
+    [
+     5.8,
+     16.4,
+     996.4,
+     989.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This bar chart compares the number of cases where MAS and Baseline models were correct or incorrect across three clinical problems: Congestive Heart Failure, Acute Kidney Injury, and Sepsis.",
+    "kinds": [
+     "bar"
+    ],
+    "seconds": 2.558,
+    "cost_usd": null
+   }
+  },
+  "B2": {
+   "boxes": [
+    [
+     4.2,
+     29.9,
+     328.6,
+     990.7
+    ],
+    [
+     328.6,
+     29.9,
+     659.4,
+     990.7
+    ],
+    [
+     659.4,
+     29.9,
+     999.0,
+     990.7
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "The figure displays three line charts showing the trends of Accuracy Reward, Format Reward, and Completion Length over time.",
+    "kinds": [
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 3.174,
+    "cost_usd": null
+   }
+  },
+  "B3": {
+   "boxes": [
+    [
+     8.4,
+     12.4,
+     331.9,
+     497.9
+    ],
+    [
+     338.9,
+     12.4,
+     662.5,
+     497.9
+    ],
+    [
+     675.0,
+     261.4,
+     998.6,
+     746.9
+    ],
+    [
+     8.4,
+     510.4,
+     333.3,
+     995.9
+    ],
+    [
+     344.5,
+     510.4,
+     669.5,
+     995.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 5,
+    "list": 5
+   },
+   "list": {
+    "description": "This figure displays a series of ROC curves comparing the performance of different models (OnimiaNet, H2former, MemSAM, EchoONE, and EchoAgent) across different ejection fraction (EF) categories.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 4.95,
+    "cost_usd": null
+   }
+  },
+  "B4": {
+   "boxes": [
+    [
+     2.6,
+     2.5,
+     997.4,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure is a forest plot comparing clinician-authored summaries and AI-generated summaries across five rating domains.",
+    "kinds": [
+     "forest"
+    ],
+    "seconds": 2.362,
+    "cost_usd": null
+   }
+  },
+  "B5": {
+   "boxes": [
+    [
+     4.7,
+     0.0,
+     193.5,
+     485.2
+    ],
+    [
+     205.0,
+     38.0,
+     394.5,
+     485.2
+    ],
+    [
+     404.6,
+     38.0,
+     596.1,
+     485.2
+    ],
+    [
+     606.9,
+     38.0,
+     797.0,
+     485.2
+    ],
+    [
+     809.8,
+     38.0,
+     997.3,
+     485.2
+    ],
+    [
+     4.0,
+     510.1,
+     203.0,
+     996.4
+    ],
+    [
+     207.0,
+     544.5,
+     394.5,
+     995.3
+    ],
+    [
+     407.9,
+     548.0,
+     595.4,
+     995.3
+    ],
+    [
+     610.2,
+     545.7,
+     797.0,
+     996.4
+    ],
+    [
+     810.5,
+     546.9,
+     997.3,
+     994.1
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 10,
+    "list": 10
+   },
+   "list": {
+    "description": "This figure compares the performance of three models (RiskAgent-8B, GPT-4o, and o3-mini) across different medical risk categories in both qualitative and quantitative MedRisk assessments.",
+    "kinds": [
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box"
+    ],
+    "seconds": 8.129,
+    "cost_usd": null
+   }
+  },
+  "C1": {
+   "boxes": [
+    [
+     4.0,
+     12.3,
+     253.8,
+     1000.0
+    ],
+    [
+     265.7,
+     12.3,
+     501.6,
+     1000.0
+    ],
+    [
+     514.2,
+     12.3,
+     750.2,
+     1000.0
+    ],
+    [
+     762.0,
+     12.3,
+     998.7,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure compares the performance of HeartAgent, an Expert, and their combination (Expert + HeartAgent) across four different metrics on the MIMIC dataset: Top-1 Diagnosis, Top-1 Explanation, Top-3 Diagnosis, and Top-3 Explanation.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.553,
+    "cost_usd": null
+   }
+  },
+  "C3": {
+   "boxes": [
+    [
+     13.8,
+     12.5,
+     486.6,
+     676.4
+    ],
+    [
+     510.9,
+     12.9,
+     996.6,
+     676.4
+    ],
+    [
+     1.6,
+     739.9,
+     915.0,
+     999.6
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents a comparison of patient satisfaction and communication metrics across three different assessment tools (GMCPQ, MXEKF, and PACES) for AMIE and PCP groups.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.156,
+    "cost_usd": null
+   }
+  },
+  "C4": {
+   "boxes": [
+    [
+     3.5,
+     7.5,
+     488.8,
+     988.8
+    ],
+    [
+     494.8,
+     7.5,
+     996.5,
+     988.8
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "The figure compares the diagnostic lability of various large language models and evaluates the performance of single-agent versus multi-agent systems across different metrics.",
+    "kinds": [
+     "box",
+     "bar"
+    ],
+    "seconds": 2.773,
+    "cost_usd": null
+   }
+  },
+  "C5": {
+   "boxes": [
+    [
+     0.0,
+     32.4,
+     303.5,
+     973.5
+    ],
+    [
+     330.8,
+     38.3,
+     647.7,
+     917.4
+    ],
+    [
+     685.7,
+     44.2,
+     998.1,
+     938.1
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents three pie charts showing user feedback on whether AI helped their assessment, increased their confidence, and saved them time.",
+    "kinds": [
+     "pie",
+     "pie",
+     "pie"
+    ],
+    "seconds": 3.894,
+    "cost_usd": null
+   }
+  },
+  "S02": {
+   "boxes": [
+    [
+     5.6,
+     6.5,
+     501.1,
+     300.7
+    ],
+    [
+     519.4,
+     6.5,
+     998.6,
+     300.7
+    ],
+    [
+     5.6,
+     326.8,
+     500.4,
+     1000.0
+    ],
+    [
+     519.4,
+     325.7,
+     998.6,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure presents a comparative analysis of different LLM response generation methods, temperature settings, experiment settings, and functions across various accuracy metrics.",
+    "kinds": [
+     "bar",
+     "scatter",
+     "bar",
+     "scatter"
+    ],
+    "seconds": 4.54,
+    "cost_usd": null
+   }
+  },
+  "S03": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure is a horizontal stacked bar chart comparing the performance (correct, 2OP, EOP, NOP, error, and incorrect responses) of various large language models on 2022 ACG questions.",
+    "kinds": [
+     "stacked_bar"
+    ],
+    "seconds": 3.284,
+    "cost_usd": null
+   }
+  },
+  "S04": {
+   "boxes": [
+    [
+     2.0,
+     3.3,
+     993.9,
+     998.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure compares the performance of various large language models (GPT4, Claude3, GeminiAdvanced) across different input modalities (no image, LLM caption, direct image, human hint) using a stacked bar chart showing correctness and error types.",
+    "kinds": [
+     "stacked_bar"
+    ],
+    "seconds": 3.234,
+    "cost_usd": null
+   }
+  },
+  "S05": {
+   "boxes": [
+    [
+     4.2,
+     6.8,
+     449.5,
+     993.2
+    ],
+    [
+     462.2,
+     6.8,
+     1000.0,
+     993.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure shows the accuracy of different GPT models across various ACG Self-Assessment versions and model training data cutoff dates.",
+    "kinds": [
+     "line",
+     "scatter"
+    ],
+    "seconds": 3.187,
+    "cost_usd": null
+   }
+  },
+  "S06": {
+   "boxes": [
+    [
+     3.1,
+     1.0,
+     505.4,
+     491.0
+    ],
+    [
+     515.5,
+     1.0,
+     997.7,
+     491.0
+    ],
+    [
+     3.1,
+     510.0,
+     506.2,
+     1000.0
+    ],
+    [
+     514.7,
+     511.0,
+     997.7,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure displays four line charts comparing the accuracy of raw versus best prompts under two conditions: without and after determining a seed, across various model temperatures.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 4.56,
+    "cost_usd": null
+   }
+  },
+  "S08": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure is a confusion matrix comparing GPT-3.5 extracted options from LLM textual responses against blinded human validation.",
+    "kinds": [
+     "heatmap"
+    ],
+    "seconds": 3.284,
+    "cost_usd": null
+   }
+  },
+  "S10": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     325.7
+    ],
+    [
+     0.0,
+     335.9,
+     995.2,
+     662.8
+    ],
+    [
+     0.0,
+     669.9,
+     995.2,
+     996.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents the performance of various large language models on the 2022 ACG questions, categorized by total questions, text-based questions, and image-inclusive questions.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 4.811,
+    "cost_usd": null
+   }
+  },
+  "S11": {
+   "boxes": [
+    [
+     2.4,
+     3.2,
+     504.0,
+     255.9
+    ],
+    [
+     504.8,
+     5.4,
+     996.0,
+     255.9
+    ],
+    [
+     4.8,
+     255.9,
+     501.6,
+     501.1
+    ],
+    [
+     504.0,
+     255.9,
+     996.0,
+     501.1
+    ],
+    [
+     2.4,
+     503.8,
+     501.6,
+     755.9
+    ],
+    [
+     501.6,
+     503.8,
+     996.0,
+     755.9
+    ],
+    [
+     4.8,
+     755.9,
+     497.6,
+     1000.0
+    ],
+    [
+     517.6,
+     755.9,
+     996.0,
+     834.8
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 7,
+    "list": 8
+   },
+   "list": {
+    "description": "This figure presents a series of stacked bar charts comparing the performance (Correct, Partially Correct, Incorrect) of various large language models across different medical question types.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 8.468,
+    "cost_usd": null
+   }
+  },
+  "S12": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     990.9,
+     196.3
+    ],
+    [
+     3.7,
+     200.1,
+     990.9,
+     396.4
+    ],
+    [
+     3.7,
+     400.2,
+     990.9,
+     596.5
+    ],
+    [
+     0.0,
+     599.8,
+     990.9,
+     750.0
+    ],
+    [
+     3.7,
+     751.6,
+     990.9,
+     996.7
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 5
+   },
+   "list": {
+    "description": "This figure displays the performance of various large language models across five different question types: Complication, Diagnosis, Investigation, Pathophysiology, and Treatment, categorized by correctness (Correct, EDP, Error, Incorrect).",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 6.806,
+    "cost_usd": null
+   }
+  },
+  "S13": {
+   "boxes": [
+    [
+     3.0,
+     2.8,
+     998.5,
+     246.0
+    ],
+    [
+     0.0,
+     252.6,
+     998.5,
+     496.9
+    ],
+    [
+     0.0,
+     501.4,
+     998.5,
+     747.9
+    ],
+    [
+     3.0,
+     755.1,
+     998.5,
+     998.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure displays four stacked bar charts showing the performance (correctness and error types) of various large language models on four different questions (Q1 to Q4).",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 6.08,
+    "cost_usd": null
+   }
+  },
+  "S14": {
+   "boxes": [
+    [
+     1.2,
+     0.0,
+     997.7,
+     337.6
+    ],
+    [
+     1.2,
+     337.6,
+     997.7,
+     680.5
+    ],
+    [
+     12.9,
+     680.5,
+     997.7,
+     999.4
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 8,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure displays the performance of various large language models across three different question types: Long, Medium, and Short, categorized by correctness and error types.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 5.344,
+    "cost_usd": null
+   }
+  },
+  "W01": {
+   "boxes": [
+    [
+     4.5,
+     2.1,
+     997.3,
+     454.9
+    ],
+    [
+     5.4,
+     470.6,
+     995.5,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure presents the results of a study comparing the performance of a cardiologist alone versus a cardiologist assisted by AMIE across various clinical assessment metrics.",
+    "kinds": [
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.417,
+    "cost_usd": null
+   }
+  },
+  "W02": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     500.0
+    ],
+    [
+     500.0,
+     0.0,
+     1000.0,
+     500.0
+    ],
+    [
+     0.0,
+     500.0,
+     500.0,
+     1000.0
+    ],
+    [
+     500.0,
+     500.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure presents a comparative analysis of clinical performance metrics between two models, AMIE (top) and PCP (bottom), across various diagnostic, management, investigation, and treatment categories.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 13.989,
+    "cost_usd": null
+   }
+  },
+  "W03": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure compares the answer accuracy of two models (PCP and AMIE) in closed-book and open-book settings across two difficulty levels (lower and higher) as rated by pharmacists.",
+    "kinds": [
+     "bar"
+    ],
+    "seconds": 4.317,
+    "cost_usd": null
+   }
+  },
+  "W04": {
+   "boxes": [
+    [
+     26.0,
+     47.0,
+     301.0,
+     236.0
+    ],
+    [
+     248.0,
+     47.0,
+     301.0,
+     236.0
+    ],
+    [
+     301.0,
+     47.0,
+     443.0,
+     236.0
+    ],
+    [
+     301.0,
+     47.0,
+     634.0,
+     236.0
+    ],
+    [
+     301.0,
+     47.0,
+     826.0,
+     236.0
+    ],
+    [
+     26.0,
+     417.0,
+     137.0,
+     598.0
+    ],
+    [
+     137.0,
+     417.0,
+     251.0,
+     598.0
+    ],
+    [
+     251.0,
+     417.0,
+     365.0,
+     598.0
+    ],
+    [
+     365.0,
+     417.0,
+     479.0,
+     598.0
+    ],
+    [
+     479.0,
+     417.0,
+     593.0,
+     598.0
+    ],
+    [
+     26.0,
+     602.0,
+     137.0,
+     783.0
+    ],
+    [
+     137.0,
+     602.0,
+     251.0,
+     783.0
+    ],
+    [
+     251.0,
+     602.0,
+     365.0,
+     783.0
+    ],
+    [
+     365.0,
+     602.0,
+     479.0,
+     783.0
+    ],
+    [
+     479.0,
+     602.0,
+     593.0,
+     783.0
+    ],
+    [
+     26.0,
+     797.0,
+     137.0,
+     978.0
+    ],
+    [
+     137.0,
+     797.0,
+     251.0,
+     978.0
+    ],
+    [
+     251.0,
+     797.0,
+     365.0,
+     978.0
+    ],
+    [
+     365.0,
+     797.0,
+     479.0,
+     978.0
+    ],
+    [
+     479.0,
+     797.0,
+     593.0,
+     978.0
+    ],
+    [
+     26.0,
+     737.0,
+     137.0,
+     918.0
+    ],
+    [
+     137.0,
+     737.0,
+     251.0,
+     918.0
+    ],
+    [
+     251.0,
+     737.0,
+     365.0,
+     918.0
+    ],
+    [
+     365.0,
+     737.0,
+     479.0,
+     918.0
+    ],
+    [
+     479.0,
+     737.0,
+     593.0,
+     918.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 16,
+    "list": 25
+   },
+   "list": {
+    "description": "This figure presents a series of line charts comparing the performance of AMIE and PCB across various metrics related to overall appropriateness, investigations, and treatments over three visits.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 17.421,
+    "cost_usd": null
+   }
+  },
+  "W05": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     134.3,
+     554.7
+    ],
+    [
+     134.3,
+     0.0,
+     231.3,
+     526.0
+    ],
+    [
+     231.3,
+     0.0,
+     332.7,
+     546.2
+    ],
+    [
+     332.7,
+     0.0,
+     427.9,
+     546.2
+    ],
+    [
+     427.9,
+     0.0,
+     521.1,
+     474.0
+    ],
+    [
+     521.1,
+     0.0,
+     624.4,
+     474.0
+    ],
+    [
+     624.4,
+     0.0,
+     727.0,
+     474.0
+    ],
+    [
+     727.0,
+     0.0,
+     825.9,
+     474.0
+    ],
+    [
+     825.9,
+     0.0,
+     916.7,
+     474.0
+    ],
+    [
+     916.7,
+     0.0,
+     1000.0,
+     474.0
+    ],
+    [
+     428.2,
+     490.4,
+     522.4,
+     1000.0
+    ],
+    [
+     534.8,
+     506.9,
+     613.8,
+     996.8
+    ],
+    [
+     633.1,
+     506.9,
+     712.1,
+     996.8
+    ],
+    [
+     731.3,
+     508.0,
+     810.3,
+     996.8
+    ],
+    [
+     0.0,
+     554.7,
+     127.5,
+     1000.0
+    ],
+    [
+     138.1,
+     584.5,
+     210.8,
+     996.8
+    ],
+    [
+     251.9,
+     583.4,
+     324.0,
+     996.8
+    ],
+    [
+     335.2,
+     584.5,
+     407.3,
+     996.8
+    ],
+    [
+     866.3,
+     747.1,
+     927.9,
+     826.8
+    ],
+    [
+     927.9,
+     747.1,
+     974.5,
+     830.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 17,
+    "list": 20
+   },
+   "list": {
+    "description": "This figure presents a series of stacked bar charts comparing the preferences of specialists and patient actors (PCP vs. AMIE) across various clinical communication and decision-making domains over three visits.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 13.642,
+    "cost_usd": null
+   }
+  },
+  "W06": {
+   "boxes": [
+    [
+     3.4,
+     11.6,
+     244.7,
+     258.0
+    ],
+    [
+     261.2,
+     11.6,
+     466.2,
+     245.5
+    ],
+    [
+     466.2,
+     11.6,
+     676.2,
+     245.5
+    ],
+    [
+     676.2,
+     11.6,
+     885.0,
+     245.5
+    ],
+    [
+     885.0,
+     11.6,
+     996.9,
+     245.5
+    ],
+    [
+     3.4,
+     261.8,
+     244.7,
+     491.8
+    ],
+    [
+     261.2,
+     261.8,
+     466.2,
+     491.8
+    ],
+    [
+     466.2,
+     261.8,
+     676.2,
+     491.8
+    ],
+    [
+     676.2,
+     261.8,
+     885.0,
+     491.8
+    ],
+    [
+     885.0,
+     261.8,
+     996.6,
+     491.8
+    ],
+    [
+     12.2,
+     491.8,
+     244.7,
+     721.9
+    ],
+    [
+     261.2,
+     491.8,
+     466.2,
+     721.9
+    ],
+    [
+     466.2,
+     491.8,
+     676.2,
+     721.9
+    ],
+    [
+     676.2,
+     491.8,
+     885.0,
+     721.9
+    ],
+    [
+     885.0,
+     491.8,
+     996.9,
+     721.9
+    ],
+    [
+     12.5,
+     721.9,
+     250.9,
+     1000.0
+    ],
+    [
+     250.9,
+     721.9,
+     466.2,
+     994.9
+    ],
+    [
+     466.2,
+     721.9,
+     676.2,
+     994.9
+    ],
+    [
+     676.2,
+     721.9,
+     885.0,
+     993.5
+    ],
+    [
+     885.0,
+     721.9,
+     997.2,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 20
+   },
+   "list": {
+    "description": "This figure displays the performance of different reasoning methods (chain-of-thought, structured reasoning, and structured reasoning with drafts) across various retrieval and clinical management metrics as the number of guidelines-allocated prompt tokens increases.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 20.628,
+    "cost_usd": null
+   }
+  },
+  "W07": {
+   "boxes": [
+    [
+     0.0,
+     4.7,
+     502.1,
+     1000.0
+    ],
+    [
+     502.1,
+     4.7,
+     999.3,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure presents a comparative evaluation of various medical scoring systems across three metrics: correctness, unit tests, and coverage, alongside their citation counts, split into two panels (a and b).",
+    "kinds": [
+     "bar",
+     "bar"
+    ],
+    "seconds": 3.928,
+    "cost_usd": null
+   }
+  },
+  "W08": {
+   "boxes": [
+    [
+     0.0,
+     1.9,
+     356.9,
+     992.3
+    ],
+    [
+     366.8,
+     1.9,
+     691.4,
+     992.3
+    ],
+    [
+     717.4,
+     113.9,
+     1000.0,
+     992.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents a comparison of accuracy on the RiskQA dataset and tool selection accuracy across different models and methods, including Random, CoT, and AgentMD using GPT-3.5 and GPT-4.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.047,
+    "cost_usd": null
+   }
+  },
+  "W09": {
+   "boxes": [
+    [
+     3.7,
+     1.2,
+     996.3,
+     373.8
+    ],
+    [
+     3.7,
+     430.3,
+     475.5,
+     957.9
+    ],
+    [
+     546.6,
+     436.3,
+     996.3,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 5,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure illustrates the workflow of AgentMD, showing how admission notes are processed into risk summaries and then evaluated by clinicians, alongside performance metrics.",
+    "kinds": [
+     "other",
+     "bar",
+     "heatmap"
+    ],
+    "seconds": 4.282,
+    "cost_usd": null
+   }
+  },
+  "W10": {
+   "boxes": [
+    [
+     8.9,
+     3.8,
+     961.7,
+     205.4
+    ],
+    [
+     8.9,
+     205.4,
+     973.3,
+     521.0
+    ],
+    [
+     8.9,
+     533.2,
+     314.6,
+     638.4
+    ],
+    [
+     337.2,
+     541.5,
+     536.3,
+     638.4
+    ],
+    [
+     558.8,
+     541.5,
+     757.9,
+     638.4
+    ],
+    [
+     781.1,
+     541.5,
+     980.2,
+     638.4
+    ],
+    [
+     27.4,
+     638.4,
+     324.2,
+     753.2
+    ],
+    [
+     337.2,
+     638.4,
+     546.5,
+     753.2
+    ],
+    [
+     558.8,
+     638.4,
+     768.1,
+     753.2
+    ],
+    [
+     781.1,
+     638.4,
+     989.7,
+     753.2
+    ],
+    [
+     7.5,
+     753.8,
+     266.1,
+     998.1
+    ],
+    [
+     266.1,
+     753.8,
+     511.6,
+     998.1
+    ],
+    [
+     525.3,
+     753.8,
+     768.1,
+     998.1
+    ],
+    [
+     771.5,
+     753.8,
+     1000.0,
+     998.1
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 11,
+    "list": 14
+   },
+   "list": {
+    "description": "This figure illustrates the workflow and performance evaluation of AgentMD, a system that extracts risk summaries from patient notes and compares its performance against GPT-4 across various medical risk calculators.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 11.313,
+    "cost_usd": null
+   }
+  },
+  "W11": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure is a heatmap showing the frequency of the top 10 specialist roles appearing for three different clinical problems: Acute Kidney Injury, Congestive Heart Failure, and Sepsis.",
+    "kinds": [
+     "heatmap"
+    ],
+    "seconds": 2.797,
+    "cost_usd": null
+   }
+  },
+  "W12": {
+   "boxes": [
+    [
+     10.3,
+     11.4,
+     477.2,
+     997.2
+    ],
+    [
+     477.2,
+     88.1,
+     995.6,
+     974.4
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure displays a donut chart showing the distribution of 14 categories and a bar chart showing the top 15 views by count.",
+    "kinds": [
+     "pie",
+     "bar"
+    ],
+    "seconds": 3.067,
+    "cost_usd": null
+   }
+  },
+  "W13": {
+   "boxes": [
+    [
+     5.6,
+     21.1,
+     493.0,
+     982.4
+    ],
+    [
+     493.0,
+     21.1,
+     1000.0,
+     989.4
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure displays bar charts comparing the average accuracy of various AI models on two different tasks: EF Grading and EchoQA.",
+    "kinds": [
+     "bar",
+     "bar"
+    ],
+    "seconds": 2.91,
+    "cost_usd": null
+   }
+  },
+  "W14": {
+   "boxes": [
+    [
+     3.3,
+     4.7,
+     998.7,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure shows the difference in physician-rated scores between AI-generated and clinician-authored summaries across several rating domains.",
+    "kinds": [
+     "forest"
+    ],
+    "seconds": 2.391,
+    "cost_usd": null
+   }
+  },
+  "W15": {
+   "boxes": [
+    [
+     1.4,
+     0.0,
+     999.3,
+     717.6
+    ],
+    [
+     2.7,
+     729.3,
+     944.7,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 12,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure compares the performance of different reasoning methods (CoT, SC-CoT, MDAgent, Dual-Inf, HeartAgent) across three medical datasets (MIMIC, NEJM, UMN) using three different large language models (Llama-3.3-70B, Qwen-2.5-32B, MedGemma-27B) in terms of Top-3 differential diagnosis accuracy and the number of correct diagnoses.",
+    "kinds": [
+     "bar",
+     "stacked_bar"
+    ],
+    "seconds": 4.888,
+    "cost_usd": null
+   }
+  },
+  "W16": {
+   "boxes": [
+    [
+     3.6,
+     0.0,
+     997.1,
+     561.2
+    ],
+    [
+     4.3,
+     570.4,
+     957.6,
+     826.5
+    ],
+    [
+     107.1,
+     835.7,
+     905.8,
+     995.9
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 16,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents a comparative evaluation of different reasoning methods (CoT, SC-CoT, MDAgent, Dual-Inf, HeartAgent) across three medical datasets (MIMIC, NEJM, UMN) using two metrics: Top-3 Explanation Performance and Explanation Score, alongside factuality score distributions.",
+    "kinds": [
+     "bar",
+     "box",
+     "bar"
+    ],
+    "seconds": 4.966,
+    "cost_usd": null
+   }
+  },
+  "W17": {
+   "boxes": [
+    [
+     5.1,
+     9.2,
+     496.0,
+     492.0
+    ],
+    [
+     505.4,
+     9.2,
+     996.4,
+     554.0
+    ],
+    [
+     5.1,
+     516.1,
+     496.0,
+     1000.0
+    ],
+    [
+     505.4,
+     554.0,
+     996.4,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure presents a comparison of different AI models' performance on NEJM datasets across four metrics: Top-1 DDx Accuracy, Top-1 Explanation Performance, Top-3 DDx Accuracy, and Top-3 Explanation Performance.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.935,
+    "cost_usd": null
+   }
+  },
+  "W18": {
+   "boxes": [
+    [
+     2.0,
+     16.8,
+     237.5,
+     993.3
+    ],
+    [
+     256.6,
+     16.8,
+     500.0,
+     993.3
+    ],
+    [
+     510.6,
+     16.8,
+     741.4,
+     993.3
+    ],
+    [
+     765.2,
+     16.8,
+     998.7,
+     993.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "The figure displays four confusion matrices comparing the performance of two different large language models (Llama-3.3-70B and MedGemma-27B) on two datasets (MIMIC and UMN).",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap"
+    ],
+    "seconds": 4.321,
+    "cost_usd": null
+   }
+  },
+  "W19": {
+   "boxes": [
+    [
+     44.0,
+     201.0,
+     531.0,
+     848.0
+    ],
+    [
+     484.0,
+     55.0,
+     948.0,
+     944.0
+    ],
+    [
+     43.0,
+     565.0,
+     934.0,
+     895.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure presents a comparative analysis of different model methods across several benchmarks using accuracy, radar charts, and confidence scores.",
+    "kinds": [
+     "bar",
+     "pie",
+     "bar"
+    ],
+    "seconds": 4.033,
+    "cost_usd": null
+   }
+  },
+  "W20": {
+   "boxes": [
+    [
+     48.0,
+     20.0,
+     858.0,
+     442.0
+    ],
+    [
+     501.0,
+     11.0,
+     951.0,
+     893.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "This figure presents two pie charts showing the distribution of medical imaging modalities and body structures in a dataset.",
+    "kinds": [
+     "pie",
+     "pie"
+    ],
+    "seconds": 3.027,
+    "cost_usd": null
+   }
+  },
+  "W21": {
+   "boxes": [
+    [
+     8.8,
+     13.4,
+     492.2,
+     324.0
+    ],
+    [
+     492.2,
+     13.4,
+     998.4,
+     324.0
+    ],
+    [
+     8.8,
+     348.2,
+     492.2,
+     658.8
+    ],
+    [
+     492.2,
+     347.5,
+     998.4,
+     658.8
+    ],
+    [
+     0.0,
+     683.0,
+     492.2,
+     993.6
+    ],
+    [
+     492.2,
+     683.0,
+     998.4,
+     993.6
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 6
+   },
+   "list": {
+    "description": "This figure displays several line and scatter plots showing the progression of different reward metrics and response length over time.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 5.022,
+    "cost_usd": null
+   }
+  },
+  "W22": {
+   "boxes": [
+    [
+     522.0,
+     575.1,
+     881.3,
+     761.6
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "This figure shows example interactions between a clinician and an LLM-based interface regarding the Autoprognosis 2.0 risk score, including model details and an explainable AI visualization.",
+    "kinds": [
+     "bar"
+    ],
+    "seconds": 3.411,
+    "cost_usd": null
+   }
+  },
+  "W23": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     246.6,
+     988.8
+    ],
+    [
+     258.8,
+     0.0,
+     470.9,
+     1000.0
+    ],
+    [
+     470.9,
+     0.0,
+     695.3,
+     1000.0
+    ],
+    [
+     695.3,
+     53.2,
+     999.3,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 8,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure presents the distribution of diseases, symptoms, medical specialties, and organ systems through a series of four pie charts.",
+    "kinds": [
+     "pie",
+     "pie",
+     "pie",
+     "pie"
+    ],
+    "seconds": 4.867,
+    "cost_usd": null
+   }
+  },
+  "W24": {
+   "boxes": [
+    [
+     10.3,
+     2.6,
+     692.6,
+     605.1
+    ],
+    [
+     2.3,
+     605.1,
+     645.7,
+     992.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "The figure displays accuracy comparisons between different AI models (RiskAgent-8B, GPT-4.5, o3-mini, and o1) across various types of cancer and rare diseases.",
+    "kinds": [
+     "line",
+     "line"
+    ],
+    "seconds": 3.287,
+    "cost_usd": null
+   }
+  },
+  "W25": {
+   "boxes": [
+    [
+     5.8,
+     0.0,
+     495.7,
+     488.0
+    ],
+    [
+     518.8,
+     10.5,
+     998.1,
+     484.9
+    ],
+    [
+     5.8,
+     518.1,
+     495.7,
+     1000.0
+    ],
+    [
+     518.8,
+     531.6,
+     998.1,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure compares the performance of GPT-4o-Series and LLaMA-3-Series models against RiskAgent across qualitative and quantitative medical risk metrics over time and model size.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 4.831,
+    "cost_usd": null
+   }
+  },
+  "W26": {
+   "boxes": [
+    [
+     2.5,
+     3.0,
+     494.7,
+     181.6
+    ],
+    [
+     499.6,
+     0.0,
+     998.4,
+     179.8
+    ],
+    [
+     1.6,
+     181.6,
+     998.4,
+     380.3
+    ],
+    [
+     3.3,
+     384.5,
+     998.4,
+     588.7
+    ],
+    [
+     2.5,
+     588.7,
+     973.7,
+     673.4
+    ],
+    [
+     11.5,
+     673.4,
+     998.4,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 6
+   },
+   "list": {
+    "description": "This figure compares the performance of different large language models (Qwen, Deepseek, Gemini, ChatGPT) and their variants (+ versions) across several metrics including accuracy, integrity, utility, and safety.",
+    "kinds": [
+     "line",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "box"
+    ],
+    "seconds": 6.279,
+    "cost_usd": null
+   }
+  },
+  "W27": {
+   "boxes": [
+    [
+     1.6,
+     8.9,
+     464.1,
+     300.8
+    ],
+    [
+     465.7,
+     1.6,
+     987.1,
+     312.1
+    ],
+    [
+     5.6,
+     330.6,
+     385.0,
+     668.5
+    ],
+    [
+     385.0,
+     328.2,
+     1000.0,
+     671.0
+    ],
+    [
+     5.6,
+     714.5,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 5
+   },
+   "list": {
+    "description": "This figure compares several large language models (ChatGPT, Gemini, Qwen, DeepSeek) across three metrics: conciseness, empathy, and clarity, showing their performance distributions and average scores.",
+    "kinds": [
+     "line",
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 5.386,
+    "cost_usd": null
+   }
+  },
+  "W28": {
+   "boxes": [
+    [
+     6.4,
+     16.4,
+     502.4,
+     472.0
+    ],
+    [
+     502.4,
+     5.2,
+     992.0,
+     465.1
+    ],
+    [
+     6.4,
+     472.0,
+     998.4,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 4,
+    "list": 3
+   },
+   "list": {
+    "description": "This figure compares the performance of various large language models (original and enhanced versions) across multiple metrics using donut charts, scatter plots, and a heatmap.",
+    "kinds": [
+     "pie",
+     "scatter",
+     "heatmap"
+    ],
+    "seconds": 4.257,
+    "cost_usd": null
+   }
+  },
+  "W29": {
+   "boxes": [
+    [
+     3.5,
+     3.7,
+     382.0,
+     485.1
+    ],
+    [
+     408.0,
+     3.7,
+     665.5,
+     485.1
+    ],
+    [
+     691.4,
+     3.7,
+     998.3,
+     485.1
+    ],
+    [
+     146.1,
+     521.1,
+     502.2,
+     1000.0
+    ],
+    [
+     502.2,
+     521.1,
+     862.6,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 5
+   },
+   "list": {
+    "description": "This figure presents a series of heatmaps comparing different large language models across various metrics, categorized by age group and gender.",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap"
+    ],
+    "seconds": 4.917,
+    "cost_usd": null
+   }
+  },
+  "W30": {
+   "boxes": [
+    [
+     10.0,
+     109.0,
+     498.0,
+     848.0
+    ],
+    [
+     305.0,
+     109.0,
+     498.0,
+     848.0
+    ],
+    [
+     498.0,
+     109.0,
+     506.0,
+     848.0
+    ],
+    [
+     740.0,
+     150.0,
+     985.0,
+     850.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 4
+   },
+   "list": {
+    "description": "This figure compares the performance of various large language models across three clinical classes using heatmaps and an ablation study radar chart.",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "line"
+    ],
+    "seconds": 4.307,
+    "cost_usd": null
+   }
+  }
+ }
+}

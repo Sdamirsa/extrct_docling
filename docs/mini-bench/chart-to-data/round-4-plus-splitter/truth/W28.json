@@ -1,0 +1,35 @@
+{
+ "id": "W28",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    2.0,
+    12.0,
+    528.0,
+    411.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    545.0,
+    1.0,
+    996.0,
+    466.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    0.0,
+    461.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Three charts: a is a ring of eight value-labelled sectors (a circular bar chart, counted as a chart like a pie); b is a scatter plot whose marginal histograms and legend belong to it; c is a heatmap without a colour bar. Boxes b and c overlap by 5 grid units in height (y 461-466): the top of panel letter c stands about 2 px higher than the descenders of b's x-axis title 'Response Quality' reach down, so no horizontal line separates them; each box holds its own chart whole, and box c takes in the descender tips of b's axis title at its top edge.",
+ "drawn_as": "T47"
+}

@@ -1,0 +1,2474 @@
+{
+ "candidate": "sonnet-5-5-recommended",
+ "about": "The recommended cut with Cloud: Sonnet 5.5: the rule splitter's cut when it has the number of charts the model lists (no caption), else the rules' cutter started from the model's boxes.",
+ "figures": {
+  "A3": {
+   "boxes": [
+    [
+     45.6,
+     7.3,
+     999.1,
+     995.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Point estimates with confidence intervals of ICC(2,1) absolute agreement for human-human (R1-R2) and judge-human (Judge-R1, Judge-R2) rater pairs.",
+    "kinds": [
+     "forest"
+    ],
+    "seconds": 5.13,
+    "cost_usd": 0.011106
+   }
+  },
+  "B1": {
+   "boxes": [
+    [
+     5.8,
+     16.4,
+     996.4,
+     989.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Grouped bar chart of case counts per clinical problem (congestive heart failure, acute kidney injury, sepsis) split by whether the MAS and baseline were each correct or incorrect.",
+    "kinds": [
+     "grouped_bar"
+    ],
+    "seconds": 2.52,
+    "cost_usd": 0.00723
+   }
+  },
+  "B2": {
+   "boxes": [
+    [
+     4.2,
+     29.9,
+     328.6,
+     990.7
+    ],
+    [
+     328.6,
+     29.9,
+     659.4,
+     990.7
+    ],
+    [
+     659.4,
+     29.9,
+     999.0,
+     990.7
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Three line plots with scattered raw points showing training curves for accuracy reward, format reward, and completion length.",
+    "kinds": [
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 2.75,
+    "cost_usd": 0.005974
+   }
+  },
+  "B3": {
+   "boxes": [
+    [
+     8.4,
+     12.4,
+     331.9,
+     497.9
+    ],
+    [
+     338.9,
+     12.4,
+     662.5,
+     497.9
+    ],
+    [
+     675.0,
+     261.4,
+     998.6,
+     746.9
+    ],
+    [
+     8.4,
+     510.4,
+     333.3,
+     995.9
+    ],
+    [
+     344.5,
+     510.4,
+     669.5,
+     995.9
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 5,
+    "list": 5
+   },
+   "list": {
+    "description": "ROC curves comparing five models (OnimiaNet, H2former, MemSAM, EchoONE, EchoAgent) for classifying EF<40%, 40%≤EF<50% and EF≥50%, with AUROC values in the legends.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 2.78,
+    "cost_usd": 0.008302
+   }
+  },
+  "B4": {
+   "boxes": [
+    [
+     2.6,
+     2.5,
+     997.4,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Forest-style plot of mean differences with confidence intervals for five rating domains, comparing AI-generated and clinician-authored summaries.",
+    "kinds": [
+     "forest"
+    ],
+    "seconds": 3.14,
+    "cost_usd": 0.007044
+   }
+  },
+  "B5": {
+   "boxes": [
+    [
+     4.7,
+     0.0,
+     193.5,
+     485.2
+    ],
+    [
+     205.0,
+     38.0,
+     394.5,
+     485.2
+    ],
+    [
+     404.6,
+     38.0,
+     596.1,
+     485.2
+    ],
+    [
+     606.9,
+     38.0,
+     797.0,
+     485.2
+    ],
+    [
+     809.8,
+     38.0,
+     997.3,
+     485.2
+    ],
+    [
+     4.0,
+     510.1,
+     203.0,
+     996.4
+    ],
+    [
+     207.0,
+     544.5,
+     394.5,
+     995.3
+    ],
+    [
+     407.9,
+     548.0,
+     595.4,
+     995.3
+    ],
+    [
+     610.2,
+     545.7,
+     797.0,
+     996.4
+    ],
+    [
+     810.5,
+     546.9,
+     997.3,
+     994.1
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 10,
+    "list": 10
+   },
+   "list": {
+    "description": "Box plots comparing RiskAgent-8B, GPT-4o and o3-mini on MedRisk qualitative (a) and quantitative (b) benchmarks across Stroke/TIA, Shortness of Breath, Internal Medicine, Cardiac and Overall categories.",
+    "kinds": [
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box",
+     "box"
+    ],
+    "seconds": 3.5,
+    "cost_usd": 0.012156
+   }
+  },
+  "C1": {
+   "boxes": [
+    [
+     4.0,
+     12.3,
+     253.8,
+     1000.0
+    ],
+    [
+     265.7,
+     12.3,
+     501.6,
+     1000.0
+    ],
+    [
+     514.2,
+     12.3,
+     750.2,
+     1000.0
+    ],
+    [
+     762.0,
+     12.3,
+     998.7,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "Four bar charts compare accuracy of HeartAgent, Expert, and Expert + HeartAgent on MIMIC for top-1 and top-3 diagnosis and explanation.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 2.57,
+    "cost_usd": 0.006902
+   }
+  },
+  "C3": {
+   "boxes": [
+    [
+     13.8,
+     12.5,
+     486.6,
+     676.4
+    ],
+    [
+     510.9,
+     12.9,
+     996.6,
+     676.4
+    ],
+    [
+     1.6,
+     739.9,
+     915.0,
+     999.6
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Stacked horizontal bar charts compare the rating distributions of AMIE (top, red) and PCP (bottom, blue) consultations on GMCPQ, MXEKF and PACES criteria, with significance stars and sample sizes.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 3.36,
+    "cost_usd": 0.014922
+   }
+  },
+  "C4": {
+   "boxes": [
+    [
+     3.5,
+     7.5,
+     488.8,
+     988.8
+    ],
+    [
+     494.8,
+     7.5,
+     996.5,
+     988.8
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "Two panels: (a) box plots of diagnostic lability for eight language models, and (b) grouped bars comparing single-agent and multi-agent scores across eight categories.",
+    "kinds": [
+     "box",
+     "grouped_bar"
+    ],
+    "seconds": 2.51,
+    "cost_usd": 0.00534
+   }
+  },
+  "C5": {
+   "boxes": [
+    [
+     0.0,
+     32.4,
+     303.5,
+     973.5
+    ],
+    [
+     330.8,
+     38.3,
+     647.7,
+     917.4
+    ],
+    [
+     685.7,
+     44.2,
+     998.1,
+     938.1
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Three pie charts showing survey responses on whether the AI helped assessment, made users more confident, and saved them time.",
+    "kinds": [
+     "pie",
+     "pie",
+     "pie"
+    ],
+    "seconds": 1.94,
+    "cost_usd": 0.006998
+   }
+  },
+  "S02": {
+   "boxes": [
+    [
+     5.6,
+     6.5,
+     501.1,
+     300.7
+    ],
+    [
+     519.4,
+     6.5,
+     998.6,
+     300.7
+    ],
+    [
+     5.6,
+     326.8,
+     500.4,
+     1000.0
+    ],
+    [
+     519.4,
+     325.7,
+     998.6,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "Four-panel figure comparing LLM accuracy (%) across response generation methods (grouped bars), temperature settings (point ranges), prompt techniques at different max-token settings (grouped bars), and prompt candidates/functions (point ranges with error bars).",
+    "kinds": [
+     "grouped_bar",
+     "other",
+     "grouped_bar",
+     "other"
+    ],
+    "seconds": 3.47,
+    "cost_usd": 0.010216
+   }
+  },
+  "S03": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 1
+   },
+   "list": {
+    "description": "Horizontal stacked bar chart of the percentage of 2022 ACG questions answered correctly, with 2OP, EOP, NOP, error and incorrect shares, for many large language models.",
+    "kinds": [
+     "stacked_bar"
+    ],
+    "seconds": 1.92,
+    "cost_usd": 0.01053
+   }
+  },
+  "S04": {
+   "boxes": [
+    [
+     2.0,
+     3.3,
+     993.9,
+     998.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Stacked horizontal bar chart of answer outcome percentages (correct, 2OP, EOP, NOP, error, incorrect) for GPT4, Claude3 Opus, Claude3 Sonnet and Gemini Advanced under four image conditions, with significance markers versus the no-image reference.",
+    "kinds": [
+     "stacked_bar"
+    ],
+    "seconds": 2.65,
+    "cost_usd": 0.009938
+   }
+  },
+  "S05": {
+   "boxes": [
+    [
+     4.2,
+     6.8,
+     449.5,
+     993.2
+    ],
+    [
+     462.2,
+     6.8,
+     1000.0,
+     993.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "Two panels of accuracy (%): (a) GPT-3.5 Turbo 0125 and GPT-4 0613 across ACG self-assessment versions 2021-2023; (b) accuracy of various GPT models by training data cutoff date.",
+    "kinds": [
+     "line",
+     "scatter"
+    ],
+    "seconds": 2.39,
+    "cost_usd": 0.007714
+   }
+  },
+  "S06": {
+   "boxes": [
+    [
+     3.1,
+     1.0,
+     505.4,
+     491.0
+    ],
+    [
+     515.5,
+     1.0,
+     997.7,
+     491.0
+    ],
+    [
+     3.1,
+     510.0,
+     506.2,
+     1000.0
+    ],
+    [
+     514.7,
+     511.0,
+     997.7,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 4
+   },
+   "list": {
+    "description": "Four line charts of accuracy (average with min–max range band) versus model temperature for raw and best prompts, before and after determining the seed.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 2.88,
+    "cost_usd": 0.009674
+   }
+  },
+  "S08": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 1
+   },
+   "list": {
+    "description": "Confusion-matrix heatmap comparing blinded human validation labels with GPT-3.5 extracted options from LLM textual responses, with counts in each cell.",
+    "kinds": [
+     "heatmap"
+    ],
+    "seconds": 1.73,
+    "cost_usd": 0.00685
+   }
+  },
+  "S10": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     325.7
+    ],
+    [
+     0.0,
+     335.9,
+     995.2,
+     662.8
+    ],
+    [
+     0.0,
+     669.9,
+     995.2,
+     996.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Three stacked bar charts compare the percentage of correct, 2OP, EOP, NOP, error and incorrect answers from many LLMs on 2022 ACG questions, for all questions, text-based questions and image-inclusive questions.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 3.4,
+    "cost_usd": 0.013422
+   }
+  },
+  "S11": {
+   "boxes": [
+    [
+     4.8,
+     3.2,
+     501.6,
+     170.6
+    ],
+    [
+     504.8,
+     5.4,
+     996.0,
+     166.8
+    ],
+    [
+     2.4,
+     170.6,
+     504.0,
+     337.5
+    ],
+    [
+     504.8,
+     172.2,
+     996.0,
+     334.2
+    ],
+    [
+     2.4,
+     337.5,
+     503.2,
+     505.4
+    ],
+    [
+     503.2,
+     339.1,
+     996.0,
+     504.9
+    ],
+    [
+     4.8,
+     505.4,
+     501.6,
+     671.7
+    ],
+    [
+     506.4,
+     507.0,
+     996.0,
+     667.9
+    ],
+    [
+     4.8,
+     671.7,
+     501.6,
+     834.8
+    ],
+    [
+     504.8,
+     673.3,
+     996.0,
+     834.8
+    ],
+    [
+     4.8,
+     840.7,
+     497.6,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 7,
+    "list": 11
+   },
+   "list": {
+    "description": "Grid of eleven stacked bar charts showing the percentage of correct, incorrect and other response categories for many LLMs, one panel per gastroenterology question type (colon, endoscopy, esophagus, IBD, IBS, liver, etc.).",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 4.87,
+    "cost_usd": 0.017284
+   }
+  },
+  "S12": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     990.9,
+     196.3
+    ],
+    [
+     3.7,
+     200.1,
+     990.9,
+     396.4
+    ],
+    [
+     3.7,
+     400.2,
+     990.9,
+     596.5
+    ],
+    [
+     0.0,
+     599.8,
+     990.9,
+     796.6
+    ],
+    [
+     3.7,
+     800.4,
+     990.9,
+     996.7
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 5
+   },
+   "list": {
+    "description": "Five stacked bar panels show the percentage of correct, incorrect and other response categories for many LLMs, split by medical question type: complication, diagnosis, investigation, pathophysiology and treatment.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 3.07,
+    "cost_usd": 0.010962
+   }
+  },
+  "S13": {
+   "boxes": [
+    [
+     3.0,
+     2.8,
+     998.5,
+     246.0
+    ],
+    [
+     0.0,
+     252.6,
+     998.5,
+     496.9
+    ],
+    [
+     0.0,
+     501.4,
+     998.5,
+     747.9
+    ],
+    [
+     3.0,
+     755.1,
+     998.5,
+     998.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "Four stacked bar charts (Q1-Q4) showing, for each language model, the percentage of 75 answers rated Correct, 2OP, EOP, NOP, Error or Incorrect by humans.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 2.71,
+    "cost_usd": 0.012222
+   }
+  },
+  "S14": {
+   "boxes": [
+    [
+     1.2,
+     0.0,
+     997.7,
+     328.8
+    ],
+    [
+     7.0,
+     334.7,
+     997.7,
+     664.1
+    ],
+    [
+     1.2,
+     670.0,
+     997.7,
+     999.4
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 8,
+    "list": 3
+   },
+   "list": {
+    "description": "Three stacked bar charts show the percentage of Correct, 2OP, EOP, NOP, Error and Incorrect answers for many LLMs on long, medium and short question types.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 3.65,
+    "cost_usd": 0.012358
+   }
+  },
+  "W01": {
+   "boxes": [
+    [
+     4.5,
+     2.1,
+     997.3,
+     454.9
+    ],
+    [
+     5.4,
+     470.6,
+     995.5,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "Comparison of cardiologists assisted by AMIE versus cardiologists alone: (a) stacked bars of preference proportions across response criteria, and (b) grouped bars of the proportion of 'yes' responses for error and content measures, with error bars.",
+    "kinds": [
+     "stacked_bar",
+     "grouped_bar"
+    ],
+    "seconds": 2.23,
+    "cost_usd": 0.008172
+   }
+  },
+  "W02": {
+   "boxes": [
+    [
+     87.7,
+     9.7,
+     987.7,
+     344.1
+    ],
+    [
+     53.7,
+     344.1,
+     708.3,
+     970.6
+    ],
+    [
+     715.7,
+     353.8,
+     987.7,
+     836.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Paired stacked horizontal bars compare AMIE (top, red) and PCP (bottom, blue) ratings, as the percentage of consultations per rating category, across Diagnosis & Management, MXEKF and PACES criteria, with significance marks and N.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 2.71,
+    "cost_usd": 0.016366
+   }
+  },
+  "W03": {
+   "boxes": [
+    [
+     13.1,
+     18.5,
+     532.5,
+     995.2
+    ],
+    [
+     545.0,
+     18.5,
+     998.1,
+     995.2
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "Two-panel grouped bar chart comparing answer accuracy of PCP and AMIE in closed-book and open-book settings for lower- and higher-difficulty questions, with 95% CIs and significance tests.",
+    "kinds": [
+     "bar",
+     "bar"
+    ],
+    "seconds": 2.35,
+    "cost_usd": 0.009214
+   }
+  },
+  "W04": {
+   "boxes": [
+    [
+     429.6,
+     10.0,
+     616.4,
+     312.8
+    ],
+    [
+     616.4,
+     12.5,
+     803.2,
+     288.6
+    ],
+    [
+     803.2,
+     12.5,
+     999.4,
+     317.8
+    ],
+    [
+     12.5,
+     60.1,
+     229.8,
+     288.6
+    ],
+    [
+     238.5,
+     60.1,
+     409.1,
+     288.6
+    ],
+    [
+     420.9,
+     342.0,
+     605.2,
+     608.0
+    ],
+    [
+     605.2,
+     317.8,
+     805.7,
+     638.0
+    ],
+    [
+     812.6,
+     317.8,
+     999.4,
+     635.5
+    ],
+    [
+     12.5,
+     376.1,
+     217.3,
+     608.0
+    ],
+    [
+     238.5,
+     376.1,
+     409.1,
+     608.0
+    ],
+    [
+     421.5,
+     638.0,
+     613.9,
+     981.7
+    ],
+    [
+     795.1,
+     640.5,
+     999.4,
+     1000.0
+    ],
+    [
+     12.5,
+     698.1,
+     229.1,
+     951.6
+    ],
+    [
+     238.5,
+     698.1,
+     409.1,
+     1000.0
+    ],
+    [
+     613.9,
+     698.1,
+     795.1,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 16,
+    "list": 15
+   },
+   "list": {
+    "description": "Grid of line charts comparing AMIE and PCP ratings across three visits for overall, investigations and treatments quality measures, with P values and a dashed box for guideline-related measures.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 5.25,
+    "cost_usd": 0.015014
+   }
+  },
+  "W05": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     134.3,
+     480.3
+    ],
+    [
+     0.0,
+     480.3,
+     128.1,
+     1000.0
+    ],
+    [
+     128.1,
+     506.9,
+     210.8,
+     996.8
+    ],
+    [
+     134.3,
+     0.0,
+     231.3,
+     474.0
+    ],
+    [
+     231.3,
+     0.0,
+     327.1,
+     474.0
+    ],
+    [
+     251.9,
+     506.9,
+     329.6,
+     996.8
+    ],
+    [
+     327.1,
+     0.0,
+     427.9,
+     474.0
+    ],
+    [
+     329.6,
+     506.9,
+     407.3,
+     996.8
+    ],
+    [
+     427.9,
+     0.0,
+     521.1,
+     474.0
+    ],
+    [
+     521.1,
+     0.0,
+     624.4,
+     474.0
+    ],
+    [
+     534.8,
+     506.9,
+     613.8,
+     996.8
+    ],
+    [
+     624.4,
+     0.0,
+     727.0,
+     474.0
+    ],
+    [
+     633.1,
+     506.9,
+     712.1,
+     996.8
+    ],
+    [
+     727.0,
+     0.0,
+     825.9,
+     474.0
+    ],
+    [
+     731.3,
+     508.0,
+     810.3,
+     996.8
+    ],
+    [
+     825.9,
+     0.0,
+     922.9,
+     826.8
+    ],
+    [
+     922.9,
+     0.0,
+     1000.0,
+     830.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 17,
+    "list": 17
+   },
+   "list": {
+    "description": "Stacked bar panels show, for each communication axis and visit (1-3), the number of scenarios in which AMIE, the PCP, or neither (tie/NA) was preferred, from specialist physician and patient actor perspectives.",
+    "kinds": [
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 4.77,
+    "cost_usd": 0.015532
+   }
+  },
+  "W06": {
+   "boxes": [
+    [
+     72.0,
+     30.0,
+     245.0,
+     245.0
+    ],
+    [
+     245.0,
+     30.0,
+     262.0,
+     245.0
+    ],
+    [
+     245.0,
+     30.0,
+     450.0,
+     245.0
+    ],
+    [
+     245.0,
+     30.0,
+     638.0,
+     245.0
+    ],
+    [
+     245.0,
+     30.0,
+     826.0,
+     245.0
+    ],
+    [
+     72.0,
+     318.0,
+     245.0,
+     518.0
+    ],
+    [
+     245.0,
+     318.0,
+     262.0,
+     518.0
+    ],
+    [
+     245.0,
+     318.0,
+     450.0,
+     518.0
+    ],
+    [
+     245.0,
+     318.0,
+     638.0,
+     518.0
+    ],
+    [
+     245.0,
+     318.0,
+     826.0,
+     518.0
+    ],
+    [
+     72.0,
+     590.0,
+     245.0,
+     790.0
+    ],
+    [
+     245.0,
+     590.0,
+     262.0,
+     790.0
+    ],
+    [
+     245.0,
+     590.0,
+     450.0,
+     790.0
+    ],
+    [
+     245.0,
+     590.0,
+     638.0,
+     790.0
+    ],
+    [
+     245.0,
+     590.0,
+     826.0,
+     790.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 15
+   },
+   "list": {
+    "description": "Grid of 15 line plots comparing retrieval metrics and LLM-judged win rates across guidelines-allocated prompt tokens for chain-of-thought, structured reasoning, and structured reasoning with 4 drafts, with no-retrieval baselines and oracle stars.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 4.09,
+    "cost_usd": 0.015924
+   }
+  },
+  "W07": {
+   "boxes": [
+    [
+     0.0,
+     70.0,
+     490.0,
+     990.0
+    ],
+    [
+     355.0,
+     70.0,
+     990.0,
+     990.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "Two heatmap-style panels showing, for clinical risk calculators, correctness of logic and interpretation, unit test results (Q1-Q5), MDCalc/other coverage, and citation count bars, for calculators in panels a and b.",
+    "kinds": [
+     "heatmap",
+     "heatmap"
+    ],
+    "seconds": 3.55,
+    "cost_usd": 0.013968
+   }
+  },
+  "W08": {
+   "boxes": [
+    [
+     0.0,
+     1.9,
+     356.9,
+     992.3
+    ],
+    [
+     366.8,
+     1.9,
+     691.4,
+     992.3
+    ],
+    [
+     717.4,
+     113.9,
+     1000.0,
+     992.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 3,
+    "list": 3
+   },
+   "list": {
+    "description": "Three bar charts with error bars comparing accuracy of Random, CoT and AgentMD baselines on RiskQA with GPT-3.5 and GPT-4, and accuracy of AgentMD tool selection against MedCPT.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 2.13,
+    "cost_usd": 0.007464
+   }
+  },
+  "W09": {
+   "boxes": [
+    [
+     3.7,
+     1.2,
+     520.8,
+     957.9
+    ],
+    [
+     520.8,
+     15.6,
+     996.3,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 5,
+    "list": 2
+   },
+   "list": {
+    "description": "Overview of the AgentMD workflow (a) with clinician evaluation results shown as a stacked bar chart (b) and a heatmap of per-calculator scores (c).",
+    "kinds": [
+     "stacked_bar",
+     "heatmap"
+    ],
+    "seconds": 2.37,
+    "cost_usd": 0.009344
+   }
+  },
+  "W10": {
+   "boxes": [
+    [
+     8.9,
+     3.8,
+     969.2,
+     272.3
+    ],
+    [
+     8.9,
+     272.3,
+     973.3,
+     521.0
+    ],
+    [
+     8.9,
+     533.2,
+     324.2,
+     656.9
+    ],
+    [
+     337.2,
+     541.5,
+     546.5,
+     656.9
+    ],
+    [
+     558.8,
+     541.5,
+     768.1,
+     656.9
+    ],
+    [
+     781.1,
+     541.5,
+     989.7,
+     656.9
+    ],
+    [
+     27.4,
+     669.6,
+     324.2,
+     762.8
+    ],
+    [
+     344.7,
+     669.6,
+     546.5,
+     762.8
+    ],
+    [
+     558.8,
+     669.6,
+     768.1,
+     762.8
+    ],
+    [
+     788.6,
+     669.6,
+     989.7,
+     762.8
+    ],
+    [
+     7.5,
+     784.4,
+     265.4,
+     998.1
+    ],
+    [
+     279.1,
+     790.8,
+     511.6,
+     998.1
+    ],
+    [
+     525.3,
+     790.8,
+     757.9,
+     998.1
+    ],
+    [
+     771.5,
+     790.8,
+     1000.0,
+     998.1
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 11,
+    "list": 14
+   },
+   "list": {
+    "description": "Multi-panel figure showing the AgentMD risk calculator workflow on MIMIC-III notes, density plots of calculators per patient and patients per calculator, density plots of calculator quality ratings, and ROC curves comparing AgentMD with GPT-4.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 6.37,
+    "cost_usd": 0.01629
+   }
+  },
+  "W11": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 1
+   },
+   "list": {
+    "description": "Heatmap of how often each of ten specialist roles appears for three clinical problems (acute kidney injury, congestive heart failure, sepsis), with counts printed in each cell.",
+    "kinds": [
+     "heatmap"
+    ],
+    "seconds": 3.25,
+    "cost_usd": 0.007568
+   }
+  },
+  "W12": {
+   "boxes": [
+    [
+     10.3,
+     11.4,
+     394.7,
+     997.2
+    ],
+    [
+     397.6,
+     82.4,
+     995.6,
+     974.4
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 2
+   },
+   "list": {
+    "description": "Panel (a) is a donut chart of the distribution of 14 echocardiography categories, and panel (b) is a horizontal bar chart of the top 15 view counts.",
+    "kinds": [
+     "pie",
+     "bar"
+    ],
+    "seconds": 6.33,
+    "cost_usd": 0.006096
+   }
+  },
+  "W13": {
+   "boxes": [
+    [
+     5.6,
+     21.1,
+     493.0,
+     982.4
+    ],
+    [
+     493.0,
+     21.1,
+     1000.0,
+     989.4
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "Two bar charts compare average accuracy of various models on EF Grading (a) and EchoQA (b), with EchoAgent scoring highest in both (80.00 and 79.42).",
+    "kinds": [
+     "bar",
+     "bar"
+    ],
+    "seconds": 3.16,
+    "cost_usd": 0.00582
+   }
+  },
+  "W14": {
+   "boxes": [
+    [
+     3.3,
+     4.7,
+     998.7,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Forest-style plot of mean differences with confidence intervals in physician-rated scores between AI-generated and clinician-authored summaries across five rating domains.",
+    "kinds": [
+     "forest"
+    ],
+    "seconds": 1.69,
+    "cost_usd": 0.00727
+   }
+  },
+  "W15": {
+   "boxes": [
+    [
+     2.0,
+     0.0,
+     328.1,
+     238.4
+    ],
+    [
+     339.0,
+     9.4,
+     663.7,
+     238.4
+    ],
+    [
+     674.6,
+     9.4,
+     998.6,
+     238.4
+    ],
+    [
+     3.4,
+     249.0,
+     328.1,
+     478.0
+    ],
+    [
+     339.0,
+     249.0,
+     663.7,
+     478.0
+    ],
+    [
+     674.6,
+     249.0,
+     998.6,
+     478.0
+    ],
+    [
+     2.7,
+     488.5,
+     328.1,
+     747.5
+    ],
+    [
+     339.0,
+     488.5,
+     663.0,
+     717.6
+    ],
+    [
+     674.6,
+     488.5,
+     998.6,
+     717.6
+    ],
+    [
+     51.2,
+     771.6,
+     328.1,
+     1000.0
+    ],
+    [
+     356.8,
+     771.6,
+     633.0,
+     1000.0
+    ],
+    [
+     661.7,
+     771.6,
+     944.7,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 12,
+    "list": 12
+   },
+   "list": {
+    "description": "Panel a shows bar charts of top-3 differential diagnosis accuracy for five methods (CoT, SC-CoT, MDAgent, Dual-Inf, HeartAgent) on MIMIC, NEJM and UMN with three LLMs. Panel b shows stacked bars of the share of cases with 0-3 correct diagnoses on MIMIC.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 4.1,
+    "cost_usd": 0.017858
+   }
+  },
+  "W16": {
+   "boxes": [
+    [
+     3.6,
+     0.0,
+     326.4,
+     187.8
+    ],
+    [
+     338.6,
+     9.2,
+     659.2,
+     187.8
+    ],
+    [
+     670.0,
+     9.2,
+     997.1,
+     187.8
+    ],
+    [
+     5.0,
+     195.9,
+     324.2,
+     374.5
+    ],
+    [
+     338.6,
+     195.9,
+     656.4,
+     390.3
+    ],
+    [
+     670.0,
+     195.9,
+     995.0,
+     390.3
+    ],
+    [
+     5.0,
+     382.7,
+     323.5,
+     561.2
+    ],
+    [
+     337.9,
+     395.9,
+     645.6,
+     561.2
+    ],
+    [
+     666.4,
+     395.9,
+     974.1,
+     561.2
+    ],
+    [
+     4.3,
+     570.4,
+     291.2,
+     796.9
+    ],
+    [
+     364.5,
+     580.1,
+     621.1,
+     796.9
+    ],
+    [
+     694.5,
+     580.1,
+     957.6,
+     796.9
+    ],
+    [
+     5.0,
+     817.3,
+     234.4,
+     995.9
+    ],
+    [
+     234.4,
+     816.3,
+     350.8,
+     995.9
+    ],
+    [
+     350.8,
+     816.3,
+     529.8,
+     995.9
+    ],
+    [
+     545.7,
+     816.3,
+     675.8,
+     995.9
+    ],
+    [
+     675.8,
+     816.3,
+     787.9,
+     995.9
+    ],
+    [
+     787.9,
+     835.7,
+     905.8,
+     995.9
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 16,
+    "list": 18
+   },
+   "list": {
+    "description": "Multi-panel comparison of HeartAgent against CoT, SC-CoT, MDAgent and Dual-Inf across three LLMs: top-3 explanation accuracy on MIMIC, NEJM and UMN, explanation score distributions on MIMIC, and factuality score distributions.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "bar",
+     "box",
+     "box",
+     "box",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar",
+     "stacked_bar"
+    ],
+    "seconds": 5.5,
+    "cost_usd": 0.020142
+   }
+  },
+  "W17": {
+   "boxes": [
+    [
+     5.1,
+     9.2,
+     496.0,
+     492.0
+    ],
+    [
+     505.4,
+     9.2,
+     996.4,
+     554.0
+    ],
+    [
+     5.1,
+     516.1,
+     496.0,
+     1000.0
+    ],
+    [
+     505.4,
+     554.0,
+     996.4,
+     1000.0
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "Four bar charts compare baseline LLMs and the authors' method with different backbones on NEJM cases, for top-1 and top-3 diagnosis accuracy and explanation performance.",
+    "kinds": [
+     "bar",
+     "bar",
+     "bar",
+     "bar"
+    ],
+    "seconds": 2.5,
+    "cost_usd": 0.009368
+   }
+  },
+  "W18": {
+   "boxes": [
+    [
+     2.0,
+     16.8,
+     237.5,
+     993.3
+    ],
+    [
+     256.6,
+     16.8,
+     500.0,
+     993.3
+    ],
+    [
+     510.6,
+     16.8,
+     741.4,
+     993.3
+    ],
+    [
+     765.2,
+     16.8,
+     998.7,
+     993.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 4,
+    "list": 4
+   },
+   "list": {
+    "description": "Four 2x2 confusion matrices comparing actual versus predicted positive/negative labels for Llama-3.3-70B and MedGemma-27B on the MIMIC and UMN datasets.",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap"
+    ],
+    "seconds": 3.38,
+    "cost_usd": 0.006582
+   }
+  },
+  "W19": {
+   "boxes": [
+    [
+     3.4,
+     12.0,
+     506.9,
+     603.1
+    ],
+    [
+     506.9,
+     52.4,
+     996.6,
+     981.6
+    ],
+    [
+     28.1,
+     603.1,
+     506.9,
+     992.2
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 3
+   },
+   "list": {
+    "description": "Three-panel figure: (a) accuracy bars for Qwen and Lingshu with base, thinking and reasoning-with-retrieval on three benchmarks; (b) radar chart comparing retrieval methods across five benchmarks; (c) confidence bars with and without CDIR on four benchmarks.",
+    "kinds": [
+     "stacked_bar",
+     "other",
+     "grouped_bar"
+    ],
+    "seconds": 3.01,
+    "cost_usd": 0.01134
+   }
+  },
+  "W20": {
+   "boxes": [
+    [
+     3.8,
+     8.2,
+     452.1,
+     996.5
+    ],
+    [
+     452.1,
+     11.7,
+     997.1,
+     996.5
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 1,
+    "list": 2
+   },
+   "list": {
+    "description": "Two pie charts showing the distribution of a dataset by imaging modality (a) and by body structure (b), with percentage labels for each slice.",
+    "kinds": [
+     "pie",
+     "pie"
+    ],
+    "seconds": 1.94,
+    "cost_usd": 0.009324
+   }
+  },
+  "W21": {
+   "boxes": [
+    [
+     8.8,
+     13.4,
+     499.4,
+     324.0
+    ],
+    [
+     508.8,
+     13.4,
+     998.4,
+     324.0
+    ],
+    [
+     8.8,
+     348.2,
+     499.4,
+     658.8
+    ],
+    [
+     507.8,
+     347.5,
+     998.4,
+     658.8
+    ],
+    [
+     0.0,
+     683.0,
+     499.4,
+     993.6
+    ],
+    [
+     504.7,
+     683.0,
+     998.4,
+     993.6
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 3,
+    "list": 6
+   },
+   "list": {
+    "description": "Six line plots with scatter points show training curves of reward components (accuracy, format, confidence gain, query semantic image and text) and response length, mostly rising over training.",
+    "kinds": [
+     "line",
+     "line",
+     "line",
+     "line",
+     "line",
+     "line"
+    ],
+    "seconds": 3.21,
+    "cost_usd": 0.010618
+   }
+  },
+  "W22": {
+   "boxes": [
+    [
+     522.0,
+     575.1,
+     881.3,
+     761.6
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 1,
+    "list": 1
+   },
+   "list": {
+    "description": "Screenshots of LLM chat interactions about the AutoPrognosis 2.0 risk model, with panel (b) including a SHAP bar plot of risk factor contributions for a patient.",
+    "kinds": [
+     "bar"
+    ],
+    "seconds": 2.59,
+    "cost_usd": 0.012384
+   }
+  },
+  "W23": {
+   "boxes": [
+    [
+     0.0,
+     0.0,
+     246.6,
+     988.8
+    ],
+    [
+     258.8,
+     0.0,
+     501.4,
+     1000.0
+    ],
+    [
+     501.4,
+     0.0,
+     744.6,
+     1000.0
+    ],
+    [
+     758.8,
+     53.2,
+     999.3,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 8,
+    "list": 4
+   },
+   "list": {
+    "description": "Four sunburst-style pie charts with count colorbars showing the distributions of diseases, symptoms, specialties and organ systems in a medical benchmark.",
+    "kinds": [
+     "pie",
+     "pie",
+     "pie",
+     "pie"
+    ],
+    "seconds": 2.35,
+    "cost_usd": 0.009074
+   }
+  },
+  "W24": {
+   "boxes": [
+    [
+     10.3,
+     2.6,
+     692.6,
+     605.1
+    ],
+    [
+     2.3,
+     605.1,
+     645.7,
+     992.3
+    ]
+   ],
+   "from": "rules",
+   "counts": {
+    "rules": 2,
+    "list": 2
+   },
+   "list": {
+    "description": "Two line charts compare the accuracy of RiskAgent-8B, GPT-4.5, o3-mini and o1 across cancer types (top) and rare diseases (bottom).",
+    "kinds": [
+     "line",
+     "line"
+    ],
+    "seconds": 2.12,
+    "cost_usd": 0.006764
+   }
+  },
+  "W25": {
+   "boxes": [
+    [
+     5.8,
+     0.0,
+     495.7,
+     488.0
+    ],
+    [
+     518.8,
+     10.5,
+     998.1,
+     484.9
+    ],
+    [
+     5.8,
+     518.1,
+     495.7,
+     1000.0
+    ],
+    [
+     518.8,
+     531.6,
+     998.1,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 6,
+    "list": 4
+   },
+   "list": {
+    "description": "Four combo bar-and-line charts compare RiskAgent with GPT-4o and LLaMA-3 series baselines on MedRisk qualitative and quantitative accuracy, with the accuracy gains shown as lines across release dates and model sizes.",
+    "kinds": [
+     "grouped_bar",
+     "grouped_bar",
+     "grouped_bar",
+     "grouped_bar"
+    ],
+    "seconds": 2.25,
+    "cost_usd": 0.009108
+   }
+  },
+  "W26": {
+   "boxes": [
+    [
+     1.6,
+     3.0,
+     490.5,
+     198.7
+    ],
+    [
+     490.5,
+     0.0,
+     998.4,
+     193.8
+    ],
+    [
+     8.2,
+     201.7,
+     998.4,
+     399.1
+    ],
+    [
+     2.5,
+     399.1,
+     998.4,
+     598.4
+    ],
+    [
+     13.2,
+     599.6,
+     998.4,
+     792.8
+    ],
+    [
+     11.5,
+     802.0,
+     998.4,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 6
+   },
+   "list": {
+    "description": "Multi-panel comparison of Qwen, DeepSeek, Gemini and ChatGPT with and without enhancement (+) on response quality, integrity, accuracy, utility and safety scores.",
+    "kinds": [
+     "line",
+     "grouped_bar",
+     "other",
+     "grouped_bar",
+     "grouped_bar",
+     "other"
+    ],
+    "seconds": 3.33,
+    "cost_usd": 0.013442
+   }
+  },
+  "W27": {
+   "boxes": [
+    [
+     1.6,
+     1.6,
+     498.0,
+     346.8
+    ],
+    [
+     519.8,
+     14.5,
+     987.1,
+     346.8
+    ],
+    [
+     6.5,
+     346.8,
+     375.3,
+     668.5
+    ],
+    [
+     379.3,
+     346.8,
+     1000.0,
+     671.0
+    ],
+    [
+     5.6,
+     714.5,
+     1000.0,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 5
+   },
+   "list": {
+    "description": "Multi-panel comparison of Qwen, DeepSeek, Gemini and ChatGPT with and without enhancement (+) on conciseness, empathy and clarity: radar chart, clarity and empathy proportion bars, and conciseness score bars.",
+    "kinds": [
+     "other",
+     "bar",
+     "bar",
+     "grouped_bar",
+     "bar"
+    ],
+    "seconds": 4.66,
+    "cost_usd": 0.0109
+   }
+  },
+  "W28": {
+   "boxes": [
+    [
+     6.4,
+     16.4,
+     524.8,
+     408.1
+    ],
+    [
+     548.1,
+     5.2,
+     992.0,
+     431.4
+    ],
+    [
+     6.4,
+     442.6,
+     998.4,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 4,
+    "list": 3
+   },
+   "list": {
+    "description": "Comparison of original and enhanced LLMs (Qwen, Deepseek, Gemini, ChatGPT) on quality ratings: a radial chart of overall scores, a scatter plot of response vs reading quality with marginal distributions, and a heatmap of ten rating dimensions.",
+    "kinds": [
+     "other",
+     "scatter",
+     "heatmap"
+    ],
+    "seconds": 7.41,
+    "cost_usd": 0.011052
+   }
+  },
+  "W29": {
+   "boxes": [
+    [
+     3.5,
+     3.7,
+     382.0,
+     485.1
+    ],
+    [
+     408.0,
+     3.7,
+     665.5,
+     485.1
+    ],
+    [
+     691.4,
+     3.7,
+     998.3,
+     485.1
+    ],
+    [
+     146.1,
+     521.1,
+     523.8,
+     1000.0
+    ],
+    [
+     555.7,
+     521.1,
+     862.6,
+     1000.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 5
+   },
+   "list": {
+    "description": "Heatmaps of Likert-style scores (1-5) for eight language models across eight categories, broken down by age group (adult, middle aged, geriatric) and by sex (female, male).",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "heatmap"
+    ],
+    "seconds": 6.75,
+    "cost_usd": 0.00884
+   }
+  },
+  "W30": {
+   "boxes": [
+    [
+     40.0,
+     70.0,
+     335.0,
+     900.0
+    ],
+    [
+     300.0,
+     70.0,
+     575.0,
+     900.0
+    ],
+    [
+     505.0,
+     70.0,
+     820.0,
+     900.0
+    ],
+    [
+     780.0,
+     130.0,
+     990.0,
+     910.0
+    ]
+   ],
+   "from": "list",
+   "counts": {
+    "rules": 2,
+    "list": 4
+   },
+   "list": {
+    "description": "Heatmaps of model scores across eight metrics for three error severity classes, plus a radar chart of an ablation study for ZODIAC.",
+    "kinds": [
+     "heatmap",
+     "heatmap",
+     "heatmap",
+     "other"
+    ],
+    "seconds": 2.03,
+    "cost_usd": 0.006708
+   }
+  }
+ }
+}

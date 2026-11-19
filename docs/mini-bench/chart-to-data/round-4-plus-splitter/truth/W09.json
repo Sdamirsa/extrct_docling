@@ -1,0 +1,26 @@
+{
+ "id": "W09",
+ "charts": [
+  {
+   "label": "b",
+   "box": [
+    0.0,
+    425.0,
+    478.0,
+    965.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    542.0,
+    427.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Panel a is a workflow diagram (its small bars are an illustration), not a chart.",
+ "drawn_as": "T21"
+}

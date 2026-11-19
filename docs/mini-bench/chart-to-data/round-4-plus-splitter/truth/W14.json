@@ -1,0 +1,17 @@
+{
+ "id": "W14",
+ "charts": [
+  {
+   "label": "1",
+   "box": [
+    0.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "One chart fills the whole image; the x-axis title and the right-hand labels are cut by the image edge itself.",
+ "drawn_as": "T07"
+}

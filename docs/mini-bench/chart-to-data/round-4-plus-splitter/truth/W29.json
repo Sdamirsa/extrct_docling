@@ -1,0 +1,53 @@
+{
+ "id": "W29",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    0.0,
+    387.0,
+    487.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    406.0,
+    0.0,
+    670.0,
+    487.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    689.0,
+    0.0,
+    952.0,
+    487.0
+   ]
+  },
+  {
+   "label": "d",
+   "box": [
+    143.0,
+    516.0,
+    527.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "e",
+   "box": [
+    550.0,
+    516.0,
+    815.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The colour bar right of (c) serves (a)-(c) and the one right of (e) serves (d)-(e); as shared legends they are left out of every box.",
+ "drawn_as": "T10"
+}

@@ -1,0 +1,26 @@
+{
+ "id": "W13",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    3.0,
+    5.0,
+    503.0,
+    998.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    503.0,
+    5.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The x axis line of (a) runs on to the right until it meets the y axis title of (b), so the two boxes share an edge at x 503 with no gap between the charts.",
+ "drawn_as": "T48"
+}

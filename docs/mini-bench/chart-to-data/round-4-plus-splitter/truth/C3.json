@@ -1,0 +1,35 @@
+{
+ "id": "C3",
+ "charts": [
+  {
+   "label": "GMCPQ",
+   "box": [
+    8.0,
+    6.0,
+    492.0,
+    683.0
+   ]
+  },
+  {
+   "label": "MXEKF",
+   "box": [
+    505.0,
+    6.0,
+    1000.0,
+    683.0
+   ]
+  },
+  {
+   "label": "PACES",
+   "box": [
+    0.0,
+    733.0,
+    492.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Legend at the bottom right is shared by the three charts and left out.",
+ "drawn_as": "T24"
+}

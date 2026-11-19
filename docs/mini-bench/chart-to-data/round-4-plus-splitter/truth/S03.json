@@ -1,0 +1,17 @@
+{
+ "id": "S03",
+ "charts": [
+  {
+   "label": "All 2022 ACG questions (N = 300)",
+   "box": [
+    0.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T36"
+}

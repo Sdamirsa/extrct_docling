@@ -1,0 +1,487 @@
+{
+ "ruling": "sonnet-5-5-caption",
+ "about": "anthropic/claude-sonnet-5.5 through https://openrouter.ai/api/v1 (image side 2000 px, reasoning effort high): where the rule splitter's cut and the rules' cutter started from sonnet-5-5-caption differ, the model sees both drawn on the figure and says how many charts there are and whether the first drawing is right, with the figure's caption.",
+ "figures": {
+  "B3": {
+   "boxes": {
+    "rules": 5,
+    "list": 5
+   },
+   "same": true
+  },
+  "B5": {
+   "boxes": {
+    "rules": 10,
+    "list": 10
+   },
+   "same": true
+  },
+  "C4": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.96,
+   "prompt_tokens": 1526,
+   "output_tokens": 18,
+   "cost_usd": 0.003232,
+   "cut": false
+  },
+  "S03": {
+   "boxes": {
+    "rules": 2,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.39,
+   "prompt_tokens": 4969,
+   "output_tokens": 18,
+   "cost_usd": 0.010118,
+   "cut": false
+  },
+  "S05": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "S06": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.18,
+   "prompt_tokens": 4078,
+   "output_tokens": 18,
+   "cost_usd": 0.008336,
+   "cut": false
+  },
+  "S08": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.59,
+   "prompt_tokens": 2430,
+   "output_tokens": 18,
+   "cost_usd": 0.00504,
+   "cut": false
+  },
+  "S11": {
+   "boxes": {
+    "rules": 7,
+    "list": 11
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 11,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.89,
+   "prompt_tokens": 6697,
+   "output_tokens": 18,
+   "cost_usd": 0.013574,
+   "cut": false
+  },
+  "S12": {
+   "boxes": {
+    "rules": 1,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 4.59,
+   "prompt_tokens": 3306,
+   "output_tokens": 18,
+   "cost_usd": 0.006792,
+   "cut": false
+  },
+  "S13": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": true
+  },
+  "S14": {
+   "boxes": {
+    "rules": 8,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 5.36,
+   "prompt_tokens": 4446,
+   "output_tokens": 18,
+   "cost_usd": 0.009072,
+   "cut": false
+  },
+  "W02": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 5.83,
+   "prompt_tokens": 8527,
+   "output_tokens": 18,
+   "cost_usd": 0.017234,
+   "cut": false
+  },
+  "W03": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W04": {
+   "boxes": {
+    "rules": 16,
+    "list": 15
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 15,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 5.84,
+   "prompt_tokens": 5813,
+   "output_tokens": 266,
+   "cost_usd": 0.014286,
+   "cut": false
+  },
+  "W05": {
+   "boxes": {
+    "rules": 17,
+    "list": 17
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 17,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 9.72,
+   "prompt_tokens": 4734,
+   "output_tokens": 672,
+   "cost_usd": 0.016188,
+   "cut": false
+  },
+  "W06": {
+   "boxes": {
+    "rules": 6,
+    "list": 15
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 15,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 6.04,
+   "prompt_tokens": 7839,
+   "output_tokens": 160,
+   "cost_usd": 0.017278,
+   "cut": false
+  },
+  "W07": {
+   "boxes": {
+    "rules": 1,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 4.21,
+   "prompt_tokens": 7193,
+   "output_tokens": 18,
+   "cost_usd": 0.014566,
+   "cut": false
+  },
+  "W09": {
+   "boxes": {
+    "rules": 5,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 6.57,
+   "prompt_tokens": 3086,
+   "output_tokens": 489,
+   "cost_usd": 0.011062,
+   "cut": false
+  },
+  "W10": {
+   "boxes": {
+    "rules": 11,
+    "list": 14
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 14,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 5.09,
+   "prompt_tokens": 6708,
+   "output_tokens": 314,
+   "cost_usd": 0.016556,
+   "cut": false
+  },
+  "W11": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 1,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 3.73,
+   "prompt_tokens": 3509,
+   "output_tokens": 18,
+   "cost_usd": 0.007198,
+   "cut": false
+  },
+  "W12": {
+   "boxes": {
+    "rules": 3,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 2,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.54,
+   "prompt_tokens": 1342,
+   "output_tokens": 18,
+   "cost_usd": 0.002864,
+   "cut": false
+  },
+  "W15": {
+   "boxes": {
+    "rules": 12,
+    "list": 12
+   },
+   "same": true
+  },
+  "W16": {
+   "boxes": {
+    "rules": 16,
+    "list": 14
+   },
+   "same": false,
+   "first": "list",
+   "charts": 18,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 6.63,
+   "prompt_tokens": 7607,
+   "output_tokens": 308,
+   "cost_usd": 0.018294,
+   "cut": false
+  },
+  "W19": {
+   "boxes": {
+    "rules": 2,
+    "list": 3
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 3,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.82,
+   "prompt_tokens": 5431,
+   "output_tokens": 18,
+   "cost_usd": 0.011042,
+   "cut": false
+  },
+  "W20": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.86,
+   "prompt_tokens": 4999,
+   "output_tokens": 18,
+   "cost_usd": 0.010178,
+   "cut": false
+  },
+  "W21": {
+   "boxes": {
+    "rules": 3,
+    "list": 6
+   },
+   "same": false,
+   "first": "list",
+   "charts": 6,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.6,
+   "prompt_tokens": 5870,
+   "output_tokens": 18,
+   "cost_usd": 0.01192,
+   "cut": false
+  },
+  "W23": {
+   "boxes": {
+    "rules": 8,
+    "list": 4
+   },
+   "same": false,
+   "first": "list",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.22,
+   "prompt_tokens": 1985,
+   "output_tokens": 18,
+   "cost_usd": 0.00415,
+   "cut": false
+  },
+  "W24": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W25": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.38,
+   "prompt_tokens": 2644,
+   "output_tokens": 18,
+   "cost_usd": 0.005468,
+   "cut": false
+  },
+  "W26": {
+   "boxes": {
+    "rules": 2,
+    "list": 6
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 6,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 13.36,
+   "prompt_tokens": 5941,
+   "output_tokens": 376,
+   "cost_usd": 0.015642,
+   "cut": false
+  },
+  "W27": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 6.15,
+   "prompt_tokens": 4793,
+   "output_tokens": 18,
+   "cost_usd": 0.009766,
+   "cut": false
+  },
+  "W28": {
+   "boxes": {
+    "rules": 4,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.56,
+   "prompt_tokens": 4509,
+   "output_tokens": 18,
+   "cost_usd": 0.009198,
+   "cut": false
+  },
+  "W29": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.11,
+   "prompt_tokens": 3119,
+   "output_tokens": 18,
+   "cost_usd": 0.006418,
+   "cut": false
+  },
+  "W30": {
+   "boxes": {
+    "rules": 2,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 7.73,
+   "prompt_tokens": 1590,
+   "output_tokens": 288,
+   "cost_usd": 0.00606,
+   "cut": false
+  }
+ }
+}

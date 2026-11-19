@@ -1,0 +1,3808 @@
+{
+ "gemma4-26b-qat": {
+  "title": "Local: Gemma 4 26B",
+  "figures": {
+   "all": 51,
+   "tricky": 34,
+   "easy": 17
+  },
+  "charts": {
+   "all": 236,
+   "tricky": 195,
+   "easy": 41
+  },
+  "variants": {
+   "rules": {
+    "all": {
+     "figures": 51,
+     "right": 24,
+     "count_right": 26,
+     "charts": 236,
+     "found": 165,
+     "held": 135,
+     "extra": 54
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 7,
+     "count_right": 9,
+     "charts": 195,
+     "found": 124,
+     "held": 99,
+     "extra": 54
+    },
+    "easy": {
+     "figures": 17,
+     "right": 17,
+     "count_right": 17,
+     "charts": 41,
+     "found": 41,
+     "held": 36,
+     "extra": 0
+    }
+   },
+   "one_rule": {
+    "all": {
+     "figures": 51,
+     "right": 37,
+     "count_right": 42,
+     "charts": 236,
+     "found": 169,
+     "held": 138,
+     "extra": 58
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 20,
+     "count_right": 25,
+     "charts": 195,
+     "found": 128,
+     "held": 102,
+     "extra": 58
+    },
+    "easy": {
+     "figures": 17,
+     "right": 17,
+     "count_right": 17,
+     "charts": 41,
+     "found": 41,
+     "held": 36,
+     "extra": 0
+    }
+   },
+   "ruling": {
+    "all": {
+     "figures": 51,
+     "right": 37,
+     "count_right": 43,
+     "charts": 236,
+     "found": 206,
+     "held": 168,
+     "extra": 41
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 20,
+     "count_right": 26,
+     "charts": 195,
+     "found": 165,
+     "held": 132,
+     "extra": 41
+    },
+    "easy": {
+     "figures": 17,
+     "right": 17,
+     "count_right": 17,
+     "charts": 41,
+     "found": 41,
+     "held": 36,
+     "extra": 0
+    }
+   },
+   "ruling_by_count": {
+    "all": {
+     "figures": 51,
+     "right": 38,
+     "count_right": 44,
+     "charts": 236,
+     "found": 207,
+     "held": 168,
+     "extra": 41
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 21,
+     "count_right": 27,
+     "charts": 195,
+     "found": 166,
+     "held": 132,
+     "extra": 41
+    },
+    "easy": {
+     "figures": 17,
+     "right": 17,
+     "count_right": 17,
+     "charts": 41,
+     "found": 41,
+     "held": 36,
+     "extra": 0
+    }
+   },
+   "caption_one_rule": {
+    "all": {
+     "figures": 51,
+     "right": 38,
+     "count_right": 41,
+     "charts": 236,
+     "found": 144,
+     "held": 115,
+     "extra": 64
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 21,
+     "count_right": 24,
+     "charts": 195,
+     "found": 103,
+     "held": 79,
+     "extra": 64
+    },
+    "easy": {
+     "figures": 17,
+     "right": 17,
+     "count_right": 17,
+     "charts": 41,
+     "found": 41,
+     "held": 36,
+     "extra": 0
+    }
+   },
+   "caption_ruling": {
+    "all": {
+     "figures": 51,
+     "right": 33,
+     "count_right": 39,
+     "charts": 236,
+     "found": 191,
+     "held": 149,
+     "extra": 59
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 17,
+     "count_right": 22,
+     "charts": 195,
+     "found": 151,
+     "held": 114,
+     "extra": 58
+    },
+    "easy": {
+     "figures": 17,
+     "right": 16,
+     "count_right": 17,
+     "charts": 41,
+     "found": 40,
+     "held": 35,
+     "extra": 1
+    }
+   },
+   "caption_ruling_by_count": {
+    "all": {
+     "figures": 51,
+     "right": 37,
+     "count_right": 43,
+     "charts": 236,
+     "found": 191,
+     "held": 155,
+     "extra": 57
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 21,
+     "count_right": 26,
+     "charts": 195,
+     "found": 151,
+     "held": 120,
+     "extra": 56
+    },
+    "easy": {
+     "figures": 17,
+     "right": 16,
+     "count_right": 17,
+     "charts": 41,
+     "found": 40,
+     "held": 35,
+     "extra": 1
+    }
+   }
+  },
+  "ceiling": {
+   "no_caption": {
+    "all": 39,
+    "tricky": 22,
+    "easy": 17
+   },
+   "caption": {
+    "all": 41,
+    "tricky": 24,
+    "easy": 17
+   }
+  },
+  "list": {
+   "no_caption": {
+    "all": {
+     "count_right": 42,
+     "own_boxes_right": 28,
+     "seeded_right": 32
+    },
+    "tricky": {
+     "count_right": 25,
+     "own_boxes_right": 13,
+     "seeded_right": 15
+    },
+    "easy": {
+     "count_right": 17,
+     "own_boxes_right": 15,
+     "seeded_right": 17
+    }
+   },
+   "caption": {
+    "all": {
+     "count_right": 41,
+     "own_boxes_right": 25,
+     "seeded_right": 33
+    },
+    "tricky": {
+     "count_right": 24,
+     "own_boxes_right": 14,
+     "seeded_right": 19
+    },
+    "easy": {
+     "count_right": 17,
+     "own_boxes_right": 11,
+     "seeded_right": 14
+    }
+   }
+  },
+  "ruling": {
+   "no_caption": {
+    "figures": 51,
+    "asked": 35,
+    "one_right": 22,
+    "one_right_picked": 20,
+    "one_right_picked_by_count": 21,
+    "neither": 12,
+    "neither_flagged": 3,
+    "one_right_flagged": 1,
+    "both": 1,
+    "count_right": 26,
+    "seconds": 69.3,
+    "cost_usd": 0
+   },
+   "caption": {
+    "figures": 51,
+    "asked": 36,
+    "one_right": 25,
+    "one_right_picked": 17,
+    "one_right_picked_by_count": 21,
+    "neither": 10,
+    "neither_flagged": 2,
+    "one_right_flagged": 0,
+    "both": 1,
+    "count_right": 27,
+    "seconds": 72.9,
+    "cost_usd": 0
+   }
+  },
+  "list_calls": {
+   "no_caption": {
+    "seconds": 280.8,
+    "cost_usd": 0
+   },
+   "caption": {
+    "seconds": 264.4,
+    "cost_usd": 0
+   }
+  },
+  "per_figure": {
+   "A3": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B1": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B2": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B3": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "B4": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B5": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "C1": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "C3": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "C4": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "C5": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S02": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "S03": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S04": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S05": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "S06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S08": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S10": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "S11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "S12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S13": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S14": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W01": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W02": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W03": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "W04": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W05": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W07": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W08": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W09": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W10": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W13": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W14": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W15": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": true
+    }
+   },
+   "W16": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W17": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W18": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W19": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W20": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W21": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W22": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "same",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "same",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W23": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W24": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling": {
+     "from": "rules",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W25": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W26": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W27": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W28": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W29": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "ruling": {
+     "from": "list",
+     "right": true
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W30": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "ruling": {
+     "from": "list",
+     "right": false
+    },
+    "ruling_by_count": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   }
+  }
+ },
+ "sonnet-5-5": {
+  "title": "Cloud: Sonnet 5.5",
+  "figures": {
+   "all": 34,
+   "tricky": 34,
+   "easy": 0
+  },
+  "charts": {
+   "all": 195,
+   "tricky": 195,
+   "easy": 0
+  },
+  "variants": {
+   "rules": {
+    "all": {
+     "figures": 34,
+     "right": 7,
+     "count_right": 9,
+     "charts": 195,
+     "found": 124,
+     "held": 99,
+     "extra": 54
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 7,
+     "count_right": 9,
+     "charts": 195,
+     "found": 124,
+     "held": 99,
+     "extra": 54
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "one_rule": {
+    "all": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 34,
+     "charts": 195,
+     "found": 177,
+     "held": 157,
+     "extra": 18
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 34,
+     "charts": 195,
+     "found": 177,
+     "held": 157,
+     "extra": 18
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_one_rule": {
+    "all": {
+     "figures": 34,
+     "right": 28,
+     "count_right": 32,
+     "charts": 195,
+     "found": 181,
+     "held": 165,
+     "extra": 12
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 28,
+     "count_right": 32,
+     "charts": 195,
+     "found": 181,
+     "held": 165,
+     "extra": 12
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_ruling": {
+    "all": {
+     "figures": 34,
+     "right": 27,
+     "count_right": 30,
+     "charts": 195,
+     "found": 182,
+     "held": 163,
+     "extra": 14
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 27,
+     "count_right": 30,
+     "charts": 195,
+     "found": 182,
+     "held": 163,
+     "extra": 14
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_ruling_by_count": {
+    "all": {
+     "figures": 34,
+     "right": 27,
+     "count_right": 31,
+     "charts": 195,
+     "found": 184,
+     "held": 162,
+     "extra": 14
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 27,
+     "count_right": 31,
+     "charts": 195,
+     "found": 184,
+     "held": 162,
+     "extra": 14
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   }
+  },
+  "ceiling": {
+   "no_caption": {
+    "all": 30,
+    "tricky": 30,
+    "easy": 0
+   },
+   "caption": {
+    "all": 29,
+    "tricky": 29,
+    "easy": 0
+   }
+  },
+  "list": {
+   "no_caption": {
+    "all": {
+     "count_right": 34,
+     "own_boxes_right": 32,
+     "seeded_right": 30
+    },
+    "tricky": {
+     "count_right": 34,
+     "own_boxes_right": 32,
+     "seeded_right": 30
+    },
+    "easy": {
+     "count_right": 0,
+     "own_boxes_right": 0,
+     "seeded_right": 0
+    }
+   },
+   "caption": {
+    "all": {
+     "count_right": 32,
+     "own_boxes_right": 29,
+     "seeded_right": 29
+    },
+    "tricky": {
+     "count_right": 32,
+     "own_boxes_right": 29,
+     "seeded_right": 29
+    },
+    "easy": {
+     "count_right": 0,
+     "own_boxes_right": 0,
+     "seeded_right": 0
+    }
+   }
+  },
+  "ruling": {
+   "caption": {
+    "figures": 34,
+    "asked": 27,
+    "one_right": 22,
+    "one_right_picked": 20,
+    "one_right_picked_by_count": 20,
+    "neither": 5,
+    "neither_flagged": 1,
+    "one_right_flagged": 0,
+    "both": 0,
+    "count_right": 25,
+    "seconds": 125.0,
+    "cost_usd": 0.2815
+   }
+  },
+  "list_calls": {
+   "no_caption": {
+    "seconds": 121.7,
+    "cost_usd": 0.3839
+   },
+   "caption": {
+    "seconds": 133.2,
+    "cost_usd": 0.3928
+   }
+  },
+  "per_figure": {
+   "B3": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B5": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "C4": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S03": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S05": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S08": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S13": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S14": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W02": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W03": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W04": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W05": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W07": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W09": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W10": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W15": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W16": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "rules",
+     "right": false
+    }
+   },
+   "W19": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W20": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W21": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W23": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W24": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W25": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W26": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W27": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W28": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W29": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W30": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   }
+  }
+ },
+ "gemini-3-8-flash": {
+  "title": "Cloud: Gemini 3.8 Flash",
+  "figures": {
+   "all": 34,
+   "tricky": 34,
+   "easy": 0
+  },
+  "charts": {
+   "all": 195,
+   "tricky": 195,
+   "easy": 0
+  },
+  "variants": {
+   "rules": {
+    "all": {
+     "figures": 34,
+     "right": 7,
+     "count_right": 9,
+     "charts": 195,
+     "found": 124,
+     "held": 99,
+     "extra": 54
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 7,
+     "count_right": 9,
+     "charts": 195,
+     "found": 124,
+     "held": 99,
+     "extra": 54
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "one_rule": {
+    "all": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 33,
+     "charts": 195,
+     "found": 187,
+     "held": 177,
+     "extra": 10
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 33,
+     "charts": 195,
+     "found": 187,
+     "held": 177,
+     "extra": 10
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_one_rule": {
+    "all": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 33,
+     "charts": 195,
+     "found": 187,
+     "held": 169,
+     "extra": 10
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 33,
+     "charts": 195,
+     "found": 187,
+     "held": 169,
+     "extra": 10
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_ruling": {
+    "all": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 32,
+     "charts": 195,
+     "found": 189,
+     "held": 171,
+     "extra": 11
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 29,
+     "count_right": 32,
+     "charts": 195,
+     "found": 189,
+     "held": 171,
+     "extra": 11
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   },
+   "caption_ruling_by_count": {
+    "all": {
+     "figures": 34,
+     "right": 30,
+     "count_right": 33,
+     "charts": 195,
+     "found": 189,
+     "held": 172,
+     "extra": 8
+    },
+    "tricky": {
+     "figures": 34,
+     "right": 30,
+     "count_right": 33,
+     "charts": 195,
+     "found": 189,
+     "held": 172,
+     "extra": 8
+    },
+    "easy": {
+     "figures": 0,
+     "right": 0,
+     "count_right": 0,
+     "charts": 0,
+     "found": 0,
+     "held": 0,
+     "extra": 0
+    }
+   }
+  },
+  "ceiling": {
+   "no_caption": {
+    "all": 30,
+    "tricky": 30,
+    "easy": 0
+   },
+   "caption": {
+    "all": 30,
+    "tricky": 30,
+    "easy": 0
+   }
+  },
+  "list": {
+   "no_caption": {
+    "all": {
+     "count_right": 33,
+     "own_boxes_right": 32,
+     "seeded_right": 30
+    },
+    "tricky": {
+     "count_right": 33,
+     "own_boxes_right": 32,
+     "seeded_right": 30
+    },
+    "easy": {
+     "count_right": 0,
+     "own_boxes_right": 0,
+     "seeded_right": 0
+    }
+   },
+   "caption": {
+    "all": {
+     "count_right": 33,
+     "own_boxes_right": 29,
+     "seeded_right": 30
+    },
+    "tricky": {
+     "count_right": 33,
+     "own_boxes_right": 29,
+     "seeded_right": 30
+    },
+    "easy": {
+     "count_right": 0,
+     "own_boxes_right": 0,
+     "seeded_right": 0
+    }
+   }
+  },
+  "ruling": {
+   "caption": {
+    "figures": 34,
+    "asked": 26,
+    "one_right": 23,
+    "one_right_picked": 22,
+    "one_right_picked_by_count": 23,
+    "neither": 3,
+    "neither_flagged": 0,
+    "one_right_flagged": 0,
+    "both": 0,
+    "count_right": 25,
+    "seconds": 156.8,
+    "cost_usd": 0.0661
+   }
+  },
+  "list_calls": {
+   "no_caption": {
+    "seconds": 187.9,
+    "cost_usd": 0.1166
+   },
+   "caption": {
+    "seconds": 155.9,
+    "cost_usd": 0.1193
+   }
+  },
+  "per_figure": {
+   "B3": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "B5": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "C4": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S03": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S05": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S08": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "S13": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "S14": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W02": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W03": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W04": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W05": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": false
+    }
+   },
+   "W06": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W07": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W09": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "rules",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W10": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W11": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W12": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W15": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W16": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": false
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": false
+    }
+   },
+   "W19": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W20": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W21": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W23": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W24": {
+    "rules": {
+     "from": "rules",
+     "right": true
+    },
+    "one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "rules",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "same",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "same",
+     "right": true
+    }
+   },
+   "W25": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W26": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W27": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W28": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W29": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   },
+   "W30": {
+    "rules": {
+     "from": "rules",
+     "right": false
+    },
+    "one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_one_rule": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling": {
+     "from": "list",
+     "right": true
+    },
+    "caption_ruling_by_count": {
+     "from": "list",
+     "right": true
+    }
+   }
+  }
+ }
+}

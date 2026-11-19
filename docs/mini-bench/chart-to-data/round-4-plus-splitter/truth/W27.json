@@ -1,0 +1,53 @@
+{
+ "id": "W27",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    3.0,
+    492.0,
+    348.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    479.0,
+    2.0,
+    991.0,
+    315.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    0.0,
+    331.0,
+    377.0,
+    673.0
+   ]
+  },
+  {
+   "label": "d",
+   "box": [
+    378.0,
+    328.0,
+    978.0,
+    673.0
+   ]
+  },
+  {
+   "label": "e",
+   "box": [
+    0.0,
+    708.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "b and e are blocks of percentage bars without axes; each block is counted as one chart with its own colour key. The radar a cannot be boxed clean: its legend reaches under the panel letter b, and its bottom label 'Gemini' sits level with the panel letters c and d, so the box of a overlaps the corners of b, c and d by about 1-2% of the image.",
+ "drawn_as": "T26"
+}

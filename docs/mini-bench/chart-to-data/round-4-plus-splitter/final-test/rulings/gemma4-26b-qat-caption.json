@@ -1,0 +1,651 @@
+{
+ "ruling": "gemma4-26b-qat-caption",
+ "about": "gemma4:26b-a4b-it-qat through Ollama (image side 1600 px, temperature 0): where the rule splitter's cut and the rules' cutter started from gemma4-26b-qat-caption differ, the model sees both drawn on the figure and says how many charts there are and whether the first drawing is right, with the figure's caption.",
+ "figures": {
+  "A3": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "B1": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "B2": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": true
+  },
+  "B3": {
+   "boxes": {
+    "rules": 5,
+    "list": 5
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 7.389,
+   "prompt_tokens": 533,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "B4": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "B5": {
+   "boxes": {
+    "rules": 10,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 10,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.933,
+   "prompt_tokens": 866,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "C1": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.85,
+   "prompt_tokens": 790,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "C3": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.889,
+   "prompt_tokens": 839,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "C4": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.488,
+   "prompt_tokens": 521,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "C5": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": true
+  },
+  "S02": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": false,
+   "first": "list",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.858,
+   "prompt_tokens": 760,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S03": {
+   "boxes": {
+    "rules": 2,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.872,
+   "prompt_tokens": 757,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S04": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "S05": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.824,
+   "prompt_tokens": 727,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S06": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.907,
+   "prompt_tokens": 776,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S08": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.792,
+   "prompt_tokens": 746,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S10": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.861,
+   "prompt_tokens": 752,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S11": {
+   "boxes": {
+    "rules": 7,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 15,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.96,
+   "prompt_tokens": 738,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "S12": {
+   "boxes": {
+    "rules": 1,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.959,
+   "prompt_tokens": 758,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "S13": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": true
+  },
+  "S14": {
+   "boxes": {
+    "rules": 8,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 8,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 1.88,
+   "prompt_tokens": 724,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W01": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W02": {
+   "boxes": {
+    "rules": 3,
+    "list": 4
+   },
+   "same": false,
+   "first": "list",
+   "charts": 12,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 1.971,
+   "prompt_tokens": 710,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W03": {
+   "boxes": {
+    "rules": 2,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.996,
+   "prompt_tokens": 1004,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W04": {
+   "boxes": {
+    "rules": 16,
+    "list": 20
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 16,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 2.011,
+   "prompt_tokens": 855,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W05": {
+   "boxes": {
+    "rules": 17,
+    "list": 20
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 20,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.9,
+   "prompt_tokens": 799,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W06": {
+   "boxes": {
+    "rules": 6,
+    "list": 20
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 20,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.037,
+   "prompt_tokens": 905,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W07": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.956,
+   "prompt_tokens": 805,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W08": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": true
+  },
+  "W09": {
+   "boxes": {
+    "rules": 5,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 1.902,
+   "prompt_tokens": 801,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W10": {
+   "boxes": {
+    "rules": 11,
+    "list": 14
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 14,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.036,
+   "prompt_tokens": 826,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W11": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 1,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.849,
+   "prompt_tokens": 757,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W12": {
+   "boxes": {
+    "rules": 3,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.335,
+   "prompt_tokens": 433,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W13": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W14": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "W15": {
+   "boxes": {
+    "rules": 12,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 12,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 1.956,
+   "prompt_tokens": 884,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W16": {
+   "boxes": {
+    "rules": 16,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 16,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 1.915,
+   "prompt_tokens": 711,
+   "output_tokens": 17,
+   "cut": false
+  },
+  "W17": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": true
+  },
+  "W18": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": true
+  },
+  "W19": {
+   "boxes": {
+    "rules": 2,
+    "list": 3
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 3,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.014,
+   "prompt_tokens": 876,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W20": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.939,
+   "prompt_tokens": 744,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W21": {
+   "boxes": {
+    "rules": 3,
+    "list": 6
+   },
+   "same": false,
+   "first": "list",
+   "charts": 6,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.895,
+   "prompt_tokens": 738,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W22": {
+   "boxes": {
+    "rules": 1,
+    "list": 1
+   },
+   "same": true
+  },
+  "W23": {
+   "boxes": {
+    "rules": 8,
+    "list": 4
+   },
+   "same": false,
+   "first": "list",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.713,
+   "prompt_tokens": 612,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W24": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W25": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "rules",
+   "seconds": 1.857,
+   "prompt_tokens": 848,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W26": {
+   "boxes": {
+    "rules": 2,
+    "list": 6
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 6,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.017,
+   "prompt_tokens": 811,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W27": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.942,
+   "prompt_tokens": 784,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W28": {
+   "boxes": {
+    "rules": 4,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.897,
+   "prompt_tokens": 800,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W29": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 1.862,
+   "prompt_tokens": 751,
+   "output_tokens": 16,
+   "cut": false
+  },
+  "W30": {
+   "boxes": {
+    "rules": 2,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 1.47,
+   "prompt_tokens": 509,
+   "output_tokens": 16,
+   "cut": false
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "id": "W19",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    0.0,
+    463.0,
+    544.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    470.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    22.0,
+    547.0,
+    545.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The box of b cannot be made clean: the radar's own legend sits at the top left of the panel while the right end of bar chart c (the 0.92 bar label, its w/o CDIR legend and the 1.0 tick) runs under it, so the boxes of b and c overlap in a strip about 7% of the image wide.",
+ "drawn_as": "T46"
+}

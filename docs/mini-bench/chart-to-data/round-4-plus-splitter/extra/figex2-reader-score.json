@@ -1,0 +1,87 @@
+{
+ "figures": [
+  {
+   "id": "S02",
+   "truth_values": 75,
+   "figex2_returned": 44,
+   "figex2_right": 0,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 23,
+    "cloud-sonnet-5-5": 69,
+    "cloud-gemini-3-8-flash": 75,
+    "agent-sonnet-5-5": 75
+   }
+  },
+  {
+   "id": "S03",
+   "truth_values": 222,
+   "figex2_returned": 97,
+   "figex2_right": 96,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 10,
+    "cloud-sonnet-5-5": 80,
+    "cloud-gemini-3-8-flash": 222,
+    "agent-sonnet-5-5": 37
+   }
+  },
+  {
+   "id": "S04",
+   "truth_values": 144,
+   "figex2_returned": 98,
+   "figex2_right": 98,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 24,
+    "cloud-sonnet-5-5": 144,
+    "cloud-gemini-3-8-flash": 142,
+    "agent-sonnet-5-5": 24
+   }
+  },
+  {
+   "id": "S05",
+   "truth_values": 17,
+   "figex2_returned": 18,
+   "figex2_right": 0,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 13,
+    "cloud-sonnet-5-5": 13,
+    "cloud-gemini-3-8-flash": 13,
+    "agent-sonnet-5-5": 13
+   }
+  },
+  {
+   "id": "S06",
+   "truth_values": 52,
+   "figex2_returned": 96,
+   "figex2_right": 28,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 26,
+    "cloud-sonnet-5-5": 52,
+    "cloud-gemini-3-8-flash": 52,
+    "agent-sonnet-5-5": 52
+   }
+  },
+  {
+   "id": "S08",
+   "truth_values": 63,
+   "figex2_returned": 63,
+   "figex2_right": 63,
+   "round4_right": {
+    "ollama-gemma4-26b-qat": 0,
+    "cloud-sonnet-5-5": 63,
+    "cloud-gemini-3-8-flash": 63,
+    "agent-sonnet-5-5": 63
+   }
+  }
+ ],
+ "total": {
+  "truth_values": 573,
+  "figex2_returned": 416,
+  "figex2_right": 285,
+  "round4_right": {
+   "ollama-gemma4-26b-qat": 96,
+   "cloud-sonnet-5-5": 421,
+   "cloud-gemini-3-8-flash": 567,
+   "agent-sonnet-5-5": 264
+  }
+ }
+}

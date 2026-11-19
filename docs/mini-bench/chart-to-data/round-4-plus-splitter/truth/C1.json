@@ -1,0 +1,44 @@
+{
+ "id": "C1",
+ "charts": [
+  {
+   "label": "Top-1 Diagnosis Performance on MIMIC",
+   "box": [
+    2.0,
+    8.0,
+    256.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Top-1 Explanation Performance on MIMIC",
+   "box": [
+    262.0,
+    8.0,
+    503.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Top-3 Diagnosis Performance on MIMIC",
+   "box": [
+    510.0,
+    8.0,
+    752.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on MIMIC",
+   "box": [
+    759.0,
+    8.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The y-axis title 'Accuracy' is printed only beside the first chart, at its own axis, so it is kept inside the first box (it could also be read as shared by the row). The slanted tick labels 'Expert + HeartAgent' are cut by the bottom edge of the image itself.",
+ "drawn_as": "T27"
+}

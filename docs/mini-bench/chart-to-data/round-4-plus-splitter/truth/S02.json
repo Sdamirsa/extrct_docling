@@ -1,0 +1,44 @@
+{
+ "id": "S02",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    4.0,
+    4.0,
+    503.0,
+    304.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    516.0,
+    4.0,
+    1000.0,
+    304.0
+   ]
+  },
+  {
+   "label": "c",
+   "box": [
+    4.0,
+    324.0,
+    503.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "d",
+   "box": [
+    516.0,
+    324.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The x-axis titles of c and d are cut by the bottom edge of the image itself.",
+ "drawn_as": "T19"
+}

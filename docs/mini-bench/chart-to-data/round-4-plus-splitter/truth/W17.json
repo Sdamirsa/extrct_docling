@@ -1,0 +1,44 @@
+{
+ "id": "W17",
+ "charts": [
+  {
+   "label": "Top-1 DDx Accuracy on NEJM",
+   "box": [
+    0.0,
+    3.0,
+    497.0,
+    497.0
+   ]
+  },
+  {
+   "label": "Top-1 Explanation Performance on NEJM",
+   "box": [
+    501.0,
+    3.0,
+    998.0,
+    497.0
+   ]
+  },
+  {
+   "label": "Top-3 DDx Accuracy on NEJM",
+   "box": [
+    0.0,
+    508.0,
+    497.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on NEJM",
+   "box": [
+    501.0,
+    508.0,
+    998.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T29"
+}

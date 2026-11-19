@@ -1,0 +1,35 @@
+{
+ "id": "B2",
+ "charts": [
+  {
+   "label": "Accuracy Reward",
+   "box": [
+    1.0,
+    18.0,
+    334.0,
+    995.0
+   ]
+  },
+  {
+   "label": "Format Reward",
+   "box": [
+    335.0,
+    18.0,
+    666.0,
+    995.0
+   ]
+  },
+  {
+   "label": "Completion Length",
+   "box": [
+    666.0,
+    18.0,
+    1000.0,
+    995.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Three line charts cut off by the bottom edge of the image (no x-axis labels in view). The plot of the middle chart runs right up to the y tick labels of the right chart (no gap), so boxes 2 and 3 share the edge x=666.",
+ "drawn_as": "T15"
+}

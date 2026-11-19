@@ -1,0 +1,53 @@
+{
+ "id": "B3",
+ "charts": [
+  {
+   "label": "OnimiaNet",
+   "box": [
+    5.0,
+    6.0,
+    335.0,
+    503.0
+   ]
+  },
+  {
+   "label": "H2former",
+   "box": [
+    336.0,
+    6.0,
+    669.0,
+    503.0
+   ]
+  },
+  {
+   "label": "EchoAgent",
+   "box": [
+    672.0,
+    255.0,
+    1000.0,
+    752.0
+   ]
+  },
+  {
+   "label": "MemSAM",
+   "box": [
+    5.0,
+    507.0,
+    337.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "EchoONE",
+   "box": [
+    340.0,
+    507.0,
+    671.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Five ROC plots, listed by rows from the top: the fifth plot (EchoAgent) stands alone at the right, centred between the two rows, and is listed third because its top edge lies in the first row band. The gap between the last x tick label '1.0' of a left plot and the y-axis title of the plot to its right is only about 4 px, so those box edges are tight.",
+ "drawn_as": "T39"
+}

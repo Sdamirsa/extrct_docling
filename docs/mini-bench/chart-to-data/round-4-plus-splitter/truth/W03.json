@@ -1,0 +1,26 @@
+{
+ "id": "W03",
+ "charts": [
+  {
+   "label": "Pharmacist-rated lower difficulty (n=282)",
+   "box": [
+    10.0,
+    5.0,
+    536.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Pharmacist-rated higher difficulty (n=318)",
+   "box": [
+    541.0,
+    5.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Two plots side by side, each with its own axis lines and title, counted as two charts. The y axis title and tick labels are printed only at the left plot (the right plot has none) and are kept in the left box; the legend 'Random baseline / Mean +- 95% CI' serves both plots but is drawn inside the right plot area, so it falls in the right box.",
+ "drawn_as": "T40"
+}

@@ -1,0 +1,5886 @@
+{
+ "candidate": "figex2-raw",
+ "about": "FigEx2-8B: the captions of its captioning model and every box of its detector (at most one per letter, score from 0.02), with the captioning model's features (guided) and without (alone). Not a candidate by itself.",
+ "figures": {
+  "A3": {
+   "captions": {
+    "A": "Absolute agreement between two human raters (R1 and R2).",
+    "B": "Absolute agreement between a human rater (R1) and a judge.",
+    "C": "Absolute agreement between a human rater (R2) and a judge."
+   },
+   "reply": "A: Absolute agreement between two human raters (R1 and R2).\nB: Absolute agreement between a human rater (R1) and a judge.\nC: Absolute agreement between a human rater (R2) and a judge.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.4375,
+     "box": [
+      2.9,
+      0.0,
+      1000.0,
+      963.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.1023,
+     "box": [
+      0.0,
+      774.5,
+      987.8,
+      993.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0984,
+     "box": [
+      0.0,
+      774.5,
+      987.8,
+      993.7
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4447,
+     "box": [
+      3.0,
+      0.0,
+      1000.0,
+      960.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.0764,
+     "box": [
+      0.0,
+      334.4,
+      995.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0616,
+     "box": [
+      12.2,
+      779.6,
+      1000.0,
+      991.1
+     ]
+    }
+   ],
+   "caption_seconds": 7.03,
+   "detector_seconds": 0.275
+  },
+  "B1": {
+   "captions": {
+    "A": "The number of cases for which the model and baseline were correct or incorrect for each clinical problem."
+   },
+   "reply": "A: The number of cases for which the model and baseline were correct or incorrect for each clinical problem.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.2728,
+     "box": [
+      473.9,
+      0.0,
+      986.4,
+      963.8
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.1544,
+     "box": [
+      48.0,
+      0.0,
+      1000.0,
+      984.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1016,
+     "box": [
+      596.8,
+      0.0,
+      986.2,
+      984.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.2851,
+     "box": [
+      466.5,
+      0.0,
+      986.8,
+      964.3
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.1721,
+     "box": [
+      33.9,
+      0.0,
+      1000.0,
+      975.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1005,
+     "box": [
+      593.9,
+      0.0,
+      987.2,
+      984.9
+     ]
+    }
+   ],
+   "caption_seconds": 2.98,
+   "detector_seconds": 0.18
+  },
+  "B2": {
+   "captions": {
+    "A": "Accuracy reward.",
+    "B": "Format reward.",
+    "C": "Completion length."
+   },
+   "reply": "A: Accuracy reward.\nB: Format reward.\nC: Completion length.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.7201,
+     "box": [
+      8.2,
+      7.9,
+      370.2,
+      994.2
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4182,
+     "box": [
+      366.3,
+      0.0,
+      674.0,
+      992.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1348,
+     "box": [
+      692.7,
+      0.0,
+      992.5,
+      989.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0821,
+     "box": [
+      692.7,
+      0.0,
+      992.5,
+      989.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.047,
+     "box": [
+      721.3,
+      0.0,
+      993.7,
+      984.3
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7249,
+     "box": [
+      8.1,
+      8.5,
+      370.6,
+      994.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3933,
+     "box": [
+      373.7,
+      5.6,
+      670.3,
+      997.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.135,
+     "box": [
+      692.0,
+      0.0,
+      992.5,
+      990.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0814,
+     "box": [
+      692.0,
+      0.0,
+      992.5,
+      990.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0491,
+     "box": [
+      720.1,
+      0.0,
+      994.0,
+      984.7
+     ]
+    }
+   ],
+   "caption_seconds": 1.94,
+   "detector_seconds": 0.074
+  },
+  "B3": {
+   "captions": {
+    "A": "ROC curves of OnimiaNet.",
+    "B": "ROC curves of H2former.",
+    "C": "ROC curves of EchoAgent.",
+    "D": "ROC curves of MemSAM.",
+    "E": "ROC curves of EchoONE."
+   },
+   "reply": "A: ROC curves of OnimiaNet.\nB: ROC curves of H2former.\nC: ROC curves of EchoAgent.\nD: ROC curves of MemSAM.\nE: ROC curves of EchoONE.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6485,
+     "box": [
+      7.6,
+      5.1,
+      322.6,
+      494.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4782,
+     "box": [
+      343.7,
+      10.4,
+      649.9,
+      482.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.307,
+     "box": [
+      5.3,
+      505.4,
+      330.9,
+      996.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2352,
+     "box": [
+      673.5,
+      175.7,
+      994.8,
+      738.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1682,
+     "box": [
+      5.3,
+      505.4,
+      330.9,
+      996.8
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0933,
+     "box": [
+      673.5,
+      175.7,
+      994.8,
+      738.9
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.031,
+     "box": [
+      667.3,
+      0.0,
+      1000.0,
+      769.6
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.658,
+     "box": [
+      7.4,
+      5.3,
+      322.3,
+      494.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4663,
+     "box": [
+      343.4,
+      10.4,
+      651.1,
+      482.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3072,
+     "box": [
+      4.8,
+      505.4,
+      331.3,
+      997.1
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2305,
+     "box": [
+      673.2,
+      173.8,
+      995.5,
+      740.2
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1707,
+     "box": [
+      4.8,
+      505.4,
+      331.3,
+      997.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0868,
+     "box": [
+      673.2,
+      173.8,
+      995.5,
+      740.2
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0314,
+     "box": [
+      666.5,
+      0.0,
+      1000.0,
+      771.1
+     ]
+    }
+   ],
+   "caption_seconds": 4.93,
+   "detector_seconds": 0.134
+  },
+  "B4": {
+   "captions": {
+    "A": "The difference in mean scores between AI-generated and clinician-authored summaries for each of the five rating domains."
+   },
+   "reply": "A: The difference in mean scores between AI-generated and clinician-authored summaries for each of the five rating domains.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.4058,
+     "box": [
+      167.9,
+      4.3,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4056,
+     "box": [
+      0.0,
+      0.0,
+      955.6,
+      979.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1103,
+     "box": [
+      740.4,
+      4.5,
+      992.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1091,
+     "box": [
+      740.4,
+      4.5,
+      992.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0658,
+     "box": [
+      740.4,
+      4.5,
+      992.0,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4421,
+     "box": [
+      0.0,
+      0.0,
+      860.8,
+      991.1
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3877,
+     "box": [
+      162.8,
+      3.5,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1116,
+     "box": [
+      737.6,
+      3.3,
+      992.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.109,
+     "box": [
+      737.6,
+      3.3,
+      992.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0655,
+     "box": [
+      737.6,
+      3.3,
+      992.4,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 3.13,
+   "detector_seconds": 0.147
+  },
+  "B5": {
+   "captions": {
+    "A": "Boxplots of MedRisk-Qualitative scores for RiskAgent-8B, GPT-4o, and o3-mini. Each boxplot represents the distribution of scores for a specific category, with the median, quartiles, and outliers shown.",
+    "B": "Boxplots of MedRisk-Quantitative scores for RiskAgent-8B, GPT-4o, and o3-mini. Each boxplot represents the distribution of scores for a specific category, with the median, quartiles, and outliers shown."
+   },
+   "reply": "A: Boxplots of MedRisk-Qualitative scores for RiskAgent-8B, GPT-4o, and o3-mini. Each boxplot represents the distribution of scores for a specific category, with the median, quartiles, and outliers shown.\nB: Boxplots of MedRisk-Quantitative scores for RiskAgent-8B, GPT-4o, and o3-mini. Each boxplot represents the distribution of scores for a specific category, with the median, quartiles, and outliers shown.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.8436,
+     "box": [
+      5.1,
+      15.2,
+      1000.0,
+      492.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.7341,
+     "box": [
+      3.4,
+      499.1,
+      1000.0,
+      993.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0332,
+     "box": [
+      5.1,
+      15.2,
+      1000.0,
+      492.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.7132,
+     "box": [
+      3.4,
+      499.0,
+      1000.0,
+      993.7
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.5387,
+     "box": [
+      4.6,
+      3.5,
+      1000.0,
+      495.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0292,
+     "box": [
+      3.4,
+      499.0,
+      1000.0,
+      993.7
+     ]
+    }
+   ],
+   "caption_seconds": 11.74,
+   "detector_seconds": 0.175
+  },
+  "C1": {
+   "captions": {
+    "A": "Top-1 diagnosis performance on MIMIC.",
+    "B": "Top-1 explanation performance on MIMIC.",
+    "C": "Top-3 diagnosis performance on MIMIC.",
+    "D": "Top-3 explanation performance on MIMIC."
+   },
+   "reply": "A: Top-1 diagnosis performance on MIMIC.\nB: Top-1 explanation performance on MIMIC.\nC: Top-3 diagnosis performance on MIMIC.\nD: Top-3 explanation performance on MIMIC.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6807,
+     "box": [
+      4.4,
+      3.1,
+      261.1,
+      965.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4385,
+     "box": [
+      229.8,
+      7.4,
+      504.0,
+      995.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.217,
+     "box": [
+      724.4,
+      7.3,
+      992.5,
+      999.5
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1775,
+     "box": [
+      724.4,
+      7.3,
+      992.5,
+      999.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0781,
+     "box": [
+      724.4,
+      7.3,
+      992.5,
+      999.5
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0531,
+     "box": [
+      724.4,
+      7.3,
+      992.5,
+      999.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6916,
+     "box": [
+      4.2,
+      4.1,
+      260.9,
+      964.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4311,
+     "box": [
+      229.5,
+      5.9,
+      503.3,
+      995.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.2147,
+     "box": [
+      724.5,
+      6.4,
+      992.7,
+      999.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1759,
+     "box": [
+      724.5,
+      6.4,
+      992.7,
+      999.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0764,
+     "box": [
+      724.5,
+      6.4,
+      992.7,
+      999.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0528,
+     "box": [
+      724.5,
+      6.4,
+      992.7,
+      999.0
+     ]
+    }
+   ],
+   "caption_seconds": 5.47,
+   "detector_seconds": 0.102
+  },
+  "C3": {
+   "captions": {
+    "A": "The GMCPQ is a 12-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust.",
+    "B": "The MXEKF is a 10-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust.",
+    "C": "The PACES is a 4-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust."
+   },
+   "reply": "A: The GMCPQ is a 12-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust.\nB: The MXEKF is a 10-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust.\nC: The PACES is a 4-item scale that assesses the quality of the patient–clinician relationship in the context of chronic disease care. The scale is divided into three domains: (1) patient–clinician relationship, (2) patient–clinician communication, and (3) patient–clinician trust.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.4195,
+     "box": [
+      2.2,
+      2.5,
+      1000.0,
+      750.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2658,
+     "box": [
+      456.9,
+      2.7,
+      1000.0,
+      689.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0965,
+     "box": [
+      5.4,
+      710.6,
+      1000.0,
+      986.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0523,
+     "box": [
+      5.4,
+      710.6,
+      1000.0,
+      986.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4243,
+     "box": [
+      2.0,
+      2.8,
+      1000.0,
+      754.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2445,
+     "box": [
+      455.2,
+      2.2,
+      1000.0,
+      692.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1153,
+     "box": [
+      35.3,
+      699.8,
+      942.3,
+      992.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0619,
+     "box": [
+      0.0,
+      739.0,
+      995.4,
+      985.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0359,
+     "box": [
+      2.6,
+      740.0,
+      504.1,
+      987.4
+     ]
+    }
+   ],
+   "caption_seconds": 22.42,
+   "detector_seconds": 0.216
+  },
+  "C4": {
+   "captions": {
+    "A": "The diagnostic ability of different models on the Med-Bench dataset.",
+    "B": "The comparison of the diagnostic ability between the single-agent and multi-agent models."
+   },
+   "reply": "A: The diagnostic ability of different models on the Med-Bench dataset.\nB: The comparison of the diagnostic ability between the single-agent and multi-agent models.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6001,
+     "box": [
+      0.0,
+      3.6,
+      483.3,
+      995.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4095,
+     "box": [
+      530.5,
+      0.0,
+      1000.0,
+      863.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1152,
+     "box": [
+      530.5,
+      0.0,
+      1000.0,
+      863.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.107,
+     "box": [
+      615.8,
+      859.5,
+      926.4,
+      991.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0507,
+     "box": [
+      582.4,
+      0.0,
+      1000.0,
+      848.3
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0346,
+     "box": [
+      582.4,
+      0.0,
+      1000.0,
+      848.3
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6074,
+     "box": [
+      0.0,
+      3.7,
+      483.9,
+      995.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4255,
+     "box": [
+      527.0,
+      0.0,
+      1000.0,
+      864.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1179,
+     "box": [
+      527.0,
+      0.0,
+      1000.0,
+      864.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1073,
+     "box": [
+      615.8,
+      855.7,
+      928.2,
+      992.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0511,
+     "box": [
+      581.2,
+      0.8,
+      1000.0,
+      848.5
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0343,
+     "box": [
+      581.2,
+      0.8,
+      1000.0,
+      848.5
+     ]
+    }
+   ],
+   "caption_seconds": 3.69,
+   "detector_seconds": 0.087
+  },
+  "C5": {
+   "captions": {
+    "A": "Pie chart showing the responses to the question “Did the AI help your assessment?”",
+    "B": "Pie chart showing the responses to the question “Did the AI make you more confident?”",
+    "C": "Pie chart showing the responses to the question “Did the AI save you time?”"
+   },
+   "reply": "A: Pie chart showing the responses to the question “Did the AI help your assessment?”\nB: Pie chart showing the responses to the question “Did the AI make you more confident?”\nC: Pie chart showing the responses to the question “Did the AI save you time?”\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6193,
+     "box": [
+      0.1,
+      10.9,
+      339.3,
+      996.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4904,
+     "box": [
+      324.9,
+      13.0,
+      660.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1342,
+     "box": [
+      680.5,
+      12.1,
+      996.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0895,
+     "box": [
+      680.5,
+      12.1,
+      996.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0631,
+     "box": [
+      680.5,
+      12.1,
+      996.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0201,
+     "box": [
+      679.1,
+      0.0,
+      973.9,
+      147.1
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.5618,
+     "box": [
+      0.0,
+      10.7,
+      339.3,
+      996.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4863,
+     "box": [
+      324.8,
+      13.5,
+      660.8,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1334,
+     "box": [
+      679.9,
+      12.1,
+      996.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0912,
+     "box": [
+      679.9,
+      12.1,
+      996.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0623,
+     "box": [
+      679.9,
+      12.1,
+      996.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0203,
+     "box": [
+      679.1,
+      0.0,
+      974.5,
+      146.6
+     ]
+    }
+   ],
+   "caption_seconds": 6.43,
+   "detector_seconds": 0.085
+  },
+  "S02": {
+   "captions": {
+    "A": "Bar plot of the accuracy of the three response generation methods for GPT-3 and GPT-4.",
+    "B": "Accuracy of the best prompt and raw prompt for different temperature settings for GPT-3.5.",
+    "C": "Accuracy of the 15 experiment settings for GPT-3.5 with different model sizes.",
+    "D": "Accuracy of the 15 experiment settings for GPT-4."
+   },
+   "reply": "A: Bar plot of the accuracy of the three response generation methods for GPT-3 and GPT-4.\nB: Accuracy of the best prompt and raw prompt for different temperature settings for GPT-3.5.\nC: Accuracy of the 15 experiment settings for GPT-3.5 with different model sizes.\nD: Accuracy of the 15 experiment settings for GPT-4.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.8901,
+     "box": [
+      6.0,
+      2.0,
+      509.4,
+      305.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7657,
+     "box": [
+      0.0,
+      306.4,
+      508.5,
+      999.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.7391,
+     "box": [
+      501.8,
+      268.3,
+      1000.0,
+      995.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5191,
+     "box": [
+      517.1,
+      0.8,
+      1000.0,
+      305.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0258,
+     "box": [
+      501.8,
+      268.3,
+      1000.0,
+      995.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0202,
+     "box": [
+      708.2,
+      5.5,
+      1000.0,
+      305.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8856,
+     "box": [
+      5.7,
+      1.9,
+      509.5,
+      305.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7605,
+     "box": [
+      0.0,
+      307.2,
+      510.2,
+      999.6
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.7227,
+     "box": [
+      500.8,
+      266.8,
+      1000.0,
+      995.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2331,
+     "box": [
+      516.3,
+      0.0,
+      1000.0,
+      307.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0258,
+     "box": [
+      500.8,
+      266.8,
+      1000.0,
+      995.8
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0205,
+     "box": [
+      500.8,
+      266.8,
+      1000.0,
+      995.8
+     ]
+    }
+   ],
+   "caption_seconds": 9.69,
+   "detector_seconds": 0.186
+  },
+  "S03": {
+   "captions": {
+    "A": "Quantized models are indicated by a pink circle, while fine-tuned models are indicated by a blue square."
+   },
+   "reply": "A: Quantized models are indicated by a pink circle, while fine-tuned models are indicated by a blue square.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.3901,
+     "box": [
+      3.3,
+      0.0,
+      1000.0,
+      979.2
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.1296,
+     "box": [
+      0.0,
+      93.0,
+      994.7,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0317,
+     "box": [
+      543.1,
+      0.0,
+      974.1,
+      949.9
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4011,
+     "box": [
+      3.1,
+      0.0,
+      1000.0,
+      978.1
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.1332,
+     "box": [
+      0.0,
+      92.9,
+      994.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0329,
+     "box": [
+      3.6,
+      494.7,
+      1000.0,
+      996.8
+     ]
+    }
+   ],
+   "caption_seconds": 3.54,
+   "detector_seconds": 0.181
+  },
+  "S04": {
+   "captions": {
+    "A": "The bar chart shows the performance of different models and methods in the visual question answering task. The x-axis represents the percentage of correct answers, while the y-axis lists the different models and methods. The colors of the bars indicate the type of answer: green for correct, yellow for error, and red for incorrect. The asterisks (*) indicate the statistical significance of the difference between the models and methods."
+   },
+   "reply": "A: The bar chart shows the performance of different models and methods in the visual question answering task. The x-axis represents the percentage of correct answers, while the y-axis lists the different models and methods. The colors of the bars indicate the type of answer: green for correct, yellow for error, and red for incorrect. The asterisks (*) indicate the statistical significance of the difference between the models and methods.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.4377,
+     "box": [
+      2.2,
+      0.8,
+      335.4,
+      968.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4127,
+     "box": [
+      270.1,
+      3.6,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0786,
+     "box": [
+      270.1,
+      3.6,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4405,
+     "box": [
+      2.1,
+      0.8,
+      335.5,
+      968.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4143,
+     "box": [
+      270.0,
+      3.1,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.078,
+     "box": [
+      270.0,
+      3.1,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 9.47,
+   "detector_seconds": 0.184
+  },
+  "S05": {
+   "captions": {
+    "A": "Accuracy of GPT-3.5 and GPT-4 models on the ACG self-assessment version.",
+    "B": "Accuracy of GPT-3 and GPT-4 models on the ACG self-assessment version."
+   },
+   "reply": "A: Accuracy of GPT-3.5 and GPT-4 models on the ACG self-assessment version.\nB: Accuracy of GPT-3 and GPT-4 models on the ACG self-assessment version.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.8789,
+     "box": [
+      456.9,
+      1.4,
+      999.2,
+      989.2
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.713,
+     "box": [
+      1.7,
+      4.1,
+      477.6,
+      990.8
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.8869,
+     "box": [
+      457.1,
+      1.8,
+      999.9,
+      990.2
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.7074,
+     "box": [
+      1.6,
+      4.6,
+      477.5,
+      991.9
+     ]
+    }
+   ],
+   "caption_seconds": 5.61,
+   "detector_seconds": 0.123
+  },
+  "S06": {
+   "captions": {
+    "A": "Accuracy of the raw prompt without determining seed.",
+    "B": "Accuracy of the best prompt without determining seed.",
+    "C": "Accuracy of the raw prompt after determining seed.",
+    "D": "Accuracy of the best prompt after determining seed."
+   },
+   "reply": "A: Accuracy of the raw prompt without determining seed.\nB: Accuracy of the best prompt without determining seed.\nC: Accuracy of the raw prompt after determining seed.\nD: Accuracy of the best prompt after determining seed.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.9048,
+     "box": [
+      1.0,
+      0.7,
+      515.9,
+      496.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.878,
+     "box": [
+      509.1,
+      3.2,
+      998.3,
+      496.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8759,
+     "box": [
+      510.7,
+      501.7,
+      996.3,
+      994.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8346,
+     "box": [
+      0.0,
+      500.1,
+      516.8,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.8744,
+     "box": [
+      508.8,
+      3.9,
+      998.8,
+      495.3
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8737,
+     "box": [
+      511.1,
+      502.1,
+      997.0,
+      995.9
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.8548,
+     "box": [
+      0.0,
+      5.0,
+      511.3,
+      495.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8356,
+     "box": [
+      0.0,
+      499.8,
+      516.7,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 5.73,
+   "detector_seconds": 0.186
+  },
+  "S08": {
+   "captions": {
+    "A": "GPT-3.5 correctly extracted the correct option from the LLM’s response.",
+    "B": "GPT-3.5 correctly extracted an incorrect option from the LLM’s response.",
+    "C": "GPT-3.5 correctly extracted the correct option from the LLM’s response.",
+    "D": "GPT-3.5 correctly extracted the correct option from the LLM’s response.",
+    "E": "GPT-3.5 correctly extracted the correct option from the LLM’s response."
+   },
+   "reply": "A: GPT-3.5 correctly extracted the correct option from the LLM’s response.\nB: GPT-3.5 correctly extracted an incorrect option from the LLM’s response.\nC: GPT-3.5 correctly extracted the correct option from the LLM’s response.\nD: GPT-3.5 correctly extracted the correct option from the LLM’s response.\nE: GPT-3.5 correctly extracted the correct option from the LLM’s response.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.344,
+     "box": [
+      34.7,
+      83.2,
+      678.9,
+      621.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.287,
+     "box": [
+      685.1,
+      155.1,
+      971.4,
+      427.1
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2317,
+     "box": [
+      133.7,
+      814.2,
+      829.6,
+      984.6
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.177,
+     "box": [
+      796.8,
+      659.3,
+      997.5,
+      992.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1727,
+     "box": [
+      685.1,
+      155.1,
+      971.4,
+      427.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.1457,
+     "box": [
+      809.0,
+      649.9,
+      1000.0,
+      987.2
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.141,
+     "box": [
+      809.0,
+      649.9,
+      1000.0,
+      987.2
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.1152,
+     "box": [
+      809.0,
+      649.9,
+      1000.0,
+      987.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.3405,
+     "box": [
+      34.4,
+      82.3,
+      679.3,
+      622.2
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3144,
+     "box": [
+      681.7,
+      156.5,
+      975.6,
+      428.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2337,
+     "box": [
+      131.2,
+      810.9,
+      830.8,
+      985.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1838,
+     "box": [
+      681.7,
+      156.5,
+      975.6,
+      428.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1776,
+     "box": [
+      796.3,
+      660.4,
+      998.0,
+      991.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.1451,
+     "box": [
+      808.4,
+      651.2,
+      1000.0,
+      986.0
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.1442,
+     "box": [
+      808.4,
+      651.2,
+      1000.0,
+      986.0
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.116,
+     "box": [
+      808.4,
+      651.2,
+      1000.0,
+      986.0
+     ]
+    }
+   ],
+   "caption_seconds": 11.3,
+   "detector_seconds": 0.168
+  },
+  "S10": {
+   "captions": {
+    "A": "Performance of all 300 ACG questions.",
+    "B": "Performance of 162 text-based ACG questions.",
+    "C": "Performance of 138 image-inclusive ACG questions."
+   },
+   "reply": "A: Performance of all 300 ACG questions.\nB: Performance of 162 text-based ACG questions.\nC: Performance of 138 image-inclusive ACG questions.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.9461,
+     "box": [
+      0.0,
+      3.0,
+      992.9,
+      326.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.6852,
+     "box": [
+      0.0,
+      334.9,
+      993.7,
+      671.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.4057,
+     "box": [
+      0.0,
+      664.9,
+      999.1,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1368,
+     "box": [
+      0.0,
+      664.9,
+      999.1,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0665,
+     "box": [
+      0.0,
+      664.9,
+      999.1,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.9391,
+     "box": [
+      0.0,
+      2.8,
+      993.2,
+      326.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.6625,
+     "box": [
+      0.0,
+      334.0,
+      998.7,
+      667.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3198,
+     "box": [
+      0.2,
+      664.8,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1161,
+     "box": [
+      0.2,
+      664.8,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0612,
+     "box": [
+      0.2,
+      664.8,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 5.26,
+   "detector_seconds": 0.166
+  },
+  "S11": {
+   "captions": {
+    "A": "Colon.",
+    "B": "Esophagus.",
+    "C": "IBD.",
+    "D": "Liver.",
+    "E": "Pancreatico-biliary.",
+    "F": "Stomach.",
+    "G": "Endoscopy.",
+    "H": "Nutrition.",
+    "I": "Miscellaneous.",
+    "J": "General."
+   },
+   "reply": "A: Colon.\nB: Esophagus.\nC: IBD.\nD: Liver.\nE: Pancreatico-biliary.\nF: Stomach.\nG: Endoscopy.\nH: Nutrition.\nI: Miscellaneous.\nJ: General.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.7857,
+     "box": [
+      0.0,
+      2.2,
+      999.3,
+      161.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4244,
+     "box": [
+      0.0,
+      173.1,
+      995.1,
+      330.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3528,
+     "box": [
+      0.0,
+      173.1,
+      995.1,
+      330.3
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1484,
+     "box": [
+      0.0,
+      173.1,
+      995.1,
+      330.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0786,
+     "box": [
+      17.6,
+      838.1,
+      1000.0,
+      997.3
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0435,
+     "box": [
+      15.5,
+      835.4,
+      512.9,
+      999.1
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8024,
+     "box": [
+      0.0,
+      2.2,
+      999.2,
+      161.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3784,
+     "box": [
+      0.0,
+      173.5,
+      995.8,
+      330.4
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.2914,
+     "box": [
+      0.0,
+      173.5,
+      995.8,
+      330.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1545,
+     "box": [
+      5.6,
+      332.0,
+      1000.0,
+      496.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0795,
+     "box": [
+      18.8,
+      837.0,
+      1000.0,
+      997.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0446,
+     "box": [
+      18.8,
+      837.0,
+      1000.0,
+      997.0
+     ]
+    }
+   ],
+   "caption_seconds": 6.42,
+   "detector_seconds": 0.184
+  },
+  "S12": {
+   "captions": {
+    "A": "The distribution of question types in the test set.",
+    "B": "The distribution of question types in the test set.",
+    "C": "The distribution of question types in the test set.",
+    "D": "The distribution of question types in the test set.",
+    "E": "The distribution of question types in the test set."
+   },
+   "reply": "A: The distribution of question types in the test set.\nB: The distribution of question types in the test set.\nC: The distribution of question types in the test set.\nD: The distribution of question types in the test set.\nE: The distribution of question types in the test set.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.902,
+     "box": [
+      3.9,
+      3.8,
+      981.3,
+      193.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4284,
+     "box": [
+      1.7,
+      189.6,
+      992.8,
+      391.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.3701,
+     "box": [
+      9.9,
+      396.5,
+      1000.0,
+      591.5
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.2578,
+     "box": [
+      9.4,
+      798.2,
+      1000.0,
+      993.2
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1853,
+     "box": [
+      13.3,
+      594.0,
+      1000.0,
+      796.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0821,
+     "box": [
+      9.9,
+      396.5,
+      1000.0,
+      591.5
+     ]
+    },
+    {
+     "letter": "I",
+     "score": 0.0525,
+     "box": [
+      9.4,
+      798.2,
+      1000.0,
+      993.2
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.035,
+     "box": [
+      9.4,
+      798.2,
+      1000.0,
+      993.2
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.027,
+     "box": [
+      13.3,
+      594.0,
+      1000.0,
+      796.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.9119,
+     "box": [
+      6.3,
+      2.3,
+      982.2,
+      193.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5214,
+     "box": [
+      2.8,
+      189.4,
+      993.3,
+      391.7
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.369,
+     "box": [
+      10.8,
+      396.1,
+      1000.0,
+      592.2
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.3154,
+     "box": [
+      10.9,
+      798.1,
+      1000.0,
+      993.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.171,
+     "box": [
+      10.8,
+      396.1,
+      1000.0,
+      592.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0853,
+     "box": [
+      10.8,
+      396.1,
+      1000.0,
+      592.2
+     ]
+    },
+    {
+     "letter": "I",
+     "score": 0.0583,
+     "box": [
+      10.9,
+      798.1,
+      1000.0,
+      993.3
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0393,
+     "box": [
+      10.9,
+      798.1,
+      1000.0,
+      993.3
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0258,
+     "box": [
+      13.6,
+      594.4,
+      1000.0,
+      796.3
+     ]
+    }
+   ],
+   "caption_seconds": 6.72,
+   "detector_seconds": 0.106
+  },
+  "S13": {
+   "captions": {
+    "A": "The average human score of each question in the first round of the competition.",
+    "B": "The average human score of each question in the second round of the competition.",
+    "C": "The average human score of each question in the third round of the competition.",
+    "D": "The average human score of each question in the fourth round of the competition."
+   },
+   "reply": "A: The average human score of each question in the first round of the competition.\nB: The average human score of each question in the second round of the competition.\nC: The average human score of each question in the third round of the competition.\nD: The average human score of each question in the fourth round of the competition.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6831,
+     "box": [
+      0.0,
+      1.5,
+      987.0,
+      241.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.2978,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2652,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2371,
+     "box": [
+      0.0,
+      247.6,
+      994.7,
+      476.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1423,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0502,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0249,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    },
+    {
+     "letter": "P",
+     "score": 0.0204,
+     "box": [
+      7.7,
+      752.5,
+      1000.0,
+      995.6
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7943,
+     "box": [
+      0.0,
+      1.8,
+      988.2,
+      241.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3295,
+     "box": [
+      0.0,
+      249.7,
+      994.6,
+      480.1
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.2704,
+     "box": [
+      8.5,
+      752.5,
+      1000.0,
+      996.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2532,
+     "box": [
+      8.5,
+      752.5,
+      1000.0,
+      996.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.178,
+     "box": [
+      0.0,
+      249.7,
+      994.6,
+      480.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0506,
+     "box": [
+      8.5,
+      752.5,
+      1000.0,
+      996.0
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0246,
+     "box": [
+      8.5,
+      752.5,
+      1000.0,
+      996.0
+     ]
+    }
+   ],
+   "caption_seconds": 7.72,
+   "detector_seconds": 0.121
+  },
+  "S14": {
+   "captions": {
+    "A": "Long questions.",
+    "B": "Medium questions.",
+    "C": "Short questions."
+   },
+   "reply": "A: Long questions.\nB: Medium questions.\nC: Short questions.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.797,
+     "box": [
+      0.0,
+      332.3,
+      998.2,
+      665.3
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.6172,
+     "box": [
+      0.0,
+      2.9,
+      988.6,
+      327.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3798,
+     "box": [
+      1.7,
+      661.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1335,
+     "box": [
+      1.7,
+      661.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0936,
+     "box": [
+      0.0,
+      332.3,
+      998.2,
+      665.3
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.7925,
+     "box": [
+      0.0,
+      333.0,
+      997.8,
+      667.5
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.5681,
+     "box": [
+      0.0,
+      2.7,
+      989.7,
+      328.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3371,
+     "box": [
+      2.7,
+      661.2,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1239,
+     "box": [
+      2.7,
+      661.2,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0957,
+     "box": [
+      0.0,
+      333.0,
+      997.8,
+      667.5
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0227,
+     "box": [
+      0.0,
+      333.0,
+      997.8,
+      667.5
+     ]
+    }
+   ],
+   "caption_seconds": 2.26,
+   "detector_seconds": 0.138
+  },
+  "W01": {
+   "captions": {
+    "A": "Proportion of expert preferences for AMIE + cardiologist response over cardiologist alone response or a tie, broken down by response component. The dashed line indicates the 50% preference threshold.",
+    "B": "Proportion of ‘yes’ responses to the question ‘Is this response correct?’, broken down by response quality component. The responses were aggregated across all 100 cases."
+   },
+   "reply": "A: Proportion of expert preferences for AMIE + cardiologist response over cardiologist alone response or a tie, broken down by response component. The dashed line indicates the 50% preference threshold.\nB: Proportion of ‘yes’ responses to the question ‘Is this response correct?’, broken down by response quality component. The responses were aggregated across all 100 cases.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.8387,
+     "box": [
+      0.0,
+      498.2,
+      993.4,
+      999.5
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.6776,
+     "box": [
+      1.1,
+      5.8,
+      1000.0,
+      482.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0265,
+     "box": [
+      1.1,
+      5.8,
+      1000.0,
+      482.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.782,
+     "box": [
+      0.0,
+      499.2,
+      993.8,
+      999.5
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.7273,
+     "box": [
+      1.0,
+      5.9,
+      1000.0,
+      482.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0278,
+     "box": [
+      1.0,
+      5.9,
+      1000.0,
+      482.6
+     ]
+    }
+   ],
+   "caption_seconds": 9.49,
+   "detector_seconds": 0.197
+  },
+  "W02": {
+   "captions": {
+    "A": "The top row of stacked bar charts shows the distribution of ratings for each of the 15 AMIE domains.",
+    "B": "The bottom row of stacked bar charts shows the distribution of ratings for each of the 15 PACES domains."
+   },
+   "reply": "A: The top row of stacked bar charts shows the distribution of ratings for each of the 15 AMIE domains.\nB: The bottom row of stacked bar charts shows the distribution of ratings for each of the 15 PACES domains.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.3539,
+     "box": [
+      523.1,
+      8.8,
+      1000.0,
+      875.5
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.3495,
+     "box": [
+      7.2,
+      0.0,
+      1000.0,
+      879.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0964,
+     "box": [
+      35.7,
+      224.8,
+      1000.0,
+      845.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0445,
+     "box": [
+      562.4,
+      335.4,
+      996.5,
+      834.9
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.35,
+     "box": [
+      14.2,
+      0.0,
+      1000.0,
+      971.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3499,
+     "box": [
+      521.6,
+      5.9,
+      1000.0,
+      877.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0988,
+     "box": [
+      37.2,
+      222.3,
+      1000.0,
+      840.7
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0446,
+     "box": [
+      561.8,
+      335.1,
+      996.8,
+      835.5
+     ]
+    }
+   ],
+   "caption_seconds": 6.26,
+   "detector_seconds": 0.182
+  },
+  "W03": {
+   "captions": {
+    "A": "Performance on the 282 pharmacist-rated lower-difficulty questions. Error bars represent 95% confidence intervals. Statistical significance is indicated by asterisks (*p<0.05, **p<0.01, ***p<0.001), and n.s. indicates not significant.",
+    "B": "Performance on the 318 pharmacist-rated higher-difficulty questions. Error bars represent 95% confidence intervals. Statistical significance is indicated by asterisks (*p<0.05, **p<0.01, ***p<0.001), and n.s. indicates not significant."
+   },
+   "reply": "A: Performance on the 282 pharmacist-rated lower-difficulty questions. Error bars represent 95% confidence intervals. Statistical significance is indicated by asterisks (*p<0.05, **p<0.01, ***p<0.001), and n.s. indicates not significant.\nB: Performance on the 318 pharmacist-rated higher-difficulty questions. Error bars represent 95% confidence intervals. Statistical significance is indicated by asterisks (*p<0.05, **p<0.01, ***p<0.001), and n.s. indicates not significant.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.7034,
+     "box": [
+      24.9,
+      0.0,
+      553.6,
+      963.2
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5352,
+     "box": [
+      543.5,
+      4.2,
+      996.9,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1519,
+     "box": [
+      543.5,
+      4.2,
+      996.9,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0561,
+     "box": [
+      48.3,
+      853.4,
+      520.4,
+      994.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0216,
+     "box": [
+      578.8,
+      331.4,
+      974.0,
+      906.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7089,
+     "box": [
+      24.4,
+      0.0,
+      553.7,
+      962.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4631,
+     "box": [
+      541.6,
+      4.9,
+      997.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1315,
+     "box": [
+      541.6,
+      4.9,
+      997.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0554,
+     "box": [
+      48.1,
+      850.7,
+      520.7,
+      994.5
+     ]
+    }
+   ],
+   "caption_seconds": 14.55,
+   "detector_seconds": 0.138
+  },
+  "W04": {
+   "captions": {
+    "A": "Overall appropriate.",
+    "B": "Free of significant error.",
+    "C": "Follow-up appropriate.",
+    "D": "Selected applicable guidelines.",
+    "E": "No guideline conflict or conflict justified.",
+    "F": "Appropriate recommended.",
+    "G": "Inappropriate avoided.",
+    "H": "Sufficiently precise.",
+    "I": "Aligned with guidelines.",
+    "J": "References guidelines.",
+    "K": "Appropriate recommended.",
+    "L": "Inappropriate avoided.",
+    "M": "Sufficiently precise.",
+    "N": "Aligned with guidelines.",
+    "O": "References guidelines."
+   },
+   "reply": "A: Overall appropriate.\nB: Free of significant error.\nC: Follow-up appropriate.\nD: Selected applicable guidelines.\nE: No guideline conflict or conflict justified.\nF: Appropriate recommended.\nG: Inappropriate avoided.\nH: Sufficiently precise.\nI: Aligned with guidelines.\nJ: References guidelines.\nK: Appropriate recommended.\nL: Inappropriate avoided.\nM: Sufficiently precise.\nN: Aligned with guidelines.\nO: References guidelines.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.492,
+     "box": [
+      1.2,
+      7.2,
+      588.8,
+      308.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4422,
+     "box": [
+      629.5,
+      6.7,
+      988.6,
+      299.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.3095,
+     "box": [
+      627.0,
+      625.9,
+      994.9,
+      975.7
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.237,
+     "box": [
+      17.1,
+      644.1,
+      602.9,
+      979.7
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2135,
+     "box": [
+      17.1,
+      644.1,
+      602.9,
+      979.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1803,
+     "box": [
+      629.5,
+      6.7,
+      988.6,
+      299.7
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0521,
+     "box": [
+      0.0,
+      663.5,
+      992.6,
+      971.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4794,
+     "box": [
+      1.3,
+      7.1,
+      590.4,
+      308.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4461,
+     "box": [
+      629.8,
+      5.9,
+      988.7,
+      300.8
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.324,
+     "box": [
+      626.4,
+      624.8,
+      995.5,
+      976.1
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.2274,
+     "box": [
+      16.9,
+      643.4,
+      603.2,
+      980.1
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2127,
+     "box": [
+      16.9,
+      643.4,
+      603.2,
+      980.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1801,
+     "box": [
+      629.8,
+      5.9,
+      988.7,
+      300.8
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0549,
+     "box": [
+      0.0,
+      663.4,
+      993.9,
+      972.0
+     ]
+    }
+   ],
+   "caption_seconds": 10.97,
+   "detector_seconds": 0.189
+  },
+  "W05": {
+   "captions": {
+    "A": "Prioritization of preferences, constraints and values.",
+    "B": "Communication and shared decision-making.",
+    "C": "Monitoring and adjustment of management plan.",
+    "D": "Managing interplay of competing priorities.",
+    "E": "Acting as patient, teacher and salesperson.",
+    "F": "Relationship fostering.",
+    "G": "Organization of the clinical encounter.",
+    "H": "Contrast and selection.",
+    "I": "Illness-specific knowledge.",
+    "J": "Prognostication."
+   },
+   "reply": "A: Prioritization of preferences, constraints and values.\nB: Communication and shared decision-making.\nC: Monitoring and adjustment of management plan.\nD: Managing interplay of competing priorities.\nE: Acting as patient, teacher and salesperson.\nF: Relationship fostering.\nG: Organization of the clinical encounter.\nH: Contrast and selection.\nI: Illness-specific knowledge.\nJ: Prognostication.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.4233,
+     "box": [
+      7.3,
+      6.5,
+      1000.0,
+      541.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3223,
+     "box": [
+      496.7,
+      0.0,
+      989.4,
+      996.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1705,
+     "box": [
+      19.4,
+      538.2,
+      423.1,
+      999.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0632,
+     "box": [
+      26.1,
+      538.6,
+      1000.0,
+      990.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4214,
+     "box": [
+      8.1,
+      7.4,
+      1000.0,
+      538.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3259,
+     "box": [
+      439.2,
+      5.7,
+      994.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.172,
+     "box": [
+      19.2,
+      537.4,
+      423.5,
+      999.1
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0629,
+     "box": [
+      26.3,
+      538.7,
+      1000.0,
+      990.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0297,
+     "box": [
+      769.7,
+      8.5,
+      1000.0,
+      500.0
+     ]
+    }
+   ],
+   "caption_seconds": 9.38,
+   "detector_seconds": 0.176
+  },
+  "W06": {
+   "captions": {
+    "A": "Performance of the retrieval components of the models.",
+    "B": "Performance of the models on the axes of the evaluation framework."
+   },
+   "reply": "A: Performance of the retrieval components of the models.\nB: Performance of the models on the axes of the evaluation framework.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.3525,
+     "box": [
+      0.0,
+      0.9,
+      991.0,
+      267.1
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2382,
+     "box": [
+      575.7,
+      5.1,
+      986.9,
+      275.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.167,
+     "box": [
+      3.1,
+      552.5,
+      1000.0,
+      988.6
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0655,
+     "box": [
+      0.0,
+      552.6,
+      998.6,
+      996.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.3595,
+     "box": [
+      0.0,
+      0.0,
+      992.4,
+      267.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2333,
+     "box": [
+      8.3,
+      281.7,
+      1000.0,
+      986.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1637,
+     "box": [
+      3.3,
+      552.1,
+      1000.0,
+      987.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0654,
+     "box": [
+      0.0,
+      551.4,
+      999.3,
+      996.7
+     ]
+    }
+   ],
+   "caption_seconds": 3.55,
+   "detector_seconds": 0.172
+  },
+  "W07": {
+   "captions": {
+    "A": "The 30 most cited calculators in the literature.",
+    "B": "The 30 least cited calculators in the literature."
+   },
+   "reply": "A: The 30 most cited calculators in the literature.\nB: The 30 least cited calculators in the literature.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.7337,
+     "box": [
+      6.6,
+      32.3,
+      492.5,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.6888,
+     "box": [
+      430.1,
+      23.9,
+      998.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0565,
+     "box": [
+      6.6,
+      32.3,
+      492.5,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0256,
+     "box": [
+      430.1,
+      23.9,
+      998.6,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7361,
+     "box": [
+      6.4,
+      32.3,
+      492.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.6121,
+     "box": [
+      429.4,
+      24.0,
+      999.8,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0572,
+     "box": [
+      6.4,
+      32.3,
+      492.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0244,
+     "box": [
+      429.4,
+      24.0,
+      999.8,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 4.1,
+   "detector_seconds": 0.2
+  },
+  "W08": {
+   "captions": {
+    "B": "Accuracy of GPT-3.5 on RiskQA.",
+    "C": "Accuracy of GPT-4 on RiskQA.",
+    "D": "Accuracy of tool selection of GPT-3.5 and GPT-4 on MedCPT and RiskQA."
+   },
+   "reply": "B: Accuracy of GPT-3.5 on RiskQA.\nC: Accuracy of GPT-4 on RiskQA.\nD: Accuracy of tool selection of GPT-3.5 and GPT-4 on MedCPT and RiskQA.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.9122,
+     "box": [
+      0.1,
+      1.0,
+      326.6,
+      984.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.7857,
+     "box": [
+      660.4,
+      0.0,
+      1000.0,
+      991.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.6502,
+     "box": [
+      335.0,
+      7.1,
+      668.7,
+      991.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2066,
+     "box": [
+      660.4,
+      0.0,
+      1000.0,
+      991.9
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0238,
+     "box": [
+      660.4,
+      0.0,
+      1000.0,
+      991.9
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.9135,
+     "box": [
+      0.7,
+      0.6,
+      326.2,
+      984.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.7799,
+     "box": [
+      660.5,
+      0.0,
+      1000.0,
+      992.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.6557,
+     "box": [
+      334.9,
+      6.7,
+      669.1,
+      990.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2007,
+     "box": [
+      660.5,
+      0.0,
+      1000.0,
+      992.3
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0229,
+     "box": [
+      660.5,
+      0.0,
+      1000.0,
+      992.3
+     ]
+    }
+   ],
+   "caption_seconds": 6.05,
+   "detector_seconds": 0.119
+  },
+  "W09": {
+   "captions": {
+    "A": "Overview of the study design. For each of the 698 patients, we used the clinical note to generate 16 different risk summaries using the LLM-based clinical decision support tool, AgentMD. We then evaluated the outputs of these 16 calculators using a standardized evaluation form.",
+    "B": "Overall performance of the 16 calculators. The bar chart shows the percentage of calculators that were deemed “yes” (green), “partial” (yellow), or “no” (red) for each of the three evaluation criteria: patient eligibility, process correctness, and result usefulness.",
+    "C": "Performance of each of the 16 calculators. The heatmap shows the percentage of calculators that were deemed “yes” (green), “partial” (yellow), or “no” (red) for each of the three evaluation criteria: patient eligibility, process correctness, and result usefulness. The average performance of each calculator is also shown."
+   },
+   "reply": "A: Overview of the study design. For each of the 698 patients, we used the clinical note to generate 16 different risk summaries using the LLM-based clinical decision support tool, AgentMD. We then evaluated the outputs of these 16 calculators using a standardized evaluation form.\nB: Overall performance of the 16 calculators. The bar chart shows the percentage of calculators that were deemed “yes” (green), “partial” (yellow), or “no” (red) for each of the three evaluation criteria: patient eligibility, process correctness, and result usefulness.\nC: Performance of each of the 16 calculators. The heatmap shows the percentage of calculators that were deemed “yes” (green), “partial” (yellow), or “no” (red) for each of the three evaluation criteria: patient eligibility, process correctness, and result usefulness. The average performance of each calculator is also shown.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.9479,
+     "box": [
+      0.0,
+      5.4,
+      995.0,
+      394.1
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8502,
+     "box": [
+      537.1,
+      415.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.8281,
+     "box": [
+      0.0,
+      412.8,
+      501.8,
+      998.6
+     ]
+    },
+    {
+     "letter": "M",
+     "score": 0.0264,
+     "box": [
+      0.0,
+      5.4,
+      995.0,
+      394.1
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.945,
+     "box": [
+      0.0,
+      5.2,
+      995.1,
+      394.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8579,
+     "box": [
+      537.6,
+      414.9,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.8332,
+     "box": [
+      0.0,
+      412.5,
+      502.1,
+      998.8
+     ]
+    },
+    {
+     "letter": "M",
+     "score": 0.026,
+     "box": [
+      0.0,
+      5.2,
+      995.1,
+      394.0
+     ]
+    }
+   ],
+   "caption_seconds": 21.33,
+   "detector_seconds": 0.216
+  },
+  "W10": {
+   "captions": {
+    "A": "We used the MIMIC-III database to extract 9,000 patient notes and used the LLM AgentMD to generate a list of potential risk calculators for each patient.",
+    "B": "We then arranged the patients in order of their risk scores for each of the 1,039 calculators.",
+    "C": "The distribution of the number of calculators per patient.",
+    "D": "The distribution of the number of patients per calculator.",
+    "E": "The distribution of the top 10 calculators for each of the 5 AE CHF features.",
+    "F": "The receiver operating characteristic (ROC) curves for the top 4 calculators for each of the 4 AE CHF features."
+   },
+   "reply": "A: We used the MIMIC-III database to extract 9,000 patient notes and used the LLM AgentMD to generate a list of potential risk calculators for each patient.\nB: We then arranged the patients in order of their risk scores for each of the 1,039 calculators.\nC: The distribution of the number of calculators per patient.\nD: The distribution of the number of patients per calculator.\nE: The distribution of the top 10 calculators for each of the 5 AE CHF features.\nF: The receiver operating characteristic (ROC) curves for the top 4 calculators for each of the 4 AE CHF features.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.902,
+     "box": [
+      2.9,
+      3.3,
+      613.8,
+      234.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8559,
+     "box": [
+      640.6,
+      2.1,
+      987.9,
+      259.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8307,
+     "box": [
+      633.7,
+      258.0,
+      984.0,
+      523.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.7888,
+     "box": [
+      4.8,
+      255.0,
+      611.5,
+      510.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.5741,
+     "box": [
+      10.3,
+      522.0,
+      1000.0,
+      778.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.2657,
+     "box": [
+      0.0,
+      781.1,
+      991.7,
+      997.5
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0322,
+     "box": [
+      10.3,
+      522.0,
+      1000.0,
+      778.1
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0244,
+     "box": [
+      10.3,
+      522.0,
+      1000.0,
+      778.1
+     ]
+    },
+    {
+     "letter": "M",
+     "score": 0.0227,
+     "box": [
+      2.9,
+      3.3,
+      613.8,
+      234.8
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.9014,
+     "box": [
+      2.2,
+      3.4,
+      613.9,
+      234.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8577,
+     "box": [
+      640.4,
+      1.8,
+      987.7,
+      259.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8311,
+     "box": [
+      631.6,
+      258.0,
+      984.3,
+      524.1
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.74,
+     "box": [
+      12.5,
+      522.0,
+      1000.0,
+      777.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2705,
+     "box": [
+      2.7,
+      253.8,
+      612.0,
+      511.1
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.2312,
+     "box": [
+      0.0,
+      781.3,
+      991.6,
+      997.2
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0302,
+     "box": [
+      12.5,
+      522.0,
+      1000.0,
+      777.9
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0245,
+     "box": [
+      12.5,
+      522.0,
+      1000.0,
+      777.9
+     ]
+    },
+    {
+     "letter": "M",
+     "score": 0.0227,
+     "box": [
+      2.2,
+      3.4,
+      613.9,
+      234.8
+     ]
+    }
+   ],
+   "caption_seconds": 16.32,
+   "detector_seconds": 0.223
+  },
+  "W11": {
+   "captions": {
+    "A": "The top 10 most frequently appearing specialist roles in the dataset are displayed in the heatmap."
+   },
+   "reply": "A: The top 10 most frequently appearing specialist roles in the dataset are displayed in the heatmap.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.3069,
+     "box": [
+      10.4,
+      0.0,
+      1000.0,
+      989.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2842,
+     "box": [
+      0.0,
+      332.0,
+      998.4,
+      968.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0916,
+     "box": [
+      0.0,
+      332.0,
+      998.4,
+      968.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.3961,
+     "box": [
+      8.0,
+      14.8,
+      1000.0,
+      375.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.277,
+     "box": [
+      0.0,
+      332.6,
+      998.0,
+      967.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0899,
+     "box": [
+      0.0,
+      332.6,
+      998.0,
+      967.6
+     ]
+    }
+   ],
+   "caption_seconds": 3.39,
+   "detector_seconds": 0.19
+  },
+  "W12": {
+   "captions": {
+    "A": "Distribution of the 14 categories of views in the dataset.",
+    "B": "Top 15 views in the dataset."
+   },
+   "reply": "A: Distribution of the 14 categories of views in the dataset.\nB: Top 15 views in the dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6954,
+     "box": [
+      0.4,
+      13.4,
+      409.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5615,
+     "box": [
+      356.0,
+      6.5,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0783,
+     "box": [
+      0.4,
+      13.4,
+      409.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0229,
+     "box": [
+      356.0,
+      6.5,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6955,
+     "box": [
+      0.2,
+      13.4,
+      409.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5818,
+     "box": [
+      355.7,
+      6.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0792,
+     "box": [
+      0.2,
+      13.4,
+      409.4,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0239,
+     "box": [
+      355.7,
+      6.4,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 3.11,
+   "detector_seconds": 0.112
+  },
+  "W13": {
+   "captions": {
+    "A": "The average accuracy of the models on the EF grading dataset.",
+    "B": "The average accuracy of the models on the EchoQA dataset."
+   },
+   "reply": "A: The average accuracy of the models on the EF grading dataset.\nB: The average accuracy of the models on the EchoQA dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.5488,
+     "box": [
+      569.1,
+      8.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4754,
+     "box": [
+      34.1,
+      4.8,
+      503.1,
+      993.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1381,
+     "box": [
+      140.5,
+      11.8,
+      490.2,
+      999.6
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1236,
+     "box": [
+      569.1,
+      8.4,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.038,
+     "box": [
+      689.3,
+      0.0,
+      976.4,
+      84.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.5355,
+     "box": [
+      567.9,
+      8.5,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4618,
+     "box": [
+      31.4,
+      4.6,
+      502.6,
+      993.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1306,
+     "box": [
+      139.4,
+      12.4,
+      489.9,
+      997.7
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1239,
+     "box": [
+      567.9,
+      8.5,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0368,
+     "box": [
+      689.1,
+      0.0,
+      976.5,
+      83.4
+     ]
+    }
+   ],
+   "caption_seconds": 3.3,
+   "detector_seconds": 0.098
+  },
+  "W14": {
+   "captions": {
+    "A": "The difference in mean scores between AI-generated and clinician-authored summaries for each of the five domains."
+   },
+   "reply": "A: The difference in mean scores between AI-generated and clinician-authored summaries for each of the five domains.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.4073,
+     "box": [
+      303.2,
+      0.0,
+      1000.0,
+      979.6
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4006,
+     "box": [
+      5.6,
+      22.3,
+      295.3,
+      870.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1294,
+     "box": [
+      684.9,
+      0.0,
+      990.6,
+      985.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1262,
+     "box": [
+      5.0,
+      216.7,
+      242.0,
+      840.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0733,
+     "box": [
+      684.9,
+      0.0,
+      990.6,
+      985.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0637,
+     "box": [
+      684.9,
+      0.0,
+      990.6,
+      985.7
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4015,
+     "box": [
+      5.7,
+      22.6,
+      295.7,
+      870.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3943,
+     "box": [
+      315.1,
+      0.0,
+      1000.0,
+      995.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1266,
+     "box": [
+      4.9,
+      215.9,
+      241.9,
+      840.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1256,
+     "box": [
+      683.3,
+      0.0,
+      991.3,
+      985.8
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0704,
+     "box": [
+      683.3,
+      0.0,
+      991.3,
+      985.8
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0625,
+     "box": [
+      683.3,
+      0.0,
+      991.3,
+      985.8
+     ]
+    }
+   ],
+   "caption_seconds": 3.09,
+   "detector_seconds": 0.154
+  },
+  "W15": {
+   "captions": {
+    "A": "Top-3 DDx accuracy of different methods on MIMIC, NEJM, and UMN datasets. The statistical significance is marked by * (p < 0.05), ** (p < 0.01), and *** (p < 0.001).",
+    "B": "The number of correct diagnoses of different methods on MIMIC dataset."
+   },
+   "reply": "A: Top-3 DDx accuracy of different methods on MIMIC, NEJM, and UMN datasets. The statistical significance is marked by * (p < 0.05), ** (p < 0.01), and *** (p < 0.001).\nB: The number of correct diagnoses of different methods on MIMIC dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.8454,
+     "box": [
+      0.0,
+      728.5,
+      989.9,
+      995.8
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4725,
+     "box": [
+      0.0,
+      11.3,
+      998.1,
+      683.3
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0331,
+     "box": [
+      0.0,
+      728.5,
+      989.9,
+      995.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.024,
+     "box": [
+      0.0,
+      11.3,
+      998.1,
+      683.3
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.8316,
+     "box": [
+      0.0,
+      728.2,
+      992.6,
+      996.7
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4688,
+     "box": [
+      0.0,
+      11.0,
+      998.2,
+      685.3
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0311,
+     "box": [
+      0.0,
+      728.2,
+      992.6,
+      996.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0244,
+     "box": [
+      0.0,
+      11.0,
+      998.2,
+      685.3
+     ]
+    }
+   ],
+   "caption_seconds": 10.3,
+   "detector_seconds": 0.203
+  },
+  "W16": {
+   "captions": {
+    "A": "Bar plots of the top-3 accuracy of the five methods on the MIMIC, NEJM, and UMN datasets. The error bars represent the standard deviation of the top-3 accuracy across 100 samples. The statistical significance is marked by asterisks: *p < 0.05, **p < 0.01, ***p < 0.001.",
+    "B": "Violin plots of the five methods’ scores on the MIMIC dataset. The error bars represent the standard deviation of the scores across 100 samples. The statistical significance is marked by asterisks: *p < 0.05, **p < 0.01, ***p < 0.001.",
+    "C": "Bar plots of the factuality score distribution of the five methods on the MIMIC and UMN datasets. The error bars represent the standard deviation of the factuality score across 100 samples."
+   },
+   "reply": "A: Bar plots of the top-3 accuracy of the five methods on the MIMIC, NEJM, and UMN datasets. The error bars represent the standard deviation of the top-3 accuracy across 100 samples. The statistical significance is marked by asterisks: *p < 0.05, **p < 0.01, ***p < 0.001.\nB: Violin plots of the five methods’ scores on the MIMIC dataset. The error bars represent the standard deviation of the scores across 100 samples. The statistical significance is marked by asterisks: *p < 0.05, **p < 0.01, ***p < 0.001.\nC: Bar plots of the factuality score distribution of the five methods on the MIMIC and UMN datasets. The error bars represent the standard deviation of the factuality score across 100 samples.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.876,
+     "box": [
+      0.6,
+      1.7,
+      999.3,
+      557.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7801,
+     "box": [
+      0.0,
+      810.4,
+      963.0,
+      996.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.7355,
+     "box": [
+      0.0,
+      564.2,
+      997.5,
+      800.7
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8438,
+     "box": [
+      1.4,
+      2.1,
+      999.7,
+      562.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7614,
+     "box": [
+      0.0,
+      811.1,
+      962.8,
+      996.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.7527,
+     "box": [
+      0.0,
+      564.8,
+      997.5,
+      800.5
+     ]
+    }
+   ],
+   "caption_seconds": 23.68,
+   "detector_seconds": 0.208
+  },
+  "W17": {
+   "captions": {
+    "A": "Top-1 DDx Accuracy on NEJM",
+    "B": "Top-1 Explanation Performance on NEJM",
+    "C": "Top-3 DDx Accuracy on NEJM",
+    "D": "Top-3 Explanation Performance on NEJM"
+   },
+   "reply": "A: Top-1 DDx Accuracy on NEJM\nB: Top-1 Explanation Performance on NEJM\nC: Top-3 DDx Accuracy on NEJM\nD: Top-3 Explanation Performance on NEJM\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6799,
+     "box": [
+      6.6,
+      6.4,
+      504.5,
+      533.7
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3025,
+     "box": [
+      506.2,
+      527.6,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.2746,
+     "box": [
+      5.9,
+      521.8,
+      510.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1834,
+     "box": [
+      506.2,
+      527.6,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1014,
+     "box": [
+      506.2,
+      527.6,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0203,
+     "box": [
+      506.2,
+      527.6,
+      1000.0,
+      999.9
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6725,
+     "box": [
+      7.0,
+      6.7,
+      503.8,
+      533.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3054,
+     "box": [
+      505.5,
+      527.4,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3042,
+     "box": [
+      5.1,
+      520.6,
+      516.7,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.187,
+     "box": [
+      505.5,
+      527.4,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1039,
+     "box": [
+      505.5,
+      527.4,
+      1000.0,
+      999.9
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.02,
+     "box": [
+      505.5,
+      527.4,
+      1000.0,
+      999.9
+     ]
+    }
+   ],
+   "caption_seconds": 5.63,
+   "detector_seconds": 0.176
+  },
+  "W18": {
+   "captions": {
+    "A": "Confusion matrix for MIMIC (Llama-3.3-70B).",
+    "B": "Confusion matrix for MIMIC (MedGemma-27B).",
+    "C": "Confusion matrix for UMN (Llama-3.3-70B).",
+    "D": "Confusion matrix for UMN (MedGemma-27B)."
+   },
+   "reply": "A: Confusion matrix for MIMIC (Llama-3.3-70B).\nB: Confusion matrix for MIMIC (MedGemma-27B).\nC: Confusion matrix for UMN (Llama-3.3-70B).\nD: Confusion matrix for UMN (MedGemma-27B).\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.5084,
+     "box": [
+      2.5,
+      11.8,
+      258.8,
+      982.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3373,
+     "box": [
+      224.0,
+      8.2,
+      486.9,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1314,
+     "box": [
+      751.9,
+      0.0,
+      995.2,
+      986.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1209,
+     "box": [
+      751.9,
+      0.0,
+      995.2,
+      986.6
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1192,
+     "box": [
+      751.9,
+      0.0,
+      995.2,
+      986.6
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.082,
+     "box": [
+      751.9,
+      0.0,
+      995.2,
+      986.6
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.4709,
+     "box": [
+      0.0,
+      0.0,
+      513.3,
+      981.1
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.3268,
+     "box": [
+      229.1,
+      15.7,
+      482.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1325,
+     "box": [
+      752.0,
+      0.0,
+      995.2,
+      987.7
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1212,
+     "box": [
+      752.0,
+      0.0,
+      995.2,
+      987.7
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.121,
+     "box": [
+      752.0,
+      0.0,
+      995.2,
+      987.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0832,
+     "box": [
+      752.0,
+      0.0,
+      995.2,
+      987.7
+     ]
+    }
+   ],
+   "caption_seconds": 8.2,
+   "detector_seconds": 0.082
+  },
+  "W19": {
+   "captions": {
+    "A": "Accuracy of the base model and the model with different reasoning modules on three datasets.",
+    "B": "Accuracy of the base model and the model with different retrieval modules on the MMMU-Pro-H&M (10 opt) and the MMMU-Pro-H&M (4 opt) datasets.",
+    "C": "The confidence of the base model and the model with different retrieval modules on the MMMU-Pro-H&M (10 opt) dataset."
+   },
+   "reply": "A: Accuracy of the base model and the model with different reasoning modules on three datasets.\nB: Accuracy of the base model and the model with different retrieval modules on the MMMU-Pro-H&M (10 opt) and the MMMU-Pro-H&M (4 opt) datasets.\nC: The confidence of the base model and the model with different retrieval modules on the MMMU-Pro-H&M (10 opt) dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "C",
+     "score": 0.8454,
+     "box": [
+      17.3,
+      547.4,
+      548.2,
+      996.2
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.6483,
+     "box": [
+      6.9,
+      7.0,
+      468.5,
+      548.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4572,
+     "box": [
+      451.4,
+      0.0,
+      998.2,
+      995.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2657,
+     "box": [
+      451.4,
+      0.0,
+      998.2,
+      995.8
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6068,
+     "box": [
+      6.7,
+      7.3,
+      469.1,
+      548.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.5683,
+     "box": [
+      16.9,
+      546.7,
+      549.9,
+      997.1
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.466,
+     "box": [
+      450.5,
+      0.0,
+      998.8,
+      996.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2743,
+     "box": [
+      450.5,
+      0.0,
+      998.8,
+      996.4
+     ]
+    }
+   ],
+   "caption_seconds": 9.64,
+   "detector_seconds": 0.141
+  },
+  "W20": {
+   "captions": {
+    "A": "Distribution of the 12 modalities in the dataset.",
+    "B": "Distribution of the 14 body structures in the dataset."
+   },
+   "reply": "A: Distribution of the 12 modalities in the dataset.\nB: Distribution of the 14 body structures in the dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "B",
+     "score": 0.5031,
+     "box": [
+      450.1,
+      0.0,
+      1000.0,
+      967.4
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.354,
+     "box": [
+      29.7,
+      0.0,
+      1000.0,
+      988.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0645,
+     "box": [
+      29.7,
+      0.0,
+      1000.0,
+      988.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0605,
+     "box": [
+      634.5,
+      917.4,
+      980.7,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0254,
+     "box": [
+      738.2,
+      15.0,
+      988.8,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.4846,
+     "box": [
+      448.5,
+      0.0,
+      1000.0,
+      969.0
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.3637,
+     "box": [
+      2.1,
+      8.2,
+      472.6,
+      995.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0647,
+     "box": [
+      13.7,
+      577.9,
+      1000.0,
+      978.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0592,
+     "box": [
+      634.6,
+      917.4,
+      980.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0259,
+     "box": [
+      738.1,
+      14.4,
+      989.0,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 3.53,
+   "detector_seconds": 0.124
+  },
+  "W21": {
+   "captions": {
+    "A": "Accuracy Reward",
+    "B": "Query Semantic Reward: Image",
+    "C": "Format Reward",
+    "D": "Query Semantic Reward: Text",
+    "E": "Confidence Gain Reward",
+    "F": "Response Length"
+   },
+   "reply": "A: Accuracy Reward\nB: Query Semantic Reward: Image\nC: Format Reward\nD: Query Semantic Reward: Text\nE: Confidence Gain Reward\nF: Response Length\n[DET]",
+   "guided": [
+    {
+     "letter": "C",
+     "score": 0.3163,
+     "box": [
+      22.9,
+      697.5,
+      1000.0,
+      997.8
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.2977,
+     "box": [
+      6.3,
+      1.4,
+      515.1,
+      655.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2337,
+     "box": [
+      537.6,
+      18.6,
+      993.7,
+      658.1
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.2003,
+     "box": [
+      526.5,
+      681.6,
+      1000.0,
+      989.7
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1874,
+     "box": [
+      22.9,
+      697.5,
+      1000.0,
+      997.8
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0703,
+     "box": [
+      527.9,
+      690.1,
+      998.7,
+      988.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.3009,
+     "box": [
+      5.8,
+      0.4,
+      515.4,
+      655.4
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3003,
+     "box": [
+      19.8,
+      697.9,
+      1000.0,
+      997.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2358,
+     "box": [
+      536.0,
+      17.8,
+      993.9,
+      660.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.2214,
+     "box": [
+      526.0,
+      681.7,
+      1000.0,
+      989.5
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.19,
+     "box": [
+      19.8,
+      697.9,
+      1000.0,
+      997.3
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0691,
+     "box": [
+      527.2,
+      690.4,
+      998.7,
+      987.8
+     ]
+    }
+   ],
+   "caption_seconds": 4.59,
+   "detector_seconds": 0.147
+  },
+  "W22": {
+   "captions": {
+    "A": "Example interactions with LLM-based interfaces. (a) Clinicians can ask the LLM questions about the AutoPrognosis risk score, such as what variables are included, the underlying methodology, and the cohort on which the model was derived.",
+    "B": "Example interactions with LLM-based interfaces. (b) After calculating the patient’s risk using the AutoPrognosis model, the clinician can query why this prediction was issued using explainable AI to improve understanding of the model predictions."
+   },
+   "reply": "A: Example interactions with LLM-based interfaces. (a) Clinicians can ask the LLM questions about the AutoPrognosis risk score, such as what variables are included, the underlying methodology, and the cohort on which the model was derived.\nB: Example interactions with LLM-based interfaces. (b) After calculating the patient’s risk using the AutoPrognosis model, the clinician can query why this prediction was issued using explainable AI to improve understanding of the model predictions.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.3366,
+     "box": [
+      0.0,
+      0.0,
+      994.9,
+      951.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2032,
+     "box": [
+      456.3,
+      0.0,
+      984.5,
+      841.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1569,
+     "box": [
+      0.0,
+      310.8,
+      988.7,
+      994.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0959,
+     "box": [
+      646.9,
+      841.4,
+      973.2,
+      1000.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.076,
+     "box": [
+      646.9,
+      841.4,
+      973.2,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.394,
+     "box": [
+      0.0,
+      0.0,
+      993.8,
+      945.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2082,
+     "box": [
+      455.2,
+      0.0,
+      985.3,
+      844.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1573,
+     "box": [
+      0.0,
+      311.8,
+      989.3,
+      995.1
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0946,
+     "box": [
+      646.9,
+      840.7,
+      973.5,
+      1000.0
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0751,
+     "box": [
+      646.9,
+      840.7,
+      973.5,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 11.53,
+   "detector_seconds": 0.195
+  },
+  "W23": {
+   "captions": {
+    "A": "Distribution of diseases in the MedART dataset.",
+    "B": "Distribution of symptoms in the MedART dataset.",
+    "C": "Distribution of specialties in the MedART dataset.",
+    "D": "Distribution of organ systems in the MedART dataset."
+   },
+   "reply": "A: Distribution of diseases in the MedART dataset.\nB: Distribution of symptoms in the MedART dataset.\nC: Distribution of specialties in the MedART dataset.\nD: Distribution of organ systems in the MedART dataset.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.8208,
+     "box": [
+      1.8,
+      0.0,
+      258.5,
+      953.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4151,
+     "box": [
+      258.4,
+      8.6,
+      501.4,
+      970.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1743,
+     "box": [
+      719.5,
+      2.7,
+      994.6,
+      998.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1068,
+     "box": [
+      719.5,
+      2.7,
+      994.6,
+      998.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.1061,
+     "box": [
+      719.5,
+      2.7,
+      994.6,
+      998.2
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0811,
+     "box": [
+      719.5,
+      2.7,
+      994.6,
+      998.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7292,
+     "box": [
+      2.1,
+      0.2,
+      257.4,
+      980.6
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4235,
+     "box": [
+      258.4,
+      8.8,
+      501.9,
+      969.9
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.1141,
+     "box": [
+      718.9,
+      3.0,
+      995.1,
+      998.2
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.104,
+     "box": [
+      258.4,
+      8.8,
+      501.9,
+      969.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0935,
+     "box": [
+      110.2,
+      0.0,
+      1000.0,
+      986.2
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.0657,
+     "box": [
+      718.9,
+      3.0,
+      995.1,
+      998.2
+     ]
+    }
+   ],
+   "caption_seconds": 5.1,
+   "detector_seconds": 0.087
+  },
+  "W24": {
+   "captions": {
+    "A": "The accuracy of four LLMs in the cancer domain.",
+    "B": "The accuracy of four LLMs in the rare disease domain."
+   },
+   "reply": "A: The accuracy of four LLMs in the cancer domain.\nB: The accuracy of four LLMs in the rare disease domain.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.5445,
+     "box": [
+      5.7,
+      4.0,
+      702.6,
+      374.9
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3226,
+     "box": [
+      4.2,
+      363.4,
+      674.8,
+      995.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.273,
+     "box": [
+      4.2,
+      363.4,
+      674.8,
+      995.3
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.2141,
+     "box": [
+      36.4,
+      861.9,
+      664.4,
+      996.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0332,
+     "box": [
+      36.4,
+      861.9,
+      664.4,
+      996.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.6836,
+     "box": [
+      6.7,
+      5.4,
+      710.7,
+      369.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.3138,
+     "box": [
+      4.0,
+      362.4,
+      675.0,
+      995.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.2699,
+     "box": [
+      4.0,
+      362.4,
+      675.0,
+      995.8
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.207,
+     "box": [
+      35.8,
+      860.9,
+      664.9,
+      996.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0324,
+     "box": [
+      35.8,
+      860.9,
+      664.9,
+      996.3
+     ]
+    }
+   ],
+   "caption_seconds": 3.93,
+   "detector_seconds": 0.157
+  },
+  "W25": {
+   "captions": {
+    "A": "MedRisk-Qualitative and MedRisk-Quantitative accuracy of GPT-4o and RiskAgent across different time points.",
+    "B": "MedRisk-Qualitative and MedRisk-Quantitative accuracy of LLaMA-3 and RiskAgent across different parameter sizes."
+   },
+   "reply": "A: MedRisk-Qualitative and MedRisk-Quantitative accuracy of GPT-4o and RiskAgent across different time points.\nB: MedRisk-Qualitative and MedRisk-Quantitative accuracy of LLaMA-3 and RiskAgent across different parameter sizes.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.907,
+     "box": [
+      0.0,
+      13.5,
+      997.7,
+      484.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.8082,
+     "box": [
+      2.3,
+      495.7,
+      1000.0,
+      999.6
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0407,
+     "box": [
+      0.0,
+      13.5,
+      997.7,
+      484.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8874,
+     "box": [
+      0.3,
+      13.3,
+      998.8,
+      486.8
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5197,
+     "box": [
+      1.6,
+      499.0,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.0349,
+     "box": [
+      0.3,
+      13.3,
+      998.8,
+      486.8
+     ]
+    }
+   ],
+   "caption_seconds": 6.73,
+   "detector_seconds": 0.173
+  },
+  "W26": {
+   "captions": {
+    "A": "Line chart of the response quality scores of the six models.",
+    "B": "Bar chart of the response quality scores of the six models.",
+    "C": "The scores for integrity of the six models.",
+    "D": "The scores for accuracy of the six models.",
+    "E": "The scores for utility of the six models.",
+    "F": "The scores for safety of the six models."
+   },
+   "reply": "A: Line chart of the response quality scores of the six models.\nB: Bar chart of the response quality scores of the six models.\nC: The scores for integrity of the six models.\nD: The scores for accuracy of the six models.\nE: The scores for utility of the six models.\nF: The scores for safety of the six models.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.827,
+     "box": [
+      6.6,
+      2.1,
+      482.7,
+      178.9
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.7853,
+     "box": [
+      5.5,
+      391.1,
+      1000.0,
+      595.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7493,
+     "box": [
+      14.0,
+      181.7,
+      1000.0,
+      390.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.7356,
+     "box": [
+      492.6,
+      0.8,
+      996.5,
+      191.6
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.6014,
+     "box": [
+      8.7,
+      588.9,
+      1000.0,
+      794.7
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.2984,
+     "box": [
+      0.0,
+      797.9,
+      996.5,
+      994.3
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0735,
+     "box": [
+      5.5,
+      391.1,
+      1000.0,
+      595.8
+     ]
+    },
+    {
+     "letter": "J",
+     "score": 0.0373,
+     "box": [
+      5.5,
+      391.1,
+      1000.0,
+      595.8
+     ]
+    },
+    {
+     "letter": "I",
+     "score": 0.0308,
+     "box": [
+      0.0,
+      797.9,
+      996.5,
+      994.3
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0241,
+     "box": [
+      8.7,
+      588.9,
+      1000.0,
+      794.7
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8314,
+     "box": [
+      5.9,
+      1.9,
+      483.1,
+      179.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.778,
+     "box": [
+      6.8,
+      389.3,
+      1000.0,
+      596.5
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.739,
+     "box": [
+      492.2,
+      0.2,
+      996.0,
+      191.5
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.572,
+     "box": [
+      9.1,
+      588.8,
+      1000.0,
+      794.4
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.4471,
+     "box": [
+      19.9,
+      178.5,
+      1000.0,
+      395.5
+     ]
+    },
+    {
+     "letter": "F",
+     "score": 0.2397,
+     "box": [
+      0.0,
+      797.8,
+      996.5,
+      994.6
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0694,
+     "box": [
+      6.8,
+      389.3,
+      1000.0,
+      596.5
+     ]
+    },
+    {
+     "letter": "J",
+     "score": 0.0399,
+     "box": [
+      6.8,
+      389.3,
+      1000.0,
+      596.5
+     ]
+    },
+    {
+     "letter": "I",
+     "score": 0.0285,
+     "box": [
+      0.0,
+      797.8,
+      996.5,
+      994.6
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0239,
+     "box": [
+      9.1,
+      588.8,
+      1000.0,
+      794.4
+     ]
+    }
+   ],
+   "caption_seconds": 8.54,
+   "detector_seconds": 0.19
+  },
+  "W27": {
+   "captions": {
+    "A": "Radar chart of conciseness, clarity, and empathy scores for the six models.",
+    "B": "Distribution of clarity scores for the six models.",
+    "C": "Bar chart of conciseness scores for the six models.",
+    "D": "Bar chart of clarity scores for the six models.",
+    "E": "Bar chart of empathy scores for the six models."
+   },
+   "reply": "A: Radar chart of conciseness, clarity, and empathy scores for the six models.\nB: Distribution of clarity scores for the six models.\nC: Bar chart of conciseness scores for the six models.\nD: Bar chart of clarity scores for the six models.\nE: Bar chart of empathy scores for the six models.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.8792,
+     "box": [
+      4.8,
+      4.9,
+      491.9,
+      338.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8682,
+     "box": [
+      382.7,
+      323.3,
+      992.2,
+      684.4
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.8081,
+     "box": [
+      3.5,
+      327.6,
+      369.1,
+      687.3
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.4474,
+     "box": [
+      12.7,
+      702.8,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.1642,
+     "box": [
+      471.0,
+      9.9,
+      1000.0,
+      327.7
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0362,
+     "box": [
+      12.7,
+      702.8,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0221,
+     "box": [
+      12.7,
+      702.8,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8798,
+     "box": [
+      4.7,
+      4.7,
+      492.1,
+      338.6
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.8743,
+     "box": [
+      382.1,
+      321.5,
+      992.6,
+      684.3
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.7988,
+     "box": [
+      3.2,
+      327.5,
+      369.6,
+      687.4
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.4687,
+     "box": [
+      11.4,
+      703.2,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.1226,
+     "box": [
+      472.2,
+      0.0,
+      1000.0,
+      335.9
+     ]
+    },
+    {
+     "letter": "G",
+     "score": 0.0351,
+     "box": [
+      11.4,
+      703.2,
+      1000.0,
+      1000.0
+     ]
+    },
+    {
+     "letter": "H",
+     "score": 0.0236,
+     "box": [
+      11.4,
+      703.2,
+      1000.0,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 8.55,
+   "detector_seconds": 0.225
+  },
+  "W28": {
+   "captions": {
+    "A": "The overall quality of the enhanced models is higher than that of the original models.",
+    "B": "The enhanced models have higher response quality and reading quality than the original models.",
+    "C": "The enhanced models have higher scores in all aspects than the original models."
+   },
+   "reply": "A: The overall quality of the enhanced models is higher than that of the original models.\nB: The enhanced models have higher response quality and reading quality than the original models.\nC: The enhanced models have higher scores in all aspects than the original models.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.8906,
+     "box": [
+      5.2,
+      5.0,
+      534.2,
+      431.9
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.8845,
+     "box": [
+      535.1,
+      4.4,
+      999.1,
+      462.5
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.5175,
+     "box": [
+      0.0,
+      455.7,
+      999.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0216,
+     "box": [
+      535.1,
+      4.4,
+      999.1,
+      462.5
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.8895,
+     "box": [
+      4.9,
+      4.8,
+      534.2,
+      432.4
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.8884,
+     "box": [
+      532.9,
+      2.3,
+      999.8,
+      465.8
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.5889,
+     "box": [
+      0.0,
+      455.1,
+      999.6,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 6.65,
+   "detector_seconds": 0.209
+  },
+  "W29": {
+   "captions": {
+    "A": "Heatmap of the average pairwise accuracy of the models on the adult 22–54 age group.",
+    "B": "Heatmap of the average pairwise accuracy of the models on the middle-aged 55–64 age group.",
+    "C": "Heatmap of the average pairwise accuracy of the models on the geriatric ≥65 age group.",
+    "D": "Heatmap of the average pairwise accuracy of the models on the female gender group.",
+    "E": "Heatmap of the average pairwise accuracy of the models on the male gender group."
+   },
+   "reply": "A: Heatmap of the average pairwise accuracy of the models on the adult 22–54 age group.\nB: Heatmap of the average pairwise accuracy of the models on the middle-aged 55–64 age group.\nC: Heatmap of the average pairwise accuracy of the models on the geriatric ≥65 age group.\nD: Heatmap of the average pairwise accuracy of the models on the female gender group.\nE: Heatmap of the average pairwise accuracy of the models on the male gender group.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.6799,
+     "box": [
+      5.0,
+      4.1,
+      1000.0,
+      487.2
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5458,
+     "box": [
+      129.5,
+      464.3,
+      886.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1245,
+     "box": [
+      709.6,
+      449.5,
+      880.6,
+      998.4
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0803,
+     "box": [
+      129.5,
+      464.3,
+      886.6,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0256,
+     "box": [
+      696.3,
+      453.2,
+      876.6,
+      987.2
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "A",
+     "score": 0.7026,
+     "box": [
+      4.8,
+      3.9,
+      1000.0,
+      487.3
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.5349,
+     "box": [
+      129.0,
+      464.0,
+      887.2,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1329,
+     "box": [
+      709.6,
+      449.7,
+      880.2,
+      998.2
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0834,
+     "box": [
+      129.0,
+      464.0,
+      887.2,
+      1000.0
+     ]
+    },
+    {
+     "letter": "E",
+     "score": 0.0259,
+     "box": [
+      709.6,
+      449.7,
+      880.2,
+      998.2
+     ]
+    }
+   ],
+   "caption_seconds": 12.1,
+   "detector_seconds": 0.186
+  },
+  "W30": {
+   "captions": {
+    "A": "Heatmap of the accuracy of the LLMs on the normal class.",
+    "B": "Heatmap of the accuracy of the LLMs on the clinically significant class.",
+    "C": "Heatmap of the accuracy of the LLMs on the life-threatening class.",
+    "D": "Radar chart of the ablation study."
+   },
+   "reply": "A: Heatmap of the accuracy of the LLMs on the normal class.\nB: Heatmap of the accuracy of the LLMs on the clinically significant class.\nC: Heatmap of the accuracy of the LLMs on the life-threatening class.\nD: Radar chart of the ablation study.\n[DET]",
+   "guided": [
+    {
+     "letter": "A",
+     "score": 0.4308,
+     "box": [
+      7.9,
+      14.5,
+      679.2,
+      1000.0
+     ]
+    },
+    {
+     "letter": "B",
+     "score": 0.4304,
+     "box": [
+      746.3,
+      15.9,
+      989.8,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1881,
+     "box": [
+      746.3,
+      15.9,
+      989.8,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0716,
+     "box": [
+      746.3,
+      15.9,
+      989.8,
+      1000.0
+     ]
+    }
+   ],
+   "alone": [
+    {
+     "letter": "B",
+     "score": 0.4563,
+     "box": [
+      746.5,
+      14.0,
+      990.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "A",
+     "score": 0.4449,
+     "box": [
+      4.5,
+      14.8,
+      690.1,
+      1000.0
+     ]
+    },
+    {
+     "letter": "C",
+     "score": 0.1948,
+     "box": [
+      746.5,
+      14.0,
+      990.3,
+      1000.0
+     ]
+    },
+    {
+     "letter": "D",
+     "score": 0.0721,
+     "box": [
+      746.5,
+      14.0,
+      990.3,
+      1000.0
+     ]
+    }
+   ],
+   "caption_seconds": 6.98,
+   "detector_seconds": 0.098
+  }
+ }
+}

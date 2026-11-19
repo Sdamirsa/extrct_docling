@@ -1,0 +1,44 @@
+{
+ "id": "W23",
+ "charts": [
+  {
+   "label": "Disease Distribution",
+   "box": [
+    3.0,
+    28.0,
+    253.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Symptom Distribution",
+   "box": [
+    257.0,
+    28.0,
+    500.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Specialty Distribution",
+   "box": [
+    507.0,
+    28.0,
+    749.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Organ System Distribution",
+   "box": [
+    757.0,
+    28.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T34"
+}

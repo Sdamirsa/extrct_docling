@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="948" height="378" viewBox="0 0 948 378" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="948" height="378" fill="#f6f8fa"/>
+<text x="12" y="22" font-size="13" font-weight="600" fill="#0e1217">Truth</text>
+<text x="12" y="40" font-size="12" fill="#0e1217">1 chart</text>
+<rect x="12" y="52" width="210" height="296.1" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="13.5" y="53.5" width="207.0" height="293.1" fill="#0e1217" fill-opacity="0.08" stroke="#0e1217" stroke-width="1.5"/>
+<text x="117.0" y="204.1" font-size="12" text-anchor="middle" fill="#0e1217">1</text>
+<text x="250" y="22" font-size="13" font-weight="600" fill="#0e1217">Rule splitter, today</text>
+<text x="250" y="40" font-size="12" fill="#c22f2f">2 boxes: wrong number</text>
+<rect x="250" y="52" width="210" height="296.1" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="255.0" y="53.7" width="202.0" height="195.8" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="356.0" y="155.6" font-size="12" text-anchor="middle" fill="#c22f2f">1</text>
+<rect x="255.0" y="252.5" width="202.0" height="93.5" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="356.0" y="303.3" font-size="12" text-anchor="middle" fill="#c22f2f">2</text>
+<text x="488" y="22" font-size="13" font-weight="600" fill="#0e1217">Recommended, local</text>
+<text x="488" y="40" font-size="12" fill="#0a7d0a">1 box: cut right</text>
+<rect x="488" y="52" width="210" height="296.1" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="489.5" y="53.5" width="207.0" height="293.1" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="593.0" y="204.1" font-size="12" text-anchor="middle" fill="#0a7d0a">1</text>
+<text x="726" y="22" font-size="13" font-weight="600" fill="#0e1217">Recommended, cloud</text>
+<text x="726" y="40" font-size="12" fill="#0a7d0a">1 box: cut right</text>
+<rect x="726" y="52" width="210" height="296.1" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="727.5" y="53.5" width="207.0" height="293.1" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="831.0" y="204.1" font-size="12" text-anchor="middle" fill="#0a7d0a">1</text>
+<text x="12" y="368" font-size="11" fill="#57606a">Each diagram is the outline of the figure image with the boxes of one cut.</text>
+</svg>

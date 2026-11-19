@@ -1,0 +1,17 @@
+{
+ "id": "W22",
+ "charts": [
+  {
+   "label": "1",
+   "box": [
+    565.0,
+    580.0,
+    885.0,
+    765.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The figure is two chat screenshots; the only chart is the SHAP bar plot shown inside the right screenshot.",
+ "drawn_as": "T01"
+}

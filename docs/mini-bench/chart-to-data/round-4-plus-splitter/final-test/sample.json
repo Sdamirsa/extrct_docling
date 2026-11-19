@@ -1,0 +1,182 @@
+{
+ "rule": "cut wrong by the rule splitter, or by the rules' cutter started from the chart list of Gemma, Sonnet or Gemini (first part, no caption)",
+ "tricky": [
+  "B3",
+  "B5",
+  "C4",
+  "S03",
+  "S05",
+  "S06",
+  "S08",
+  "S11",
+  "S12",
+  "S13",
+  "S14",
+  "W02",
+  "W03",
+  "W04",
+  "W05",
+  "W06",
+  "W07",
+  "W09",
+  "W10",
+  "W11",
+  "W12",
+  "W15",
+  "W16",
+  "W19",
+  "W20",
+  "W21",
+  "W23",
+  "W24",
+  "W25",
+  "W26",
+  "W27",
+  "W28",
+  "W29",
+  "W30"
+ ],
+ "cut_wrong_by": {
+  "B3": [
+   "gemma4-26b-qat-cut"
+  ],
+  "B5": [
+   "gemma4-26b-qat-cut"
+  ],
+  "C4": [
+   "rules"
+  ],
+  "S03": [
+   "rules"
+  ],
+  "S05": [
+   "gemma4-26b-qat-cut"
+  ],
+  "S06": [
+   "rules"
+  ],
+  "S08": [
+   "rules"
+  ],
+  "S11": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "S12": [
+   "rules"
+  ],
+  "S13": [
+   "gemma4-26b-qat-cut"
+  ],
+  "S14": [
+   "rules"
+  ],
+  "W02": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W03": [
+   "gemma4-26b-qat-cut"
+  ],
+  "W04": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W05": [
+   "rules",
+   "gemma4-26b-qat-cut",
+   "sonnet-5-5-cut",
+   "gemini-3-8-flash-cut"
+  ],
+  "W06": [
+   "rules",
+   "gemma4-26b-qat-cut",
+   "sonnet-5-5-cut"
+  ],
+  "W07": [
+   "rules",
+   "gemini-3-8-flash-cut"
+  ],
+  "W09": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W10": [
+   "rules",
+   "gemma4-26b-qat-cut",
+   "sonnet-5-5-cut",
+   "gemini-3-8-flash-cut"
+  ],
+  "W11": [
+   "rules"
+  ],
+  "W12": [
+   "rules"
+  ],
+  "W15": [
+   "gemma4-26b-qat-cut"
+  ],
+  "W16": [
+   "rules",
+   "gemma4-26b-qat-cut",
+   "sonnet-5-5-cut",
+   "gemini-3-8-flash-cut"
+  ],
+  "W19": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W20": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W21": [
+   "rules"
+  ],
+  "W23": [
+   "rules"
+  ],
+  "W24": [
+   "gemma4-26b-qat-cut"
+  ],
+  "W25": [
+   "rules"
+  ],
+  "W26": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ],
+  "W27": [
+   "rules"
+  ],
+  "W28": [
+   "rules"
+  ],
+  "W29": [
+   "rules"
+  ],
+  "W30": [
+   "rules",
+   "gemma4-26b-qat-cut"
+  ]
+ },
+ "easy": [
+  "A3",
+  "B1",
+  "B2",
+  "B4",
+  "C1",
+  "C3",
+  "C5",
+  "S02",
+  "S04",
+  "S10",
+  "W01",
+  "W08",
+  "W13",
+  "W14",
+  "W17",
+  "W18",
+  "W22"
+ ]
+}

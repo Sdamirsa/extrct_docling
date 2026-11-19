@@ -1,0 +1,35 @@
+{
+ "id": "S10",
+ "charts": [
+  {
+   "label": "All 2022 ACG questions (N = 300)",
+   "box": [
+    6.0,
+    2.0,
+    999.0,
+    328.0
+   ]
+  },
+  {
+   "label": "Question type: text-based (N = 162)",
+   "box": [
+    6.0,
+    338.0,
+    999.0,
+    664.0
+   ]
+  },
+  {
+   "label": "Question type: image-inclusive (N = 138)",
+   "box": [
+    6.0,
+    671.0,
+    999.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T43"
+}

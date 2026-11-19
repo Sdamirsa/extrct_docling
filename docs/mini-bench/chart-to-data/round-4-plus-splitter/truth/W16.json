@@ -1,0 +1,170 @@
+{
+ "id": "W16",
+ "charts": [
+  {
+   "label": "Top-3 Explanation Performance on MIMIC (Llama-3.3-70B)",
+   "box": [
+    2.0,
+    7.0,
+    329.0,
+    190.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on MIMIC (Qwen-2.5-32B)",
+   "box": [
+    333.0,
+    7.0,
+    661.0,
+    190.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on MIMIC (MedGemma-27B)",
+   "box": [
+    663.0,
+    7.0,
+    1000.0,
+    190.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on NEJM (Llama-3.3-70B)",
+   "box": [
+    2.0,
+    194.0,
+    329.0,
+    377.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on NEJM (Qwen-2.5-32B)",
+   "box": [
+    333.0,
+    194.0,
+    661.0,
+    377.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on NEJM (MedGemma-27B)",
+   "box": [
+    663.0,
+    194.0,
+    1000.0,
+    377.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on UMN (Llama-3.3-70B)",
+   "box": [
+    2.0,
+    381.0,
+    329.0,
+    563.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on UMN (Qwen-2.5-32B)",
+   "box": [
+    333.0,
+    381.0,
+    661.0,
+    563.0
+   ]
+  },
+  {
+   "label": "Top-3 Explanation Performance on UMN (MedGemma-27B)",
+   "box": [
+    663.0,
+    381.0,
+    1000.0,
+    563.0
+   ]
+  },
+  {
+   "label": "Explanation score on MIMIC (Llama-3.3-70B)",
+   "box": [
+    28.0,
+    578.0,
+    296.0,
+    800.0
+   ]
+  },
+  {
+   "label": "Explanation score on MIMIC (Qwen-2.5-32B)",
+   "box": [
+    357.0,
+    578.0,
+    626.0,
+    800.0
+   ]
+  },
+  {
+   "label": "Explanation score on MIMIC (MedGemma-27B)",
+   "box": [
+    686.0,
+    578.0,
+    961.0,
+    800.0
+   ]
+  },
+  {
+   "label": "MIMIC Llama-3.3-70B",
+   "box": [
+    103.0,
+    848.0,
+    233.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "MIMIC Qwen-2.5-32B",
+   "box": [
+    237.0,
+    848.0,
+    353.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "MIMIC MedGemma-27B",
+   "box": [
+    356.0,
+    848.0,
+    470.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "UMN Llama-3.3-70B",
+   "box": [
+    538.0,
+    848.0,
+    669.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "UMN Qwen-2.5-32B",
+   "box": [
+    672.0,
+    848.0,
+    788.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "UMN MedGemma-27B",
+   "box": [
+    791.0,
+    848.0,
+    907.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Panel letters a, b, c each stand over several charts and are left out, as are the shared Score 1-5 legend and the two dataset headings of panel c. In panel c the y-axis title is printed only beside the first chart of each dataset group and is boxed with that chart.",
+ "drawn_as": "T42"
+}

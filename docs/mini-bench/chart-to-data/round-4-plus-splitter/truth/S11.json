@@ -1,0 +1,107 @@
+{
+ "id": "S11",
+ "charts": [
+  {
+   "label": "Question type: COLON (N = 49)",
+   "box": [
+    3.0,
+    4.0,
+    500.0,
+    170.0
+   ]
+  },
+  {
+   "label": "Question type: ENDOSCOPY (N = 26)",
+   "box": [
+    504.0,
+    4.0,
+    1000.0,
+    170.0
+   ]
+  },
+  {
+   "label": "Question type: ESOPHAGUS (N = 36)",
+   "box": [
+    3.0,
+    171.0,
+    500.0,
+    337.0
+   ]
+  },
+  {
+   "label": "Question type: IBD (N = 30)",
+   "box": [
+    504.0,
+    171.0,
+    1000.0,
+    337.0
+   ]
+  },
+  {
+   "label": "Question type: IBS (N = 14)",
+   "box": [
+    3.0,
+    338.0,
+    500.0,
+    504.0
+   ]
+  },
+  {
+   "label": "Question type: LIVER (N = 52)",
+   "box": [
+    504.0,
+    338.0,
+    1000.0,
+    504.0
+   ]
+  },
+  {
+   "label": "Question type: MISCELLANEOUS (N = 19)",
+   "box": [
+    3.0,
+    505.0,
+    500.0,
+    671.0
+   ]
+  },
+  {
+   "label": "Question type: NUTRITION (N = 3)",
+   "box": [
+    504.0,
+    505.0,
+    1000.0,
+    671.0
+   ]
+  },
+  {
+   "label": "Question type: PANCREATICO-BILIARY (N = 31)",
+   "box": [
+    3.0,
+    672.0,
+    500.0,
+    838.0
+   ]
+  },
+  {
+   "label": "Question type: SMALL BOWEL (N = 22)",
+   "box": [
+    504.0,
+    672.0,
+    1000.0,
+    838.0
+   ]
+  },
+  {
+   "label": "Question type: STOMACH (N = 17)",
+   "box": [
+    3.0,
+    839.0,
+    500.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T38"
+}

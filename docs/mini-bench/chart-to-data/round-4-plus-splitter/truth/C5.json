@@ -1,0 +1,35 @@
+{
+ "id": "C5",
+ "charts": [
+  {
+   "label": "Did the AI help your assessment?",
+   "box": [
+    0.0,
+    22.0,
+    307.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Did the AI make you more confident?",
+   "box": [
+    327.0,
+    22.0,
+    651.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Did the AI save you time?",
+   "box": [
+    682.0,
+    22.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Three pies, each with its own title and its own legend (legends of the first two read the same but each stands beside its pie). The first title and the bottoms of the pies are cut by the image edge itself.",
+ "drawn_as": "T31"
+}

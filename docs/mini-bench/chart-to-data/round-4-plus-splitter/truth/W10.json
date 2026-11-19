@@ -1,0 +1,134 @@
+{
+ "id": "W10",
+ "charts": [
+  {
+   "label": "c",
+   "box": [
+    641.0,
+    2.0,
+    972.0,
+    263.0
+   ]
+  },
+  {
+   "label": "d",
+   "box": [
+    641.0,
+    264.0,
+    976.0,
+    524.0
+   ]
+  },
+  {
+   "label": "e Short-term Mortality of AE CHF - Specificity",
+   "box": [
+    112.0,
+    564.0,
+    327.0,
+    660.0
+   ]
+  },
+  {
+   "label": "e Short-term Mortality of AE CHF - Urgency",
+   "box": [
+    335.0,
+    564.0,
+    549.0,
+    660.0
+   ]
+  },
+  {
+   "label": "e Short-term Mortality of AE CHF - Severity",
+   "box": [
+    556.0,
+    564.0,
+    771.0,
+    660.0
+   ]
+  },
+  {
+   "label": "e Short-term Mortality of AE CHF - Absence",
+   "box": [
+    778.0,
+    564.0,
+    993.0,
+    660.0
+   ]
+  },
+  {
+   "label": "e 4-year Mortality Score - Specificity",
+   "box": [
+    112.0,
+    667.0,
+    327.0,
+    766.0
+   ]
+  },
+  {
+   "label": "e 4-year Mortality Score - Urgency",
+   "box": [
+    335.0,
+    667.0,
+    549.0,
+    766.0
+   ]
+  },
+  {
+   "label": "e 4-year Mortality Score - Severity",
+   "box": [
+    556.0,
+    667.0,
+    771.0,
+    766.0
+   ]
+  },
+  {
+   "label": "e 4-year Mortality Score - Absence",
+   "box": [
+    778.0,
+    667.0,
+    993.0,
+    766.0
+   ]
+  },
+  {
+   "label": "f High-risk Varices Calculator",
+   "box": [
+    30.0,
+    789.0,
+    271.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "f Functional Morbidity Index",
+   "box": [
+    277.0,
+    789.0,
+    516.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "f NSTEMI Risk Calculator",
+   "box": [
+    523.0,
+    789.0,
+    762.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "f IFD Risk Score",
+   "box": [
+    768.0,
+    789.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Panels a and b are workflow diagrams (the pink bars in b are schematic), not charts. In panel e the column heads, the row names and the single word Density stand for several charts and are left out, as are the panel letters e and f.",
+ "drawn_as": "T50"
+}

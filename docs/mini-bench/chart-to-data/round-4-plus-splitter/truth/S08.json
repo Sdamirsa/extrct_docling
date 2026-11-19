@@ -1,0 +1,17 @@
+{
+ "id": "S08",
+ "charts": [
+  {
+   "label": "GPT-3.5 Extracted Option from LLM Textual Response",
+   "box": [
+    2.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T22"
+}

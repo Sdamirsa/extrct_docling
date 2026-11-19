@@ -1,0 +1,62 @@
+{
+ "id": "W21",
+ "charts": [
+  {
+   "label": "Accuracy Reward",
+   "box": [
+    0.0,
+    6.0,
+    501.0,
+    326.0
+   ]
+  },
+  {
+   "label": "Query Semantic Reward: Image",
+   "box": [
+    502.0,
+    6.0,
+    1000.0,
+    326.0
+   ]
+  },
+  {
+   "label": "Format Reward",
+   "box": [
+    0.0,
+    343.0,
+    501.0,
+    661.0
+   ]
+  },
+  {
+   "label": "Query Semantic Reward: Text",
+   "box": [
+    502.0,
+    343.0,
+    1000.0,
+    666.0
+   ]
+  },
+  {
+   "label": "Confidence Gain Reward",
+   "box": [
+    0.0,
+    677.0,
+    501.0,
+    996.0
+   ]
+  },
+  {
+   "label": "Response Length",
+   "box": [
+    502.0,
+    677.0,
+    1000.0,
+    996.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T12"
+}

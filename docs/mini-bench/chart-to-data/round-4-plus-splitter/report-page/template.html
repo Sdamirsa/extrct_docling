@@ -1,0 +1,617 @@
+<title>Chart Splitter Check</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a sticky bar switches two views. Summary reads top-down: the answer, one
+   grid of every splitter on every figure (a cell opens the figure), found against
+   whole, the judges, the model's count as arbiter and the one rule, FigEx2 as a
+   splitter and as a reader, the safety review, what it says for the step, limits.
+   Figures is a workbench: the figure with the truth and one splitter's boxes drawn
+   on it at the left, the verdict and every splitter on that figure at the right.
+   Tokens are those of rounds 3 and 4. */
+
+:root {
+  --page: #f3f5f8; --surface: #ffffff; --surface-2: #e9edf2; --line: #d8dee6;
+  --ink: #0e1217; --ink-2: #454e5b; --muted: #77808d;
+  --accent: #2a78d6; --series-1: #2a78d6; --series-1-soft: #9ec5f4; --series-2: #eb6834;
+  --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  /* drawn on a figure, which is white in both themes */
+  --fig-truth: #0e1217; --fig-whole: #1f6fd0; --fig-clipped: #b26a00; --fig-off: #d03b3b;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+    --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+    --accent: #5a9bea; --series-1: #3987e5; --series-1-soft: #184f95; --series-2: #d95926;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+  --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+  --accent: #5a9bea; --series-1: #3987e5; --series-1-soft: #184f95; --series-2: #d95926;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 18px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.bar .sub { color: var(--muted); font-size: 12px; }
+.tabs { display: flex; gap: 4px; margin-left: auto; background: var(--surface-2); padding: 3px; border-radius: 999px; }
+.tabs button { border: 0; background: transparent; padding: 6px 16px; border-radius: 999px; cursor: pointer; font-weight: 500; color: var(--ink-2); }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+
+main { padding-block: 24px 56px; display: flex; flex-direction: column; gap: 32px; }
+section { display: flex; flex-direction: column; gap: 12px; }
+.lede { font-size: 16px; max-width: 70ch; }
+.note { max-width: 78ch; color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.scroll { overflow-x: auto; }
+.pad { padding: 14px 16px; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.tile { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile .big { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.1; }
+.tile .big small { font-size: 15px; font-weight: 600; color: var(--muted); }
+.tile .lab { color: var(--ink-2); font-size: 13px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { font-weight: 600; color: var(--ink-2); font-size: 12px; vertical-align: bottom; }
+tbody tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; }
+tr.pick td { background: color-mix(in srgb, var(--accent) 10%, transparent); font-weight: 600; }
+tr.sep td { border-top: 2px solid var(--line); }
+.model { display: flex; flex-direction: column; line-height: 1.25; }
+.model .build { color: var(--muted); font-size: 11px; }
+.up { color: var(--good); font-weight: 600; } .down { color: var(--crit); font-weight: 600; }
+
+/* the grid: splitters by figures */
+.mx { border-collapse: separate; border-spacing: 2px; width: auto; }
+.mx th, .mx td { padding: 0; border: 0; text-align: center; }
+.mx th.g { font-size: 12px; font-weight: 600; color: var(--ink-2); text-align: left; padding: 0 0 2px 2px; white-space: nowrap; }
+.mx th.fig { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--muted); min-width: 17px; }
+.mx th.lab { text-align: left; font-size: 11px; font-weight: 500; color: var(--muted); padding-right: 12px; white-space: nowrap; }
+.mx td.name { text-align: left; padding-right: 14px; white-space: nowrap; }
+.mx td.tot { text-align: right; padding-right: 12px; white-space: nowrap; font-weight: 700; font-size: 14px; }
+.mx td.tot small { font-weight: 400; color: var(--muted); font-size: 12px; }
+.mx tr.sec td { text-align: left; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 10px; }
+.mx .gs { padding-left: 10px; }
+.c { width: 17px; height: 22px; border-radius: 4px; border: 0; padding: 0; cursor: pointer; font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: block; line-height: 22px; }
+.c:hover { filter: brightness(1.15); }
+.v-right { background: var(--good); color: #fff; }
+.v-near { background: var(--warn); color: #0b0b0b; }
+.v-wrong { background: var(--crit); color: #fff; }
+.v-none { background: var(--surface-2); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
+i.c.v-none { cursor: default; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12px; color: var(--ink-2); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .c { cursor: default; display: inline-block; text-align: center; }
+.swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.swatch.hatch, .seg.hatch { background: repeating-linear-gradient(135deg, var(--series-2) 0 4px, color-mix(in srgb, var(--series-2) 30%, transparent) 4px 7px); }
+
+/* bars */
+.bars { padding: 16px 18px; display: flex; flex-direction: column; gap: 9px; }
+.bars h3 { font-family: var(--font-body); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-top: 6px; }
+.bars h3:first-child { margin-top: 0; }
+.brow { display: grid; grid-template-columns: 230px 1fr 170px; gap: 12px; align-items: center; }
+.track { position: relative; height: 14px; background: var(--surface-2); border-radius: 4px; }
+.track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; }
+.track i.found { background: var(--series-1-soft); }
+.track i.whole { background: var(--series-1); }
+.track.split { display: flex; gap: 2px; background: transparent; }
+.track.split .rest { flex: 1; background: var(--surface-2); border-radius: 0 4px 4px 0; }
+.seg { height: 100%; background: var(--series-1); }
+.seg.soft { background: var(--series-1-soft); }
+.seg:last-of-type { border-radius: 0 4px 4px 0; }
+.brow .val { color: var(--ink-2); font-size: 13px; white-space: nowrap; }
+.brow .val b { color: var(--ink); }
+.axis { display: grid; grid-template-columns: 230px 1fr 170px; gap: 12px; color: var(--muted); font-size: 11px; }
+.axis div { display: flex; justify-content: space-between; }
+@media (max-width: 720px) { .brow, .axis { grid-template-columns: 1fr; gap: 3px; } .axis > span { display: none; } }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.cols .panel { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.cols p, .cols li { color: var(--ink-2); }
+.cols strong, .note strong { color: var(--ink); }
+ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.flag { padding: 10px 14px; border-left: 3px solid var(--serious); color: var(--ink-2); max-width: 90ch; }
+details { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+summary { cursor: pointer; padding: 8px 12px; font-weight: 500; }
+details pre { margin: 0; padding: 10px 12px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 11.5px; line-height: 1.5; color: var(--ink-2); white-space: pre-wrap; overflow: auto; max-height: 320px; }
+.answers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 8px; }
+
+/* figures view */
+.chipgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.chipgroup .lab { font-size: 12px; color: var(--muted); min-width: 104px; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 3px 9px; border-radius: 999px; cursor: pointer; font-size: 12px; display: inline-flex; gap: 5px; align-items: center; }
+.chip .mono { font-size: 11px; }
+.chip i { width: 7px; height: 7px; border-radius: 50%; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.bench { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 16px; align-items: start; }
+@media (max-width: 980px) { .bench { grid-template-columns: minmax(0, 1fr); } }
+.stack { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.figcard { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.fighead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.fighead .grow { margin-left: auto; display: flex; gap: 6px; }
+.toggles { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--ink-2); }
+.toggles label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.stagewrap { display: flex; justify-content: center; background: var(--surface-2); border-radius: 6px; padding: 10px; }
+.stage { position: relative; line-height: 0; max-width: 100%; }
+.stage img { max-width: 100%; max-height: 78vh; height: auto; background: #fff; display: block; }
+.bx { position: absolute; pointer-events: none; }
+.bx b { position: absolute; font-family: var(--font-mono); font-size: 10px; line-height: 1; padding: 2px 4px; color: #fff; font-weight: 500; white-space: nowrap; }
+.bx.t { border: 2px dashed var(--fig-truth); }
+.bx.t b { left: -2px; top: -2px; background: var(--fig-truth); }
+.bx.t.missed b { background: var(--fig-off); }
+.bx.s b { right: -2px; top: -2px; }
+.bx.s.whole { border: 2px solid var(--fig-whole); background: color-mix(in srgb, var(--fig-whole) 9%, transparent); }
+.bx.s.whole b { background: var(--fig-whole); }
+.bx.s.clipped { border: 2px solid var(--fig-clipped); background: color-mix(in srgb, var(--fig-clipped) 10%, transparent); }
+.bx.s.clipped b { background: var(--fig-clipped); }
+.bx.s.off { border: 2px dotted var(--fig-off); background: color-mix(in srgb, var(--fig-off) 8%, transparent); }
+.bx.s.off b { background: var(--fig-off); }
+.key { display: inline-block; width: 22px; height: 12px; vertical-align: -2px; }
+.key.t { border: 2px dashed var(--ink); }
+.key.whole { border: 2px solid var(--fig-whole); }
+.key.clipped { border: 2px solid var(--fig-clipped); }
+.key.off { border: 2px dotted var(--fig-off); }
+.tkey { font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 1px 4px; color: #fff; background: var(--fig-off); }
+.card { padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.pill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; font-size: 13px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.said { color: var(--ink-2); font-size: 13px; }
+.more { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 12px; }
+#allsplit td, #allsplit th { padding: 5px 8px; }
+#allsplit tbody tr { cursor: pointer; }
+#allsplit tbody tr:hover td { background: var(--surface-2); }
+#allsplit .c { cursor: pointer; }
+ol.truth { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; font-size: 13px; color: var(--ink-2); max-height: 260px; overflow: auto; }
+ol.truth .mono { color: var(--ink); margin-right: 6px; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--page); padding: 6px 9px; border-radius: 6px; font-size: 12px; max-width: 300px; line-height: 1.35; }
+@media (prefers-reduced-motion: no-preference) { .tabs button, .chip, .c { transition: background-color .12s, color .12s; } }
+</style>
+
+<div class="bar"><div class="wrap">
+  <div><h1>Chart Splitter Check</h1><div class="sub">Chart-to-data mini bench · round 4 plus · 19 November 2026 · 51 figures, 236 charts</div></div>
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" id="tab-summary" aria-selected="true" data-view="summary">Summary</button>
+    <button role="tab" id="tab-figures" aria-selected="false" data-view="figures">Figures</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+<main id="view-summary">
+  <section>
+    <p class="lede">Before any method reads a figure, the prepare phase cuts it into its charts. Round 4 found that cut wrong on 6 of the 11 chart figures of one paper. This check measures the cut alone, for twelve ways of making it, and asks what should decide it. A final test then put the design that came out of it against two additions: the figure's caption, and a model ruling between two cuts.</p>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section id="finalsection" hidden>
+    <h2>The final test, and what it decides</h2>
+    <p class="note">/*__FINAL_NOTE__*/</p>
+    <div class="cols" id="finaldecision">/*__FINAL_DECISION__*/</div>
+    <p class="note">Figures cut right. The recommended cuts and the cuts of the tested design are the last six rows of the grid below, and can be opened there.</p>
+    <div id="finaltables" style="display:flex;flex-direction:column;gap:12px"></div>
+    <h3>What the caption does to the chart list</h3>
+    <div class="panel scroll"><table id="finallist"></table></div>
+    <h3>The ruling call</h3>
+    <p class="note">Asked only where the two cuts differ. The model sees both drawn on the figure and answers with a number of charts and a boolean.</p>
+    <div class="panel scroll"><table id="finalruling"></table></div>
+  </section>
+
+  <section>
+    <h2>Every splitter on every figure</h2>
+    <p class="note">A column is one figure, with the number of charts it holds on top. A figure is cut right when the splitter returns that many charts and every box sits on its chart, overlapping it by half or more. Open a cell to see the boxes on the figure.</p>
+    <div class="legend">
+      <span><i class="c v-right"></i>cut right</span>
+      <span><i class="c v-near">≈</i>right number of charts, a box off its chart</span>
+      <span><i class="c v-wrong">6</i>wrong number: the charts it returned</span>
+    </div>
+    <div class="panel scroll" style="padding:12px 14px"><table class="mx" id="grid"></table></div>
+    <p class="note muted" id="gridnote"></p>
+  </section>
+
+  <section>
+    <h2>A box on the right chart is not yet a crop</h2>
+    <p class="note">A chart is found when a box overlaps it by half. It is whole when that box also holds nine tenths of the chart, tick labels and titles included: only then can a reader work from the crop. A model's own boxes clip. The same boxes, used as seeds of the rule splitter's cutter, come out whole.</p>
+    <div class="legend"><span><i class="swatch" style="background:var(--series-1-soft)"></i>charts found</span><span><i class="swatch" style="background:var(--series-1)"></i>of them, whole in their box</span></div>
+    <div class="panel bars" id="whole"></div>
+  </section>
+
+  <section>
+    <h2>A second splitter as judge</h2>
+    <p class="note">Read as: a splitter's cut is kept when the judge finds the same number of charts, and the judge's cut is taken when it does not. No truth is used in that choice. Figures cut right, of 51.</p>
+    <div class="panel scroll"><table id="judges"></table></div>
+    <div class="cols">
+      <div class="panel"><h3>Overruling costs the good splitters</h3><p>It helps the two weak ones with FigEx2 as judge. It takes a quarter to a half of the figures from the cloud models, because the judge is then the weaker splitter of the two.</p></div>
+      <div class="panel"><h3>Agreement is the signal</h3><p>Where the rules and FigEx2 find the same number of charts, the rules' cut is right on all 20 figures. Whenever a cloud model and a judge agree, the cloud model's cut is right.</p></div>
+      <div class="panel"><h3>So a detector's place is to flag doubt</h3><p>"These two disagree, do not trust this cut" is something nothing in the step says today.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The model counts, the rules cut</h2>
+    <p class="note">A model's best answer is how many charts there are. Its weakest is where their edges are. The first table is the arbiter as it was measured: the model's count takes the rules' cut when it has that many charts, else Heron's, else the model's own boxes.</p>
+    <div class="panel scroll"><table id="arbiter"></table></div>
+    <p class="flag"><strong>Scored afterwards, on the same 51 figures.</strong> The second table is one rule for every reading method, written after the tables above were read: the rules' cut when it has the model's count, else the model's boxes as seeds of the rules' cutter. It needs no detector. It is a reading of these results, not a test of them.</p>
+    <div class="panel scroll"><table id="onerule"></table></div>
+    <p class="note">Where the rule splitter and the model find a different number of charts, which of the two has the number right:</p>
+    <div class="panel scroll"><table id="disagree"></table></div>
+  </section>
+
+  <section>
+    <h2>FigEx2</h2>
+    <div class="cols">
+      <div class="panel"><h3>What it is</h3><p>Two models that work as one (Song et al., EMNLP 2026). A captioning model, Qwen3-VL-8B with the authors' adapters, lists the panels of a figure by their printed letters. A detector with 26 classes, the letters A to Z, draws at most one box per letter. Trained on biomedical figures.</p></div>
+      <div class="panel"><h3>As a splitter</h3><p id="figex2split"></p></div>
+      <div class="panel"><h3>What it would cost to use</h3><p>A 17.5 GB base model beside its own 2.6 GB, 8 seconds per figure, a second Python environment, and no licence stated in either repository. Most chart grids have no printed letters for its detector to go by.</p></div>
+    </div>
+    <h3>Its captioning model as a value reader, beside the four of round 4</h3>
+    <p class="note">Asked once per figure, in plain words, for a table of values, on the six main figures of the showcase paper. Values right within 5 % of the axis under the right printed name, of 573. Its 285 overstates it: 140 are zeros and complements it wrote for bar segments it did not read, which the 5 % tolerance accepts.</p>
+    <div class="legend"><span><i class="swatch" style="background:var(--series-1)"></i>right</span><span><i class="swatch" style="background:var(--series-1-soft)"></i>FigEx2: estimated in round numbers</span><span><i class="swatch hatch"></i>FigEx2: filled in, not read</span></div>
+    <div class="panel bars" id="reader"></div>
+    <div class="panel scroll"><table id="readertable"></table></div>
+    <p class="note muted">Not a run of the step: one question per figure, no prepared context, no crops, no checks. Its answers are cut at 2,048 tokens, about 90 rows, so Figures 4 and 5 are read in part.</p>
+    <div class="answers" id="answers"></div>
+  </section>
+
+  <section>
+    <h2>Was FigEx2's code safe to run</h2>
+    <p class="note">Third-party code and weights, run on a machine that holds unpublished papers and API keys. A separate agent reviewed everything, reading only. Its verdict: <strong>safe with caveats, nothing malicious found.</strong> The review came after the first runs.</p>
+    <div class="cols">
+      <div class="panel"><h3>Code</h3><p>The authors' two main files were read in full, and every changed part of their detector file against the library's own. No network call, no shell, no reading of the environment or of files outside the folders it is given.</p></div>
+      <div class="panel"><h3>Model files</h3><p>All seven weight files are plain <span class="mono">safetensors</span> tables, a format that cannot carry code. No pickle file, no Python file. All 30 files hash to what the hub recorded.</p></div>
+      <div class="panel"><h3>Caveats, and what was done</h3><p>The authors' loaders pass <span class="mono">trust_remote_code=True</span>, and one fallback could have asked the hub for a third repository. Our two wrapper scripts now take local folders only, give the fallback the same local folder, and switch the hub libraries to offline mode.</p></div>
+      <div class="panel"><h3>Not covered</h3><p>The libraries themselves, the two repositories after the versions below, and any watching of the process while it runs. It runs as the user, without a sandbox. A new download needs a new review.</p></div>
+    </div>
+    <div class="panel scroll"><table>
+      <thead><tr><th>Reviewed</th><th>Version</th></tr></thead>
+      <tbody>
+        <tr><td>The authors' code</td><td class="mono">d95df2078060702486285af80fb30c79d2842bd8</td></tr>
+        <tr><td>FigEx2-8B on Hugging Face</td><td class="mono">65a135a0aa69164591c2ee4cbba886672fcc71b2</td></tr>
+        <tr><td>Qwen3-VL-8B-Instruct</td><td class="mono">0c351dd01ed87e9c1b53cbc748cba10e6187ff3b</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>What this says for the step</h2>
+    <div class="cols">
+      <div class="panel"><h3>The reading model lists the charts</h3><p>One overview call, with the prompt the local engine already has. Sonnet has the number of charts right on all 51 figures, Gemini on 50, Gemma on 42. The rules have it right on 26.</p></div>
+      <div class="panel"><h3>The rules draw the edges</h3><p>The splitter's own cutter, given one seed per chart, cuts along the widest ink-free band and trims each cell to its ink. That turns 134 whole charts into 220 for Gemini's boxes.</p></div>
+      <div class="panel"><h3>Agreement says how far to trust it</h3><p>Where Gemma and the rules find the same number of charts, the rules' cut is right on all 22 figures. Where they differ, the record should say so.</p></div>
+      <div class="panel"><h3>Left out</h3><p>FigEx2, for its size, its licence and its letters. Heron as a splitter: 10 of 11 on the showcase paper, 5 of 10 on the bench, 9 of 30 elsewhere. Neither adds a figure once a model's count is used.</p></div>
+    </div>
+    <p class="note muted">None of this is built. The check changed no engine code.</p>
+  </section>
+
+  <section>
+    <h2>Limits</h2>
+    <div class="cols">
+      <div class="panel"><h3>The truth is drawn by a model</h3><p id="truthlimit"></p></div>
+      <div class="panel"><h3>One run per model</h3><p>Round 3 saw the same model return different counts for one figure in two runs. A difference of one or two figures between two rows is within that.</p></div>
+      <div class="panel"><h3>Medical-AI papers only</h3><p>51 figures of 14 papers. The showcase paper's grey plot backgrounds are what makes Heron see its panels as pictures.</p></div>
+      <div class="panel"><h3>Gemini ran at low effort</h3><p>At high effort it took 232 seconds and 9.8 cents for one single-chart figure. That run was stopped after six figures. Sonnet ran at high and barely thinks on this call.</p></div>
+      <div class="panel"><h3>FigEx2 off its ground</h3><p>It was trained on lettered biomedical panels. The image size of 1,024 px and the score cut of 0.5 are our choices.</p></div>
+      <div class="panel"><h3>Spend</h3><p>0.87 USD on OpenRouter: Sonnet 0.53, Gemini at low effort 0.16, the stopped Gemini run 0.18. Five agents: four for the truth, one for the safety review.</p></div>
+    </div>
+  </section>
+</main>
+
+<main id="view-figures" hidden>
+  <section>
+    <p class="flag">The figure images are the papers' own artwork, shown here for private review. Keep this page unshared.</p>
+    <div id="figchips" style="display:flex;flex-direction:column;gap:6px"></div>
+    <div class="chipgroup" id="splitchips" role="group" aria-label="Splitter"></div>
+  </section>
+  <div class="bench">
+    <div class="stack">
+      <div class="panel figcard" id="figcard"></div>
+    </div>
+    <div class="stack">
+      <div class="panel card" id="verdict"></div>
+      <div class="panel card"><h3>Every splitter on this figure</h3><div class="scroll"><table id="allsplit"></table></div></div>
+      <div class="panel card" id="truthcard"></div>
+    </div>
+  </div>
+</main>
+</div>
+<div id="tip" hidden></div>
+<script id="bench-data" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('bench-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const GROUPS = [['bench', 'Bench'], ['showcase', 'Showcase paper'], ['other', 'Other papers']];
+  const N = D.figures.length;
+  const byId = Object.fromEntries(D.figures.map((f) => [f.id, f]));
+  const byKey = Object.fromEntries(D.splitters.map((s) => [s.key, s]));
+  // figures in the order of the grid: by group, fewest charts first
+  const ORDER = GROUPS.flatMap(([g]) => D.figures.filter((f) => f.group === g)
+    .sort((a, b) => a.truth.length - b.truth.length || a.id.localeCompare(b.id)));
+  const state = { figure: 'S06', splitter: 'gemini-3-8-flash-cut', truth: true, boxes: true };
+
+  const verdict = (p) => p.right ? ['v-right', '', 'Cut right']
+    : p.count_right ? ['v-near', '≈', 'Right number of charts, a box off its chart']
+    : ['v-wrong', String(p.returned), 'Wrong number of charts'];
+  const charts = (n) => n + (n === 1 ? ' chart' : ' charts');
+  const cellTip = (s, f, p) => `${f.id} · ${charts(f.truth.length)} · ${s.name}: returned ${p.returned}, found ${p.found}, whole ${p.held}`;
+
+  function tiles() {
+    const k = byKey, t = (key) => k[key].all;
+    const one = (i) => D.oneRule.models[i].rows.one_rule.all;
+    const rows = [
+      [`${t('rules').right} <small>of ${N}</small>`, 'figures cut right today, by the rule splitter alone. Docling\'s layout detector (Heron) and FigEx2 reach the same number and are left out.'],
+      [`${one(0).right} <small>of ${N}</small>`, 'recommended, fully local: Gemma 4 26B lists the charts in the call the local engine already makes; the rules\' cut is taken when it has that many, else the rules\' cutter starts from Gemma\'s boxes.'],
+      [`${one(1).right} <small>of ${N}</small>`, 'recommended, cloud: the same rule with the reading model\'s list. Sonnet 5.5 and Gemini 3.8 Flash both reach it, for 3 to 5 seconds and 0.3 to 1 cent a figure.'],
+      [`${one(1).held}–${one(2).held} <small>of ${D.charts}</small>`, `charts whole in their crop with the cloud configuration (Sonnet, Gemini). Today: ${t('rules').held}. Local: ${one(0).held}.`],
+    ];
+    return rows.map(([big, lab]) => `<div class="panel tile"><div class="big num">${big}</div><div class="lab">${lab}</div></div>`).join('');
+  }
+
+  function grid() {
+    const counts = GROUPS.map(([g]) => ORDER.filter((f) => f.group === g).length);
+    const starts = new Set(); let at = 0; counts.forEach((n) => { starts.add(at); at += n; });
+    let h = '<thead><tr><th></th><th></th>' + GROUPS.map(([, name], i) => `<th class="g${i ? ' gs' : ''}" colspan="${counts[i]}">${name} <span class="muted" style="font-weight:400">${counts[i]}</span></th>`).join('') + '</tr>';
+    h += '<tr><th class="lab">charts in the figure</th><th class="lab" style="text-align:right">cut right</th>' + ORDER.map((f, i) => `<th class="fig${starts.has(i) && i ? ' gs' : ''}" data-tip="${esc(f.id + ' · ' + f.paper)}">${f.truth.length}</th>`).join('') + '</tr></thead><tbody>';
+    let section = '';
+    for (const s of D.splitters) {
+      if (s.section !== section) { section = s.section; h += `<tr class="sec"><td colspan="${N + 2}">${section}</td></tr>`; }
+      h += `<tr><td class="name"><span class="model"><span>${esc(s.name)}</span><span class="build">${esc(s.call)}</span></span></td><td class="tot num">${s.all.right} <small>of ${s.n}</small></td>`;
+      ORDER.forEach((f, i) => {
+        const p = s.per[f.id], gs = starts.has(i) && i ? ' class="gs"' : '';
+        if (!p) { h += `<td${gs}><i class="c v-none" data-tip="${f.id}: not run with this model"></i></td>`; return; }
+        const [cls, glyph] = verdict(p);
+        h += `<td${gs}><button class="c ${cls}" data-f="${f.id}" data-s="${s.key}" data-tip="${esc(cellTip(s, f, p))}" aria-label="${esc(cellTip(s, f, p))}">${glyph}</button></td>`;
+      });
+      h += '</tr>';
+    }
+    return h + '</tbody>';
+  }
+
+  function whole() {
+    let h = '', section = '';
+    for (const s of D.splitters) {
+      if (s.section !== section) { section = s.section; h += `<h3>${section}</h3>`; }
+      const a = s.all, tip = `${s.name}: ${a.found} of ${s.charts} charts found, ${a.held} whole in their box`;
+      const of = s.charts === D.charts ? '' : ` <span class="muted">of ${s.charts}</span>`;
+      h += `<div class="brow" data-tip="${esc(tip)}"><div>${esc(s.name)}</div><div class="track"><i class="found" style="width:${(100 * a.found / s.charts).toFixed(2)}%"></i><i class="whole" style="width:${(100 * a.held / s.charts).toFixed(2)}%"></i></div><div class="val num">found ${a.found} · whole <b>${a.held}</b>${of}</div></div>`;
+    }
+    return h + `<div class="axis"><span></span><div><span>0</span><span>${D.charts} charts</span></div><span></span></div>`;
+  }
+
+  function judges() {
+    const cell = (row, j) => {
+      if (!row[j]) return '<td class="r muted">n/a</td><td class="r muted">n/a</td>';
+      const d = row[j].right - row.alone;
+      const mark = d > 0 ? `<span class="up">▲ ${d}</span>` : d < 0 ? `<span class="down">▼ ${-d}</span>` : '<span class="muted">same</span>';
+      return `<td class="r num"><b>${row[j].right}</b> &nbsp;${mark}</td><td class="r num">${row[j].agree} <span class="muted">(${row[j].agree_right} right)</span></td>`;
+    };
+    return '<thead><tr><th>Splitter</th><th class="r">Alone</th><th class="r">With Heron as judge</th><th class="r">Same count as Heron</th><th class="r">With FigEx2 as judge</th><th class="r">Same count as FigEx2</th></tr></thead><tbody>'
+      + D.judges.map((r) => `<tr><td>${esc(r.name)}</td><td class="r num"><b>${r.alone}</b></td>${cell(r, 'heron')}${cell(r, 'figex2')}</tr>`).join('') + '</tbody>';
+  }
+
+  function arbiter() {
+    const src = (a, k) => `${a.took[k] || 0} <span class="muted">(${a.right_by_source[k] || 0} right)</span>`;
+    return '<thead><tr><th>Count from</th><th class="r">Count right</th><th class="r">Figures cut right</th><th class="r">Bench</th><th class="r">Showcase</th><th class="r">Other papers</th><th class="r">Rules\' cut taken</th><th class="r">Heron\'s taken</th><th class="r">Own boxes</th></tr></thead><tbody>'
+      + Object.values(D.arbiter).map((a) => `<tr><td>${esc(a.name)}</td><td class="r num">${a.count_right}</td><td class="r num"><b>${a.all.right}</b> of ${N}</td>${GROUPS.map(([g]) => `<td class="r num">${a.groups[g].right} of ${a.groups[g].figures}</td>`).join('')}<td class="r num">${src(a, 'rules')}</td><td class="r num">${src(a, 'heron')}</td><td class="r num">${src(a, 'own')}</td></tr>`).join('') + '</tbody>';
+  }
+
+  function oneRule() {
+    let h = '<thead><tr><th>Chart list from</th><th>Crops from</th><th class="r">Figures cut right</th><th class="r">Bench</th><th class="r">Showcase</th><th class="r">Other papers</th><th class="r">Charts whole</th></tr></thead><tbody>';
+    D.oneRule.models.forEach((m, mi) => {
+      D.oneRule.policies.forEach(([key, label], i) => {
+        const r = m.rows[key];
+        h += `<tr class="${key === 'one_rule' ? 'pick' : ''}${i === 0 && mi ? ' sep' : ''}"><td>${i === 0 ? esc(m.name) : ''}</td><td>${esc(label)}</td><td class="r num"><b>${r.all.right}</b> of ${N}</td>${GROUPS.map(([g]) => `<td class="r num">${r.groups[g]}</td>`).join('')}<td class="r num">${r.all.held} of ${D.charts}</td></tr>`;
+      });
+    });
+    return h + '</tbody>';
+  }
+
+  function disagree() {
+    return '<thead><tr><th>Model</th><th class="r">Same count as the rules</th><th class="r">cut right by the one rule</th><th class="r">Different count</th><th class="r">the model\'s count is right</th><th class="r">the rules\' count is right</th><th class="r">cut right by the one rule</th></tr></thead><tbody>'
+      + D.oneRule.models.map((m) => { const c = m.count; return `<tr><td>${esc(m.name)}</td><td class="r num">${c.agree}</td><td class="r num">${c.agree_cut_right}</td><td class="r num">${c.differ}</td><td class="r num"><b>${c.differ_model_count_right}</b></td><td class="r num"><b>${c.differ_rules_count_right}</b></td><td class="r num">${c.differ_cut_right}</td></tr>`; }).join('') + '</tbody>';
+  }
+
+  const READERS = [['cloud-gemini-3-8-flash', 'cloud, Gemini 3.8 Flash'], ['cloud-sonnet-5-5', 'cloud, Sonnet 5.5'], ['figex2', 'FigEx2 captioning model'], ['agent-sonnet-5-5', 'agent, Sonnet 5.5'], ['ollama-gemma4-26b-qat', 'ollama, Gemma 4 26B']];
+  function reader() {
+    const R = D.reader, total = R.total.truth_values;
+    const parts = R.figures.reduce((a, f) => ({ read: a.read + f.parts.read, estimated: a.estimated + f.parts.estimated, filled: a.filled + f.parts.filled }), { read: 0, estimated: 0, filled: 0 });
+    const w = (n) => `flex:0 0 ${(100 * n / total).toFixed(2)}%`;
+    return READERS.map(([key, name]) => {
+      if (key === 'figex2') {
+        const tip = `FigEx2: ${parts.read} printed numbers read, ${parts.estimated} estimated, ${parts.filled} filled in, of ${total}`;
+        return `<div class="brow" data-tip="${esc(tip)}"><div>${name}</div><div class="track split"><i class="seg" style="position:static;${w(parts.read)};border-radius:0"></i><i class="seg soft" style="position:static;${w(parts.estimated)};border-radius:0"></i><i class="seg hatch" style="position:static;${w(parts.filled)}"></i><i class="rest" style="position:static"></i></div><div class="val num"><b>${R.total.figex2_right}</b> · read ${parts.read}, filled in ${parts.filled}</div></div>`;
+      }
+      const n = R.total.round4_right[key];
+      return `<div class="brow" data-tip="${esc(name + ': ' + n + ' of ' + total)}"><div>${name}</div><div class="track"><i class="whole" style="width:${(100 * n / total).toFixed(2)}%"></i></div><div class="val num"><b>${n}</b></div></div>`;
+    }).join('') + `<div class="axis"><span></span><div><span>0</span><span>${total} values</span></div><span></span></div>`;
+  }
+  function readerTable() {
+    const cols = [['ollama-gemma4-26b-qat', 'ollama, Gemma'], ['cloud-sonnet-5-5', 'cloud, Sonnet'], ['cloud-gemini-3-8-flash', 'cloud, Gemini'], ['agent-sonnet-5-5', 'agent']];
+    const row = (name, f, bold) => `<tr><td>${name}</td><td class="r num">${f.truth_values}</td><td class="r num">${f.figex2_returned}</td><td class="r num"><b>${f.figex2_right}</b></td>${cols.map(([k]) => `<td class="r num">${bold ? '<b>' : ''}${f.round4_right[k]}${bold ? '</b>' : ''}</td>`).join('')}</tr>`;
+    return '<thead><tr><th>Figure</th><th class="r">Values</th><th class="r">FigEx2 returned</th><th class="r">FigEx2 right</th>' + cols.map(([, n]) => `<th class="r">${n}</th>`).join('') + '</tr></thead><tbody>'
+      + D.reader.figures.map((f) => row(`<button class="more" data-f="${f.id}" data-s="rules">${f.id}</button> ${f.name}`, f)).join('') + row('<b>All six</b>', D.reader.total, true) + '</tbody>';
+  }
+  function answers() {
+    return D.reader.figures.map((f) => `<details><summary>${f.name}: what it answered <span class="muted">(${f.figex2_right} of ${f.truth_values} right)</span></summary><pre>${esc(f.answer)}</pre></details>`).join('');
+  }
+
+  // the final test
+  const PICKED = { /*__PICKED__*/ };
+  function finalTables() {
+    const F = D.final;
+    return F.models.map((m) => {
+      let h = `<h3>${esc(m.title)}</h3><div class="panel scroll"><table><thead><tr><th>Cut from</th>` + F.sets.map(([k, label]) => `<th class="r">${label} <span class="muted">(${m.figures[k]})</span></th>`).join('') + '<th class="r">Charts whole, all run</th></tr></thead><tbody>';
+      for (const [key, label] of F.variants) {
+        const v = m.variants[key];
+        if (!v) continue;
+        h += `<tr class="${PICKED[m.title] === key ? 'pick' : ''}"><td>${esc(label)}</td>` + F.sets.map(([k]) => `<td class="r num"><b>${v[k].right}</b></td>`).join('') + `<td class="r num">${v.all.held} of ${m.charts.all}</td></tr>`;
+      }
+      [['no_caption', 'Ceiling without the caption: one of the two cuts is right'], ['caption', 'Ceiling with the caption']].forEach(([kind, label], i) => {
+        h += `<tr class="${i ? '' : 'sep'}"><td class="muted">${label}</td>` + F.sets.map(([k]) => `<td class="r num muted">${m.ceiling[kind][k]}</td>`).join('') + '<td></td></tr>';
+      });
+      return h + '</tbody></table></div>';
+    }).join('');
+  }
+  function finalList() {
+    const cell = (m, kind, key) => m.list[kind].all[key];
+    return '<thead><tr><th>The chart list of</th><th class="r">Figures</th><th class="r">Count right, no caption</th><th class="r">with caption</th><th class="r">Own boxes cut right, no caption</th><th class="r">with caption</th><th class="r">Through the cutter, no caption</th><th class="r">with caption</th></tr></thead><tbody>'
+      + D.final.models.map((m) => `<tr><td>${esc(m.title)}</td><td class="r num">${m.figures.all}</td>${['count_right', 'own_boxes_right', 'seeded_right'].map((key) => `<td class="r num">${cell(m, 'no_caption', key)}</td><td class="r num"><b>${cell(m, 'caption', key)}</b></td>`).join('')}</tr>`).join('') + '</tbody>';
+  }
+  function finalRuling() {
+    let h = '<thead><tr><th>The ruling of</th><th>List</th><th class="r">Asked</th><th class="r">One cut right: picked it</th><th class="r">the same, read by its number</th><th class="r">Neither right: its number fits neither</th><th class="r">Its number of charts is right</th><th class="r">Seconds a call</th><th class="r">USD</th></tr></thead><tbody>';
+    for (const m of D.final.models) {
+      for (const [kind, label] of [['no_caption', 'no caption'], ['caption', 'with caption']]) {
+        const s = m.ruling[kind];
+        if (!s) continue;
+        h += `<tr><td>${esc(m.title)}</td><td>${label}</td><td class="r num">${s.asked} of ${s.figures}</td><td class="r num"><b>${s.one_right_picked}</b> of ${s.one_right}</td><td class="r num">${s.one_right_picked_by_count} of ${s.one_right}</td><td class="r num">${s.neither_flagged} of ${s.neither}</td><td class="r num">${s.count_right} of ${s.asked}</td><td class="r num">${(s.seconds / Math.max(s.asked, 1)).toFixed(1)}</td><td class="r num">${s.cost_usd ? s.cost_usd.toFixed(2) : 'local'}</td></tr>`;
+      }
+    }
+    return h + '</tbody>';
+  }
+
+  // figures view
+  function chips() {
+    $('figchips').innerHTML = GROUPS.map(([g, name]) => `<div class="chipgroup" role="group" aria-label="${name}"><span class="lab">${name}</span>` + ORDER.filter((f) => f.group === g).map((f) => `<button class="chip" data-f="${f.id}" aria-pressed="${f.id === state.figure}"><span class="mono">${f.id}</span><span class="muted">${f.truth.length}</span></button>`).join('') + '</div>').join('');
+    const f = byId[state.figure];
+    $('splitchips').innerHTML = '<span class="lab">Splitter</span>' + D.splitters.map((s) => { const cls = s.per[f.id] ? verdict(s.per[f.id])[0] : 'v-none'; return `<button class="chip" data-s="${s.key}" aria-pressed="${s.key === state.splitter}"><i class="${cls}"></i>${esc(s.name)}</button>`; }).join('');
+  }
+  const pct = (b) => `left:${b[0] / 10}%;top:${b[1] / 10}%;width:${(b[2] - b[0]) / 10}%;height:${(b[3] - b[1]) / 10}%`;
+  const STATE = { whole: ['', 'on its chart, and the chart is whole in it'], clipped: [' ~', 'on its chart, but it holds less than nine tenths of it'], off: [' ×', 'on no chart'] };
+  function figure() {
+    const f = byId[state.figure], s = byKey[state.splitter];
+    const p = s.per[f.id] || { missing: true, boxes: [], missed: [] };
+    const at = ORDER.indexOf(f);
+    let boxes = '';
+    if (state.truth) boxes += f.truth.map((t, i) => `<div class="bx t${p.missed.includes(i) ? ' missed' : ''}" style="${pct(t.b)}"><b>T${i + 1}</b></div>`).join('');
+    if (state.boxes) boxes += p.boxes.map((b, i) => `<div class="bx s ${b.s}" style="${pct(b.b)}"><b>${i + 1}${STATE[b.s][0]}</b></div>`).join('');
+    $('figcard').innerHTML = `<div class="fighead"><h2><span class="mono" style="font-size:16px">${f.id}</span></h2><span class="muted">${esc(f.paper)} · ${esc(f.type || 'untyped')} · ${f.size[0]} × ${f.size[1]} px</span><span class="grow"><button class="more" id="prev" data-f="${ORDER[(at + N - 1) % N].id}">Previous</button><button class="more" id="next" data-f="${ORDER[(at + 1) % N].id}">Next</button></span></div>
+      <div class="toggles"><label><input type="checkbox" id="show-truth"${state.truth ? ' checked' : ''}> <i class="key t"></i> truth, drawn blind (T1, T2, ...)</label><label><input type="checkbox" id="show-boxes"${state.boxes ? ' checked' : ''}> boxes of ${esc(s.name)}:</label><span><i class="key whole"></i> whole</span><span><i class="key clipped"></i> clipped ~</span><span><i class="key off"></i> on no chart ×</span><span><b class="tkey">T3</b> a chart no box is on</span></div>
+      <div class="stagewrap"><div class="stage"><img src="${f.img}" alt="Figure ${f.id}: ${charts(f.truth.length)}">${boxes}</div></div>`;
+    allSplitters(f, s);
+    $('truthcard').innerHTML = `<h3>Truth: ${charts(f.truth.length)}</h3>${f.earlier != null ? `<p class="said">Earlier truth of rounds 1 to 4 has the same number.</p>` : ''}<ol class="truth">${f.truth.map((t, i) => `<li><span class="mono">T${i + 1}</span>${esc(t.label)}</li>`).join('')}</ol>${f.note ? `<p class="said"><strong>The drawer's note.</strong> ${esc(f.note)}</p>` : ''}`;
+    chips();
+    if (p.missing) {
+      $('verdict').innerHTML = `<header><h3>${esc(s.name)}</h3><span class="pill v-none">Not run on this figure</span></header><p class="said">The cloud models of the final test ran on the figures that are tricky today.</p>`;
+      return;
+    }
+    const [cls, , label] = verdict(p), said = p.said || {};
+    let more = '';
+    if (said.final) {
+      const r = said.final.ruling, c = said.final.counts, from = said.final.from;
+      if (c) {
+        more += from === 'rules'
+          ? `<p class="said">The rule splitter's cut has the ${charts(c.list)} the model lists, so it is taken as it is.</p>`
+          : `<p class="said">The rule splitter has ${charts(c.rules)} and the model lists ${c.list}: the rules' cutter was started from the model's boxes.</p>`;
+      } else if (r.same) {
+        more += '<p class="said">The rule splitter and the cutter started from the model\'s chart list made the same cut. No ruling was asked.</p>';
+      } else {
+        more += `<p class="said">The two cuts differ: the rule splitter has ${r.boxes.rules}, the cutter started from the model's list has ${r.boxes.list}. The model was shown both and answered <strong>${charts(r.charts)}, ${r.first_is_right ? 'the first drawing is right' : 'the second drawing is right'}</strong>. The first drawing was ${r.first === 'rules' ? 'the rule splitter\'s' : 'the list\'s'}, so the cut taken is ${from === 'rules' ? 'the rule splitter\'s' : 'the one from the list'}. <span class="muted">${r.seconds != null ? r.seconds.toFixed(1) + ' s' : ''}${r.cost_usd ? ', ' + (100 * r.cost_usd).toFixed(2) + ' cent' : ''}</span></p>`;
+      }
+    }
+    if (said.method) more += `<p class="said">Rule that made the cut: <span class="mono">${esc(said.method)}</span>${said.notes && said.notes.length ? '. ' + esc(said.notes.join('; ')) : ''}</p>`;
+    if (said.description) more += `<p class="said">It said: “${esc(said.description)}” ${said.kinds && said.kinds.length ? '<span class="muted">Kinds: ' + esc(said.kinds.join(', ')) + '.</span>' : ''} <span class="muted">${said.seconds != null ? said.seconds.toFixed(1) + ' s' : ''}${said.cost ? ', ' + (100 * said.cost).toFixed(2) + ' cent' : ''}</span></p>`;
+    if (said.listed) more += `<p class="said">Its captioning model listed ${said.listed.length ? 'the panels ' + esc(said.listed.join(', ')) : 'no panel'}.</p>` + (Object.keys(said.captions || {}).length ? `<details><summary>Its captions</summary><pre>${esc(Object.entries(said.captions).map(([k, v]) => k + ': ' + v).join('\n'))}</pre></details>` : '');
+    if (said.scores) more += `<p class="said">Scores of the picture boxes the detector drew: <span class="mono">${said.scores.map((x) => x.toFixed(2)).join(' ') || 'none'}</span>. Kept: those over 2 % of the figure that hold no other box.</p>`;
+    $('verdict').innerHTML = `<header><h3>${esc(s.name)}</h3><span class="pill ${cls}">${label}</span></header>
+      <dl class="kv num"><dt>Charts in the figure</dt><dd>${p.truth}</dd><dt>Charts it returned</dt><dd>${p.returned}</dd><dt>Found, a box overlaps the chart by half</dt><dd>${p.found}</dd><dt>Whole in their box</dt><dd>${p.held}</dd><dt>Boxes on no chart</dt><dd>${p.extra}</dd></dl>${more}`;
+  }
+
+  function allSplitters(f, s) {
+    $('allsplit').innerHTML = '<thead><tr><th>Splitter</th><th class="r">Returned</th><th class="r">Found</th><th class="r">Whole</th><th></th></tr></thead><tbody>'
+      + D.splitters.map((x) => {
+        const q = x.per[f.id], pick = x.key === s.key ? 'pick' : '';
+        if (!q) return `<tr data-s="${x.key}" class="${pick}"><td>${esc(x.name)}</td><td class="r muted" colspan="3">not run</td><td><i class="c v-none"></i></td></tr>`;
+        const [c, g] = verdict(q);
+        return `<tr data-s="${x.key}" class="${pick}"><td>${esc(x.name)}</td><td class="r num">${q.returned}</td><td class="r num">${q.found}</td><td class="r num">${q.held}</td><td><i class="c ${c}" style="text-align:center;font-style:normal">${g}</i></td></tr>`;
+      }).join('') + '</tbody>';
+  }
+
+  function show(view) {
+    for (const v of ['summary', 'figures']) {
+      $('view-' + v).hidden = v !== view;
+      $('tab-' + v).setAttribute('aria-selected', String(v === view));
+    }
+    if (view === 'figures') figure();
+  }
+
+  function start() {
+    $('tiles').innerHTML = tiles();
+    if (D.final) {
+      $('finalsection').hidden = false;
+      $('finaltables').innerHTML = finalTables();
+      $('finallist').innerHTML = finalList();
+      $('finalruling').innerHTML = finalRuling();
+    }
+    $('grid').innerHTML = grid();
+    const sonnet = byKey['sonnet-5-5'], gem = byKey['gemini-3-8-flash'];
+    const misses = (s) => ORDER.filter((f) => !s.per[f.id].right).map((f) => f.id).join(' and ');
+    $('gridnote').textContent = `The two cloud models miss two figures each: Sonnet ${misses(sonnet)}, Gemini ${misses(gem)}. W05 and W06 are grids of 17 and 15 small charts; W07 is a hard call in the truth, two panels that can be read as eight.`;
+    $('whole').innerHTML = whole();
+    $('judges').innerHTML = judges();
+    $('arbiter').innerHTML = arbiter();
+    $('onerule').innerHTML = oneRule();
+    $('disagree').innerHTML = disagree();
+    const fx = byKey['figex2'].all, fd = byKey['figex2-detector'].all;
+    $('figex2split').textContent = `As designed it cuts ${fx.right} of ${N} figures right and has the number of charts right on ${fx.count_right}. Its detector alone, without the 17 GB captioning model, cuts ${fd.right}. Its captioning model counts the panels right on ${D.captioner.count_right} figures, behind Gemma (42), Gemini (50) and Sonnet (51).`;
+    $('reader').innerHTML = reader();
+    $('readertable').innerHTML = readerTable();
+    $('answers').innerHTML = answers();
+    $('truthlimit').textContent = `Four agents drew the boxes blind, from the images alone. Their number of charts equals the earlier truth on all ${D.truthCheck.same_count} of the ${D.truthCheck.figures_with_an_earlier_count} figures that had one. No person has drawn it, and "whole in its box" leans on the truth's edges more than "found" does.`;
+
+    document.addEventListener('click', (e) => {
+      const tab = e.target.closest('[data-view]');
+      if (tab) { show(tab.dataset.view); return; }
+      const el = e.target.closest('[data-f], [data-s]');
+      if (!el) return;
+      if (el.dataset.f) state.figure = el.dataset.f;
+      if (el.dataset.s) state.splitter = el.dataset.s;
+      const jump = $('view-figures').hidden;
+      show('figures');
+      if (jump) window.scrollTo(0, 0);
+    });
+    document.addEventListener('change', (e) => {
+      if (e.target.id === 'show-truth') { state.truth = e.target.checked; figure(); }
+      if (e.target.id === 'show-boxes') { state.boxes = e.target.checked; figure(); }
+    });
+    const tip = $('tip');
+    function showTip(el, x, y) {
+      tip.textContent = el.dataset.tip; tip.hidden = false;
+      const r = tip.getBoundingClientRect();
+      tip.style.left = Math.max(8, Math.min(x + 12, window.innerWidth - r.width - 8)) + 'px';
+      tip.style.top = Math.max(8, Math.min(y + 14, window.innerHeight - r.height - 8)) + 'px';
+    }
+    document.addEventListener('mousemove', (e) => {
+      const el = e.target.closest ? e.target.closest('[data-tip]') : null;
+      if (el) showTip(el, e.clientX, e.clientY); else tip.hidden = true;
+    });
+    document.addEventListener('focusin', (e) => {
+      const el = e.target.closest ? e.target.closest('[data-tip]') : null;
+      if (el) { const r = el.getBoundingClientRect(); showTip(el, r.left, r.bottom); } else tip.hidden = true;
+    });
+  }
+  start();
+})();
+</script>

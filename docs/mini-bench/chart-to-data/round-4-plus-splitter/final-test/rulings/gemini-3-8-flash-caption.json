@@ -1,0 +1,478 @@
+{
+ "ruling": "gemini-3-8-flash-caption",
+ "about": "google/gemini-3.8-flash through https://openrouter.ai/api/v1 (image side 2000 px, reasoning effort low): where the rule splitter's cut and the rules' cutter started from gemini-3-8-flash-caption differ, the model sees both drawn on the figure and says how many charts there are and whether the first drawing is right, with the figure's caption.",
+ "figures": {
+  "S03": {
+   "boxes": {
+    "rules": 2,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.27,
+   "prompt_tokens": 2559,
+   "output_tokens": 15,
+   "cost_usd": 0.0019755,
+   "cut": false
+  },
+  "S06": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 3.62,
+   "prompt_tokens": 2598,
+   "output_tokens": 179,
+   "cost_usd": 0.00261975,
+   "cut": false
+  },
+  "B3": {
+   "boxes": {
+    "rules": 5,
+    "list": 5
+   },
+   "same": true
+  },
+  "B5": {
+   "boxes": {
+    "rules": 10,
+    "list": 10
+   },
+   "same": true
+  },
+  "C4": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.46,
+   "prompt_tokens": 2591,
+   "output_tokens": 15,
+   "cost_usd": 0.0019995,
+   "cut": false
+  },
+  "S05": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "S08": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "list",
+   "charts": 1,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.31,
+   "prompt_tokens": 2556,
+   "output_tokens": 83,
+   "cost_usd": 0.00222825,
+   "cut": false
+  },
+  "S11": {
+   "boxes": {
+    "rules": 7,
+    "list": 11
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 11,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 14.42,
+   "prompt_tokens": 2458,
+   "output_tokens": 16,
+   "cost_usd": 0.0019035,
+   "cut": false
+  },
+  "S12": {
+   "boxes": {
+    "rules": 1,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 5.64,
+   "prompt_tokens": 2564,
+   "output_tokens": 342,
+   "cost_usd": 0.0032055,
+   "cut": false
+  },
+  "S13": {
+   "boxes": {
+    "rules": 4,
+    "list": 4
+   },
+   "same": true
+  },
+  "S14": {
+   "boxes": {
+    "rules": 8,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.6,
+   "prompt_tokens": 2530,
+   "output_tokens": 125,
+   "cost_usd": 0.00236625,
+   "cut": false
+  },
+  "W02": {
+   "boxes": {
+    "rules": 3,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.76,
+   "prompt_tokens": 2532,
+   "output_tokens": 15,
+   "cost_usd": 0.00195525,
+   "cut": false
+  },
+  "W03": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W04": {
+   "boxes": {
+    "rules": 16,
+    "list": 15
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 15,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 3.79,
+   "prompt_tokens": 2601,
+   "output_tokens": 16,
+   "cost_usd": 0.00201075,
+   "cut": false
+  },
+  "W05": {
+   "boxes": {
+    "rules": 17,
+    "list": 17
+   },
+   "same": true
+  },
+  "W06": {
+   "boxes": {
+    "rules": 6,
+    "list": 15
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 15,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 4.05,
+   "prompt_tokens": 2695,
+   "output_tokens": 16,
+   "cost_usd": 0.00208125,
+   "cut": false
+  },
+  "W07": {
+   "boxes": {
+    "rules": 1,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 16.33,
+   "prompt_tokens": 2504,
+   "output_tokens": 15,
+   "cost_usd": 0.00193425,
+   "cut": false
+  },
+  "W09": {
+   "boxes": {
+    "rules": 5,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": false,
+   "picked": "rules",
+   "seconds": 10.4,
+   "prompt_tokens": 2623,
+   "output_tokens": 1021,
+   "cost_usd": 0.005796,
+   "cut": false
+  },
+  "W10": {
+   "boxes": {
+    "rules": 11,
+    "list": 14
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 14,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 8.79,
+   "prompt_tokens": 2608,
+   "output_tokens": 812,
+   "cost_usd": 0.005001,
+   "cut": false
+  },
+  "W11": {
+   "boxes": {
+    "rules": 3,
+    "list": 1
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 1,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.93,
+   "prompt_tokens": 2567,
+   "output_tokens": 114,
+   "cost_usd": 0.00235275,
+   "cut": false
+  },
+  "W12": {
+   "boxes": {
+    "rules": 3,
+    "list": 2
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 2,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 5.6,
+   "prompt_tokens": 2595,
+   "output_tokens": 146,
+   "cost_usd": 0.00249375,
+   "cut": false
+  },
+  "W15": {
+   "boxes": {
+    "rules": 12,
+    "list": 12
+   },
+   "same": true
+  },
+  "W16": {
+   "boxes": {
+    "rules": 16,
+    "list": 18
+   },
+   "same": false,
+   "first": "list",
+   "charts": 18,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.8,
+   "prompt_tokens": 2514,
+   "output_tokens": 15,
+   "cost_usd": 0.00194175,
+   "cut": false
+  },
+  "W19": {
+   "boxes": {
+    "rules": 2,
+    "list": 3
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 3,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 15.43,
+   "prompt_tokens": 2605,
+   "output_tokens": 216,
+   "cost_usd": 0.00276375,
+   "cut": false
+  },
+  "W20": {
+   "boxes": {
+    "rules": 1,
+    "list": 2
+   },
+   "same": false,
+   "first": "list",
+   "charts": 2,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.91,
+   "prompt_tokens": 2558,
+   "output_tokens": 87,
+   "cost_usd": 0.00224475,
+   "cut": false
+  },
+  "W21": {
+   "boxes": {
+    "rules": 3,
+    "list": 6
+   },
+   "same": false,
+   "first": "list",
+   "charts": 6,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 2.69,
+   "prompt_tokens": 2544,
+   "output_tokens": 125,
+   "cost_usd": 0.00237675,
+   "cut": false
+  },
+  "W23": {
+   "boxes": {
+    "rules": 8,
+    "list": 4
+   },
+   "same": false,
+   "first": "list",
+   "charts": 4,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.04,
+   "prompt_tokens": 2504,
+   "output_tokens": 14,
+   "cost_usd": 0.0019305,
+   "cut": false
+  },
+  "W24": {
+   "boxes": {
+    "rules": 2,
+    "list": 2
+   },
+   "same": true
+  },
+  "W25": {
+   "boxes": {
+    "rules": 6,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 3.76,
+   "prompt_tokens": 2610,
+   "output_tokens": 97,
+   "cost_usd": 0.00232125,
+   "cut": false
+  },
+  "W26": {
+   "boxes": {
+    "rules": 2,
+    "list": 6
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 6,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.6,
+   "prompt_tokens": 2557,
+   "output_tokens": 15,
+   "cost_usd": 0.001974,
+   "cut": false
+  },
+  "W27": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 5,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 7.59,
+   "prompt_tokens": 2600,
+   "output_tokens": 239,
+   "cost_usd": 0.00284625,
+   "cut": false
+  },
+  "W28": {
+   "boxes": {
+    "rules": 4,
+    "list": 3
+   },
+   "same": false,
+   "first": "list",
+   "charts": 3,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 20.27,
+   "prompt_tokens": 2511,
+   "output_tokens": 341,
+   "cost_usd": 0.003162,
+   "cut": false
+  },
+  "W29": {
+   "boxes": {
+    "rules": 2,
+    "list": 5
+   },
+   "same": false,
+   "first": "list",
+   "charts": 5,
+   "first_is_right": true,
+   "picked": "list",
+   "seconds": 3.64,
+   "prompt_tokens": 2541,
+   "output_tokens": 202,
+   "cost_usd": 0.00266325,
+   "cut": false
+  },
+  "W30": {
+   "boxes": {
+    "rules": 2,
+    "list": 4
+   },
+   "same": false,
+   "first": "rules",
+   "charts": 4,
+   "first_is_right": false,
+   "picked": "list",
+   "seconds": 2.13,
+   "prompt_tokens": 2547,
+   "output_tokens": 15,
+   "cost_usd": 0.0019665,
+   "cut": false
+  }
+ }
+}

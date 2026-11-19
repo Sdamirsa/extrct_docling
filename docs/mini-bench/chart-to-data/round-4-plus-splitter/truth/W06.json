@@ -1,0 +1,143 @@
+{
+ "id": "W06",
+ "charts": [
+  {
+   "label": "Retriever recall",
+   "box": [
+    0.0,
+    7.0,
+    246.0,
+    259.0
+   ]
+  },
+  {
+   "label": "Citation recall",
+   "box": [
+    259.0,
+    7.0,
+    434.0,
+    248.0
+   ]
+  },
+  {
+   "label": "Retriever F1",
+   "box": [
+    447.0,
+    7.0,
+    622.0,
+    248.0
+   ]
+  },
+  {
+   "label": "Citation F1",
+   "box": [
+    635.0,
+    7.0,
+    810.0,
+    248.0
+   ]
+  },
+  {
+   "label": "Citation precision",
+   "box": [
+    823.0,
+    7.0,
+    998.0,
+    248.0
+   ]
+  },
+  {
+   "label": "Minimum win rate across all axes",
+   "box": [
+    0.0,
+    260.0,
+    246.0,
+    521.0
+   ]
+  },
+  {
+   "label": "Best overall management plan",
+   "box": [
+    259.0,
+    257.0,
+    434.0,
+    521.0
+   ]
+  },
+  {
+   "label": "Most aligned with guidelines",
+   "box": [
+    447.0,
+    257.0,
+    622.0,
+    521.0
+   ]
+  },
+  {
+   "label": "Most appropriate investigations",
+   "box": [
+    635.0,
+    257.0,
+    810.0,
+    521.0
+   ]
+  },
+  {
+   "label": "Most appropriate interventions",
+   "box": [
+    823.0,
+    257.0,
+    998.0,
+    521.0
+   ]
+  },
+  {
+   "label": "Most detailed investigations",
+   "box": [
+    0.0,
+    531.0,
+    250.0,
+    894.0
+   ]
+  },
+  {
+   "label": "Most detailed interventions",
+   "box": [
+    259.0,
+    531.0,
+    437.0,
+    894.0
+   ]
+  },
+  {
+   "label": "Most appropriate follow-up",
+   "box": [
+    447.0,
+    531.0,
+    625.0,
+    894.0
+   ]
+  },
+  {
+   "label": "Best risk management",
+   "box": [
+    635.0,
+    531.0,
+    813.0,
+    894.0
+   ]
+  },
+  {
+   "label": "Safest management plan",
+   "box": [
+    823.0,
+    531.0,
+    1000.0,
+    894.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "The y-axis title and tick labels are printed only beside the first chart of each row and are boxed with that chart; the legend under the grid is shared and left out.",
+ "drawn_as": "T06"
+}

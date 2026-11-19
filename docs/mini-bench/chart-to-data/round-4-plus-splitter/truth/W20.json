@@ -1,0 +1,26 @@
+{
+ "id": "W20",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    0.0,
+    483.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    444.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Boxes overlap between x 444 and 483: the slice label 'Echocardiography: 1.19%' of pie (a) reaches to the right past the start of the left-hand slice labels of pie (b) ('Reproductive System', 'Cellular & Molecular', 'Blood & Hematology', 'Limbs & Extremities', 'Brain & Central Nervous System'). Each box holds its whole pie with all its labels, so (a) takes in the first letters of those labels of (b), and (b) takes in the '1.19%' end of that label of (a).",
+ "drawn_as": "T28"
+}

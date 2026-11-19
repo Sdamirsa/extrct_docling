@@ -1,0 +1,26 @@
+{
+ "id": "W07",
+ "charts": [
+  {
+   "label": "a",
+   "box": [
+    0.0,
+    33.0,
+    486.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "b",
+   "box": [
+    439.0,
+    33.0,
+    994.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Each panel is taken as one chart: a tile grid in three column blocks plus a citation bar chart, all sharing one set of row labels (the bars cannot be read without the row labels at the far left). Could also be counted as 4 plots per panel. The boxes of a and b overlap: the longest row labels of b start left of the right end of a's citation axis.",
+ "drawn_as": "T02"
+}

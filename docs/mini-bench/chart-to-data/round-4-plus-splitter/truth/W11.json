@@ -1,0 +1,17 @@
+{
+ "id": "W11",
+ "charts": [
+  {
+   "label": "Top 10 Specialist Appearances by Problem",
+   "box": [
+    0.0,
+    0.0,
+    1000.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "",
+ "drawn_as": "T33"
+}

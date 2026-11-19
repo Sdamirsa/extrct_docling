@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="948" height="245" viewBox="0 0 948 245" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="948" height="245" fill="#f6f8fa"/>
+<text x="12" y="22" font-size="13" font-weight="600" fill="#0e1217">Truth</text>
+<text x="12" y="40" font-size="12" fill="#0e1217">4 charts</text>
+<rect x="12" y="52" width="210" height="162.5" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="13.9" y="53.8" width="103.0" height="76.8" fill="#0e1217" fill-opacity="0.08" stroke="#0e1217" stroke-width="1.5"/>
+<text x="65.4" y="96.2" font-size="12" text-anchor="middle" fill="#0e1217">1</text>
+<rect x="121.0" y="53.8" width="99.1" height="76.8" fill="#0e1217" fill-opacity="0.08" stroke="#0e1217" stroke-width="1.5"/>
+<text x="170.6" y="96.2" font-size="12" text-anchor="middle" fill="#0e1217">2</text>
+<rect x="13.9" y="135.7" width="103.0" height="77.3" fill="#0e1217" fill-opacity="0.08" stroke="#0e1217" stroke-width="1.5"/>
+<text x="65.4" y="178.4" font-size="12" text-anchor="middle" fill="#0e1217">3</text>
+<rect x="121.0" y="135.7" width="99.1" height="77.3" fill="#0e1217" fill-opacity="0.08" stroke="#0e1217" stroke-width="1.5"/>
+<text x="170.6" y="178.4" font-size="12" text-anchor="middle" fill="#0e1217">4</text>
+<text x="250" y="22" font-size="13" font-weight="600" fill="#0e1217">Rule splitter, today</text>
+<text x="250" y="40" font-size="12" fill="#c22f2f">6 boxes: wrong number</text>
+<rect x="250" y="52" width="210" height="162.5" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="252.2" y="53.7" width="102.5" height="76.6" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="303.4" y="96.0" font-size="12" text-anchor="middle" fill="#c22f2f">1</text>
+<rect x="359.8" y="53.7" width="98.3" height="76.6" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="408.9" y="96.0" font-size="12" text-anchor="middle" fill="#c22f2f">2</text>
+<rect x="252.2" y="136.4" width="102.3" height="34.9" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="303.3" y="157.8" font-size="12" text-anchor="middle" fill="#c22f2f">3</text>
+<rect x="253.3" y="174.3" width="101.5" height="38.8" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="304.0" y="197.7" font-size="12" text-anchor="middle" fill="#c22f2f">4</text>
+<rect x="359.6" y="136.6" width="98.4" height="67.5" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="408.8" y="174.3" font-size="12" text-anchor="middle" fill="#c22f2f">5</text>
+<rect x="370.3" y="207.7" width="84.0" height="5.3" fill="#c22f2f" fill-opacity="0.08" stroke="#c22f2f" stroke-width="1.5"/>
+<text x="412.3" y="214.4" font-size="12" text-anchor="middle" fill="#c22f2f">6</text>
+<text x="488" y="22" font-size="13" font-weight="600" fill="#0e1217">Recommended, local</text>
+<text x="488" y="40" font-size="12" fill="#0a7d0a">4 boxes: cut right</text>
+<rect x="488" y="52" width="210" height="162.5" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="490.2" y="53.7" width="102.5" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="541.4" y="96.0" font-size="12" text-anchor="middle" fill="#0a7d0a">1</text>
+<rect x="597.8" y="53.7" width="98.3" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="646.9" y="96.0" font-size="12" text-anchor="middle" fill="#0a7d0a">2</text>
+<rect x="490.2" y="136.4" width="102.7" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="541.5" y="178.7" font-size="12" text-anchor="middle" fill="#0a7d0a">3</text>
+<rect x="597.6" y="136.6" width="98.4" height="76.5" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="646.8" y="178.8" font-size="12" text-anchor="middle" fill="#0a7d0a">4</text>
+<text x="726" y="22" font-size="13" font-weight="600" fill="#0e1217">Recommended, cloud</text>
+<text x="726" y="40" font-size="12" fill="#0a7d0a">4 boxes: cut right</text>
+<rect x="726" y="52" width="210" height="162.5" fill="#ffffff" stroke="#c5ccd6"/>
+<rect x="728.2" y="53.7" width="102.5" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="779.4" y="96.0" font-size="12" text-anchor="middle" fill="#0a7d0a">1</text>
+<rect x="835.8" y="53.7" width="98.3" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="884.9" y="96.0" font-size="12" text-anchor="middle" fill="#0a7d0a">2</text>
+<rect x="728.2" y="136.4" width="102.7" height="76.6" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="779.5" y="178.7" font-size="12" text-anchor="middle" fill="#0a7d0a">3</text>
+<rect x="835.6" y="136.6" width="98.4" height="76.5" fill="#0a7d0a" fill-opacity="0.08" stroke="#0a7d0a" stroke-width="1.5"/>
+<text x="884.8" y="178.8" font-size="12" text-anchor="middle" fill="#0a7d0a">4</text>
+<text x="12" y="235" font-size="11" fill="#57606a">Each diagram is the outline of the figure image with the boxes of one cut.</text>
+</svg>

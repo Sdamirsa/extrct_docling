@@ -1,0 +1,35 @@
+{
+ "id": "W02",
+ "charts": [
+  {
+   "label": "Diagnosis & Management",
+   "box": [
+    49.0,
+    6.0,
+    528.0,
+    841.0
+   ]
+  },
+  {
+   "label": "MXEKF",
+   "box": [
+    561.0,
+    6.0,
+    992.0,
+    316.0
+   ]
+  },
+  {
+   "label": "PACES",
+   "box": [
+    554.0,
+    350.0,
+    992.0,
+    841.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "Legend at the bottom is shared by the three charts and left out.",
+ "drawn_as": "T04"
+}

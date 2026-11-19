@@ -1,0 +1,161 @@
+{
+ "id": "W05",
+ "charts": [
+  {
+   "label": "Prioritization of preferences, constraints and values - Specialist physician perspective",
+   "box": [
+    6.0,
+    86.0,
+    130.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Prioritization of preferences, constraints and values - Patient actor perspective",
+   "box": [
+    136.0,
+    86.0,
+    213.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Communication and shared decision-making - Specialist physician perspective",
+   "box": [
+    250.0,
+    86.0,
+    327.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Communication and shared decision-making - Patient actor perspective",
+   "box": [
+    333.0,
+    86.0,
+    410.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Monitoring and adjustment of management plan - Specialist physician perspective",
+   "box": [
+    446.0,
+    86.0,
+    523.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Monitoring and adjustment of management plan - Patient actor perspective",
+   "box": [
+    529.0,
+    86.0,
+    607.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Managing interplay of competing priorities - Specialist physician perspective",
+   "box": [
+    643.0,
+    86.0,
+    720.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Managing interplay of competing priorities - Patient actor perspective",
+   "box": [
+    726.0,
+    86.0,
+    803.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Acting as patient, teacher and salesperson - Specialist physician perspective",
+   "box": [
+    839.0,
+    86.0,
+    916.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Acting as patient, teacher and salesperson - Patient actor perspective",
+   "box": [
+    922.0,
+    86.0,
+    1000.0,
+    479.0
+   ]
+  },
+  {
+   "label": "Relationship fostering - Specialist physician perspective",
+   "box": [
+    6.0,
+    578.0,
+    130.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Relationship fostering - Patient actor perspective",
+   "box": [
+    136.0,
+    578.0,
+    213.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Organization of the clinical encounter - Specialist physician perspective",
+   "box": [
+    250.0,
+    578.0,
+    327.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Organization of the clinical encounter - Patient actor perspective",
+   "box": [
+    333.0,
+    578.0,
+    410.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Contrast and selection - Specialist physician perspective",
+   "box": [
+    533.0,
+    502.0,
+    616.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Illness-specific knowledge - Specialist physician perspective",
+   "box": [
+    631.0,
+    502.0,
+    714.0,
+    1000.0
+   ]
+  },
+  {
+   "label": "Prognostication - Specialist physician perspective",
+   "box": [
+    730.0,
+    502.0,
+    813.0,
+    1000.0
+   ]
+  }
+ ],
+ "not_chart": false,
+ "note": "A heading that stands over a pair of charts is left out as shared; the heading over a single chart (Contrast and selection, Illness-specific knowledge, Prognostication) is boxed with it. The y-axis title and tick labels are printed only beside the first chart of each row and are boxed with that chart; the legend at the lower right is shared and left out.",
+ "drawn_as": "T30"
+}

@@ -301,6 +301,16 @@ def main(
             ),
         ),
     ] = FigureDataOptions().cloud_api_key_env,
+    figure_data_ollama_url: Annotated[
+        str,
+        typer.Option(
+            "--figure-data-ollama-url",
+            help=(
+                "--figure-data ollama, and agent on the ollama backend: "
+                "where Ollama listens."
+            ),
+        ),
+    ] = FigureDataOptions().ollama_url,
     figure_data_when: Annotated[
         StepTiming,
         typer.Option(
@@ -424,6 +434,7 @@ def main(
                     "backend": figure_data_backend,
                     "cloud_base_url": figure_data_base_url,
                     "cloud_api_key_env": figure_data_key_env,
+                    "ollama_url": figure_data_ollama_url,
                 }
             ),
             console,
@@ -523,6 +534,7 @@ def main(
             figure_step.close()
         if figure_step.runs:
             console.print(runs_table(figure_step.runs))
+            _refresh_rows(rows, figure_step.bundles)
     _render_summary(console, rows, mode=mode)
     _exit(rows)
 
@@ -544,6 +556,7 @@ class _FigureStep:
         self.options = options
         self.console = console
         self.runs: list[StepRun] = []
+        self.bundles: list[Path] = []
         self._reader: FigureReader | None = None
 
     def run(self, bundle: Path, pdf_path: Path) -> None:
@@ -563,6 +576,7 @@ class _FigureStep:
                     on_result=outcome_printer(self.console, bundle.name),
                 )
             )
+            self.bundles.append(bundle)
         except Exception as exc:
             # The step reads finished bundles; whatever goes wrong in it
             # leaves the conversion as it was.
@@ -575,6 +589,22 @@ class _FigureStep:
     def close(self) -> None:
         if self._reader is not None:
             self._reader.close()
+
+
+def _refresh_rows(rows: list[BatchRow], bundles: list[Path]) -> None:
+    """The figure-to-data step rebuilt the chunks and the check of
+    *bundles* after their rows were made: show what is on disk now."""
+    changed = {bundle.resolve() for bundle in bundles}
+    for row in rows:
+        if row.output is None or row.output.resolve() not in changed:
+            continue
+        row.chunks = _count_lines(row.output / "chunks.jsonl")
+        check_path = row.output / CHECK_FILENAME
+        if check_path.is_file():
+            check = BundleCheck.model_validate_json(
+                check_path.read_text(encoding="utf-8")
+            )
+            row.check_summary, row.check_ok = check.summary_line(), check.ok
 
 
 def _exit(rows: list[BatchRow]) -> None:

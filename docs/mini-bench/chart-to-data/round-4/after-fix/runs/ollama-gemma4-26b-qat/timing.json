@@ -1,0 +1,28 @@
+[
+  {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/5",
+    "mode": "ollama",
+    "model": "gemma4:26b-a4b-it-qat",
+    "backend": "ollama",
+    "status": "read",
+    "panels": 2,
+    "rows": 17,
+    "seconds": 43.68,
+    "calls": 3,
+    "tool_calls": null,
+    "prompt_tokens": 4227,
+    "eval_tokens": 2098,
+    "cost_usd": null,
+    "gpu_bytes": 15648906280,
+    "issues": 6,
+    "notes": [
+      "panel a: 71.59 outside the axis range [2021, 2023] (2021.0/GPT-3.5 Turbo 0125)",
+      "panel a: 63.58 outside the axis range [2021, 2023] (2022.0/GPT-3.5 Turbo 0125)",
+      "panel a: 70.35 outside the axis range [2021, 2023] (2023.0/GPT-3.5 Turbo 0125)",
+      "panel a: 44.57 outside the axis range [2021, 2023] (2021.0/GPT-4 0613)",
+      "panel a: 46.3 outside the axis range [2021, 2023] (2022.0/GPT-4 0613)",
+      "panel a: 53.49 outside the axis range [2021, 2023] (2023.0/GPT-4 0613)"
+    ]
+  }
+]

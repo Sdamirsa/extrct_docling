@@ -1,0 +1,1218 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/11",
+    "image_path": "images/picture_012.png",
+    "page": 63,
+    "bbox": [
+      71.15,
+      101.67,
+      480.06,
+      707.83
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "colon",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: COLON (N = 49)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 47.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 57.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 67.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 49.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six (GPT) bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "endoscopy",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: ENDOSCOPY (N = 26)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 65.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "esophagus",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: ESOPHAGUS (N = 36)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 72.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 64.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 77.8,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 64.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "ibd",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: IBD (N = 30)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 83.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 56.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "ibs",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: IBS (N = 14)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 43.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 64.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 64.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 57.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 36.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "liver",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: LIVER (N = 52)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 46.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 38.5,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 62.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 71.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 67.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "miscellaneous",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: MISCELLANEOUS (N = 19)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 63.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 42.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 68.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 84.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 63.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "nutrition",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: NUTRITION (N = 3)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 100.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read."
+      ]
+    },
+    {
+      "id": "pancreatico-biliary",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: PANCREATICO-BILIARY (N = 31)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 52.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 68.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 58.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 65.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "small-bowel",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: SMALL BOWEL (N = 22)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 86.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 86.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 54.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    },
+    {
+      "id": "stomach",
+      "bbox_px": [
+        0.0,
+        0.0,
+        613.0,
+        908.2
+      ],
+      "title": "Question type: STOMACH (N = 17)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 35.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 41.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 59.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 59.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4o API",
+          "x": null,
+          "series": "Correct",
+          "value": 59.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 53.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.55
+        }
+      ],
+      "notes": [
+        "Only the first six bars' Correct segments were read, approximately."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Eleven stacked-bar panels, one per question subject (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach). Each shows the percentage of answers that were Correct, 2OP, EOP, NOP, Error or Incorrect for about 37 LLM variants.",
+  "uncertain": [
+    "In every one of the 11 panels, the bars for the other ~31 models (Claude3/3.5, Mistral, Llama, Gemini, Gemma, Phi) were not read: the labels are too small and blurred to read reliably.",
+    "In every panel the 2OP, EOP, NOP, Error and Incorrect segments of all bars were not read. Incorrect fills the rest of each bar, and the other categories are small slices.",
+    "The values read for the six GPT bars are visual estimates (the printed labels are illegible) and are approximate."
+  ]
+}

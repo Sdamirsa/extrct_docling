@@ -1,0 +1,621 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "GPT-3.5 Extracted Option from LLM Textual Response",
+   "kind": "heatmap",
+   "orientation": null,
+   "x_axis": {
+    "name": "GPT-3.5 extracted option",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Blinded Human Validation",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "GPT: Require Evaluation",
+    "Parsing Failed"
+   ],
+   "points": [
+    {
+     "category": "A",
+     "x": null,
+     "series": "A",
+     "value": 16.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "16"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "A",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "B",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "D",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "1"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "B",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 2.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "2"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "C",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "24"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "C",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "1"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "D",
+     "value": 13.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "13"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "D",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "E",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "4"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "E",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "1"
+    },
+    {
+     "category": "2OP",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "5"
+    },
+    {
+     "category": "EOP",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 5.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "5"
+    },
+    {
+     "category": "NOP",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "A",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "B",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "C",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "D",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "E",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "GPT: Require Evaluation",
+     "value": 3.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "3"
+    },
+    {
+     "category": "Error",
+     "x": null,
+     "series": "Parsing Failed",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "0"
+    }
+   ],
+   "box": [
+    0,
+    0,
+    1000,
+    1000
+   ],
+   "notes": [
+    "Layout analysis split one heatmap into 3 charts; recorded as a single heatmap of 9 rows x 7 columns = 63 cells. Colorbar 0-25. Pink outline marks the A-E block."
+   ]
+  }
+ ],
+ "description": "A single confusion-matrix heatmap comparing blinded human validation labels (A–E, 2OP, EOP, NOP, Error) with the option GPT-3.5 extracted from LLM textual responses (A–E, Require Evaluation, Parsing Failed).",
+ "has_data": true,
+ "not_read": [
+  "Charts a, b and c from layout analysis are column slices of the same heatmap (a = column A, b = column B, c = columns C to Parsing Failed). All 63 cells are recorded in chart 1, so a, b and c have no records of their own.",
+  "The colorbar scale (0-25) and the pink outline of the A-E block are not recorded as data. They add nothing beyond the printed cell counts."
+ ],
+ "finished": true,
+ "warned": true,
+ "looks": 1,
+ "records": 1
+}

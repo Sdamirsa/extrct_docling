@@ -1,0 +1,1109 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/2",
+    "image_path": "images/picture_003.png",
+    "page": 16,
+    "bbox": [
+      73.98,
+      310.45,
+      538.46,
+      610.95
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        3.9,
+        2.9,
+        349.2,
+        135.6
+      ],
+      "title": "Impact of output structure",
+      "kind": "grouped_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            70.0
+          ],
+          "ticks": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0,
+            60.0,
+            70.0
+          ]
+        },
+        "y": {
+          "name": "Response Generation",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Langchain",
+            "Function Call -",
+            "Standard Output",
+            "0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "GPT3-API",
+          "color": null
+        },
+        {
+          "name": "GPT4-API",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "LangChain",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "LangChain",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 66.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Function Call",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Function Call",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 68.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Standard Output",
+          "x": null,
+          "series": "GPT3-API",
+          "value": 40.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Standard Output",
+          "x": null,
+          "series": "GPT4-API",
+          "value": 55.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        362.0,
+        2.9,
+        696.0,
+        135.6
+      ],
+      "title": "Impact of temperature",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            38.0,
+            52.0
+          ],
+          "ticks": [
+            38.0,
+            40.0,
+            42.0,
+            44.0,
+            46.0,
+            48.0,
+            50.0,
+            52.0
+          ]
+        },
+        "y": {
+          "name": "Temperature",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Default (temp=1)",
+            "Default - 10%",
+            "Default - 40%",
+            "Default - 60%",
+            "Default - 90%",
+            "temp=0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "best prompt",
+          "color": null
+        },
+        {
+          "name": "raw prompt",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "Default (temp=1)",
+          "x": null,
+          "series": "best prompt",
+          "value": 47.8,
+          "err_lo": 44.9,
+          "err_hi": 50.65,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default (temp=1)",
+          "x": null,
+          "series": "raw prompt",
+          "value": 48.3,
+          "err_lo": 45.0,
+          "err_hi": 51.6,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 10%",
+          "x": null,
+          "series": "best prompt",
+          "value": 45.0,
+          "err_lo": 38.45,
+          "err_hi": 51.5,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 10%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 45.0,
+          "err_lo": 41.7,
+          "err_hi": 48.25,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 40%",
+          "x": null,
+          "series": "best prompt",
+          "value": 42.76,
+          "err_lo": 38.86,
+          "err_hi": 46.66,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 40%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 42.76,
+          "err_lo": 41.66,
+          "err_hi": 43.86,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 60%",
+          "x": null,
+          "series": "best prompt",
+          "value": 45.5,
+          "err_lo": 42.65,
+          "err_hi": 48.4,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 60%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 45.0,
+          "err_lo": 43.07,
+          "err_hi": 46.9,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 90%",
+          "x": null,
+          "series": "best prompt",
+          "value": 46.1,
+          "err_lo": 43.9,
+          "err_hi": 48.25,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Default - 90%",
+          "x": null,
+          "series": "raw prompt",
+          "value": 45.5,
+          "err_lo": 44.4,
+          "err_hi": 46.6,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "temp=0",
+          "x": null,
+          "series": "best prompt",
+          "value": 45.5,
+          "err_lo": 44.45,
+          "err_hi": 46.6,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "temp=0",
+          "x": null,
+          "series": "raw prompt",
+          "value": 43.86,
+          "err_lo": 42.78,
+          "err_hi": 44.95,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Where the two series' error bars overlap, which cap belongs to which series was inferred from colour and symmetry about the centre."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        3.9,
+        147.4,
+        348.7,
+        450.9
+      ],
+      "title": "Impact of Max_token",
+      "kind": "grouped_bar",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            56.0
+          ],
+          "ticks": [
+            0.0,
+            10.0,
+            20.0,
+            30.0,
+            40.0,
+            50.0
+          ]
+        },
+        "y": {
+          "name": "Experiment Setting",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Best Prompt (candidate 4)",
+            "Give Model Time to Think",
+            "Consensus Technique",
+            "Expert Mimicry",
+            "Confidence Scoring",
+            "Contextual Embedding",
+            "Comparative Analysis",
+            "Elimination Method",
+            "Answer Justification",
+            "Chain of Thought",
+            "Option Analysis",
+            "Direct Question",
+            "Raw",
+            "0"
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "MT: 512",
+          "color": null
+        },
+        {
+          "name": "MT: 1024",
+          "color": null
+        },
+        {
+          "name": "MT: 512plus",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 512",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Best Prompt (candidate 4)",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 512",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 512",
+          "value": 38.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 512",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 512",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 53.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 53.4,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 512",
+          "value": 48.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 512",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 512",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 512",
+          "value": 48.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 512",
+          "value": 52.6,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 512",
+          "value": 45.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 512",
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 48.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 48.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 512",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 1024",
+          "value": 41.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": "MT: 512plus",
+          "value": 43.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        362.0,
+        146.9,
+        696.0,
+        450.9
+      ],
+      "title": "Impact of prompt engineering",
+      "kind": "forest",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Accuracy (%)",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            34.5,
+            53.0
+          ],
+          "ticks": [
+            35.0,
+            40.0,
+            42.5,
+            45.0,
+            47.5,
+            50.0,
+            52.5
+          ]
+        },
+        "y": {
+          "name": "Function",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Candidate 6",
+            "Candidate 5",
+            "Candidate 4",
+            "Candidate 3",
+            "Candidate 2",
+            "Candidate 1",
+            "Give Model Time to Think",
+            "Consensus Technique",
+            "Expert Mimicry",
+            "Confidence Scoring",
+            "Contextual Embedding",
+            "Comparative Analysis",
+            "Elimination Method",
+            "Answer Justification",
+            "Chain of Thought",
+            "Option Analysis",
+            "Direct Question-",
+            "Raw"
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": "Candidate 6",
+          "x": null,
+          "series": null,
+          "value": 48.85,
+          "err_lo": 48.85,
+          "err_hi": 48.85,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Candidate 5",
+          "x": null,
+          "series": null,
+          "value": 47.7,
+          "err_lo": 45.8,
+          "err_hi": 49.7,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Candidate 4",
+          "x": null,
+          "series": null,
+          "value": 48.85,
+          "err_lo": 45.4,
+          "err_hi": 52.3,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Candidate 3",
+          "x": null,
+          "series": null,
+          "value": 43.9,
+          "err_lo": 42.9,
+          "err_hi": 44.8,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Candidate 2",
+          "x": null,
+          "series": null,
+          "value": 48.3,
+          "err_lo": 48.3,
+          "err_hi": 48.3,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Candidate 1",
+          "x": null,
+          "series": null,
+          "value": 38.3,
+          "err_lo": 35.0,
+          "err_hi": 41.7,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Give Model Time to Think",
+          "x": null,
+          "series": null,
+          "value": 43.9,
+          "err_lo": 41.3,
+          "err_hi": 46.4,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Consensus Technique",
+          "x": null,
+          "series": null,
+          "value": 40.0,
+          "err_lo": 37.1,
+          "err_hi": 42.9,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Expert Mimicry",
+          "x": null,
+          "series": null,
+          "value": 45.5,
+          "err_lo": 44.6,
+          "err_hi": 46.5,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Confidence Scoring",
+          "x": null,
+          "series": null,
+          "value": 45.5,
+          "err_lo": 43.6,
+          "err_hi": 47.5,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Contextual Embedding",
+          "x": null,
+          "series": null,
+          "value": 46.6,
+          "err_lo": 43.7,
+          "err_hi": 49.5,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Comparative Analysis",
+          "x": null,
+          "series": null,
+          "value": 42.2,
+          "err_lo": 41.2,
+          "err_hi": 43.2,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Elimination Method",
+          "x": null,
+          "series": null,
+          "value": 44.1,
+          "err_lo": 40.6,
+          "err_hi": 47.7,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Answer Justification",
+          "x": null,
+          "series": null,
+          "value": 48.3,
+          "err_lo": 46.7,
+          "err_hi": 50.0,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Chain of Thought",
+          "x": null,
+          "series": null,
+          "value": 47.5,
+          "err_lo": 43.95,
+          "err_hi": 51.0,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Option Analysis",
+          "x": null,
+          "series": null,
+          "value": 43.9,
+          "err_lo": 42.9,
+          "err_hi": 44.8,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Direct Question",
+          "x": null,
+          "series": null,
+          "value": 48.3,
+          "err_lo": 46.7,
+          "err_hi": 50.0,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        },
+        {
+          "category": "Raw",
+          "x": null,
+          "series": null,
+          "value": 43.9,
+          "err_lo": 42.9,
+          "err_hi": 44.8,
+          "label_printed": null,
+          "source": "agent",
+          "confidence": 0.8
+        }
+      ],
+      "notes": [
+        "Candidates 6 and 2 show a dot without visible error bars; err_lo/err_hi set equal to the value."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "agent",
+    "name": "extrct figure-to-data agent (claude-sonnet-5-5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Four-panel figure showing LLM multiple-choice-question accuracy under different output structures (a), temperatures (b), max-token settings (c) and prompt-engineering techniques (d).",
+  "uncertain": [
+    "All values were read from the axes, since the figure prints no numbers. Each is an estimate to about ±0.3 percentage points.",
+    "Panel b: in rows where the best-prompt and raw-prompt error bars overlap, the cap assigned to each series is an inference from colour and symmetry about the centre.",
+    "Panel b: the light raw-prompt centre markers are faint, so their positions are less certain than the dark ones."
+  ]
+}

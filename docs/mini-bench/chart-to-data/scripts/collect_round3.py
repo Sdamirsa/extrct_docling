@@ -10,7 +10,8 @@ Copies ``<label>/<bundle>/figure-to-data/`` to
 ``round-3/runs/<label>/<bundle>/figure-to-data/`` (the readings, the run
 records, the session traces; images and evidence are git-ignored) and
 writes ``round-3/runs/<label>/timing.json``, one row per figure, in the
-form the scripts of the earlier rounds read.
+form the scripts of the earlier rounds read. ``BENCH_ROUND=round-4`` puts
+the same under ``round-4/``.
 
 With ``--audit`` it also writes ``round-3/runs/<label>/AUDIT.md``: for each
 agent session, the tools it was offered and the tools it called. A cloud
@@ -20,13 +21,14 @@ run has none: its model gets one HTTP request and no tool.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 from collections import Counter
 from pathlib import Path
 
 BENCH = Path(__file__).resolve().parents[1]
-ROUND = BENCH / "round-3"
+ROUND = BENCH / os.environ.get("BENCH_ROUND", "round-3")
 ALLOWED = {
     "agent": {
         "mcp__figure__look",

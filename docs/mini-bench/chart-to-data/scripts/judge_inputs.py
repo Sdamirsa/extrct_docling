@@ -16,7 +16,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from analyze import BENCH, ROUND, load_charts, load_timing
+from analyze import BENCH, ROUND, load_charts, load_timing, round_file
 
 from docling.engines.figure_data.schema import ChartData
 from docling.engines.figure_data.scoring import score_figure
@@ -62,8 +62,9 @@ def describe(chart: ChartData | None) -> str:
 
 
 def main() -> None:
-    testset = json.loads((BENCH / "testset.json").read_text(encoding="utf-8"))
-    truth = load_charts(BENCH / "truth")
+    testset = json.loads(round_file("testset.json").read_text(encoding="utf-8"))
+    truth = load_charts(round_file("truth"))
+    truth_dir = round_file("truth").relative_to(BENCH)
     for model_dir in sorted(p for p in (ROUND / "runs").iterdir() if p.is_dir()):
         preds, timing = load_charts(model_dir), load_timing(model_dir)
         out = ROUND / "judge" / "inputs" / model_dir.name
@@ -79,7 +80,7 @@ def main() -> None:
             sheet = (
                 f"# {spec['id']} · {key[0]} {key[1]} · model {model_dir.name}\n\n"
                 f"- figure: `figures/{spec['id']}__{key[0]}__{stem}.png`\n"
-                f"- truth JSON: `truth/{key[0]}__{stem}.json`\n"
+                f"- truth JSON: `{truth_dir.as_posix()}/{key[0]}__{stem}.json`\n"
                 f"- prediction JSON: under `runs/{model_dir.name}/`, bundle `{key[0]}`, figure `{stem}`\n"
                 f"- expected: {spec['expected_kind']}\n"
                 f"- time: {clock.get('seconds')} s, calls {clock.get('calls')}, "

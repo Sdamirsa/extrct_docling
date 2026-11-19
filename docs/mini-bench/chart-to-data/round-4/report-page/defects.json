@@ -1,0 +1,160 @@
+{
+ "subline": "What round 4 found in the figure-to-data step: fixed and open · 19 November 2026",
+ "lede": "Running one whole paper through the pipeline showed defects that 15 prepared bench figures had not. Two are fixed, the capture defect among them. Eight are open. None of the open ones makes a run fail: they cost values, or put a chart in the wrong place in the record.",
+ "defects": [
+  {
+   "id": "F36",
+   "anchor": "capture",
+   "status": "fixed",
+   "title": "A figure's image was taken without its transparency mask",
+   "cost": "Figure 6: no value could be paired with its year or date in any of the four runs",
+   "what": [
+    "Where a figure is one image in the PDF, the prepare phase takes that image's own pixels when they are sharper than a page render. The image of Figure 6 carries a soft mask: 30 % of it is transparent, and the file stores black there. The PDF library hands out an image's pixels without its mask.",
+    "Every reader was given the figure with black where the page is white. The axis titles and tick labels are printed in black on that part and were gone. The first run's model said so itself: \"Axis tick labels and x-axis labels are not visible in either chart.\""
+   ],
+   "evidence": "capture",
+   "effect": "All four runs returned the 13 printed numbers of Figure 6 and none could say which year or cut-off date a point stands at. The runs then gave sibling models (same colour, releases a few months apart) each other's values. Read again from the corrected image, all four have all 13 valued points right.",
+   "where": "docling/engines/figure_data/evidence.py, _image_bitmap",
+   "fix": "The alpha is taken from the PDF library's rendering of the image object, the pixels stay the file's own, and the figure is put on white. Near-black pixels of the prepared Figure 6 went from 31.7 % to 2.3 %. A test builds a PDF whose image has a soft mask and a black tick mark on the transparent part.",
+   "left": "The fix went in after the last conversion had started. The four saved bundles hold Figure 6 as first read; a second pass of the four commands (about 2 hours and 5 USD) would replace it. Figure 3 has a mask too (43 % transparent) and was not affected: it was captured by a page render, which applies the mask."
+  },
+  {
+   "id": "F37",
+   "anchor": "axis",
+   "status": "fixed",
+   "title": "Years a step apart were fitted as a log axis",
+   "cost": "The readers of Figure 6 would have been told a log scale for its x axis",
+   "what": [
+    "With the labels visible again, the chart list handed to the readers said \"x ticks 2021 | 2022 | 2023 (log)\". Three ticks that far from zero lie on a line in both scales, and the last pixel decided between them."
+   ],
+   "evidence": null,
+   "effect": "Found right after the capture fix and before any reader saw it. On a numeric axis the local engine would have measured against a log scale.",
+   "where": "docling/engines/figure_data/evidence.py, fit_axis",
+   "fix": "A linear fit that is off by less than 0.5 % of the range is kept. Ticks of 1, 2, 4, 8 and of 1, 10, 100 are still fitted as log. Tested.",
+   "left": null
+  },
+  {
+   "id": "F38",
+   "anchor": "splitter",
+   "status": "open",
+   "title": "The chart splitter miscounts the charts of a figure",
+   "cost": "Wrong on 6 of the 11 chart figures of this paper",
+   "what": [
+    "The prepare phase cuts a figure into charts by their tick labels, so that a reader can be given one crop per chart. On this paper it was right on five figures and wrong on six: one chart drawn in blocks was cut apart, and grids of bar charts were counted wrong in both directions."
+   ],
+   "evidence": "splitter",
+   "effect": "The local engine reads one crop per chart it is given: it returned 107 values in six charts for Figure 7's 52 in four, and declined a five-panel grid because the split showed it one chart. The cloud models and the agent saw the whole figure beside the crops and read the charts the figure has, but the second part of a split chart then pairs with nothing in the bench's scorer (Sonnet on Figure 4: 55 of 80 as scored, all 80 right).",
+   "where": "docling/engines/figure_data/panels.py (split by tick labels, then by gutters)",
+   "fix": "Two cases need a rule each: one axes frame with one x axis and blank rows between blocks is one chart; a grid of charts with repeated titles and repeated tick sets has as many charts as titles. Either rule has to be checked on the 15 bench figures, where the splitter is right today.",
+   "left": null
+  },
+  {
+   "id": "F39",
+   "anchor": "box",
+   "status": "open",
+   "title": "A reading's chart takes the box of a wrong split",
+   "cost": "Figure 7: the record places panel d inside panel c",
+   "what": [
+    "The step gives a chart of a reading the box of the prepared chart with the same id. When the split is wrong, the ids no longer mean the same chart. On Figure 7 the split had six parts; two readings returned the figure's four panels as charts 1 to 4 and were given the boxes of parts 1 to 4, of which parts 3 and 4 are the upper and the lower half of one panel."
+   ],
+   "evidence": "box",
+   "effect": "The values are untouched; the box in the record (bbox_px) is wrong. Anything that locates a chart by its box is misled: the bench's scorer compared panel c with panel d and counted 24 of 52 for the agent and 24 for Gemini, whose 52 values are all right.",
+   "where": "docling/engines/figure_data/reading.py, chart_from_reading",
+   "fix": "Take the prepared box only when the reading kept the charts it was given (same count, ids used as given). Otherwise use the box the model returned for the chart, or none.",
+   "left": null
+  },
+  {
+   "id": "F40",
+   "anchor": "segments",
+   "status": "open",
+   "title": "Unlabelled segments of stacked bars are left out",
+   "cost": "Agent: 61 of 366 values on Figures 4 and 5. Sonnet's single call: 80 of 222 on Figure 4",
+   "what": [
+    "Figures 4 and 5 are 37 and 24 stacked bars of six classes. Only the share of Correct is printed; the other segments have to be measured, and three of them are a point or two wide. The conventions given to every reader ask for one point per segment.",
+    "The agent recorded the printed share alone on both figures and wrote that the other segments \"are small, so reading them would be estimates only\". Its judge: Incorrect runs from 20 to 72 points, and one bar's Error segment is twice its Correct share. On another figure of the same kind the same agent recorded all 888 segments.",
+    "Sonnet's single call returned all 144 values of Figure 5 and, for Figure 4, the printed share and an estimate of Incorrect per bar."
+   ],
+   "evidence": "segments",
+   "effect": "305 of the 573 values of the main figures are missing from the agent's run, and 142 of 222 of Figure 4 from Sonnet's call. Both runs say what they left out, so nothing is wrong in what they returned. The step's check on stacks (segments sum to 100) fires on these readings and is reported back to the agent, which kept its choice.",
+   "where": "docling/engines/figure_data/methods/agent.py (POLICY), reading.py (CONVENTIONS), methods/toolbox.py (what record_chart replies)",
+   "fix": "Make the reply of record_chart name the missing classes per bar when a stacked chart's legend has more entries than its bars have points, with the instruction to measure them, and say in the policy that an estimate marked as measured is wanted. Tuning a prompt on this paper needs a run on the bench figures afterwards.",
+   "left": null
+  },
+  {
+   "id": "F40b",
+   "anchor": "classes",
+   "status": "open",
+   "title": "No check sees a segment under the wrong class",
+   "cost": "Gemini: two figures not usable as they are, though 366 of 366 values came back",
+   "what": [
+    "Gemini 3.8 Flash returned every segment of Figures 4 and 5 and put small ones under the wrong legend class: the EOP gap came back as 2OP, the grey NOP as EOP. In Figure 4 NOP is non-zero in 2 bars where the figure has 17. In the figure EOP is drawn in the grey of the plot background, so an EOP segment looks like a gap in the bar."
+   ],
+   "evidence": null,
+   "effect": "A stack whose classes are swapped still sums to 100, so the step's stack check does not fire on it, and the values go into the exports at the confidence of a cloud reading. A count within 5 % of the axis does not see it either: a segment of 1.3 points under the wrong name is 1.3 points off. The judge did.",
+   "where": "docling/engines/figure_data/verify.py (stack check), reading.py",
+   "fix": "No simple check exists: the colours would have to be compared with the legend. A cheaper guard is to lower the starting confidence of measured segments under about 3 % of the axis, so that they stay out of the embedded table unless a printed label confirms them.",
+   "left": null
+  },
+  {
+   "id": "F33",
+   "anchor": "frame",
+   "status": "open",
+   "title": "A bar that fills its chart's box is taken for a frame",
+   "cost": "Seen in the end-to-end test: the tallest bar of a tightly boxed chart was not read",
+   "what": [
+    "The local engine's vector reader drops marks taller than 0.9 of the chart's region, a rule that keeps plot frames and backgrounds out. A bar that reaches the top tick of a chart boxed close to its plot area is such a mark."
+   ],
+   "evidence": "frame",
+   "effect": "Only charts drawn as vector graphics are read this way, and only by the local method. No figure of the showcase paper is one. In the test, the bar of value 1.0 was missing from the reading while the two shorter bars were read.",
+   "where": "docling/engines/figure_data/readers/vector.py, read_vector_panel",
+   "fix": "Tell a frame from a bar by what it is: a frame spans both axes or is stroked without a fill; a bar is filled and shares its width and baseline with its neighbours.",
+   "left": null
+  },
+  {
+   "id": "F32",
+   "anchor": "layoutbox",
+   "status": "open",
+   "title": "The layout model's figure box can cut off an axis label",
+   "cost": "Seen in the end-to-end test: the top tick label became the figure's caption",
+   "what": [
+    "A figure is captured by the box the conversion's layout model drew around it. On a synthetic page that box ended under the top tick label of the chart. The axis then ran from 0 to 0.5 for every reader, values above it failed the check \"outside the axis range\", their confidence fell under the threshold, and the table was held back from the exports."
+   ],
+   "evidence": null,
+   "effect": "The step worked as designed on a figure it was handed without its axis; the loss is silent to the reader of the bundle, who sees a pointer in place of a table. Not seen on the showcase paper's figures.",
+   "where": "the conversion (layout model); docling/engines/figure_data/prepare.py takes the box as given",
+   "fix": "Let the prepare phase widen the box by tick-like text that lies just outside it and lines up with the labels inside (numbers on the axis line), before the figure is captured.",
+   "left": null
+  },
+  {
+   "id": "S6",
+   "anchor": "scorer",
+   "status": "open",
+   "title": "The bench's scorer undercounts on charts with many similar names",
+   "cost": "Up to 77 of 573 values per run counted as wrong or missing that are right",
+   "what": [
+    "The scorer of rounds 1 to 3 pairs a predicted chart with the truth chart whose box it overlaps by more than half, and a predicted value with a truth value whose names are less than a fifth apart, first fit. \"Claude3-Sonnet Web\", \"Claude3-Sonnet API\" and \"Claude3.5-Sonnet API\" are that close, as are most of the 37 bar names of this paper. A reading that leaves one row out then pairs the next bar with its neighbour."
+   ],
+   "evidence": "scorer",
+   "effect": "The numbers of round 4 come from a count that pairs by exact printed name after putting the charts where the truth has them (scripts/compare_bundles.py). The four judges reached the same counts on their own. The scorer in the package is unchanged, so rounds 1 to 3 stay comparable.",
+   "where": "docling/engines/figure_data/scoring.py (match_panels, _match_values)",
+   "fix": "Pair by exact name first and by similarity only among what is left; pair charts by printed title or id before boxes. The 15 bench figures have to be scored again to see what moves.",
+   "left": null
+  },
+  {
+   "id": "S10",
+   "anchor": "gpu",
+   "status": "open",
+   "title": "The batch process keeps GPU memory while the step runs",
+   "cost": "8.7 GiB held after the conversion engine was let go",
+   "what": [
+    "With the step at the end of a batch, amir-batch lets go of the conversion engine and empties the GPU cache before the reading model loads. During the last run the process still held 8.7 GiB of GPU memory at that point."
+   ],
+   "evidence": null,
+   "effect": "The local model (15.6 GB) fitted beside it on this machine. On a 24 GB GPU the two would not fit, and the design is that the reading model loads beside no conversion model.",
+   "where": "docling/engines/cli.py, _release_gpu_memory",
+   "fix": "Find what still refers to the models (a cache in the conversion library is the likely holder), or run the step in a process of its own after the batch.",
+   "left": null
+  }
+ ],
+ "notlisted": "Not on this list: the local engine's measuring errors (bars read at a gridline, a stack's last class read as the bar's end), which are the known state of the local method since round 2 and are what its judge called misleading on three figures; and the four gaps of the pipeline that were closed in this round (the page viewer, the batch summary, Ollama's address, an error message), which are on the results page."
+}

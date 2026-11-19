@@ -1,0 +1,113 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/9",
+    "image_path": "images/picture_010.png",
+    "page": 61,
+    "bbox": [
+      76.01,
+      183.02,
+      536.91,
+      697.01
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        691.0,
+        770.4
+      ],
+      "title": null,
+      "kind": "heatmap",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "Colon",
+            "Liver",
+            "II"
+          ]
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 Web",
+            "GPT-3.5 API",
+            "GPT-4 Web",
+            "GPT-4 API",
+            "GPT-4o API",
+            "GPT-4omini API",
+            "Claude3-Hiaku Web",
+            "Claude3-Haiku API",
+            "Claude3-Sonnet Web",
+            "Claude3-Sonnet API",
+            "Claude3-Opus Web",
+            "Claude3-Opus API",
+            "Claude3.5-Sonnet API",
+            "Mistralv2-7b Poe",
+            "Mistralv2-7b-Q8 Local",
+            "Mistral-Large Poe",
+            "Mixtral-8x7b Poe",
+            "Llama2-7b Poe",
+            "Llama2-7b-Q8 Local",
+            "medicineLLM-7b-Q8 Local",
+            "Llama2-13b Poe",
+            "Llama2-13b-Q5 Local",
+            "Llama2-70b Poe",
+            "Llama3-8b Poe",
+            "Llama3-8b-Q8 Local",
+            "OpenBioLLM-8b-Q8 Local",
+            "Llama3-70b Poe",
+            "Llama3.1-8b Poe",
+            "Llama3.1-70b Poe",
+            "Llama3.1-405b Poe",
+            "Gemini Web",
+            "GeminiAdvanced Web",
+            "Gemma2-9b Poe",
+            "Gemma2-9b-Q8 Local",
+            "Gemma2-27b Local",
+            "Phi3-3b-Q16 Local",
+            "Phi3-14b-Q6 Local",
+            "Difficulty Quartiles",
+            "Length Tertiles",
+            "Taxonomy: Integrated",
+            "Diagnosis",
+            "Treatment",
+            "Investigation",
+            "Complications",
+            "Liver",
+            "Colon",
+            "Esophagus",
+            "IBD",
+            "Pancreatico-biliary"
+          ]
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure compares the performance of various large language models across different medical tasks and difficulty levels, represented by a heatmap-style grid of colored bars.",
+  "uncertain": []
+}

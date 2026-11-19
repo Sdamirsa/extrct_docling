@@ -1,0 +1,27 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "axes",
+ "seconds": 268.08,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 267.92,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 412437,
+   "eval_tokens": 50543,
+   "cut": false,
+   "cost_usd": 0.8667575000000001,
+   "turns": 16,
+   "tool_calls": 15
+  }
+ ],
+ "ollama_ps": [],
+ "issues": []
+}

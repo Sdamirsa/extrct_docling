@@ -1,0 +1,1507 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/6",
+    "image_path": "images/picture_007.png",
+    "page": 22,
+    "bbox": [
+      70.67,
+      107.13,
+      493.43,
+      434.31
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        2.0,
+        0.5,
+        320.4,
+        240.9
+      ],
+      "title": "Raw Prompt - Without Determining Seed",
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            2.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": "#87B3B3"
+        },
+        {
+          "name": "Range (Min to Max)",
+          "color": "#87B3B3"
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 85.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 80.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        326.8,
+        0.5,
+        632.5,
+        240.9
+      ],
+      "title": "Best Prompt - Without Determining Seed",
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            2.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": "blue"
+        },
+        {
+          "name": "Range (Min to Max)",
+          "color": "lightblue"
+        }
+      ],
+      "data": [
+        {
+          "category": "0",
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Average",
+          "value": 57.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Average",
+          "value": 47.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 33.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.1",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.4",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.6",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.8",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 91.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "0.9",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.4",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.6",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 57.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "1.8",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 47.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 33.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.25
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        2.0,
+        250.3,
+        319.9,
+        364.6
+      ],
+      "title": "Raw Prompt - After Determining Seed",
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy %",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            66.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": "#77ac77"
+        },
+        {
+          "name": "Range (Min to Max)",
+          "color": "#c2d6c2"
+        }
+      ],
+      "data": [
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 83.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Average",
+          "value": 66.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 85.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 81.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 81.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 78.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 73.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 75.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": null,
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        5.4,
+        364.6,
+        320.9,
+        490.7
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            2.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": "Accuracy",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            25.0,
+            50.0
+          ],
+          "ticks": [
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [],
+      "data": [
+        {
+          "category": null,
+          "x": "",
+          "series": null,
+          "value": 50.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "pointed position and read value disagree, read value kept: ?"
+      ]
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        326.3,
+        250.8,
+        632.5,
+        463.7
+      ],
+      "title": "Best Prompt - After Determining Seed",
+      "kind": "line",
+      "orientation": "horizontal",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            25.0,
+            91.0
+          ],
+          "ticks": [
+            91.0,
+            75.0,
+            66.0,
+            58.0,
+            50.0,
+            41.0,
+            33.0,
+            25.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Average",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "Range (Min to Max)",
+          "color": "#81C784"
+        }
+      ],
+      "data": [
+        {
+          "category": "1",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Average",
+          "value": 76.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "3",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "5",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "6",
+          "x": null,
+          "series": "Average",
+          "value": 70.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "7",
+          "x": null,
+          "series": "Average",
+          "value": 77.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "8",
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "9",
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "10",
+          "x": null,
+          "series": "Average",
+          "value": 79.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "11",
+          "x": null,
+          "series": "Average",
+          "value": 83.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "12",
+          "x": null,
+          "series": "Average",
+          "value": 74.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "13",
+          "x": null,
+          "series": "Average",
+          "value": 72.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "14",
+          "x": null,
+          "series": "Average",
+          "value": 66.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "1",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "2",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "3",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "4",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "5",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "6",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "7",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "8",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "9",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "10",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "11",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "12",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "13",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        },
+        {
+          "category": "14",
+          "x": null,
+          "series": "Range (Min to Max)",
+          "value": null,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.5
+        }
+      ],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    },
+    {
+      "id": "6",
+      "bbox_px": [
+        358.7,
+        465.7,
+        621.2,
+        490.7
+      ],
+      "title": null,
+      "kind": "line",
+      "orientation": null,
+      "axes": {
+        "x": {
+          "name": "Model Tempreature",
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            2.0
+          ],
+          "ticks": null
+        },
+        "y": {
+          "name": null,
+          "unit": null,
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [],
+      "data": [],
+      "notes": [
+        "no axis calibrated from tick labels; values are the model's"
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure displays four line charts comparing the accuracy of raw versus best prompts under two conditions: without and after determining a seed, across various model temperatures.",
+  "uncertain": []
+}

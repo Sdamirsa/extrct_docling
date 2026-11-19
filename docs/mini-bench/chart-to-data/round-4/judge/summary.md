@@ -1,0 +1,35 @@
+# Judge summary
+
+Verdicts per model (15 figures: 10 data charts, 5 without data).
+
+| model | correct | partial | wrong | missed | true_negative | false_positive | usable figures | dominant failure |
+|---|---|---|---|---|---|---|---|---|
+| agent-sonnet-5-5 | 3 | 3 | 0 | 0 | 0 | 0 | 5 | MISSING_VALUES |
+| cloud-gemini-3-8-flash | 4 | 2 | 0 | 0 | 0 | 0 | 4 | VALUE_ASSIGNMENT |
+| cloud-sonnet-5-5 | 4 | 2 | 0 | 0 | 0 | 0 | 5 | MISSING_VALUES |
+| ollama-gemma4-26b-qat | 0 | 6 | 0 | 0 | 0 | 0 | 0 | GEOMETRY_MISMEASURED |
+
+Figures on which each error type was assigned.
+
+| error type | agent-sonnet-5-5 | cloud-gemini-3-8-flash | cloud-sonnet-5-5 | ollama-gemma4-26b-qat |
+|---|---|---|---|---|
+| CATEGORY_LABELS | 0 | 0 | 0 | 2 |
+| GEOMETRY_MISMEASURED | 0 | 3 | 3 | 4 |
+| INTERVAL_BOUNDS | 1 | 2 | 1 | 2 |
+| INVENTED_VALUES | 0 | 2 | 0 | 2 |
+| MISSING_VALUES | 2 | 1 | 2 | 3 |
+| PANEL_STRUCTURE | 2 | 1 | 3 | 2 |
+| PRINTED_LABEL_MISREAD | 0 | 0 | 0 | 1 |
+| SERIES_NAMES | 0 | 0 | 0 | 2 |
+| VALUE_ASSIGNMENT | 1 | 3 | 0 | 2 |
+
+## Assessments
+
+**agent-sonnet-5-5.** Every number this run returned was read correctly: 268 values over six figures, none further than 1.6 % of the axis range from the truth (S02 bars and intervals within 0.1 point, S06 line points within 1.14, all 63 counts of S08 and all 61 printed Correct shares of S03 and S04 exact), and nothing was invented. Its typical failure is deliberate omission: on both stacked-bar charts it recorded only the series that carries a printed label and declared the other five as too small to estimate, which leaves out 305 of the 573 truth values, among them Incorrect segments of 20 to 72 points and a 40-point Error segment; 'usable' for S03 and S04 therefore means the Correct series only. The second weakness is structural and inherited from the layout analysis: S03 is cut into two panels and S06's panel d carries the box of half of panel c, which makes the automatic scorer undercount correct values (27 of 37 on S03, 21 of 52 on S06). Where the image withholds information it guesses instead of abstaining: on S05, with the tick labels hidden by the round's image defect, it assumed chronological columns and attached four values to the wrong sibling model at confidence 0.95, covered only by a general note. Axis metadata also carries OCR residue (ticks such as '0' and 'Function Call -', a categorical x axis on S03) that does not touch the values. The run can be trusted on charts with printed values and on clean bar, interval and line charts read from geometry; on stacked bars expect the labelled series only, and treat a series attribution that depends on unreadable labels as unverified.
+
+**cloud-gemini-3-8-flash.** The run reads printed numbers without a single misread (37 and 24 Correct shares, 17 point labels, 63 heatmap cells) and measures bar ends, interval centres and line markers within 2 % of the axis almost everywhere (S02 71 of 75, S06 52 of 52 by content), with the right charts, kinds, series and category names in all six figures and nothing left unread. It fails on the small unlabelled segments of stacked bars (S03, S04): the background-coloured EOP gap and the grey NOP segment are attached to the neighbouring legend class, slivers of 2OP are returned on bars that have none, and in S04 the orange Error segment of two bars was set aside as an 'unlabelled yellow segment', so the class breakdown is unreliable although every Correct share is exact and the errors stay under the scorer's 5 % band. Nothing in the record warns of this: every estimated value carries confidence 0.8, and in S05 same-coloured markers were attributed to legend entries by guess at 0.95. Interval and range ends are weaker than centres (6 of 56 and 12 of 104 beyond 2 %, two beyond 5 %). Two scorer penalties are artefacts of the record rather than of the reading: in S06 the step replaced the model's four quadrant boxes by those of the layout analysis (truth c is scored against d's values) and the temperature is keyed as a category, and in S03 the box and the axis ticks come from the same layout hint. It can be trusted on figures whose values are printed and on plain bar, interval, line and heatmap panels; the minor classes of stacked bars should not be taken from it.
+
+**cloud-sonnet-5-5.** Printed numbers are read without a single error (37 + 24 + 17 + 63 labels in S03, S04, S05, S08), and measured marks are close: bar ends, interval ends, stacked segments and line points are within 1-2 % of the axis in every figure, with one bar off by 3.1 % (S02 c). Its typical failure is leaving data out rather than getting it wrong: on the 37-bar stacked chart S03 it returned Correct and Incorrect only (142 of 222 values missing, 64 of them non-zero, declared), and in S02 b it nulled 6 of 12 marker centres where two series overlap; this accounts for both partial verdicts and for nearly all values a consumer would not get, hence the dominant failure although two other codes occur more often. The second pattern is structural and comes from the preparation step's panel split leaking into the record: one chart kept as two panels (S03), panels with the whole-figure box or a strip of the chart (S06, S08), which costs scorer pairs but no values. Small readings carry a slight bias or scatter (S06 averages half a point low; S04 slivers up to 0.9 points off, three slivers of 0.3-0.6 where none is drawn). S05 was read correctly as far as the defective image allows; its x keys and the attribution of four points that depends on the hidden date ticks are unusable for that reason only. The run can be trusted on charts with printed values and on measured charts of moderate size (up to about 150 values); on dense stacked bars expect the labelled and the large segments only.
+
+**ollama-gemma4-26b-qat.** The run reads printed numbers and names well: 36 of 37 printed shares in S03, 24 of 24 in S04, all 17 labels of S05, 23 of 23 returned cells of S08, legend entries and bar labels nearly verbatim, and the four panels of S02 are found correctly. It fails wherever a value has to be measured: marks are placed on gridlines, on a neighbouring bar or on the bar's right end (S02 c: 39 bars all 19.91; stacked bars: Incorrect 99.8 on 34 bars because the right edge is reported instead of the segment length), interval ends and ranges are dropped or taken for the centre, and line charts without a calibrated axis are estimated 1 to 5 points off. Dense figures come back incomplete without a word in `uncertain` (168 of 222 values in S03, 80 of 144 in S04, 40 of 63 cells in S08), panels are split wrongly (S03, S06), and some numbers land on the wrong series or in invented cells (S05 b, S02 a, S08). The step's own checks flagged much of this (segments not summing to 100, printed against measured, values outside the axis range), but the records carry the values without a caveat. It can be trusted for the printed label of each bar or point in a simple chart, not for any number read from geometry and not for completeness; none of the six figures is usable as it is.
+

@@ -1,0 +1,79 @@
+{
+ "model": "ollama-gemma4-26b-qat",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-19",
+ "figures": [
+  {
+   "figure_id": "S02",
+   "verdict": "partial",
+   "error_types": ["GEOMETRY_MISMEASURED", "VALUE_ASSIGNMENT", "INTERVAL_BOUNDS"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "Panel c returns 19.91 for all 39 bars (the 20 gridline; the bars end at 38.3 to 53.4), and panel a gives GPT4-API the length of the GPT3-API bar in two of three groups (LangChain 39.94 vs 66.73, Function Call 43.28 vs 68.40). Panel b has 7 of 12 centres off by more than 5 % of the axis, placed on gridlines or caps (raw prompt 51.56 at Default (temp=1) and at Default - 10 %, truth 48.33 and 45.00, 51.6 being an upper interval end) and none of its 24 interval ends; only panel d is close (14 of 18 centres within 5 %, Candidate 1 upper end 38.98 vs 41.67), so 15 of 75 values are within 2 % and 23 within 5 %."
+  },
+  {
+   "figure_id": "S03",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "GEOMETRY_MISMEASURED", "PANEL_STRUCTURE", "SERIES_NAMES", "PRINTED_LABEL_MISREAD", "CATEGORY_LABELS"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "The single chart is split in two at y=506 (27 + 10 bars) and the 27 upper bars carry no series name, so the scorer pairs 0 of 222 although 36 of the 37 printed Correct shares are right (the miss: Llama2-70b Poe 30.7 with label '30.7%' where the figure prints 37.3%); eight lower bar names carry a stray hyphen ('Llama3.1-8b Poe-'). Of the 185 other segment values 168 are not returned and not declared (91 of them visible segments), and the 17 returned are right-edge positions instead of segment lengths: Incorrect 99.81 on all ten lower bars (truth 30.7 to 56.7), GeminiAdvanced Web 2OP 56.61 for a segment of 5.0 that ends at 56.7, Gemini Web Error 59.82 vs 6.67."
+  },
+  {
+   "figure_id": "S04",
+   "verdict": "partial",
+   "error_types": ["GEOMETRY_MISMEASURED", "MISSING_VALUES"],
+   "severity": 3,
+   "usable": false,
+   "evidence": "All 24 printed Correct shares are right (65.2, 59.4, 68.1 ... 54.3) and all 24 bar labels verbatim, but Incorrect is 99.88 on every bar (the bar's right end; truth 19.6 to 63.3) and the 16 other values of the four GeminiAdvanced bars sit on the 40/60/80 gridlines (no image: 2OP 39.85, EOP 59.92, NOP 79.81 vs 4.75, 2.29, 4.68). The 80 values of 2OP, EOP, NOP and Error of the other 20 bars are not returned and not declared (30 of them are visible segments), so 24 of 144 values are right."
+  },
+  {
+   "figure_id": "S05",
+   "verdict": "partial",
+   "error_types": ["VALUE_ASSIGNMENT"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "All 17 printed numbers and all 13 legend names are returned and panel a is right (70.3 and 53.4 are what the given image shows of 70.35% and 53.49%, cut at the frame), but in panel b five of the seven scoreable values sit on the wrong model: GPT3.5-1106 62.35 (truth 48.15) and GPT4-0125 48.15 (truth 62.35) cross the marker colours, GPT4o 56.0 and GPT4omini 75.93 are swapped, GPT3.5-0125 43.83 (truth 46.30). The categories could not be read (the black background hides the years and cut-off dates; the run wrote '12.35%' and legend names in their place), which is not counted and also hides the date column of a marker, so only the colour-crossing swap is the run's alone."
+  },
+  {
+   "figure_id": "S06",
+   "verdict": "partial",
+   "error_types": ["PANEL_STRUCTURE", "CATEGORY_LABELS", "GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS", "INVENTED_VALUES"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "Six panels for four charts: c is cut at half height, so its 13 averages have neither x nor category and its last point reads 66 where the truth is 50.01 (the 50.0 sits alone in a stray panel), and d, cut above its tick labels, is keyed 1 to 14 instead of the temperatures 0 to 2, with 14 points for 13 markers (a second 70 after 0.6 shifts the rest: 83 at '11' against 74.99 at 1.6). The averages are the model's uncalibrated estimates, mostly 1 to 3 points low in a and b (a at 0: 70 vs 73.17, b at 1: 76 vs 79.64; all 26 within 5 %, 13 within 2 %; in row order 43 of 52 within 5 %), and no range end is usable: the 'Range (Min to Max)' rows repeat the average in 22 of 26 rows of a and b, give one number in c and null in d."
+  },
+  {
+   "figure_id": "S08",
+   "verdict": "partial",
+   "error_types": ["INVENTED_VALUES", "MISSING_VALUES", "SERIES_NAMES"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "The 23 real cells returned are all right, 11 of the 12 non-zero counts among them (diagonal 16, 25, 24, 13, 4; GPT: Require Evaluation 1, 5, 5, 3; Parsing Failed 2, 1), but 40 of the 63 cells are missing without a note (39 zeros and B x D = 1, the one extraction error the matrix shows) and four cells are invented in columns that do not exist (2OP x 2OP = 1, EOP x EOP = 5, NOP x NOP = 5, Error x Error = 3, copies of the Require Evaluation column: the counts sum to 113 instead of 100). The column label is written in x with series null, which is why the scorer pairs 0 of 63: a keying fault, not wrong numbers."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 0,
+   "partial": 6,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 0,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "GEOMETRY_MISMEASURED": 4,
+   "MISSING_VALUES": 3,
+   "PANEL_STRUCTURE": 2,
+   "SERIES_NAMES": 2,
+   "CATEGORY_LABELS": 2,
+   "INVENTED_VALUES": 2,
+   "INTERVAL_BOUNDS": 2,
+   "VALUE_ASSIGNMENT": 2,
+   "PRINTED_LABEL_MISREAD": 1
+  },
+  "usable_figures": 0,
+  "dominant_failure": "GEOMETRY_MISMEASURED",
+  "assessment": "The run reads printed numbers and names well: 36 of 37 printed shares in S03, 24 of 24 in S04, all 17 labels of S05, 23 of 23 returned cells of S08, legend entries and bar labels nearly verbatim, and the four panels of S02 are found correctly. It fails wherever a value has to be measured: marks are placed on gridlines, on a neighbouring bar or on the bar's right end (S02 c: 39 bars all 19.91; stacked bars: Incorrect 99.8 on 34 bars because the right edge is reported instead of the segment length), interval ends and ranges are dropped or taken for the centre, and line charts without a calibrated axis are estimated 1 to 5 points off. Dense figures come back incomplete without a word in `uncertain` (168 of 222 values in S03, 80 of 144 in S04, 40 of 63 cells in S08), panels are split wrongly (S03, S06), and some numbers land on the wrong series or in invented cells (S05 b, S02 a, S08). The step's own checks flagged much of this (segments not summing to 100, printed against measured, values outside the axis range), but the records carry the values without a caveat. It can be trusted for the printed label of each bar or point in a simple chart, not for any number read from geometry and not for completeness; none of the six figures is usable as it is."
+ }
+}

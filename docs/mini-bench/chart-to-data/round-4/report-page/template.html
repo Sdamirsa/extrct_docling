@@ -1,0 +1,550 @@
+<title>Chart-to-Data Round 4</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a sticky bar switches two views. Summary reads top-down: the answer, the
+   four commands side by side, which method to use, right values and verdicts figure
+   by figure, the dense figures, time and cost, what reached the bundles, what
+   changed in the pipeline, the capture defect before and after, failure types, what
+   the paper showed, limits, next. Figures is a workbench: figure and truth on the
+   left, one card per switched-on run on the right. Tokens are those of round 3. */
+
+:root {
+  --page: #f3f5f8; --surface: #ffffff; --surface-2: #e9edf2; --line: #d8dee6;
+  --ink: #0e1217; --ink-2: #454e5b; --muted: #77808d;
+  --accent: #2a78d6; --series-1: #2a78d6; --series-2: #eb6834;
+  --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #1c5cab;
+  --seq-ink-lo: #0e1217; --seq-ink-hi: #ffffff;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+    --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+    --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+    --seq-1: #133a6e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #5598e7; --seq-5: #9ec5f4;
+    --seq-ink-lo: #eef0f3; --seq-ink-hi: #0c0e11;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+  --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+  --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+  --seq-1: #133a6e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --seq-ink-lo: #eef0f3; --seq-ink-hi: #0c0e11;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 18px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.bar .sub { color: var(--muted); font-size: 12px; }
+.tabs { display: flex; gap: 4px; margin-left: auto; background: var(--surface-2); padding: 3px; border-radius: 999px; }
+.tabs button { border: 0; background: transparent; padding: 6px 16px; border-radius: 999px; cursor: pointer; font-weight: 500; color: var(--ink-2); }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+
+main { padding-block: 24px 56px; display: flex; flex-direction: column; gap: 32px; }
+section { display: flex; flex-direction: column; gap: 12px; }
+.lede { font-size: 16px; max-width: 68ch; color: var(--ink); }
+.note { max-width: 78ch; color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.scroll { overflow-x: auto; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.tile { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile .big { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.1; }
+.tile .lab { color: var(--ink-2); font-size: 13px; }
+
+.reco { padding: 16px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px 28px; }
+.reco h3 { margin-bottom: 4px; }
+.reco p { color: var(--ink-2); }
+.reco strong { color: var(--ink); }
+
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { font-weight: 600; color: var(--ink-2); font-size: 12px; background: var(--surface); position: sticky; top: 0; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; }
+.model { display: flex; flex-direction: column; line-height: 1.25; white-space: nowrap; }
+.model .build { color: var(--muted); font-size: 12px; }
+.pick { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; vertical-align: 1px; }
+.dots { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line); }
+.dots i.on { background: var(--series-1); border-color: var(--series-1); }
+
+.matrix td, .matrix th { padding: 4px; text-align: center; border-bottom: 0; }
+.matrix th.fig { font-family: var(--font-mono); font-size: 11px; font-weight: 500; }
+.matrix th.fig.nodata { color: var(--muted); }
+.matrix td.name { text-align: left; padding-right: 12px; }
+.cell { width: 34px; height: 28px; border-radius: 5px; border: 0; cursor: pointer; font-size: 11px; font-weight: 700; font-family: var(--font-mono); display: inline-flex; align-items: center; justify-content: center; }
+.cell:hover { filter: brightness(1.12); }
+.v-correct { background: var(--good); color: #fff; }
+.v-partial { background: var(--warn); color: #0b0b0b; }
+.v-wrong { background: var(--crit); color: #fff; }
+.v-missed { background: var(--serious); color: #0b0b0b; }
+.v-true_negative { background: var(--surface-2); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
+.v-false_positive { background: repeating-linear-gradient(135deg, var(--crit) 0 5px, #a82c2c 5px 10px); color: #fff; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .cell { width: 26px; height: 20px; cursor: default; }
+.swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+.heat td.h { text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+.h0 { color: var(--muted); }
+.h1 { background: var(--seq-1); color: var(--seq-ink-lo); }
+.h2 { background: var(--seq-2); color: var(--seq-ink-lo); }
+.h3 { background: var(--seq-3); color: var(--seq-ink-lo); }
+.h4 { background: var(--seq-4); color: var(--seq-ink-hi); }
+.h5 { background: var(--seq-5); color: var(--seq-ink-hi); }
+.heat th.m { font-size: 11px; white-space: normal; min-width: 76px; vertical-align: bottom; }
+
+.timechart { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.trow { display: grid; grid-template-columns: 200px 1fr 86px; gap: 12px; align-items: center; }
+.trow .track { display: flex; gap: 2px; height: 18px; }
+.trow .seg { height: 100%; border-radius: 0; cursor: default; }
+.trow .seg.a { background: var(--series-1); border-radius: 0 4px 4px 0; }
+.trow .seg.b { background: var(--series-2); border-radius: 0 4px 4px 0; }
+.trow .seg.a:not(:last-child) { border-radius: 0; }
+.trow .val { text-align: right; color: var(--ink-2); }
+@media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 2px; } .trow .val { text-align: left; } }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.cols .panel { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.cols p, .cols li { color: var(--ink-2); }
+ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+
+/* figures view */
+.private { padding: 10px 14px; border-left: 3px solid var(--serious); color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 5px 11px; border-radius: 999px; cursor: pointer; font-size: 13px; display: inline-flex; gap: 6px; align-items: center; }
+.chip .mono { font-size: 12px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.chip.nodata:not([aria-pressed="true"]) { color: var(--muted); border-style: dashed; }
+.chip .tick { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.chip[aria-pressed="true"] .tick { background: var(--series-1); }
+.bench { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; align-items: start; }
+@media (max-width: 980px) { .bench { grid-template-columns: minmax(0, 1fr); } }
+.stack { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.figcard { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.figcard img { max-width: 100%; height: auto; background: #fff; border-radius: 4px; border: 1px solid var(--line); align-self: center; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 13px; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; }
+.card { padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.card header .grow { margin-left: auto; color: var(--muted); font-size: 12px; }
+.pill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.codes { display: flex; flex-wrap: wrap; gap: 4px; }
+.code { font-family: var(--font-mono); font-size: 10.5px; padding: 1px 6px; border-radius: 4px; background: var(--surface-2); color: var(--ink-2); }
+.evidence { color: var(--ink-2); }
+.vals { max-height: 360px; overflow: auto; border: 1px solid var(--line); border-radius: 6px; }
+.vals table { font-size: 12px; }
+.vals th, .vals td { padding: 4px 8px; white-space: nowrap; }
+.vals tr.ph td { background: var(--surface-2); font-weight: 600; white-space: normal; }
+.more { align-self: flex-start; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 12px; }
+.empty { color: var(--muted); font-style: italic; }
+.modelgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--page); padding: 6px 9px; border-radius: 6px; font-size: 12px; max-width: 300px; line-height: 1.35; }
+@media (prefers-reduced-motion: no-preference) { .tabs button, .chip, .cell { transition: background-color .12s, color .12s; } }
+.arrow { color: var(--muted); padding: 0 4px; }
+.was { color: var(--muted); }
+.now { font-weight: 700; }
+tr.r1 td { color: var(--muted); }
+tr.r1 .cell { opacity: .62; }
+tr.grp td { border-bottom: 0; padding-bottom: 2px; }
+.matrix td.name .build { font-size: 11px; }
+.rtag { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: 11px; font-weight: 600; background: var(--surface-2); color: var(--ink-2); margin-left: 6px; }
+.rtag.now { background: var(--accent); color: #fff; }
+.chipgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.chipgroup .lab { font-size: 12px; color: var(--muted); min-width: 62px; }
+.trow .track.thin { height: 10px; opacity: .55; }
+.pair { display: flex; flex-direction: column; gap: 3px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; font-size: 13px; padding: 14px 16px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.steps { counter-reset: s; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.steps li { counter-increment: s; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.steps li h3::before { content: counter(s) ". "; color: var(--muted); }
+.steps .was-is { font-size: 12px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 6px; }
+.enote { font-size: 12px; color: var(--ink-2); border-left: 3px solid var(--line); padding-left: 8px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 12px; }
+.codebox { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.codebox pre { margin: 0; overflow-x: auto; font-family: var(--font-mono); font-size: 12px; line-height: 1.55; color: var(--ink-2); white-space: pre; }
+td.wraptext { color: var(--ink-2); min-width: 200px; vertical-align: top; }
+#lessons td { vertical-align: top; }
+tr.sep td { border-top: 2px solid var(--line); }
+#scorecard thead th { white-space: normal; vertical-align: bottom; }
+#scorecard .model { white-space: normal; min-width: 170px; max-width: 250px; }
+#scorecard td:last-child { min-width: 110px; }
+
+/* round 4 */
+.meter { display: inline-block; width: 96px; height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; vertical-align: middle; margin-right: 8px; }
+.meter i { display: block; height: 100%; background: var(--series-1); border-radius: 0 4px 4px 0; }
+.hb { all: unset; display: block; width: 100%; cursor: pointer; text-align: center; font: inherit; font-weight: 600; }
+.hb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.heat td.h { min-width: 54px; }
+.heat thead th { vertical-align: bottom; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 12px; }
+.shots figure { margin: 0; padding: 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.shots img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+.shots figcaption { font-size: 13px; }
+#scorecard td:last-child { min-width: 150px; }
+#matrix { width: auto; }
+#matrix td, #matrix th.fig { padding: 4px 10px; }
+#exports thead th, #byfigure thead th, #dense thead th, #defecttable thead th { white-space: normal; vertical-align: bottom; }
+#exports td:first-child, #byfigure td:first-child { min-width: 200px; }
+</style>
+
+<div class="bar"><div class="wrap">
+  <div><h1>Chart-to-Data Mini Bench · Round 4</h1><div class="sub" id="subline"></div></div>
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" id="tab-summary" aria-selected="true" data-view="summary">Summary</button>
+    <button role="tab" id="tab-figures" aria-selected="false" data-view="figures">Figures</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+<main id="view-summary">
+  <section>
+    <p class="lede" id="lede"></p>
+  </section>
+
+  <section>
+    <h2>Four commands on one paper</h2>
+    <p class="note" id="scoreintro"></p>
+    <div class="panel scroll"><table id="scorecard"></table></div>
+    <p class="note muted" id="scorenotes"></p>
+  </section>
+
+  <section>
+    <h2>Which method to use</h2>
+    <div class="panel reco" id="reco"></div>
+  </section>
+
+  <section>
+    <h2>Right values, figure by figure</h2>
+    <p class="note" id="heatnote"></p>
+    <div class="panel scroll"><table class="heat" id="byfigure"></table></div>
+  </section>
+
+  <section>
+    <h2>The judges' verdicts</h2>
+    <p class="note" id="matrixnote"></p>
+    <div class="legend" id="legend"></div>
+    <div class="panel scroll" style="padding:10px 12px"><table class="matrix" id="matrix"></table></div>
+  </section>
+
+  <section>
+    <h2>The dense supplementary figures</h2>
+    <p class="note" id="densenote"></p>
+    <div class="panel scroll"><table class="heat" id="dense"></table></div>
+  </section>
+
+  <section>
+    <h2>Time and cost of one command</h2>
+    <p class="note" id="timenote"></p>
+    <div class="legend"><span><i class="swatch" style="background:var(--series-1)"></i>conversion</span><span><i class="swatch" style="background:var(--series-2)"></i>figure-to-data step (prepare, read, embed)</span></div>
+    <div class="panel timechart" id="timechart"></div>
+  </section>
+
+  <section>
+    <h2>What each run leaves in its bundle</h2>
+    <div class="panel scroll"><table id="exports"></table></div>
+  </section>
+
+  <section>
+    <h2>What changed in the pipeline</h2>
+    <p class="note">Running the batch command for real showed what the step still lacked there.</p>
+    <ol class="steps" id="changes"></ol>
+  </section>
+
+  <section>
+    <h2>The capture defect, before and after</h2>
+    <p class="note" id="defectnote"></p>
+    <div class="shots" id="shots"></div>
+    <div class="panel scroll"><table id="defecttable"></table></div>
+  </section>
+
+  <section>
+    <h2>How they fail</h2>
+    <p class="note">Number of figures, out of the six judged, on which the judge assigned each error type.</p>
+    <div class="panel scroll"><table class="heat" id="heat"></table></div>
+  </section>
+
+  <section>
+    <h2>What the paper showed about the step</h2>
+    <div class="cols" id="findings"></div>
+  </section>
+
+  <section>
+    <h2>Limits</h2>
+    <div class="cols" id="limits"></div>
+  </section>
+
+  <section>
+    <h2>Next</h2>
+    <div class="cols" id="next"></div>
+  </section>
+</main>
+
+<main id="view-figures" hidden>
+  <section>
+    <p class="panel private">The figure images are the paper's own artwork, shown here for private review. Keep this page unshared.</p>
+    <div class="chips" id="figchips" role="group" aria-label="Figure"></div>
+  </section>
+  <div class="bench">
+    <div class="stack">
+      <div class="panel figcard" id="figcard"></div>
+      <div class="panel card" id="truthcard"></div>
+    </div>
+    <div class="stack">
+      <div class="panel card">
+        <header><h3>Runs</h3><span class="grow"><button class="more" id="allon">All on</button> <button class="more" id="alloff">All off</button></span></header>
+        <div id="modelchips" class="chipgroup"></div>
+      </div>
+      <div class="modelgrid" id="modelcards"></div>
+    </div>
+  </div>
+</main>
+</div>
+<div id="tip" hidden></div>
+<script id="bench-data" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('bench-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const VERDICT = { correct: ['C', 'Correct'], partial: ['p', 'Partial'], wrong: ['w', 'Wrong'], missed: ['m', 'Missed'] };
+  const STATUS = { read: 'read', no_data: 'declined: no data', not_read: 'not read', failed: 'failed', 'not prepared': 'not prepared' };
+  const store = {
+    get(key, fallback) { try { const v = localStorage.getItem('c2d4.' + key); return v == null ? fallback : JSON.parse(v); } catch (e) { return fallback; } },
+    set(key, value) { try { localStorage.setItem('c2d4.' + key, JSON.stringify(value)); } catch (e) { /* storage unavailable */ } },
+  };
+  const byKey = Object.fromEntries(D.runs.map((r) => [r.key, r]));
+  const state = {
+    view: store.get('view', 'summary'),
+    fig: store.get('fig', 'S03'),
+    on: new Set(store.get('on', D.runs.map((r) => r.key)).filter((k) => byKey[k])),
+    allTruth: false,
+    allRows: {},
+  };
+  if (!D.figures.some((f) => f.id === state.fig)) state.fig = D.figures[0].id;
+  const runName = (r) => `${r.name} (${r.build})`;
+  const fmt = (v) => {
+    if (v == null || v === '') return '';
+    if (typeof v !== 'number') return esc(v);
+    if (Number.isInteger(v)) return String(v);
+    return String(Number(v.toPrecision(4)));
+  };
+  const int = (v) => Math.round(v).toLocaleString('en-US');
+  const mins = (s) => Math.round(s / 60) + ' min';
+  const secs = (s) => (s == null ? '' : s >= 100 ? int(s) + ' s' : s.toFixed(1) + ' s');
+  const usd = (v) => (v == null ? 'local' : '$' + v.toFixed(2));
+  const cards = (items) => items.map(([h, p]) => `<div class="panel"><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join('');
+  const model = (r) => `<span class="model"><span>${esc(r.name)}</span><span class="build">${esc(r.build)}</span></span>`;
+  const judged = D.figures.filter((f) => f.kind === 'truth');
+  const dense = D.figures.filter((f) => f.kind === 'sample');
+  const step = (n, max) => (n <= 0 ? 0 : Math.max(1, Math.ceil((5 * n) / max)));
+
+  function renderSummary() {
+    const T = D.text;
+    $('subline').textContent = T.subline;
+    $('lede').textContent = T.lede;
+    $('scoreintro').textContent = T.scoreintro;
+    $('scorenotes').textContent = T.scorenotes;
+    ['heatnote', 'matrixnote', 'densenote', 'timenote', 'defectnote'].forEach((id) => { $(id).textContent = T[id]; });
+    $('reco').innerHTML = T.reco.map(([h, strong, rest]) => `<div><h3>${esc(h)}</h3><p><strong>${esc(strong)}</strong> ${esc(rest)}</p></div>`).join('');
+
+    const dots = (n) => `<span class="dots" aria-hidden="true">${judged.map((_, i) => `<i class="${i < n ? 'on' : ''}"></i>`).join('')}</span>`;
+    const meter = (n, of) => `<span class="meter" aria-hidden="true"><i style="width:${(100 * n) / of}%"></i></span>`;
+    $('scorecard').innerHTML = `<thead><tr><th>Method</th><th class="r">Whole command</th><th class="r">of it, the step</th><th class="r">Cost</th><th class="r">Values returned, 12 figures</th><th>Main six: right values (of ${D.truthValues})</th><th>Judges: usable figures (of ${judged.length})</th><th class="r">Would mislead</th><th class="r">Dense figures: sampled bars right (of ${D.sampleValues})</th><th>The figure goes to</th></tr></thead><tbody>` +
+      D.runs.map((r) => `<tr><td>${model(r)}</td>
+        <td class="r num">${mins(r.seconds.command)}</td>
+        <td class="r num">${int(r.seconds.command - r.seconds.conversion)} s</td>
+        <td class="r num">${usd(r.cost)}</td>
+        <td class="r num">${int(r.values)}</td>
+        <td>${meter(r.truth.within_5_by_name, D.truthValues)}<span class="num now">${r.truth.within_5_by_name}</span></td>
+        <td>${dots(r.judge.usable)}<span class="num now">${r.judge.usable}</span></td>
+        <td class="r num">${r.judge.would_mislead}</td>
+        <td class="r num">${r.sample.within_5}</td>
+        <td>${esc(r.where)}</td></tr>`).join('') + '</tbody>';
+
+    const cellButton = (cls, text, r, f, tip) => `<td class="h ${cls}"><button class="hb" data-run="${r.key}" data-fig="${f.id}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">${text}</button></td>`;
+    $('byfigure').innerHTML = `<thead><tr><th>Method</th>${judged.map((f) => `<th class="m r">${f.id}<br><span class="muted">${esc(f.figure)} · ${f.truthValues}</span></th>`).join('')}<th class="m r">All six<br><span class="muted">${D.truthValues}</span></th></tr></thead><tbody>` +
+      D.runs.map((r) => `<tr><td>${model(r)}</td>${judged.map((f) => {
+        const p = r.per[f.id];
+        const n = p.score.within_5_by_name;
+        const again = p.afterFix ? ` Read again after the fix: ${p.afterFix.within_5_by_name}.` : '';
+        return cellButton('h' + step(n, f.truthValues), n, r, f, `${runName(r)} on ${f.id}: ${n} of ${f.truthValues} values right by name, ${p.values} returned.${again}`);
+      }).join('')}<td class="h h${step(r.truth.within_5_by_name, D.truthValues)}">${r.truth.within_5_by_name}</td></tr>`).join('') + '</tbody>';
+
+    $('legend').innerHTML = Object.entries(VERDICT).slice(0, 2).map(([k, [code, label]]) => `<span><span class="cell v-${k}">${code}</span>${esc(label)}</span>`).join('') +
+      '<span><span class="cell v-partial">p!</span>Partial, and it would mislead</span>';
+    $('matrix').innerHTML = `<thead><tr><th></th>${judged.map((f) => `<th class="fig">${f.id}</th>`).join('')}</tr></thead><tbody>` +
+      D.runs.map((r) => `<tr class="grp"><td class="name">${model(r)}</td>${judged.map((f) => {
+        const j = r.per[f.id].judge;
+        const tip = `${runName(r)} on ${f.id}: ${VERDICT[j.verdict][1]}${j.usable ? ', usable' : ', not usable as it is'}. ${j.evidence}`;
+        return `<td><button class="cell v-${j.verdict}" data-run="${r.key}" data-fig="${f.id}" data-tip="${esc(tip)}" aria-label="${esc(tip)}">${VERDICT[j.verdict][0]}${j.severity === 3 ? '!' : ''}</button></td>`;
+      }).join('')}</tr>`).join('') + '</tbody>';
+
+    $('dense').innerHTML = `<thead><tr><th>Figure</th><th class="r">Values it holds</th>${D.runs.map((r) => `<th class="m r" colspan="2">${esc(r.name)}<br><span class="muted">returned · sampled right of 12</span></th>`).join('')}</tr></thead><tbody>` +
+      dense.map((f) => `<tr><td><strong>${f.id}</strong> <span class="muted">${esc(f.figure)}, page ${esc(f.page)}</span></td><td class="r num">${int(f.holds)}</td>${D.runs.map((r) => {
+        const p = r.per[f.id];
+        const tip = `${runName(r)} on ${f.id}: ${STATUS[p.status]}, ${p.values} values returned of ${f.holds}; ${p.sample.within_5} of ${f.sampleValues} sampled bars right.`;
+        return `<td class="r num">${p.values ? int(p.values) : '<span class="muted">' + esc(STATUS[p.status]) + '</span>'}</td>` + cellButton('h' + step(p.sample.within_5, f.sampleValues), p.sample.within_5, r, f, tip);
+      }).join('')}</tr>`).join('') +
+      `<tr class="sep"><td><strong>All five</strong></td><td class="r num">${int(dense.reduce((n, f) => n + f.holds, 0))}</td>${D.runs.map((r) => `<td class="r num">${int(dense.reduce((n, f) => n + r.per[f.id].values, 0))}</td><td class="h h${step(r.sample.within_5, D.sampleValues)}">${r.sample.within_5}</td>`).join('')}</tr></tbody>`;
+
+    const longest = Math.max(...D.runs.map((r) => r.seconds.command));
+    $('timechart').innerHTML = D.runs.map((r) => {
+      const stepSeconds = r.seconds.command - r.seconds.conversion;
+      return `<div class="trow">${model(r)}
+      <div class="track"><div class="seg a" style="width:${(100 * r.seconds.conversion) / longest}%" tabindex="0" data-tip="${esc(`${runName(r)}: conversion ${int(r.seconds.conversion)} s`)}"></div><div class="seg b" style="width:${(100 * stepSeconds) / longest}%" tabindex="0" data-tip="${esc(`${runName(r)}: figure-to-data step ${int(stepSeconds)} s, of which ${int(r.seconds.reading)} s reading`)}"></div></div>
+      <span class="val num">${mins(r.seconds.command)}<br><span class="muted">${usd(r.cost)}</span></span></div>`;
+    }).join('');
+
+    $('exports').innerHTML = `<thead><tr><th>Method</th><th class="r">Figures read</th><th class="r">Declined: no data</th><th class="r">Not read</th><th class="r">Charts</th><th class="r">A table at the figure</th><th class="r">A pointer only</th><th class="r">Chunks</th><th class="r">Chunks with figure data</th><th class="r">Model calls</th><th class="r">Output tokens</th></tr></thead><tbody>` +
+      D.runs.map((r) => `<tr><td>${model(r)}</td><td class="r num">${r.status.read}</td><td class="r num">${r.status.no_data}</td><td class="r num">${r.status.not_read}</td><td class="r num">${r.charts}</td><td class="r num">${r.exports.tables_at_the_figure}</td><td class="r num">${r.exports.pointer_only}</td><td class="r num">${r.exports.chunks}</td><td class="r num">${r.exports.chunks_with_figure_data}</td><td class="r num">${r.calls}${r.toolCalls ? ` <span class="muted">+ ${r.toolCalls} tool calls</span>` : ''}</td><td class="r num">${int(r.outputTokens)}</td></tr>`).join('') + '</tbody>';
+
+    $('changes').innerHTML = T.changes.map(([h, was, now]) => `<li class="panel"><h3>${esc(h)}</h3><p>${esc(was)}</p><p class="was-is"><strong>Now:</strong> ${esc(now)}</p></li>`).join('');
+
+    $('shots').innerHTML = `<figure class="panel"><img src="${D.defect.before}" alt="Figure 6 as the readers got it: two charts on a black background, the axis labels invisible"><figcaption><strong>As every reader got it.</strong> <span class="muted">Black where the page is white; the axis titles and tick labels are gone.</span></figcaption></figure>
+      <figure class="panel"><img src="${D.defect.after}" alt="Figure 6 after the fix: the same charts on white with years and cut-off dates on the x axes"><figcaption><strong>After the fix.</strong> <span class="muted">The image's transparency mask is applied; years and cut-off dates are readable.</span></figcaption></figure>`;
+    const s05 = D.figures.find((f) => f.id === 'S05');
+    $('defecttable').innerHTML = '<thead><tr><th>Method</th><th class="r">First pass: right by name (of 13)</th><th class="r">Read again after the fix (of 13)</th></tr></thead><tbody>' +
+      D.runs.map((r) => { const p = r.per[s05.id]; return `<tr><td>${model(r)}</td><td class="r num">${p.score.within_5_by_name}</td><td class="r num now">${p.afterFix ? p.afterFix.within_5_by_name : ''}</td></tr>`; }).join('') + '</tbody>';
+
+    const max = Math.max(1, ...D.runs.flatMap((r) => D.errorRows.map(([code]) => r.errors[code] || 0)));
+    $('heat').innerHTML = `<thead><tr><th>Error type</th>${D.runs.map((r) => `<th class="m r">${esc(r.name)}</th>`).join('')}</tr></thead><tbody>` +
+      D.errorRows.map(([code, label]) => `<tr><td>${esc(label)}</td>${D.runs.map((r) => {
+        const n = r.errors[code] || 0;
+        return `<td class="h h${step(n, max)}" data-tip="${esc(`${runName(r)}: ${label.toLowerCase()} on ${n} of ${judged.length} figures`)}" tabindex="0">${n}</td>`;
+      }).join('')}</tr>`).join('') + '</tbody>';
+
+    $('findings').innerHTML = cards(T.findings);
+    $('limits').innerHTML = cards(T.limits);
+    $('next').innerHTML = cards(T.next);
+  }
+
+  function valueTable(chart, limit) {
+    if (!chart) return '<p class="empty">No reading for this figure.</p>';
+    if (!chart.panels.length) return '<p class="empty">No charts: nothing returned for this figure.</p>';
+    let shown = 0;
+    const body = chart.panels.map((p) => {
+      const head = `<tr class="ph"><td colspan="7">Chart ${esc(p.id)}${p.title ? ` · ${esc(p.title)}` : ''} · ${esc(p.kind || 'kind not given')} · ${p.n} value${p.n === 1 ? '' : 's'}</td></tr>`;
+      const rows = p.rows.filter(() => shown++ < limit).map((r) => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="num">${fmt(r[2])}</td><td class="r num"><strong>${fmt(r[3])}</strong></td><td class="r num">${fmt(r[4])}</td><td class="r num">${fmt(r[5])}</td><td class="muted">${esc(r[7] || '')}${r[6] ? ` “${esc(r[6])}”` : ''}</td></tr>`).join('');
+      return head + rows;
+    }).join('');
+    return `<div class="vals"><table><thead><tr><th>Category</th><th>Series</th><th>x</th><th class="r">Value</th><th class="r">Low</th><th class="r">High</th><th>Source</th></tr></thead><tbody>${body}</tbody></table></div>`;
+  }
+
+  function renderFigures() {
+    const f = D.figures.find((x) => x.id === state.fig);
+    const kindNote = { truth: '', sample: 'sample', none: 'no truth' };
+    $('figchips').innerHTML = D.figures.map((x) => `<button class="chip${x.kind === 'truth' ? '' : ' nodata'}" data-fig="${x.id}" aria-pressed="${x.id === f.id}" data-tip="${esc(`${x.figure}, page ${x.page}. ${x.shows}`)}"><span class="mono">${x.id}</span>${kindNote[x.kind] ? `<span>${kindNote[x.kind]}</span>` : ''}</button>`).join('');
+    $('figcard').innerHTML = `<h3>${f.id} · ${esc(f.figure)}</h3><img src="${f.img}" alt="${esc(`${f.figure}: ${f.shows}`)}">
+      <dl class="meta"><dt>Where</dt><dd>${esc(f.figure)}, page ${esc(f.page)} of the showcase paper</dd><dt>Shows</dt><dd>${esc(f.shows)}</dd>${f.id === 'S05' ? '<dt>Note</dt><dd>This is the image the readers were given in the four runs: black where the page is white. See the capture defect in the summary.</dd>' : ''}</dl>`;
+    const total = f.truth ? f.truth.total : 0;
+    const limit = state.allTruth ? 1e9 : 40;
+    const head = f.kind === 'truth' ? `${total} values in ${f.truthCharts} chart${f.truthCharts === 1 ? '' : 's'}` : f.kind === 'sample' ? `sample of ${f.sampleValues} bars; the figure holds ${int(f.holds)} values` : 'no truth';
+    $('truthcard').innerHTML = `<header><h3>${f.kind === 'sample' ? 'Sample truth' : 'Reference truth'}</h3><span class="pill ${f.kind === 'truth' ? 'v-correct' : 'v-true_negative'}">${esc(head)}</span><span class="grow">claude-fable-5-2</span></header>
+      ${f.truth ? valueTable(f.truth, limit) : '<p class="evidence">A coloured cell per model and question, about 11,000 cells, without printed values or axes. All four runs declined it, and no truth was made.</p>'}
+      ${f.truth && total > 40 ? `<button class="more" id="truthmore">${state.allTruth ? 'Show the first 40 rows' : `Show ${Math.min(total, f.truth.panels.reduce((n, x) => n + x.rows.length, 0))} rows`}</button>` : ''}
+      ${f.truth && f.truth.uncertain.length ? `<details><summary class="muted">Notes on how it was made</summary><ul>${f.truth.uncertain.map((u) => `<li>${esc(u)}</li>`).join('')}</ul></details>` : ''}`;
+
+    $('modelchips').innerHTML = D.runs.map((r) => `<button class="chip" data-run="${r.key}" aria-pressed="${state.on.has(r.key)}"><span class="tick"></span>${esc(r.name)}</button>`).join('');
+    const shown = D.runs.filter((r) => state.on.has(r.key));
+    $('modelcards').innerHTML = shown.length ? shown.map((r) => {
+      const p = r.per[f.id];
+      const limitRows = state.allRows[r.key] ? 1e9 : 25;
+      const total = p.pred ? p.pred.total : 0;
+      const capped = p.pred ? p.pred.panels.reduce((n, x) => n + x.rows.length, 0) : 0;
+      const j = p.judge;
+      let score = '';
+      if (p.score) {
+        score = `Right by name: ${p.score.within_5_by_name} of ${f.truthValues}. The scorer of rounds 1 to 3: ${p.score.within_5}. Names ignored: ${p.score.within_5_names_ignored}.`;
+        if (p.afterFix) score += ` Read again after the capture fix: ${p.afterFix.within_5_by_name}.`;
+      } else if (p.sample) {
+        score = `Sampled bars right: ${p.sample.within_5} of ${f.sampleValues}. Returned ${p.values} of the ${int(f.holds)} values the figure holds.`;
+      }
+      const how = [p.cost != null ? '$' + p.cost.toFixed(3) : '', p.tokens ? `${p.tokens.toLocaleString('en-US')} output tokens` : ''].filter(Boolean).join(' · ');
+      const notes = p.pred ? p.pred.uncertain.slice(0, 3) : [];
+      return `<article class="panel card"><header><h3>${esc(r.name)} <span class="muted">${esc(r.build)}</span></h3>${j ? `<span class="pill v-${j.verdict}">${VERDICT[j.verdict][1]}${j.severity === 3 ? ', would mislead' : ''}</span><span class="pill v-true_negative">${j.usable ? 'usable' : 'not usable'}</span>` : `<span class="pill v-true_negative">${esc(STATUS[p.status])}</span>`}<span class="grow num">${secs(p.seconds)}</span></header>
+        ${j && j.error_types.length ? `<div class="codes">${j.error_types.map((c) => `<span class="code">${esc(c)}</span>`).join('')}</div>` : ''}
+        ${j ? `<p class="evidence">${esc(j.evidence)}</p>` : ''}
+        ${notes.length ? `<p class="enote">What it says it left out or is unsure of: ${notes.map(esc).join(' · ')}</p>` : ''}
+        ${score || how ? `<p class="muted">${esc([score, how].filter(Boolean).join(' '))}</p>` : ''}
+        ${valueTable(p.pred, limitRows)}
+        ${capped > 25 ? `<button class="more" data-rows="${r.key}">${state.allRows[r.key] ? 'Show the first 25 rows' : `Show ${capped} rows`}</button>` : ''}
+        ${total > capped ? `<p class="muted">${total - capped} more rows are in the run's file.</p>` : ''}</article>`;
+    }).join('') : '<p class="panel card empty">Switch a run on to see what it returned for this figure.</p>';
+  }
+
+  function show(view) {
+    state.view = view; store.set('view', view);
+    $('view-summary').hidden = view !== 'summary';
+    $('view-figures').hidden = view !== 'figures';
+    document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === view)));
+    if (view === 'figures') renderFigures();
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    if (t.dataset.view) return show(t.dataset.view);
+    if ((t.classList.contains('cell') || t.classList.contains('hb')) && t.dataset.fig) {
+      state.fig = t.dataset.fig; state.on.add(t.dataset.run);
+      store.set('fig', state.fig); store.set('on', [...state.on]);
+      state.allTruth = false;
+      return show('figures');
+    }
+    if (t.dataset.fig) { state.fig = t.dataset.fig; state.allTruth = false; state.allRows = {}; store.set('fig', state.fig); return renderFigures(); }
+    if (t.dataset.run) {
+      if (state.on.has(t.dataset.run)) state.on.delete(t.dataset.run); else state.on.add(t.dataset.run);
+      store.set('on', [...state.on]); return renderFigures();
+    }
+    if (t.id === 'allon') { D.runs.forEach((r) => state.on.add(r.key)); store.set('on', [...state.on]); return renderFigures(); }
+    if (t.id === 'alloff') { state.on.clear(); store.set('on', []); return renderFigures(); }
+    if (t.id === 'truthmore') { state.allTruth = !state.allTruth; return renderFigures(); }
+    if (t.dataset.rows) { state.allRows[t.dataset.rows] = !state.allRows[t.dataset.rows]; return renderFigures(); }
+  });
+
+  const tip = $('tip');
+  function showTip(el, x, y) {
+    tip.textContent = el.dataset.tip; tip.hidden = false;
+    const r = tip.getBoundingClientRect();
+    tip.style.left = Math.max(8, Math.min(x + 12, window.innerWidth - r.width - 8)) + 'px';
+    tip.style.top = Math.max(8, y + 16 + r.height > window.innerHeight ? y - r.height - 10 : y + 16) + 'px';
+  }
+  document.addEventListener('pointermove', (e) => {
+    const el = e.target.closest('[data-tip]');
+    if (el) showTip(el, e.clientX, e.clientY); else tip.hidden = true;
+  });
+  document.addEventListener('focusin', (e) => {
+    const el = e.target.closest('[data-tip]');
+    if (el) { const r = el.getBoundingClientRect(); showTip(el, r.left, r.bottom); } else tip.hidden = true;
+  });
+  document.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+
+  renderSummary();
+  show(state.view === 'figures' ? 'figures' : 'summary');
+})();
+</script>

@@ -1,0 +1,29 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "gutters",
+ "seconds": 29.71,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 29.66,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 50741,
+   "eval_tokens": 3695,
+   "cut": false,
+   "cost_usd": 0.0903837,
+   "turns": 6,
+   "tool_calls": 5
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel a2: 75.93 outside the axis range [9.26, 63.58] (4.0/GPT4o-20240513 (2023-09))"
+ ]
+}

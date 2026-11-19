@@ -19,6 +19,14 @@ UI:
 * Noise-flagged pictures (journal logos, repeated banners) render with a
   dashed gray border and a ``noise`` badge so a reviewer can spot them
   at a glance.
+* A figure the figure-to-data step read carries a ``data`` badge; its side
+  panel shows the note that a model read it, the table of values and a link
+  to the full reading.
+
+:func:`render_html_preview` builds the viewer during a conversion;
+:func:`rebuild_html_preview` builds the same page from a finished bundle's
+files, which is how a step that runs after the conversion gets what it
+added to the document into the viewer.
 """
 
 from __future__ import annotations
@@ -29,16 +37,23 @@ import io
 import json
 import logging
 import re
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
-from docling_core.types.doc import PictureItem, TableItem
+from docling_core.types.doc import DoclingDocument, PictureItem, TableData, TableItem
+from PIL import Image
 
-from docling.datamodel.base_models import ConversionStatus, Page
+from docling.datamodel.base_models import ConversionStatus
 from docling.datamodel.document import ConversionResult
 from docling.engines.artifacts import crop_stem
+from docling.engines.figure_data.evidence import job_stem
+from docling.engines.figure_data.prepare import STEP_DIRNAME
+from docling.engines.figure_data.publish import get_chart_data
+from docling.engines.figure_data.report import READING_MD
+from docling.engines.figure_data.schema import ChartData
 from docling.engines.figure_typing import get_figure_type
-from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.picture_filter import PictureNoiseFlag, read_noise_flags
 
 _log = logging.getLogger(__name__)
 
@@ -60,10 +75,24 @@ LABEL_COLOURS: dict[str, str] = {
     "reference": "#17becf",
 }
 LABEL_DEFAULT = "#888888"
+PREVIEW_FILENAME = "preview.html"
+PREVIEW_EMBEDDED_FILENAME = "preview.embedded.html"
 
 
 class PreviewError(RuntimeError):
     """Raised when the viewer cannot produce a preview."""
+
+
+@dataclass(frozen=True)
+class _PageImage:
+    """A page render on disk and how it maps to the page."""
+
+    page_no: int
+    page_height: float
+    rel_path: str
+    width_px: int
+    height_px: int
+    scale: float
 
 
 def render_html_preview(
@@ -92,41 +121,102 @@ def render_html_preview(
     images_dir = target_dir / page_image_subdir
     images_dir.mkdir(exist_ok=True)
 
-    noise_by_self_ref: dict[str, PictureNoiseFlag] = {}
-    for flag in noise_flags or []:
-        if flag.self_ref:
-            noise_by_self_ref[flag.self_ref] = flag
-
-    counters = {"picture": 0, "table": 0}
-    indexed = _index_items_by_page(result, noise_by_self_ref, counters, target_dir)
-
-    noise_count = sum(flag.is_noise for flag in noise_by_self_ref.values())
-    summary = _summary_block(result, indexed, noise_count, chunks_jsonl)
-
-    page_blocks: list[str] = []
+    pages: list[_PageImage] = []
     for page in result.pages:
-        page_block = _render_page_block(
-            page,
-            indexed.get(page.page_no, []),
-            images_dir,
-            image_scale=image_scale,
+        image = page.get_image(scale=image_scale)
+        if image is None or page.size is None:
+            _log.warning(
+                "Skipping page %s: no rendered image (set generate_page_images=True).",
+                page.page_no,
+            )
+            continue
+        image_path = images_dir / f"page_{page.page_no:04d}.png"
+        image.save(image_path, format="PNG")
+        pages.append(
+            _PageImage(
+                page_no=page.page_no,
+                page_height=page.size.height,
+                rel_path=image_path.relative_to(target_dir).as_posix(),
+                width_px=int(page.size.width * image_scale),
+                height_px=int(page.size.height * image_scale),
+                scale=image_scale,
+            )
         )
-        if page_block is not None:
-            page_blocks.append(page_block)
-
-    if not page_blocks:
+    if not pages:
         raise PreviewError(
             "No page images were rendered. Build PdfEngine with with_page_images=True."
         )
-
-    html_doc = _HTML_TEMPLATE.format(
-        title=html.escape(result.input.file.name if result.input else "preview"),
-        summary=summary,
-        legend=_render_legend(),
-        pages="\n".join(page_blocks),
+    return _write_preview(
+        result.document,
+        pages,
+        target_dir,
+        title=result.input.file.name if result.input else "preview",
+        page_count=len(result.pages),
+        noise_flags=noise_flags or [],
+        chunks_jsonl=chunks_jsonl,
     )
 
-    target = target_dir / "preview.html"
+
+def rebuild_html_preview(pdf_dir: Path, *, page_image_subdir: str = "images") -> Path:
+    """Write ``preview.html`` of an existing bundle again from its files
+    (``document.json``, the page renders, ``figures.jsonl``,
+    ``chunks.jsonl``), without reconverting."""
+    doc = DoclingDocument.load_from_json(pdf_dir / "document.json")
+    pages: list[_PageImage] = []
+    for page_no, page in sorted(doc.pages.items()):
+        rel_path = f"{page_image_subdir}/page_{page_no:04d}.png"
+        if not (pdf_dir / rel_path).is_file():
+            continue
+        with Image.open(pdf_dir / rel_path) as image:
+            width_px, height_px = image.size
+        pages.append(
+            _PageImage(
+                page_no=page_no,
+                page_height=page.size.height,
+                rel_path=rel_path,
+                width_px=width_px,
+                height_px=height_px,
+                scale=width_px / page.size.width,
+            )
+        )
+    if not pages:
+        raise PreviewError(
+            f"{pdf_dir} holds no page renders ({page_image_subdir}/page_NNNN.png)."
+        )
+    return _write_preview(
+        doc,
+        pages,
+        pdf_dir,
+        title=(doc.origin.filename if doc.origin is not None else None) or pdf_dir.name,
+        page_count=len(doc.pages),
+        noise_flags=read_noise_flags(pdf_dir / "figures.jsonl"),
+        chunks_jsonl=pdf_dir / "chunks.jsonl",
+    )
+
+
+def _write_preview(
+    doc: DoclingDocument,
+    pages: list[_PageImage],
+    target_dir: Path,
+    *,
+    title: str,
+    page_count: int,
+    noise_flags: list[PictureNoiseFlag],
+    chunks_jsonl: Path | None,
+) -> Path:
+    noise_by_self_ref = {flag.self_ref: flag for flag in noise_flags if flag.self_ref}
+    counters = {"picture": 0, "table": 0}
+    indexed = _index_items_by_page(doc, noise_by_self_ref, counters, target_dir)
+    noise_count = sum(flag.is_noise for flag in noise_by_self_ref.values())
+    html_doc = _HTML_TEMPLATE.format(
+        title=html.escape(title),
+        summary=_summary_block(page_count, indexed, noise_count, chunks_jsonl),
+        legend=_render_legend(),
+        pages="\n".join(
+            _render_page_block(page, indexed.get(page.page_no, [])) for page in pages
+        ),
+    )
+    target = target_dir / PREVIEW_FILENAME
     target.write_text(html_doc, encoding="utf-8")
     _log.info("Wrote HTML preview to %s", target)
     return target
@@ -141,8 +231,6 @@ def embed_html_images(preview_html: Path, *, page_jpeg_quality: int = 80) -> Pat
     its own. Page renders are re-encoded as JPEG to keep the size shareable;
     figure/table crops stay lossless PNG.
     """
-    from PIL import Image
-
     base_dir = preview_html.parent
     cache: dict[str, str] = {}
 
@@ -166,19 +254,18 @@ def embed_html_images(preview_html: Path, *, page_jpeg_quality: int = 80) -> Pat
 
     html_doc = preview_html.read_text(encoding="utf-8")
     embedded = _IMAGE_REF.sub(lambda m: _data_uri(m.group(0)), html_doc)
-    target = base_dir / "preview.embedded.html"
+    target = base_dir / PREVIEW_EMBEDDED_FILENAME
     target.write_text(embedded, encoding="utf-8")
     _log.info("Wrote standalone HTML preview to %s", target)
     return target
 
 
 def _summary_block(
-    result: ConversionResult,
+    pages: int,
     indexed: dict[int, list[tuple]],
     noise_count: int,
     chunks_jsonl: Path | None,
 ) -> str:
-    pages = len(result.pages)
     pictures = sum(
         1 for ents in indexed.values() for e in ents if e[4]["kind"] == "picture"
     )
@@ -200,20 +287,31 @@ def _summary_block(
         chips.append(
             f'<span class="chip chip-noise">{noise_count}<small>noise</small></span>'
         )
+    # A picture has one entry per page it is on; a figure counts once.
+    read = {
+        e[4]["self_ref"]: e[4]["figure_data"]["values"]
+        for ents in indexed.values()
+        for e in ents
+        if e[4].get("figure_data") is not None
+    }
+    if read:
+        chips.append(
+            f'<span class="chip chip-data">{sum(1 for n in read.values() if n)}'
+            f"<small>of {len(read)} chart figures with data read by a model"
+            "</small></span>"
+        )
     return f'<div class="summary">{"".join(chips)}</div>'
 
 
 def _index_items_by_page(
-    result: ConversionResult,
+    doc: DoclingDocument,
     noise_by_self_ref: dict[str, PictureNoiseFlag],
     counters: dict[str, int],
     pdf_dir: Path,
 ) -> dict[int, list[tuple]]:
     by_page: dict[int, list[tuple]] = {}
-    for item, level in result.document.iterate_items():
-        display = _display_metadata(
-            item, result.document, noise_by_self_ref, counters, pdf_dir
-        )
+    for item, level in doc.iterate_items():
+        display = _display_metadata(item, doc, noise_by_self_ref, counters, pdf_dir)
         prov_list = getattr(item, "prov", None) or []
         for prov_idx, prov in enumerate(prov_list):
             by_page.setdefault(prov.page_no, []).append(
@@ -264,6 +362,7 @@ def _display_metadata(
                 "generic_classifier_label": _picture_classifier_label(item),
                 "is_noise": bool(getattr(flag, "is_noise", False)),
                 "noise_reason": getattr(flag, "noise_reason", None),
+                "figure_data": _figure_data_display(item, pdf_dir),
             }
         )
     elif kind == "table":
@@ -289,6 +388,43 @@ def _display_metadata(
             }
         )
     return info
+
+
+def _figure_data_display(item: PictureItem, pdf_dir: Path) -> dict[str, Any] | None:
+    """What the figure-to-data step stored on *item*, as the side panel
+    shows it; None for a picture the step did not look at."""
+    record = get_chart_data(item)
+    if record is None:
+        return None
+    chart = ChartData.model_validate(record)
+    table = item.meta.tabular_chart if item.meta is not None else None
+    reading = f"{STEP_DIRNAME}/{job_stem(item.self_ref)}/{READING_MD}"
+    return {
+        "charts": len(chart.panels),
+        "values": sum(len(panel.data) for panel in chart.panels),
+        "note": table.title if table is not None else None,
+        "table_html": (
+            _grid_html(table.chart_data)
+            if table is not None and table.chart_data.num_rows
+            else None
+        ),
+        "left_out": chart.uncertain,
+        "reading": reading if (pdf_dir / reading).is_file() else None,
+    }
+
+
+def _grid_html(table: TableData) -> str:
+    rows = [
+        "<tr>"
+        + "".join(
+            f"<{tag}>{html.escape(cell.text)}</{tag}>"
+            for cell in row
+            for tag in ("th" if cell.column_header or cell.row_header else "td",)
+        )
+        + "</tr>"
+        for row in table.grid
+    ]
+    return "<table>" + "".join(rows) + "</table>"
 
 
 def _crop_path(
@@ -338,24 +474,7 @@ def _picture_classifier_label(item) -> str | None:
     return None
 
 
-def _render_page_block(
-    page: Page,
-    page_items: list[tuple],
-    images_dir: Path,
-    *,
-    image_scale: float,
-) -> str | None:
-    image = page.get_image(scale=image_scale)
-    if image is None or page.size is None:
-        _log.warning(
-            "Skipping page %s: no rendered image (set generate_page_images=True).",
-            page.page_no,
-        )
-        return None
-
-    image_path = images_dir / f"page_{page.page_no:04d}.png"
-    image.save(image_path, format="PNG")
-
+def _render_page_block(page: _PageImage, page_items: list[tuple]) -> str:
     overlays = "\n".join(
         _render_overlay(
             item,
@@ -363,22 +482,17 @@ def _render_page_block(
             prov_idx,
             prov,
             display,
-            page_height=page.size.height,
-            image_scale=image_scale,
+            page_height=page.page_height,
+            image_scale=page.scale,
         )
         for (item, level, prov_idx, prov, display) in page_items
     )
-
-    rel_image = image_path.relative_to(images_dir.parent).as_posix()
-    img_w = int(page.size.width * image_scale)
-    img_h = int(page.size.height * image_scale)
-
     return _PAGE_TEMPLATE.format(
         page_no=page.page_no,
         item_count=len(page_items),
-        image_src=html.escape(rel_image),
-        img_w=img_w,
-        img_h=img_h,
+        image_src=html.escape(page.rel_path),
+        img_w=page.width_px,
+        img_h=page.height_px,
         overlays=overlays,
     )
 
@@ -411,6 +525,12 @@ def _render_overlay(
     noise_badge = (
         '<span class="bbox-noise-badge">noise</span>' if display.get("is_noise") else ""
     )
+    figure_data = display.get("figure_data")
+    data_badge = (
+        '<span class="bbox-data-badge">data</span>'
+        if figure_data is not None and figure_data["values"]
+        else ""
+    )
     class_attr = " ".join(css_classes)
 
     return (
@@ -421,7 +541,7 @@ def _render_overlay(
         f"width:{width:.1f}px; height:{height:.1f}px; "
         f'border-color:{colour}; background-color:{colour}22;">'
         f'<span class="bbox-tag" style="background:{colour};">{html.escape(label_value)}</span>'
-        f"{noise_badge}"
+        f"{noise_badge}{data_badge}"
         f"</div>"
     )
 
@@ -473,6 +593,7 @@ _HTML_TEMPLATE = """<!doctype html>
   .chip-table {{ background: #e8f5e9; }}
   .chip-chunk {{ background: #e3f2fd; }}
   .chip-noise {{ background: #f5f5f5; color: #888; }}
+  .chip-data {{ background: #e0f2f1; }}
   .legend {{ margin-top: 8px; font-size: 12px; display: flex; flex-wrap: wrap; gap: 12px; }}
   .legend-item {{ display: inline-flex; align-items: center; gap: 4px; }}
   .legend-swatch {{
@@ -513,6 +634,11 @@ _HTML_TEMPLATE = """<!doctype html>
     color: #555; background: #fff; border: 1px solid #aaa;
     font-size: 9px; font-weight: 600; border-radius: 2px;
     pointer-events: none;
+  }}
+  .bbox-data-badge {{
+    position: absolute; bottom: -14px; left: -2px; padding: 1px 4px;
+    color: #fff; background: #00695c; font-size: 9px; font-weight: 600;
+    border-radius: 2px; pointer-events: none;
   }}
   .bbox.cited {{
     outline: 3px solid #e33; outline-offset: 1px;
@@ -569,6 +695,11 @@ _HTML_TEMPLATE = """<!doctype html>
   .panel-table td, .panel-table th {{
     border: 1px solid #ddd; padding: 2px 4px;
   }}
+  .panel-figure-data {{
+    border-left: 3px solid #00695c; padding-left: 10px; margin-bottom: 10px;
+  }}
+  .panel-figure-data .panel-table {{ max-height: 360px; }}
+  .panel-figure-data ul {{ margin: 0; padding-left: 18px; }}
   details.panel-raw {{ margin-top: 14px; color: #666; font-size: 12px; }}
   details.panel-raw summary {{ cursor: pointer; }}
   details.panel-raw pre {{
@@ -582,7 +713,7 @@ _HTML_TEMPLATE = """<!doctype html>
 <body>
 <header>
   <h1>Docling preview — {title}</h1>
-  <div class="hint">Click any bounding box to inspect node metadata. Dashed boxes are filtered as noise. Append <code>?ref=self_ref[,self_ref...]</code> to this page's URL (values from <code>chunks.jsonl</code> / <code>nodes.jsonl</code>, e.g. <code>#/texts/12</code>) to jump to and highlight cited evidence.</div>
+  <div class="hint">Click any bounding box to inspect node metadata. Dashed boxes are filtered as noise. A figure tagged <b>data</b> has values a model read from it. Append <code>?ref=self_ref[,self_ref...]</code> to this page's URL (values from <code>chunks.jsonl</code> / <code>nodes.jsonl</code>, e.g. <code>#/texts/12</code>) to jump to and highlight cited evidence.</div>
   {summary}
   {legend}
 </header>
@@ -639,11 +770,33 @@ _HTML_TEMPLATE = """<!doctype html>
         ' (' + Math.round(100 * data.figure_type_confidence) + '%)');
     }}
     html += field('VLM description', data.vlm_caption);
+    if (data.figure_data) html += renderFigureData(data.figure_data);
     html += field('Generic classifier (noise filter only)', data.generic_classifier_label);
     if (data.image_path) {{
       html += field('Image', '<img class="panel-thumbnail" src="' + escapeHtml(data.image_path) + '"/>', {{raw: true}});
     }}
     return html;
+  }}
+
+  function renderFigureData(fd) {{
+    const count = fd.values + ' value' + (fd.values === 1 ? '' : 's') + ' in ' +
+      fd.charts + ' chart' + (fd.charts === 1 ? '' : 's');
+    let html = field('Figure data (read by a model)',
+      fd.note || (fd.values ? count : 'Looked at; no values were read.'));
+    if (fd.table_html) {{
+      html += field('Values read (' + count + ')',
+        '<div class="panel-table">' + fd.table_html + '</div>', {{raw: true}});
+    }}
+    if (fd.left_out.length) {{
+      html += field('Not read, or uncertain', '<ul>' + fd.left_out.map(function(t) {{
+        return '<li>' + escapeHtml(t) + '</li>';
+      }}).join('') + '</ul>', {{raw: true}});
+    }}
+    if (fd.reading) {{
+      html += field('Full reading', '<a href="' + escapeHtml(fd.reading) + '">' +
+        escapeHtml(fd.reading) + '</a>', {{raw: true}});
+    }}
+    return '<div class="panel-figure-data">' + html + '</div>';
   }}
 
   function renderTable(data) {{

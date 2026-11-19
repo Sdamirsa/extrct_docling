@@ -1,0 +1,21 @@
+[
+  {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/5",
+    "mode": "cloud",
+    "model": "anthropic/claude-sonnet-5.5",
+    "backend": "openai-compatible",
+    "status": "read",
+    "panels": 2,
+    "rows": 17,
+    "seconds": 13.42,
+    "calls": 1,
+    "tool_calls": null,
+    "prompt_tokens": 6153,
+    "eval_tokens": 1796,
+    "cost_usd": 0.0303,
+    "gpu_bytes": null,
+    "issues": 0,
+    "notes": []
+  }
+]

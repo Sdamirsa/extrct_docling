@@ -1,0 +1,50 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "google/gemini-3.8-flash",
+ "panel_split": "axes",
+ "seconds": 222.21,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 222.03,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 16021,
+   "eval_tokens": 55753,
+   "cut": false,
+   "cost_usd": 0.2210895,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 44.9; GPT-3.5 API sums to 44.9; GPT-4 Web sums to 67.3; GPT-4 API sums to 75.5; GPT-4o API sums to 49",
+  "panel 2: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 46.2; GPT-3.5 API sums to 50; GPT-4 Web sums to 57.7; GPT-4 API sums to 65.4; GPT-4o API sums to 53.8",
+  "panel 3: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 41.7; GPT-3.5 API sums to 41.7; GPT-4 Web sums to 72.2; GPT-4 API sums to 77.8; GPT-4o API sums to 55.6",
+  "panel 4: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 4: stacked segments do not sum to 100: GPT-3.5 Web sums to 60; GPT-3.5 API sums to 50; GPT-4 Web sums to 70; GPT-4 API sums to 70; GPT-4o API sums to 83.3",
+  "panel 5: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 5: stacked segments do not sum to 100: GPT-3.5 Web sums to 42.9; GPT-3.5 API sums to 50; GPT-4 Web sums to 64.3; GPT-4 API sums to 64.3; GPT-4o API sums to 57.1",
+  "panel 6: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 6: stacked segments do not sum to 100: GPT-3.5 Web sums to 46.2; GPT-3.5 API sums to 38.5; GPT-4 Web sums to 61.5; GPT-4 API sums to 71.2; GPT-4o API sums to 67.3",
+  "panel 7: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 7: stacked segments do not sum to 100: GPT-3.5 Web sums to 63.2; GPT-3.5 API sums to 42.1; GPT-4 Web sums to 73.7; GPT-4 API sums to 68.4; GPT-4o API sums to 84.2",
+  "panel 8: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 8: stacked segments do not sum to 100: GPT-3.5 Web sums to 66.7; GPT-3.5 API sums to 33.3; GPT-4 API sums to 66.7; GPT-4o API sums to 66.7; GPT-4omini API sums to 66.7",
+  "panel 9: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 9: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.6; GPT-3.5 API sums to 48.4; GPT-4 Web sums to 67.7; GPT-4 API sums to 58.1; GPT-4o API sums to 77.4",
+  "panel 10: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 10: stacked segments do not sum to 100: GPT-3.5 Web sums to 40.9; GPT-3.5 API sums to 50; GPT-4 Web sums to 86.4; GPT-4 API sums to 77.3; GPT-4o API sums to 77.3",
+  "panel 11: 34 of 36 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 11: stacked segments do not sum to 100: GPT-3.5 Web sums to 35.3; GPT-3.5 API sums to 41.2; GPT-4 Web sums to 58.8; GPT-4 API sums to 58.8; GPT-4o API sums to 58.8"
+ ]
+}

@@ -1,0 +1,620 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Raw Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model Tempreature",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy %",
+    "unit": "%",
+    "scale": "linear",
+    "min": 22.0,
+    "max": 93.0
+   },
+   "series": [
+    "Average"
+   ],
+   "points": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 73.1,
+     "err_lo": 72.0,
+     "err_hi": 75.0,
+     "label": null
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 75.8,
+     "err_lo": 75.0,
+     "err_hi": 77.7,
+     "label": null
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 77.7,
+     "err_lo": 66.7,
+     "err_hi": 86.3,
+     "label": null
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 72.1,
+     "err_hi": 77.7,
+     "label": null
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 71.3,
+     "err_lo": 69.3,
+     "err_hi": 72.8,
+     "label": null
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 69.3,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 75.0,
+     "err_lo": 69.3,
+     "err_hi": 77.7,
+     "label": null
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 80.5,
+     "err_lo": 75.0,
+     "err_hi": 83.0,
+     "label": null
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 78.7,
+     "err_lo": 75.0,
+     "err_hi": 83.0,
+     "label": null
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 79.5,
+     "err_lo": 72.1,
+     "err_hi": 90.0,
+     "label": null
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 73.1,
+     "err_lo": 69.3,
+     "err_hi": 78.0,
+     "label": null
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 73.1,
+     "err_lo": 66.7,
+     "err_hi": 86.3,
+     "label": null
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 48.1,
+     "err_lo": 41.7,
+     "err_hi": 53.3,
+     "label": null
+    }
+   ],
+   "box": [
+    3,
+    1,
+    505,
+    491
+   ],
+   "notes": [
+    "Err_lo/err_hi = shaded Min-to-Max range, read approximately. Red ring marks the best point (temp 1); gold rings at 0 and 0.6. Y ticks are 25, 33.3, 41.7, 50, 58.3, 66.7, 75, 83.3, 91.7 printed rounded. The layout analysis found 6 charts but the figure has 4 panels (a-d)."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Best Prompt - Without Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model Tempreature",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy %",
+    "unit": "%",
+    "scale": "linear",
+    "min": 22.0,
+    "max": 93.0
+   },
+   "series": [
+    "Average"
+   ],
+   "points": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 75.9,
+     "err_lo": 75.9,
+     "err_hi": 77.8,
+     "label": null
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 76.8,
+     "err_lo": 75.0,
+     "err_hi": 80.6,
+     "label": null
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 73.0,
+     "err_lo": 69.4,
+     "err_hi": 77.8,
+     "label": null
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 75.8,
+     "err_lo": 72.1,
+     "err_hi": 80.6,
+     "label": null
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 71.2,
+     "err_lo": 66.7,
+     "err_hi": 77.8,
+     "label": null
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 78.6,
+     "err_lo": 72.1,
+     "err_hi": 91.6,
+     "label": null
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 74.9,
+     "err_lo": 63.7,
+     "err_hi": 80.6,
+     "label": null
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 79.6,
+     "err_lo": 74.8,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 75.8,
+     "err_lo": 66.7,
+     "err_hi": 80.6,
+     "label": null
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 73.1,
+     "err_lo": 69.4,
+     "err_hi": 75.0,
+     "label": null
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 59.1,
+     "err_lo": 52.5,
+     "err_hi": 66.7,
+     "label": null
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 48.9,
+     "err_lo": 44.1,
+     "err_hi": 52.9,
+     "label": null
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 35.8,
+     "err_lo": 24.7,
+     "err_hi": 44.3,
+     "label": null
+    }
+   ],
+   "box": [
+    515,
+    1,
+    998,
+    491
+   ],
+   "notes": [
+    "Err_lo/err_hi = shaded Min-to-Max range, read approximately. Red ring at temp 1 (best); gold ring at 0."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Raw Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model Tempreature",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy %",
+    "unit": "%",
+    "scale": "linear",
+    "min": 22.0,
+    "max": 93.0
+   },
+   "series": [
+    "Average"
+   ],
+   "points": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 83.1,
+     "err_lo": 80.3,
+     "err_hi": 88.9,
+     "label": null
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 76.7,
+     "err_lo": 75.0,
+     "err_hi": 77.6,
+     "label": null
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 71.0,
+     "err_lo": 69.2,
+     "err_hi": 75.0,
+     "label": null
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 77.6,
+     "err_lo": 72.0,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 73.9,
+     "err_lo": 72.0,
+     "err_hi": 75.0,
+     "label": null
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 81.3,
+     "err_lo": 77.4,
+     "err_hi": 86.1,
+     "label": null
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 79.4,
+     "err_lo": 77.4,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 75.7,
+     "err_lo": 72.0,
+     "err_hi": 77.6,
+     "label": null
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 70.1,
+     "err_lo": 66.4,
+     "err_hi": 72.0,
+     "label": null
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 72.0,
+     "err_lo": 72.0,
+     "err_hi": 72.0,
+     "label": null
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 76.6,
+     "err_lo": 66.4,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 74.8,
+     "err_lo": 66.4,
+     "err_hi": 80.5,
+     "label": null
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 49.6,
+     "err_lo": 41.4,
+     "err_hi": 58.4,
+     "label": null
+    }
+   ],
+   "box": [
+    3,
+    510,
+    505,
+    1000
+   ],
+   "notes": [
+    "Err_lo/err_hi = shaded Min-to-Max range, read approximately. Red ring at temp 0 (best); gold ring at 1.4."
+   ]
+  },
+  {
+   "id": "4",
+   "title": "Best Prompt - After Determining Seed",
+   "kind": "line",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model Tempreature",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Accuracy %",
+    "unit": "%",
+    "scale": "linear",
+    "min": 22.0,
+    "max": 93.0
+   },
+   "series": [
+    "Average"
+   ],
+   "points": [
+    {
+     "category": "0",
+     "x": null,
+     "series": "Average",
+     "value": 77.6,
+     "err_lo": 74.5,
+     "err_hi": 80.4,
+     "label": null
+    },
+    {
+     "category": "0.1",
+     "x": null,
+     "series": "Average",
+     "value": 75.6,
+     "err_lo": 71.8,
+     "err_hi": 80.4,
+     "label": null
+    },
+    {
+     "category": "0.2",
+     "x": null,
+     "series": "Average",
+     "value": 77.6,
+     "err_lo": 74.5,
+     "err_hi": 80.4,
+     "label": null
+    },
+    {
+     "category": "0.4",
+     "x": null,
+     "series": "Average",
+     "value": 73.8,
+     "err_lo": 66.2,
+     "err_hi": 77.7,
+     "label": null
+    },
+    {
+     "category": "0.6",
+     "x": null,
+     "series": "Average",
+     "value": 69.0,
+     "err_lo": 66.2,
+     "err_hi": 72.0,
+     "label": null
+    },
+    {
+     "category": "0.8",
+     "x": null,
+     "series": "Average",
+     "value": 74.7,
+     "err_lo": 66.2,
+     "err_hi": 83.0,
+     "label": null
+    },
+    {
+     "category": "0.9",
+     "x": null,
+     "series": "Average",
+     "value": 81.3,
+     "err_lo": 77.5,
+     "err_hi": 83.3,
+     "label": null
+    },
+    {
+     "category": "1",
+     "x": null,
+     "series": "Average",
+     "value": 84.1,
+     "err_lo": 80.3,
+     "err_hi": 86.1,
+     "label": null
+    },
+    {
+     "category": "1.2",
+     "x": null,
+     "series": "Average",
+     "value": 82.2,
+     "err_lo": 75.0,
+     "err_hi": 91.6,
+     "label": null
+    },
+    {
+     "category": "1.4",
+     "x": null,
+     "series": "Average",
+     "value": 85.1,
+     "err_lo": 83.0,
+     "err_hi": 88.0,
+     "label": null
+    },
+    {
+     "category": "1.6",
+     "x": null,
+     "series": "Average",
+     "value": 74.7,
+     "err_lo": 69.2,
+     "err_hi": 80.3,
+     "label": null
+    },
+    {
+     "category": "1.8",
+     "x": null,
+     "series": "Average",
+     "value": 71.9,
+     "err_lo": 66.2,
+     "err_hi": 77.7,
+     "label": null
+    },
+    {
+     "category": "2",
+     "x": null,
+     "series": "Average",
+     "value": 65.3,
+     "err_lo": 63.0,
+     "err_hi": 66.7,
+     "label": null
+    }
+   ],
+   "box": [
+    515,
+    510,
+    998,
+    1000
+   ],
+   "notes": [
+    "Err_lo/err_hi = shaded Min-to-Max range, read approximately; upper end at 1.4 is partly hidden by the legend (estimate). Red ring at temp 1.4 (best); gold ring at 2."
+   ]
+  }
+ ],
+ "description": "Four line panels (a-d) show GPT-3.5 accuracy (%) versus model temperature (0 to 2) for raw and best prompts, before and after determining the seed. Each has an average line with a min-to-max range band.",
+ "has_data": true,
+ "not_read": [
+  "Listed charts 5 and 6 are not separate charts. Chart 5 is panel d, which I recorded as chart 4. Chart 6 is the x-axis labels of panel d, so nothing was left to record. Chart 4 in the layout list is the lower part of panel c, which I recorded as chart 3.",
+  "All values are estimated from pixel positions, because no numbers are printed. Y tick labels are rounded: 25, 33.3, 41.7, 50 and so on.",
+  "Min-to-Max band edges are recorded as err_lo and err_hi, estimated to about ±1 point. The upper edge at temperature 1.4 in panel d is partly hidden by the legend, and in panel a the band top at 1.4 is also near the legend.",
+  "The red rings (best setting) and gold rings (other highlighted settings) are given only in the notes."
+ ],
+ "finished": true,
+ "warned": true,
+ "looks": 4,
+ "records": 4
+}

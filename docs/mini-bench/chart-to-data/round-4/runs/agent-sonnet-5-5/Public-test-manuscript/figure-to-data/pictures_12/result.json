@@ -1,0 +1,38 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "single",
+ "seconds": 89.12,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 89.08,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 148467,
+   "eval_tokens": 14929,
+   "cut": false,
+   "cost_usd": 0.30515620000000004,
+   "turns": 13,
+   "tool_calls": 12
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: 24 of 37 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 56.4; GPT-3.5 API sums to 52.7; GPT-4 Web sums to 67.3; GPT-4 API sums to 60; GPT-4o API sums to 74.5",
+  "panel 2: 24 of 37 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.2; GPT-3.5 API sums to 47.7; GPT-4 Web sums to 73.3; GPT-4 API sums to 76.2; GPT-4o API sums to 79.4",
+  "panel 3: 24 of 37 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 47.3; GPT-3.5 API sums to 44.4; GPT-4 Web sums to 65.8; GPT-4 API sums to 65.8; GPT-4o API sums to 74.1",
+  "panel 4: 24 of 37 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 4: stacked segments do not sum to 100: GPT-3.5 Web sums to 33.3; GPT-3.5 API sums to 0; GPT-4omini API sums to 33.3; Claude3-Haiku Web sums to 66.7; Claude3-Haiku API sums to 66.7",
+  "panel 5: 24 of 37 categories are not printed in the figure (e.g. 'Claude3-Haiku API')",
+  "panel 5: stacked segments do not sum to 100: GPT-3.5 Web sums to 49.2; GPT-3.5 API sums to 49.2; GPT-4 Web sums to 64.2; GPT-4 API sums to 67; GPT-4o API sums to 74"
+ ]
+}

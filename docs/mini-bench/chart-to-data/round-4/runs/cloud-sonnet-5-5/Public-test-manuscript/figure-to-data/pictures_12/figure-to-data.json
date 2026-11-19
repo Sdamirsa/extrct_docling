@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/12",
+    "image_path": "images/picture_013.png",
+    "page": 64,
+    "bbox": [
+      72.32,
+      103.64,
+      251.22,
+      700.84
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Five stacked bar charts showing, for each question type (Complication, Diagnosis, Investigation, Pathophysiology, Treatment), the percentage of correct, ZOP, EOP, NOP, error and incorrect answers for many LLMs (GPT, Claude, Mistral, Llama, Gemini, Gemma, Phi).",
+  "uncertain": [
+    "no chart returned: Five stacked bar charts showing, for each question type (Complication, Diagnosis, Investigation, Pathophysiology, Treatment), the percentage of correct, ZOP, EOP, NOP, error and incorrect answers for many LLMs (GPT, Claude, Mistral, Llama, Gemini, Gemma, Phi).",
+    "The five stacked-bar charts (about 40 models each, six answer categories: Correct, ZOP, EOP, NOP, Error, Incorrect) were not transcribed. The x tick labels are too small and blurred to read reliably, and the per-model segment values are not legible enough to read exactly. Only some Correct-segment percentages are printed, and many of those are illegible."
+  ]
+}

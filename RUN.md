@@ -87,6 +87,7 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--figure-data-backend` | the method's own | Where the model runs. `cloud`: `openai-compatible` (an API endpoint). `agent`: `claude-cli` (the Claude Code CLI with its own login) or `ollama` (the agent on a local model). |
 | `--figure-data-base-url` | `https://openrouter.ai/api/v1` | `cloud`: the chat-completions endpoint, any that speaks the OpenAI format (a provider, a gateway, a local Ollama at `http://127.0.0.1:11434/v1`). |
 | `--figure-data-key-env` | `OPENROUTER_API_KEY` | `cloud`: the variable that holds the endpoint's API key, read from the environment, else from `.env`. |
+| `--figure-data-ollama-url` | `http://127.0.0.1:11434` | `ollama`, and `agent` on the `ollama` backend: where Ollama listens. |
 | `--figure-data-when` | `end` | `end`: read the figures once the whole batch is converted (the conversion models are released first, the reading model loads once). `each`: after each PDF. |
 
 ## Figure-to-data: the numbers behind the charts
@@ -107,8 +108,10 @@ Three phases: **prepare** (no model: each chart candidate is captured from
 the PDF at high resolution with its printed text), **read** (one of three
 methods), **embed** (the reading is written at the figure in the markdown,
 the HTML, `chunks.jsonl`, `figures.jsonl`, `document.json`, with a note that
-a model read it; `run.json` gets a `figure_to_data` block, `check.json` the
-counts).
+a model read it; the page viewer is rebuilt, so a figure with a reading
+carries a `data` tag and shows note, table and a link in its side panel;
+`run.json` gets a `figure_to_data` block, `check.json` the counts, and the
+batch summary's `check` column shows them as `charts shown/read/candidates`).
 
 | Method | The figure goes to | Needs | Use it when |
 |---|---|---|---|
@@ -117,6 +120,12 @@ counts).
 | `agent` | the model's provider (nowhere with `--figure-data-backend ollama`) | Claude Code CLI, logged in | the papers may be sent out and you have Claude Code but no API key: all ten bench charts usable; each reading is checked and corrected in the loop |
 
 Measured on 15 figures: [docs/mini-bench/chart-to-data/round-3](docs/mini-bench/chart-to-data/round-3/README.md).
+On one whole paper, command by command (time, cost, what each leaves in
+the bundle): [round-4](docs/mini-bench/chart-to-data/round-4/README.md).
+There the conversion took 11 to 12 minutes and the step 6 minutes
+(`cloud`, Sonnet 5.5), 14 (`agent`), 27 (`ollama`) or 30 (`cloud`,
+Gemini 3.8 Flash) for 12 chart candidates, some of them grids of up to
+eleven charts.
 
 **The cloud method's API key.** Put it in a `.env` file in the folder you
 run from (or any folder above it), or export it; `.env` is git-ignored:

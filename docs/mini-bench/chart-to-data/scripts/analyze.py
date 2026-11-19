@@ -32,8 +32,17 @@ from docling.engines.figure_data.scoring import match_panels, score_figure
 
 BENCH = Path(__file__).resolve().parents[1]
 # A later round keeps its runs, metrics and judge files in its own folder
-# (BENCH_ROUND=round-2); the figures, the test set and the truth are shared.
+# (BENCH_ROUND=round-2). The figures, the test set and the truth are shared,
+# unless the round is on other figures and brings its own (round-4).
 ROUND = BENCH / os.environ.get("BENCH_ROUND", "")
+
+
+def round_file(name: str) -> Path:
+    """*name* in the round's folder when the round has its own, else the
+    bench's."""
+    own = ROUND / name
+    return own if own.exists() else BENCH / name
+
 FIELDS = [
     "model", "figure_id", "bundle", "self_ref", "has_data", "predicted",
     "truth_panels", "pred_panels", "panels_matched", "kind_matches",
@@ -81,9 +90,9 @@ def ratio(part: float, whole: float) -> float | None:
 
 
 def main() -> None:
-    testset = json.loads((BENCH / "testset.json").read_text(encoding="utf-8"))
+    testset = json.loads(round_file("testset.json").read_text(encoding="utf-8"))
     ids = {(Path(f["bundle"]).name, f["self_ref"]): f["id"] for f in testset["figures"]}
-    truth = load_charts(BENCH / "truth")
+    truth = load_charts(round_file("truth"))
     rows: list[dict] = []
     summary: dict[str, dict] = {}
     for model_dir in sorted(p for p in (ROUND / "runs").iterdir() if p.is_dir()):

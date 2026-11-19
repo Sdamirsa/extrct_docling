@@ -1,0 +1,29 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "google/gemini-3.8-flash",
+ "panel_split": "gutters",
+ "seconds": 122.45,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 122.39,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 7896,
+   "eval_tokens": 22755,
+   "cut": false,
+   "cost_usd": 0.09125325,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel a2: 75.93 outside the axis range [9.26, 63.58] (4.0/GPT4o-20240513 (2023-09))"
+ ]
+}

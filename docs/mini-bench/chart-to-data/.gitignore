@@ -24,3 +24,8 @@ round-*/extra/**/*.png
 round-*/extra/**/figure.txt
 round-*/extra/**/evidence.json
 round-*/extra/**/trace.json
+# Round 4: a figure read again after a fix, kept beside the round's runs.
+round-*/after-fix/**/*.png
+round-*/after-fix/**/figure.txt
+round-*/after-fix/**/evidence.json
+round-*/after-fix/**/trace.json

@@ -1,0 +1,31 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "axes",
+ "seconds": 54.92,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 54.76,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 121113,
+   "eval_tokens": 9122,
+   "cut": false,
+   "cost_usd": 0.20731650000000001,
+   "turns": 9,
+   "tool_calls": 8
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 42.4; GPT-3.5 API sums to 42.4; GPT-4 Web sums to 62.6; GPT-4 API sums to 71.7; GPT-4o API sums to 76.8",
+  "panel 2: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.5; GPT-3.5 API sums to 46.5; GPT-4 Web sums to 70.7; GPT-4 API sums to 67.7; GPT-4o API sums to 75.8",
+  "panel 3: stacked segments do not sum to 100: GPT-3.5 Web sums to 49; GPT-3.5 API sums to 49; GPT-4 Web sums to 64.7; GPT-4 API sums to 58.8; GPT-4o API sums to 68.6"
+ ]
+}

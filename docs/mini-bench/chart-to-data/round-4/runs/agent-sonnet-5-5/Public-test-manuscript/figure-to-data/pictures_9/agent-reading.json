@@ -1,0 +1,14 @@
+{
+ "panels": [],
+ "description": "Supplementary figure showing, for about 40 LLM configurations, a per-question color strip (green mostly correct, red incorrect, with yellow and grey intermediate shades), ordered by question and aligned with strips marking question difficulty quartile, length tertile, taxonomy, question type and organ system.",
+ "has_data": false,
+ "not_read": [
+  "Per-question outcome strips for all models: each has several hundred unlabeled cells and the figure prints no numeric values, no color legend and no x-axis. Cell-level reading would be guesswork. Not recorded.",
+  "Difficulty quartile and length tertile color strips: the shade has no legend or numbers. Not recorded.",
+  "Taxonomy, question type (Diagnosis, Treatment, Investigation, Complications) and organ (Liver, Colon, Esophagus, IBD, Pancreatico-biliary) membership bars: grey presence marks per question with no values. Not recorded."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 0,
+ "records": 0
+}

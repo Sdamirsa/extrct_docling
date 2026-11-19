@@ -1,0 +1,76 @@
+{
+ "model": "cloud-gemini-3-8-flash",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-19",
+ "figures": [
+  {
+   "figure_id": "S02",
+   "verdict": "correct",
+   "error_types": ["GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 75 centres of the four panels are within 5 % of the axis and 71 within 2 %, with panels, kinds, series and categories right (one label keeps a stray tick mark, 'Direct Question-'); the four misses are scatter on single marks, not an offset: three light-blue 'MT: 1024' bars of panel c are one 1/60 step off (Best Prompt (candidate 4) 46.7 vs 44.95, Consensus Technique 41.7 vs 43.29, Direct Question 50.0 vs 48.29) and b 'Default - 60%' raw prompt is 45.3 vs 45.00. Of the 56 interval ends 6 are off by 2-5 % of the axis (d 'Candidate 5' err_lo 46.7 vs 45.86, b 'Default - 90%' raw prompt err_lo 44.0 vs 44.48), none by more, and the two rows drawn without a bar (Candidate 6, Candidate 2) are rightly left without bounds."
+  },
+  {
+   "figure_id": "S03",
+   "verdict": "partial",
+   "error_types": ["VALUE_ASSIGNMENT", "INVENTED_VALUES", "GEOMETRY_MISMEASURED"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "All 37 printed Correct shares are exact and Incorrect is within 1 point in 33 of 37 bars, but the four small classes are shifted towards the start of the legend: the background-coloured EOP gap is returned as 2OP and the dark-grey NOP as EOP (Mistralv2-7b Poe: truth EOP 1.33 / NOP 1.67, predicted 2OP 1.3 / EOP 1.7 / NOP 0; Llama3-70b Poe: EOP 2.67 returned as 2OP 2.6, EOP 0), so NOP is non-zero in 2 bars instead of 17 and 2OP in 26 instead of 16 (summed 39.3 vs 14.3 points). 14 non-zero values stand where the bar has no such segment (Llama2-7b-Q8 Local 2OP 0.7 on a bar that is green and red only), 31 existing segments are returned as 0 and only 20 of the 70 non-zero small segments are within 0.5 points (worst: Llama2-70b Poe EOP 1.0 vs 4.33); every value stays within 5 % of the 0-100 axis, which is why the scorer shows 216/222 within 2 %, so Correct and Incorrect are usable and the 2OP/EOP/NOP/Error columns are not."
+  },
+  {
+   "figure_id": "S04",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "INVENTED_VALUES", "VALUE_ASSIGNMENT", "GEOMETRY_MISMEASURED"],
+   "severity": 2,
+   "usable": false,
+   "evidence": "All 24 printed Correct shares are exact, but the orange Error segment of 'GeminiAdvanced Web - LLM caption' and '- human hint' (truth 8.70 and 10.91) was set aside as an 'Unlabelled yellow segment ... not listed in the legend' (declared in `uncertain`, about 8.9 and 10.1) while Error is returned as 2.7 and 2.9, so these bars sum to 91.1 and 89.9 (the step's check reports it), and 8 of 16 EOP gaps are returned as 0 with their width added to Incorrect (Claude3Sonnet API - no image: EOP 0.7 vs 5.27, Incorrect 44.9 vs 40.31). Segments are also invented: 2OP 0.7-1.4 on six GPT4 bars that go from green straight to red (GPT4 API - no image: 2OP 1.4 vs 0, Incorrect 29.8 vs 31.2) and Error 3.0 on 'GeminiAdvanced Web - no image' (truth 0, Incorrect 60.0 vs 63.29); Incorrect is within 1 point in only 12 of 24 bars and only 1 bar has all six classes within 0.5 points."
+  },
+  {
+   "figure_id": "S05",
+   "verdict": "correct",
+   "error_types": ["VALUE_ASSIGNMENT"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "The categories could not be read (black background of the image given to every reader hides the tick labels; the run says so in `uncertain` and writes x = 1-3 and 1-4, which is why the scorer pairs 0 of 17), so judged on what is visible: all 17 printed numbers are returned as they appear (71.59, 63.58, 44.57, 46.30 ... 75.93, 56.0; '70.3' and '53.4' are clipped in the image, truth 70.35 and 53.49, noted by the run) and all 13 legend names are right, panel a attached correctly by colour. In panel b the run assumed the two middle columns to be 2023-04 then 2023-12, whereas the hidden ticks read 2023-12 then 2023-04, so GPT4-1106 / GPT4-0125 (62.35 vs truth 65.43, and 65.43 vs 62.35) and GPT3.5-1106 / GPT3.5-0125 (46.30 vs 48.15, and 48.15 vs 46.30) are swapped: not decidable from the image (same colour) and not counted against the run, but the guess is stated with confidence 0.95 like the four same-colour 2021-09 markers that the truth leaves open."
+  },
+  {
+   "figure_id": "S06",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE", "INTERVAL_BOUNDS"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "Read by content, all 52 averages are within 2 % of the axis under the four right titles (mean -0.4 points, a small constant offset; largest in c at 0.2: 70.0 vs 71.30); the scorer's 30 of 52 matched and 21 within 2 % come from the record, not the reading: panels 3 and 4 carry the boxes of the upper and lower half of the lower-left chart ([2, 250, 320, 365] and [5, 365, 321, 491]; the model's reply had the four quadrants, the step replaced them by the layout analysis' charts of the same ids), so truth c is paired with the values of d and truth d with nothing, and the temperature is keyed as category ('0', '1', '2') instead of x. Of the 104 range ends 92 are within 2 % and 102 within 5 %; the worst are in panel a (1.4: err_hi 86.3 vs 91.68, under the legend box; 1.2: err_lo 71.3 vs 75.06; 1.0: err_hi 80.0, equal to the average, vs 83.34)."
+  },
+  {
+   "figure_id": "S08",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": true,
+   "evidence": "All 63 cells of the 9 x 7 confusion matrix equal the printed counts (diagonal 16, 25, 24, 13, 4; B/D 1, B/Parsing Failed 2, C/Parsing Failed 1; 'GPT: Require Evaluation' 1, 5, 5, 3 for 2OP, EOP, NOP, Error; 51 zeros; sum 100), rows and columns named as printed."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 4,
+   "partial": 2,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 0,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "VALUE_ASSIGNMENT": 3,
+   "GEOMETRY_MISMEASURED": 3,
+   "INVENTED_VALUES": 2,
+   "INTERVAL_BOUNDS": 2,
+   "MISSING_VALUES": 1,
+   "PANEL_STRUCTURE": 1
+  },
+  "usable_figures": 4,
+  "dominant_failure": "VALUE_ASSIGNMENT",
+  "assessment": "The run reads printed numbers without a single misread (37 and 24 Correct shares, 17 point labels, 63 heatmap cells) and measures bar ends, interval centres and line markers within 2 % of the axis almost everywhere (S02 71 of 75, S06 52 of 52 by content), with the right charts, kinds, series and category names in all six figures and nothing left unread. It fails on the small unlabelled segments of stacked bars (S03, S04): the background-coloured EOP gap and the grey NOP segment are attached to the neighbouring legend class, slivers of 2OP are returned on bars that have none, and in S04 the orange Error segment of two bars was set aside as an 'unlabelled yellow segment', so the class breakdown is unreliable although every Correct share is exact and the errors stay under the scorer's 5 % band. Nothing in the record warns of this: every estimated value carries confidence 0.8, and in S05 same-coloured markers were attributed to legend entries by guess at 0.95. Interval and range ends are weaker than centres (6 of 56 and 12 of 104 beyond 2 %, two beyond 5 %). Two scorer penalties are artefacts of the record rather than of the reading: in S06 the step replaced the model's four quadrant boxes by those of the layout analysis (truth c is scored against d's values) and the temperature is keyed as a category, and in S03 the box and the axis ticks come from the same layout hint. It can be trusted on figures whose values are printed and on plain bar, interval, line and heatmap panels; the minor classes of stacked bars should not be taken from it."
+ }
+}

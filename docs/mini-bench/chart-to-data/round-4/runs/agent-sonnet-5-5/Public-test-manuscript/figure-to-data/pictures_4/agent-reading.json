@@ -1,0 +1,260 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "VLM Performance on Gastroenterology Multiple-Choice Questions with Image Data",
+   "kind": "stacked_bar",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Percentage",
+    "unit": null,
+    "scale": "linear",
+    "min": 0.0,
+    "max": 100.0
+   },
+   "y_axis": {
+    "name": "Model - condition",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [
+    "Correct"
+   ],
+   "points": [
+    {
+     "category": "GPT4 Web - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 65.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "65.2%"
+    },
+    {
+     "category": "GPT4 Web - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 59.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "59.4%"
+    },
+    {
+     "category": "GPT4 Web - direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 68.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "68.1%"
+    },
+    {
+     "category": "GPT4 Web - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 73.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "73.2%"
+    },
+    {
+     "category": "GPT4 API - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 68.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "68.8%"
+    },
+    {
+     "category": "GPT4 API - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 64.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "64.5%"
+    },
+    {
+     "category": "GPT4 API - direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 65.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "65.2%"
+    },
+    {
+     "category": "GPT4 API - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 71.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "71.7%"
+    },
+    {
+     "category": "Claude3Opus Web - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 63.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "63.8%"
+    },
+    {
+     "category": "Claude3Opus Web - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 48.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.6%"
+    },
+    {
+     "category": "Claude3Opus Web - direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 63.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "63.8%"
+    },
+    {
+     "category": "Claude3Opus Web - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 76.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "76.8%"
+    },
+    {
+     "category": "Claude3Opus API - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 68.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "68.1%"
+    },
+    {
+     "category": "Claude3Opus API - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 68.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "68.8%"
+    },
+    {
+     "category": "Claude3Opus API - direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 68.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "68.8%"
+    },
+    {
+     "category": "Claude3Opus API - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 78.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "78.3%"
+    },
+    {
+     "category": "Claude3Sonnet API - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 53.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "53.7%"
+    },
+    {
+     "category": "Claude3Sonnet API - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 54.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.3%"
+    },
+    {
+     "category": "Claude3Sonnet API - direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 73.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "73.9%"
+    },
+    {
+     "category": "Claude3Sonnet API - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 56.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.5%"
+    },
+    {
+     "category": "GeminiAdvanced Web - no image",
+     "x": null,
+     "series": "Correct",
+     "value": 25.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25.0%"
+    },
+    {
+     "category": "GeminiAdvanced Web - LLM caption",
+     "x": null,
+     "series": "Correct",
+     "value": 47.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "47.8%"
+    },
+    {
+     "category": "GeminiAdvanced Web- direct image",
+     "x": null,
+     "series": "Correct",
+     "value": 20.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "20.3%"
+    },
+    {
+     "category": "GeminiAdvanced Web - human hint",
+     "x": null,
+     "series": "Correct",
+     "value": 54.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.3%"
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Only the Correct (dark green) segment, printed as a label on each bar, is recorded. The other segments (2OP, EOP, NOP, Error, Incorrect) are not recorded; stacks do not sum to 100 because EOP (light grey) blends with the background and leaves gaps.",
+    "Significance marks vs the no-image reference, right of bars: GPT4 Web: ref, ns, ns, ns; GPT4 API: ref, ns, ns, ns; Claude3Opus Web: ref, ****, ns, **; Claude3Opus API: ref, ns, ns, *; Claude3Sonnet API: ref, ns, ****, ns; GeminiAdvanced Web: ref, ****, ns, ****."
+   ]
+  }
+ ],
+ "description": "Horizontal stacked bars of answer outcome percentages (Correct, 2OP, EOP, NOP, Error, Incorrect) for GPT4, Claude3 Opus, Claude3 Sonnet and GeminiAdvanced under four image conditions on gastroenterology multiple-choice questions.",
+ "has_data": true,
+ "not_read": [
+  "The 2OP, EOP, NOP, Error and Incorrect segments of all 24 bars were not recorded. They have no printed labels and are small, so reading them would be estimates only. Only the printed Correct percentages were recorded.",
+  "The significance marks (ref, ns, *, **, ****) to the right of each bar are written in the chart notes, not as data points."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 2,
+ "records": 1
+}

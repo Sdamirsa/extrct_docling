@@ -1,0 +1,66 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "single",
+ "seconds": 60.77,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.068,
+   "total_s": 3.066,
+   "load_s": 0.368,
+   "prompt_eval_s": 0.964,
+   "eval_s": 1.593,
+   "prompt_tokens": 1656,
+   "eval_tokens": 102,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 57.589,
+   "total_s": 57.588,
+   "load_s": 0.365,
+   "prompt_eval_s": 1.076,
+   "eval_s": 56.006,
+   "prompt_tokens": 2062,
+   "eval_tokens": 3505,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T09:58:32.626807021+01:00"
+  }
+ ],
+ "issues": [
+  "panel 1: printed 65.2% vs measured 59.9178 (GPT4 Web - no image/Correct)",
+  "panel 1: printed 68.1% vs measured 59.9178 (GPT4 Web - direct image/Correct)",
+  "panel 1: printed 68.8% vs measured 60.622 (GPT4 API - no image/Correct)",
+  "panel 1: printed 64.5% vs measured 57.6291 (GPT4 API - LLM caption/Correct)",
+  "panel 1: printed 65.2% vs measured 58.5093 (GPT4 API - direct image/Correct)",
+  "panel 1: printed 71.7% vs measured 64.3192 (GPT4 API - human hint/Correct)",
+  "panel 1: printed 76.8% vs measured 69.9529 (Claude3Opus Web - human hint/Correct)",
+  "panel 1: printed 68.1% vs measured 59.9178 (Claude3Opus API - no image/Correct)",
+  "panel 1: printed 68.8% vs measured 62.0304 (Claude3Opus API - LLM caption/Correct)",
+  "panel 1: printed 78.3% vs measured 71.5374 (Claude3Opus API - human hint/Correct)",
+  "panel 1: printed 56.5% vs measured 48.2981 (Claude3Sonnet API - human hint/Correct)",
+  "panel 1: printed 25.0% vs measured 18.1927 (GeminiAdvanced Web - no image/Correct)",
+  "panel 1: printed 47.8% vs measured 34.9179 (GeminiAdvanced Web - LLM caption/Correct)",
+  "panel 1: printed 20.3% vs measured 11.8547 (GeminiAdvanced Web- direct image/Correct)",
+  "panel 1: stacked segments do not sum to 100: GPT4 Web - no image sums to 165.082; GPT4 Web - LLM caption sums to 159.282; GPT4 Web - direct image sums to 167.982; GPT4 Web - human hint sums to 173.082; GPT4 API - no image sums to 168.682"
+ ]
+}

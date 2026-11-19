@@ -1,0 +1,56 @@
+{
+ "subline": "One 68-page paper through amir-batch --figure-data, once per method · 19 November 2026",
+ "lede": "The figure-to-data step runs inside the pipeline with all four setups: one command per run, and each bundle carries the readings at its figures. On this paper no method reads the figures completely, and the order of the methods differs from round 3.",
+ "names": {
+  "S02": "Figure 3",
+  "S03": "Figure 4",
+  "S04": "Figure 5",
+  "S05": "Figure 6",
+  "S06": "Figure 7",
+  "S08": "Supplementary Figure S2",
+  "S09": "Supplementary Figure S3",
+  "S10": "Supplementary Figure S4",
+  "S11": "Supplementary Figure S5",
+  "S12": "Supplementary Figure S6",
+  "S13": "Supplementary Figure S7",
+  "S14": "Supplementary Figure S8"
+ },
+ "scoreintro": "Each row is one command: the conversion with the default options, then the step with that method. Right values are counted on the six main figures, which have a reference truth of 573 values. The dense figures are five supplementary grids of stacked bars, scored on 60 bars sampled by rule.",
+ "scorenotes": "Right means within 5 % of the axis range under the right printed name. That is lenient for stacked-bar segments one or two points wide: Gemini's count is kinder than its judge, who found small segments under the wrong class. Figure 6 counts as wrong by name for every run, because its axis labels were lost on the way to the reader (see the capture defect below). The agent's cost is what the Claude Code CLI reports.",
+ "reco": [
+  ["The papers may be sent out, and time or cost matters", "cloud with Sonnet 5.5.", "18 minutes and 0.91 USD for the whole paper. Nothing it returned is further than 3.1 % of the axis from the truth. It leaves out small segments and most of two dense grids, and says so."],
+  ["You want the most values per figure", "cloud with Gemini 3.8 Flash.", "It returned every value of both big stacked-bar charts. Check the small segments: it put some under the wrong class. It takes 42 minutes."],
+  ["Dense grids, and nothing may be wrong", "agent.", "Everything it returned is right, and it read all 26 panels of the supplementary grids. On two stacked-bar charts it recorded the printed numbers only. 2.97 USD."],
+  ["Nothing may leave the machine", "ollama, with review.", "It reads printed numbers and names well and mismeasures bars and segments: none of the six main figures is usable as it is, and three would mislead."]
+ ],
+ "heatnote": "Values within 5 % of the axis under the right printed name, of the values the figure holds. Select a cell to open that figure. Figure 6 (S05) is 0 for every run in the first pass; read again from the corrected image, every run has all 13 of its valued points.",
+ "matrixnote": "One fresh judge per run compared each reading with the truth and the figure. An exclamation mark means the judge found the reading would mislead. Select a cell to open the figure with that run.",
+ "densenote": "Five supplementary figures hold 26 panels of 37 stacked bars: 5,772 segment values, of which 955 are printed. In three of the figures the printed digits are 4 to 6 pixels high and cannot be read from the PDF. The sample is fixed by rule: the share of Correct of bars 1, 8, 15, 22, 29 and 36 in the first and the last panel of each figure.",
+ "timenote": "The conversion is the same 11 to 12 minutes in every run. What differs is the step: 6 minutes for one call per figure to Sonnet, 30 for Gemini, which spends three quarters of its output on thinking.",
+ "changes": [
+  ["The page viewer shows the readings", "A person who opens a bundle opens the viewer first, and saw nothing of the step there: the viewer could only be built during a conversion.", "The step rebuilds preview.html and preview.embedded.html from the bundle's files. A figure with a reading carries a data tag; its side panel shows the note, the table and a link to the full reading."],
+  ["The batch summary reflects the step", "The summary table was made before the step ran, so its check column and the exit code showed the bundle without its readings.", "The rows of the bundles the step ran on are read again from disk: charts 9/10/12 means 9 tables shown, 10 figures read, 12 candidates."],
+  ["Ollama's address on the batch command", "The standalone command could be told where Ollama listens, amir-batch could not.", "--figure-data-ollama-url."],
+  ["An end-to-end test for the four setups", "Round 3 tested each method on prepared figures. Nothing ran amir-batch with the step from PDF to bundle.", "A real conversion of a synthetic chart PDF, once per setup, with the models replaced at the process boundary: a local HTTP server and a stand-in claude executable that drives the agent's real tool server."],
+  ["A figure's image is taken with its transparency mask", "Figure 6 is one image with a soft mask. Taken without it, the figure reached every reader with black where the page is white, and its axis labels were gone.", "The alpha comes from the PDF renderer, the pixels stay the file's own, and the figure is put on white. Fixed after the runs; the four bundles hold that figure as first read."],
+  ["Ticks on a line in value are a linear axis", "The years 2021, 2022, 2023 fitted a log scale as well as a linear one, and the last pixel made the axis log in what the readers were told.", "A linear fit that is off by less than 0.5 % of the range is kept."]
+ ],
+ "defectnote": "Figure 6 as every reader got it in the four runs, and as the fixed capture gives it. In the first pass every run returned the 13 printed numbers and none could say which year or date a point stands at. Read again from the corrected image, outside the bundles:",
+ "findings": [
+  ["The chart splitter was wrong on six of eleven chart figures", "It cuts a figure into charts by their tick labels. One chart of 37 bars in six blocks came out as two, four line panels as six, a grid of eleven panels as seven. The cloud models and the agent saw the whole figure and said so. The local engine read what it was given."],
+  ["Stacked bars with small unlabelled segments got four answers", "Every segment, some under the wrong class (Gemini). Every segment of one chart and two classes of the other (Sonnet). The printed share only (agent). The bar's end for the last class (local)."],
+  ["Each method names what it left out", "An incomplete reading lists the part not read, with the reason. The one exception the judges found is the local run on dense figures."],
+  ["The bench's scorer undercounts on this paper", "It pairs charts by their boxes and names that are almost alike, and many of the 37 bar names are. The counts on this page pair by exact printed name. All four judges came to the same counts on their own."]
+ ],
+ "limits": [
+  ["One paper", "By the maintainer, with unusually dense figures. Round 3, on 15 figures of 11 papers, put Sonnet's single call ahead of Gemini's. Neither result settles the choice."],
+  ["Not every figure was new", "Figures 5 and 7 are in the five-figure smoke set the local engine was first built on. The other ten candidates are new to all methods."],
+  ["Truth and judges are a model's work", "As in rounds 1 to 3. Two of the six truth files could be checked against an independent earlier one and agree on every paired value within 2 %."],
+  ["Figure 6 was judged as first read", "The judges read the rule for the defect differently. The reading after the fix is the better evidence for that figure."]
+ ],
+ "next": [
+  ["A second pass with the fixed capture", "The four bundles hold Figure 6 as read before the fix. Running the four commands again takes about 2 hours and 5 USD."],
+  ["The open defects", "The chart splitter on grids and block charts, the box a reading's chart gets after a wrong split, the agent's handling of unlabelled segments, and three smaller ones. They have a page of their own."],
+  ["More papers", "One whole paper per kind of figure would say more about the methods than more figures of this one."]
+ ]
+}

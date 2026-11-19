@@ -26,9 +26,11 @@ choose how to use the flags (skip in markdown, dim in preview, etc.).
 
 from __future__ import annotations
 
+import json
 import logging
 from collections import Counter
 from dataclasses import dataclass
+from pathlib import Path
 from typing import TYPE_CHECKING
 
 from docling_core.types.doc import PictureItem
@@ -155,6 +157,27 @@ def classify_pictures(
             repeat_threshold,
         )
     return flags
+
+
+def read_noise_flags(figures_jsonl: Path) -> list[PictureNoiseFlag]:
+    """The flags a conversion wrote to *figures_jsonl*, for a bundle that is
+    worked on after its conversion; none when the file is missing."""
+    if not figures_jsonl.is_file():
+        return []
+    rows = [
+        json.loads(line)
+        for line in figures_jsonl.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    return [
+        PictureNoiseFlag(
+            self_ref=row.get("self_ref"),
+            is_noise=bool(row.get("is_noise")),
+            noise_reason=row.get("noise_reason"),
+            classifier_label=row.get("generic_classifier_label"),
+        )
+        for row in rows
+    ]
 
 
 def _is_confident_medical_image(item: PictureItem) -> bool:

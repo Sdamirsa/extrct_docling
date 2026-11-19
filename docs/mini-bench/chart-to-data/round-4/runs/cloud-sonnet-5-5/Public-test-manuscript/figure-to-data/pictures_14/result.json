@@ -1,0 +1,31 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "axes",
+ "seconds": 49.69,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 49.38,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 11157,
+   "eval_tokens": 10218,
+   "cut": false,
+   "cost_usd": 0.124494,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel long: stacked segments do not sum to 100: GPT-3.5 Web sums to 42.4; GPT-3.5 API sums to 42.4; GPT-4 Web sums to 62.6; GPT-4 API sums to 71.7; GPT-4o API sums to 76.8",
+  "panel medium: stacked segments do not sum to 100: GPT-3.5 Web sums to 51.5; GPT-3.5 API sums to 46.5; GPT-4 Web sums to 70.7; GPT-4 API sums to 67.7; GPT-4o API sums to 75.8",
+  "panel short: stacked segments do not sum to 100: GPT-3.5 Web sums to 49; GPT-3.5 API sums to 49; GPT-4 Web sums to 64.7; GPT-4 API sums to 58.8; GPT-4o API sums to 68"
+ ]
+}

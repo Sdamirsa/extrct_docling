@@ -1,0 +1,21 @@
+[
+  {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/5",
+    "mode": "cloud",
+    "model": "google/gemini-3.8-flash",
+    "backend": "openai-compatible",
+    "status": "read",
+    "panels": 2,
+    "rows": 17,
+    "seconds": 145.62,
+    "calls": 1,
+    "tool_calls": null,
+    "prompt_tokens": 8294,
+    "eval_tokens": 29740,
+    "cost_usd": 0.1177,
+    "gpu_bytes": null,
+    "issues": 0,
+    "notes": []
+  }
+]

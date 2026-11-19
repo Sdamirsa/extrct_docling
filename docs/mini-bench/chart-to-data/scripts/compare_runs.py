@@ -20,7 +20,7 @@ import json
 import sys
 from pathlib import Path
 
-from analyze import BENCH, load_charts, load_timing, series_lenient
+from analyze import load_charts, load_timing, round_file, series_lenient
 
 from docling.engines.figure_data.schema import ChartData
 from docling.engines.figure_data.scoring import match_panels, score_figure
@@ -52,8 +52,8 @@ def nameless_hits(truth: ChartData, pred: ChartData | None, share: float = 0.05)
 
 def main() -> None:
     runs = [arg.split("=", 1) for arg in sys.argv[1:]]
-    testset = json.loads((BENCH / "testset.json").read_text(encoding="utf-8"))
-    truth = load_charts(BENCH / "truth")
+    testset = json.loads(round_file("testset.json").read_text(encoding="utf-8"))
+    truth = load_charts(round_file("truth"))
     loaded = {
         label: (load_charts(Path(folder)), load_timing(Path(folder)))
         for label, folder in runs
@@ -64,10 +64,16 @@ def main() -> None:
     )
     print(f"{'':14} |" + "".join(f" {'named any /ret pan    s':22} |" for _ in runs))
     totals = {label: [0, 0, 0, 0, 0, 0.0] for label, _ in runs}
+    truth_values = no_data = 0
     for figure in testset["figures"]:
         key = (Path(figure["bundle"]).name, figure["self_ref"])
-        chart = truth[key]
+        chart = truth.get(key)
+        if chart is None:
+            # A figure of the test set that has no truth is not scored.
+            continue
         wanted = sum(len(p.data) for p in chart.panels)
+        truth_values += wanted
+        no_data += not wanted
         line = f"{figure['id']:4}{wanted:6}{len(chart.panels):4} |"
         for label, _ in runs:
             preds, timing = loaded[label]
@@ -92,13 +98,14 @@ def main() -> None:
             )
         print(line)
     print(
-        "\ntotals over the data charts (560 truth values) and the 5 figures without data:"
+        f"\ntotals over the data charts ({truth_values} truth values) and the "
+        f"{no_data} figures without data:"
     )
     for label, _ in runs:
         named, loose, returned, invented, empty, seconds = totals[label]
         print(
             f"  {label:24} within 5 %: {named:4} named, {loose:4} names ignored;"
-            f" {returned:4} returned | no-data figures left empty {empty}/5"
+            f" {returned:4} returned | no-data figures left empty {empty}/{no_data}"
             f" ({invented} values invented) | {seconds:5.0f} s"
         )
 

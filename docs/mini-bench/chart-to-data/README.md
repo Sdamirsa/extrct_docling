@@ -16,8 +16,16 @@ Round 3, a day later, made figure-to-data a step of its own after the
 conversion with three reading methods (a local model, one cloud call, an
 agent) and ran all three on the same prepared figures:
 [`round-3/README.md`](round-3/README.md), [`round-3/LOG.md`](round-3/LOG.md).
-The figures, the test set, the truth and the scripts are shared by all
-rounds; each round keeps its own runs, metrics and judge files.
+Round 4 left the prepared figures and ran the pipeline command itself
+on one whole paper, once per method:
+[`round-4/README.md`](round-4/README.md), [`round-4/LOG.md`](round-4/LOG.md).
+A side check after round 4 measured the cut of a figure into its charts
+alone, on 51 figures, for the rule splitter, two detectors and three
+vision models:
+[`round-4-plus-splitter/README.md`](round-4-plus-splitter/README.md).
+The figures, the test set, the truth and the scripts are shared by rounds
+1 to 3; round 4 is on another paper and brings its own test set and
+truth. Each round keeps its own runs, metrics and judge files.
 
 ## Answer
 

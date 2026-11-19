@@ -1,0 +1,27 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/12",
+    "image_path": "images/picture_013.png",
+    "page": 64,
+    "bbox": [
+      72.32,
+      103.64,
+      251.22,
+      700.84
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data ollama measured (gemma4:26b-a4b-it-qat)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "This figure displays the performance of various large language models across five different question types: Complication, Diagnosis, Investigation, Pathophysiology, and Treatment, categorized by correctness (Correct, EDP, Error, Incorrect).",
+  "uncertain": [
+    "not read: the model sees 5 charts in this figure and the layout analysis separates 1; one image of several charts is not read reliably"
+  ]
+}

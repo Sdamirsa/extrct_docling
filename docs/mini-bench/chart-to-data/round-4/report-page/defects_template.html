@@ -1,0 +1,305 @@
+<title>Figure-to-Data Defects</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column. A count of what is fixed and what is open, then one card per
+   defect: status, what happens, the evidence (an image or a table), what it cost in
+   round 4, where it lives in the code, what a fix takes. Tokens are those of the
+   round-3 and round-4 report pages. */
+
+:root {
+  --page: #f3f5f8; --surface: #ffffff; --surface-2: #e9edf2; --line: #d8dee6;
+  --ink: #0e1217; --ink-2: #454e5b; --muted: #77808d;
+  --accent: #2a78d6; --series-1: #2a78d6; --series-2: #eb6834;
+  --good: #0ca30c; --warn: #fab219; --serious: #ec835a; --crit: #d03b3b;
+  --seq-1: #cde2fb; --seq-2: #9ec5f4; --seq-3: #6da7ec; --seq-4: #3987e5; --seq-5: #1c5cab;
+  --seq-ink-lo: #0e1217; --seq-ink-hi: #ffffff;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+    --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+    --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+    --seq-1: #133a6e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #5598e7; --seq-5: #9ec5f4;
+    --seq-ink-lo: #eef0f3; --seq-ink-hi: #0c0e11;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0c0e11; --surface: #15181c; --surface-2: #1e2329; --line: #2b323b;
+  --ink: #eef0f3; --ink-2: #bfc6d0; --muted: #8b939e;
+  --accent: #5a9bea; --series-1: #3987e5; --series-2: #d95926;
+  --seq-1: #133a6e; --seq-2: #184f95; --seq-3: #256abf; --seq-4: #5598e7; --seq-5: #9ec5f4;
+  --seq-ink-lo: #eef0f3; --seq-ink-hi: #0c0e11;
+}
+* { box-sizing: border-box; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 18px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 600; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); font-size: 12px; }
+.muted { color: var(--muted); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 10px; }
+.bar .sub { color: var(--muted); font-size: 12px; }
+.tabs { display: flex; gap: 4px; margin-left: auto; background: var(--surface-2); padding: 3px; border-radius: 999px; }
+.tabs button { border: 0; background: transparent; padding: 6px 16px; border-radius: 999px; cursor: pointer; font-weight: 500; color: var(--ink-2); }
+.tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+
+main { padding-block: 24px 56px; display: flex; flex-direction: column; gap: 32px; }
+section { display: flex; flex-direction: column; gap: 12px; }
+.lede { font-size: 16px; max-width: 68ch; color: var(--ink); }
+.note { max-width: 78ch; color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.scroll { overflow-x: auto; }
+
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.tile { padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile .big { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.1; }
+.tile .lab { color: var(--ink-2); font-size: 13px; }
+
+.reco { padding: 16px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px 28px; }
+.reco h3 { margin-bottom: 4px; }
+.reco p { color: var(--ink-2); }
+.reco strong { color: var(--ink); }
+
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+thead th { font-weight: 600; color: var(--ink-2); font-size: 12px; background: var(--surface); position: sticky; top: 0; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; }
+.model { display: flex; flex-direction: column; line-height: 1.25; white-space: nowrap; }
+.model .build { color: var(--muted); font-size: 12px; }
+.pick { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; vertical-align: 1px; }
+.dots { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line); }
+.dots i.on { background: var(--series-1); border-color: var(--series-1); }
+
+.matrix td, .matrix th { padding: 4px; text-align: center; border-bottom: 0; }
+.matrix th.fig { font-family: var(--font-mono); font-size: 11px; font-weight: 500; }
+.matrix th.fig.nodata { color: var(--muted); }
+.matrix td.name { text-align: left; padding-right: 12px; }
+.cell { width: 34px; height: 28px; border-radius: 5px; border: 0; cursor: pointer; font-size: 11px; font-weight: 700; font-family: var(--font-mono); display: inline-flex; align-items: center; justify-content: center; }
+.cell:hover { filter: brightness(1.12); }
+.v-correct { background: var(--good); color: #fff; }
+.v-partial { background: var(--warn); color: #0b0b0b; }
+.v-wrong { background: var(--crit); color: #fff; }
+.v-missed { background: var(--serious); color: #0b0b0b; }
+.v-true_negative { background: var(--surface-2); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
+.v-false_positive { background: repeating-linear-gradient(135deg, var(--crit) 0 5px, #a82c2c 5px 10px); color: #fff; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .cell { width: 26px; height: 20px; cursor: default; }
+.swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+.heat td.h { text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; }
+.h0 { color: var(--muted); }
+.h1 { background: var(--seq-1); color: var(--seq-ink-lo); }
+.h2 { background: var(--seq-2); color: var(--seq-ink-lo); }
+.h3 { background: var(--seq-3); color: var(--seq-ink-lo); }
+.h4 { background: var(--seq-4); color: var(--seq-ink-hi); }
+.h5 { background: var(--seq-5); color: var(--seq-ink-hi); }
+.heat th.m { font-size: 11px; white-space: normal; min-width: 76px; vertical-align: bottom; }
+
+.timechart { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.trow { display: grid; grid-template-columns: 200px 1fr 86px; gap: 12px; align-items: center; }
+.trow .track { display: flex; gap: 2px; height: 18px; }
+.trow .seg { height: 100%; border-radius: 0; cursor: default; }
+.trow .seg.a { background: var(--series-1); border-radius: 0 4px 4px 0; }
+.trow .seg.b { background: var(--series-2); border-radius: 0 4px 4px 0; }
+.trow .seg.a:not(:last-child) { border-radius: 0; }
+.trow .val { text-align: right; color: var(--ink-2); }
+@media (max-width: 640px) { .trow { grid-template-columns: 1fr; gap: 2px; } .trow .val { text-align: left; } }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.cols .panel { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.cols p, .cols li { color: var(--ink-2); }
+ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+
+/* figures view */
+.private { padding: 10px 14px; border-left: 3px solid var(--serious); color: var(--ink-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 5px 11px; border-radius: 999px; cursor: pointer; font-size: 13px; display: inline-flex; gap: 6px; align-items: center; }
+.chip .mono { font-size: 12px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.chip.nodata:not([aria-pressed="true"]) { color: var(--muted); border-style: dashed; }
+.chip .tick { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.chip[aria-pressed="true"] .tick { background: var(--series-1); }
+.bench { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; align-items: start; }
+@media (max-width: 980px) { .bench { grid-template-columns: minmax(0, 1fr); } }
+.stack { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.figcard { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.figcard img { max-width: 100%; height: auto; background: #fff; border-radius: 4px; border: 1px solid var(--line); align-self: center; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 13px; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; }
+.card { padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.card header .grow { margin-left: auto; color: var(--muted); font-size: 12px; }
+.pill { display: inline-flex; align-items: center; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.codes { display: flex; flex-wrap: wrap; gap: 4px; }
+.code { font-family: var(--font-mono); font-size: 10.5px; padding: 1px 6px; border-radius: 4px; background: var(--surface-2); color: var(--ink-2); }
+.evidence { color: var(--ink-2); }
+.vals { max-height: 360px; overflow: auto; border: 1px solid var(--line); border-radius: 6px; }
+.vals table { font-size: 12px; }
+.vals th, .vals td { padding: 4px 8px; white-space: nowrap; }
+.vals tr.ph td { background: var(--surface-2); font-weight: 600; white-space: normal; }
+.more { align-self: flex-start; border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: 12px; }
+.empty { color: var(--muted); font-style: italic; }
+.modelgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--ink); color: var(--page); padding: 6px 9px; border-radius: 6px; font-size: 12px; max-width: 300px; line-height: 1.35; }
+@media (prefers-reduced-motion: no-preference) { .tabs button, .chip, .cell { transition: background-color .12s, color .12s; } }
+.arrow { color: var(--muted); padding: 0 4px; }
+.was { color: var(--muted); }
+.now { font-weight: 700; }
+tr.r1 td { color: var(--muted); }
+tr.r1 .cell { opacity: .62; }
+tr.grp td { border-bottom: 0; padding-bottom: 2px; }
+.matrix td.name .build { font-size: 11px; }
+.rtag { display: inline-block; padding: 0 6px; border-radius: 4px; font-size: 11px; font-weight: 600; background: var(--surface-2); color: var(--ink-2); margin-left: 6px; }
+.rtag.now { background: var(--accent); color: #fff; }
+.chipgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.chipgroup .lab { font-size: 12px; color: var(--muted); min-width: 62px; }
+.trow .track.thin { height: 10px; opacity: .55; }
+.pair { display: flex; flex-direction: column; gap: 3px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; font-size: 13px; padding: 14px 16px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; }
+.steps { counter-reset: s; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.steps li { counter-increment: s; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.steps li h3::before { content: counter(s) ". "; color: var(--muted); }
+.steps .was-is { font-size: 12px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 6px; }
+.enote { font-size: 12px; color: var(--ink-2); border-left: 3px solid var(--line); padding-left: 8px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 12px; }
+.codebox { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.codebox pre { margin: 0; overflow-x: auto; font-family: var(--font-mono); font-size: 12px; line-height: 1.55; color: var(--ink-2); white-space: pre; }
+td.wraptext { color: var(--ink-2); min-width: 200px; vertical-align: top; }
+#lessons td { vertical-align: top; }
+tr.sep td { border-top: 2px solid var(--line); }
+#scorecard thead th { white-space: normal; vertical-align: bottom; }
+#scorecard .model { white-space: normal; min-width: 170px; max-width: 250px; }
+#scorecard td:last-child { min-width: 110px; }
+
+/* defects page */
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.status.fixed { background: var(--good); color: #fff; }
+.status.open { background: var(--warn); color: #0b0b0b; }
+.status.design { background: var(--surface-2); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line); }
+.defect { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.defect > header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.defect > header .id { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.defect p { max-width: 76ch; color: var(--ink-2); }
+.defect p strong { color: var(--ink); }
+.facts { display: grid; grid-template-columns: minmax(110px, auto) 1fr; gap: 6px 16px; font-size: 13px; max-width: 900px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; color: var(--ink-2); }
+.facts code, .defect code { font-family: var(--font-mono); font-size: 12px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; }
+.shots figure { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.shots img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; align-self: flex-start; }
+.shots figcaption { font-size: 12px; color: var(--ink-2); }
+.toc { padding: 6px 4px; }
+.toc td a { color: var(--ink); text-decoration: none; font-weight: 600; }
+.toc td a:hover, .toc td a:focus-visible { text-decoration: underline; }
+.counts { display: flex; flex-wrap: wrap; gap: 12px; }
+.counts .tile { min-width: 190px; flex: 1 1 190px; }
+blockquote { margin: 0; padding: 2px 0 2px 12px; border-left: 3px solid var(--line); color: var(--ink-2); max-width: 76ch; }
+</style>
+
+<div class="bar"><div class="wrap">
+  <div><h1>Figure-to-Data Defects · Round 4</h1><div class="sub" id="subline"></div></div>
+</div></div>
+
+<div class="wrap">
+<main>
+  <section>
+    <p class="lede" id="lede"></p>
+    <div class="counts" id="counts"></div>
+  </section>
+
+  <section>
+    <h2>The list</h2>
+    <div class="panel scroll toc"><table id="toc"></table></div>
+  </section>
+
+  <section id="cards"></section>
+
+  <section>
+    <p class="note muted" id="notlisted"></p>
+    <p class="panel private">The figure images are the paper's own artwork, shown here for private review. Keep this page unshared.</p>
+  </section>
+</main>
+</div>
+<script id="defect-data" type="application/json">/*__DATA__*/</script>
+<script>
+(function () {
+  const D = JSON.parse(document.getElementById('defect-data').textContent);
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const LABEL = { fixed: 'Fixed', open: 'Open' };
+  const pill = (s) => `<span class="status ${s}">${LABEL[s]}</span>`;
+  const shot = ([src, alt, strong, rest]) => `<figure><img src="${src}" alt="${esc(alt)}"><figcaption><strong>${esc(strong)}</strong> ${esc(rest)}</figcaption></figure>`;
+  const table = (head, rows, right) => `<div class="panel scroll"><table><thead><tr>${head.map((h, i) => `<th${right.includes(i) ? ' class="r"' : ''}>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c, i) => `<td${right.includes(i) ? ' class="r num"' : ''}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+
+  const EVIDENCE = {
+    capture() {
+      return `<div class="shots">${D.shots.capture.map(shot).join('')}</div>` +
+        table(['Method', 'First pass: right under the right year or date (of 13)', 'Read again after the fix (of 13)'],
+          D.capture.map((r) => [esc(r.name), r.before, `<strong>${r.after}</strong>`]), [1, 2]);
+    },
+    splitter() {
+      return table(['Figure', 'Charts in the figure', 'Charts the splitter found', ''],
+        D.split.map((r) => [`<strong>${esc(r.id)}</strong> <span class="muted">${esc(r.figure)}</span>`, r.has, r.found, r.has === r.found ? '<span class="muted">right</span>' : `<span class="status open">${r.found > r.has ? 'cut apart' : 'merged'}</span>`]), [1, 2]) +
+        `<div class="shots">${D.shots.splitter.map(shot).join('')}</div>`;
+    },
+    box() {
+      return `<div class="shots">${D.shots.box.map(shot).join('')}</div>` +
+        table(['Run on Figure 7', 'Scorer of rounds 1 to 3 (of 52)', 'Right by name (of 52)'],
+          D.figure7.map((r) => [esc(r.name), r.scored, `<strong>${r.byName}</strong>`]), [1, 2]);
+    },
+    segments() {
+      return table(['Run', 'Figure 4: values returned (of 222)', 'Figure 5: values returned (of 144)', 'Right by name, both figures (of 366)'],
+        D.segments.map((r) => [esc(r.name), r.s03, r.s04, `<strong>${r.right}</strong>`]), [1, 2, 3]);
+    },
+    frame() {
+      return `<div class="shots">${D.shots.frame.map(shot).join('')}</div>`;
+    },
+    scorer() {
+      return table(['Run', 'Scorer of rounds 1 to 3 (of 573)', 'Right by name (of 573)', 'Difference'],
+        D.scorer.map((r) => [esc(r.name), r.scored, `<strong>${r.byName}</strong>`, r.byName - r.scored]), [1, 2, 3]);
+    },
+  };
+
+  $('subline').textContent = D.text.subline;
+  $('lede').textContent = D.text.lede;
+  const fixed = D.text.defects.filter((d) => d.status === 'fixed').length;
+  const open = D.text.defects.length - fixed;
+  $('counts').innerHTML = [[fixed, 'fixed in this round, with a test each'], [open, 'open, with where they live in the code'], ['6 of 11', 'chart figures on which the chart splitter was wrong'], ['13 of 13', 'points of Figure 6 right for every method after the capture fix (0 before)']]
+    .map(([big, lab]) => `<div class="panel tile"><div class="big num">${esc(big)}</div><div class="lab">${esc(lab)}</div></div>`).join('');
+  $('toc').innerHTML = '<thead><tr><th>Defect</th><th>Status</th><th>What it cost in round 4</th></tr></thead><tbody>' +
+    D.text.defects.map((d) => `<tr><td><a href="#${d.anchor}">${esc(d.title)}</a></td><td>${pill(d.status)}</td><td class="muted">${esc(d.cost)}</td></tr>`).join('') + '</tbody>';
+  $('cards').innerHTML = D.text.defects.map((d) => `<article class="panel defect" id="${d.anchor}">
+      <header>${pill(d.status)}<h2>${esc(d.title)}</h2></header>
+      ${d.what.map((p) => `<p>${esc(p)}</p>`).join('')}
+      ${d.evidence ? EVIDENCE[d.evidence]() : ''}
+      <dl class="facts">
+        <dt>In round 4</dt><dd>${esc(d.effect)}</dd>
+        <dt>Where</dt><dd><code>${esc(d.where)}</code></dd>
+        <dt>${d.status === 'fixed' ? 'The fix' : 'What a fix takes'}</dt><dd>${esc(d.fix)}</dd>
+        ${d.left ? `<dt>Still to know</dt><dd>${esc(d.left)}</dd>` : ''}
+      </dl></article>`).join('');
+  $('notlisted').textContent = D.text.notlisted;
+})();
+</script>

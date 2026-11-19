@@ -1,0 +1,23 @@
+[
+  {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/5",
+    "mode": "agent",
+    "model": "claude-sonnet-5-5",
+    "backend": "claude-cli",
+    "status": "read",
+    "panels": 2,
+    "rows": 17,
+    "seconds": 21.59,
+    "calls": 1,
+    "tool_calls": 4,
+    "prompt_tokens": 41155,
+    "eval_tokens": 2740,
+    "cost_usd": 0.0656,
+    "gpu_bytes": null,
+    "issues": 0,
+    "notes": [
+      "In chart b, legend markers of the same colour look identical, so the model assigned to each of the two GPT3 points and the two 2021-09 GPT3.5 points is a guess (4 points)."
+    ]
+  }
+]

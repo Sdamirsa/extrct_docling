@@ -1,0 +1,134 @@
+{
+ "ollama-gemma4-26b-qat": {
+  "first pass": {
+   "values": 17,
+   "paired by name": 0,
+   "within 5 % by name": 0,
+   "within 5 %, names ignored": 13,
+   "seconds": 31.02,
+   "cost_usd": null,
+   "categories": [
+    "12.35%",
+    "GPT4-0125 (2023-12)",
+    "GPT4o-20240513 (2023-09)",
+    "None"
+   ]
+  },
+  "after the fix": {
+   "values": 17,
+   "paired by name": 17,
+   "within 5 % by name": 13,
+   "within 5 %, names ignored": 13,
+   "seconds": 43.68,
+   "cost_usd": null,
+   "categories": [
+    "2021-09",
+    "2021.0",
+    "2022.0",
+    "2023-04",
+    "2023-09",
+    "2023-12",
+    "2023.0"
+   ]
+  }
+ },
+ "cloud-sonnet-5-5": {
+  "first pass": {
+   "values": 17,
+   "paired by name": 0,
+   "within 5 % by name": 0,
+   "within 5 %, names ignored": 13,
+   "seconds": 9.76,
+   "cost_usd": null,
+   "categories": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  },
+  "after the fix": {
+   "values": 17,
+   "paired by name": 17,
+   "within 5 % by name": 13,
+   "within 5 %, names ignored": 13,
+   "seconds": 13.42,
+   "cost_usd": null,
+   "categories": [
+    "2021-09",
+    "2021.0",
+    "2022.0",
+    "2023-04",
+    "2023-09",
+    "2023-12",
+    "2023.0"
+   ]
+  }
+ },
+ "cloud-gemini-3-8-flash": {
+  "first pass": {
+   "values": 17,
+   "paired by name": 0,
+   "within 5 % by name": 0,
+   "within 5 %, names ignored": 13,
+   "seconds": 122.45,
+   "cost_usd": null,
+   "categories": [
+    "1.0",
+    "2.0",
+    "3.0",
+    "4.0"
+   ]
+  },
+  "after the fix": {
+   "values": 17,
+   "paired by name": 17,
+   "within 5 % by name": 13,
+   "within 5 %, names ignored": 13,
+   "seconds": 145.62,
+   "cost_usd": null,
+   "categories": [
+    "2021-09",
+    "2021.0",
+    "2022.0",
+    "2023-04",
+    "2023-09",
+    "2023-12",
+    "2023.0"
+   ]
+  }
+ },
+ "agent-sonnet-5-5": {
+  "first pass": {
+   "values": 17,
+   "paired by name": 0,
+   "within 5 % by name": 0,
+   "within 5 %, names ignored": 13,
+   "seconds": 29.71,
+   "cost_usd": null,
+   "categories": [
+    "1.0",
+    "2.0",
+    "3.0",
+    "4.0"
+   ]
+  },
+  "after the fix": {
+   "values": 17,
+   "paired by name": 17,
+   "within 5 % by name": 13,
+   "within 5 %, names ignored": 13,
+   "seconds": 21.59,
+   "cost_usd": null,
+   "categories": [
+    "2021-09",
+    "2021.0",
+    "2022.0",
+    "2023-04",
+    "2023-09",
+    "2023-12",
+    "2023.0"
+   ]
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "bench": "chart-to-data mini bench, round 4",
+ "date": "2026-11-19",
+ "question": "One paper through the whole pipeline, once per reading method of the figure-to-data step: what does each `amir-batch --figure-data ...` command take, cost and leave in its bundle, and how right is it on that paper's figures?",
+ "paper": "showcase/Public-test-manuscript.pdf (68 pages, 15 pictures, 12 chart candidates)",
+ "figures": "testset.json: the 12 chart candidates the step picks. S02-S08 (six figures) have a full truth (truth/, 573 values in 13 charts); S10-S14 a sample of 60 values fixed by rule (truth-sample/); S09 none",
+ "not_new_to_every_method": "S04 and S06 are in the five-figure smoke set the local engine was first built on (tests/data/figure_data/testset-5.json, 2026-11-09). No figure of this paper is in the 15-figure bench of rounds 1 to 3",
+ "command": "amir-batch showcase/Public-test-manuscript.pdf -o samples/round-4-showcase/<label> --figure-data <method> [--figure-data-model <model>] (scripts/run_round4.sh), one run after the other",
+ "conversion": "default options (Granite-Vision 4.1-4B for tables and figure descriptions, BiomedCLIP figure types), repeated in every run; the four bundles hold the same 15 pictures with the same boxes",
+ "engine": {
+  "version": "2.131.0-r4",
+  "git_commit": "c861f628f0ea4794b5ae225af035b464e67a3972",
+  "git_dirty": true,
+  "note": "the commit of round 3 plus the uncommitted pipeline changes of this round (LOG.md section 2), frozen from the first run's start to the last run's end; the fix to the prepare phase found on the way (LOG.md section 7) went in after the last conversion had started and was applied to none of the four runs"
+ },
+ "step": {
+  "version": "3",
+  "design": ".claude/reference/figure-data/STANDALONE-STEP.md",
+  "options_recorded_in": "runs/<label>/Public-test-manuscript/figure-to-data/runs/<run id>.json (options, prompts, outcome per figure)"
+ },
+ "runs": {
+  "ollama-gemma4-26b-qat": {
+   "method": "ollama",
+   "model": "gemma4:26b-a4b-it-qat (15.6 GB loaded, context 16,384)",
+   "backend": "Ollama 0.32.14, /api/chat",
+   "limits": "120 s per call, no new call once a figure took 600 s"
+  },
+  "cloud-sonnet-5-5": {
+   "method": "cloud",
+   "model": "anthropic/claude-sonnet-5.5",
+   "backend": "openai-compatible: POST https://openrouter.ai/api/v1/chat/completions, one request per figure, key from OPENROUTER_API_KEY in .env",
+   "reasoning_effort": "high",
+   "max_output_tokens": "64,000",
+   "reply_schema": "in the system prompt only (the host refuses it as response_format, as in round 3)"
+  },
+  "cloud-gemini-3-8-flash": {
+   "method": "cloud",
+   "model": "google/gemini-3.8-flash",
+   "backend": "openai-compatible: POST https://openrouter.ai/api/v1/chat/completions, one request per figure, key from OPENROUTER_API_KEY in .env",
+   "reasoning_effort": "high",
+   "max_output_tokens": "64,000 (largest reply 55,753 tokens, on the 11-panel figure)",
+   "reply_schema": "enforced as response_format, every field required"
+  },
+  "agent-sonnet-5-5": {
+   "method": "agent",
+   "model": "claude-sonnet-5-5",
+   "backend": "claude-cli: Claude Code 2.1.326 headless, one session per figure, effort high",
+   "tools": [
+    "mcp__figure__look",
+    "mcp__figure__record_chart",
+    "mcp__figure__finish"
+   ],
+   "limits": "600 s and 2 USD per figure; the longest session took 268 s and 0.87 USD",
+   "audit": "runs/agent-sonnet-5-5/AUDIT.md: every session was offered those three tools and called no other"
+  }
+ },
+ "truth": {
+  "made_by": "three fresh claude-fable-5-2 sub-agents (truth/PROMPT.md), a fourth for the sample (truth-sample/PROMPT.md), while the runs were under way; none read a model's output",
+  "cross_check": "S04 and S06 against the truth of 2026-11-09 in tests/data/figure_data/truth (another agent, an older conversion): 144 of 144 and 40 of 40 paired values within 2 % of the axis"
+ },
+ "judges": "one fresh claude-fable-5-2 sub-agent per run (judge/PROMPT.md), the six figures with a truth file",
+ "isolation": {
+  "readers": "the cloud model gets one HTTP request per figure and has no tool; an agent session has the three tools of one server bound to one figure folder (audited); the local engine reads one figure",
+  "truth": "written into this folder while the runs were going; no reader has a file tool, so it was not locked",
+  "judges": "told to read one run's folder, the truth and the figure images, and nothing of the other runs"
+ },
+ "after_fix": "after-fix/: Figure 6 (S05) prepared again with the corrected capture and read once more by each method, outside the bundles (amir-figdata prepare --refs '#/pictures/5' --out ..., amir-figdata read)",
+ "scoring": "scripts/compare_bundles.py: the scorer of rounds 1 to 3 as it is, a count by printed name with the charts put where the truth has them, and a count with names ignored (LOG.md section 6)",
+ "cost_usd": {
+  "cloud-sonnet-5-5": 0.91,
+  "cloud-gemini-3-8-flash": 1.42,
+  "agent-sonnet-5-5": "2.97 as the Claude Code CLI reports it (what a session costs depends on the login it runs under)",
+  "after_fix_rereads": "0.03 (Sonnet), 0.12 (Gemini), 0.07 (agent)",
+  "openrouter_total_this_round": 2.49
+ },
+ "not_published": "the four bundles (samples/round-4-showcase/, git-ignored) and the comparison page built into that folder; this folder keeps the readings, the run records, the metrics, the truth and the judges' files, without the figure images"
+}

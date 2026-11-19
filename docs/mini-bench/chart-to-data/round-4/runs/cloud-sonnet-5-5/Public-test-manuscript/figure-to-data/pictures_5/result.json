@@ -1,0 +1,27 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "gutters",
+ "seconds": 9.76,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 9.69,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 5543,
+   "eval_tokens": 1761,
+   "cut": false,
+   "cost_usd": 0.028696,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": []
+}

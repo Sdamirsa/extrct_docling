@@ -431,9 +431,21 @@ def _image_bitmap(
     width, height = obj.get_px_size()
     try:
         bitmap = obj.get_bitmap(render=False).to_pil().convert("RGB")
+        # The image's own pixels come without its soft mask: where the mask
+        # makes the image transparent they are whatever the file stores,
+        # in practice black, and black axis labels vanish in it. pdfium
+        # applies the mask only when it renders the object, so the alpha
+        # is taken from that rendering and the pixels stay the file's own.
+        rendered = obj.get_bitmap(render=True, scale_to_original=True).to_pil()
     except Exception as exc:  # pdfium cannot decode every filter / colour space
         _log.debug("native bitmap unavailable: %s", exc)
         return None, 0.0
+    if "A" in rendered.getbands():
+        alpha = rendered.getchannel("A")
+        if alpha.getextrema()[0] < 255:
+            on_white = Image.new("RGB", bitmap.size, "white")
+            on_white.paste(bitmap, mask=alpha.resize(bitmap.size))
+            bitmap = on_white
     return bitmap, min(width / a, height / d)
 
 
@@ -720,6 +732,7 @@ class AxisMap(BaseModel):
 
 
 _MAX_RESIDUAL = 0.03
+_LINEAR_IS_CLOSE = 0.005
 
 
 def fit_axis(
@@ -727,8 +740,9 @@ def fit_axis(
 ) -> AxisMap | None:
     """Fit an axis to ``(pixel position, label)`` ticks: linear or log when
     at least two labels are numbers, strictly monotone in position and on a
-    line within 3 % of the range; categorical when most labels are not
-    numbers; None otherwise."""
+    line within 3 % of the range (log only when linear is off by more than
+    0.5 % and log is closer); categorical when most labels are not numbers;
+    None otherwise."""
     pairs = sorted(ticks)
     if not pairs:
         return None
@@ -754,7 +768,12 @@ def fit_axis(
         residual = float(np.max(np.abs(slope * pos + intercept - target))) / span
         if residual > _MAX_RESIDUAL:
             continue
-        if best is None or residual < best.residual:
+        # Ticks a few steps apart far from zero (the years 2021, 2022,
+        # 2023) lie on a line in both scales, and the last pixel then
+        # decides between them: a linear fit that close is kept.
+        if best is None or (
+            best.residual > _LINEAR_IS_CLOSE and residual < best.residual
+        ):
             best = AxisMap(
                 axis=axis,
                 scale=scale,

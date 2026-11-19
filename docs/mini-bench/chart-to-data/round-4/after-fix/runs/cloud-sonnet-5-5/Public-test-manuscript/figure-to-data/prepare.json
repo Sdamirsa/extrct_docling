@@ -1,0 +1,30 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Public-test-manuscript",
+  "pdf": "Public-test-manuscript.pdf",
+  "prepared_at": "2026-11-19T10:13:35",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": [
+    "#/pictures/5"
+  ],
+  "figures": [
+    {
+      "self_ref": "#/pictures/5",
+      "status": "prepared",
+      "folder": "pictures_5",
+      "reason": null,
+      "page": 21,
+      "figure_type": "kaplan_meier",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        1417,
+        588
+      ],
+      "source_kind": "raster",
+      "charts": 2,
+      "words": 58
+    }
+  ]
+}

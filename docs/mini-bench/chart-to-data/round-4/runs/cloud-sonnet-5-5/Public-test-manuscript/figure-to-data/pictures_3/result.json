@@ -1,0 +1,30 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "axes",
+ "seconds": 36.34,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 36.23,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 9173,
+   "eval_tokens": 7223,
+   "cut": false,
+   "cost_usd": 0.090576,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: stacked segments do not sum to 100: Claude3-Haiku API sums to 95.5; Claude3-Sonnet Web sums to 96.3; Mistralv2-7b-Q8 Local sums to 95.3; Llama2-70b Poe sums to 94.3",
+  "panel 2: stacked segments do not sum to 100: Gemma2-27b Poe sums to 94.3"
+ ]
+}

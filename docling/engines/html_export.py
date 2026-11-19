@@ -58,7 +58,7 @@ from typing_extensions import override
 
 from docling.engines.figure_data.schema import CHART_DATA_META_KEY
 from docling.engines.figure_typing import META_KEY, get_figure_type
-from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.picture_filter import PictureNoiseFlag, read_noise_flags
 from docling.engines.run_snapshot import engine_provenance
 from docling.engines.structure import (
     DocumentStructure,
@@ -467,20 +467,11 @@ def rebuild_document_html(pdf_dir: Path) -> Path:
     conversion (``data-label-was`` says which those were)."""
     doc = DoclingDocument.load_from_json(pdf_dir / "document.json")
     structure = read_structure(pdf_dir) or structure_document(doc)
-    noise_flags = [
-        PictureNoiseFlag(
-            self_ref=row.get("self_ref"),
-            is_noise=bool(row.get("is_noise")),
-            noise_reason=row.get("noise_reason"),
-            classifier_label=row.get("generic_classifier_label"),
-        )
-        for row in _read_jsonl(pdf_dir / "figures.jsonl")
-    ]
     run_path = pdf_dir / "run.json"
     return write_document_html(
         doc,
         pdf_dir,
-        noise_flags=noise_flags,
+        noise_flags=read_noise_flags(pdf_dir / "figures.jsonl"),
         figures_jsonl=pdf_dir / "figures.jsonl",
         tables_jsonl=pdf_dir / "tables.jsonl",
         chunks_jsonl=pdf_dir / "chunks.jsonl",

@@ -1,0 +1,72 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "gutters",
+ "seconds": 43.68,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 8.401,
+   "total_s": 8.399,
+   "load_s": 5.51,
+   "prompt_eval_s": 1.223,
+   "eval_s": 1.647,
+   "prompt_tokens": 1491,
+   "eval_tokens": 107,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "a",
+   "prompt": "grounded",
+   "wall_s": 13.68,
+   "total_s": 13.679,
+   "load_s": 0.368,
+   "prompt_eval_s": 2.141,
+   "eval_s": 11.051,
+   "prompt_tokens": 1192,
+   "eval_tokens": 718,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "b",
+   "prompt": "grounded",
+   "wall_s": 21.493,
+   "total_s": 21.491,
+   "load_s": 0.383,
+   "prompt_eval_s": 0.853,
+   "eval_s": 20.142,
+   "prompt_tokens": 1544,
+   "eval_tokens": 1273,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T10:37:18.404787568+01:00"
+  }
+ ],
+ "issues": [
+  "panel a: 71.59 outside the axis range [2021, 2023] (2021.0/GPT-3.5 Turbo 0125)",
+  "panel a: 63.58 outside the axis range [2021, 2023] (2022.0/GPT-3.5 Turbo 0125)",
+  "panel a: 70.35 outside the axis range [2021, 2023] (2023.0/GPT-3.5 Turbo 0125)",
+  "panel a: 44.57 outside the axis range [2021, 2023] (2021.0/GPT-4 0613)",
+  "panel a: 46.3 outside the axis range [2021, 2023] (2022.0/GPT-4 0613)",
+  "panel a: 53.49 outside the axis range [2021, 2023] (2023.0/GPT-4 0613)"
+ ]
+}

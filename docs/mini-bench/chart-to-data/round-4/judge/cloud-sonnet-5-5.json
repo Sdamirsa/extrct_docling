@@ -1,0 +1,74 @@
+{
+ "model": "cloud-sonnet-5-5",
+ "judged_by": "claude-fable-5-2",
+ "date": "2026-11-19",
+ "figures": [
+  {
+   "figure_id": "S02",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "GEOMETRY_MISMEASURED", "INTERVAL_BOUNDS"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "Panel b: 6 of 12 marker centres are null (raw prompt at Default (temp=1), -60%, -90% and temp=0, truth 48.33 / 45.0 / 45.56 / 43.89; best prompt at -10% and -40%, truth 45.0 / 42.78) although their interval ends were returned within 0.1; this is declared in a panel note only ('Raw prompt markers are mostly hidden behind the best prompt intervals'), not in `uncertain`, and the four teal stars are in fact drawn on top and visible. Panel c: 'Best Prompt (candidate 4)' MT: 1024 is 46.7 against 44.95 (3.1 % of the axis, an isolated misread that repeats the MT: 512 bar); panel d gives Candidate 6 and Candidate 2 bounds (48.8-49.0, 48.3-48.5) where no error bar is drawn, and the raw-prompt lower bound at Default (temp=1) is null (truth 45.06); the other 68 values are within 0.4 % and the 55 returned interval ends within 0.7 % of their axis."
+  },
+  {
+   "figure_id": "S03",
+   "verdict": "partial",
+   "error_types": ["MISSING_VALUES", "PANEL_STRUCTURE"],
+   "severity": 2,
+   "usable": true,
+   "evidence": "All 37 printed Correct shares and all 37 Incorrect values are right (largest difference 0.13 points), but only 6 of the 148 2OP / EOP / NOP / Error cells came back: 142 of 222 truth values are missing, 64 of them non-zero (e.g. Llama2-70b Poe EOP 4.33, Claude3-Sonnet Web EOP 3.33, Mistralv2-7b-Q8 Local NOP 2.0 and Error 2.0, Gemma2-27b Poe 2OP 1.67), which the record declares in `uncertain` ('Small 2OP, EOP, NOP and Error segments ... are not tabulated'). The one chart is returned as two panels cut at y = 506 px (27 + 10 bars, 'kept as two panels to match the given chart ids'), so the scorer leaves the 25 correct values of panel 2 unpaired (55 of 80 matched) although all 80 returned values are within 0.73 points (worst: GeminiAdvanced Web NOP 1.6 against 2.33)."
+  },
+  {
+   "figure_id": "S04",
+   "verdict": "correct",
+   "error_types": ["GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 144 values are within 0.9 % of the axis: the 24 printed Correct shares are exact, Incorrect is within 0.39 points, and the EOP gaps drawn in the background grey are read as EOP (16 of 16 non-zero). The thin segments scatter by up to 0.93 points without a common direction (Claude3Opus Web - no image EOP 1.2 against 2.13; Claude3Opus API - human hint splits the 1.41 EOP gap into EOP 0.5 / NOP 0.3 / Error 0.6 where NOP and Error are not drawn; Claude3Opus API - no image 2OP 0.0 against 0.7; Claude3Sonnet API - no image NOP 0.4 against 0), and the record says that widths other than Correct are visual estimates."
+  },
+  {
+   "figure_id": "S05",
+   "verdict": "correct",
+   "error_types": [],
+   "severity": 0,
+   "usable": false,
+   "evidence": "The categories could not be read (the black background hides the tick labels; the run keys the points 1-3 and 1-4 and says so in `uncertain`), which is not counted: all 17 visible printed values and all 13 legend names are returned, both lines carry the legend name of their colour, and 70.3 / 53.4 are the visible part of the labels 70.35% / 53.49% that the black area cuts off. A consequence of the hidden date ticks, not counted as an error either but the reason for usable = false: the run took the four columns of the scatter as chronological, while the PDF prints 2021-09, 2023-12, 2023-04, 2023-09, so GPT3.5-1106 / GPT3.5-0125 carry 46.30 / 48.15 instead of 48.15 / 46.30 and GPT4-1106 / GPT4-0125 carry 62.35 / 65.43 instead of 65.43 / 62.35 (2.5 % and 4.2 % of the axis); it flagged a possible swap only for the two orange points of column 1."
+  },
+  {
+   "figure_id": "S06",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE", "GEOMETRY_MISMEASURED"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All four panels carry the whole-figure box [0, 0, 634, 491] instead of their quadrant and write the temperature as category instead of x, so the scorer pairs 0 of 52 although the titles a-d and the numbers are right: paired by temperature, the 52 averages are within 1.3 % of the axis and 102 of 104 range ends within 2 % (largest: panel a at 1.4, upper end 90.0 against 91.68 under the legend box; at 1.8, lower end 65.0 against 66.67). The averages sit a constant half point low (mean -0.55, sd 0.19, all 52 below the truth, e.g. 80.57 -> 80.0, 84.24 -> 83.5), which stays inside the tolerance."
+  },
+  {
+   "figure_id": "S08",
+   "verdict": "correct",
+   "error_types": ["PANEL_STRUCTURE"],
+   "severity": 1,
+   "usable": true,
+   "evidence": "All 63 printed counts are returned under the right row and column labels (diagonal 16, 25, 24, 13, 4; B/D 1, B/Parsing Failed 2, C/Parsing Failed 1; GPT: Require Evaluation 1, 5, 5, 3 for 2OP, EOP, NOP, Error; sum 100). Only the panel box is wrong: [63, 37, 110, 379], the first of the three strips of the preparation step's split, instead of the whole matrix [0, 0, 418, 379]; with a single chart the scorer pairs it all the same."
+  }
+ ],
+ "summary": {
+  "verdict_counts": {
+   "correct": 4,
+   "partial": 2,
+   "wrong": 0,
+   "missed": 0,
+   "true_negative": 0,
+   "false_positive": 0
+  },
+  "error_type_counts": {
+   "MISSING_VALUES": 2,
+   "PANEL_STRUCTURE": 3,
+   "GEOMETRY_MISMEASURED": 3,
+   "INTERVAL_BOUNDS": 1
+  },
+  "usable_figures": 5,
+  "dominant_failure": "MISSING_VALUES",
+  "assessment": "Printed numbers are read without a single error (37 + 24 + 17 + 63 labels in S03, S04, S05, S08), and measured marks are close: bar ends, interval ends, stacked segments and line points are within 1-2 % of the axis in every figure, with one bar off by 3.1 % (S02 c). Its typical failure is leaving data out rather than getting it wrong: on the 37-bar stacked chart S03 it returned Correct and Incorrect only (142 of 222 values missing, 64 of them non-zero, declared), and in S02 b it nulled 6 of 12 marker centres where two series overlap; this accounts for both partial verdicts and for nearly all values a consumer would not get, hence the dominant failure although two other codes occur more often. The second pattern is structural and comes from the preparation step's panel split leaking into the record: one chart kept as two panels (S03), panels with the whole-figure box or a strip of the chart (S06, S08), which costs scorer pairs but no values. Small readings carry a slight bias or scatter (S06 averages half a point low; S04 slivers up to 0.9 points off, three slivers of 0.3-0.6 where none is drawn). S05 was read correctly as far as the defective image allows; its x keys and the attribution of four points that depends on the hidden date ticks are unusable for that reason only. The run can be trusted on charts with printed values and on measured charts of moderate size (up to about 150 values); on dense stacked bars expect the labelled and the large segments only."
+ }
+}

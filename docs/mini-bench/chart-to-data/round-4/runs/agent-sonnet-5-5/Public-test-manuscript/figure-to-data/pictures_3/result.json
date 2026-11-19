@@ -1,0 +1,30 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "axes",
+ "seconds": 26.41,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 26.35,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 61186,
+   "eval_tokens": 3772,
+   "cut": false,
+   "cost_usd": 0.1034809,
+   "turns": 6,
+   "tool_calls": 5
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: stacked segments do not sum to 100: GPT-3.5 Web sums to 47.7; GPT-3.5 API sums to 46; GPT-4 Web sums to 66; GPT-4 API sums to 66; GPT-4o API sums to 73.7",
+  "panel 2: stacked segments do not sum to 100: Llama3.1-8b Poe sums to 43; Llama3.1-70b Poe sums to 58.3; Llama3.1-405b Poe sums to 64; Gemini Web sums to 41.3; GeminiAdvanced Web sums to 51.7"
+ ]
+}

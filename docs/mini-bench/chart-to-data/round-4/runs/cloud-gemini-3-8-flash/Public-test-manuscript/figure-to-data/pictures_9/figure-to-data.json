@@ -1,0 +1,28 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/9",
+    "image_path": "images/picture_010.png",
+    "page": 61,
+    "bbox": [
+      76.01,
+      183.02,
+      536.91,
+      697.01
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (google/gemini-3.8-flash)",
+    "date": "2026-11-19",
+    "time_minutes": null
+  },
+  "description": "Supplementary Figure S3 shows a granular performance heatmap of various large language models and question characteristics across individual unlabeled test questions.",
+  "uncertain": [
+    "not a data chart: Supplementary Figure S3 shows a granular performance heatmap of various large language models and question characteristics across individual unlabeled test questions.",
+    "Dense qualitative performance heatmap across 39 rows and hundreds of individual unlabeled questions without column ticks, labels, or numeric axes to allow tabular extraction."
+  ]
+}

@@ -3,7 +3,8 @@
 
 """Tests for figure-to-data (:mod:`docling.engines.figure_data`). No model
 runs: the Ollama client replays recorded responses through an httpx mock
-transport."""
+transport. The step inside ``amir-batch``, end to end, is in
+``test_figure_data_batch.py``."""
 
 from __future__ import annotations
 
@@ -128,9 +129,11 @@ def _bar_chart_pdf(
     stacks: list[tuple[str, list[tuple[float, tuple[int, int, int]]]]],
     *,
     printed: dict[str, str] | None = None,
+    sentence: str | None = None,
 ) -> Path:
     """A 300 pt page: y axis 0..1 from y=60 to y=260 (labels 0, 0.5, 1.0),
-    one bar (or stack of segments) per category, 30 pt wide every 50 pt."""
+    one bar (or stack of segments) per category, 30 pt wide every 50 pt;
+    *sentence* is printed under the chart."""
     import pypdfium2 as pdfium
 
     pdf = pdfium.PdfDocument.new()
@@ -146,6 +149,8 @@ def _bar_chart_pdf(
         _text(pdf, page, category, 92 + 50 * i, 45)
         if printed and category in printed:
             _text(pdf, page, printed[category], 85 + 50 * i, bottom + 4)
+    if sentence is not None:
+        _text(pdf, page, sentence, 40, 18)
     page.gen_content()
     pdf.save(target)
     pdf.close()

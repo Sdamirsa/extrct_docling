@@ -1,0 +1,243 @@
+{
+  "schema": "extrct.figure-prep-manifest/1",
+  "step_version": "3",
+  "bundle": "Public-test-manuscript",
+  "pdf": "Public-test-manuscript.pdf",
+  "prepared_at": "2026-11-19T09:44:43",
+  "crop_dpi": 220,
+  "panel_split": "auto",
+  "selection": null,
+  "figures": [
+    {
+      "self_ref": "#/pictures/0",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (flow_diagram)",
+      "page": null,
+      "figure_type": "flow_diagram",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/1",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (flow_diagram)",
+      "page": null,
+      "figure_type": "flow_diagram",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/2",
+      "status": "prepared",
+      "folder": "pictures_2",
+      "reason": null,
+      "page": 16,
+      "figure_type": "forest_plot",
+      "capture": "pdf-render",
+      "size_px": [
+        1419,
+        918
+      ],
+      "source_kind": "raster",
+      "charts": 4,
+      "words": 92
+    },
+    {
+      "self_ref": "#/pictures/3",
+      "status": "prepared",
+      "folder": "pictures_3",
+      "reason": null,
+      "page": 18,
+      "figure_type": "bar_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        1090,
+        1537
+      ],
+      "source_kind": "raster",
+      "charts": 2,
+      "words": 90
+    },
+    {
+      "self_ref": "#/pictures/4",
+      "status": "prepared",
+      "folder": "pictures_4",
+      "reason": null,
+      "page": 20,
+      "figure_type": "bar_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        982,
+        1498
+      ],
+      "source_kind": "raster",
+      "charts": 1,
+      "words": 78
+    },
+    {
+      "self_ref": "#/pictures/5",
+      "status": "prepared",
+      "folder": "pictures_5",
+      "reason": null,
+      "page": 21,
+      "figure_type": "kaplan_meier",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        1417,
+        588
+      ],
+      "source_kind": "raster",
+      "charts": 2,
+      "words": 31
+    },
+    {
+      "self_ref": "#/pictures/6",
+      "status": "prepared",
+      "folder": "pictures_6",
+      "reason": null,
+      "page": 22,
+      "figure_type": "box_plot",
+      "capture": "pdf-render",
+      "size_px": [
+        1292,
+        1000
+      ],
+      "source_kind": "raster",
+      "charts": 6,
+      "words": 105
+    },
+    {
+      "self_ref": "#/pictures/7",
+      "status": "skipped",
+      "folder": null,
+      "reason": "not typed as a chart (flow_diagram)",
+      "page": null,
+      "figure_type": "flow_diagram",
+      "capture": null,
+      "size_px": null,
+      "source_kind": null,
+      "charts": null,
+      "words": null
+    },
+    {
+      "self_ref": "#/pictures/8",
+      "status": "prepared",
+      "folder": "pictures_8",
+      "reason": null,
+      "page": 58,
+      "figure_type": "heatmap",
+      "capture": "pdf-render",
+      "size_px": [
+        851,
+        772
+      ],
+      "source_kind": "raster",
+      "charts": 3,
+      "words": 85
+    },
+    {
+      "self_ref": "#/pictures/9",
+      "status": "prepared",
+      "folder": "pictures_9",
+      "reason": null,
+      "page": 61,
+      "figure_type": "heatmap",
+      "capture": "pdf-render",
+      "size_px": [
+        1409,
+        1571
+      ],
+      "source_kind": "raster",
+      "charts": 5,
+      "words": 50
+    },
+    {
+      "self_ref": "#/pictures/10",
+      "status": "prepared",
+      "folder": "pictures_10",
+      "reason": null,
+      "page": 62,
+      "figure_type": "bar_chart",
+      "capture": "embedded-bitmap",
+      "size_px": [
+        1051,
+        1569
+      ],
+      "source_kind": "raster",
+      "charts": 3,
+      "words": 228
+    },
+    {
+      "self_ref": "#/pictures/11",
+      "status": "prepared",
+      "folder": "pictures_11",
+      "reason": null,
+      "page": 63,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        1250,
+        1852
+      ],
+      "source_kind": "raster",
+      "charts": 7,
+      "words": 175
+    },
+    {
+      "self_ref": "#/pictures/12",
+      "status": "prepared",
+      "folder": "pictures_12",
+      "reason": null,
+      "page": 64,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        547,
+        1824
+      ],
+      "source_kind": "raster",
+      "charts": 1,
+      "words": 128
+    },
+    {
+      "self_ref": "#/pictures/13",
+      "status": "prepared",
+      "folder": "pictures_13",
+      "reason": null,
+      "page": 65,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        671,
+        1801
+      ],
+      "source_kind": "raster",
+      "charts": 4,
+      "words": 168
+    },
+    {
+      "self_ref": "#/pictures/14",
+      "status": "prepared",
+      "folder": "pictures_14",
+      "reason": null,
+      "page": 66,
+      "figure_type": "bar_chart",
+      "capture": "pdf-render",
+      "size_px": [
+        853,
+        1706
+      ],
+      "source_kind": "raster",
+      "charts": 8,
+      "words": 207
+    }
+  ]
+}

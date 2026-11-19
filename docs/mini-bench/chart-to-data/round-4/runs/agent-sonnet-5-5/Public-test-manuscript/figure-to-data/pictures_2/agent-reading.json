@@ -1,0 +1,804 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Impact of output structure",
+   "kind": "grouped_bar",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Accuracy (%)",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 70.0
+   },
+   "y_axis": {
+    "name": "Response Generation",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [
+    "GPT3-API",
+    "GPT4-API"
+   ],
+   "points": [
+    {
+     "category": "LangChain",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "LangChain",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 66.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Function Call",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Function Call",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 68.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Standard Output",
+     "x": null,
+     "series": "GPT3-API",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Standard Output",
+     "x": null,
+     "series": "GPT4-API",
+     "value": 55.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "2",
+   "title": "Impact of temperature",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Accuracy (%)",
+    "unit": "%",
+    "scale": "linear",
+    "min": 38.0,
+    "max": 52.0
+   },
+   "y_axis": {
+    "name": "Temperature",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [
+    "best prompt",
+    "raw prompt"
+   ],
+   "points": [
+    {
+     "category": "Default (temp=1)",
+     "x": null,
+     "series": "best prompt",
+     "value": 47.8,
+     "err_lo": 44.9,
+     "err_hi": 50.65,
+     "label": null
+    },
+    {
+     "category": "Default (temp=1)",
+     "x": null,
+     "series": "raw prompt",
+     "value": 48.3,
+     "err_lo": 45.0,
+     "err_hi": 51.6,
+     "label": null
+    },
+    {
+     "category": "Default - 10%",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.0,
+     "err_lo": 38.45,
+     "err_hi": 51.5,
+     "label": null
+    },
+    {
+     "category": "Default - 10%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.0,
+     "err_lo": 41.7,
+     "err_hi": 48.25,
+     "label": null
+    },
+    {
+     "category": "Default - 40%",
+     "x": null,
+     "series": "best prompt",
+     "value": 42.76,
+     "err_lo": 38.86,
+     "err_hi": 46.66,
+     "label": null
+    },
+    {
+     "category": "Default - 40%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 42.76,
+     "err_lo": 41.66,
+     "err_hi": 43.86,
+     "label": null
+    },
+    {
+     "category": "Default - 60%",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.5,
+     "err_lo": 42.65,
+     "err_hi": 48.4,
+     "label": null
+    },
+    {
+     "category": "Default - 60%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.0,
+     "err_lo": 43.07,
+     "err_hi": 46.9,
+     "label": null
+    },
+    {
+     "category": "Default - 90%",
+     "x": null,
+     "series": "best prompt",
+     "value": 46.1,
+     "err_lo": 43.9,
+     "err_hi": 48.25,
+     "label": null
+    },
+    {
+     "category": "Default - 90%",
+     "x": null,
+     "series": "raw prompt",
+     "value": 45.5,
+     "err_lo": 44.4,
+     "err_hi": 46.6,
+     "label": null
+    },
+    {
+     "category": "temp=0",
+     "x": null,
+     "series": "best prompt",
+     "value": 45.5,
+     "err_lo": 44.45,
+     "err_hi": 46.6,
+     "label": null
+    },
+    {
+     "category": "temp=0",
+     "x": null,
+     "series": "raw prompt",
+     "value": 43.86,
+     "err_lo": 42.78,
+     "err_hi": 44.95,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Where the two series' error bars overlap, which cap belongs to which series was inferred from colour and symmetry about the centre."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Impact of Max_token",
+   "kind": "grouped_bar",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Accuracy (%)",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 56.0
+   },
+   "y_axis": {
+    "name": "Experiment Setting",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [
+    "MT: 512",
+    "MT: 1024",
+    "MT: 512plus"
+   ],
+   "points": [
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 512",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Best Prompt (candidate 4)",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 512",
+     "value": 38.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 512",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 512",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 53.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 53.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 512",
+     "value": 48.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 512",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 512",
+     "value": 48.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 512",
+     "value": 52.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 512",
+     "value": 45.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 512",
+     "value": 50.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 48.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 48.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 512",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 1024",
+     "value": 41.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": "MT: 512plus",
+     "value": 43.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": []
+  },
+  {
+   "id": "4",
+   "title": "Impact of prompt engineering",
+   "kind": "forest",
+   "orientation": "horizontal",
+   "x_axis": {
+    "name": "Accuracy (%)",
+    "unit": "%",
+    "scale": "linear",
+    "min": 34.5,
+    "max": 53.0
+   },
+   "y_axis": {
+    "name": "Function",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "series": [],
+   "points": [
+    {
+     "category": "Candidate 6",
+     "x": null,
+     "series": null,
+     "value": 48.85,
+     "err_lo": 48.85,
+     "err_hi": 48.85,
+     "label": null
+    },
+    {
+     "category": "Candidate 5",
+     "x": null,
+     "series": null,
+     "value": 47.7,
+     "err_lo": 45.8,
+     "err_hi": 49.7,
+     "label": null
+    },
+    {
+     "category": "Candidate 4",
+     "x": null,
+     "series": null,
+     "value": 48.85,
+     "err_lo": 45.4,
+     "err_hi": 52.3,
+     "label": null
+    },
+    {
+     "category": "Candidate 3",
+     "x": null,
+     "series": null,
+     "value": 43.9,
+     "err_lo": 42.9,
+     "err_hi": 44.8,
+     "label": null
+    },
+    {
+     "category": "Candidate 2",
+     "x": null,
+     "series": null,
+     "value": 48.3,
+     "err_lo": 48.3,
+     "err_hi": 48.3,
+     "label": null
+    },
+    {
+     "category": "Candidate 1",
+     "x": null,
+     "series": null,
+     "value": 38.3,
+     "err_lo": 35.0,
+     "err_hi": 41.7,
+     "label": null
+    },
+    {
+     "category": "Give Model Time to Think",
+     "x": null,
+     "series": null,
+     "value": 43.9,
+     "err_lo": 41.3,
+     "err_hi": 46.4,
+     "label": null
+    },
+    {
+     "category": "Consensus Technique",
+     "x": null,
+     "series": null,
+     "value": 40.0,
+     "err_lo": 37.1,
+     "err_hi": 42.9,
+     "label": null
+    },
+    {
+     "category": "Expert Mimicry",
+     "x": null,
+     "series": null,
+     "value": 45.5,
+     "err_lo": 44.6,
+     "err_hi": 46.5,
+     "label": null
+    },
+    {
+     "category": "Confidence Scoring",
+     "x": null,
+     "series": null,
+     "value": 45.5,
+     "err_lo": 43.6,
+     "err_hi": 47.5,
+     "label": null
+    },
+    {
+     "category": "Contextual Embedding",
+     "x": null,
+     "series": null,
+     "value": 46.6,
+     "err_lo": 43.7,
+     "err_hi": 49.5,
+     "label": null
+    },
+    {
+     "category": "Comparative Analysis",
+     "x": null,
+     "series": null,
+     "value": 42.2,
+     "err_lo": 41.2,
+     "err_hi": 43.2,
+     "label": null
+    },
+    {
+     "category": "Elimination Method",
+     "x": null,
+     "series": null,
+     "value": 44.1,
+     "err_lo": 40.6,
+     "err_hi": 47.7,
+     "label": null
+    },
+    {
+     "category": "Answer Justification",
+     "x": null,
+     "series": null,
+     "value": 48.3,
+     "err_lo": 46.7,
+     "err_hi": 50.0,
+     "label": null
+    },
+    {
+     "category": "Chain of Thought",
+     "x": null,
+     "series": null,
+     "value": 47.5,
+     "err_lo": 43.95,
+     "err_hi": 51.0,
+     "label": null
+    },
+    {
+     "category": "Option Analysis",
+     "x": null,
+     "series": null,
+     "value": 43.9,
+     "err_lo": 42.9,
+     "err_hi": 44.8,
+     "label": null
+    },
+    {
+     "category": "Direct Question",
+     "x": null,
+     "series": null,
+     "value": 48.3,
+     "err_lo": 46.7,
+     "err_hi": 50.0,
+     "label": null
+    },
+    {
+     "category": "Raw",
+     "x": null,
+     "series": null,
+     "value": 43.9,
+     "err_lo": 42.9,
+     "err_hi": 44.8,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "Candidates 6 and 2 show a dot without visible error bars; err_lo/err_hi set equal to the value."
+   ]
+  }
+ ],
+ "description": "Four-panel figure showing LLM multiple-choice-question accuracy under different output structures (a), temperatures (b), max-token settings (c) and prompt-engineering techniques (d).",
+ "has_data": true,
+ "not_read": [
+  "All values were read from the axes, since the figure prints no numbers. Each is an estimate to about ±0.3 percentage points.",
+  "Panel b: in rows where the best-prompt and raw-prompt error bars overlap, the cap assigned to each series is an inference from colour and symmetry about the centre.",
+  "Panel b: the light raw-prompt centre markers are faint, so their positions are less certain than the dark ones."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 4,
+ "records": 4
+}

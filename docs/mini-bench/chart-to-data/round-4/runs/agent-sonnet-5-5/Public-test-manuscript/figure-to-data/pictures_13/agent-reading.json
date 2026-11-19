@@ -1,0 +1,8145 @@
+{
+ "panels": [
+  {
+   "id": "1",
+   "title": "Question Difficulty (Average Human Score): Q1 (N = 75)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Percentage",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 100.0
+   },
+   "series": [
+    "Correct",
+    "2OP",
+    "EOP",
+    "NOP",
+    "Error",
+    "Incorrect"
+   ],
+   "points": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 33.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "33.3%"
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Correct",
+     "value": 29.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "29.3%"
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 70.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 49.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "49.3%"
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 49.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Correct",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.0%"
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Correct",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "58.7%"
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 65.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Correct",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "37.3%"
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 61.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "38.7%"
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "EOP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 53.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Correct",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "38.7%"
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Correct",
+     "value": 53.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "53.3%"
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 42.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Correct",
+     "value": 49.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "49.3%"
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "24.0%"
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 72.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "26.7%"
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 72.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "44.0%"
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 53.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.0%"
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 72.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "28.0%"
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 70.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "24.0%"
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25.3%"
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 65.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "28.0%"
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 69.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "20.0%"
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 78.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "44.0%"
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 53.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 29.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "29.3%"
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 69.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "41.3%"
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.0%"
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Correct",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25.3%"
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Error",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.8,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "2OP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "NOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Error",
+     "value": 9.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "41.3%"
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 33.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "33.3%"
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 29.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "29.3%"
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 68.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 68.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "37 bars; Correct values are printed labels (multiples of 1.333% = 1/75), several labels overlap/illegible and were read from bar heights; minor segments (2OP, EOP, NOP, Error) are estimated from bar geometry at low resolution, Incorrect = remainder to 100."
+   ]
+  },
+  {
+   "id": "2",
+   "title": "Question Difficulty (Average Human Score): Q2 (N = 75)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Percentage",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 100.0
+   },
+   "series": [
+    "Correct",
+    "2OP",
+    "EOP",
+    "NOP",
+    "Error",
+    "Incorrect"
+   ],
+   "points": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Correct",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.0%"
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 61.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "61.3%"
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Correct",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "58.7%"
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Correct",
+     "value": 69.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "69.3%"
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 30.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Correct",
+     "value": 53.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "53.3%"
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 49.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Correct",
+     "value": 61.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "61.3%"
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Correct",
+     "value": 61.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "61.3%"
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "73.3%"
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 25.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "57.3%"
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "37.3%"
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 61.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 28.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "28.0%"
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 70.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 65.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.0%"
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "45.3%"
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.0%"
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "41.3%"
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 61.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "61.3%"
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Correct",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Error",
+     "value": 9.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "2OP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "EOP",
+     "value": 3.5,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Error",
+     "value": 6.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 29.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "48.0%"
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "44.0%"
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "62.7%"
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "37 bars; Correct values are printed labels (multiples of 1.333% = 1/75), many labels overlap/illegible and were read from bar heights; minor segments (2OP, EOP, NOP, Error) are estimated from bar geometry at low resolution, Incorrect = remainder to 100."
+   ]
+  },
+  {
+   "id": "3",
+   "title": "Question Difficulty (Average Human Score): Q3 (N = 75)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Percentage",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 100.0
+   },
+   "series": [
+    "Correct",
+    "2OP",
+    "EOP",
+    "NOP",
+    "Error",
+    "Incorrect"
+   ],
+   "points": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "54.7%"
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 49.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 74.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "74.7%"
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Correct",
+     "value": 74.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "74.7%"
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Correct",
+     "value": 78.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "78.7%"
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 21.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Correct",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "60.0%"
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Correct",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "57.3%"
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "EOP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Correct",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "64.0%"
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "EOP",
+     "value": 8.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "57.3%"
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 40.1,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Correct",
+     "value": 69.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "69.3%"
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Correct",
+     "value": 74.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "74.7%"
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 22.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 80.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "80.0%"
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 20.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "45.3%"
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.0%"
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 76.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "76.0%"
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 22.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "62.7%"
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 30.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "30.7%"
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "26.7%"
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "34.7%"
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.0%"
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "46.7%"
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "45.3%"
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 53.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 22.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "22.7%"
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 69.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 65.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "65.3%"
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "45.3%"
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "62.7%"
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 74.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "74.7%"
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 24.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Error",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Correct",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "60.0%"
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "2OP",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Error",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 22.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "37.3%"
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 6.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 54.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "44.0%"
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 53.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 45.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "45.3%"
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 45.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "52.0%"
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "60.0%"
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "37 bars; Correct values are printed labels (multiples of 1.333% = 1/75) or read from bar heights where labels overlap/illegible; minor segments (2OP, EOP, NOP, Error) are estimated from bar geometry at low resolution, Incorrect = remainder to 100."
+   ]
+  },
+  {
+   "id": "4",
+   "title": "Question Difficulty (Average Human Score): Q4 (N = 75)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "x_axis": {
+    "name": "Model",
+    "unit": null,
+    "scale": "categorical",
+    "min": null,
+    "max": null
+   },
+   "y_axis": {
+    "name": "Percentage",
+    "unit": "%",
+    "scale": "linear",
+    "min": 0.0,
+    "max": 100.0
+   },
+   "series": [
+    "Correct",
+    "2OP",
+    "EOP",
+    "NOP",
+    "Error",
+    "Incorrect"
+   ],
+   "points": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-3.5 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 78.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "78.7%"
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 21.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Correct",
+     "value": 82.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "82.7%"
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4 API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 17.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Correct",
+     "value": 88.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "88.0%"
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4o API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Correct",
+     "value": 74.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "74.7%"
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GPT-4omini API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Correct",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "52.0%"
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Error",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Correct",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "64.0%"
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "62.7%"
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Correct",
+     "value": 78.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "78.7%"
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 21.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Correct",
+     "value": 78.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "78.7%"
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3-Opus API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 18.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Correct",
+     "value": 88.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "88.0%"
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Claude3.5-Sonnet API",
+     "x": null,
+     "series": "Incorrect",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "44.0%"
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 64.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "64.0%"
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mistral-Large Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 34.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "62.7%"
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Mixtral-8x7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 29.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "29.3%"
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 69.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "41.3%"
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 25.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "25.3%"
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "medicineLLM-7b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 72.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "41.3%"
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "37.6%"
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 62.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "42.7%"
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama2-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 32.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "32.0%"
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 66.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 38.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "36.7%"
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "OpenBioLLM-8b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 58.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 61.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "61.3%"
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 5.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 33.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 56.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "56.0%"
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-8b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 44.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 73.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "73.3%"
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 72.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "72.0%"
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Llama3.1-405b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 26.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Error",
+     "value": 8.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemini Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 38.6,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Correct",
+     "value": 57.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "57.3%"
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "2OP",
+     "value": 2.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Error",
+     "value": 12.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "GeminiAdvanced Web",
+     "x": null,
+     "series": "Incorrect",
+     "value": 25.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 50.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "50.7%"
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 48.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "52.0%"
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-9b-Q8 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 58.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "58.7%"
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "EOP",
+     "value": 4.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "NOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Gemma2-27b Poe",
+     "x": null,
+     "series": "Incorrect",
+     "value": 36.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 46.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "46.7%"
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 1.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 52.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 60.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": "60.0%"
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "2OP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "EOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "NOP",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Error",
+     "value": 0.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    },
+    {
+     "category": "Phi3-14b-Q6 Local",
+     "x": null,
+     "series": "Incorrect",
+     "value": 40.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label": null
+    }
+   ],
+   "box": null,
+   "notes": [
+    "37 bars; Correct values are printed labels (multiples of 1.333% = 1/75) or read from bar heights where labels overlap/illegible; minor segments (2OP, EOP, NOP, Error) are estimated from bar geometry at low resolution, Incorrect = remainder to 100."
+   ]
+  }
+ ],
+ "description": "Four stacked-bar charts (Q1–Q4, N = 75 each) show how 37 LLMs and interfaces score on questions of increasing difficulty, split into Correct, 2OP, EOP, NOP, Error and Incorrect percentages.",
+ "has_data": true,
+ "not_read": [
+  "All four charts are recorded in full (37 bars × 6 segments each). The image is low resolution, so the numbers have limited precision.",
+  "Correct values come from the printed labels or from bar heights. Many labels overlap or are garbled, and a few were read from bar height instead (for example Gemini Web in Q2, and some Llama bars in Q1 and Q3). Treat these as ±1–2 points.",
+  "The 2OP, EOP, NOP and Error segments are my estimates from bar geometry, to about ±1.3 points (1/75). They carry no printed labels. Incorrect is the remainder to 100, so it inherits these errors.",
+  "Some printed labels disagree with the bar height or with the 1/75 step. I recorded the value that matches the bar. One label differs from its value: Q4 OpenBioLLM-8b-Q8 Local is labelled 36.7% but the bar reads 38.7.",
+  "In the Q3 and Q4 charts, the x tick labels in the supplied OCR text are garbled. I took the model names from the Q1 and Q2 axes, and the bar order is identical in all four charts."
+ ],
+ "finished": true,
+ "warned": false,
+ "looks": 10,
+ "records": 4
+}

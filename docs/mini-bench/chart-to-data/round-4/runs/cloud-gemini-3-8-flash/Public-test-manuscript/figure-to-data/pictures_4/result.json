@@ -1,0 +1,29 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "google/gemini-3.8-flash",
+ "panel_split": "single",
+ "seconds": 210.85,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 210.81,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 6220,
+   "eval_tokens": 34318,
+   "cut": false,
+   "cost_usd": 0.1333575,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel panel_1: stacked segments do not sum to 100: GeminiAdvanced Web - LLM caption sums to 91.1; GeminiAdvanced Web - human hint sums to 89.9"
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "mode": "measured",
+ "method": "agent",
+ "backend": "claude-cli",
+ "model": "claude-sonnet-5-5",
+ "panel_split": "single",
+ "seconds": 21.6,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "agent session",
+   "wall_s": 21.56,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 56909,
+   "eval_tokens": 2703,
+   "cut": false,
+   "cost_usd": 0.08585800000000002,
+   "turns": 5,
+   "tool_calls": 4
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "panel 1: stacked segments do not sum to 100: GPT4 Web - no image sums to 65.2; GPT4 Web - LLM caption sums to 59.4; GPT4 Web - direct image sums to 68.1; GPT4 Web - human hint sums to 73.2; GPT4 API - no image sums to 68.8"
+ ]
+}

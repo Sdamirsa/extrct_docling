@@ -1,0 +1,97 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 79.91,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 9.319,
+   "total_s": 9.318,
+   "load_s": 5.286,
+   "prompt_eval_s": 1.278,
+   "eval_s": 2.73,
+   "prompt_tokens": 1706,
+   "eval_tokens": 175,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 7.011,
+   "total_s": 7.01,
+   "load_s": 0.353,
+   "prompt_eval_s": 0.544,
+   "eval_s": 5.99,
+   "prompt_tokens": 984,
+   "eval_tokens": 397,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "2",
+   "prompt": "grounded",
+   "wall_s": 11.139,
+   "total_s": 11.138,
+   "load_s": 0.357,
+   "prompt_eval_s": 0.564,
+   "eval_s": 10.119,
+   "prompt_tokens": 1050,
+   "eval_tokens": 658,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "3",
+   "prompt": "grounded",
+   "wall_s": 33.054,
+   "total_s": 33.053,
+   "load_s": 0.442,
+   "prompt_eval_s": 0.714,
+   "eval_s": 31.783,
+   "prompt_tokens": 1200,
+   "eval_tokens": 2016,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "4",
+   "prompt": "grounded",
+   "wall_s": 19.251,
+   "total_s": 19.25,
+   "load_s": 0.338,
+   "prompt_eval_s": 0.754,
+   "eval_s": 18.041,
+   "prompt_tokens": 1264,
+   "eval_tokens": 1150,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T09:56:35.285093023+01:00"
+  }
+ ],
+ "issues": [
+  "4 charts found by their tick labels"
+ ]
+}

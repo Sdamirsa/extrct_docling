@@ -170,8 +170,8 @@ def run_claude(
             stdout, stderr, code = done.stdout or "", done.stderr or "", done.returncode
         except FileNotFoundError as exc:
             raise ClaudeCliError(
-                f"{command!r} is not installed or not on PATH: the cloud and "
-                "agent methods run through the Claude Code CLI"
+                f"{command!r} is not installed or not on PATH: the agent "
+                "method runs through the Claude Code CLI"
             ) from exc
         except subprocess.TimeoutExpired as exc:
             stdout, stderr, code = _text(exc.stdout), _text(exc.stderr), 0

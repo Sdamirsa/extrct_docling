@@ -1,0 +1,75 @@
+{
+ "mode": "measured",
+ "method": "ollama",
+ "backend": "ollama",
+ "model": "gemma4:26b-a4b-it-qat",
+ "panel_split": "axes",
+ "seconds": 56.42,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "overview",
+   "wall_s": 3.296,
+   "total_s": 3.294,
+   "load_s": 0.436,
+   "prompt_eval_s": 1.09,
+   "eval_s": 1.641,
+   "prompt_tokens": 1982,
+   "eval_tokens": 99,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "1",
+   "prompt": "grounded",
+   "wall_s": 27.27,
+   "total_s": 27.269,
+   "load_s": 0.353,
+   "prompt_eval_s": 1.026,
+   "eval_s": 25.741,
+   "prompt_tokens": 1802,
+   "eval_tokens": 1626,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  },
+  {
+   "panel": "2",
+   "prompt": "grounded",
+   "wall_s": 25.709,
+   "total_s": 25.707,
+   "load_s": 0.32,
+   "prompt_eval_s": 0.861,
+   "eval_s": 24.383,
+   "prompt_tokens": 1419,
+   "eval_tokens": 1550,
+   "cut": false,
+   "cost_usd": null,
+   "turns": null,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [
+  {
+   "name": "gemma4:26b-a4b-it-qat",
+   "size": 15648906280,
+   "size_vram": 15648906280,
+   "context_length": 16384,
+   "expires_at": "2026-11-19T09:57:31.781993213+01:00"
+  }
+ ],
+ "issues": [
+  "2 charts found by their tick labels",
+  "the model sees 1 chart(s)",
+  "panel 1: stacked segments do not sum to 74: GPT-3.5 Web sums to 47.7; GPT-3.5 API sums to 46; GPT-4 Web sums to 66; GPT-4 API sums to 66; GPT-4omini API sums to 56",
+  "panel 2: printed 58.3% vs measured 51.2107 (Llama3.1-70b Poe-/Correct)",
+  "panel 2: printed 64.0% vs measured 57.1249 (Llama3.1-405b Poe-/Correct)",
+  "panel 2: printed 45.3% vs measured 39.8965 (Gemma2-9b-Q8 Local-/Correct)",
+  "panel 2: printed 42.7% vs measured 35.5252 (Phi3-3b-Q16 Local-/Correct)",
+  "panel 2: printed 48.7% vs measured 41.4394 (Phi3-14b-Q6 Local/Correct)",
+  "panel 2: stacked segments do not sum to 100: Llama3.1-8b Poe- sums to 142.81; Llama3.1-70b Poe- sums to 158.11; Llama3.1-405b Poe- sums to 163.81; Gemini Web sums to 200.935; GeminiAdvanced Web- sums to 337.156"
+ ]
+}

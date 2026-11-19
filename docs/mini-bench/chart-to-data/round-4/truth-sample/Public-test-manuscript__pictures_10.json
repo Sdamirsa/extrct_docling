@@ -1,0 +1,386 @@
+{
+ "schema": "extrct.figure-data/1",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/10",
+  "image_path": "images/picture_011.png",
+  "page": 62,
+  "bbox": [
+   72.21461486816406,
+   654.3550567626953,
+   416.08123779296875,
+   141.0731201171875
+  ]
+ },
+ "source_kind": "raster",
+ "panels": [
+  {
+   "id": "1",
+   "bbox_px": [
+    7.7,
+    4.4,
+    516,
+    251.4
+   ],
+   "title": "All 2022 ACG questions (N = 300)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "GPT-3.5 Web",
+      "GPT-3.5 API",
+      "GPT-4 Web",
+      "GPT-4 API",
+      "GPT-4o API",
+      "GPT-4omini API",
+      "Claude3-Hiaku Web",
+      "Claude3-Haiku API",
+      "Claude3-Sonnet Web",
+      "Claude3-Sonnet API",
+      "Claude3-Opus Web",
+      "Claude3-Opus API",
+      "Claude3.5-Sonnet API",
+      "Mistralv2-7b Poe",
+      "Mistralv2-7b-Q8 Local",
+      "Mistral-Large Poe",
+      "Mixtral-8x7b Poe",
+      "Llama2-7b Poe",
+      "Llama2-7b-Q8 Local",
+      "medicineLLM-7b-Q8 Local",
+      "Llama2-13b Poe",
+      "Llama2-13b-Q5 Local",
+      "Llama2-70b Poe",
+      "Llama3-8b Poe",
+      "Llama3-8b-Q8 Local",
+      "OpenBioLLM-8b-Q8 Local",
+      "Llama3-70b Poe",
+      "Llama3.1-8b Poe",
+      "Llama3.1-70b Poe",
+      "Llama3.1-405b Poe",
+      "Gemini Web",
+      "GeminiAdvanced Web",
+      "Gemma2-9b Poe",
+      "Gemma2-9b-Q8 Local",
+      "Gemma2-27b Poe",
+      "Phi3-3b-Q16 Local",
+      "Phi3-14b-Q6 Local"
+     ]
+    },
+    "y": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Correct",
+     "color": "green #008000"
+    },
+    {
+     "name": "2OP",
+     "color": "light green #90EE90"
+    },
+    {
+     "name": "EOP",
+     "color": "light grey #D3D3D3 (the colour of the plot background)"
+    },
+    {
+     "name": "NOP",
+     "color": "grey #A9A9A9"
+    },
+    {
+     "name": "Error",
+     "color": "orange #FFA500"
+    },
+    {
+     "name": "Incorrect",
+     "color": "red #FF0000"
+    }
+   ],
+   "data": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 47.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "47.7%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 50.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "50.3%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 37.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "37.3%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 33.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "33.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 58.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "58.3%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 42.7,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "42.7%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "Panel 1 of 3 in reading order. 37 bars, one per model, in groups of 6, 7, 4, 13, 5 and 2 separated by an empty slot; every bar is a stack of the six legend classes (Correct at the bottom, Incorrect on top) that sums to 100 %.",
+    "Sample only: the bars at positions 1, 8, 15, 22, 29 and 36 from the left, the share printed in the Correct segment. The other 31 bars and the other five classes are not recorded.",
+    "Worked on the bitmap embedded in the PDF page (1065 x 1597 px, 220 ppi, lossless (FlateDecode)); the bundle crop is that bitmap at 0.49 px per px. Panel box and plot area found there and mapped to the crop (map fitted on the bar blocks of both images, residual <= 0.6 px). Plot area in the crop: [31.2, 14.7, 516, 189.5].",
+    "y axis: tick labels 0 to 100 in steps of 20; the axis line runs on to 105. Calibrated on 6 ticks of the bitmap (0 at row 389, 20 at row 321, 40 at row 253.37, 60 at row 186, 80 at row 118, 100 at row 50.57): 3.38 px per 1 %, largest residual 0.05 %.",
+    "Each label read twice from enlargements of 9x to 24x (Lanczos or bicubic, then nearest neighbour). Check against the y axis, printed / top of the Correct segment as measured: GPT-3.5 Web 47.7% / 47.7; Claude3-Haiku API 50.3% / 50.4; Mistralv2-7b-Q8 Local 37.3% / 37.4; Llama2-13b-Q5 Local 33.4% / 33.6; Llama3.1-70b Poe 58.3% / 58.5; Phi3-3b-Q16 Local 42.7% / 42.7. Largest difference 0.17."
+   ]
+  },
+  {
+   "id": "3",
+   "bbox_px": [
+    5.2,
+    520.9,
+    514.4,
+    767.9
+   ],
+   "title": "Question type: image-inclusive (N = 138)",
+   "kind": "stacked_bar",
+   "orientation": "vertical",
+   "axes": {
+    "x": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "range": null,
+     "ticks": [
+      "GPT-3.5 Web",
+      "GPT-3.5 API",
+      "GPT-4 Web",
+      "GPT-4 API",
+      "GPT-4o API",
+      "GPT-4omini API",
+      "Claude3-Hiaku Web",
+      "Claude3-Haiku API",
+      "Claude3-Sonnet Web",
+      "Claude3-Sonnet API",
+      "Claude3-Opus Web",
+      "Claude3-Opus API",
+      "Claude3.5-Sonnet API",
+      "Mistralv2-7b Poe",
+      "Mistralv2-7b-Q8 Local",
+      "Mistral-Large Poe",
+      "Mixtral-8x7b Poe",
+      "Llama2-7b Poe",
+      "Llama2-7b-Q8 Local",
+      "medicineLLM-7b-Q8 Local",
+      "Llama2-13b Poe",
+      "Llama2-13b-Q5 Local",
+      "Llama2-70b Poe",
+      "Llama3-8b Poe",
+      "Llama3-8b-Q8 Local",
+      "OpenBioLLM-8b-Q8 Local",
+      "Llama3-70b Poe",
+      "Llama3.1-8b Poe",
+      "Llama3.1-70b Poe",
+      "Llama3.1-405b Poe",
+      "Gemini Web",
+      "GeminiAdvanced Web",
+      "Gemma2-9b Poe",
+      "Gemma2-9b-Q8 Local",
+      "Gemma2-27b Poe",
+      "Phi3-3b-Q16 Local",
+      "Phi3-14b-Q6 Local"
+     ]
+    },
+    "y": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "range": [
+      0,
+      100
+     ],
+     "ticks": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ]
+    }
+   },
+   "series": [
+    {
+     "name": "Correct",
+     "color": "green #008000"
+    },
+    {
+     "name": "2OP",
+     "color": "light green #90EE90"
+    },
+    {
+     "name": "EOP",
+     "color": "light grey #D3D3D3 (the colour of the plot background)"
+    },
+    {
+     "name": "NOP",
+     "color": "grey #A9A9A9"
+    },
+    {
+     "name": "Error",
+     "color": "orange #FFA500"
+    },
+    {
+     "name": "Incorrect",
+     "color": "red #FF0000"
+    }
+   ],
+   "data": [
+    {
+     "category": "GPT-3.5 Web",
+     "x": null,
+     "series": "Correct",
+     "value": 44.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "44.2%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Claude3-Haiku API",
+     "x": null,
+     "series": "Correct",
+     "value": 52.9,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "52.9%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Mistralv2-7b-Q8 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 37.0,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "37.0%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Llama2-13b-Q5 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 30.4,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "30.4%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Llama3.1-70b Poe",
+     "x": null,
+     "series": "Correct",
+     "value": 57.2,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "57.2%",
+     "source": "printed",
+     "confidence": 1.0
+    },
+    {
+     "category": "Phi3-3b-Q16 Local",
+     "x": null,
+     "series": "Correct",
+     "value": 41.3,
+     "err_lo": null,
+     "err_hi": null,
+     "label_printed": "41.3%",
+     "source": "printed",
+     "confidence": 1.0
+    }
+   ],
+   "notes": [
+    "Panel 3 of 3 in reading order. 37 bars, one per model, in groups of 6, 7, 4, 13, 5 and 2 separated by an empty slot; every bar is a stack of the six legend classes (Correct at the bottom, Incorrect on top) that sums to 100 %.",
+    "Sample only: the bars at positions 1, 8, 15, 22, 29 and 36 from the left, the share printed in the Correct segment. The other 31 bars and the other five classes are not recorded.",
+    "Worked on the bitmap embedded in the PDF page (1065 x 1597 px, 220 ppi, lossless (FlateDecode)); the bundle crop is that bitmap at 0.49 px per px. Panel box and plot area found there and mapped to the crop (map fitted on the bar blocks of both images, residual <= 0.6 px). Plot area in the crop: [28.8, 531.2, 513.9, 697.7].",
+    "y axis: tick labels 0 to 100 in steps of 20; the axis line runs on to 105. Calibrated on 6 ticks of the bitmap (0 at row 1424, 20 at row 1359.84, 40 at row 1295, 60 at row 1230.08, 80 at row 1166, 100 at row 1101): 3.23 px per 1 %, largest residual 0.08 %.",
+    "Each label read twice from enlargements of 9x to 24x (Lanczos or bicubic, then nearest neighbour). Check against the y axis, printed / top of the Correct segment as measured: GPT-3.5 Web 44.2% / 44.2; Claude3-Haiku API 52.9% / 52.8; Mistralv2-7b-Q8 Local 37.0% / 37.0; Llama2-13b-Q5 Local 30.4% / 30.6; Llama3.1-70b Poe 57.2% / 57.2; Phi3-3b-Q16 Local 41.3% / 41.4. Largest difference 0.15."
+   ]
+  }
+ ],
+ "labeler": {
+  "kind": "agent",
+  "name": "claude-fable-5-2",
+  "date": "2026-11-19"
+ },
+ "description": "Supplementary Figure S4. Performance Stratified by Image-Inclusive and Text-Based Questions: 3 panels of stacked bars (3 rows x 1 column), 37 models per panel, six classes per bar (Correct, 2OP, EOP, NOP, Error, Incorrect) as percentages that sum to 100; the share of Correct is printed in the bar. Sample truth: the first and the last panel, six bars each.",
+ "uncertain": [
+  "sample: 6 bars of 2 panels, the printed share of Correct only",
+  "panel 1, bar 8 'Claude3-Haiku API', read as 50.3%: the first digit is overprinted by the '%' of the label of the bar to its left; it reads 5 on both enlargements and the bar top is at 50.4.",
+  "panel 1, bar 22 'Llama2-13b-Q5 Local', read as 33.4%: 33.4 is not a multiple of 1/300 (it is 100/299); the digit 4 is clear at 16x on both enlargements.",
+  "panel 3, bar 1 'GPT-3.5 Web', read as 44.2%: its '%' is overprinted by the label of the next bar; the digits are clear.",
+  "Scorer hazard (docling/engines/figure_data/scoring.py: labels count as equal within a Levenshtein distance of 0.2 of the longer, values pair first-fit in prediction order). By that rule, computed here on lower-cased labels, these tick labels are the same: 'Llama2-13b-Q5 Local' (bar 22) and 'Llama2-7b-Q8 Local' (bar 19): 0.16; 'Llama3.1-70b Poe' (bar 29) and 'Llama2-70b Poe' (bar 23): 0.19; 'Llama3.1-70b Poe' (bar 29) and 'Llama3-70b Poe' (bar 27): 0.12; 'Llama3.1-70b Poe' (bar 29) and 'Llama3.1-8b Poe' (bar 28): 0.12; 'Llama3.1-70b Poe' (bar 29) and 'Llama3.1-405b Poe' (bar 30): 0.12; 'Phi3-3b-Q16 Local' (bar 36) and 'Phi3-14b-Q6 Local' (bar 37): 0.18. Against a prediction that lists all 37 bars from left to right the truth rows are then paired with an earlier bar instead of their own: bar 22 with bar 19 'Llama2-7b-Q8 Local'; bar 29 with bar 23 'Llama2-70b Poe'. Pair by exact tick label when scoring this sample.",
+  "The legend sits inside the plot area (top right) and covers the upper part of the last two bars; it is not a panel. Bar 36's Correct segment and its label lie below it."
+ ]
+}

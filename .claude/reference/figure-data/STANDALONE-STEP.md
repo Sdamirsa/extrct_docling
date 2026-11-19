@@ -1,10 +1,12 @@
-<!-- last-reviewed: 2026-11-18 -->
+<!-- last-reviewed: 2026-11-19 -->
 # The figure-to-data step: design, as built
 
-Status: **built** on 2026-11-18 (step version 3). This file is the shape of
+Status: **built** on 2026-11-18 (step version 3), run through `amir-batch`
+end to end with all four setups on 2026-11-19. This file is the shape of
 the step and the reasons for it. Measured results are in
-`docs/mini-bench/chart-to-data/round-3/`; the measured engine behind the
-local method is in `DESIGN.md`. It replaces the design note of 2026-11-17
+`docs/mini-bench/chart-to-data/round-3/` (15 prepared figures) and
+`round-4/` (one whole paper through the pipeline); the measured engine
+behind the local method is in `DESIGN.md`. It replaces the design note of 2026-11-17
 ("design, not built"); what changed against that note is in section 8.
 
 ## 1. What was asked for
@@ -50,7 +52,8 @@ folder), and a failure in it cannot take a conversion with it.
 ├── runs/<run id>.json        one per run: method, model, options, prompts, outcome per figure
 └── pictures_3/               one folder per figure = one unit of work
     ├── figure.png            the figure at high resolution (PDF render at 220 dpi, or the
-    │                         embedded bitmap when that is sharper; at most 3,200 px)
+    │                         embedded bitmap when that is sharper, on white where its
+    │                         soft mask makes it transparent; at most 3,200 px)
     ├── figure.txt            what a reader is told beside the image
     ├── evidence.json         the same evidence for code: words with boxes, charts found,
     │                         the PDF's drawing paths
@@ -206,10 +209,13 @@ conversion's model wrote:
 | `<name>.md`, `<name>.embedded.md` | note and table inside `<!--<annotation kind="chart_data">-->` |
 | `chunks.jsonl` | rebuilt, so the tables are retrievable |
 | `<name>.html` | note and table in the model-generated metadata box; manifest entry |
+| `preview.html`, `preview.embedded.html` | rebuilt from the bundle's files (`visualizer.rebuild_html_preview`): a `data` tag on the figure's box, in its side panel the note, the table and a link to the full reading; a chip in the header counts the figures with data |
 | `run.json` | a `figure_to_data` block: run id, method, model, counts. Absent = the step never ran |
 | `check.json` | `figure_data`: eligible, extracted, no_data, verified, low_confidence |
 
-Not rewritten: `preview.html` (the page viewer).
+The page viewer was left as the conversion wrote it until round 4
+(2026-11-19): a person who opens a bundle opens the viewer first, and saw
+nothing of the step there.
 
 Confidence a value starts at: printed and confirmed 0.95, measured on PDF
 paths 0.90, printed 0.85, a cloud model's reading 0.80 (289 of 290 such
@@ -221,7 +227,8 @@ values were within 5 % of the axis in round 2), measured on pixels 0.70 to
 ```
 amir-batch <pdfs> --figure-data ollama|cloud|agent
            [--figure-data-model M] [--figure-data-backend B]
-           [--figure-data-when end|each]
+           [--figure-data-base-url U] [--figure-data-key-env V]
+           [--figure-data-ollama-url U] [--figure-data-when end|each]
 
 amir-figdata step <output folder or bundles> --method ...
 amir-figdata prepare | read | embed ...      # phase by phase
@@ -260,6 +267,16 @@ amir-figdata prepare | read | embed ...      # phase by phase
 
 ## 10. Not done
 
+- Seen on one whole paper (round 4, `docs/mini-bench/chart-to-data/round-4/LOG.md`)
+  and open: the chart splitter was wrong on six of eleven chart figures
+  (one chart in blocks cut in two, grids of bar charts miscounted); a
+  reading's chart takes the box of the prepared chart with the same id,
+  also after a wrong split; the agent leaves the unlabelled segments of
+  some stacked bars out though the conventions ask for every segment;
+  the vector reader takes a bar that fills 90 % of its chart's box for a
+  frame; the batch process still held 8.7 GiB of GPU memory while the
+  step ran.
+
 - The cloud method was run through OpenRouter only (Claude Sonnet 5.5 and
   Gemini 3.8 Flash, round 3), and against a local Ollama endpoint. No
   other provider's endpoint was tried.
@@ -279,5 +296,6 @@ amir-figdata prepare | read | embed ...      # phase by phase
 ## 11. Documents that describe it
 
 `README.md` (config table, what you get), `RUN.md`, `DESIGN.md` (engine),
-`docs/mini-bench/chart-to-data/round-3/` (results, log, run records), the
+`docs/mini-bench/chart-to-data/round-3/` and `round-4/` (results, log, run
+records), the
 usage skill under `docling/.agents/skills/docling/`.

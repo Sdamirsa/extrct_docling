@@ -10,6 +10,7 @@ Usage:
     uv run amir-batch samples/ -o out/      # custom output root
     uv run amir-batch samples/ --compare    # full-page VLM A/B per PDF
     uv run amir-batch samples/ --check-only # re-check existing bundles
+    uv run amir-batch supplement.docx supplements.zip   # Word files, archives
     uv run amir-batch samples/ --figure-data ollama   # + the numbers behind the charts
 
 ``--figure-data`` adds the figure-to-data step
@@ -79,6 +80,14 @@ from docling.engines.figure_data.step import StepRun, needs_step, run_step
 from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
 from docling.engines.run_snapshot import ENGINE_VERSION, RunRecord, read_run_record
 from docling.engines.schemas import PdfConversionOutput, RelatedDocument
+from docling.engines.sources import (
+    CONVERTED_DIRNAME,
+    INPUT_SUFFIXES,
+    ConvertedFrom,
+    SourceError,
+    SourceFile,
+    expand_source,
+)
 from docling.engines.structure import DocumentRole
 from docling.engines.vlm_specs import PictureDescriptionPreset
 from docling.utils.utils import create_file_hash
@@ -144,6 +153,10 @@ class PlannedPdf(BaseModel):
     binary_hash: str = Field(description="Docling's SHA-256 of the file.")
     document_role: DocumentRole = "manuscript"
     related: list[RelatedDocument] = Field(default_factory=list)
+    # A PDF made from a Word file or taken out of an archive: where it came
+    # from, and the name its supplement pairing goes by (the archive's).
+    converted_from: ConvertedFrom | None = None
+    pair_stem: str | None = None
 
     def as_related(self, role: DocumentRole, pairing: str) -> RelatedDocument:
         return RelatedDocument(
@@ -165,8 +178,10 @@ def main(
         list[Path],
         typer.Argument(
             help=(
-                "One or more PDF paths or directories. Directories are "
-                "scanned (non-recursive) for ``*.pdf`` files (any case)."
+                "One or more files or directories. Directories are scanned "
+                "(non-recursive) for PDF, Word (.docx) and ZIP files (any "
+                "case). A Word file is turned into a PDF with LibreOffice "
+                "first; a ZIP stands for the PDF and Word files inside it."
             )
         ),
     ],
@@ -382,18 +397,18 @@ def main(
             "[red]--check-only checks standard bundles; drop --compare.[/red]"
         )
         raise typer.Exit(code=2)
-    pdf_paths = _collect_pdfs(inputs, console)
-    if not pdf_paths:
-        console.print("[red]No PDF files found.[/red]")
+    sources, unprepared = _collect_sources(inputs, output_dir, console)
+    if not sources and not unprepared:
+        console.print("[red]No PDF, Word (.docx) or ZIP files found.[/red]")
         raise typer.Exit(code=2)
 
     mode = "check-only" if check_only else "compare" if compare else "single"
     console.rule(
         f"[bold]amir-batch[/bold] · mode=[cyan]{mode}[/cyan] · "
-        f"{len(pdf_paths)} PDF{'s' if len(pdf_paths) != 1 else ''} -> "
+        f"{len(sources)} PDF{'s' if len(sources) != 1 else ''} -> "
         f"[green]{escape(str(output_dir))}[/green]"
     )
-    plan = _plan_bundles(pdf_paths, output_dir, console, compare=compare)
+    plan = _plan_bundles(sources, output_dir, console, compare=compare)
     try:
         pairs = _pair_named_supplements(plan, supplement or [])
     except ValueError as exc:
@@ -408,7 +423,7 @@ def main(
         )
 
     if check_only:
-        rows = [_check_row(item.path, item.pdf_dir) for item in plan]
+        rows = [*unprepared, *(_check_row(item.path, item.pdf_dir) for item in plan)]
         _render_summary(console, rows, mode=mode)
         _exit(rows)
         return
@@ -462,7 +477,7 @@ def main(
         else {None: engine.engine_config(make_html_preview=preview)}
     )
 
-    rows: list[BatchRow] = []
+    rows: list[BatchRow] = list(unprepared)
     try:
         with Progress(
             SpinnerColumn(),
@@ -616,30 +631,63 @@ def _exit(rows: list[BatchRow]) -> None:
         raise typer.Exit(code=3)
 
 
-def _collect_pdfs(inputs: list[Path], console: Console) -> list[Path]:
+def _collect_sources(
+    inputs: list[Path], output_dir: Path, console: Console
+) -> tuple[list[SourceFile], list[BatchRow]]:
+    """The PDFs of the batch, and a failed row for each file that could not
+    be made into one. A Word file is turned into a PDF and a ZIP archive
+    stands for the PDF and Word files inside it
+    (:func:`~docling.engines.sources.expand_source`); what is made goes
+    under ``<output_dir>/_converted``."""
     paths: list[Path] = []
     for entry in inputs:
         if entry.is_dir():
             paths.extend(
-                p for p in entry.iterdir() if p.is_file() and p.suffix.lower() == ".pdf"
+                p
+                for p in entry.iterdir()
+                if p.is_file() and p.suffix.lower() in INPUT_SUFFIXES
             )
-        elif entry.is_file() and entry.suffix.lower() == ".pdf":
+        elif entry.is_file() and entry.suffix.lower() in INPUT_SUFFIXES:
             paths.append(entry)
         else:
             console.print(
-                f"[yellow]skipping[/yellow] {escape(str(entry))} (not a PDF or dir)"
+                f"[yellow]skipping[/yellow] {escape(str(entry))} "
+                "(not a PDF, a Word file, a ZIP archive or a folder)"
             )
-    return sorted({p.resolve() for p in paths})
+    sources: dict[Path, SourceFile] = {}
+    unprepared: list[BatchRow] = []
+    for path in sorted({p.resolve() for p in paths}):
+        try:
+            expanded = expand_source(path, output_dir / CONVERTED_DIRNAME)
+        except SourceError as exc:
+            console.print(f"[red]not converted[/red] {escape(str(exc))}")
+            unprepared.append(
+                BatchRow(
+                    name=path.name, status=RowStatus.EXCEPTION, errors=[str(exc)[:200]]
+                )
+            )
+            continue
+        for source in expanded:
+            origin = source.converted_from
+            if origin is not None:
+                inside = f" in {origin.archive}" if origin.archive else ""
+                console.print(
+                    f"[cyan]source[/cyan] {escape(source.pdf.name)} from "
+                    f"{escape(origin.file_name)}{escape(inside)}"
+                )
+            sources[source.pdf.resolve()] = source
+    return [sources[key] for key in sorted(sources)], unprepared
 
 
 def _plan_bundles(
-    pdf_paths: list[Path], output_dir: Path, console: Console, *, compare: bool
+    sources: list[SourceFile], output_dir: Path, console: Console, *, compare: bool
 ) -> list[PlannedPdf]:
     """Each PDF with its bundle folder, resolved for the whole batch so that
     two PDFs never share one (see :func:`resolve_pdf_dir`)."""
     plan: list[PlannedPdf] = []
     taken: set[Path] = set()
-    for pdf_path in pdf_paths:
+    for source in sources:
+        pdf_path = source.pdf
         size, binary_hash = pdf_path.stat().st_size, create_file_hash(pdf_path)
         pdf_dir = resolve_pdf_dir(
             output_dir,
@@ -657,14 +705,19 @@ def _plan_bundles(
             )
         plan.append(
             PlannedPdf(
-                path=pdf_path, pdf_dir=pdf_dir, file_size=size, binary_hash=binary_hash
+                path=pdf_path,
+                pdf_dir=pdf_dir,
+                file_size=size,
+                binary_hash=binary_hash,
+                converted_from=source.converted_from,
+                pair_stem=source.pair_stem,
             )
         )
     return plan
 
 
 _SUPPLEMENT_SUFFIX = re.compile(
-    r"[\s_.\-]+(?:supp(?:l(?:ement(?:ary|al)?)?)?\.?|si|appendix)"
+    r"[\s_.\-]+(?:supp(?:l(?:ement(?:s|ary|al)?)?)?\.?|si|appendix)"
     r"(?:[\s_.\-]+(?:materials?|information|info|data|files?|appendix))?"
     r"(?:[\s_.\-]*\d+)?$",
     re.IGNORECASE,
@@ -715,10 +768,11 @@ def _pair_supplements(plan: list[PlannedPdf]) -> list[tuple[PlannedPdf, PlannedP
         by_key.setdefault(key(item.path.stem), []).append(item)
     pairs: list[tuple[PlannedPdf, PlannedPdf]] = []
     for item in plan:
-        match = _SUPPLEMENT_SUFFIX.search(item.path.stem)
+        stem = item.pair_stem or item.path.stem
+        match = _SUPPLEMENT_SUFFIX.search(stem)
         if match is None or item.document_role == "supplement":
             continue
-        manuscripts = by_key.get(key(item.path.stem[: match.start()]), [])
+        manuscripts = by_key.get(key(stem[: match.start()]), [])
         if len(manuscripts) != 1:
             continue
         manuscript = manuscripts[0]
@@ -807,6 +861,7 @@ def _run_single(item: PlannedPdf, *, engine: PdfEngine, preview: bool) -> BatchR
         make_html_preview=preview,
         document_role=item.document_role,
         related=item.related,
+        converted_from=item.converted_from,
     )
     return _converted_row(item.path.name, out, time.monotonic() - started)
 

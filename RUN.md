@@ -45,16 +45,31 @@ stops the batch, prints the rows done so far and exits 130; the interrupted
 bundle has no `complete: true`, so the next run redoes it.
 
 
-## How `_collect_pdfs` decides what to process
+## Which files of the input are processed
 
-From `docling/engines/cli.py`:
+From `docling/engines/cli.py` (`_collect_sources`) and
+`docling/engines/sources.py`:
 
-- A **directory** argument is scanned **non-recursively** for files whose
-  suffix is `.pdf` in any case — subfolders and extension-less files are
+- A **directory** argument is scanned **non-recursively** for PDF, Word
+  (`.docx`) and ZIP files, the suffix in any case. Subfolders,
+  extension-less files and every other kind (a `.csv` index, say) are
   invisible to it.
-- A **file** argument is included only if `path.suffix.lower() == ".pdf"`.
-- Anything else is skipped with a yellow console warning, not an error.
-- The final list is deduplicated and sorted by resolved path — order is
+- A **file** argument is taken when it has one of those three suffixes;
+  anything else is skipped with a yellow console warning, not an error.
+- A **Word file** is turned into a PDF first, with LibreOffice through
+  Docling's own helper (a throwaway profile, macros off, a timeout), and
+  then converted like any PDF: its bundle has pages, boxes, the page
+  viewer, the checks and figure data. Without LibreOffice the file gets an
+  `EXCEPTION` row and the batch exits 1.
+- A **ZIP archive** stands for the PDF and Word files inside it. Each
+  becomes a bundle named `<archive>__<file>`; the files of
+  `12345_supplements.zip` are paired with `12345.pdf` as its supplements.
+- What was made or taken out is kept under `<output>/_converted/`, so the
+  checks and the figure-to-data step find the PDF again and an unchanged
+  source is not converted twice. `run.json` records where a bundle's PDF
+  came from under `source.converted_from` (file name, size, hash, the
+  archive, the converter).
+- The final list is deduplicated and sorted by resolved path: the order is
   deterministic, not input order.
 - Output folder names are the sanitized stem; two PDFs of a batch that map to
   the same name (`Smith 2020.pdf` and `Smith_2020.pdf`, or `main.pdf` in two
@@ -82,7 +97,7 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`), no conversion. |
 | `--pair-supplements / --no-pair-supplements` | **on** | A PDF named like another of the batch plus `Supplementary` (`supplement`, `supp`, `SI`, `appendix`, an optional number) is recorded as that manuscript's supplement: `run.json` of both gets `related` (role, file name, size, hash, bundle folder), the supplement `document_role: "supplement"`, and every element of its HTML `data-document-role`. |
 | `--supplement SUPP.pdf=MANUSCRIPT.pdf` | none | Pair two PDFs of the batch whose names do not say so (repeatable); recorded with `pairing: "explicit"`. |
-| `--figure-data` | `off` | Adds the figure-to-data step on the finished bundles: `ollama` (a local model, nothing leaves the machine), `cloud` (one call per figure to a cloud model's API endpoint) or `agent` (one agent session per figure). See [Figure-to-data](#figure-to-data-the-numbers-behind-the-charts). |
+| `--figure-data` | `off` | Adds the figure-to-data step on the finished bundles: `ollama` (a local model, nothing leaves the machine), `cloud` (a cloud model's API endpoint: a short call that lists the charts, then one call per figure) or `agent` (one agent session per figure). See [Figure-to-data](#figure-to-data-the-numbers-behind-the-charts). |
 | `--figure-data-model` | the backend's own | `gemma4:26b-a4b-it-qat` on Ollama, `anthropic/claude-sonnet-5.5` on the cloud endpoint (OpenRouter's name), `claude-sonnet-5-5` for the agent. |
 | `--figure-data-backend` | the method's own | Where the model runs. `cloud`: `openai-compatible` (an API endpoint). `agent`: `claude-cli` (the Claude Code CLI with its own login) or `ollama` (the agent on a local model). |
 | `--figure-data-base-url` | `https://openrouter.ai/api/v1` | `cloud`: the chat-completions endpoint, any that speaks the OpenAI format (a provider, a gateway, a local Ollama at `http://127.0.0.1:11434/v1`). |

@@ -20,7 +20,7 @@ from docling.datamodel.base_models import ConversionStatus
 from docling.engines import pdf_engine
 from docling.engines.cli import (
     RowStatus,
-    _collect_pdfs,
+    _collect_sources,
     _compare_row,
     _pair_named_supplements,
     _pair_supplements,
@@ -35,6 +35,7 @@ from docling.engines.compare_pipelines import (
 from docling.engines.html_export import MANIFEST_ID
 from docling.engines.pdf_engine import PdfEngine
 from docling.engines.schemas import PdfConversionOutput, SourceKind
+from docling.engines.sources import SourceFile
 from docling.utils.utils import create_file_hash
 
 FIXTURE_PDF = Path("tests/data/pdf/sources/2305.03393v1-pg9.pdf")
@@ -274,7 +275,9 @@ def test_bundle_folders_of_a_batch_never_collide(tmp_path: Path) -> None:
     console = Console(file=io.StringIO())
     inputs = [tmp_path / "in", tmp_path / "in" / "a", tmp_path / "in" / "b"]
 
-    plan = _plan_bundles(_collect_pdfs(inputs, console), out, console, compare=False)
+    sources, unprepared = _collect_sources(inputs, out, console)
+    assert unprepared == []
+    plan = _plan_bundles(sources, out, console, compare=False)
 
     folders = {
         item.path.relative_to(tmp_path / "in").as_posix(): item.pdf_dir.name
@@ -319,7 +322,8 @@ def test_a_pdf_keeps_its_bundle_folder_across_batches(tmp_path: Path) -> None:
     console = Console(file=io.StringIO())
 
     def folders(pdfs: list[Path], *, compare: bool) -> dict[str, str]:
-        plan = _plan_bundles(pdfs, out, console, compare=compare)
+        sources = [SourceFile(pdf=pdf) for pdf in pdfs]
+        plan = _plan_bundles(sources, out, console, compare=compare)
         return {item.path.name: item.pdf_dir.name for item in plan}
 
     assert folders([x, same, cut], compare=False) == {
@@ -477,7 +481,10 @@ def test_supplement_named_on_the_command_line_is_paired(tmp_path: Path) -> None:
     for name in ("Wang.pdf", "PULSE Supplementary.pdf", "PULSE.pdf"):
         (tmp_path / name).write_bytes(name.encode())
     plan = _plan_bundles(
-        sorted(tmp_path.glob("*.pdf")), tmp_path / "out", Console(), compare=False
+        [SourceFile(pdf=pdf) for pdf in sorted(tmp_path.glob("*.pdf"))],
+        tmp_path / "out",
+        Console(),
+        compare=False,
     )
     by_name = {item.path.name: item for item in plan}
 

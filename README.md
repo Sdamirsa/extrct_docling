@@ -11,6 +11,8 @@ uv sync --frozen --no-group docs --extra standard --extra feat-ocr-rapidocr-onnx
 uv run amir-batch my-paper.pdf -o out                                   # convert → out/my-paper/
 ```
 
+A folder works too (`amir-batch papers/ -o out`), and so do Word files and ZIP archives of supplements: a `.docx` is turned into a PDF with LibreOffice first and then converted like any PDF, a `.zip` stands for the PDF and Word files inside it.
+
 Then open `out/my-paper/preview.embedded.html` in any browser (one file, works offline).
 That's it. Everything below is optional reading.
 
@@ -57,8 +59,8 @@ After the conversion, `--figure-data` reads the data out of every figure typed a
 
 | Method | What reads the figure | The figure goes to | Needs |
 |---|---|---|---|
-| `--figure-data ollama` | a local open model (default **Gemma 4 26B-A4B, 4-bit QAT**) inside a measuring engine: charts cut apart by their tick labels, axes calibrated, one call per chart, printed numbers preferred | nowhere | [Ollama](https://ollama.com), 16 GB GPU |
-| `--figure-data cloud` | one call per figure to a cloud model's API endpoint (default **Claude Sonnet 5.5 through [OpenRouter](https://openrouter.ai)**; any OpenAI-compatible endpoint with `--figure-data-base-url`) with the figure, a crop per chart and the printed text | the endpoint: OpenRouter and the model host it picks | an API key: `OPENROUTER_API_KEY` in the environment or in `.env` |
+| `--figure-data ollama` | a local open model (default **Gemma 4 26B-A4B, 4-bit QAT**) inside a measuring engine: the model lists the charts and the rules cut the figure by that list, axes calibrated, one call per chart, printed numbers preferred | nowhere | [Ollama](https://ollama.com), 16 GB GPU |
+| `--figure-data cloud` | two calls per figure to a cloud model's API endpoint (default **Claude Sonnet 5.5 through [OpenRouter](https://openrouter.ai)**; any OpenAI-compatible endpoint with `--figure-data-base-url`): a short one that lists the charts, by which the figure is cut, then the read, with the figure, a crop per chart and the printed text | the endpoint: OpenRouter and the model host it picks | an API key: `OPENROUTER_API_KEY` in the environment or in `.env` |
 | `--figure-data agent` | one agent session per figure: it looks closer where marks are dense, records chart by chart, and gets our checks back to correct itself | the model's provider (or nowhere, on a local model) | [Claude Code](https://claude.com/claude-code) CLI, logged in |
 
 Measured on 15 figures from 11 papers (10 data charts, 560 values). Sent to Claude Sonnet 5.5, a figure comes back usable either way: one API call per figure returned usable data for all 10 charts and all 560 values for 0.70 USD in 257 s; the agent returned usable data for all 10 and 470 values for 1.12 USD in 382 s. Gemini 3.8 Flash in the same call: 9 of 10 charts usable, 464 values, 0.73 USD, 1,181 s. The local model returned usable data for 6 of 10 charts and two readings that would mislead, so its output needs review. The prompts and checks were tuned on these same figures, so expect less elsewhere. And less it was, on one whole paper with denser figures (68 pages, 12 chart candidates, [round 4](docs/mini-bench/chart-to-data/round-4/README.md)): no method read it completely. Of 573 values in its six main figures, one call to Sonnet 5.5 returned 408 right for 0.91 USD (6 min of reading), one call to Gemini 3.8 Flash 554 for 1.42 USD (30 min; small segments of stacked bars under the wrong class), the agent 251 for 2.97 USD (14 min; nothing wrong, the unlabelled segments left out), the local model 83, with three figures that would mislead. Each run says what it left unread. All three are kept so you can choose by what may leave your machine, what you may spend and how good the numbers must be: **[results and evidence](docs/mini-bench/chart-to-data/round-3/README.md)**, how to run it in [RUN.md](RUN.md#figure-to-data-the-numbers-behind-the-charts).

@@ -74,10 +74,13 @@ def build_run_snapshot(
     related: list[dict[str, Any]] | None = None,
     structure_version: str | None = None,
     quality: dict[str, Any] | None = None,
+    converted_from: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """The ``run.json`` content, without writing it. ``complete`` says the
     engine ran every step of the bundle; *binary_hash* is Docling's SHA-256
-    of the source file (``InputDocument.document_hash``). *related* names the
+    of the source file (``InputDocument.document_hash``). *converted_from*
+    is the file the PDF was made from or taken out of, when it is not the
+    file the user gave (:mod:`docling.engines.sources`). *related* names the
     PDFs this one belongs with (its manuscript, its supplements);
     *structure_version* is the version of the labelling rules, which changes
     when a label, a heading level or a link can come out differently;
@@ -91,6 +94,7 @@ def build_run_snapshot(
             file_name=file_name,
             file_size=file_size,
             binary_hash=binary_hash,
+            converted_from=converted_from,
         ),
         "status": status,
         "complete": complete,
@@ -153,6 +157,9 @@ class RunSource(BaseModel):
     file_size_bytes: int | None = None
     binary_hash: str | None = Field(
         None, description="None in bundles written before the field existed."
+    )
+    converted_from: dict[str, Any] | None = Field(
+        None, description="The Word file or archive member the PDF was made from."
     )
 
 
@@ -310,8 +317,9 @@ def _source_block(
     file_name: str | None,
     file_size: int | None,
     binary_hash: str | None,
+    converted_from: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    return {
+    block = {
         "input": (
             public_source_path(Path(source)) if source_kind == "local_path" else source
         ),
@@ -320,6 +328,9 @@ def _source_block(
         "file_size_bytes": file_size,
         "binary_hash": binary_hash,
     }
+    if converted_from is not None:
+        block["converted_from"] = converted_from
+    return block
 
 
 def _timing_block(

@@ -68,6 +68,7 @@ from docling.engines.schemas import (
     SourceKind,
 )
 from docling.engines.serializers import export_markdown
+from docling.engines.sources import ConvertedFrom
 from docling.engines.structure import (
     STRUCTURE_FILENAME,
     STRUCTURE_VERSION,
@@ -321,6 +322,7 @@ class PdfEngine:
         make_html_preview: bool = False,
         document_role: DocumentRole = "manuscript",
         related: Sequence[RelatedDocument] = (),
+        converted_from: ConvertedFrom | None = None,
     ) -> PdfConversionOutput:
         """Convert a single PDF from a local path or URL.
 
@@ -345,6 +347,10 @@ class PdfEngine:
         related
             The PDFs this one belongs with (the manuscript of a supplement,
             the supplements of a manuscript), recorded in ``run.json``.
+        converted_from
+            The Word file or archive member the PDF was made from
+            (:func:`docling.engines.sources.expand_source`), recorded in
+            ``run.json`` under ``source``.
 
         After the conversion the structure pass settles labels, heading
         levels and caption links (:mod:`docling.engines.structure`), and the
@@ -440,6 +446,7 @@ class PdfEngine:
                 make_html_preview=make_html_preview,
                 document_role=document_role,
                 related=related,
+                converted_from=converted_from,
             )
         return output
 
@@ -455,6 +462,7 @@ class PdfEngine:
         make_html_preview: bool,
         document_role: DocumentRole,
         related: Sequence[RelatedDocument],
+        converted_from: ConvertedFrom | None = None,
     ) -> None:
         doc = result.document
         errors = output.errors
@@ -559,6 +567,11 @@ class PdfEngine:
                 errors=[e.model_dump() for e in errors],
                 document_role=document_role,
                 related=[r.model_dump(exclude_none=True) for r in related],
+                converted_from=(
+                    converted_from.model_dump(exclude_none=True)
+                    if converted_from is not None
+                    else None
+                ),
                 structure_version=(
                     STRUCTURE_VERSION if output.structure is not None else None
                 ),

@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/11",
+    "image_path": "images/picture_012.png",
+    "page": 63,
+    "bbox": [
+      71.15,
+      101.67,
+      480.06,
+      707.83
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-20",
+    "time_minutes": null
+  },
+  "description": "Eleven stacked bar charts, one per question subject (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach), showing for each of about 37 LLM configurations the percentage of answers Correct, 2OP, EOP, NOP, Error or Incorrect.",
+  "uncertain": [
+    "no chart returned: Eleven stacked bar charts, one per question subject (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach), showing for each of about 37 LLM configurations the percentage of answers Correct, 2OP, EOP, NOP, Error or Incorrect.",
+    "No values were extracted. Each of the 11 charts has about 37 stacked bars with six segments each (roughly 220 points per chart), and the printed percentage labels are too small and overlapping to read reliably.",
+    "Panels, series and points are left empty for all 11 charts: COLON, ENDOSCOPY, ESOPHAGUS, IBD, IBS, LIVER, MISCELLANEOUS, NUTRITION, PANCREATICO-BILIARY, SMALL BOWEL, STOMACH."
+  ]
+}

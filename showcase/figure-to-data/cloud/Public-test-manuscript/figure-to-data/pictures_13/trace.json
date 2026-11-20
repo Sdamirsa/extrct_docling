@@ -1,0 +1,494 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 9702,
+  "completion_tokens": 2567,
+  "total_tokens": 12269,
+  "cost": 0.045074,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.045074,
+   "upstream_inference_prompt_cost": 0.019404,
+   "upstream_inference_completions_cost": 0.02567
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Four stacked bar charts (Q1-Q4) show the percentage of responses per model (Correct, 2OP, EOP, NOP, Error, Incorrect) for questions of increasing average human-score difficulty.",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "1",
+    "title": "Question Difficulty (Average Human Score): Q1 (N = 75)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "2OP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [
+     {
+      "category": "GPT-3.5 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 33.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "33.3%"
+     },
+     {
+      "category": "GPT-3.5 API",
+      "x": null,
+      "series": "Correct",
+      "value": 29.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "29.3%"
+     },
+     {
+      "category": "GPT-4 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 49.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": null
+     },
+     {
+      "category": "GPT-4 API",
+      "x": null,
+      "series": "Correct",
+      "value": 46.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": null
+     },
+     {
+      "category": "GPT-4omini API",
+      "x": null,
+      "series": "Correct",
+      "value": 34.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "34.7%"
+     },
+     {
+      "category": "Llama3.1-405b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 48.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "48.0%"
+     },
+     {
+      "category": "Gemma2-27b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 33.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "33.3%"
+     },
+     {
+      "category": "Phi3-14b-Q6 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 32.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "32.0%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Only a subset of the ~34 bars read; most are partly illegible. Red Incorrect fills the rest of each bar."
+    ]
+   },
+   {
+    "id": "2",
+    "title": "Question Difficulty (Average Human Score): Q2 (N = 75)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "2OP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [
+     {
+      "category": "GPT-4omini API",
+      "x": null,
+      "series": "Correct",
+      "value": 54.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": null
+     },
+     {
+      "category": "GPT-4 API",
+      "x": null,
+      "series": "Correct",
+      "value": 69.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "69.3%"
+     },
+     {
+      "category": "Claude3.5-Sonnet API",
+      "x": null,
+      "series": "Correct",
+      "value": 73.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "73.3%"
+     },
+     {
+      "category": "Llama3.1-405b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 61.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "61.3%"
+     },
+     {
+      "category": "Gemma2-27b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 62.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "62.7%"
+     },
+     {
+      "category": "Phi3-14b-Q6 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 42.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "42.7%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Subset only."
+    ]
+   },
+   {
+    "id": "3",
+    "title": "Question Difficulty (Average Human Score): Q3 (N = 75)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "2OP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [
+     {
+      "category": "GPT-3.5 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 54.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "54.7%"
+     },
+     {
+      "category": "GPT-3.5 API",
+      "x": null,
+      "series": "Correct",
+      "value": 50.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "50.7%"
+     },
+     {
+      "category": "GPT-4 API",
+      "x": null,
+      "series": "Correct",
+      "value": 78.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "78.7%"
+     },
+     {
+      "category": "Claude3.5-Sonnet API",
+      "x": null,
+      "series": "Correct",
+      "value": 80.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "80.0%"
+     },
+     {
+      "category": "Llama3.1-405b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 74.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "74.7%"
+     },
+     {
+      "category": "Phi3-14b-Q6 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 60.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "60.0%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Subset only."
+    ]
+   },
+   {
+    "id": "4",
+    "title": "Question Difficulty (Average Human Score): Q4 (N = 75)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "2OP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [
+     {
+      "category": "GPT-3.5 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 58.1,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "58.1%"
+     },
+     {
+      "category": "GPT-4 API",
+      "x": null,
+      "series": "Correct",
+      "value": 92.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "92.7%"
+     },
+     {
+      "category": "Claude3.5-Sonnet API",
+      "x": null,
+      "series": "Correct",
+      "value": 88.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "88.0%"
+     },
+     {
+      "category": "Llama2-7b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 29.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "29.3%"
+     },
+     {
+      "category": "Llama2-7b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 25.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "25.3%"
+     },
+     {
+      "category": "Phi3-3b-Q16 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 48.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "48.7%"
+     },
+     {
+      "category": "Phi3-14b-Q6 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 60.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "60.0%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Subset only."
+    ]
+   }
+  ],
+  "not_read": [
+   "Most bars in all four charts, and nearly all minor segments (2OP, EOP, NOP, Error, Incorrect), were not transcribed; labels are small and overlapping.",
+   "Each chart has about 34 bars; only 6-8 per chart were read."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 4479,
+   "completion_tokens": 221,
+   "total_tokens": 4700,
+   "cost": 0.011168,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.011168,
+    "upstream_inference_prompt_cost": 0.008958,
+    "upstream_inference_completions_cost": 0.00221
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Four stacked bar charts (Q1-Q4) showing the percentage of Correct, 2OP, EOP, NOP, Error and Incorrect answers for many LLM models and interfaces on each question.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "Q1",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      5,
+      1000,
+      255
+     ]
+    },
+    {
+     "id": "Q2",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      255,
+      1000,
+      505
+     ]
+    },
+    {
+     "id": "Q3",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      505,
+      1000,
+      755
+     ]
+    },
+    {
+     "id": "Q4",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      755,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

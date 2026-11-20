@@ -1,0 +1,60 @@
+Figure pictures_9 of Public-test-manuscript, page 61
+Image: figure.png, 1409 x 1571 px
+Caption in the paper: Supplementary  Figure  S3. Granular  performance  of  LLMs  (Experiment  1)  and  question characteristics .
+
+Charts found by layout analysis: one, or none.
+- chart 1, y ticks GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 API | GPT-4o API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet API | Claude3-Opus Web | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local | Llama2-13b Poe | Llama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe (categorical), x ticks Colon | Liver | II (categorical)
+
+Text printed in the figure (text @ x,y on a 0-1000 grid of the image):
+GPT-3.5 Web @ 130,7
+GPT-3.5 API @ 135,22
+GPT-4 Web @ 137,39
+GPT-4 API @ 141,56
+GPT-4o API @ 137,73
+GPT-4omini API @ 123,90
+Claude3-Hiaku Web @ 108,123
+Claude3-Haiku API @ 112,140
+Claude3-Sonnet Web @ 104,157
+Claude3-Sonnet API @ 108,174
+Claude3-Opus Web @ 109,191
+Claude3-Opus API @ 113,208
+Claude3.5-Sonnet API @ 101,224
+Mistralv2-7b Poe @ 117,258
+Mistralv2-7b-Q8 Local @ 101,275
+Mistral-Large Poe @ 115,292
+Mixtral-8x7b Poe @ 117,308
+Llama2-7b Poe @ 123,342
+Llama2-7b-Q8 Local @ 106,359
+medicineLLM-7b-Q8 Local @ 88,375
+Llama2-13b Poe @ 119,392
+Llama2-13b-Q5 Local @ 102,409
+Llama2-70b Poe @ 119,425
+Llama3-8b Poe @ 123,442
+Llama3-8b-Q8 Local @ 106,459
+OpenBioLLM-8b-Q8 Local @ 89,476
+Llama3-70b Poe @ 119,493
+Llama3.1-8b Poe @ 117,510
+Llama3.1-70b Poe @ 112,526
+Llama3.1-405b Poe @ 109,544
+Gemini Web @ 132,577
+GeminiAdvanced Web @ 100,594
+Gemma2-9b Poe @ 118,611
+Gemma2-9b-Q8 Local @ 100,628
+Gemma2-27b Local @ 108,644
+Phi3-3b-Q16 Local @ 112,678
+Phi3-14b-Q6 Local @ 111,694
+Difficulty Quartiles @ 110,728
+Length Tertiles @ 124,762
+Taxonomy: Integrated @ 101,796
+Diagnosis @ 141,829
+Treatment @ 139,846
+Investigation @ 129,863
+Complications @ 126,880
+Liver @ 156,913
+II @ 985,921
+Colon @ 154,930
+Esophagus @ 137,947
+IBD @ 161,963
+Pancreatico-biliary @ 111,981
+
+Part of this text was read by OCR and can hold misreads; the image decides.

@@ -1,0 +1,44 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "axes",
+ "seconds": 32.12,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud list",
+   "wall_s": 3.37,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 4030,
+   "eval_tokens": 188,
+   "cut": false,
+   "cost_usd": 0.00994,
+   "turns": 1,
+   "tool_calls": null
+  },
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 28.52,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 8259,
+   "eval_tokens": 4710,
+   "cut": false,
+   "cost_usd": 0.063618,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "4 charts found by their tick labels"
+ ]
+}

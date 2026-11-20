@@ -1,4 +1,4 @@
-## Vision-Language and Large Language Model Performance in Gastroenterology: GPT, Claude, Llama, Phi, Mistral, Gemma, and Quantized Models
+# Vision-Language and Large Language Model Performance in Gastroenterology: GPT, Claude, Llama, Phi, Mistral, Gemma, and Quantized Models
 
 Running title:
 
@@ -78,7 +78,7 @@ The  evaluation  of  specialty-specific  performance  is  particularly  importan
 
 Multiple-choice  questions  (MCQs)  serve  as  common  benchmarks  of  LLM  medical reasoning capabilities [6]. While MCQs can provide an objective and concrete gold standard to benchmark against, they do not capture the full complexity of real-world clinical reasoning [8], [9].  Nevertheless,  LLMs  such  as  GPT-3.5,  GPT-4,  and  Bard  have  achieved  varying  levels  of accuracy  on  MCQs  for  many  different  medical  specialties.  In  some  cases,  they  match  the performance of medical residents ( Table 1) [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20],  [21],  [22],  [23],  [24].  These  findings  must  be  viewed  with  caution,  however,  as  there  is significant methodological heterogeneity across the studies. In addition, there is a lack of specialtylevel analysis of medical reasoning for VLMs.
 
-## Table 1: LLMs and human performance on specialty and subspecialty board exams.
+Table 1: LLMs and human performance on specialty and subspecialty board exams.
 
 | Field; Author         | Dataset                                   | Handling Image- Inclusive Qs         | Evaluation Metrics                                                   | Stratified Performance            | Reporting Prompt (Prompt)                                                                   | Reporting Usage Method   | Reporting LLM Version (Version)   | Reporting Evaluation   | LLM- Performance                                                                          | Human Performance                |
 |-----------------------|-------------------------------------------|--------------------------------------|----------------------------------------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------|--------------------------|-----------------------------------|------------------------|-------------------------------------------------------------------------------------------|----------------------------------|
@@ -237,13 +237,13 @@ The  optimization  dataset  consisted  of  60  randomly  sampled  text-based  qu
 
 We found that the choice of model settings, prompt strategy, and use of structured outputs all  impacted  LLM performance  in gastroenterology MCQ reasoning. We found that structured output generation, when available, enhanced performance by  5-10%  ( Figure 3.a and Supplementary Table S2 ). When evaluating the 11 prompt engineering techniques individually, we found that 5 techniques resulted in a score &gt; 2 standard deviations above the raw prompt. The direct question and answering and justification prompts had the greatest impact on performance (+4.44%), followed by contextual embedding (+2.77%), confidence scoring (+1.67%), and expert mimicry (+1.67%). The best performing prompt containing all 5 techniques increased performance by 5.00% [95% CI: 1.11%, 7.78%] ( Figure 3.d and Supplementary Table S3 ). Setting the model temperature to 1 (default) resulted in optimal performance (F igure 3.b and Supplementary Table S4 ). Additionally, setting max\_token to 512 plus the number of tokens in the input text resulted in the best performance ( Figure 3.c and Supplementary Table S4 ). The best selected settings were used for all subsequent analyses.
 
+Figure 3. Impact of output structure (a), temperature (b), Max\_token (c), and prompt engineering (d) on LLM MCQ performance .
+
 ![](images/picture_003.png)
 
 Accuracy (%)
 
 Accuracy (%)
-
-Figure 3. Impact of output structure (a), temperature (b), Max\_token (c), and prompt engineering (d) on LLM MCQ performance .
 
 Figure  Legends:  (a)  Accuracy  comparison  of  different  structured  output  strategies  (LangChain,  Function  Call, Standard Output). (b) Accuracy results at various temperature settings, highlighting the optimal default setting and the consistency observed at lower temperatures. (c) Accuracy of various max-token lengths (512 tokens, 1024 tokens, and input token length plus 512 tokens), illustrating the benefits of fair token allocation across questions. (d) Accuracy (average and 95% CI) of different individual and combined (candidate) prompt engineering techniques.
 
@@ -439,11 +439,11 @@ Supplementary Section 6: Complementary Results
 
 ## Supplementary Section 1: Exam and Question Context
 
-## 1.1 Gastroenterology Board Exam Context
+### 1.1 Gastroenterology Board Exam Context
 
 The Gastroenterology Board Exam is a rigorous and essential assessment that gastroenterologists must pass to become board-certified in their specialty. Administered by the American Board of Internal Medicine, this exam tests a candidate's knowledge, practical skills, and critical thinking abilities in gastroenterology. The exam ensures that practitioners meet the high standards required to provide quality care in this complex field. Test takers undergo a rigorous educational pathway before  taking  the  exam,  including  four  years  of  undergraduate  study,  four  years  of  medical education,  three  years  of  internal  medicine  residency,  and  three  years  of  gastroenterology fellowship. By passing this exam, these physicians achieve board certification and affirm their expertise in providing high-quality care in gastroenterology [37].
 
-## 1.2 ACG Question Bank Characteristics
+### 1.2 ACG Question Bank Characteristics
 
 The American College of Gastroenterology (ACG) developed the Board Prep/Self-Assessment Test (SA), which was developed meticulously by an ACG committee with contributions from most postgraduate  course  faculty  members.  This  comprehensive  test  consists  of  approximately  300 questions annually. These questions, presented in single best answer and true/false formats and often  supplemented  with  photos  and  illustrations,  come  with  in-depth  answers  and  referenced annotations. It offers an essential review for both graduating fellows preparing for their GI Boards and seasoned practitioners seeking a comprehensive clinical update.
 
@@ -482,7 +482,7 @@ Maximum Token Count (max\_token) : This setting determines the allowable length 
 
 Temperature :  The  temperature  controls  the  randomness  of  the  model's  responses.  A  lower temperature  (close  to  0)  results  in  more  deterministic  and  repetitive  outputs,  with  a  higher likelihood  assigned  to  the  most  likely  words.  Conversely,  a  higher  temperature  leads  to  more random and diverse outputs, which can enhance creativity but also increase  the probability of nonsensical or irrelevant responses ( Supplementary Table S5 ).
 
-## 2.1 Finding the Best Setting: Function, Prompt, Max-Token, and Temperature
+### 2.1 Finding the Best Setting: Function, Prompt, Max-Token, and Temperature
 
 The aim of this experiment was to find the best set of model settings and set up future experiments. This experiment was conducted via a random sample of 60 questions from 2021 and 2023. We used GPT3 (gpt-3.5-turbo-0125 in March 2024) to find the best setup and replicate this setup in future experiments. The step-by-step model settings include:
 
@@ -497,13 +497,13 @@ The aim of this experiment was to find the best set of model settings and set up
 - Model max\_token: A token is a basic unit of text, such as a word or punctuation mark, used by LLMs to understand and generate text. We tested the max\_token of 512, and as our initial experiment revealed the better performance of max\_token 1024 for prompts that need space for generation, we added another solution, which is based on the length of the input text. This max\_token points to the total number of input tokens (prompt, question, and options) and output tokens (generated tokens), so in our third scenario, we first counted the number of input tokens and set the max\_token of 512+input tokens. Consequently, this approach can provide a fair area for model output, regardless of the question-option length. The performances in these three scenarios are listed in Supplementary Table S7.
 - Consistency: We ran the raw prompt and each prompt engineering technique 3 times via GPT 3.5. In addition to finding effective prompt engineering techniques (when the average performance  of  a  prompt  exceeds  the  95%  CI),  we  demonstrated  consistency  among prompt strategies.
 
-## 2.2 Structured Output
+### 2.2 Structured Output
 
 We tested the two options of using the Langchain library and the official structured output ability provided by OpenAI and Claude3. This feature  was first announced by OpenAI, and Calude3 recently added this feature to their API capability. In addition, the Langchain can force an LLM to provide a response in the desired format so that the parser can parse this response to provide a structured output (JSON or dictionary). Behind the scene of the Langchain, Claude3, or OpenAI function calling (i.e., the feature used to provide structured output), injects some instructions into the message, parses the output, and retrieves parameters from the generated message.
 
 For other models, including all outputs generated in the Web environment, Poe environment, and Local environment, as well as old GPT models (instruct-GPT, babbage, and DaVinci), the output was unstructured. The method for extracting the selected option from the raw output can be found in the 'Evaluation of accuracy' section.
 
-## 2.3 Structured and Unstructured Prompt
+### 2.3 Structured and Unstructured Prompt
 
 The full prompt was structured as a command prompt, one empty line, one question, one empty line,  and  one  option.  In  cases  of  generating  structured  output  (GPT4-API,  GPT3.5-API, Claude3Haiku-API, Claude3Sonnet-API, and Claude3Opus-API), the full prompt was provided along with a schema for function call. The function call is the OpenAI and Claude3 tool, which can generate structure outputs via a schema consisting of a schema description, parameters for output,  and  parameter  definitions.  The  scheme  description  in  our  experiment  was  "You  can generate  your  unstructured  output  and  selected  option." The  LLM  can  output  two  parameters, "unstructured output" and "selected option", with the corresponding parameter definitions of 'Your unstructured output for the answer, if needed.' and "The selected option from the list of provided choices. (Example: 'F')". The options were limited to one of the options "A", "B", "C", "D", or "E".
 
@@ -597,7 +597,7 @@ Footnote: SD, standard deviation; 95% CI, 95% confidence interval. Raw prompt: "
 
 ## Supplementary Section 3: Full Details of Experiment One
 
-## 3.1. LLMs in Experiment 1
+### 3.1. LLMs in Experiment 1
 
 Experiment 1 aims to show the performance of LLMs on text-based questions. The full details of the LLMs in this experiment are as follows.
 
@@ -651,7 +651,7 @@ Experiment 1 aims to show the performance of LLMs on text-based questions. The f
 - Phi3-medium14b-Q6 Local (6-bit quantized version of Phi3-medium with 14B parameters; accessed from bartowski/Phi-3-medium-128k-instruct-GGUF in July 2024)
 - Gemma2-9b-Q8 (8-bit quantized Gemma-2-9b; accessed from lmstudiocommunity/gemma-2-9b-it-GGUF in July 2024)
 
-## 3.2. Local Models, the Quantization Concept, and Computer Configuration
+### 3.2. Local Models, the Quantization Concept, and Computer Configuration
 
 We created a local server via LM Studio and sent requests from Python to  the local server to generate responses. LM Studio uses the lllama.cpp python library to empower the user interface for the use of local LLMs. The sources of the local models are described in Supplementary Section 3.1. LLMs used in Experiment 1.
 
@@ -661,7 +661,7 @@ To generate local LLM responses, we used a laptop (Lenovo7 16IAX7) with a 12th G
 
 ## Supplementary Section 4: Full Details of Experiment Two
 
-## 4.1 Handling Image-Inclusive Questions
+### 4.1 Handling Image-Inclusive Questions
 
 Historical limitations on the availability of image-capable LLMs led previous studies to exclude questions  containing  images,  focusing  instead  on  assessing  the  models'  text-based  reasoning capabilities  (12,15,16).  Our  dataset,  however,  contains  a  considerable  number  of  questions accompanied by images. To address this, we tested three approaches to image inclusion:
 
@@ -683,7 +683,7 @@ your choice is justified, and your confidence in this decision is rated from 1 t
 
 Images have been provided for your reference. You may use the information in the images if helpful; otherwise, base your answer solely on the available information.'
 
-## 4.2 Models in Experiment 2
+### 4.2 Models in Experiment 2
 
 The following models were used in experiment 2:
 
@@ -701,7 +701,7 @@ Supplementary  Figure  S1.  Details  of  semiautomated  answer  extraction  from
 
 ![](images/picture_008.png)
 
-## 5.1 Extracting Answers from Raw Output Utilizing GPT3.5
+### 5.1 Extracting Answers from Raw Output Utilizing GPT3.5
 
 For models providing structured output, the correctness of the answer was evaluated by comparing the ground truth and LLM answer via python code. For models without a structured output, the selected  option  was  extracted  via  the  OpenAI  extraction  schema.  The  GPT3.5-API  has  a temperature  of  0  and  a  maximum  number  of  tokens  for  generation  of  50,  with  the  following command:
 
@@ -713,7 +713,7 @@ Schema Options :  "A",  "B",  "C",  "D",  "E",  "No  option  was  selected",  "M
 
 We tested the performance of this pipeline on a random sample of 200 questions from 4 different answered datasets (Claude3 Haiku-Web, GPT3.5-Web, llama2-7b-Q8-Local, and mixtral-8x7bPoe). When one of options A to E was provided as the selected option, the accuracy was 99%. The four options of "No option was selected", "More than one option was selected", and "I am not sure." was provided to a human evaluator to label the questions.
 
-## 5.2  Performance of GPT3.5 in Extracting Answers from Raw Textual LLM Responses
+### 5.2  Performance of GPT3.5 in Extracting Answers from Raw Textual LLM Responses
 
 To evaluate the performance of GPT-3.5 in extracting selected options from raw responses, we created a dataset comprising 100 answers from various environments. Supplementary Figure S 2 illustrates the performance metrics. GPT-3.5 successfully extracted the correct option in 83% of the cases, achieving an accuracy of 98.8% for those extractions. In the remaining 17% of the cases, GPT-3.5  flagged  the  questions  for  manual  evaluation,  resulting  in  an  overall  semiautomated accuracy of 99%.
 
@@ -735,13 +735,13 @@ Supplementary Figure S2. Confusion matrix of GPT-3.5 performance in the extracti
 | NOP                                                  | 0                                                    |                                                        0 |                                                        0 |                                                    0 |                                                        0 |                                                    5 | 0                                                                                             |
 | Eror                                                 | 0                                                    |                                                        0 |                                                        0 |                                                    0 |                                                        0 |                                                    3 | 0                                                                                             |
 
-## 5.3 Human Evaluator
+### 5.3 Human Evaluator
 
 One  evaluator  with  a  medical  doctorate  degree  and  two  years  of  medical  practice  evaluated answers requiring human evaluation, as mentioned in Supplementary Section 5.2. The guidelines for labeling answers are depicted in Figure 2 . If one option was selected by LLM, the option was replaced with the LLM answer, and the correctness was evaluated via Python code. If more than one option was selected and the correct answer lies in one of the selected options, the two-option label ('2OP') was added. If no option was selected or the LLM avoided providing any option, no option ('NOP') label was added. If the LLM sought to provide an answer beyond the provided options, the label of the external option ('EOP') was used. In cases where the LLM selected an
 
 0 option while providing some caution or uncertainty, the selected answer was selected as the LLM choice.
 
-## 5.4 Questions Classification: Difficulty, Taxonomy, Care Phase, Subject, Length Question Type: Gastroenterology Subject Category
+### 5.4 Questions Classification: Difficulty, Taxonomy, Care Phase, Subject, Length Question Type: Gastroenterology Subject Category
 
 The  2022  ACG-SA  was  our  main  databank  for  generating  answers.  The  dataset  includes  49 questions on the colon, 26 on endoscopy, 36 on the esophagus, 30 on inflammatory bowel disease (IBD), 14 on irritable bowel syndrome (IBS), 52 on the liver, 19 categorized as miscellaneous, 3 on nutrition, 32 on pancreaticobiliary, 22 on the small bowel, and 17 on the stomach.
 
@@ -769,29 +769,29 @@ Supplementary  Figure  S3. Granular  performance  of  LLMs  (Experiment  1)  and
 
 ![](images/picture_010.png)
 
-## Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions
+Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions
 
 ![](images/picture_011.png)
 
-## Supplementary Figure S5. Performance Stratified by Question Subject
+Supplementary Figure S5. Performance Stratified by Question Subject
 
 ![](images/picture_012.png)
 
-## Supplementary Figure S6. Performance stratified by patient care phase
-
 L
+
+Supplementary Figure S6. Performance stratified by patient care phase
 
 ![](images/picture_013.png)
 
-## Supplementary Figure S7. Performance Stratified by Question Difficulty
+Supplementary Figure S7. Performance Stratified by Question Difficulty
 
 ![](images/picture_014.png)
 
-## Supplementary Figure S8. Performance stratified by the question length
+Supplementary Figure S8. Performance stratified by the question length
 
 ![](images/picture_015.png)
 
-## Supplementary Table S5. The cost and time of executing one question with an average length
+Supplementary Table S5. The cost and time of executing one question with an average length
 
 | Setup (Cost of Setup)                                   | Model Name                  | Prompt Token ****   |   Completio n Tokens | Executio n Time   | Execution Time per 100 Completion Token   | Total Cost of 100 similar Execution   | Execution Cost per 1 M Prompt Token   | Execution Cost per 1 M Completion Token   |
 |---------------------------------------------------------|-----------------------------|---------------------|----------------------|-------------------|-------------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------------|

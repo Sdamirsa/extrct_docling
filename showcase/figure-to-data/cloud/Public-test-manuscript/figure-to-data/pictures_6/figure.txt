@@ -1,0 +1,127 @@
+Figure pictures_6 of Public-test-manuscript, page 22
+Image: figure.png, 1292 x 1000 px
+Caption in the paper: Figure  7.  The  impacts  of  temperature,  prompt  design,  and  random  seeds  on  GPT-3.5 consistency are important.
+
+Charts as a model listed them, cut by layout analysis: 4 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart a, box [3, 1, 505, 491], crop panel-a.png, y ticks 25 | 33 | 41 | 50 | 58 | 66 | 75 | 91 (linear)
+- chart b, box [515, 1, 998, 491], crop panel-b.png, y ticks 25 | 33 | 41 | 50 | 58 | 66 | 91 (linear)
+- chart c, box [3, 510, 506, 1000], crop panel-c.png, y ticks 25 | 33 | 41 | 50 | 66 | 75 | 91 (linear)
+- chart d, box [515, 511, 998, 1000], crop panel-d.png, y ticks 25 | 33 | 41 | 50 | 58 | 66 | 75 | 91 (linear)
+
+Text printed in chart a (text @ x,y on a 0-1000 grid of that chart's crop):
+a @ 27,40
+Raw Prompt - Without Determining Seed @ 555,44
+91 @ 86,108
+Average @ 834,118
+Range (Min to Max) @ 889,155
+ε8 @ 87,200
+75 @ 87,290
+o @ 152,319
+66 @ 86,381
+Accuracy % @ 25,417
+58 @ 87,471
+50 @ 86,561
+41 @ 87,651
+33 @ 86,743
+25 @ 86,832
+0 @ 149,903
+2 @ 957,903
+22 @ 285,915
+0 @ 351,915
+06 @ 418,914
+08 @ 486,914
+0.9 @ 553,914
+1 @ 622,905
+12 @ 687,914
+16 @ 822,914
+18 @ 891,914
+Model Tempreature @ 569,977
+
+Text printed in chart b (text @ x,y on a 0-1000 grid of that chart's crop):
+b @ 27,38
+Best Prompt - Without Determining Seed @ 535,44
+91 @ 49,108
+Average @ 827,116
+Range (Min to Max) @ 884,155
+838 @ 49,200
+75. @ 49,291
+66 @ 50,380
+58 @ 49,471
+50 @ 49,562
+41 @ 50,651
+33 @ 49,742
+25 @ 49,834
+0 @ 113,903
+2 @ 956,902
+01 @ 183,915
+22 @ 254,915
+0 @ 324,915
+06 @ 393,914
+88 @ 463,914
+0.9 @ 533,915
+1 @ 604,905
+22 @ 673,914
+16 @ 815,913
+1.8 @ 884,913
+Model Tempreature @ 558,977
+
+Text printed in chart c (text @ x,y on a 0-1000 grid of that chart's crop):
+C @ 28,38
+Raw Prompt - After Determining Seed @ 525,47
+91 @ 85,112
+Average @ 834,118
+Range (Min to Max) @ 886,153
+ε8 @ 85,202
+75 @ 84,292
+O @ 756,331
+66 @ 85,383
+Accuracy % @ 24,419
+85 @ 85,473
+50 @ 85,562
+41 @ 85,655
+33 @ 85,745
+25 @ 84,835
+0 @ 148,903
+1 @ 620,904
+2 @ 956,903
+01 @ 216,916
+2 @ 284,915
+40 @ 349,916
+0.6 @ 418,915
+8 @ 485,915
+60 @ 552,916
+12 @ 687,914
+18 @ 889,915
+Model Tempreature @ 565,973
+
+Text printed in chart d (text @ x,y on a 0-1000 grid of that chart's crop):
+d @ 26,37
+Best Prompt - After Determining Seed @ 505,45
+91 @ 49,110
+Average @ 827,115
+Range (Min to Max) @ 883,153
+ε8 @ 50,200
+75 @ 49,290
+66 @ 49,381
+58 @ 49,472
+50 @ 50,562
+41 @ 50,654
+33 @ 49,744
+25 @ 49,833
+0 @ 115,904
+1 @ 605,904
+2 @ 955,903
+10 @ 184,916
+2 @ 256,915
+40 @ 325,915
+88 @ 464,916
+60 @ 534,916
+12 @ 675,915
+16 @ 815,915
+18 @ 885,915
+Model Tempreature @ 555,973
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

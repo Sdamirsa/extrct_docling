@@ -1,0 +1,95 @@
+Figure pictures_8 of Public-test-manuscript, page 58
+Image: figure.png, 851 x 772 px
+Caption in the paper: Supplementary Figure S2. Confusion matrix of GPT-3.5 performance in the extraction of selected options from the raw textual response of LLMs.
+
+Charts found by layout analysis: one, or none.
+- chart 1
+
+Text printed in the figure (text @ x,y on a 0-1000 grid of the image):
+GPT-3.5 Extracted Option from LLM Textual Response @ 486,16
+GPT: Require Evaluation @ 810,75
+Parsing Failed @ 880,91
+A @ 163,114
+B @ 273,115
+C @ 385,113
+E @ 607,114
+25 @ 984,141
+A @ 77,187
+16 @ 154,185
+0 @ 266,185
+0 @ 377,185
+0 @ 489,185
+0 @ 599,185
+0 @ 712,185
+0 @ 821,185
+B @ 77,281
+0 @ 155,280
+25 @ 264,280
+0 @ 377,280
+1 @ 488,280
+0 @ 599,280
+0 @ 711,280
+2 @ 820,280
+-20 @ 983,311
+C @ 78,375
+0 @ 155,374
+0 @ 265,374
+24 @ 376,375
+0 @ 489,375
+0 @ 599,374
+0 @ 711,375
+1 @ 821,375
+0 @ 155,471
+0 @ 265,471
+0 @ 377,471
+13 @ 487,471
+0 @ 599,471
+0 @ 712,471
+0 @ 821,471
+15 @ 985,482
+E @ 77,564
+0 @ 155,564
+0 @ 265,565
+0 @ 377,564
+0 @ 489,565
+4 @ 599,563
+0 @ 711,564
+0 @ 821,564
+Blinded Human Validation @ 18,568
+10 @ 984,653
+2OP @ 66,660
+0 @ 155,660
+0 @ 265,660
+0 @ 377,660
+0 @ 489,661
+0 @ 599,660
+1 @ 710,661
+0 @ 821,660
+EOP @ 64,756
+0 @ 155,754
+0 @ 265,754
+0 @ 377,755
+0 @ 489,755
+0 @ 599,755
+5 @ 710,755
+0 @ 821,755
+5 @ 981,824
+NOP @ 65,849
+0 @ 155,849
+0 @ 265,849
+0 @ 377,849
+0 @ 489,849
+0 @ 599,849
+5 @ 710,849
+0 @ 821,849
+Error @ 68,945
+0 @ 155,945
+0 @ 265,945
+0 @ 377,945
+0 @ 490,945
+0 @ 599,945
+3 @ 710,945
+0 @ 821,945
+0 @ 981,992
+
+Part of this text was read by OCR and can hold misreads; the image decides.

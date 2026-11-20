@@ -1,0 +1,676 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/13",
+    "image_path": "images/picture_014.png",
+    "page": 65,
+    "bbox": [
+      72.82,
+      103.86,
+      292.23,
+      693.3
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        1.0,
+        2.5,
+        328.5,
+        217.2
+      ],
+      "title": "Question Difficulty (Average Human Score): Q1 (N = 75)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 Web",
+            "GPT-3.5 API",
+            "GPT-4 Web",
+            "GPT-4 AP1",
+            "GPT-4omini API",
+            "Claude3-Hiaku Web",
+            "Claude3-Haiku AP1",
+            "Cla n-pl",
+            "3-Opus Web",
+            "Claude3.5-Sonnet API",
+            "Mistralv2-7b-Q8 Local",
+            "Mistral-Large Poe",
+            "Liama2-7b Poe",
+            "Llama2-13b Poe",
+            "Llama2-70b Poe",
+            "Llama3-8b Poe",
+            "Lam Poe",
+            "Llama3.1-405b Poe",
+            "Gemn Web",
+            "GemmPoe",
+            "Gemma2-9b-Q8 Local",
+            "Gemma2-27b Poe",
+            "Ph/3-3b-Q16 Local",
+            "Phi3-14b-06 Local"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 29.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "29.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 49.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 46.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 34.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "34.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Llama3.1-405b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 48.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Gemma2-27b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 33.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "33.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Phi3-14b-Q6 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 32.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "32.0%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Only a subset of the ~34 bars read; most are partly illegible. Red Incorrect fills the rest of each bar."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        0.0,
+        223.1,
+        328.5,
+        438.8
+      ],
+      "title": "Question Difficulty (Average Human Score): Q2 (N = 75)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4 Web",
+            "GPT-4 API",
+            "GPT-4omini API",
+            "Clauds3-Hiaku Web",
+            "Claude3-Haiku API",
+            "Claude3-Sonnet Web",
+            "Claude3-Sonnet APt",
+            "Mixtral-8x7b Poe",
+            "Lama2-7b Poe",
+            "Llama2-13b Poe",
+            "Llama2-70b Poe",
+            "Llama3-8b Poe",
+            "Llama3.1-405b Poe",
+            "Gemini Web",
+            "Ggen veb",
+            "Gen Ppoe",
+            "Gemma2-9b-Q8 Local",
+            "Gemma2-27b Poe",
+            "Phi3-3b-Q16 Local",
+            "Phi3-14b-Q6 Local"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            80.0,
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-4omini API",
+          "x": null,
+          "series": "Correct",
+          "value": 54.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": null,
+          "source": "vlm",
+          "confidence": 0.8
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 69.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "69.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude3.5-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 73.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "73.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Llama3.1-405b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 61.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "61.3%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Gemma2-27b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 62.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "62.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Phi3-14b-Q6 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 42.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "42.7%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Subset only."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        0.0,
+        442.8,
+        328.5,
+        660.5
+      ],
+      "title": "Question Difficulty (Average Human Score): Q3 (N = 75)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "0",
+            "GPT-3.5 Web",
+            "GPT-4 Web",
+            "GPT-40 API",
+            "Claude3-Hlaku Web",
+            "Ca APl",
+            "Caea u-web",
+            "Claude3-Sonnet API",
+            "Claude3-Opus Web",
+            "Mistralv2-7b Pos",
+            "Mistraiv2-7b-Q8 Local",
+            "Mixtral-8x7b Poe",
+            "Llama2-7b Poe",
+            "Lama2-13b-Q5 Local",
+            "Larna3.1-405b Poe",
+            "Gemini Web",
+            "GeminiAdvanced Web",
+            "Gemma2-9b Poe",
+            "Gemma2-27b Poe",
+            "Phi3-3b-Q16 Local",
+            "Phi3-14b-Q6 Local"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            80.0,
+            60.0,
+            40.0,
+            20.0,
+            0.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 54.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "54.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-3.5 API",
+          "x": null,
+          "series": "Correct",
+          "value": 50.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "50.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 78.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "78.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Claude3.5-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 80.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "80.0%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama3.1-405b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 74.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "74.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Phi3-14b-Q6 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "60.0%",
+          "source": "printed",
+          "confidence": 0.95
+        }
+      ],
+      "notes": [
+        "Subset only."
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        1.0,
+        666.8,
+        328.5,
+        881.6
+      ],
+      "title": "Question Difficulty (Average Human Score): Q4 (N = 75)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": null,
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 Web",
+            "Claude3-Hlaku Web",
+            "Ca n-veb",
+            "Mistralv2-7b Poe",
+            "MkPp0oe",
+            "Llama3.1-70b Poe",
+            "Llama3.1-405b Poe",
+            "Gen veb",
+            "Gemma2-27b Poe",
+            "Pht3-3b-Q16 Local"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            80.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "2OP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [
+        {
+          "category": "GPT-3.5 Web",
+          "x": null,
+          "series": "Correct",
+          "value": 58.1,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "58.1%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "GPT-4 API",
+          "x": null,
+          "series": "Correct",
+          "value": 92.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "92.7%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Claude3.5-Sonnet API",
+          "x": null,
+          "series": "Correct",
+          "value": 88.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "88.0%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Llama2-7b Poe",
+          "x": null,
+          "series": "Correct",
+          "value": 29.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "29.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Llama2-7b-Q8 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 25.3,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "25.3%",
+          "source": "printed",
+          "confidence": 0.95
+        },
+        {
+          "category": "Phi3-3b-Q16 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 48.7,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "48.7%",
+          "source": "printed",
+          "confidence": 0.85
+        },
+        {
+          "category": "Phi3-14b-Q6 Local",
+          "x": null,
+          "series": "Correct",
+          "value": 60.0,
+          "err_lo": null,
+          "err_hi": null,
+          "label_printed": "60.0%",
+          "source": "printed",
+          "confidence": 0.85
+        }
+      ],
+      "notes": [
+        "Subset only."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-20",
+    "time_minutes": null
+  },
+  "description": "Four stacked bar charts (Q1-Q4) show the percentage of responses per model (Correct, 2OP, EOP, NOP, Error, Incorrect) for questions of increasing average human-score difficulty.",
+  "uncertain": [
+    "Most bars in all four charts, and nearly all minor segments (2OP, EOP, NOP, Error, Incorrect), were not transcribed; labels are small and overlapping.",
+    "Each chart has about 34 bars; only 6-8 per chart were read."
+  ]
+}

@@ -1,0 +1,312 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 6170,
+  "completion_tokens": 1776,
+  "total_tokens": 7946,
+  "cost": 0.0301,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0301,
+   "upstream_inference_prompt_cost": 0.01234,
+   "upstream_inference_completions_cost": 0.01776
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Two panels showing GPT model accuracy on gastroenterology MCQs: (a) accuracy of GPT-3.5 Turbo 0125 and GPT-4 0613 across three ACG self-assessment versions; (b) accuracy of various GPT models by training data cutoff date.",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "a",
+    "title": null,
+    "kind": "line",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "ACG Self-Assessment Version",
+     "unit": null,
+     "scale": "linear",
+     "min": 2021,
+     "max": 2023
+    },
+    "y_axis": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "min": 40,
+     "max": 80
+    },
+    "series": [
+     "GPT-3.5 Turbo 0125",
+     "GPT-4 0613"
+    ],
+    "points": [
+     {
+      "category": null,
+      "x": "2021",
+      "series": "GPT-3.5 Turbo 0125",
+      "value": 71.59,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "71.59%"
+     },
+     {
+      "category": null,
+      "x": "2022",
+      "series": "GPT-3.5 Turbo 0125",
+      "value": 63.58,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "63.58%"
+     },
+     {
+      "category": null,
+      "x": "2023",
+      "series": "GPT-3.5 Turbo 0125",
+      "value": 70.35,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "70.35%"
+     },
+     {
+      "category": null,
+      "x": "2021",
+      "series": "GPT-4 0613",
+      "value": 44.57,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "44.57%"
+     },
+     {
+      "category": null,
+      "x": "2022",
+      "series": "GPT-4 0613",
+      "value": 46.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "46.30%"
+     },
+     {
+      "category": null,
+      "x": "2023",
+      "series": "GPT-4 0613",
+      "value": 53.49,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "53.49%"
+     }
+    ],
+    "box": null,
+    "notes": []
+   },
+   {
+    "id": "b",
+    "title": null,
+    "kind": "scatter",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model Training Data Cutoff Date",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Accuracy (%)",
+     "unit": "%",
+     "scale": "linear",
+     "min": 5,
+     "max": 78
+    },
+    "series": [
+     "GPT3: babbage-002 (2021-09)",
+     "GPT3: davinci-002 (2021-09)",
+     "GPT3.5-Instruct (2021-09)",
+     "GPT3.5-0125 (2023-12)",
+     "GPT3.5-0613 (2021-09)",
+     "GPT3.5-1106 (2023-04)",
+     "GPT4-0613 (2021-09)",
+     "GPT4-1106 (2023-04)",
+     "GPT4-0125 (2023-12)",
+     "GPT4o-20240513 (2023-09)",
+     "GPT4omini-20240718 (2023-09)"
+    ],
+    "points": [
+     {
+      "category": "2021-09",
+      "x": null,
+      "series": "GPT3: babbage-002 (2021-09)",
+      "value": 9.26,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "9.26%"
+     },
+     {
+      "category": "2021-09",
+      "x": null,
+      "series": "GPT3: davinci-002 (2021-09)",
+      "value": 12.35,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "12.35%"
+     },
+     {
+      "category": "2021-09",
+      "x": null,
+      "series": "GPT3.5-Instruct (2021-09)",
+      "value": 39.51,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "39.51%"
+     },
+     {
+      "category": "2021-09",
+      "x": null,
+      "series": "GPT3.5-0613 (2021-09)",
+      "value": 43.83,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "43.83%"
+     },
+     {
+      "category": "2021-09",
+      "x": null,
+      "series": "GPT4-0613 (2021-09)",
+      "value": 63.58,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "63.58%"
+     },
+     {
+      "category": "2023-12",
+      "x": null,
+      "series": "GPT3.5-0125 (2023-12)",
+      "value": 46.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "46.30%"
+     },
+     {
+      "category": "2023-12",
+      "x": null,
+      "series": "GPT4-0125 (2023-12)",
+      "value": 62.35,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "62.35%"
+     },
+     {
+      "category": "2023-04",
+      "x": null,
+      "series": "GPT3.5-1106 (2023-04)",
+      "value": 48.15,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "48.15%"
+     },
+     {
+      "category": "2023-04",
+      "x": null,
+      "series": "GPT4-1106 (2023-04)",
+      "value": 65.43,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "65.43%"
+     },
+     {
+      "category": "2023-09",
+      "x": null,
+      "series": "GPT4o-20240513 (2023-09)",
+      "value": 75.93,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "75.93%"
+     },
+     {
+      "category": "2023-09",
+      "x": null,
+      "series": "GPT4omini-20240718 (2023-09)",
+      "value": 56.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "56.0%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Within 2021-09, the 43.83% and 39.51% orange points are assigned to GPT3.5-0613 and GPT3.5-Instruct respectively by guess; the figure does not say which is which."
+    ]
+   }
+  ],
+  "not_read": []
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 2560,
+   "completion_tokens": 161,
+   "total_tokens": 2721,
+   "cost": 0.00673,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00673,
+    "upstream_inference_prompt_cost": 0.00512,
+    "upstream_inference_completions_cost": 0.00161
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Two panels of model accuracy: (a) lines for GPT-3.5 Turbo 0125 and GPT-4 0613 across ACG self-assessment versions 2021-2023; (b) scatter of accuracy for various GPT models by training data cutoff date.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "a",
+     "kind": "line",
+     "box": [
+      10,
+      30,
+      435,
+      970
+     ]
+    },
+    {
+     "id": "b",
+     "kind": "scatter",
+     "box": [
+      470,
+      30,
+      1000,
+      990
+     ]
+    }
+   ]
+  }
+ }
+}

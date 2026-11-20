@@ -1,0 +1,330 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 6254,
+  "completion_tokens": 2000,
+  "total_tokens": 8254,
+  "cost": 0.032508,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.032508,
+   "upstream_inference_prompt_cost": 0.012508,
+   "upstream_inference_completions_cost": 0.02
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Horizontal stacked bars showing the percentage of answers (Correct, 2OP, EOP, NOP, Error, Incorrect) for gastroenterology image multiple-choice questions, by model, platform and image-input condition, with significance versus the no-image reference.",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "1",
+    "title": "VLM Performance on Gastroenterology Multiple-Choice Questions with Image Data",
+    "kind": "stacked_bar",
+    "orientation": "horizontal",
+    "x_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "y_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "series": [
+     "Correct"
+    ],
+    "points": [
+     {
+      "category": "GPT4 Web - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 65.2,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "65.2%"
+     },
+     {
+      "category": "GPT4 Web - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 59.4,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "59.4%"
+     },
+     {
+      "category": "GPT4 Web - direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 68.1,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "68.1%"
+     },
+     {
+      "category": "GPT4 Web - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 73.2,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "73.2%"
+     },
+     {
+      "category": "GPT4 API - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 68.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "68.8%"
+     },
+     {
+      "category": "GPT4 API - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 64.5,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "64.5%"
+     },
+     {
+      "category": "GPT4 API - direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 65.2,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "65.2%"
+     },
+     {
+      "category": "GPT4 API - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 71.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "71.7%"
+     },
+     {
+      "category": "Claude3Opus Web - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 63.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "63.8%"
+     },
+     {
+      "category": "Claude3Opus Web - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 48.6,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "48.6%"
+     },
+     {
+      "category": "Claude3Opus Web - direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 63.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "63.8%"
+     },
+     {
+      "category": "Claude3Opus Web - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 76.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "76.8%"
+     },
+     {
+      "category": "Claude3Opus API - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 68.1,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "68.1%"
+     },
+     {
+      "category": "Claude3Opus API - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 68.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "68.8%"
+     },
+     {
+      "category": "Claude3Opus API - direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 68.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "68.8%"
+     },
+     {
+      "category": "Claude3Opus API - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 78.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "78.3%"
+     },
+     {
+      "category": "Claude3Sonnet API - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 53.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "53.7%"
+     },
+     {
+      "category": "Claude3Sonnet API - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 54.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "54.3%"
+     },
+     {
+      "category": "Claude3Sonnet API - direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 73.9,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "73.9%"
+     },
+     {
+      "category": "Claude3Sonnet API - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 56.5,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "56.5%"
+     },
+     {
+      "category": "GeminiAdvanced Web - no image",
+      "x": null,
+      "series": "Correct",
+      "value": 25.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "25.0%"
+     },
+     {
+      "category": "GeminiAdvanced Web - LLM caption",
+      "x": null,
+      "series": "Correct",
+      "value": 47.8,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "47.8%"
+     },
+     {
+      "category": "GeminiAdvanced Web- direct image",
+      "x": null,
+      "series": "Correct",
+      "value": 20.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "20.3%"
+     },
+     {
+      "category": "GeminiAdvanced Web - human hint",
+      "x": null,
+      "series": "Correct",
+      "value": 54.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "54.3%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Significance vs reference: GPT4 Web ns; GPT4 API ns; Claude3Opus Web LLM caption ****, direct ns, human hint **; Claude3Opus API caption ns, direct ns, hint *; Claude3Sonnet API caption ns, direct ****, hint ns; Gemini caption ****, direct ns, hint ****.",
+     "Only the Correct segments are labelled; other segments (2OP, EOP, NOP, Error, Incorrect) are not tabulated."
+    ]
+   }
+  ],
+  "not_read": [
+   "Non-Correct segments (2OP, EOP, NOP, Error, Incorrect) of all 24 bars were not read; they are visible but unlabelled."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 3687,
+   "completion_tokens": 138,
+   "total_tokens": 3825,
+   "cost": 0.008754,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.008754,
+    "upstream_inference_prompt_cost": 0.007374,
+    "upstream_inference_completions_cost": 0.00138
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Horizontal stacked bar chart of answer outcome percentages (correct, 2OP, EOP, NOP, error, incorrect) for GPT4, Claude3 and Gemini models under four image-input conditions, with significance marks versus the no-image reference.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "1",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      0,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

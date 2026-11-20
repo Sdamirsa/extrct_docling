@@ -1,0 +1,692 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 7895,
+  "completion_tokens": 3167,
+  "total_tokens": 11062,
+  "cost": 0.04746,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.04746,
+   "upstream_inference_prompt_cost": 0.01579,
+   "upstream_inference_completions_cost": 0.03167
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Four line charts of GPT-3.5 accuracy (%) versus model temperature (0 to 2), with min-max range bands, for raw and best prompts, without and after determining the random seed.",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "a",
+    "title": "Raw Prompt - Without Determining Seed",
+    "kind": "line",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "min": 22,
+     "max": 93
+    },
+    "series": [
+     "Average"
+    ],
+    "points": [
+     {
+      "category": "0",
+      "x": null,
+      "series": "Average",
+      "value": 72.5,
+      "err_lo": 71.5,
+      "err_hi": 74,
+      "label": null
+     },
+     {
+      "category": "0.1",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 75,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.2",
+      "x": null,
+      "series": "Average",
+      "value": 77.5,
+      "err_lo": 66,
+      "err_hi": 86,
+      "label": null
+     },
+     {
+      "category": "0.4",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 71.5,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.6",
+      "x": null,
+      "series": "Average",
+      "value": 70.5,
+      "err_lo": 69,
+      "err_hi": 72,
+      "label": null
+     },
+     {
+      "category": "0.8",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 69,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "0.9",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 69,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "1",
+      "x": null,
+      "series": "Average",
+      "value": 80,
+      "err_lo": 75,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1.2",
+      "x": null,
+      "series": "Average",
+      "value": 78,
+      "err_lo": 75,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1.4",
+      "x": null,
+      "series": "Average",
+      "value": 79,
+      "err_lo": 72,
+      "err_hi": 90,
+      "label": null
+     },
+     {
+      "category": "1.6",
+      "x": null,
+      "series": "Average",
+      "value": 72.5,
+      "err_lo": 69,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "1.8",
+      "x": null,
+      "series": "Average",
+      "value": 72.5,
+      "err_lo": 65,
+      "err_hi": 86,
+      "label": null
+     },
+     {
+      "category": "2",
+      "x": null,
+      "series": "Average",
+      "value": 47.5,
+      "err_lo": 41,
+      "err_hi": 53,
+      "label": null
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Red circle marks the best average at 1; yellow circles at 0 and 0.6 mark lowest-type points."
+    ]
+   },
+   {
+    "id": "b",
+    "title": "Best Prompt - Without Determining Seed",
+    "kind": "line",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "min": 22,
+     "max": 93
+    },
+    "series": [
+     "Average"
+    ],
+    "points": [
+     {
+      "category": "0",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 75,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.1",
+      "x": null,
+      "series": "Average",
+      "value": 76.5,
+      "err_lo": 75,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "0.2",
+      "x": null,
+      "series": "Average",
+      "value": 73.5,
+      "err_lo": 69,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.4",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 72,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "0.6",
+      "x": null,
+      "series": "Average",
+      "value": 70.5,
+      "err_lo": 66,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.8",
+      "x": null,
+      "series": "Average",
+      "value": 78,
+      "err_lo": 72,
+      "err_hi": 91,
+      "label": null
+     },
+     {
+      "category": "0.9",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 63,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "1",
+      "x": null,
+      "series": "Average",
+      "value": 79,
+      "err_lo": 75,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1.2",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 66,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "1.4",
+      "x": null,
+      "series": "Average",
+      "value": 72.5,
+      "err_lo": 69,
+      "err_hi": 75,
+      "label": null
+     },
+     {
+      "category": "1.6",
+      "x": null,
+      "series": "Average",
+      "value": 58.5,
+      "err_lo": 52,
+      "err_hi": 66,
+      "label": null
+     },
+     {
+      "category": "1.8",
+      "x": null,
+      "series": "Average",
+      "value": 48.5,
+      "err_lo": 44,
+      "err_hi": 53,
+      "label": null
+     },
+     {
+      "category": "2",
+      "x": null,
+      "series": "Average",
+      "value": 35,
+      "err_lo": 25,
+      "err_hi": 44,
+      "label": null
+     }
+    ],
+    "box": null,
+    "notes": []
+   },
+   {
+    "id": "c",
+    "title": "Raw Prompt - After Determining Seed",
+    "kind": "line",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "min": 22,
+     "max": 93
+    },
+    "series": [
+     "Average"
+    ],
+    "points": [
+     {
+      "category": "0",
+      "x": null,
+      "series": "Average",
+      "value": 83,
+      "err_lo": 80,
+      "err_hi": 88,
+      "label": null
+     },
+     {
+      "category": "0.1",
+      "x": null,
+      "series": "Average",
+      "value": 76.5,
+      "err_lo": 75,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.2",
+      "x": null,
+      "series": "Average",
+      "value": 70.5,
+      "err_lo": 69,
+      "err_hi": 75,
+      "label": null
+     },
+     {
+      "category": "0.4",
+      "x": null,
+      "series": "Average",
+      "value": 77.5,
+      "err_lo": 72,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "0.6",
+      "x": null,
+      "series": "Average",
+      "value": 73.5,
+      "err_lo": 72,
+      "err_hi": 75,
+      "label": null
+     },
+     {
+      "category": "0.8",
+      "x": null,
+      "series": "Average",
+      "value": 80.5,
+      "err_lo": 77.5,
+      "err_hi": 86,
+      "label": null
+     },
+     {
+      "category": "0.9",
+      "x": null,
+      "series": "Average",
+      "value": 79,
+      "err_lo": 77.5,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 72,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "1.2",
+      "x": null,
+      "series": "Average",
+      "value": 69.5,
+      "err_lo": 66,
+      "err_hi": 72,
+      "label": null
+     },
+     {
+      "category": "1.4",
+      "x": null,
+      "series": "Average",
+      "value": 71.5,
+      "err_lo": 69,
+      "err_hi": 72,
+      "label": null
+     },
+     {
+      "category": "1.6",
+      "x": null,
+      "series": "Average",
+      "value": 76.5,
+      "err_lo": 66,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1.8",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 66,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "2",
+      "x": null,
+      "series": "Average",
+      "value": 50,
+      "err_lo": 41,
+      "err_hi": 58,
+      "label": null
+     }
+    ],
+    "box": null,
+    "notes": []
+   },
+   {
+    "id": "d",
+    "title": "Best Prompt - After Determining Seed",
+    "kind": "line",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model Tempreature",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Accuracy %",
+     "unit": "%",
+     "scale": "linear",
+     "min": 22,
+     "max": 93
+    },
+    "series": [
+     "Average"
+    ],
+    "points": [
+     {
+      "category": "0",
+      "x": null,
+      "series": "Average",
+      "value": 77.5,
+      "err_lo": 74.5,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "0.1",
+      "x": null,
+      "series": "Average",
+      "value": 75.5,
+      "err_lo": 72,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "0.2",
+      "x": null,
+      "series": "Average",
+      "value": 77.5,
+      "err_lo": 74.5,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "0.4",
+      "x": null,
+      "series": "Average",
+      "value": 73.5,
+      "err_lo": 66,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "0.6",
+      "x": null,
+      "series": "Average",
+      "value": 68.5,
+      "err_lo": 66,
+      "err_hi": 72,
+      "label": null
+     },
+     {
+      "category": "0.8",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 66,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "0.9",
+      "x": null,
+      "series": "Average",
+      "value": 80.5,
+      "err_lo": 77.5,
+      "err_hi": 83,
+      "label": null
+     },
+     {
+      "category": "1",
+      "x": null,
+      "series": "Average",
+      "value": 83.5,
+      "err_lo": 80,
+      "err_hi": 86,
+      "label": null
+     },
+     {
+      "category": "1.2",
+      "x": null,
+      "series": "Average",
+      "value": 81.5,
+      "err_lo": 74.5,
+      "err_hi": 91,
+      "label": null
+     },
+     {
+      "category": "1.4",
+      "x": null,
+      "series": "Average",
+      "value": 84.5,
+      "err_lo": 83,
+      "err_hi": 88,
+      "label": null
+     },
+     {
+      "category": "1.6",
+      "x": null,
+      "series": "Average",
+      "value": 74.5,
+      "err_lo": 69,
+      "err_hi": 80,
+      "label": null
+     },
+     {
+      "category": "1.8",
+      "x": null,
+      "series": "Average",
+      "value": 71.5,
+      "err_lo": 66,
+      "err_hi": 77.5,
+      "label": null
+     },
+     {
+      "category": "2",
+      "x": null,
+      "series": "Average",
+      "value": 64.5,
+      "err_lo": 63,
+      "err_hi": 66,
+      "label": null
+     }
+    ],
+    "box": null,
+    "notes": []
+   }
+  ],
+  "not_read": [
+   "Range band values are approximate visual readings."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 3470,
+   "completion_tokens": 169,
+   "total_tokens": 3639,
+   "cost": 0.00863,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00863,
+    "upstream_inference_prompt_cost": 0.00694,
+    "upstream_inference_completions_cost": 0.00169
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Four line charts of average accuracy (with min-max range bands) versus model temperature for raw and best prompts, before and after determining the seed.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "a",
+     "kind": "line",
+     "box": [
+      5,
+      35,
+      507,
+      495
+     ]
+    },
+    {
+     "id": "b",
+     "kind": "line",
+     "box": [
+      527,
+      35,
+      1000,
+      495
+     ]
+    },
+    {
+     "id": "c",
+     "kind": "line",
+     "box": [
+      5,
+      545,
+      507,
+      1000
+     ]
+    },
+    {
+     "id": "d",
+     "kind": "line",
+     "box": [
+      527,
+      545,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

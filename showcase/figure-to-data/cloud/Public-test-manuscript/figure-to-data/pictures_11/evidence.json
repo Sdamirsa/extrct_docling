@@ -1,0 +1,1919 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/11",
+  "image_path": "images/picture_012.png",
+  "page": 63,
+  "bbox": [
+   71.15,
+   101.67,
+   480.06,
+   707.83
+  ]
+ },
+ "image": "figure.png",
+ "width": 1250,
+ "height": 1852,
+ "capture": "pdf-render",
+ "px_per_crop": 2.039151712887439,
+ "source_kind": "raster",
+ "figure_type": "bar_chart",
+ "caption": "Supplementary Figure S5. Performance Stratified by Question Subject",
+ "split_method": "listed",
+ "split_notes": [
+  "the rule splitter finds 7 chart(s), the model lists 11: cut between the listed charts"
+ ],
+ "rule_charts": 7,
+ "listed_charts": 11,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    3.0,
+    6.0,
+    630.0,
+    334.0
+   ],
+   "image": "panel-1.png",
+   "x_axis": "GPT-4 Wnb | GPF-40 | Caute3-Hlaku Wetb | Craude3-Halko APs | Caude3-Sonnel Apt | Mixtrol-8.71: 9oe | 1ania2-70t fre | Gemura2-27u Poe | Plu3-30-016 tocal | P013-14b-G6 1xal (categorical)",
+   "y_axis": "10€ | ae | 0 | 2z (categorical)"
+  },
+  {
+   "id": "2",
+   "bbox": [
+    631.0,
+    10.0,
+    1245.0,
+    334.0
+   ],
+   "image": "panel-2.png",
+   "x_axis": "GPF35 AP1 | G 2 | Caude3 Sonrat Aps | Mistrel Lange fh.e | Liamá3.3-70è Pre | Ph3-30-G1ELa] (categorical)",
+   "y_axis": null
+  },
+  {
+   "id": "3",
+   "bbox": [
+    6.0,
+    334.0,
+    627.0,
+    641.0
+   ],
+   "image": "panel-3.png",
+   "x_axis": "E140 | GPT-4 Wab | E3T-4 AP | GUE-44AP | Lona3.1-791 Poe (categorical)",
+   "y_axis": "20 | 50 | 80 (log)"
+  },
+  {
+   "id": "4",
+   "bbox": [
+    630.0,
+    334.0,
+    1245.0,
+    641.0
+   ],
+   "image": "panel-4.png",
+   "x_axis": "GPT-3.5 tWinb | GPF35 AP | Gemaséz-z75 Phe | Ph314b-5Locel (categorical)",
+   "y_axis": null
+  },
+  {
+   "id": "5",
+   "bbox": [
+    3.0,
+    642.0,
+    630.0,
+    950.0
+   ],
+   "image": "panel-5.png",
+   "x_axis": "GPT-35 Wel | 1357T-41A | Chouse3 Holhs APY | CMudeS-Opus API | Pia3-14b-QA12c0) (categorical)",
+   "y_axis": "20 | 40 | 60 | 80 (linear)"
+  },
+  {
+   "id": "6",
+   "bbox": [
+    633.0,
+    642.0,
+    1245.0,
+    950.0
+   ],
+   "image": "panel-6.png",
+   "x_axis": "GPT-3.5 v9b | (SHT-3 5 API | SPI-4 Wel | Ci60043-Hau AP | Liams2-75 | P7y3-3b-016 Locol (categorical)",
+   "y_axis": null
+  },
+  {
+   "id": "7",
+   "bbox": [
+    6.0,
+    951.0,
+    627.0,
+    1259.0
+   ],
+   "image": "panel-7.png",
+   "x_axis": "G97-3.5 Wel | GPT3.5 AP | GPT-4 AP] | Clsude3-Ous API | Mistyal-Larte Poc (categorical)",
+   "y_axis": "21 | 40 | 60 | 100 (linear)"
+  },
+  {
+   "id": "8",
+   "bbox": [
+    631.0,
+    951.0,
+    1245.0,
+    1259.0
+   ],
+   "image": "panel-8.png",
+   "x_axis": "GPT-2 5 1eb | 3FT-3.5 API | 10体,-140 | GPTSAPI | Mistrai-Large Foo | Pear-14t-061.0c0 (categorical)",
+   "y_axis": "20 | 40 | 100 (linear)"
+  },
+  {
+   "id": "9",
+   "bbox": [
+    6.0,
+    1260.0,
+    622.0,
+    1568.0
+   ],
+   "image": "panel-9.png",
+   "x_axis": "GPY-3.5 Wet | G5T4 viket | CPT-40 API | Clounes-Sonner AM | Cacte3-Opus AP7 | Lora3-2b Po0 (categorical)",
+   "y_axis": "21 | 41 | 100 (linear)"
+  },
+  {
+   "id": "10",
+   "bbox": [
+    633.0,
+    1260.0,
+    1245.0,
+    1546.0
+   ],
+   "image": "panel-10.png",
+   "x_axis": "GP755wkt | GPT-3.5 A57 | [4PT-S0 AP] | Caude3-Somnt AP | Code3-Opus W | Ctaude3-Ogus AP | Mistralv7-7b Pos | 13amso3.1-70 Poé | Gsmma?-27b Fo0 (categorical)",
+   "y_axis": "20 | 41 | 100 (linear)"
+  },
+  {
+   "id": "11",
+   "bbox": [
+    9.0,
+    1570.0,
+    622.0,
+    1852.0
+   ],
+   "image": "panel-11.png",
+   "x_axis": "Ciaude3 Niak u ts | 159m162-13b Poe | (ama2-700 P | 1ams3.1-700 Pon | 1927 974E0 (categorical)",
+   "y_axis": "7 | 100 (linear)"
+  }
+ ],
+ "words": [
+  {
+   "text": "Queslion lype: COLON (N = 49)",
+   "bbox": [
+    248.0,
+    7.0,
+    410.0,
+    24.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Queslion lype: ENDOSCOPY (N = 26)",
+   "bbox": [
+    856.0,
+    7.0,
+    1048.0,
+    23.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10€",
+   "bbox": [
+    14.0,
+    26.0,
+    36.0,
+    41.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Cerrec.",
+   "bbox": [
+    579.0,
+    27.0,
+    612.0,
+    41.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "For",
+   "bbox": [
+    579.0,
+    35.0,
+    600.0,
+    52.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    638.0,
+    26.0,
+    660.0,
+    41.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EP",
+   "bbox": [
+    577.0,
+    44.0,
+    601.0,
+    64.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOF",
+   "bbox": [
+    1204.0,
+    47.0,
+    1224.0,
+    63.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ae",
+   "bbox": [
+    20.0,
+    65.0,
+    36.0,
+    78.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "doy",
+   "bbox": [
+    577.0,
+    54.0,
+    602.0,
+    73.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ur",
+   "bbox": [
+    589.0,
+    70.0,
+    602.0,
+    83.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "prcentagé",
+   "bbox": [
+    4.0,
+    100.0,
+    20.0,
+    148.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentag:",
+   "bbox": [
+    629.0,
+    101.0,
+    643.0,
+    148.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": ".15",
+   "bbox": [
+    587.0,
+    131.0,
+    599.0,
+    139.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    20.0,
+    141.0,
+    36.0,
+    153.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    645.0,
+    141.0,
+    659.0,
+    154.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "2z",
+   "bbox": [
+    18.0,
+    178.0,
+    36.0,
+    194.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    642.0,
+    178.0,
+    660.0,
+    194.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Wnb",
+   "bbox": [
+    57.0,
+    222.0,
+    99.0,
+    271.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPF-40",
+   "bbox": [
+    83.0,
+    222.0,
+    126.0,
+    272.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPF35 AP1",
+   "bbox": [
+    667.0,
+    222.0,
+    710.0,
+    273.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "G 2",
+   "bbox": [
+    681.0,
+    221.0,
+    724.0,
+    272.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Caute3-Hlaku Wetb",
+   "bbox": [
+    102.0,
+    222.0,
+    163.0,
+    297.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Craude3-Halko APs",
+   "bbox": [
+    119.0,
+    222.0,
+    175.0,
+    294.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Caude3-Sonnel Apt",
+   "bbox": [
+    141.0,
+    222.0,
+    201.0,
+    297.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtrol-8.71: 9oe",
+   "bbox": [
+    248.0,
+    222.0,
+    303.0,
+    289.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1ania2-70t fre",
+   "bbox": [
+    391.0,
+    222.0,
+    443.0,
+    287.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemura2-27u Poe",
+   "bbox": [
+    502.0,
+    223.0,
+    557.0,
+    291.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Plu3-30-016 tocal",
+   "bbox": [
+    524.0,
+    221.0,
+    584.0,
+    294.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "P013-14b-G6 1xal",
+   "bbox": [
+    538.0,
+    221.0,
+    595.0,
+    294.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Caude3 Sonrat Aps",
+   "bbox": [
+    765.0,
+    222.0,
+    825.0,
+    299.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistrel Lange fh.e",
+   "bbox": [
+    857.0,
+    221.0,
+    916.0,
+    292.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liamá3.3-70è Pre",
+   "bbox": [
+    1034.0,
+    220.0,
+    1093.0,
+    294.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ph3-30-G1ELa]",
+   "bbox": [
+    1148.0,
+    220.0,
+    1208.0,
+    294.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: ESOPHAGUS (N = 36)",
+   "bbox": [
+    233.0,
+    316.0,
+    425.0,
+    332.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: IBD (N = 30)",
+   "bbox": [
+    882.0,
+    316.0,
+    1023.0,
+    332.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10r:",
+   "bbox": [
+    14.0,
+    334.0,
+    36.0,
+    349.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "11a",
+   "bbox": [
+    638.0,
+    334.0,
+    661.0,
+    350.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    20.0,
+    374.0,
+    35.0,
+    387.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    578.0,
+    387.0,
+    620.0,
+    404.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "doy",
+   "bbox": [
+    579.0,
+    366.0,
+    601.0,
+    382.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    643.0,
+    374.0,
+    659.0,
+    387.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "HON",
+   "bbox": [
+    1204.0,
+    366.0,
+    1225.0,
+    382.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "nercentage",
+   "bbox": [
+    4.0,
+    409.0,
+    20.0,
+    457.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    20.0,
+    412.0,
+    35.0,
+    426.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    644.0,
+    412.0,
+    659.0,
+    425.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    20.0,
+    450.0,
+    36.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "èTE",
+   "bbox": [
+    57.0,
+    466.0,
+    92.0,
+    480.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    644.0,
+    450.0,
+    659.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[00.05]",
+   "bbox": [
+    694.0,
+    451.0,
+    716.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "000%",
+   "bbox": [
+    910.0,
+    452.0,
+    929.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "4=./5]",
+   "bbox": [
+    1189.0,
+    457.0,
+    1212.0,
+    472.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    20.0,
+    488.0,
+    34.0,
+    502.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    643.0,
+    488.0,
+    658.0,
+    502.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "E140",
+   "bbox": [
+    28.0,
+    531.0,
+    75.0,
+    586.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Wab",
+   "bbox": [
+    57.0,
+    531.0,
+    99.0,
+    581.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "E3T-4 AP",
+   "bbox": [
+    73.0,
+    531.0,
+    112.0,
+    578.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GUE-44AP",
+   "bbox": [
+    83.0,
+    531.0,
+    125.0,
+    581.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 tWinb",
+   "bbox": [
+    652.0,
+    530.0,
+    698.0,
+    586.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPF35 AP",
+   "bbox": [
+    667.0,
+    531.0,
+    710.0,
+    583.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lona3.1-791 Poe",
+   "bbox": [
+    411.0,
+    530.0,
+    469.0,
+    603.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemaséz-z75 Phe",
+   "bbox": [
+    1126.0,
+    531.0,
+    1180.0,
+    601.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ph314b-5Locel",
+   "bbox": [
+    1161.0,
+    532.0,
+    1219.0,
+    603.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: IBS (N = 14)",
+   "bbox": [
+    259.0,
+    627.0,
+    400.0,
+    643.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: LIVER (N = 52)",
+   "bbox": [
+    875.0,
+    627.0,
+    1030.0,
+    644.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10r",
+   "bbox": [
+    14.0,
+    644.0,
+    36.0,
+    659.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Geree",
+   "bbox": [
+    579.0,
+    646.0,
+    612.0,
+    660.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    638.0,
+    644.0,
+    661.0,
+    659.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    19.0,
+    682.0,
+    37.0,
+    697.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ACP",
+   "bbox": [
+    577.0,
+    673.0,
+    603.0,
+    692.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "irconect",
+   "bbox": [
+    577.0,
+    695.0,
+    619.0,
+    716.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lor",
+   "bbox": [
+    579.0,
+    687.0,
+    603.0,
+    702.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    643.0,
+    684.0,
+    659.0,
+    696.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    19.0,
+    720.0,
+    37.0,
+    736.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percercaçe",
+   "bbox": [
+    629.0,
+    718.0,
+    643.0,
+    767.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    644.0,
+    721.0,
+    659.0,
+    735.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    20.0,
+    758.0,
+    35.0,
+    772.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    644.0,
+    759.0,
+    658.0,
+    773.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "wu",
+   "bbox": [
+    696.0,
+    783.0,
+    716.0,
+    794.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    18.0,
+    796.0,
+    36.0,
+    812.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    644.0,
+    798.0,
+    658.0,
+    812.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-35 Wel",
+   "bbox": [
+    28.0,
+    841.0,
+    74.0,
+    895.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1357T-41A",
+   "bbox": [
+    83.0,
+    840.0,
+    125.0,
+    891.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Chouse3 Holhs APY",
+   "bbox": [
+    119.0,
+    841.0,
+    176.0,
+    913.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "CMudeS-Opus API",
+   "bbox": [
+    170.0,
+    841.0,
+    226.0,
+    912.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pia3-14b-QA12c0)",
+   "bbox": [
+    538.0,
+    840.0,
+    595.0,
+    912.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 v9b",
+   "bbox": [
+    652.0,
+    841.0,
+    698.0,
+    895.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(SHT-3 5 API",
+   "bbox": [
+    667.0,
+    840.0,
+    710.0,
+    892.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "SPI-4 Wel",
+   "bbox": [
+    681.0,
+    841.0,
+    723.0,
+    890.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ci60043-Hau AP",
+   "bbox": [
+    742.0,
+    841.0,
+    799.0,
+    913.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liams2-75",
+   "bbox": [
+    902.0,
+    853.0,
+    943.0,
+    902.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "P7y3-3b-016 Locol",
+   "bbox": [
+    1148.0,
+    839.0,
+    1208.0,
+    913.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: MISCELLANEOUS (N = 19)",
+   "bbox": [
+    221.0,
+    936.0,
+    437.0,
+    952.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: NUTRITION (N = 3)",
+   "bbox": [
+    865.0,
+    936.0,
+    1041.0,
+    952.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    14.0,
+    953.0,
+    36.0,
+    968.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    638.0,
+    953.0,
+    662.0,
+    968.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "00",
+   "bbox": [
+    19.0,
+    991.0,
+    37.0,
+    1007.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incaect",
+   "bbox": [
+    579.0,
+    1008.0,
+    618.0,
+    1022.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "lreu",
+   "bbox": [
+    1203.0,
+    1005.0,
+    1243.0,
+    1023.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Nor",
+   "bbox": [
+    1204.0,
+    984.0,
+    1225.0,
+    1001.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "imr",
+   "bbox": [
+    1204.0,
+    997.0,
+    1228.0,
+    1012.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    20.0,
+    1031.0,
+    35.0,
+    1045.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Heccraae",
+   "bbox": [
+    629.0,
+    1029.0,
+    643.0,
+    1077.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ω",
+   "bbox": [
+    643.0,
+    1031.0,
+    658.0,
+    1045.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "e2.1",
+   "bbox": [
+    1190.0,
+    1039.0,
+    1206.0,
+    1051.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    20.0,
+    1069.0,
+    35.0,
+    1082.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    644.0,
+    1070.0,
+    658.0,
+    1083.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "21",
+   "bbox": [
+    19.0,
+    1108.0,
+    35.0,
+    1121.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "IPAIAT",
+   "bbox": [
+    406.0,
+    1106.0,
+    432.0,
+    1117.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    644.0,
+    1108.0,
+    659.0,
+    1121.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "G97-3.5 Wel",
+   "bbox": [
+    28.0,
+    1149.0,
+    75.0,
+    1205.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT3.5 AP",
+   "bbox": [
+    43.0,
+    1149.0,
+    87.0,
+    1202.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 AP]",
+   "bbox": [
+    73.0,
+    1150.0,
+    112.0,
+    1196.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-2 5 1eb",
+   "bbox": [
+    652.0,
+    1149.0,
+    698.0,
+    1205.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "3FT-3.5 API",
+   "bbox": [
+    667.0,
+    1150.0,
+    711.0,
+    1202.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10体,-140",
+   "bbox": [
+    681.0,
+    1151.0,
+    722.0,
+    1199.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPTSAPI",
+   "bbox": [
+    696.0,
+    1149.0,
+    737.0,
+    1197.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Clsude3-Ous API",
+   "bbox": [
+    170.0,
+    1150.0,
+    226.0,
+    1220.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistyal-Larte Poc",
+   "bbox": [
+    236.0,
+    1151.0,
+    290.0,
+    1218.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ciade3 Hr vet",
+   "bbox": [
+    727.0,
+    1151.0,
+    787.0,
+    1225.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistrai-Large Foo",
+   "bbox": [
+    858.0,
+    1150.0,
+    915.0,
+    1218.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pear-14t-061.0c0",
+   "bbox": [
+    1162.0,
+    1149.0,
+    1219.0,
+    1221.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: PANCREATICO-BILIARY (N = 31)",
+   "bbox": [
+    207.0,
+    1245.0,
+    452.0,
+    1261.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: SMALL BOWEL (N = 22)",
+   "bbox": [
+    853.0,
+    1245.0,
+    1053.0,
+    1261.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    14.0,
+    1262.0,
+    36.0,
+    1278.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "dnz",
+   "bbox": [
+    578.0,
+    1270.0,
+    600.0,
+    1290.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Core::",
+   "bbox": [
+    579.0,
+    1264.0,
+    613.0,
+    1279.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    638.0,
+    1262.0,
+    661.0,
+    1278.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "do]",
+   "bbox": [
+    579.0,
+    1283.0,
+    600.0,
+    1299.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "a0",
+   "bbox": [
+    20.0,
+    1302.0,
+    35.0,
+    1315.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "kor",
+   "bbox": [
+    579.0,
+    1294.0,
+    602.0,
+    1310.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Fnr",
+   "bbox": [
+    579.0,
+    1305.0,
+    604.0,
+    1320.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ω0",
+   "bbox": [
+    643.0,
+    1302.0,
+    659.0,
+    1315.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Insarrect",
+   "bbox": [
+    579.0,
+    1317.0,
+    618.0,
+    1331.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentige",
+   "bbox": [
+    4.0,
+    1337.0,
+    20.0,
+    1385.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "FrTtzgc",
+   "bbox": [
+    629.0,
+    1338.0,
+    643.0,
+    1386.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[o 1á]",
+   "bbox": [
+    94.0,
+    1363.0,
+    120.0,
+    1377.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "41",
+   "bbox": [
+    20.0,
+    1378.0,
+    35.0,
+    1391.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[300]",
+   "bbox": [
+    439.0,
+    1406.0,
+    463.0,
+    1421.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1.5",
+   "bbox": [
+    534.0,
+    1377.0,
+    550.0,
+    1388.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "41",
+   "bbox": [
+    644.0,
+    1379.0,
+    659.0,
+    1391.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "n R4",
+   "bbox": [
+    1043.0,
+    1397.0,
+    1058.0,
+    1408.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "21",
+   "bbox": [
+    19.0,
+    1417.0,
+    36.0,
+    1429.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    643.0,
+    1417.0,
+    659.0,
+    1430.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPY-3.5 Wet",
+   "bbox": [
+    28.0,
+    1460.0,
+    74.0,
+    1514.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "G5T4 viket",
+   "bbox": [
+    58.0,
+    1460.0,
+    99.0,
+    1509.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "CPT-40 API",
+   "bbox": [
+    83.0,
+    1459.0,
+    125.0,
+    1510.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Clounes-Sonner AM",
+   "bbox": [
+    142.0,
+    1461.0,
+    201.0,
+    1535.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Cacte3-Opus AP7",
+   "bbox": [
+    169.0,
+    1459.0,
+    227.0,
+    1532.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lora3-2b Po0",
+   "bbox": [
+    355.0,
+    1461.0,
+    404.0,
+    1521.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "E·",
+   "bbox": [
+    527.0,
+    1493.0,
+    557.0,
+    1529.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GP755wkt",
+   "bbox": [
+    652.0,
+    1460.0,
+    697.0,
+    1514.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 A57",
+   "bbox": [
+    667.0,
+    1459.0,
+    710.0,
+    1511.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[4PT-S0 AP]",
+   "bbox": [
+    706.0,
+    1459.0,
+    749.0,
+    1509.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Caude3-Somnt AP",
+   "bbox": [
+    765.0,
+    1461.0,
+    824.0,
+    1536.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Code3-Opus W",
+   "bbox": [
+    779.0,
+    1460.0,
+    837.0,
+    1534.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ctaude3-Ogus AP",
+   "bbox": [
+    794.0,
+    1460.0,
+    850.0,
+    1531.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv7-7b Pos",
+   "bbox": [
+    834.0,
+    1461.0,
+    888.0,
+    1526.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "13amso3.1-70 Poé",
+   "bbox": [
+    1035.0,
+    1459.0,
+    1092.0,
+    1531.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gsmma?-27b Fo0",
+   "bbox": [
+    1125.0,
+    1459.0,
+    1180.0,
+    1530.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question typo: STOMACH (N = 17)",
+   "bbox": [
+    239.0,
+    1553.0,
+    418.0,
+    1571.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    14.0,
+    1572.0,
+    35.0,
+    1588.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "a",
+   "bbox": [
+    20.0,
+    1612.0,
+    35.0,
+    1625.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "hOP",
+   "bbox": [
+    579.0,
+    1604.0,
+    601.0,
+    1620.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "F’or",
+   "bbox": [
+    579.0,
+    1615.0,
+    603.0,
+    1629.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    4.0,
+    1646.0,
+    20.0,
+    1696.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "«iD",
+   "bbox": [
+    20.0,
+    1649.0,
+    35.0,
+    1662.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1050",
+   "bbox": [
+    177.0,
+    1672.0,
+    204.0,
+    1683.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "4D",
+   "bbox": [
+    20.0,
+    1688.0,
+    36.0,
+    1700.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "7",
+   "bbox": [
+    19.0,
+    1725.0,
+    36.0,
+    1738.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ciaude3 Niak u ts",
+   "bbox": [
+    104.0,
+    1770.0,
+    162.0,
+    1843.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "159m162-13b Poe",
+   "bbox": [
+    315.0,
+    1769.0,
+    367.0,
+    1834.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ama2-700 P",
+   "bbox": [
+    341.0,
+    1769.0,
+    392.0,
+    1834.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1ams3.1-700 Pon",
+   "bbox": [
+    412.0,
+    1769.0,
+    469.0,
+    1839.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1927 974E0",
+   "bbox": [
+    538.0,
+    1768.0,
+    596.0,
+    1840.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

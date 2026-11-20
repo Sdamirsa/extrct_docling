@@ -1,0 +1,949 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/3",
+  "image_path": "images/picture_004.png",
+  "page": 18,
+  "bbox": [
+   127.38,
+   79.1,
+   483.24,
+   581.09
+  ]
+ },
+ "image": "figure.png",
+ "width": 1090,
+ "height": 1537,
+ "capture": "embedded-bitmap",
+ "px_per_crop": 2.041198501872659,
+ "source_kind": "raster",
+ "figure_type": "bar_chart",
+ "caption": "Figure 4. LLM Performance on Text-Only Gastroenterology Multiple-choice Questions.",
+ "split_method": "listed",
+ "split_notes": [
+  "the rule splitter finds 2 chart(s), the model lists 1: read whole"
+ ],
+ "rule_charts": 2,
+ "listed_charts": 1,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    0.0,
+    0.0,
+    1090.0,
+    1537.0
+   ],
+   "image": null,
+   "x_axis": "0 | 20 | 40 | 60 | 80 | 100 (linear)",
+   "y_axis": "GPT-3.5 Web | GPT-3.5 API- | GPT-4 Web- | GPT-4 API- | GPT-4o API- | GPT-4omini API- | Claude3-Hiaku Web- | Claude3-Haiku API- | Claude3-Sonnet Web- | Claude3-Sonnet API- | Claude3-Opus Web- | Claude3-Opus API. | Claude3.5-Sonnet API. | Mistralv2-7b Poe- | Mistralv2-7b-Q8 Local- | Mistral-Large Poe- | Mixtral-8x7b Poe- | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local- | Llama2-13b Poe- | Llama2-13b-Q5 Local- | Llama2-70b Poe- | Llama3-8b Poe- (categorical)"
+  }
+ ],
+ "words": [
+  {
+   "text": "All 2022 ACG questions (N = 300)",
+   "bbox": [
+    459.0,
+    0.0,
+    894.0,
+    29.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 Web",
+   "bbox": [
+    132.0,
+    97.0,
+    261.0,
+    120.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "47.7%",
+   "bbox": [
+    549.0,
+    92.0,
+    608.0,
+    120.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 API-",
+   "bbox": [
+    143.0,
+    127.0,
+    264.0,
+    151.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "46.0%",
+   "bbox": [
+    538.0,
+    125.0,
+    594.0,
+    150.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web-",
+   "bbox": [
+    147.0,
+    157.0,
+    262.0,
+    181.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "66.0%",
+   "bbox": [
+    692.0,
+    154.0,
+    750.0,
+    183.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 API-",
+   "bbox": [
+    160.0,
+    189.0,
+    265.0,
+    213.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "66.0%",
+   "bbox": [
+    693.0,
+    187.0,
+    749.0,
+    213.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4o API-",
+   "bbox": [
+    149.0,
+    219.0,
+    264.0,
+    243.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "73.7%",
+   "bbox": [
+    752.0,
+    218.0,
+    808.0,
+    244.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omini API-",
+   "bbox": [
+    109.0,
+    250.0,
+    264.0,
+    274.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "56.0%",
+   "bbox": [
+    615.0,
+    249.0,
+    671.0,
+    275.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hiaku Web-",
+   "bbox": [
+    69.0,
+    312.0,
+    261.0,
+    335.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[50.0%]",
+   "bbox": [
+    570.0,
+    312.0,
+    624.0,
+    338.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haiku API-",
+   "bbox": [
+    79.0,
+    342.0,
+    262.0,
+    365.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50.3%",
+   "bbox": [
+    572.0,
+    343.0,
+    627.0,
+    369.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Web-",
+   "bbox": [
+    57.0,
+    373.0,
+    262.0,
+    396.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "55.3%",
+   "bbox": [
+    610.0,
+    375.0,
+    666.0,
+    401.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet API-",
+   "bbox": [
+    68.0,
+    403.0,
+    264.0,
+    429.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.3%",
+   "bbox": [
+    585.0,
+    405.0,
+    644.0,
+    433.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus Web-",
+   "bbox": [
+    72.0,
+    434.0,
+    263.0,
+    460.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "65.7%",
+   "bbox": [
+    690.0,
+    437.0,
+    746.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus API.",
+   "bbox": [
+    84.0,
+    465.0,
+    263.0,
+    491.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "66.0%",
+   "bbox": [
+    693.0,
+    469.0,
+    749.0,
+    495.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3.5-Sonnet API.",
+   "bbox": [
+    51.0,
+    497.0,
+    262.0,
+    520.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "74.0%",
+   "bbox": [
+    754.0,
+    498.0,
+    811.0,
+    527.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poe-",
+   "bbox": [
+    95.0,
+    564.0,
+    263.0,
+    590.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40.7%",
+   "bbox": [
+    497.0,
+    563.0,
+    552.0,
+    588.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b-Q8 Local-",
+   "bbox": [
+    48.0,
+    596.0,
+    264.0,
+    622.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "37.3%",
+   "bbox": [
+    471.0,
+    594.0,
+    526.0,
+    619.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistral-Large Poe-",
+   "bbox": [
+    89.0,
+    625.0,
+    264.0,
+    655.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60.3%",
+   "bbox": [
+    649.0,
+    625.0,
+    705.0,
+    651.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtral-8x7b Poe-",
+   "bbox": [
+    94.0,
+    657.0,
+    263.0,
+    683.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.3%",
+   "bbox": [
+    601.0,
+    655.0,
+    660.0,
+    683.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b Poe",
+   "bbox": [
+    114.0,
+    722.0,
+    262.0,
+    746.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "30.7%",
+   "bbox": [
+    417.0,
+    717.0,
+    476.0,
+    745.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b-Q8 Local",
+   "bbox": [
+    65.0,
+    751.0,
+    266.0,
+    780.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "30.3%",
+   "bbox": [
+    417.0,
+    750.0,
+    472.0,
+    777.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "medicineLLM-7b-Q8 Local-",
+   "bbox": [
+    13.0,
+    786.0,
+    263.0,
+    809.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "27.0%",
+   "bbox": [
+    390.0,
+    782.0,
+    446.0,
+    808.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b Poe-",
+   "bbox": [
+    101.0,
+    816.0,
+    262.0,
+    839.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "33.0%",
+   "bbox": [
+    433.0,
+    809.0,
+    494.0,
+    841.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b-Q5 Local-",
+   "bbox": [
+    55.0,
+    847.0,
+    263.0,
+    870.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "33.4%",
+   "bbox": [
+    440.0,
+    845.0,
+    496.0,
+    871.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-70b Poe-",
+   "bbox": [
+    102.0,
+    877.0,
+    264.0,
+    901.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "37.3%",
+   "bbox": [
+    470.0,
+    876.0,
+    526.0,
+    902.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b Poe-",
+   "bbox": [
+    113.0,
+    908.0,
+    264.0,
+    932.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "43.3%",
+   "bbox": [
+    517.0,
+    908.0,
+    573.0,
+    933.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b-Q8 Local-",
+   "bbox": [
+    66.0,
+    938.0,
+    265.0,
+    964.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "31.0%",
+   "bbox": [
+    418.0,
+    934.0,
+    478.0,
+    966.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OpenBioLLM-8b-Q8 Local-",
+   "bbox": [
+    21.0,
+    970.0,
+    263.0,
+    993.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "29.0%",
+   "bbox": [
+    405.0,
+    970.0,
+    461.0,
+    996.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-70b Poe-",
+   "bbox": [
+    101.0,
+    1000.0,
+    263.0,
+    1024.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.7%",
+   "bbox": [
+    604.0,
+    1000.0,
+    663.0,
+    1028.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-8b Poe-",
+   "bbox": [
+    95.0,
+    1029.0,
+    263.0,
+    1055.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "43.0%",
+   "bbox": [
+    515.0,
+    1032.0,
+    570.0,
+    1058.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-70b Poe-",
+   "bbox": [
+    82.0,
+    1059.0,
+    263.0,
+    1085.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "58.3%",
+   "bbox": [
+    632.0,
+    1063.0,
+    691.0,
+    1091.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-405b Poe-",
+   "bbox": [
+    73.0,
+    1093.0,
+    264.0,
+    1116.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "64.0%",
+   "bbox": [
+    678.0,
+    1095.0,
+    732.0,
+    1120.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    138.0,
+    1161.0,
+    261.0,
+    1185.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "41.3%",
+   "bbox": [
+    502.0,
+    1158.0,
+    557.0,
+    1183.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web-",
+   "bbox": [
+    47.0,
+    1192.0,
+    262.0,
+    1215.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "51.7%",
+   "bbox": [
+    579.0,
+    1188.0,
+    636.0,
+    1213.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b Poe-",
+   "bbox": [
+    97.0,
+    1223.0,
+    262.0,
+    1246.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "44.7%",
+   "bbox": [
+    527.0,
+    1220.0,
+    581.0,
+    1246.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b-Q8 Local-",
+   "bbox": [
+    49.0,
+    1253.0,
+    262.0,
+    1276.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "45.3%",
+   "bbox": [
+    533.0,
+    1252.0,
+    589.0,
+    1277.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-27b Poe-",
+   "bbox": [
+    84.0,
+    1285.0,
+    264.0,
+    1308.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correct",
+   "bbox": [
+    327.0,
+    1292.0,
+    410.0,
+    1320.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[50.0%]",
+   "bbox": [
+    570.0,
+    1282.0,
+    625.0,
+    1308.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "2OP",
+   "bbox": [
+    326.0,
+    1318.0,
+    378.0,
+    1347.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-Q16 Local-",
+   "bbox": [
+    77.0,
+    1347.0,
+    262.0,
+    1373.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOP",
+   "bbox": [
+    328.0,
+    1345.0,
+    378.0,
+    1374.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.7%",
+   "bbox": [
+    512.0,
+    1346.0,
+    568.0,
+    1371.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-14b-Q6 Local",
+   "bbox": [
+    77.0,
+    1379.0,
+    259.0,
+    1402.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "NOP",
+   "bbox": [
+    328.0,
+    1373.0,
+    379.0,
+    1399.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "48.7%",
+   "bbox": [
+    558.0,
+    1375.0,
+    615.0,
+    1404.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Error",
+   "bbox": [
+    328.0,
+    1401.0,
+    386.0,
+    1426.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    329.0,
+    1428.0,
+    423.0,
+    1452.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Quantized Model",
+   "bbox": [
+    54.0,
+    1456.0,
+    227.0,
+    1479.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    256.0,
+    1481.0,
+    272.0,
+    1501.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    402.0,
+    1476.0,
+    438.0,
+    1506.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    558.0,
+    1476.0,
+    593.0,
+    1504.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    713.0,
+    1476.0,
+    748.0,
+    1504.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    868.0,
+    1475.0,
+    905.0,
+    1504.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    1018.0,
+    1475.0,
+    1066.0,
+    1505.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Fine-tuned Model",
+   "bbox": [
+    53.0,
+    1495.0,
+    231.0,
+    1518.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    616.0,
+    1504.0,
+    780.0,
+    1536.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

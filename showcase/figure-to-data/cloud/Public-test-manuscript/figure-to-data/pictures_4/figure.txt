@@ -1,0 +1,88 @@
+Figure pictures_4 of Public-test-manuscript, page 20
+Image: figure.png, 982 x 1498 px
+Caption in the paper: Figure 5. VLM Performance on Gastroenterology Multiple-Choice Questions with Image Data.
+
+Charts found by layout analysis: one, or none.
+- chart 1, y ticks GPT4 Web - no image | GPT4 Web - LLM caption | GPT4 Web - direct image | GPT4 Web - human hint | GPT4 API - no image | GPT4 API - LLM caption | GPT4 API - direct image | GPT4 API - human hint | Claude3Opus Web - no image | Claude3Opus Web - LLM caption | Claude3Opus Web - direct image | Claude3Opus Web - human hint | Claude3Opus API - no image | Claude3Opus API - LLM caption | Claude3Opus API - direct image | Claude3Opus API - human hint | Claude3Sonnet API - no image | Claude3Sonnet API - LLM caption | Claude3Sonnet API - direct image | Claude3Sonnet API - human hint | GeminiAdvanced Web - no image | GeminiAdvanced Web - LLM caption | GeminiAdvanced Web- direct image | GeminiAdvanced Web - human hint (categorical), x ticks 0 | 20 | 40 | 60 | 80 | 100 (linear)
+
+Text printed in the figure (text @ x,y on a 0-1000 grid of the image):
+(ref) @ 975,56
+GPT4 Web - no image @ 228,60
+65.2% @ 664,59
+ns @ 967,86
+GPT4 Web - LLM caption @ 216,89
+59.4% @ 632,89
+GPT4 Web - direct image @ 213,120
+68.1% @ 682,119
+su @ 967,117
+GPT4 Web - human hint @ 219,150
+73.2% @ 711,149
+ns @ 966,147
+68.8% @ 686,210
+(ref) @ 975,208
+GPT4 API - no image @ 234,212
+GPT4 API - LLM caption @ 223,241
+64.5% @ 660,240
+ns @ 967,238
+65.2% @ 664,270
+ns @ 966,268
+GPT4 API - direct image @ 219,272
+GPT4 API - human hint @ 225,301
+71.7% @ 704,300
+ns @ 966,298
+(ref) @ 975,358
+Claude3Opus Web - no image @ 191,362
+63.8% @ 656,361
+48.6% @ 570,392
+Claude3Opus Web - LLM caption @ 180,393
+ns @ 966,419
+Claude3Opus Web - direct image @ 177,423
+63.8% @ 656,422
+Claude3Opus Web - human hint @ 184,453
+76.8% @ 733,452
+(ref) @ 975,509
+Claude3Opus API - no image @ 197,514
+68.1% @ 682,512
+ns @ 967,540
+Claude3Opus API - LLM caption @ 185,544
+68.8% @ 686,542
+68.8% @ 686,573
+ns @ 966,570
+Claude3Opus API - direct image @ 183,574
+Claude3Opus API - human hint @ 189,604
+78.3% @ 741,602
+Claude3Sonnet API - no image @ 188,665
+53.7% @ 599,663
+(ref) @ 975,660
+Claude3Sonnet API - LLM caption @ 176,695
+54.3% @ 602,694
+ns @ 967,692
+Claude3Sonnet API - direct image @ 174,726
+73.9% @ 716,724
+Claude3Sonnet API - human hint @ 180,755
+56.5% @ 616,754
+ns @ 966,752
+25.0% @ 432,814
+(ref) @ 975,811
+GeminiAdvanced Web - no image @ 175,815
+GeminiAdvanced Web - LLM caption @ 165,846
+Correct @ 882,857
+ns @ 967,873
+GeminiAdvanced Web- direct image @ 165,876
+20.3% @ 405,876
+2OP @ 867,875
+EOP @ 866,892
+GeminiAdvanced Web - human hint @ 166,907
+54.3% @ 602,906
+NOP @ 868,909
+Error @ 872,927
+Incorrect @ 890,944
+0 @ 338,974
+20 @ 452,975
+40 @ 568,975
+60 @ 684,975
+80 @ 800,975
+100 @ 916,975
+Percentage @ 641,990
+
+Part of this text was read by OCR and can hold misreads; the image decides.

@@ -2,10 +2,10 @@
   "schema_version": "1",
   "engine": {
     "name": "extrct_docling",
-    "version": "2.131.0-r3",
-    "release": "extrct_docling-v2.131.0-r3",
+    "version": "2.131.0-r7",
+    "release": "extrct_docling-v2.131.0-r7",
     "repository": "https://github.com/Sdamirsa/extrct_docling",
-    "git_commit": "af4249b57b3f15e13acc57f56a968163bf6a0a30",
+    "git_commit": "e172e80f65f867ba1e78d9ec2f85496ebc1f699a",
     "git_dirty": false
   },
   "source": {
@@ -17,10 +17,411 @@
   },
   "status": "ConversionStatus.SUCCESS",
   "complete": true,
+  "document_role": "manuscript",
+  "related": [],
+  "structure_version": "1",
+  "quality": {
+    "pages": 68,
+    "label_counts": {
+      "caption": 24,
+      "footnote": 1,
+      "list_item": 132,
+      "page_footer": 68,
+      "picture": 15,
+      "section_header": 65,
+      "table": 17,
+      "text": 1596,
+      "title": 1
+    },
+    "layer_counts": {
+      "body": 1851,
+      "furniture": 68
+    },
+    "page_label_counts": {
+      "1": {
+        "list_item": 18,
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 7,
+        "title": 1
+      },
+      "2": {
+        "page_footer": 1,
+        "section_header": 1,
+        "table": 1
+      },
+      "3": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 5
+      },
+      "4": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 3
+      },
+      "5": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1
+      },
+      "6": {
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "7": {
+        "page_footer": 1,
+        "section_header": 3,
+        "text": 4
+      },
+      "8": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 69
+      },
+      "9": {
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 3
+      },
+      "10": {
+        "caption": 1,
+        "list_item": 1,
+        "page_footer": 1,
+        "section_header": 1,
+        "table": 1,
+        "text": 2
+      },
+      "11": {
+        "list_item": 3,
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 4
+      },
+      "12": {
+        "list_item": 6,
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 3
+      },
+      "13": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 47
+      },
+      "14": {
+        "page_footer": 1,
+        "section_header": 3,
+        "text": 3
+      },
+      "15": {
+        "page_footer": 1,
+        "section_header": 4,
+        "text": 5
+      },
+      "16": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 94
+      },
+      "17": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 4
+      },
+      "18": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 93
+      },
+      "19": {
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 3
+      },
+      "20": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 86
+      },
+      "21": {
+        "caption": 2,
+        "page_footer": 1,
+        "picture": 1,
+        "section_header": 3,
+        "text": 63
+      },
+      "22": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "section_header": 1,
+        "text": 109
+      },
+      "23": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 4
+      },
+      "24": {
+        "page_footer": 1,
+        "text": 4
+      },
+      "25": {
+        "page_footer": 1,
+        "text": 4
+      },
+      "26": {
+        "page_footer": 1,
+        "section_header": 3,
+        "text": 6
+      },
+      "27": {
+        "page_footer": 1,
+        "section_header": 5,
+        "text": 5
+      },
+      "28": {
+        "list_item": 9,
+        "page_footer": 1
+      },
+      "29": {
+        "list_item": 8,
+        "page_footer": 1
+      },
+      "30": {
+        "list_item": 8,
+        "page_footer": 1
+      },
+      "31": {
+        "list_item": 9,
+        "page_footer": 1
+      },
+      "32": {
+        "list_item": 8,
+        "page_footer": 1
+      },
+      "33": {
+        "list_item": 2,
+        "page_footer": 1
+      },
+      "34": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 8
+      },
+      "35": {
+        "page_footer": 1,
+        "section_header": 3,
+        "text": 2
+      },
+      "36": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "37": {
+        "page_footer": 1,
+        "table": 1
+      },
+      "38": {
+        "list_item": 1,
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 5
+      },
+      "39": {
+        "list_item": 5,
+        "page_footer": 1
+      },
+      "40": {
+        "list_item": 2,
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 3
+      },
+      "41": {
+        "page_footer": 1,
+        "text": 1
+      },
+      "42": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "43": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "44": {
+        "page_footer": 1,
+        "table": 1
+      },
+      "45": {
+        "page_footer": 1,
+        "table": 1
+      },
+      "46": {
+        "page_footer": 1,
+        "table": 1
+      },
+      "47": {
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "48": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      },
+      "49": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 2
+      },
+      "50": {
+        "list_item": 21,
+        "page_footer": 1,
+        "section_header": 5,
+        "text": 1
+      },
+      "51": {
+        "list_item": 16,
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 1
+      },
+      "52": {
+        "page_footer": 1,
+        "text": 2
+      },
+      "53": {
+        "list_item": 4,
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 1
+      },
+      "54": {
+        "list_item": 6,
+        "page_footer": 1,
+        "text": 1
+      },
+      "55": {
+        "list_item": 5,
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 3
+      },
+      "56": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "section_header": 1,
+        "text": 104
+      },
+      "57": {
+        "page_footer": 1,
+        "section_header": 2,
+        "text": 7
+      },
+      "58": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "section_header": 2,
+        "table": 1,
+        "text": 85
+      },
+      "59": {
+        "page_footer": 1,
+        "section_header": 4,
+        "text": 5
+      },
+      "60": {
+        "page_footer": 1,
+        "section_header": 1,
+        "text": 2
+      },
+      "61": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "section_header": 1,
+        "text": 54
+      },
+      "62": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 219
+      },
+      "63": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 175
+      },
+      "64": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 103
+      },
+      "65": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 52
+      },
+      "66": {
+        "caption": 1,
+        "page_footer": 1,
+        "picture": 1,
+        "text": 132
+      },
+      "67": {
+        "caption": 1,
+        "page_footer": 1,
+        "table": 1
+      },
+      "68": {
+        "footnote": 1,
+        "page_footer": 1,
+        "table": 1,
+        "text": 1
+      }
+    },
+    "body_text_items": 353,
+    "body_text_chars": 93307,
+    "section_headers": 64,
+    "pages_without_text": [
+      37,
+      44,
+      45,
+      46
+    ],
+    "chars_in_tables_share": 0.227,
+    "repeated_heading_texts": [],
+    "text_layer": null,
+    "warnings": []
+  },
   "timing": {
-    "started_at": "2026-11-05T16:43:09.657402+00:00",
-    "finished_at": "2026-11-05T16:44:01.604595+00:00",
-    "duration_seconds": 51.947
+    "started_at": "2026-11-20T15:16:47.718671+00:00",
+    "finished_at": "2026-11-20T15:17:42.766592+00:00",
+    "duration_seconds": 55.048
   },
   "engine_config": {
     "with_page_images": false,
@@ -167,10 +568,10 @@
         "prompt": "<chart2csv>",
         "response_format": "plaintext",
         "supported_engines": [
-          "api_openai",
           "api_ollama",
+          "api_lmstudio",
           "transformers",
-          "api_lmstudio"
+          "api_openai"
         ],
         "engine_overrides": {
           "transformers": {
@@ -487,10 +888,10 @@
         "prompt": "<chart2csv>",
         "response_format": "plaintext",
         "supported_engines": [
-          "api_openai",
           "api_ollama",
+          "api_lmstudio",
           "transformers",
-          "api_lmstudio"
+          "api_openai"
         ],
         "engine_overrides": {
           "transformers": {

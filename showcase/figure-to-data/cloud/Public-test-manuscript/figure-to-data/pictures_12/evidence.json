@@ -1,0 +1,1377 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/12",
+  "image_path": "images/picture_013.png",
+  "page": 64,
+  "bbox": [
+   72.32,
+   103.64,
+   251.22,
+   700.84
+  ]
+ },
+ "image": "figure.png",
+ "width": 547,
+ "height": 1824,
+ "capture": "pdf-render",
+ "px_per_crop": 2.033457249070632,
+ "source_kind": "raster",
+ "figure_type": "bar_chart",
+ "caption": "Supplementary Figure S6. Performance stratified by patient care phase",
+ "split_method": "listed",
+ "split_notes": [
+  "the rule splitter finds 1 chart(s), the model lists 5: cut between the listed charts"
+ ],
+ "rule_charts": 1,
+ "listed_charts": 5,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    0.0,
+    0.0,
+    542.0,
+    368.0
+   ],
+   "image": "panel-1.png",
+   "x_axis": "0 | GP-40 A | GPT-4scridni AP) | Ctoutied Hraku Welt | C | Llemm83.3-70 Poe | Llante3.1 -4050 Po | GeniniAdvanoed Web | Geinina2-9u Po | Genira2-9-Q8 Local | Gemma2 | 270 Poe | Pii3-14t-05 10al (categorical)",
+   "y_axis": "5 | 53 | 400 (log)"
+  },
+  {
+   "id": "2",
+   "bbox": [
+    2.0,
+    368.0,
+    542.0,
+    732.0
+   ],
+   "image": "panel-2.png",
+   "x_axis": "[PF-3.5AP] | GPT-4 Web | G | GPT-40 AP] | Mistraly2-7b Poe | Llemaz-130 Poe | Lleme'3 3-70b Poe | Gemini Web (categorical)",
+   "y_axis": "20 | 40 | 60 (linear)"
+  },
+  {
+   "id": "3",
+   "bbox": [
+    0.0,
+    732.0,
+    542.0,
+    1097.0
+   ],
+   "image": "panel-3.png",
+   "x_axis": "GPT-4 Wets | GPT40 AP | GPT-4omind AP | Claude3-Hlainy Wetb | Claude3-Haki AM | Sone AP | Llam42-7b Hoe | U4m2-13b-05 Lacal | Llamaz-70b Poe | Gemimi Weo | Phi3-3b-016 Locai | Pts3-14b-06 Locad (categorical)",
+   "y_axis": null
+  },
+  {
+   "id": "4",
+   "bbox": [
+    2.0,
+    1097.0,
+    542.0,
+    1462.0
+   ],
+   "image": "panel-4.png",
+   "x_axis": "GPT-3.5 wetb | GPT-damin AP | Claude3-Haiou weis | Claude3-HaGal Af | Mistralv2-7b Poé | Gernim wab | Gemma2-10 Pe | (méi02-270 Pr) (categorical)",
+   "y_axis": null
+  },
+  {
+   "id": "5",
+   "bbox": [
+    2.0,
+    1462.0,
+    542.0,
+    1818.0
+   ],
+   "image": "panel-5.png",
+   "x_axis": "GPY-3.5 | Claude3-Sonnet Weu | Claude3-Sunnet AP | Chode3-Opus AP | caude3. S-Sunnet AP | Mistrelv2-7h Poe | SAxtrél-x71, Poe | Cornera2-0 Poe | Phr2-30-Q16 tacat (categorical)",
+   "y_axis": "21 | 80 | 100 (linear)"
+  }
+ ],
+ "words": [
+  {
+   "text": "Question type: Complication (N = 55)",
+   "bbox": [
+    192.0,
+    3.0,
+    383.0,
+    18.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "aa",
+   "bbox": [
+    12.0,
+    24.0,
+    33.0,
+    37.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Conee:",
+   "bbox": [
+    498.0,
+    22.0,
+    532.0,
+    35.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OF",
+   "bbox": [
+    506.0,
+    33.0,
+    520.0,
+    45.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ect",
+   "bbox": [
+    519.0,
+    77.0,
+    539.0,
+    91.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Peruenlaye",
+   "bbox": [
+    0.0,
+    119.0,
+    16.0,
+    169.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GD",
+   "bbox": [
+    16.0,
+    121.0,
+    33.0,
+    133.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "5",
+   "bbox": [
+    103.0,
+    113.0,
+    110.0,
+    120.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "4D",
+   "bbox": [
+    17.0,
+    169.0,
+    33.0,
+    181.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "53",
+   "bbox": [
+    105.0,
+    158.0,
+    129.0,
+    172.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    17.0,
+    216.0,
+    32.0,
+    228.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "400",
+   "bbox": [
+    127.0,
+    193.0,
+    152.0,
+    207.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    22.0,
+    264.0,
+    31.0,
+    275.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GP-40 A",
+   "bbox": [
+    68.0,
+    268.0,
+    112.0,
+    320.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4scridni AP)",
+   "bbox": [
+    71.0,
+    267.0,
+    123.0,
+    332.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ctoutied Hraku Welt",
+   "bbox": [
+    84.0,
+    270.0,
+    143.0,
+    345.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "C",
+   "bbox": [
+    97.0,
+    270.0,
+    155.0,
+    342.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llemm83.3-70 Poe",
+   "bbox": [
+    352.0,
+    270.0,
+    409.0,
+    340.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llante3.1 -4050 Po",
+   "bbox": [
+    361.0,
+    270.0,
+    420.0,
+    344.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeniniAdvanoed Web",
+   "bbox": [
+    387.0,
+    269.0,
+    453.0,
+    352.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gerinv Web",
+   "bbox": [
+    398.0,
+    269.0,
+    442.0,
+    322.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Genira2-9-Q8 Local",
+   "bbox": [
+    409.0,
+    268.0,
+    476.0,
+    353.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Geinina2-9u Po",
+   "bbox": [
+    411.0,
+    269.0,
+    464.0,
+    337.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2",
+   "bbox": [
+    431.0,
+    296.0,
+    467.0,
+    340.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "270 Poe",
+   "bbox": [
+    451.0,
+    269.0,
+    485.0,
+    310.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pii3-14t-05 10al",
+   "bbox": [
+    460.0,
+    268.0,
+    520.0,
+    342.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: Diagnosis (N = 123)",
+   "bbox": [
+    196.0,
+    366.0,
+    379.0,
+    383.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correc.",
+   "bbox": [
+    499.0,
+    387.0,
+    532.0,
+    400.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OP",
+   "bbox": [
+    506.0,
+    397.0,
+    520.0,
+    410.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "a0",
+   "bbox": [
+    16.0,
+    437.0,
+    32.0,
+    449.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "int",
+   "bbox": [
+    499.0,
+    440.0,
+    511.0,
+    455.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ro",
+   "bbox": [
+    508.0,
+    444.0,
+    520.0,
+    453.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ar",
+   "bbox": [
+    510.0,
+    432.0,
+    520.0,
+    443.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ert",
+   "bbox": [
+    521.0,
+    444.0,
+    537.0,
+    453.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percenlege",
+   "bbox": [
+    0.0,
+    485.0,
+    16.0,
+    535.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    16.0,
+    484.0,
+    33.0,
+    499.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    16.0,
+    532.0,
+    33.0,
+    546.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "3694",
+   "bbox": [
+    104.0,
+    517.0,
+    128.0,
+    530.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ST",
+   "bbox": [
+    227.0,
+    551.0,
+    242.0,
+    563.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "43.'",
+   "bbox": [
+    427.0,
+    553.0,
+    442.0,
+    562.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1z",
+   "bbox": [
+    447.0,
+    558.0,
+    469.0,
+    571.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "74",
+   "bbox": [
+    492.0,
+    548.0,
+    502.0,
+    558.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    16.0,
+    580.0,
+    33.0,
+    594.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Local",
+   "bbox": [
+    217.0,
+    636.0,
+    240.0,
+    664.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lacal",
+   "bbox": [
+    482.0,
+    635.0,
+    508.0,
+    664.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[PF-3.5AP]",
+   "bbox": [
+    33.0,
+    633.0,
+    78.0,
+    687.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web",
+   "bbox": [
+    47.0,
+    634.0,
+    88.0,
+    683.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "G",
+   "bbox": [
+    60.0,
+    634.0,
+    100.0,
+    680.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-40 AP]",
+   "bbox": [
+    70.0,
+    634.0,
+    110.0,
+    683.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Clautit3 Sonnet Welb",
+   "bbox": [
+    103.0,
+    634.0,
+    166.0,
+    714.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistraly2-7b Poe",
+   "bbox": [
+    177.0,
+    634.0,
+    233.0,
+    703.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llemaz-130 Poe",
+   "bbox": [
+    265.0,
+    633.0,
+    321.0,
+    701.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lleme'3 3-70b Poe",
+   "bbox": [
+    352.0,
+    633.0,
+    409.0,
+    705.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GensiniAdvanced Web",
+   "bbox": [
+    387.0,
+    634.0,
+    454.0,
+    718.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    397.0,
+    635.0,
+    442.0,
+    687.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pli3-3b-016",
+   "bbox": [
+    451.0,
+    649.0,
+    497.0,
+    706.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: Investigation (N = 211)",
+   "bbox": [
+    189.0,
+    731.0,
+    387.0,
+    748.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    11.0,
+    753.0,
+    33.0,
+    768.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correc:",
+   "bbox": [
+    499.0,
+    752.0,
+    532.0,
+    765.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    506.0,
+    762.0,
+    520.0,
+    788.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "00",
+   "bbox": [
+    16.0,
+    802.0,
+    32.0,
+    814.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "eet",
+   "bbox": [
+    520.0,
+    808.0,
+    538.0,
+    819.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    17.0,
+    851.0,
+    33.0,
+    862.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    16.0,
+    898.0,
+    33.0,
+    911.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    16.0,
+    946.0,
+    33.0,
+    959.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Wets",
+   "bbox": [
+    47.0,
+    999.0,
+    89.0,
+    1048.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT40 AP",
+   "bbox": [
+    70.0,
+    999.0,
+    110.0,
+    1048.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omind AP",
+   "bbox": [
+    71.0,
+    999.0,
+    122.0,
+    1061.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hlainy Wetb",
+   "bbox": [
+    84.0,
+    999.0,
+    144.0,
+    1075.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haki AM",
+   "bbox": [
+    98.0,
+    999.0,
+    154.0,
+    1072.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Sone AP",
+   "bbox": [
+    136.0,
+    999.0,
+    176.0,
+    1049.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llam42-7b Hoe",
+   "bbox": [
+    237.0,
+    999.0,
+    287.0,
+    1061.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "U4m2-13b-05 Lacal",
+   "bbox": [
+    268.0,
+    999.0,
+    331.0,
+    1081.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llamaz-70b Poe",
+   "bbox": [
+    290.0,
+    999.0,
+    343.0,
+    1064.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Geminihdanced Webs",
+   "bbox": [
+    388.0,
+    999.0,
+    453.0,
+    1083.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemimi Weo",
+   "bbox": [
+    397.0,
+    999.0,
+    442.0,
+    1053.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-016 Locai",
+   "bbox": [
+    449.0,
+    998.0,
+    510.0,
+    1072.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pts3-14b-06 Locad",
+   "bbox": [
+    461.0,
+    998.0,
+    519.0,
+    1072.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    12.0,
+    1107.0,
+    34.0,
+    1121.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Qucstion typc: Pathophisiology (N = 3)",
+   "bbox": [
+    189.0,
+    1098.0,
+    388.0,
+    1113.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1.102.1025",
+   "bbox": [
+    80.0,
+    1134.0,
+    112.0,
+    1147.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "00010",
+   "bbox": [
+    172.0,
+    1136.0,
+    206.0,
+    1145.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "010004",
+   "bbox": [
+    398.0,
+    1134.0,
+    429.0,
+    1147.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "00",
+   "bbox": [
+    16.0,
+    1157.0,
+    32.0,
+    1170.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "'ett",
+   "bbox": [
+    520.0,
+    1173.0,
+    537.0,
+    1185.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(9",
+   "bbox": [
+    16.0,
+    1208.0,
+    33.0,
+    1220.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "756",
+   "bbox": [
+    137.0,
+    1218.0,
+    153.0,
+    1230.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    16.0,
+    1258.0,
+    33.0,
+    1270.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    17.0,
+    1308.0,
+    32.0,
+    1321.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "国",
+   "bbox": [
+    149.0,
+    1301.0,
+    174.0,
+    1316.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "[333]",
+   "bbox": [
+    227.0,
+    1303.0,
+    250.0,
+    1314.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "5.0033",
+   "bbox": [
+    292.0,
+    1301.0,
+    327.0,
+    1315.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 wetb",
+   "bbox": [
+    21.0,
+    1364.0,
+    67.0,
+    1418.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-damin AP",
+   "bbox": [
+    71.0,
+    1364.0,
+    122.0,
+    1427.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haiou weis",
+   "bbox": [
+    84.0,
+    1365.0,
+    144.0,
+    1439.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-HaGal Af",
+   "bbox": [
+    99.0,
+    1365.0,
+    154.0,
+    1437.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poé",
+   "bbox": [
+    178.0,
+    1364.0,
+    232.0,
+    1432.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gernim wab",
+   "bbox": [
+    398.0,
+    1364.0,
+    441.0,
+    1417.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-10 Pe",
+   "bbox": [
+    410.0,
+    1364.0,
+    464.0,
+    1433.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(méi02-270 Pr)",
+   "bbox": [
+    428.0,
+    1362.0,
+    488.0,
+    1436.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: Treatment (N = 217)",
+   "bbox": [
+    196.0,
+    1463.0,
+    379.0,
+    1478.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    12.0,
+    1483.0,
+    33.0,
+    1498.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correer",
+   "bbox": [
+    499.0,
+    1483.0,
+    531.0,
+    1494.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    16.0,
+    1533.0,
+    33.0,
+    1544.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "lns",
+   "bbox": [
+    499.0,
+    1537.0,
+    511.0,
+    1549.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "co",
+   "bbox": [
+    507.0,
+    1538.0,
+    521.0,
+    1549.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "’or",
+   "bbox": [
+    508.0,
+    1526.0,
+    520.0,
+    1540.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ect",
+   "bbox": [
+    520.0,
+    1538.0,
+    537.0,
+    1550.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "d9",
+   "bbox": [
+    16.0,
+    1580.0,
+    33.0,
+    1592.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "4D",
+   "bbox": [
+    17.0,
+    1629.0,
+    33.0,
+    1640.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40010",
+   "bbox": [
+    51.0,
+    1631.0,
+    85.0,
+    1643.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "É",
+   "bbox": [
+    149.0,
+    1613.0,
+    159.0,
+    1625.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "輕",
+   "bbox": [
+    159.0,
+    1623.0,
+    185.0,
+    1637.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "<1z",
+   "bbox": [
+    425.0,
+    1645.0,
+    448.0,
+    1658.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "21",
+   "bbox": [
+    16.0,
+    1677.0,
+    32.0,
+    1689.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "D",
+   "bbox": [
+    22.0,
+    1726.0,
+    31.0,
+    1735.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Whgl",
+   "bbox": [
+    41.0,
+    1732.0,
+    64.0,
+    1758.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPY-3.5",
+   "bbox": [
+    21.0,
+    1744.0,
+    57.0,
+    1784.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GFT-40 API",
+   "bbox": [
+    69.0,
+    1728.0,
+    111.0,
+    1778.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "3.701 Pod",
+   "bbox": [
+    351.0,
+    1729.0,
+    386.0,
+    1771.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Weu",
+   "bbox": [
+    103.0,
+    1730.0,
+    166.0,
+    1809.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sunnet AP",
+   "bbox": [
+    115.0,
+    1728.0,
+    178.0,
+    1807.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Chode3-Opus AP",
+   "bbox": [
+    142.0,
+    1729.0,
+    199.0,
+    1801.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "caude3. S-Sunnet AP",
+   "bbox": [
+    144.0,
+    1728.0,
+    212.0,
+    1813.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistrelv2-7h Poe",
+   "bbox": [
+    178.0,
+    1729.0,
+    233.0,
+    1798.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "SAxtrél-x71, Poe",
+   "bbox": [
+    211.0,
+    1729.0,
+    265.0,
+    1797.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Cornera2-0 Poe",
+   "bbox": [
+    410.0,
+    1729.0,
+    464.0,
+    1797.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phr2-30-Q16 tacat",
+   "bbox": [
+    448.0,
+    1727.0,
+    511.0,
+    1802.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

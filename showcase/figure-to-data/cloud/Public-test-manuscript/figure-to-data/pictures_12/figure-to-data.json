@@ -1,0 +1,403 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/12",
+    "image_path": "images/picture_013.png",
+    "page": 64,
+    "bbox": [
+      72.32,
+      103.64,
+      251.22,
+      700.84
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [
+    {
+      "id": "1",
+      "bbox_px": [
+        0.0,
+        0.0,
+        266.5,
+        181.0
+      ],
+      "title": "Question type: Complication (N = 55)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "0",
+            "GP-40 A",
+            "GPT-4scridni AP)",
+            "Ctoutied Hraku Welt",
+            "C",
+            "Llemm83.3-70 Poe",
+            "Llante3.1 -4050 Po",
+            "GeniniAdvanoed Web",
+            "Geinina2-9u Po",
+            "Genira2-9-Q8 Local",
+            "Gemma2",
+            "270 Poe",
+            "Pii3-14t-05 10al"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "log",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            5.0,
+            53.0,
+            400.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "ZOP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "About 40 bars, one per model. Bars are mostly Correct (green) and Incorrect (red), with small grey and orange segments.",
+        "Correct values printed on the bars range from about 24% to 75%. Examples: GPT-4o API about 74.5%, Claude3.5-Sonnet API about 78%, Llama3.1-405b Poe about 56.6%.",
+        "Models are grouped by family: GPT, Claude, Mistral, Llama, Gemini and Gemma, Phi3."
+      ]
+    },
+    {
+      "id": "2",
+      "bbox_px": [
+        1.0,
+        181.0,
+        266.5,
+        360.0
+      ],
+      "title": "Question type: Diagnosis (N = 123)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "[PF-3.5AP]",
+            "GPT-4 Web",
+            "G",
+            "GPT-40 AP]",
+            "Mistraly2-7b Poe",
+            "Llemaz-130 Poe",
+            "Lleme'3 3-70b Poe",
+            "Gemini Web"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            60.0,
+            40.0,
+            20.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "ZOP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Correct values range from about 25% to 80%. GPT-4o API is about 80% and Claude3.5-Sonnet API about 78%."
+      ]
+    },
+    {
+      "id": "3",
+      "bbox_px": [
+        0.0,
+        360.0,
+        266.5,
+        539.5
+      ],
+      "title": "Question type: Investigation (N = 211)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-4 Wets",
+            "GPT40 AP",
+            "GPT-4omind AP",
+            "Claude3-Hlainy Wetb",
+            "Claude3-Haki AM",
+            "Sone AP",
+            "Llam42-7b Hoe",
+            "U4m2-13b-05 Lacal",
+            "Llamaz-70b Poe",
+            "Gemimi Weo",
+            "Phi3-3b-016 Locai",
+            "Pts3-14b-06 Locad"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "ZOP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Correct values range from about 17% to 74%. GPT-4o API is about 74%."
+      ]
+    },
+    {
+      "id": "4",
+      "bbox_px": [
+        1.0,
+        539.5,
+        266.5,
+        719.0
+      ],
+      "title": "Question type: Pathophysiology (N = 3)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPT-3.5 wetb",
+            "GPT-damin AP",
+            "Claude3-Haiou weis",
+            "Claude3-HaGal Af",
+            "Mistralv2-7b Poé",
+            "Gernim wab",
+            "Gemma2-10 Pe",
+            "(méi02-270 Pr)"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": null
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "ZOP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "With N = 3, Correct takes only the values 0, 33.3, 66.7 and 100%."
+      ]
+    },
+    {
+      "id": "5",
+      "bbox_px": [
+        1.0,
+        719.0,
+        266.5,
+        894.0
+      ],
+      "title": "Question type: Treatment (N = 217)",
+      "kind": "stacked_bar",
+      "orientation": "vertical",
+      "axes": {
+        "x": {
+          "name": "Model",
+          "unit": null,
+          "scale": "categorical",
+          "range": null,
+          "ticks": [
+            "GPY-3.5",
+            "Claude3-Sonnet Weu",
+            "Claude3-Sunnet AP",
+            "Chode3-Opus AP",
+            "caude3. S-Sunnet AP",
+            "Mistrelv2-7h Poe",
+            "SAxtrél-x71, Poe",
+            "Cornera2-0 Poe",
+            "Phr2-30-Q16 tacat"
+          ]
+        },
+        "y": {
+          "name": "Percentage",
+          "unit": "%",
+          "scale": "linear",
+          "range": [
+            0.0,
+            100.0
+          ],
+          "ticks": [
+            100.0,
+            80.0,
+            21.0
+          ]
+        }
+      },
+      "series": [
+        {
+          "name": "Correct",
+          "color": null
+        },
+        {
+          "name": "ZOP",
+          "color": null
+        },
+        {
+          "name": "EOP",
+          "color": null
+        },
+        {
+          "name": "NOP",
+          "color": null
+        },
+        {
+          "name": "Error",
+          "color": null
+        },
+        {
+          "name": "Incorrect",
+          "color": null
+        }
+      ],
+      "data": [],
+      "notes": [
+        "Correct values range from about 29% to 76%. Claude3.5-Sonnet API is about 75.6% and GPT-4o API about 73.7%."
+      ]
+    }
+  ],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-20",
+    "time_minutes": null
+  },
+  "description": "Five stacked bar charts showing, for each language model and access mode, the percentage of answers that were Correct, ZOP, EOP, NOP, Error or Incorrect, split by patient care phase (Complication, Diagnosis, Investigation, Pathophysiology, Treatment).",
+  "uncertain": [
+    "No individual bar segments were extracted for any of the five charts, because the labels are too small and blurred to read reliably. Each chart has about 40 bars with 6 segments each.",
+    "The printed percentage labels on the bars are mostly illegible."
+  ]
+}

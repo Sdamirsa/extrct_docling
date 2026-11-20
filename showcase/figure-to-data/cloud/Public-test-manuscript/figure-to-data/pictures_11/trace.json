@@ -1,0 +1,184 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 13003,
+  "completion_tokens": 321,
+  "total_tokens": 13324,
+  "cost": 0.029216,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.029216,
+   "upstream_inference_prompt_cost": 0.026006,
+   "upstream_inference_completions_cost": 0.00321
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Eleven stacked bar charts, one per question subject (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach), showing for each of about 37 LLM configurations the percentage of answers Correct, 2OP, EOP, NOP, Error or Incorrect.",
+  "has_data": true,
+  "panels": [],
+  "not_read": [
+   "No values were extracted. Each of the 11 charts has about 37 stacked bars with six segments each (roughly 220 points per chart), and the printed percentage labels are too small and overlapping to read reliably.",
+   "Panels, series and points are left empty for all 11 charts: COLON, ENDOSCOPY, ESOPHAGUS, IBD, IBS, LIVER, MISCELLANEOUS, NUTRITION, PANCREATICO-BILIARY, SMALL BOWEL, STOMACH."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 5920,
+   "completion_tokens": 462,
+   "total_tokens": 6382,
+   "cost": 0.01646,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.01646,
+    "upstream_inference_prompt_cost": 0.01184,
+    "upstream_inference_completions_cost": 0.00462
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Eleven grids of stacked bar charts compare the percentage of correct, incorrect and other answers across many LLMs for each gastroenterology question type (colon, endoscopy, esophagus, IBD, IBS, liver, miscellaneous, nutrition, pancreatico-biliary, small bowel, stomach).",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "1",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      10,
+      500,
+      185
+     ]
+    },
+    {
+     "id": "2",
+     "kind": "stacked_bar",
+     "box": [
+      505,
+      10,
+      1000,
+      185
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      175,
+      500,
+      350
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "stacked_bar",
+     "box": [
+      505,
+      175,
+      1000,
+      350
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      343,
+      500,
+      515
+     ]
+    },
+    {
+     "id": "6",
+     "kind": "stacked_bar",
+     "box": [
+      505,
+      343,
+      1000,
+      515
+     ]
+    },
+    {
+     "id": "7",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      510,
+      500,
+      683
+     ]
+    },
+    {
+     "id": "8",
+     "kind": "stacked_bar",
+     "box": [
+      505,
+      510,
+      1000,
+      683
+     ]
+    },
+    {
+     "id": "9",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      677,
+      500,
+      850
+     ]
+    },
+    {
+     "id": "10",
+     "kind": "stacked_bar",
+     "box": [
+      505,
+      677,
+      1000,
+      850
+     ]
+    },
+    {
+     "id": "11",
+     "kind": "stacked_bar",
+     "box": [
+      5,
+      843,
+      500,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

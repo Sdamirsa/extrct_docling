@@ -1,0 +1,153 @@
+Figure pictures_12 of Public-test-manuscript, page 64
+Image: figure.png, 547 x 1824 px
+Caption in the paper: Supplementary Figure S6. Performance stratified by patient care phase
+
+Charts as a model listed them, cut by layout analysis: 5 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart 1, box [0, 0, 991, 202], crop panel-1.png, y ticks 5 | 53 | 400 (log), x ticks 0 | GP-40 A | GPT-4scridni AP) | Ctoutied Hraku Welt | C | Llemm83.3-70 Poe | Llante3.1 -4050 Po | GeniniAdvanoed Web | Geinina2-9u Po | Genira2-9-Q8 Local | Gemma2 | 270 Poe | Pii3-14t-05 10al (categorical)
+- chart 2, box [4, 202, 991, 401], crop panel-2.png, y ticks 20 | 40 | 60 (linear), x ticks [PF-3.5AP] | GPT-4 Web | G | GPT-40 AP] | Mistraly2-7b Poe | Llemaz-130 Poe | Lleme'3 3-70b Poe | Gemini Web (categorical)
+- chart 3, box [0, 401, 991, 601], crop panel-3.png, x ticks GPT-4 Wets | GPT40 AP | GPT-4omind AP | Claude3-Hlainy Wetb | Claude3-Haki AM | Sone AP | Llam42-7b Hoe | U4m2-13b-05 Lacal | Llamaz-70b Poe | Gemimi Weo | Phi3-3b-016 Locai | Pts3-14b-06 Locad (categorical)
+- chart 4, box [4, 601, 991, 802], crop panel-4.png, x ticks GPT-3.5 wetb | GPT-damin AP | Claude3-Haiou weis | Claude3-HaGal Af | Mistralv2-7b Poé | Gernim wab | Gemma2-10 Pe | (méi02-270 Pr) (categorical)
+- chart 5, box [4, 802, 991, 997], crop panel-5.png, y ticks 21 | 80 | 100 (linear), x ticks GPY-3.5 | Claude3-Sonnet Weu | Claude3-Sunnet AP | Chode3-Opus AP | caude3. S-Sunnet AP | Mistrelv2-7h Poe | SAxtrél-x71, Poe | Cornera2-0 Poe | Phr2-30-Q16 tacat (categorical)
+
+Text printed in chart 1 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: Complication (N = 55) @ 530,29
+aa @ 42,83
+Conee: @ 950,77
+OF @ 946,106
+ect @ 976,228
+5 @ 196,317
+GD @ 45,345
+Peruenlaye @ 15,391
+53 @ 216,448
+4D @ 46,476
+400 @ 257,543
+20 @ 45,603
+0 @ 49,732
+270 Poe @ 863,787
+GP-40 A @ 166,799
+GPT-4scridni AP) @ 179,814
+Gerinv Web @ 775,803
+Ctoutied Hraku Welt @ 209,836
+C @ 232,832
+Llemm83.3-70 Poe @ 702,829
+Llante3.1 -4050 Po @ 720,834
+Geinina2-9u Po @ 807,823
+Pii3-14t-05 10al @ 904,829
+GeniniAdvanoed Web @ 775,844
+Genira2-9-Q8 Local @ 816,844
+Gemma2 @ 828,864
+
+Text printed in chart 2 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: Diagnosis (N = 123) @ 529,18
+Correc. @ 951,70
+OP @ 946,98
+a0 @ 41,206
+ar @ 950,191
+int @ 931,218
+ro @ 948,221
+ert @ 976,221
+60 @ 42,339
+Percenlege @ 11,390
+3694 @ 211,427
+40 @ 42,470
+74 @ 917,508
+ST @ 431,519
+43.' @ 801,521
+1z @ 844,540
+20 @ 42,602
+Local @ 419,775
+Lacal @ 913,773
+[PF-3.5AP] @ 99,802
+GPT-4 Web @ 121,798
+G @ 144,794
+GPT-40 AP] @ 163,798
+Llemaz-130 Poe @ 539,821
+Gemini Web @ 773,805
+Clautit3 Sonnet Welb @ 245,841
+Mistraly2-7b Poe @ 376,826
+Lleme'3 3-70b Poe @ 701,827
+GensiniAdvanced Web @ 775,846
+Pli3-3b-016 @ 874,850
+
+Text printed in chart 3 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: Investigation (N = 211) @ 531,21
+100 @ 41,78
+Correc: @ 951,73
+50 @ 946,118
+00 @ 44,208
+eet @ 976,223
+60 @ 46,341
+10 @ 45,473
+20 @ 45,604
+GPT-4 Wets @ 125,799
+GPT40 AP @ 166,799
+Sone AP @ 288,800
+Gemimi Weo @ 774,805
+GPT-4omind AP @ 178,816
+Claude3-Haki AM @ 232,832
+Llam42-7b Hoe @ 483,816
+Llamaz-70b Poe @ 584,821
+Phi3-3b-016 Locai @ 885,830
+Pts3-14b-06 Locad @ 904,830
+Claude3-Hlainy Wetb @ 210,836
+U4m2-13b-05 Lacal @ 553,844
+Geminihdanced Webs @ 776,847
+
+Text printed in chart 4 (text @ x,y on a 0-1000 grid of that chart's crop):
+Qucstion typc: Pathophisiology (N = 3) @ 531,23
+100 @ 39,47
+1.102.1025 @ 174,119
+00010 @ 346,119
+010004 @ 762,119
+00 @ 41,182
+'ett @ 975,225
+(9 @ 42,321
+756 @ 265,348
+10 @ 42,458
+20 @ 42,596
+国 @ 295,579
+[333] @ 438,579
+5.0033 @ 569,578
+GPT-3.5 wetb @ 78,805
+GPT-damin AP @ 175,818
+Gernim wab @ 773,804
+Claude3-Haiou weis @ 207,836
+Claude3-HaGal Af @ 231,833
+Mistralv2-7b Poé @ 376,825
+Gemma2-10 Pe @ 806,826
+(méi02-270 Pr) @ 844,827
+
+Text printed in chart 5 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: Treatment (N = 217) @ 529,24
+100 @ 38,80
+Correer @ 950,74
+80 @ 42,215
+’or @ 948,199
+lns @ 931,228
+co @ 948,229
+ect @ 975,230
+d9 @ 42,348
+É @ 281,441
+4D @ 43,485
+輕 @ 315,472
+40010 @ 122,492
+<1z @ 805,532
+21 @ 41,621
+D @ 45,754
+Whgl @ 94,795
+GFT-40 API @ 163,817
+3.701 Pod @ 679,809
+GPY-3.5 @ 69,848
+Mistrelv2-7h Poe @ 377,847
+SAxtrél-x71, Poe @ 437,846
+Cornera2-0 Poe @ 806,846
+Claude3-Sonnet Weu @ 245,864
+Claude3-Sunnet AP @ 268,858
+Chode3-Opus AP @ 312,851
+caude3. S-Sunnet AP @ 326,867
+Phr2-30-Q16 tacat @ 884,850
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

@@ -1,0 +1,44 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "listed",
+ "seconds": 10.31,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud list",
+   "wall_s": 4.78,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 5920,
+   "eval_tokens": 462,
+   "cut": false,
+   "cost_usd": 0.01646,
+   "turns": 1,
+   "tool_calls": null
+  },
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 5.03,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 13003,
+   "eval_tokens": 321,
+   "cut": false,
+   "cost_usd": 0.029216,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": [
+  "the rule splitter finds 7 chart(s), the model lists 11: cut between the listed charts"
+ ]
+}

@@ -1,0 +1,100 @@
+Figure pictures_3 of Public-test-manuscript, page 18
+Image: figure.png, 1090 x 1537 px
+Caption in the paper: Figure 4. LLM Performance on Text-Only Gastroenterology Multiple-choice Questions.
+
+Charts found by layout analysis: one, or none.
+- chart 1, y ticks GPT-3.5 Web | GPT-3.5 API- | GPT-4 Web- | GPT-4 API- | GPT-4o API- | GPT-4omini API- | Claude3-Hiaku Web- | Claude3-Haiku API- | Claude3-Sonnet Web- | Claude3-Sonnet API- | Claude3-Opus Web- | Claude3-Opus API. | Claude3.5-Sonnet API. | Mistralv2-7b Poe- | Mistralv2-7b-Q8 Local- | Mistral-Large Poe- | Mixtral-8x7b Poe- | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local- | Llama2-13b Poe- | Llama2-13b-Q5 Local- | Llama2-70b Poe- | Llama3-8b Poe- (categorical), x ticks 0 | 20 | 40 | 60 | 80 | 100 (linear)
+
+Text printed in the figure (text @ x,y on a 0-1000 grid of the image):
+All 2022 ACG questions (N = 300) @ 621,9
+47.7% @ 531,69
+GPT-3.5 Web @ 180,71
+GPT-3.5 API- @ 187,90
+46.0% @ 519,89
+GPT-4 Web- @ 188,110
+66.0% @ 661,110
+GPT-4 API- @ 195,131
+66.0% @ 661,130
+GPT-4o API- @ 189,150
+73.7% @ 716,150
+GPT-4omini API- @ 171,170
+56.0% @ 590,170
+Claude3-Hiaku Web- @ 151,210
+[50.0%] @ 548,211
+Claude3-Haiku API- @ 156,230
+50.3% @ 550,232
+Claude3-Sonnet Web- @ 146,250
+55.3% @ 585,252
+Claude3-Sonnet API- @ 152,271
+52.3% @ 564,273
+Claude3-Opus Web- @ 154,291
+65.7% @ 659,293
+Claude3-Opus API. @ 159,311
+66.0% @ 661,314
+Claude3.5-Sonnet API. @ 144,331
+74.0% @ 718,333
+Mistralv2-7b Poe- @ 164,375
+40.7% @ 481,374
+Mistralv2-7b-Q8 Local- @ 143,396
+37.3% @ 457,395
+Mistral-Large Poe- @ 162,416
+60.3% @ 621,415
+Mixtral-8x7b Poe- @ 164,436
+54.3% @ 578,435
+30.7% @ 410,476
+Llama2-7b Poe @ 172,478
+30.3% @ 408,497
+Llama2-7b-Q8 Local @ 152,498
+27.0% @ 383,517
+medicineLLM-7b-Q8 Local- @ 127,519
+Llama2-13b Poe- @ 167,538
+33.0% @ 425,537
+Llama2-13b-Q5 Local- @ 146,559
+33.4% @ 429,558
+Llama2-70b Poe- @ 168,578
+37.3% @ 457,578
+Llama3-8b Poe- @ 173,599
+43.3% @ 500,599
+Llama3-8b-Q8 Local- @ 152,619
+31.0% @ 411,618
+OpenBioLLM-8b-Q8 Local- @ 130,639
+29.0% @ 397,640
+Llama3-70b Poe- @ 167,658
+54.7% @ 581,660
+Llama3.1-8b Poe- @ 164,678
+43.0% @ 498,680
+Llama3.1-70b Poe- @ 158,697
+58.3% @ 607,701
+Llama3.1-405b Poe- @ 155,719
+64.0% @ 647,721
+41.3% @ 486,762
+Gemini Web @ 183,763
+GeminiAdvanced Web- @ 142,783
+51.7% @ 557,781
+Gemma2-9b Poe- @ 165,803
+44.7% @ 508,802
+Gemma2-9b-Q8 Local- @ 143,823
+45.3% @ 515,823
+Gemma2-27b Poe- @ 160,844
+[50.0%] @ 548,843
+Correct @ 338,850
+2OP @ 323,867
+Phi3-3b-Q16 Local- @ 156,885
+EOP @ 324,885
+42.7% @ 495,884
+NOP @ 324,902
+Phi3-14b-Q6 Local @ 154,905
+48.7% @ 538,904
+Error @ 328,920
+Incorrect @ 345,937
+Quantized Model @ 129,955
+0 @ 242,970
+20 @ 385,970
+40 @ 528,969
+60 @ 670,969
+80 @ 813,969
+100 @ 956,969
+Fine-tuned Model @ 130,980
+Percentage @ 640,989
+
+Part of this text was read by OCR and can hold misreads; the image decides.

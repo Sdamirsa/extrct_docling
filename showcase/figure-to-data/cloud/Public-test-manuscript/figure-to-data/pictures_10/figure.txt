@@ -1,0 +1,247 @@
+Figure pictures_10 of Public-test-manuscript, page 62
+Image: figure.png, 1051 x 1569 px
+Caption in the paper: Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions
+
+Charts found by layout analysis: 3 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart 1, box [0, 0, 1000, 326], crop panel-1.png, y ticks 20 | 40 | 60 | 80 | 100 (linear), x ticks GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 API | GPT-40 API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet API | Clae -wveb | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local | Llama2-13b Poe | Llama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe (categorical)
+- chart 2, box [0, 336, 995, 663], crop panel-2.png, y ticks 0 | 20 | 40 | 60 | 80 | 100 (linear), x ticks GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-40 API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet API | Claude3-Opus Web | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-7b-Q8 Local | Llama2-13b Poe | Lama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe | Llama3-8b-Q8 Local | Llama3-70b Poe (categorical)
+- chart 3, box [0, 670, 995, 996], crop panel-3.png, y ticks 0 | 20 | 40 | 60 | 80 | 100 (linear), x ticks GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 API | GPT-40 API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet API | Claude3-Opus Web | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistraiv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local | Llama2-13b Poe | Llama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe (categorical)
+
+Text printed in chart 1 (text @ x,y on a 0-1000 grid of that chart's crop):
+All 2022 ACG questions (N = 300) @ 529,28
+100 @ 39,90
+Correct @ 959,89
+20P @ 949,122
+EOP @ 950,159
+NOP @ 950,193
+80 @ 44,223
+Error @ 951,230
+Incorrect @ 964,265
+[73.7%] @ 192,333
+74.0% @ 377,331
+60 @ 44,355
+[66.0'66.0%] @ 160,385
+64.0% @ 764,396
+Percentage @ 18,405
+60.3% @ 456,419
+[58.3% @ 744,434
+%0 99] @ 212,450
+[55.3%] @ 294,454
+54.3% @ 478,460
+54.7% @ 704,456
+52.3% @ 314,475
+40 @ 43,485
+50.0 50.3% @ 265,489
+%0 0€] @ 887,489
+48.7% @ 948,499
+47.746.0% @ 120,510
+[44.745.3%] @ 857,521
+43.3% @ 643,532
+[43.0%] @ 724,537
+42.7% @ 929,538
+40.7% @ 417,550
+41.3% @ 806,546
+%7) @ 438,572
+[37.3%] @ 621,575
+31.0% @ 662,614
+20 @ 43,618
+29.0% @ 683,630
+GPT-4 Web @ 123,819
+GPT-4 API @ 146,813
+GPT-40 API @ 164,820
+GPT-3.5 Web @ 78,827
+GPT-3.5 API @ 101,823
+Gemini Web @ 775,826
+GPT-4omini API @ 176,838
+Claude3-Haiku API @ 231,851
+Claude3-Opus API @ 314,850
+Mistralv2-7b Poe @ 376,846
+Mistral-Large Poe @ 418,847
+Mixtral-8x7b Poe @ 438,846
+Llama2-7b Poe @ 483,838
+Llama2-13b Poe @ 542,841
+Llama2-70b Poe @ 583,842
+Llama3-8b Poe @ 606,838
+Llama3-70b Poe @ 665,842
+Llama3.1-8b Poe @ 684,845
+Llama3.1-70b Poe @ 702,850
+Gemma2-9b Poe @ 807,845
+Gemma2-27b Poe @ 845,849
+Phi3-3b-Q16 Local @ 886,851
+Phi3-14b-Q6 Local @ 906,850
+Claude3-Hiaku Web @ 208,856
+Claude3-Sonnet Web @ 245,863
+Claude3-Sonnet API @ 268,856
+Clae -wveb @ 290,854
+Claude3.5-Sonnet API @ 326,865
+Mistralv2-7b-Q8 Local @ 387,867
+Llama2-7b-Q8 Local @ 493,859
+Llama2-13b-Q5 Local @ 552,864
+Llama3-8b-Q8 Local @ 616,860
+Llama3.1-405b Poe @ 720,856
+GeminiAdvanced Web @ 775,868
+Gemma2-9b-Q8 Local @ 817,865
+medicineLLM-7b-Q8 Local @ 502,883
+OpenBioLLM-8b-Q8 Local @ 626,880
+
+Text printed in chart 2 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: text-based (N = 162) @ 527,33
+100 @ 35,89
+Correct @ 958,90
+2OP @ 949,124
+EOP @ 950,159
+NOP @ 950,193
+80 @ 39,216
+Error @ 952,230
+Incorrect @ 964,264
+75.9% @ 186,305
+74.1% @ 372,317
+60 @ 39,341
+67.3% @ 327,361
+64.2% @ 761,379
+Percentage @ 13,390
+[61.7%] @ 455,394
+56.8% @ 207,426
+[54.9 54.3%] @ 299,440
+56.2% @ 476,431
+53.7% @ 886,445
+52.5% @ 251,452
+40 @ 38,468
+%.90 @ 106,464
+49.4% @ 948,474
+46.9% @ 126,489
+48.1% @ 270,481
+45.3% @ 640,492
+48.1% @ 847,480
+[45.3%] @ 723,494
+45.1%] @ 867,502
+43.8% @ 928,511
+40.7% @ 414,529
+40.1% @ 804,530
+(% 7à. @ 435,550
+[36.4 36.0 37.0%] @ 598,554
+32.732.1% @ 528,580
+32.731.5% @ 670,582
+20 @ 39,596
+29.6% @ 558,600
+0 @ 43,721
+GPTAAPI @ 145,787
+GPT-3.5 Web @ 78,800
+GPT-3.5 API @ 101,795
+GPT-4 Web @ 122,792
+GPT-40 API @ 163,793
+Gemini Web @ 779,798
+GPT-4omini API @ 177,812
+Llama2-7b Poe @ 486,812
+Llama2-13b Poe @ 545,819
+Llama2-70b Poe @ 587,820
+Llama3-8b Poe @ 609,813
+Llama3-70b Poe @ 669,819
+Claude3-Haiku API @ 234,829
+Claude3-Opus Web @ 295,833
+Claude3-Opus API @ 316,827
+Mistralv2-7b Poe @ 380,823
+Mistral-Large Poe @ 421,825
+Mixtral-8x7b Poe @ 441,824
+Llama3.1-8b Poe @ 689,822
+Llama3.1-70b Poe @ 707,828
+Liama3.1-405b Poe @ 725,833
+Gemma2-9b Poe @ 812,823
+Gemma2-27b Poe @ 851,827
+Phi3-3b-Q16 Local @ 891,828
+Phi3-14b-Q6 Local @ 912,830
+Claude3-Hiaku Web @ 210,836
+Claude3-Sonnet Web @ 250,843
+Claude3-Sonnet API @ 272,836
+Claude3.5-Sonnet API @ 331,846
+Mistralv2-7b-Q8 Local @ 391,847
+Llama2-7b-Q8 Local @ 497,839
+Lama2-13b-Q5 Local @ 558,845
+Llama3-8b-Q8 Local @ 621,840
+GeminiAdvanced Web @ 782,847
+Gemma2-9b-Q8 Local @ 825,847
+OpenBioLLM-8b-Q8 Local @ 633,864
+medicineLLM-7b-Q8 Local @ 509,867
+
+Text printed in chart 3 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question type: image-inclusive (N = 138) @ 528,32
+100 @ 36,91
+Correct @ 959,89
+20P @ 949,123
+EOP @ 950,158
+NOP @ 950,194
+80 @ 39,217
+Error @ 952,231
+Incorrect @ 964,269
+73.9% @ 372,320
+60 @ 39,342
+[68.1%] @ 352,357
+Percentage @ 14,390
+[63.8% @ 331,385
+63.8% @ 763,385
+[58.7%] @ 455,414
+55.1% @ 207,438
+55.8% @ 290,431
+[1%2%1 @ 749,426
+52.9% @ 271,451
+40 @ 39,467
+50.0% @ 311,468
+52.2% @ 476,456
+48.6% @ 827,479
+%824 @ 947,483
+47.1% @ 250,490
+45.745.7% @ 873,495
+44.244.9% @ 116,503
+42.8% @ 805,517
+40.6% @ 414,529
+[40.6%] @ 846,531
+41.3% @ 928,524
+[39.1%) @ 723,539
+37.0%) @ 435,552
+20 @ 39,596
+20.0% @ 661,603
+26.1% @ 681,622
+23.9% @ 558,636
+0 @ 43,720
+GPT-3.5 API @ 101,795
+GPT-4 Web @ 123,792
+GPT-4 API @ 145,787
+GPT-40 API @ 164,793
+GPT-3.5 Web @ 78,803
+Llama2-7b Poe @ 487,813
+Llama3-8b Poe @ 609,813
+Gemini Web @ 778,800
+GPT-4omini API @ 177,814
+Claude3-Opus API @ 316,829
+Mistralv2-7b Poe @ 380,823
+Mistral-Large Poe @ 421,826
+Mixtral-8x7b Poe @ 441,823
+Llama2-13b Poe @ 546,818
+Llama2-70b Poe @ 587,818
+Llama3-70b Poe @ 670,819
+Llama3.1-8b Poe @ 688,823
+Llama3.1-70b Poe @ 707,829
+Gemma2-9b Poe @ 812,823
+Gemma2-27b Poe @ 851,827
+Phi3-14b-Q6 Local @ 912,830
+Claude3-Hiaku Web @ 210,836
+Claude3-Haiku API @ 233,831
+Claude3-Sonnet Web @ 250,843
+Claude3-Sonnet API @ 272,838
+Claude3-Opus Web @ 295,834
+Llama2-7b-Q8 Local @ 498,840
+Llama2-13b-Q5 Local @ 558,845
+Llama3-8b-Q8 Local @ 621,841
+Llama3.1-405b Poe @ 725,836
+Phi3-3b-Q16 Local @ 892,831
+Claude3.5-Sonnet API @ 330,846
+Mistraiv2-7b-Q8 Local @ 391,849
+GeminiAdvanced Web @ 783,848
+Gemma2-9b-Q8 Local @ 824,848
+medicineLLM-7b-Q8 Local @ 508,863
+OpenBioLLM-8b-Q8 Local @ 633,862
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

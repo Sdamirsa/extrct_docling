@@ -1,0 +1,549 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/9",
+  "image_path": "images/picture_010.png",
+  "page": 61,
+  "bbox": [
+   76.01,
+   183.02,
+   536.91,
+   697.01
+  ]
+ },
+ "image": "figure.png",
+ "width": 1409,
+ "height": 1571,
+ "capture": "pdf-render",
+ "px_per_crop": 2.0390738060781475,
+ "source_kind": "raster",
+ "figure_type": "heatmap",
+ "caption": "Supplementary  Figure  S3. Granular  performance  of  LLMs  (Experiment  1)  and  question characteristics .",
+ "split_method": "listed",
+ "split_notes": [
+  "the rule splitter finds 5 chart(s), the model lists 1: read whole"
+ ],
+ "rule_charts": 5,
+ "listed_charts": 1,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    0.0,
+    0.0,
+    1409.0,
+    1571.0
+   ],
+   "image": null,
+   "x_axis": "Colon | Liver | II (categorical)",
+   "y_axis": "GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 API | GPT-4o API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet API | Claude3-Opus Web | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-7b-Q8 Local | medicineLLM-7b-Q8 Local | Llama2-13b Poe | Llama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe (categorical)"
+  }
+ ],
+ "words": [
+  {
+   "text": "GPT-3.5 Web",
+   "bbox": [
+    121.0,
+    0.0,
+    246.0,
+    21.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 API",
+   "bbox": [
+    132.0,
+    23.0,
+    248.0,
+    47.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web",
+   "bbox": [
+    138.0,
+    50.0,
+    248.0,
+    74.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 API",
+   "bbox": [
+    148.0,
+    76.0,
+    249.0,
+    100.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4o API",
+   "bbox": [
+    138.0,
+    103.0,
+    249.0,
+    126.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omini API",
+   "bbox": [
+    98.0,
+    130.0,
+    249.0,
+    153.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hiaku Web",
+   "bbox": [
+    57.0,
+    182.0,
+    246.0,
+    205.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haiku API",
+   "bbox": [
+    68.0,
+    209.0,
+    249.0,
+    232.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Web",
+   "bbox": [
+    45.0,
+    235.0,
+    248.0,
+    258.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet API",
+   "bbox": [
+    55.0,
+    261.0,
+    249.0,
+    285.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus Web",
+   "bbox": [
+    60.0,
+    288.0,
+    247.0,
+    311.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus API",
+   "bbox": [
+    71.0,
+    313.0,
+    248.0,
+    339.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3.5-Sonnet API",
+   "bbox": [
+    38.0,
+    341.0,
+    248.0,
+    364.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poe",
+   "bbox": [
+    84.0,
+    394.0,
+    247.0,
+    417.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b-Q8 Local",
+   "bbox": [
+    37.0,
+    422.0,
+    248.0,
+    442.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistral-Large Poe",
+   "bbox": [
+    77.0,
+    445.0,
+    247.0,
+    471.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtral-8x7b Poe",
+   "bbox": [
+    82.0,
+    473.0,
+    247.0,
+    496.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b Poe",
+   "bbox": [
+    100.0,
+    524.0,
+    247.0,
+    550.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b-Q8 Local",
+   "bbox": [
+    52.0,
+    552.0,
+    247.0,
+    575.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "medicineLLM-7b-Q8 Local",
+   "bbox": [
+    0.0,
+    578.0,
+    247.0,
+    601.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b Poe",
+   "bbox": [
+    89.0,
+    604.0,
+    246.0,
+    627.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b-Q5 Local",
+   "bbox": [
+    40.0,
+    631.0,
+    247.0,
+    654.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-70b Poe",
+   "bbox": [
+    88.0,
+    655.0,
+    247.0,
+    681.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b Poe",
+   "bbox": [
+    101.0,
+    683.0,
+    247.0,
+    707.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b-Q8 Local",
+   "bbox": [
+    52.0,
+    710.0,
+    247.0,
+    733.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OpenBioLLM-8b-Q8 Local",
+   "bbox": [
+    5.0,
+    737.0,
+    247.0,
+    760.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-70b Poe",
+   "bbox": [
+    89.0,
+    762.0,
+    247.0,
+    786.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-8b Poe",
+   "bbox": [
+    83.0,
+    790.0,
+    247.0,
+    813.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-70b Poe",
+   "bbox": [
+    70.0,
+    814.0,
+    247.0,
+    840.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-405b Poe",
+   "bbox": [
+    60.0,
+    844.0,
+    246.0,
+    864.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    126.0,
+    895.0,
+    246.0,
+    918.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web",
+   "bbox": [
+    35.0,
+    921.0,
+    247.0,
+    944.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b Poe",
+   "bbox": [
+    84.0,
+    948.0,
+    248.0,
+    971.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b-Q8 Local",
+   "bbox": [
+    37.0,
+    976.0,
+    246.0,
+    996.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-27b Local",
+   "bbox": [
+    58.0,
+    1002.0,
+    246.0,
+    1022.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-Q16 Local",
+   "bbox": [
+    69.0,
+    1053.0,
+    248.0,
+    1076.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-14b-Q6 Local",
+   "bbox": [
+    68.0,
+    1079.0,
+    246.0,
+    1102.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Difficulty Quartiles",
+   "bbox": [
+    65.0,
+    1130.0,
+    246.0,
+    1156.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Length Tertiles",
+   "bbox": [
+    103.0,
+    1185.0,
+    247.0,
+    1209.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Taxonomy: Integrated",
+   "bbox": [
+    38.0,
+    1237.0,
+    247.0,
+    1263.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Diagnosis",
+   "bbox": [
+    148.0,
+    1288.0,
+    249.0,
+    1317.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Treatment",
+   "bbox": [
+    144.0,
+    1317.0,
+    248.0,
+    1341.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Investigation",
+   "bbox": [
+    117.0,
+    1343.0,
+    247.0,
+    1367.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Complications",
+   "bbox": [
+    108.0,
+    1370.0,
+    247.0,
+    1394.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liver",
+   "bbox": [
+    192.0,
+    1422.0,
+    248.0,
+    1447.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "II",
+   "bbox": [
+    1378.0,
+    1434.0,
+    1399.0,
+    1461.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Colon",
+   "bbox": [
+    185.0,
+    1448.0,
+    248.0,
+    1473.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Esophagus",
+   "bbox": [
+    137.0,
+    1474.0,
+    248.0,
+    1501.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "IBD",
+   "bbox": [
+    205.0,
+    1500.0,
+    248.0,
+    1526.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Pancreatico-biliary",
+   "bbox": [
+    67.0,
+    1529.0,
+    245.0,
+    1552.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

@@ -1,0 +1,2143 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/14",
+  "image_path": "images/picture_015.png",
+  "page": 66,
+  "bbox": [
+   71.76,
+   104.03,
+   350.74,
+   662.44
+  ]
+ },
+ "image": "figure.png",
+ "width": 853,
+ "height": 1706,
+ "capture": "pdf-render",
+ "px_per_crop": 2.04066985645933,
+ "source_kind": "raster",
+ "figure_type": "bar_chart",
+ "caption": "Supplementary Figure S8. Performance stratified by the question length",
+ "split_method": "listed",
+ "split_notes": [
+  "the rule splitter finds 8 chart(s), the model lists 3: cut between the listed charts"
+ ],
+ "rule_charts": 8,
+ "listed_charts": 3,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    1.0,
+    0.0,
+    851.0,
+    561.0
+   ],
+   "image": "panel-1.png",
+   "x_axis": "0 | GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 API | GPT 4-AP | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku APi | Claude3-Sonnet Web | Claude3-Sonnet API | Claude3-Opus Web | Ca -Pl | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Liama2-7b Poe | Liama2-13b Poe | Liama2-13b-Q5 Local | Llama2-70b Poe | Llama3-8b Poe | Llama3-8b-Q8 Local (categorical)",
+   "y_axis": "54.5 | 62.6 | 71.7 | 76.8 (linear)"
+  },
+  {
+   "id": "2",
+   "bbox": [
+    6.0,
+    571.0,
+    851.0,
+    1133.0
+   ],
+   "image": "panel-2.png",
+   "x_axis": "GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-40 API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Cau -eb | Claude3-Opus API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-13b Poe | Llama2-13b-Q5 Local | Liama2-70b Poe | Llama3-8b Poe | Liama3-70b Poe | Llama3.1-8b Poe | Liama3.1-70b Poe | Llama3.1-405b Poe | Gemini Web (categorical)",
+   "y_axis": "0 | 20 | 40 | 60 | 80 | 100 (linear)"
+  },
+  {
+   "id": "3",
+   "bbox": [
+    1.0,
+    1143.0,
+    851.0,
+    1705.0
+   ],
+   "image": "panel-3.png",
+   "x_axis": "GPT-3.5 Web | GPT-3.5 AP1 | GPT-4 Web | GPT-4 API | GPT-40 API | GPT-4omini API | Claude3-Hiaku Web | Claude3-Sonnet Web | Claude3-Sonnet API | Ca s-wveb | Claude3-Opus API | Claude3.5-Sonnet API | Mistralv2-7b Poe | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Mixtral-8x7b Poe | Llama2-7b Poe | Llama2-13b Poe | Llama2-13b-Q5 Local | Lama2-70b Poe | Liama3-70b Poe | Llama3.1-8b Poe | Llama3.1-70b Poe | Liama3.1-405b Poe (categorical)",
+   "y_axis": "0 | 20 | 40 | 60 | 100 (linear)"
+  }
+ ],
+ "words": [
+  {
+   "text": "Question type: Long (N = 99)",
+   "bbox": [
+    336.0,
+    2.0,
+    572.0,
+    28.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    19.0,
+    35.0,
+    53.0,
+    57.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correct",
+   "bbox": [
+    784.0,
+    34.0,
+    834.0,
+    52.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20P",
+   "bbox": [
+    780.0,
+    47.0,
+    818.0,
+    72.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOP",
+   "bbox": [
+    782.0,
+    65.0,
+    816.0,
+    89.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "NOP",
+   "bbox": [
+    781.0,
+    83.0,
+    817.0,
+    106.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Error",
+   "bbox": [
+    782.0,
+    101.0,
+    820.0,
+    123.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    29.0,
+    112.0,
+    54.0,
+    132.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    781.0,
+    118.0,
+    846.0,
+    142.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "76.8%",
+   "bbox": [
+    148.0,
+    163.0,
+    186.0,
+    185.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "77.8%",
+   "bbox": [
+    307.0,
+    161.0,
+    343.0,
+    179.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    4.0,
+    188.0,
+    27.0,
+    264.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    29.0,
+    187.0,
+    53.0,
+    207.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "71.7%",
+   "bbox": [
+    131.0,
+    183.0,
+    172.0,
+    201.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "62.6%",
+   "bbox": [
+    115.0,
+    216.0,
+    155.0,
+    238.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "63.6%",
+   "bbox": [
+    633.0,
+    215.0,
+    670.0,
+    233.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    30.0,
+    265.0,
+    52.0,
+    281.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.5%",
+   "bbox": [
+    165.0,
+    244.0,
+    205.0,
+    268.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "55.50.0%",
+   "bbox": [
+    231.0,
+    233.0,
+    295.0,
+    266.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.:54 5%",
+   "bbox": [
+    371.0,
+    248.0,
+    427.0,
+    267.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "55.6% 55.6%",
+   "bbox": [
+    582.0,
+    244.0,
+    654.0,
+    262.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "49.5%",
+   "bbox": [
+    684.0,
+    268.0,
+    726.0,
+    286.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "53.5%",
+   "bbox": [
+    735.0,
+    252.0,
+    775.0,
+    270.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.5%",
+   "bbox": [
+    781.0,
+    257.0,
+    825.0,
+    274.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.142.4%",
+   "bbox": [
+    80.0,
+    290.0,
+    137.0,
+    314.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.4%",
+   "bbox": [
+    341.0,
+    294.0,
+    378.0,
+    312.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "38.4%",
+   "bbox": [
+    353.0,
+    301.0,
+    397.0,
+    331.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40.4%",
+   "bbox": [
+    512.0,
+    304.0,
+    549.0,
+    318.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.4%",
+   "bbox": [
+    771.0,
+    292.0,
+    811.0,
+    314.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    29.0,
+    338.0,
+    53.0,
+    358.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "29.3%",
+   "bbox": [
+    547.0,
+    343.0,
+    585.0,
+    362.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "26.3%",
+   "bbox": [
+    426.0,
+    353.0,
+    465.0,
+    375.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "PE",
+   "bbox": [
+    458.0,
+    370.0,
+    499.0,
+    395.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "23.2%",
+   "bbox": [
+    564.0,
+    366.0,
+    601.0,
+    385.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    39.0,
+    415.0,
+    50.0,
+    430.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 Web",
+   "bbox": [
+    38.0,
+    422.0,
+    106.0,
+    506.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 API",
+   "bbox": [
+    58.0,
+    420.0,
+    124.0,
+    502.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web",
+   "bbox": [
+    78.0,
+    420.0,
+    140.0,
+    498.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 API",
+   "bbox": [
+    100.0,
+    420.0,
+    158.0,
+    492.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT 4-AP",
+   "bbox": [
+    112.0,
+    420.0,
+    176.0,
+    498.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    628.0,
+    423.0,
+    693.0,
+    503.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omini API",
+   "bbox": [
+    114.0,
+    420.0,
+    194.0,
+    518.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hiaku Web",
+   "bbox": [
+    136.0,
+    421.0,
+    227.0,
+    539.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haiku APi",
+   "bbox": [
+    157.0,
+    420.0,
+    245.0,
+    536.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Web",
+   "bbox": [
+    165.0,
+    421.0,
+    263.0,
+    546.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet API",
+   "bbox": [
+    188.0,
+    420.0,
+    279.0,
+    541.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus Web",
+   "bbox": [
+    205.0,
+    421.0,
+    297.0,
+    537.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ca -Pl",
+   "bbox": [
+    227.0,
+    420.0,
+    314.0,
+    532.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3.5-Sonnet API",
+   "bbox": [
+    232.0,
+    420.0,
+    332.0,
+    551.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poe",
+   "bbox": [
+    282.0,
+    421.0,
+    365.0,
+    526.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b-Q8 Local",
+   "bbox": [
+    282.0,
+    420.0,
+    385.0,
+    551.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistral-Large Poe",
+   "bbox": [
+    314.0,
+    420.0,
+    403.0,
+    531.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtral-8x7b Poe",
+   "bbox": [
+    333.0,
+    420.0,
+    418.0,
+    527.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama2-7b Poe",
+   "bbox": [
+    375.0,
+    421.0,
+    453.0,
+    517.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama2-13b Poe",
+   "bbox": [
+    421.0,
+    420.0,
+    505.0,
+    524.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama2-13b-Q5 Local",
+   "bbox": [
+    422.0,
+    420.0,
+    522.0,
+    549.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-70b Poe",
+   "bbox": [
+    457.0,
+    421.0,
+    539.0,
+    524.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b-Q8 Local",
+   "bbox": [
+    478.0,
+    420.0,
+    575.0,
+    543.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b Poe",
+   "bbox": [
+    480.0,
+    422.0,
+    555.0,
+    516.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-70b Poe",
+   "bbox": [
+    526.0,
+    420.0,
+    608.0,
+    524.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-8b Poe",
+   "bbox": [
+    541.0,
+    420.0,
+    625.0,
+    526.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-70b Poe",
+   "bbox": [
+    555.0,
+    420.0,
+    642.0,
+    532.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lama3.1-405b Poe",
+   "bbox": [
+    568.0,
+    421.0,
+    660.0,
+    539.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web",
+   "bbox": [
+    611.0,
+    421.0,
+    711.0,
+    552.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Germmpoe",
+   "bbox": [
+    644.0,
+    420.0,
+    729.0,
+    527.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b-Q8 Local",
+   "bbox": [
+    645.0,
+    419.0,
+    748.0,
+    551.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-27b Poe",
+   "bbox": [
+    675.0,
+    420.0,
+    764.0,
+    532.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-Q16 Local",
+   "bbox": [
+    710.0,
+    421.0,
+    797.0,
+    532.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-14b-Q6 Local",
+   "bbox": [
+    726.0,
+    422.0,
+    815.0,
+    535.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OpenBioLLM-8b-Q8 Local",
+   "bbox": [
+    479.0,
+    419.0,
+    591.0,
+    567.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: Medium (N = 99)",
+   "bbox": [
+    323.0,
+    573.0,
+    584.0,
+    601.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    21.0,
+    609.0,
+    53.0,
+    630.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correct",
+   "bbox": [
+    784.0,
+    607.0,
+    834.0,
+    624.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20P",
+   "bbox": [
+    782.0,
+    622.0,
+    817.0,
+    644.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOP",
+   "bbox": [
+    781.0,
+    636.0,
+    817.0,
+    661.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "NOP",
+   "bbox": [
+    782.0,
+    656.0,
+    817.0,
+    678.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    29.0,
+    684.0,
+    53.0,
+    704.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    782.0,
+    693.0,
+    844.0,
+    713.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Error",
+   "bbox": [
+    783.0,
+    676.0,
+    818.0,
+    695.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "75.8%",
+   "bbox": [
+    146.0,
+    737.0,
+    185.0,
+    762.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    4.0,
+    759.0,
+    27.0,
+    836.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    29.0,
+    759.0,
+    53.0,
+    780.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0.72.7722.7%",
+   "bbox": [
+    270.0,
+    746.0,
+    345.0,
+    779.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "62.6%",
+   "bbox": [
+    374.0,
+    791.0,
+    413.0,
+    810.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "59.6%",
+   "bbox": [
+    581.0,
+    802.0,
+    621.0,
+    820.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    30.0,
+    836.0,
+    53.0,
+    854.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "51.5g",
+   "bbox": [
+    80.0,
+    829.0,
+    119.0,
+    850.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "46.5%",
+   "bbox": [
+    97.0,
+    849.0,
+    137.0,
+    872.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "45.5%",
+   "bbox": [
+    202.0,
+    854.0,
+    240.0,
+    873.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.5%",
+   "bbox": [
+    218.0,
+    827.0,
+    259.0,
+    848.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "56.6%",
+   "bbox": [
+    233.0,
+    812.0,
+    276.0,
+    834.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "49.5%",
+   "bbox": [
+    251.0,
+    837.0,
+    292.0,
+    860.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "55.5%",
+   "bbox": [
+    390.0,
+    815.0,
+    428.0,
+    837.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "48.5%",
+   "bbox": [
+    527.0,
+    842.0,
+    569.0,
+    863.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "46.5%",
+   "bbox": [
+    598.0,
+    851.0,
+    637.0,
+    870.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "45.5%",
+   "bbox": [
+    787.0,
+    855.0,
+    825.0,
+    873.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "41.4%",
+   "bbox": [
+    340.0,
+    868.0,
+    380.0,
+    890.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "35.4%",
+   "bbox": [
+    355.0,
+    891.0,
+    396.0,
+    913.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "33.3%",
+   "bbox": [
+    426.0,
+    898.0,
+    465.0,
+    920.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "39.4%",
+   "bbox": [
+    509.0,
+    876.0,
+    552.0,
+    897.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "37.4%",
+   "bbox": [
+    668.0,
+    885.0,
+    707.0,
+    904.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.4%",
+   "bbox": [
+    772.0,
+    866.0,
+    810.0,
+    885.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    30.0,
+    911.0,
+    51.0,
+    928.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "28.3%",
+   "bbox": [
+    491.0,
+    916.0,
+    535.0,
+    941.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    39.0,
+    988.0,
+    50.0,
+    1002.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 Web",
+   "bbox": [
+    38.0,
+    994.0,
+    106.0,
+    1077.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 API",
+   "bbox": [
+    58.0,
+    993.0,
+    125.0,
+    1073.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web",
+   "bbox": [
+    77.0,
+    993.0,
+    141.0,
+    1071.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-40 API",
+   "bbox": [
+    112.0,
+    991.0,
+    177.0,
+    1070.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    628.0,
+    994.0,
+    693.0,
+    1075.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omini API",
+   "bbox": [
+    113.0,
+    992.0,
+    195.0,
+    1091.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hiaku Web",
+   "bbox": [
+    135.0,
+    993.0,
+    228.0,
+    1112.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Haiku API",
+   "bbox": [
+    156.0,
+    992.0,
+    245.0,
+    1109.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Web",
+   "bbox": [
+    165.0,
+    992.0,
+    264.0,
+    1119.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Cau -eb",
+   "bbox": [
+    205.0,
+    992.0,
+    297.0,
+    1110.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus API",
+   "bbox": [
+    226.0,
+    992.0,
+    315.0,
+    1106.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poe",
+   "bbox": [
+    281.0,
+    993.0,
+    366.0,
+    1099.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b-Q8 Local",
+   "bbox": [
+    282.0,
+    992.0,
+    384.0,
+    1124.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistral-Large Poe",
+   "bbox": [
+    315.0,
+    993.0,
+    402.0,
+    1103.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtral-8x7b Poe",
+   "bbox": [
+    334.0,
+    993.0,
+    418.0,
+    1099.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b Poe",
+   "bbox": [
+    375.0,
+    992.0,
+    453.0,
+    1090.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b Poe",
+   "bbox": [
+    422.0,
+    993.0,
+    506.0,
+    1097.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b-Q5 Local",
+   "bbox": [
+    422.0,
+    992.0,
+    521.0,
+    1121.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama2-70b Poe",
+   "bbox": [
+    458.0,
+    992.0,
+    539.0,
+    1096.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3-8b Poe",
+   "bbox": [
+    478.0,
+    992.0,
+    557.0,
+    1090.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama3-70b Poe",
+   "bbox": [
+    527.0,
+    992.0,
+    607.0,
+    1096.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-8b Poe",
+   "bbox": [
+    542.0,
+    992.0,
+    625.0,
+    1098.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama3.1-70b Poe",
+   "bbox": [
+    555.0,
+    992.0,
+    642.0,
+    1105.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-405b Poe",
+   "bbox": [
+    568.0,
+    992.0,
+    660.0,
+    1110.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web",
+   "bbox": [
+    611.0,
+    992.0,
+    711.0,
+    1124.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Germ m-oe",
+   "bbox": [
+    646.0,
+    992.0,
+    730.0,
+    1099.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b-Q8 Local",
+   "bbox": [
+    646.0,
+    992.0,
+    747.0,
+    1123.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-27b Poe",
+   "bbox": [
+    676.0,
+    992.0,
+    764.0,
+    1105.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-Q16 Local",
+   "bbox": [
+    709.0,
+    991.0,
+    799.0,
+    1106.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-14b-Q6 Local",
+   "bbox": [
+    727.0,
+    994.0,
+    815.0,
+    1105.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Question type: Short (N = 102)",
+   "bbox": [
+    329.0,
+    1147.0,
+    577.0,
+    1173.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    21.0,
+    1182.0,
+    52.0,
+    1201.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correct",
+   "bbox": [
+    784.0,
+    1179.0,
+    834.0,
+    1197.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20P",
+   "bbox": [
+    782.0,
+    1193.0,
+    817.0,
+    1216.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOP",
+   "bbox": [
+    781.0,
+    1209.0,
+    818.0,
+    1234.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "NOP",
+   "bbox": [
+    780.0,
+    1227.0,
+    818.0,
+    1252.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Error",
+   "bbox": [
+    783.0,
+    1245.0,
+    820.0,
+    1268.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "08",
+   "bbox": [
+    29.0,
+    1256.0,
+    53.0,
+    1276.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    781.0,
+    1263.0,
+    846.0,
+    1286.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    4.0,
+    1332.0,
+    27.0,
+    1408.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    29.0,
+    1332.0,
+    53.0,
+    1352.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "08.0%",
+   "bbox": [
+    149.0,
+    1340.0,
+    192.0,
+    1361.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "71.6%",
+   "bbox": [
+    299.0,
+    1326.0,
+    343.0,
+    1350.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "64.7%",
+   "bbox": [
+    115.0,
+    1354.0,
+    155.0,
+    1376.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "63.7%",
+   "bbox": [
+    372.0,
+    1356.0,
+    415.0,
+    1379.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "58.8% 58.8%",
+   "bbox": [
+    131.0,
+    1376.0,
+    204.0,
+    1396.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60.1618%",
+   "bbox": [
+    268.0,
+    1362.0,
+    327.0,
+    1389.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "59.8%",
+   "bbox": [
+    633.0,
+    1374.0,
+    670.0,
+    1392.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    29.0,
+    1406.0,
+    53.0,
+    1426.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "491490%",
+   "bbox": [
+    81.0,
+    1412.0,
+    136.0,
+    1433.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.0%",
+   "bbox": [
+    201.0,
+    1401.0,
+    239.0,
+    1423.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "51.0%",
+   "bbox": [
+    252.0,
+    1405.0,
+    292.0,
+    1427.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.9%",
+   "bbox": [
+    392.0,
+    1398.0,
+    427.0,
+    1417.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "49.0%",
+   "bbox": [
+    581.0,
+    1416.0,
+    618.0,
+    1430.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "62.05",
+   "bbox": [
+    609.0,
+    1396.0,
+    656.0,
+    1420.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "5",
+   "bbox": [
+    686.0,
+    1408.0,
+    700.0,
+    1423.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "18.0%",
+   "bbox": [
+    785.0,
+    1416.0,
+    824.0,
+    1434.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "38.238.2%",
+   "bbox": [
+    341.0,
+    1455.0,
+    395.0,
+    1473.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "38.6%",
+   "bbox": [
+    495.0,
+    1453.0,
+    533.0,
+    1471.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "44.1%",
+   "bbox": [
+    528.0,
+    1430.0,
+    570.0,
+    1452.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "38.2%",
+   "bbox": [
+    598.0,
+    1455.0,
+    637.0,
+    1473.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "45.1%",
+   "bbox": [
+    667.0,
+    1427.0,
+    709.0,
+    1448.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "4",
+   "bbox": [
+    704.0,
+    1444.0,
+    717.0,
+    1460.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1.2%",
+   "bbox": [
+    715.0,
+    1444.0,
+    738.0,
+    1461.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "43.1%",
+   "bbox": [
+    772.0,
+    1435.0,
+    811.0,
+    1454.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    29.0,
+    1482.0,
+    52.0,
+    1502.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "32.4% 32.432.4%32.1%",
+   "bbox": [
+    426.0,
+    1476.0,
+    551.0,
+    1496.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "28.4%",
+   "bbox": [
+    441.0,
+    1486.0,
+    482.0,
+    1512.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    39.0,
+    1560.0,
+    50.0,
+    1574.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 Web",
+   "bbox": [
+    37.0,
+    1567.0,
+    106.0,
+    1650.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-3.5 AP1",
+   "bbox": [
+    55.0,
+    1565.0,
+    125.0,
+    1647.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 Web",
+   "bbox": [
+    77.0,
+    1566.0,
+    141.0,
+    1642.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4 API",
+   "bbox": [
+    100.0,
+    1565.0,
+    159.0,
+    1637.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-40 API",
+   "bbox": [
+    113.0,
+    1564.0,
+    177.0,
+    1643.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemini Web",
+   "bbox": [
+    627.0,
+    1566.0,
+    694.0,
+    1649.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT-4omini API",
+   "bbox": [
+    114.0,
+    1563.0,
+    196.0,
+    1664.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Hiaku Web",
+   "bbox": [
+    135.0,
+    1566.0,
+    228.0,
+    1684.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet Web",
+   "bbox": [
+    164.0,
+    1565.0,
+    263.0,
+    1691.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Sonnet API",
+   "bbox": [
+    187.0,
+    1564.0,
+    280.0,
+    1686.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Ca s-wveb",
+   "bbox": [
+    205.0,
+    1566.0,
+    296.0,
+    1682.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3-Opus API",
+   "bbox": [
+    227.0,
+    1565.0,
+    314.0,
+    1678.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3.5-Sonnet API",
+   "bbox": [
+    232.0,
+    1564.0,
+    333.0,
+    1696.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b Poe",
+   "bbox": [
+    281.0,
+    1565.0,
+    366.0,
+    1671.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistralv2-7b-Q8 Local",
+   "bbox": [
+    281.0,
+    1565.0,
+    384.0,
+    1696.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mistral-Large Poe",
+   "bbox": [
+    315.0,
+    1565.0,
+    402.0,
+    1675.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Mixtral-8x7b Poe",
+   "bbox": [
+    333.0,
+    1564.0,
+    419.0,
+    1671.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-7b Poe",
+   "bbox": [
+    374.0,
+    1565.0,
+    453.0,
+    1663.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b Poe",
+   "bbox": [
+    421.0,
+    1566.0,
+    504.0,
+    1670.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama2-13b-Q5 Local",
+   "bbox": [
+    422.0,
+    1565.0,
+    521.0,
+    1694.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Lama2-70b Poe",
+   "bbox": [
+    457.0,
+    1566.0,
+    538.0,
+    1668.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama3-70b Poe",
+   "bbox": [
+    528.0,
+    1566.0,
+    607.0,
+    1667.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-8b Poe",
+   "bbox": [
+    541.0,
+    1565.0,
+    625.0,
+    1671.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Llama3.1-70b Poe",
+   "bbox": [
+    553.0,
+    1565.0,
+    643.0,
+    1678.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Liama3.1-405b Poe",
+   "bbox": [
+    566.0,
+    1564.0,
+    661.0,
+    1684.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web",
+   "bbox": [
+    610.0,
+    1565.0,
+    711.0,
+    1696.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gempoe",
+   "bbox": [
+    645.0,
+    1565.0,
+    729.0,
+    1671.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-9b-Q8 Local",
+   "bbox": [
+    645.0,
+    1564.0,
+    748.0,
+    1697.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Gemma2-27b Poe",
+   "bbox": [
+    675.0,
+    1565.0,
+    764.0,
+    1677.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-3b-Q16 Local",
+   "bbox": [
+    708.0,
+    1565.0,
+    799.0,
+    1678.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Phi3-14b-Q6 Local",
+   "bbox": [
+    726.0,
+    1566.0,
+    816.0,
+    1679.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "medicineLLM-7b-Q8 Local",
+   "bbox": [
+    372.0,
+    1563.0,
+    488.0,
+    1705.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "OpenBioLLM-8b-Q8 Local",
+   "bbox": [
+    479.0,
+    1564.0,
+    591.0,
+    1705.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

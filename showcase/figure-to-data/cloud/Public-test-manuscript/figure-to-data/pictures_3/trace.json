@@ -1,0 +1,452 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 6706,
+  "completion_tokens": 2668,
+  "total_tokens": 9374,
+  "cost": 0.040092,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.040092,
+   "upstream_inference_prompt_cost": 0.013412,
+   "upstream_inference_completions_cost": 0.02668
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Horizontal stacked bars showing, for each of 36 LLM configurations, the percentage of 300 ACG gastroenterology questions answered Correct, 2OP, EOP, NOP, Error or Incorrect; only the Correct share is printed.",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "1",
+    "title": "All 2022 ACG questions (N = 300)",
+    "kind": "stacked_bar",
+    "orientation": "horizontal",
+    "x_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "y_axis": {
+     "name": null,
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "series": [
+     "Correct",
+     "2OP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [
+     {
+      "category": "GPT-3.5 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 47.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "47.7%"
+     },
+     {
+      "category": "GPT-3.5 API",
+      "x": null,
+      "series": "Correct",
+      "value": 46.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "46.0%"
+     },
+     {
+      "category": "GPT-4 Web",
+      "x": null,
+      "series": "Correct",
+      "value": 66.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "66.0%"
+     },
+     {
+      "category": "GPT-4 API",
+      "x": null,
+      "series": "Correct",
+      "value": 66.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "66.0%"
+     },
+     {
+      "category": "GPT-4o API",
+      "x": null,
+      "series": "Correct",
+      "value": 73.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "73.7%"
+     },
+     {
+      "category": "GPT-4omini API",
+      "x": null,
+      "series": "Correct",
+      "value": 56.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "56.0%"
+     },
+     {
+      "category": "Claude3-Hiaku Web",
+      "x": null,
+      "series": "Correct",
+      "value": 50.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "50.0%"
+     },
+     {
+      "category": "Claude3-Haiku API",
+      "x": null,
+      "series": "Correct",
+      "value": 50.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "50.3%"
+     },
+     {
+      "category": "Claude3-Sonnet Web",
+      "x": null,
+      "series": "Correct",
+      "value": 55.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "55.3%"
+     },
+     {
+      "category": "Claude3-Sonnet API",
+      "x": null,
+      "series": "Correct",
+      "value": 52.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "52.3%"
+     },
+     {
+      "category": "Claude3-Opus Web",
+      "x": null,
+      "series": "Correct",
+      "value": 65.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "65.7%"
+     },
+     {
+      "category": "Claude3-Opus API",
+      "x": null,
+      "series": "Correct",
+      "value": 66.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "66.0%"
+     },
+     {
+      "category": "Claude3.5-Sonnet API",
+      "x": null,
+      "series": "Correct",
+      "value": 74.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "74.0%"
+     },
+     {
+      "category": "Mistralv2-7b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 40.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "40.7%"
+     },
+     {
+      "category": "Mistralv2-7b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 37.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "37.3%"
+     },
+     {
+      "category": "Mistral-Large Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 60.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "60.3%"
+     },
+     {
+      "category": "Mixtral-8x7b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 54.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "54.3%"
+     },
+     {
+      "category": "Llama2-7b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 30.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "30.7%"
+     },
+     {
+      "category": "Llama2-7b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 30.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "30.3%"
+     },
+     {
+      "category": "medicineLLM-7b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 27.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "27.0%"
+     },
+     {
+      "category": "Llama2-13b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 33.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "33.0%"
+     },
+     {
+      "category": "Llama2-13b-Q5 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 33.4,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "33.4%"
+     },
+     {
+      "category": "Llama2-70b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 37.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "37.3%"
+     },
+     {
+      "category": "Llama3-8b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 43.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "43.3%"
+     },
+     {
+      "category": "Llama3-8b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 31.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "31.0%"
+     },
+     {
+      "category": "OpenBioLLM-8b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 29.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "29.0%"
+     },
+     {
+      "category": "Llama3-70b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 54.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "54.7%"
+     },
+     {
+      "category": "Llama3.1-8b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 43.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "43.0%"
+     },
+     {
+      "category": "Llama3.1-70b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 58.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "58.3%"
+     },
+     {
+      "category": "Llama3.1-405b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 64.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "64.0%"
+     },
+     {
+      "category": "Gemini Web",
+      "x": null,
+      "series": "Correct",
+      "value": 41.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "41.3%"
+     },
+     {
+      "category": "GeminiAdvanced Web",
+      "x": null,
+      "series": "Correct",
+      "value": 51.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "51.7%"
+     },
+     {
+      "category": "Gemma2-9b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 44.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "44.7%"
+     },
+     {
+      "category": "Gemma2-9b-Q8 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 45.3,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "45.3%"
+     },
+     {
+      "category": "Gemma2-27b Poe",
+      "x": null,
+      "series": "Correct",
+      "value": 50.0,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "50.0%"
+     },
+     {
+      "category": "Phi3-3b-Q16 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 42.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "42.7%"
+     },
+     {
+      "category": "Phi3-14b-Q6 Local",
+      "x": null,
+      "series": "Correct",
+      "value": 48.7,
+      "err_lo": null,
+      "err_hi": null,
+      "label": "48.7%"
+     }
+    ],
+    "box": null,
+    "notes": [
+     "Only the Correct segment is printed per bar; the other segments extend to 100%.",
+     "Quantized-model and fine-tuned-model markers appear beside some rows."
+    ]
+   }
+  ],
+  "not_read": [
+   "2OP, EOP, NOP, Error and Incorrect segments for all 37 bars were not tabulated (no printed values; mostly small slivers, Incorrect fills the remainder to 100%)."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 4163,
+   "completion_tokens": 130,
+   "total_tokens": 4293,
+   "cost": 0.009626,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009626,
+    "upstream_inference_prompt_cost": 0.008326,
+    "upstream_inference_completions_cost": 0.0013
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Horizontal stacked bar chart of the percentage of correct, 2OP, EOP, NOP, error and incorrect answers for many LLMs on 300 ACG 2022 questions, with quantized and fine-tuned models marked.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "1",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      0,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

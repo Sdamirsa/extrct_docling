@@ -1,0 +1,84 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 6981,
+  "completion_tokens": 244,
+  "total_tokens": 7225,
+  "cost": 0.016402,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.016402,
+   "upstream_inference_prompt_cost": 0.013962,
+   "upstream_inference_completions_cost": 0.00244
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Heatmap-style strips showing per-question correctness (green correct, red incorrect, with a few yellow and light-grey cells) for about 37 LLM configurations, aligned with question characteristics (difficulty quartile, length tertile, taxonomy, topic and organ-system membership).",
+  "has_data": false,
+  "panels": [],
+  "not_read": [
+   "Per-question correct/incorrect status for each LLM row is shown as colour strips with no numeric values or axis ticks, so none were tabulated.",
+   "Question characteristic strips (difficulty quartiles, length tertiles, taxonomy, diagnosis/treatment/investigation/complications, organ systems) are binary or colour-coded marks with no values, so none were tabulated."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 4464,
+   "completion_tokens": 114,
+   "total_tokens": 4578,
+   "cost": 0.010068,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.010068,
+    "upstream_inference_prompt_cost": 0.008928,
+    "upstream_inference_completions_cost": 0.00114
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Heatmap-style barcode plot showing per-question correct (green) or incorrect (red) answers for many LLMs, aligned with question difficulty, length, taxonomy and topic annotations.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "1",
+     "kind": "heatmap",
+     "box": [
+      0,
+      0,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

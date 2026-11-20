@@ -1,0 +1,1005 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/2",
+  "image_path": "images/picture_003.png",
+  "page": 16,
+  "bbox": [
+   73.98,
+   310.45,
+   538.46,
+   610.95
+  ]
+ },
+ "image": "figure.png",
+ "width": 1419,
+ "height": 918,
+ "capture": "pdf-render",
+ "px_per_crop": 2.0358680057388807,
+ "source_kind": "raster",
+ "figure_type": "forest_plot",
+ "caption": "Figure 3. Impact of output structure (a), temperature (b), Max_token (c), and prompt engineering (d) on LLM MCQ performance .",
+ "split_method": "axes",
+ "split_notes": [
+  "4 charts found by their tick labels"
+ ],
+ "rule_charts": 4,
+ "listed_charts": 4,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    8.0,
+    6.0,
+    711.0,
+    276.0
+   ],
+   "image": "panel-1.png",
+   "x_axis": "0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 (linear)",
+   "y_axis": "Langchain | Function Call - | Standard Output | 0 (categorical)"
+  },
+  {
+   "id": "2",
+   "bbox": [
+    737.0,
+    6.0,
+    1417.0,
+    276.0
+   ],
+   "image": "panel-2.png",
+   "x_axis": "38 | 40 | 42 | 44 | 46 | 48 | 50 | 52 (linear)",
+   "y_axis": "Default (temp=1) | Default - 10% | Default - 40% | Default - 60% | Default - 90% | temp=0 (categorical)"
+  },
+  {
+   "id": "3",
+   "bbox": [
+    8.0,
+    300.0,
+    710.0,
+    918.0
+   ],
+   "image": "panel-3.png",
+   "x_axis": "0 | 10 | 20 | 30 | 40 | 50 (linear)",
+   "y_axis": "Best Prompt (candidate 4) | Give Model Time to Think | Consensus Technique | Expert Mimicry | Confidence Scoring | Contextual Embedding | Comparative Analysis | Elimination Method | Answer Justification | Chain of Thought | Option Analysis | Direct Question | Raw | 0 (categorical)"
+  },
+  {
+   "id": "4",
+   "bbox": [
+    737.0,
+    299.0,
+    1417.0,
+    918.0
+   ],
+   "image": "panel-4.png",
+   "x_axis": "35 | 40 | 42.5 | 45 | 47.5 | 50 | 52.5 (linear)",
+   "y_axis": "Candidate 6 | Candidate 5 | Candidate 4 | Candidate 3 | Candidate 2 | Candidate 1 | Give Model Time to Think | Consensus Technique | Expert Mimicry | Confidence Scoring | Contextual Embedding | Comparative Analysis | Elimination Method | Answer Justification | Chain of Thought | Option Analysis | Direct Question- | Raw (categorical)"
+  }
+ ],
+ "words": [
+  {
+   "text": "a",
+   "bbox": [
+    7.0,
+    10.0,
+    40.0,
+    46.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "b",
+   "bbox": [
+    735.0,
+    3.0,
+    772.0,
+    46.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Default (temp=1)",
+   "bbox": [
+    817.0,
+    20.0,
+    939.0,
+    40.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "H",
+   "bbox": [
+    1172.0,
+    23.0,
+    1184.0,
+    38.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Response Generation",
+   "bbox": [
+    75.0,
+    44.0,
+    95.0,
+    208.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Langchain",
+   "bbox": [
+    158.0,
+    44.0,
+    234.0,
+    64.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Default - 10%",
+   "bbox": [
+    843.0,
+    56.0,
+    938.0,
+    76.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Temperature",
+   "bbox": [
+    792.0,
+    76.0,
+    815.0,
+    179.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Default - 40%",
+   "bbox": [
+    844.0,
+    98.0,
+    937.0,
+    115.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Function Call -",
+   "bbox": [
+    143.0,
+    119.0,
+    236.0,
+    138.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Default - 60%",
+   "bbox": [
+    841.0,
+    131.0,
+    939.0,
+    154.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Default - 90%",
+   "bbox": [
+    844.0,
+    175.0,
+    938.0,
+    192.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Standard Output",
+   "bbox": [
+    121.0,
+    193.0,
+    237.0,
+    213.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT3-API",
+   "bbox": [
+    648.0,
+    196.0,
+    705.0,
+    214.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "H",
+   "bbox": [
+    955.0,
+    198.0,
+    974.0,
+    214.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "best prompt",
+   "bbox": [
+    978.0,
+    195.0,
+    1054.0,
+    215.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4-API",
+   "bbox": [
+    646.0,
+    210.0,
+    705.0,
+    230.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "temp=0",
+   "bbox": [
+    875.0,
+    214.0,
+    937.0,
+    234.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "raw prompt",
+   "bbox": [
+    978.0,
+    212.0,
+    1050.0,
+    231.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    233.0,
+    243.0,
+    242.0,
+    255.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    290.0,
+    238.0,
+    316.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    356.0,
+    238.0,
+    382.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "30",
+   "bbox": [
+    422.0,
+    237.0,
+    448.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    489.0,
+    238.0,
+    514.0,
+    258.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    554.0,
+    238.0,
+    579.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    620.0,
+    238.0,
+    645.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "70",
+   "bbox": [
+    686.0,
+    238.0,
+    711.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "38",
+   "bbox": [
+    938.0,
+    238.0,
+    963.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    1003.0,
+    238.0,
+    1028.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42",
+   "bbox": [
+    1068.0,
+    238.0,
+    1093.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "44",
+   "bbox": [
+    1135.0,
+    238.0,
+    1159.0,
+    258.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "46",
+   "bbox": [
+    1199.0,
+    238.0,
+    1224.0,
+    258.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "48",
+   "bbox": [
+    1265.0,
+    238.0,
+    1290.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    1329.0,
+    238.0,
+    1356.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52",
+   "bbox": [
+    1396.0,
+    237.0,
+    1418.0,
+    259.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Accuracy (%)",
+   "bbox": [
+    420.0,
+    255.0,
+    527.0,
+    278.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Accuracy (%)",
+   "bbox": [
+    1126.0,
+    255.0,
+    1234.0,
+    278.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "C",
+   "bbox": [
+    7.0,
+    300.0,
+    39.0,
+    342.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "d",
+   "bbox": [
+    735.0,
+    297.0,
+    771.0,
+    341.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Best Prompt (candidate 4)",
+   "bbox": [
+    59.0,
+    325.0,
+    234.0,
+    342.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 6",
+   "bbox": [
+    855.0,
+    319.0,
+    943.0,
+    338.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 5",
+   "bbox": [
+    855.0,
+    349.0,
+    942.0,
+    369.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Give Model Time to Think",
+   "bbox": [
+    66.0,
+    367.0,
+    235.0,
+    384.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 4",
+   "bbox": [
+    855.0,
+    381.0,
+    942.0,
+    401.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Consensus Technique",
+   "bbox": [
+    88.0,
+    408.0,
+    234.0,
+    427.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 3",
+   "bbox": [
+    855.0,
+    412.0,
+    941.0,
+    431.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Expert Mimicry",
+   "bbox": [
+    129.0,
+    447.0,
+    236.0,
+    470.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 2",
+   "bbox": [
+    855.0,
+    443.0,
+    941.0,
+    463.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Candidate 1",
+   "bbox": [
+    855.0,
+    474.0,
+    940.0,
+    495.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Confidence Scoring",
+   "bbox": [
+    102.0,
+    489.0,
+    236.0,
+    511.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Experiment Setting",
+   "bbox": [
+    36.0,
+    515.0,
+    63.0,
+    669.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Give Model Time to Think",
+   "bbox": [
+    771.0,
+    505.0,
+    942.0,
+    525.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "1",
+   "bbox": [
+    1244.0,
+    508.0,
+    1252.0,
+    520.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Contextual Embedding",
+   "bbox": [
+    81.0,
+    531.0,
+    234.0,
+    551.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Consensus Technique",
+   "bbox": [
+    796.0,
+    537.0,
+    942.0,
+    557.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Function",
+   "bbox": [
+    750.0,
+    556.0,
+    773.0,
+    628.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Comparative Analysis",
+   "bbox": [
+    87.0,
+    572.0,
+    235.0,
+    595.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "MT: 512",
+   "bbox": [
+    632.0,
+    568.0,
+    682.0,
+    586.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Expert Mimicry",
+   "bbox": [
+    835.0,
+    567.0,
+    942.0,
+    590.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "MT: 1024",
+   "bbox": [
+    632.0,
+    583.0,
+    689.0,
+    600.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "MT: 512plus",
+   "bbox": [
+    631.0,
+    597.0,
+    705.0,
+    617.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Confidence Scoring",
+   "bbox": [
+    808.0,
+    597.0,
+    940.0,
+    620.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Elimination Method",
+   "bbox": [
+    104.0,
+    614.0,
+    235.0,
+    634.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Contextual Embedding",
+   "bbox": [
+    787.0,
+    630.0,
+    939.0,
+    650.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Answer Justification",
+   "bbox": [
+    102.0,
+    653.0,
+    236.0,
+    673.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Comparative Analysis",
+   "bbox": [
+    795.0,
+    663.0,
+    940.0,
+    680.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Chain of Thought",
+   "bbox": [
+    117.0,
+    697.0,
+    236.0,
+    717.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Elimination Method",
+   "bbox": [
+    810.0,
+    693.0,
+    941.0,
+    710.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Answer Justification",
+   "bbox": [
+    808.0,
+    722.0,
+    942.0,
+    739.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Option Analysis",
+   "bbox": [
+    127.0,
+    739.0,
+    235.0,
+    759.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Chain of Thought",
+   "bbox": [
+    821.0,
+    752.0,
+    942.0,
+    775.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Direct Question",
+   "bbox": [
+    129.0,
+    780.0,
+    238.0,
+    800.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Option Analysis",
+   "bbox": [
+    832.0,
+    784.0,
+    943.0,
+    807.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Raw",
+   "bbox": [
+    199.0,
+    821.0,
+    239.0,
+    844.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Direct Question-",
+   "bbox": [
+    836.0,
+    818.0,
+    945.0,
+    835.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Raw",
+   "bbox": [
+    906.0,
+    849.0,
+    943.0,
+    868.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    231.0,
+    889.0,
+    244.0,
+    903.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "10",
+   "bbox": [
+    309.0,
+    885.0,
+    335.0,
+    906.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    393.0,
+    886.0,
+    419.0,
+    906.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "30",
+   "bbox": [
+    479.0,
+    884.0,
+    503.0,
+    906.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    562.0,
+    886.0,
+    588.0,
+    906.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50",
+   "bbox": [
+    647.0,
+    886.0,
+    672.0,
+    906.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "35.0",
+   "bbox": [
+    946.0,
+    885.0,
+    986.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "375",
+   "bbox": [
+    1008.0,
+    885.0,
+    1046.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40.0",
+   "bbox": [
+    1070.0,
+    885.0,
+    1109.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "42.5",
+   "bbox": [
+    1133.0,
+    886.0,
+    1169.0,
+    905.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "45.0",
+   "bbox": [
+    1194.0,
+    886.0,
+    1231.0,
+    905.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "47.5",
+   "bbox": [
+    1255.0,
+    885.0,
+    1294.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "50.0",
+   "bbox": [
+    1317.0,
+    885.0,
+    1357.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "52.5",
+   "bbox": [
+    1379.0,
+    885.0,
+    1418.0,
+    907.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Accuracy (%)",
+   "bbox": [
+    422.0,
+    903.0,
+    526.0,
+    917.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Accuracy (%)",
+   "bbox": [
+    1128.0,
+    903.0,
+    1233.0,
+    917.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

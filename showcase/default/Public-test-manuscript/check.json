@@ -2,7 +2,7 @@
   "schema_version": "extrct.bundle-check/1",
   "bundle": "Public-test-manuscript",
   "pdf": "showcase/Public-test-manuscript.pdf",
-  "checked_by": "2.131.0-r3",
+  "checked_by": "2.131.0-r7",
   "ok": true,
   "issues": [],
   "html_coverage": {
@@ -20,10 +20,23 @@
     "issues": [],
     "pdf_words": 17536,
     "no_text_layer": false,
-    "document_recall": 0.9929,
+    "document_recall": 0.9974,
     "pages_checked": 61,
-    "min_page": 6,
-    "min_page_recall": 0.914,
+    "min_page": 30,
+    "min_page_recall": 0.9485,
+    "flagged_pages": []
+  },
+  "uncovered_text": {
+    "skipped": null,
+    "issues": [],
+    "no_text_layer": false,
+    "chars": 102049,
+    "uncovered_chars": 0,
+    "words": 15796,
+    "uncovered_words": 0,
+    "pages_checked": 61,
+    "max_page": 1,
+    "max_page_share": 0.0,
     "flagged_pages": []
   },
   "export_fidelity": {
@@ -31,7 +44,7 @@
     "issues": [],
     "html": 1.0,
     "md": 1.0,
-    "chunks": 0.9989
+    "chunks": 0.9994
   },
   "ligature_splits": {
     "skipped": null,
@@ -48,26 +61,17 @@
     "skipped": null,
     "issues": [],
     "count": 17,
-    "low_recall": [
-      {
-        "self_ref": "#/tables/2",
-        "cell_text_recall": 0.902
-      },
-      {
-        "self_ref": "#/tables/8",
-        "cell_text_recall": 0.933
-      },
-      {
-        "self_ref": "#/tables/16",
-        "cell_text_recall": 0.937
-      }
-    ],
+    "by_structure_model": {
+      "granite_vision": 1,
+      "tableformer": 16
+    },
+    "low_recall": [],
     "degenerate": []
   },
   "chunks": {
     "skipped": null,
     "issues": [],
-    "count": 137,
+    "count": 138,
     "empty": 0,
     "max_tokens": 512,
     "over_max_tokens": 0,
@@ -78,7 +82,8 @@
     "issues": [],
     "pages": 68,
     "body_text_items": 353,
-    "section_headers": 72
+    "section_headers": 64,
+    "warnings": []
   },
   "guards": {
     "skipped": null,
@@ -88,5 +93,22 @@
     "missing_images": [],
     "noise_in_md": [],
     "noise_unmarked_in_html": []
+  },
+  "figure_data": {
+    "skipped": "figure-to-data not run",
+    "issues": [],
+    "mode": null,
+    "eligible": 0,
+    "extracted": 0,
+    "no_data": 0,
+    "verified": 0,
+    "low_confidence": 0
+  },
+  "text_layer": {
+    "skipped": null,
+    "issues": [],
+    "glyph_order_pages": [],
+    "unreadable_pages": [],
+    "partly_unreadable_pages": []
   }
 }

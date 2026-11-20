@@ -1,0 +1,827 @@
+{
+ "schema": "extrct.figure-prep/1",
+ "step_version": "3",
+ "figure": {
+  "bundle": "Public-test-manuscript",
+  "self_ref": "#/pictures/4",
+  "image_path": "images/picture_005.png",
+  "page": 20,
+  "bbox": [
+   133.91,
+   78.3,
+   455.3,
+   568.39
+  ]
+ },
+ "image": "figure.png",
+ "width": 982,
+ "height": 1498,
+ "capture": "embedded-bitmap",
+ "px_per_crop": 2.037344398340249,
+ "source_kind": "raster",
+ "figure_type": "bar_chart",
+ "caption": "Figure 5. VLM Performance on Gastroenterology Multiple-Choice Questions with Image Data.",
+ "split_method": "single",
+ "split_notes": [],
+ "rule_charts": 1,
+ "listed_charts": 1,
+ "listed_by": "anthropic/claude-sonnet-5.5",
+ "panels": [
+  {
+   "id": "1",
+   "bbox": [
+    2.0,
+    5.0,
+    976.0,
+    1495.0
+   ],
+   "image": null,
+   "x_axis": "0 | 20 | 40 | 60 | 80 | 100 (linear)",
+   "y_axis": "GPT4 Web - no image | GPT4 Web - LLM caption | GPT4 Web - direct image | GPT4 Web - human hint | GPT4 API - no image | GPT4 API - LLM caption | GPT4 API - direct image | GPT4 API - human hint | Claude3Opus Web - no image | Claude3Opus Web - LLM caption | Claude3Opus Web - direct image | Claude3Opus Web - human hint | Claude3Opus API - no image | Claude3Opus API - LLM caption | Claude3Opus API - direct image | Claude3Opus API - human hint | Claude3Sonnet API - no image | Claude3Sonnet API - LLM caption | Claude3Sonnet API - direct image | Claude3Sonnet API - human hint | GeminiAdvanced Web - no image | GeminiAdvanced Web - LLM caption | GeminiAdvanced Web- direct image | GeminiAdvanced Web - human hint (categorical)"
+  }
+ ],
+ "words": [
+  {
+   "text": "GPT4 Web - no image",
+   "bbox": [
+    123.0,
+    76.0,
+    325.0,
+    104.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "65.2%",
+   "bbox": [
+    626.0,
+    75.0,
+    679.0,
+    101.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    68.0,
+    981.0,
+    99.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 Web - LLM caption",
+   "bbox": [
+    99.0,
+    119.0,
+    326.0,
+    148.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "59.4%",
+   "bbox": [
+    592.0,
+    119.0,
+    649.0,
+    147.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    116.0,
+    966.0,
+    143.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 Web - direct image",
+   "bbox": [
+    94.0,
+    166.0,
+    325.0,
+    194.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "68.1%",
+   "bbox": [
+    641.0,
+    163.0,
+    699.0,
+    193.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "su",
+   "bbox": [
+    933.0,
+    161.0,
+    966.0,
+    189.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 Web - human hint",
+   "bbox": [
+    104.0,
+    211.0,
+    326.0,
+    239.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "73.2%",
+   "bbox": [
+    671.0,
+    209.0,
+    726.0,
+    238.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    208.0,
+    965.0,
+    233.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 API - no image",
+   "bbox": [
+    133.0,
+    302.0,
+    326.0,
+    332.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "68.8%",
+   "bbox": [
+    644.0,
+    300.0,
+    703.0,
+    329.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    296.0,
+    981.0,
+    326.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 API - LLM caption",
+   "bbox": [
+    110.0,
+    349.0,
+    327.0,
+    374.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "64.5%",
+   "bbox": [
+    621.0,
+    347.0,
+    675.0,
+    373.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    343.0,
+    966.0,
+    371.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 API - direct image",
+   "bbox": [
+    105.0,
+    392.0,
+    325.0,
+    422.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "65.2%",
+   "bbox": [
+    626.0,
+    391.0,
+    679.0,
+    417.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    389.0,
+    965.0,
+    414.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GPT4 API - human hint",
+   "bbox": [
+    115.0,
+    438.0,
+    326.0,
+    464.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "71.7%",
+   "bbox": [
+    663.0,
+    434.0,
+    719.0,
+    466.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    434.0,
+    965.0,
+    459.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus Web - no image",
+   "bbox": [
+    51.0,
+    530.0,
+    325.0,
+    556.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "63.8%",
+   "bbox": [
+    618.0,
+    528.0,
+    671.0,
+    553.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    521.0,
+    981.0,
+    552.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus Web - LLM caption",
+   "bbox": [
+    29.0,
+    576.0,
+    325.0,
+    602.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "48.6%",
+   "bbox": [
+    531.0,
+    572.0,
+    588.0,
+    601.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus Web - direct image",
+   "bbox": [
+    23.0,
+    619.0,
+    325.0,
+    647.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "63.8%",
+   "bbox": [
+    618.0,
+    619.0,
+    671.0,
+    644.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    616.0,
+    965.0,
+    640.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus Web - human hint",
+   "bbox": [
+    34.0,
+    665.0,
+    327.0,
+    691.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "76.8%",
+   "bbox": [
+    691.0,
+    662.0,
+    748.0,
+    691.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus API - no image",
+   "bbox": [
+    62.0,
+    757.0,
+    324.0,
+    782.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "68.1%",
+   "bbox": [
+    641.0,
+    753.0,
+    699.0,
+    782.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    748.0,
+    981.0,
+    778.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus API - LLM caption",
+   "bbox": [
+    39.0,
+    802.0,
+    325.0,
+    828.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "68.8%",
+   "bbox": [
+    644.0,
+    798.0,
+    703.0,
+    827.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    795.0,
+    967.0,
+    823.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus API - direct image",
+   "bbox": [
+    34.0,
+    846.0,
+    325.0,
+    874.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "68.8%",
+   "bbox": [
+    646.0,
+    845.0,
+    702.0,
+    871.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    842.0,
+    965.0,
+    867.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Opus API - human hint",
+   "bbox": [
+    45.0,
+    893.0,
+    326.0,
+    916.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "78.3%",
+   "bbox": [
+    699.0,
+    888.0,
+    757.0,
+    917.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Sonnet API - no image",
+   "bbox": [
+    46.0,
+    983.0,
+    324.0,
+    1008.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "53.7%",
+   "bbox": [
+    561.0,
+    980.0,
+    616.0,
+    1006.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    974.0,
+    981.0,
+    1004.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Sonnet API - LLM caption",
+   "bbox": [
+    21.0,
+    1027.0,
+    325.0,
+    1054.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.3%",
+   "bbox": [
+    563.0,
+    1026.0,
+    619.0,
+    1052.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    1022.0,
+    966.0,
+    1050.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Sonnet API - direct image",
+   "bbox": [
+    18.0,
+    1074.0,
+    324.0,
+    1100.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "73.9%",
+   "bbox": [
+    674.0,
+    1070.0,
+    732.0,
+    1099.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Claude3Sonnet API - human hint",
+   "bbox": [
+    28.0,
+    1120.0,
+    326.0,
+    1142.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "56.5%",
+   "bbox": [
+    576.0,
+    1115.0,
+    633.0,
+    1143.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    933.0,
+    1114.0,
+    965.0,
+    1138.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web - no image",
+   "bbox": [
+    20.0,
+    1209.0,
+    323.0,
+    1234.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "25.0%",
+   "bbox": [
+    397.0,
+    1207.0,
+    451.0,
+    1233.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "(ref)",
+   "bbox": [
+    934.0,
+    1200.0,
+    981.0,
+    1231.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web - LLM caption",
+   "bbox": [
+    0.0,
+    1255.0,
+    325.0,
+    1280.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Correct",
+   "bbox": [
+    829.0,
+    1272.0,
+    903.0,
+    1297.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web- direct image",
+   "bbox": [
+    0.0,
+    1299.0,
+    325.0,
+    1326.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20.3%",
+   "bbox": [
+    368.0,
+    1297.0,
+    427.0,
+    1326.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "2OP",
+   "bbox": [
+    828.0,
+    1297.0,
+    874.0,
+    1324.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "ns",
+   "bbox": [
+    934.0,
+    1295.0,
+    965.0,
+    1320.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "EOP",
+   "bbox": [
+    828.0,
+    1323.0,
+    873.0,
+    1349.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "GeminiAdvanced Web - human hint",
+   "bbox": [
+    2.0,
+    1347.0,
+    325.0,
+    1370.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "54.3%",
+   "bbox": [
+    562.0,
+    1342.0,
+    621.0,
+    1371.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "NOP",
+   "bbox": [
+    827.0,
+    1347.0,
+    878.0,
+    1376.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Error",
+   "bbox": [
+    829.0,
+    1375.0,
+    884.0,
+    1401.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Incorrect",
+   "bbox": [
+    828.0,
+    1401.0,
+    919.0,
+    1428.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "0",
+   "bbox": [
+    322.0,
+    1448.0,
+    342.0,
+    1471.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "20",
+   "bbox": [
+    427.0,
+    1446.0,
+    461.0,
+    1474.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "40",
+   "bbox": [
+    541.0,
+    1446.0,
+    575.0,
+    1474.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "60",
+   "bbox": [
+    655.0,
+    1446.0,
+    689.0,
+    1474.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "80",
+   "bbox": [
+    768.0,
+    1446.0,
+    803.0,
+    1474.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "100",
+   "bbox": [
+    876.0,
+    1445.0,
+    923.0,
+    1475.0
+   ],
+   "source": "ocr"
+  },
+  {
+   "text": "Percentage",
+   "bbox": [
+    574.0,
+    1470.0,
+    684.0,
+    1497.0
+   ],
+   "source": "ocr"
+  }
+ ],
+ "marks": [],
+ "image_objects": 1
+}

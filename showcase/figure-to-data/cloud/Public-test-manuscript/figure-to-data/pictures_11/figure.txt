@@ -1,0 +1,218 @@
+Figure pictures_11 of Public-test-manuscript, page 63
+Image: figure.png, 1250 x 1852 px
+Caption in the paper: Supplementary Figure S5. Performance Stratified by Question Subject
+
+Charts as a model listed them, cut by layout analysis: 11 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart 1, box [2, 3, 504, 180], crop panel-1.png, y ticks 10€ | ae | 0 | 2z (categorical), x ticks GPT-4 Wnb | GPF-40 | Caute3-Hlaku Wetb | Craude3-Halko APs | Caude3-Sonnel Apt | Mixtrol-8.71: 9oe | 1ania2-70t fre | Gemura2-27u Poe | Plu3-30-016 tocal | P013-14b-G6 1xal (categorical)
+- chart 2, box [505, 5, 996, 180], crop panel-2.png, x ticks GPF35 AP1 | G 2 | Caude3 Sonrat Aps | Mistrel Lange fh.e | Liamá3.3-70è Pre | Ph3-30-G1ELa] (categorical)
+- chart 3, box [5, 180, 502, 346], crop panel-3.png, y ticks 20 | 50 | 80 (log), x ticks E140 | GPT-4 Wab | E3T-4 AP | GUE-44AP | Lona3.1-791 Poe (categorical)
+- chart 4, box [504, 180, 996, 346], crop panel-4.png, x ticks GPT-3.5 tWinb | GPF35 AP | Gemaséz-z75 Phe | Ph314b-5Locel (categorical)
+- chart 5, box [2, 347, 504, 513], crop panel-5.png, y ticks 20 | 40 | 60 | 80 (linear), x ticks GPT-35 Wel | 1357T-41A | Chouse3 Holhs APY | CMudeS-Opus API | Pia3-14b-QA12c0) (categorical)
+- chart 6, box [506, 347, 996, 513], crop panel-6.png, x ticks GPT-3.5 v9b | (SHT-3 5 API | SPI-4 Wel | Ci60043-Hau AP | Liams2-75 | P7y3-3b-016 Locol (categorical)
+- chart 7, box [5, 513, 502, 680], crop panel-7.png, y ticks 21 | 40 | 60 | 100 (linear), x ticks G97-3.5 Wel | GPT3.5 AP | GPT-4 AP] | Clsude3-Ous API | Mistyal-Larte Poc (categorical)
+- chart 8, box [505, 513, 996, 680], crop panel-8.png, y ticks 20 | 40 | 100 (linear), x ticks GPT-2 5 1eb | 3FT-3.5 API | 10体,-140 | GPTSAPI | Mistrai-Large Foo | Pear-14t-061.0c0 (categorical)
+- chart 9, box [5, 680, 498, 847], crop panel-9.png, y ticks 21 | 41 | 100 (linear), x ticks GPY-3.5 Wet | G5T4 viket | CPT-40 API | Clounes-Sonner AM | Cacte3-Opus AP7 | Lora3-2b Po0 (categorical)
+- chart 10, box [506, 680, 996, 835], crop panel-10.png, y ticks 20 | 41 | 100 (linear), x ticks GP755wkt | GPT-3.5 A57 | [4PT-S0 AP] | Caude3-Somnt AP | Code3-Opus W | Ctaude3-Ogus AP | Mistralv7-7b Pos | 13amso3.1-70 Poé | Gsmma?-27b Fo0 (categorical)
+- chart 11, box [7, 848, 498, 1000], crop panel-11.png, y ticks 7 | 100 (linear), x ticks Ciaude3 Niak u ts | 159m162-13b Poe | (ama2-700 P | 1ams3.1-700 Pon | 1927 974E0 (categorical)
+
+Text printed in chart 1 (text @ x,y on a 0-1000 grid of that chart's crop):
+Queslion lype: COLON (N = 49) @ 520,29
+10€ @ 35,84
+Cerrec. @ 945,85
+For @ 935,114
+EP @ 935,146
+doy @ 935,175
+ae @ 40,200
+ur @ 945,215
+prcentagé @ 14,360
+.15 @ 941,393
+0 @ 40,430
+2z @ 38,549
+GPT-4 Wnb @ 120,733
+GPF-40 @ 162,735
+Caute3-Hlaku Wetb @ 207,773
+Craude3-Halko APs @ 230,768
+Caude3-Sonnel Apt @ 268,773
+Mixtrol-8.71: 9oe @ 435,761
+1ania2-70t fre @ 660,758
+Gemura2-27u Poe @ 840,765
+Plu3-30-016 tocal @ 879,767
+P013-14b-G6 1xal @ 899,767
+Question type: ESOPHAGUS (N = 36) @ 520,970
+
+Text printed in chart 2 (text @ x,y on a 0-1000 grid of that chart's crop):
+Queslion lype: ENDOSCOPY (N = 26) @ 523,15
+100 @ 29,73
+EOF @ 950,139
+Percentag: @ 8,353
+10 @ 34,424
+20 @ 33,543
+GPF35 AP1 @ 94,733
+G 2 @ 116,730
+Mistrel Lange fh.e @ 416,761
+Liamá3.3-70è Pre @ 704,762
+Ph3-30-G1ELa] @ 891,762
+Caude3 Sonrat Aps @ 267,773
+Question type: IBD (N = 30) @ 524,969
+
+Text printed in chart 3 (text @ x,y on a 0-1000 grid of that chart's crop):
+10r: @ 31,24
+doy @ 940,130
+80 @ 35,151
+Incorrect @ 955,200
+50 @ 35,277
+nercentage @ 10,322
+10 @ 35,399
+èTE @ 110,453
+20 @ 34,524
+E3T-4 AP @ 139,718
+E140 @ 73,731
+GPT-4 Wab @ 116,723
+GUE-44AP @ 158,723
+Lona3.1-791 Poe @ 699,757
+Question type: IBS (N = 14) @ 521,980
+
+Text printed in chart 4 (text @ x,y on a 0-1000 grid of that chart's crop):
+11a @ 32,26
+HON @ 950,130
+50 @ 34,151
+60 @ 35,275
+10 @ 35,399
+[00.05] @ 122,401
+000% @ 471,402
+4=./5] @ 928,425
+20 @ 33,524
+GPT-3.5 tWinb @ 73,730
+GPF35 AP @ 95,726
+Gemaséz-z75 Phe @ 850,756
+Ph314b-5Locel @ 911,761
+Question type: LIVER (N = 52) @ 524,982
+
+Text printed in chart 5 (text @ x,y on a 0-1000 grid of that chart's crop):
+10r @ 35,31
+Geree @ 945,36
+ACP @ 936,131
+80 @ 40,154
+Lor @ 938,170
+irconect @ 949,206
+60 @ 40,279
+40 @ 39,399
+20 @ 38,526
+GPT-35 Wel @ 77,734
+1357T-41A @ 161,726
+Chouse3 Holhs APY @ 230,763
+CMudeS-Opus API @ 311,761
+Pia3-14b-QA12c0) @ 899,760
+Question type: MISCELLANEOUS (N = 19) @ 520,981
+
+Text printed in chart 6 (text @ x,y on a 0-1000 grid of that chart's crop):
+10 @ 27,31
+60 @ 29,156
+60 @ 30,279
+Percercaçe @ 5,326
+40 @ 29,403
+wu @ 119,476
+20 @ 29,529
+GPT-3.5 v9b @ 69,734
+(SHT-3 5 API @ 91,727
+SPI-4 Wel @ 113,726
+Ci60043-Hau AP @ 225,763
+Liams2-75 @ 473,765
+P7y3-3b-016 Locol @ 891,760
+Question type: NUTRITION (N = 3) @ 523,981
+
+Text printed in chart 7 (text @ x,y on a 0-1000 grid of that chart's crop):
+100 @ 31,31
+00 @ 35,156
+Incaect @ 954,208
+60 @ 35,282
+40 @ 35,404
+21 @ 34,531
+IPAIAT @ 665,521
+G97-3.5 Wel @ 73,734
+GPT3.5 AP @ 95,729
+GPT-4 AP] @ 139,721
+Clsude3-Ous API @ 309,760
+Mistyal-Larte Poc @ 414,758
+Question type: PANCREATICO-BILIARY (N = 31) @ 521,981
+
+Text printed in chart 8 (text @ x,y on a 0-1000 grid of that chart's crop):
+100 @ 31,31
+Nor @ 950,135
+imr @ 953,174
+lreu @ 964,205
+ω @ 32,282
+e2.1 @ 923,305
+Heccraae @ 8,331
+40 @ 33,407
+20 @ 33,531
+GPT-2 5 1eb @ 72,734
+3FT-3.5 API @ 94,731
+10体,-140 @ 115,727
+GPTSAPI @ 139,721
+Ciade3 Hr vet @ 205,769
+Mistrai-Large Foo @ 416,756
+Pear-14t-061.0c0 @ 911,760
+Question type: SMALL BOWEL (N = 22) @ 524,981
+
+Text printed in chart 9 (text @ x,y on a 0-1000 grid of that chart's crop):
+100 @ 31,32
+Core:: @ 958,37
+dnz @ 946,65
+do] @ 947,101
+kor @ 949,136
+a0 @ 35,157
+Fnr @ 950,170
+Insarrect @ 962,208
+Percentige @ 10,328
+[o 1á] @ 164,357
+41 @ 35,404
+1.5 @ 870,398
+[300] @ 722,498
+21 @ 35,529
+GPY-3.5 Wet @ 73,737
+G5T4 viket @ 118,729
+CPT-40 API @ 159,729
+Lora3-2b Po0 @ 606,750
+Clounes-Sonner AM @ 269,773
+Cacte3-Opus AP7 @ 312,765
+E· @ 870,815
+Question typo: STOMACH (N = 17) @ 524,981
+
+Text printed in chart 10 (text @ x,y on a 0-1000 grid of that chart's crop):
+100 @ 27,35
+ω0 @ 29,170
+FrTtzgc @ 5,357
+41 @ 30,437
+n R4 @ 682,498
+20 @ 29,572
+GP755wkt @ 68,794
+GPT-3.5 A57 @ 91,787
+[4PT-S0 AP] @ 154,783
+Caude3-Somnt AP @ 264,834
+Code3-Opus W @ 286,829
+Ctaude3-Ogus AP @ 309,823
+Mistralv7-7b Pos @ 373,816
+13amso3.1-70 Poé @ 703,822
+Gsmma?-27b Fo0 @ 849,820
+
+Text printed in chart 11 (text @ x,y on a 0-1000 grid of that chart's crop):
+100 @ 25,35
+a @ 30,172
+hOP @ 948,149
+F’or @ 949,184
+«iD @ 30,303
+Percentage @ 5,358
+1050 @ 296,381
+4D @ 31,440
+7 @ 30,573
+159m162-13b Poe @ 542,821
+(ama2-700 P @ 583,821
+Ciaude3 Niak u ts @ 202,839
+1ams3.1-700 Pon @ 704,830
+1927 974E0 @ 910,830
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

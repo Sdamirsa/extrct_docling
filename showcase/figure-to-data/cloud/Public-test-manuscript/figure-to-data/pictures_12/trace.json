@@ -1,0 +1,292 @@
+{
+ "method": "cloud",
+ "model": "anthropic/claude-sonnet-5.5",
+ "endpoint": "https://openrouter.ai/api/v1",
+ "asked_with": [
+  "reasoning_effort"
+ ],
+ "reasoning_effort": "medium",
+ "usage": {
+  "prompt_tokens": 8402,
+  "completion_tokens": 1354,
+  "total_tokens": 9756,
+  "cost": 0.030344,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.030344,
+   "upstream_inference_prompt_cost": 0.016804,
+   "upstream_inference_completions_cost": 0.01354
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 0,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "reply": {
+  "description": "Five stacked bar charts showing, for each language model and access mode, the percentage of answers that were Correct, ZOP, EOP, NOP, Error or Incorrect, split by patient care phase (Complication, Diagnosis, Investigation, Pathophysiology, Treatment).",
+  "has_data": true,
+  "panels": [
+   {
+    "id": "1",
+    "title": "Question type: Complication (N = 55)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "ZOP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [],
+    "box": null,
+    "notes": [
+     "About 40 bars, one per model. Bars are mostly Correct (green) and Incorrect (red), with small grey and orange segments.",
+     "Correct values printed on the bars range from about 24% to 75%. Examples: GPT-4o API about 74.5%, Claude3.5-Sonnet API about 78%, Llama3.1-405b Poe about 56.6%.",
+     "Models are grouped by family: GPT, Claude, Mistral, Llama, Gemini and Gemma, Phi3."
+    ]
+   },
+   {
+    "id": "2",
+    "title": "Question type: Diagnosis (N = 123)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "ZOP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [],
+    "box": null,
+    "notes": [
+     "Correct values range from about 25% to 80%. GPT-4o API is about 80% and Claude3.5-Sonnet API about 78%."
+    ]
+   },
+   {
+    "id": "3",
+    "title": "Question type: Investigation (N = 211)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "ZOP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [],
+    "box": null,
+    "notes": [
+     "Correct values range from about 17% to 74%. GPT-4o API is about 74%."
+    ]
+   },
+   {
+    "id": "4",
+    "title": "Question type: Pathophysiology (N = 3)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "ZOP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [],
+    "box": null,
+    "notes": [
+     "With N = 3, Correct takes only the values 0, 33.3, 66.7 and 100%."
+    ]
+   },
+   {
+    "id": "5",
+    "title": "Question type: Treatment (N = 217)",
+    "kind": "stacked_bar",
+    "orientation": "vertical",
+    "x_axis": {
+     "name": "Model",
+     "unit": null,
+     "scale": "categorical",
+     "min": null,
+     "max": null
+    },
+    "y_axis": {
+     "name": "Percentage",
+     "unit": "%",
+     "scale": "linear",
+     "min": 0,
+     "max": 100
+    },
+    "series": [
+     "Correct",
+     "ZOP",
+     "EOP",
+     "NOP",
+     "Error",
+     "Incorrect"
+    ],
+    "points": [],
+    "box": null,
+    "notes": [
+     "Correct values range from about 29% to 76%. Claude3.5-Sonnet API is about 75.6% and GPT-4o API about 73.7%."
+    ]
+   }
+  ],
+  "not_read": [
+   "No individual bar segments were extracted for any of the five charts, because the labels are too small and blurred to read reliably. Each chart has about 40 bars with 6 segments each.",
+   "The printed percentage labels on the bars are mostly illegible."
+  ]
+ },
+ "reply_text": null,
+ "chart_list": {
+  "reasoning_effort": "low",
+  "usage": {
+   "prompt_tokens": 3744,
+   "completion_tokens": 243,
+   "total_tokens": 3987,
+   "cost": 0.009918,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.009918,
+    "upstream_inference_prompt_cost": 0.007488,
+    "upstream_inference_completions_cost": 0.00243
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  },
+  "reply": {
+   "description": "Five stacked bar charts showing the percentage of correct, incorrect and other response categories for many LLMs, split by medical question type: complication, diagnosis, investigation, pathophysiology and treatment.",
+   "has_data": true,
+   "charts": [
+    {
+     "id": "1",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      0,
+      1000,
+      200
+     ]
+    },
+    {
+     "id": "2",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      205,
+      1000,
+      400
+     ]
+    },
+    {
+     "id": "3",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      405,
+      1000,
+      600
+     ]
+    },
+    {
+     "id": "4",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      606,
+      1000,
+      800
+     ]
+    },
+    {
+     "id": "5",
+     "kind": "stacked_bar",
+     "box": [
+      0,
+      806,
+      1000,
+      1000
+     ]
+    }
+   ]
+  }
+ }
+}

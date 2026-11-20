@@ -1,0 +1,74 @@
+Figure pictures_5 of Public-test-manuscript, page 21
+Image: figure.png, 1417 x 588 px
+Caption in the paper: Figure 6. Historical performance of GPT models on gastroenterology MCQ: (a) three ACG
+
+Charts found by layout analysis: 2 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart a, box [4, 7, 450, 993], crop panel-a.png, y ticks 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 (linear), x ticks 2021 | 2022 | 2023 (linear)
+- chart b, box [462, 7, 1000, 993], crop panel-b.png, y ticks 10 | 20 | 30 | 40 | 50 | 60 | 70 (linear), x ticks 2021-09 | 2023-12 | 2023-04 | 2023-09 (categorical)
+
+Text printed in chart a (text @ x,y on a 0-1000 grid of that chart's crop):
+a @ 27,33
+80 @ 86,39
+75 @ 88,148
+71.59% @ 200,183
+70.35% @ 950,210
+70 @ 89,255
+63.58% @ 574,355
+65 @ 86,363
+60 @ 88,471
+Accuracy @ 36,484
+55 @ 86,577
+53.49% @ 949,571
+50 @ 87,684
+46.30% @ 574,725
+44.57% @ 200,764
+45 @ 86,784
+GPT-3.5 Turbo 0125 @ 807,825
+GPT-4 0613 @ 758,863
+2021 @ 160,938
+2022 @ 535,938
+2023 @ 909,935
+ACG Self-Assessment Version @ 529,984
+
+Text printed in chart b (text @ x,y on a 0-1000 grid of that chart's crop):
+b @ 24,35
+75.93% @ 907,53
+70 @ 96,154
+65.43% @ 746,166
+63.58% @ 224,198
+62.35% @ 481,203
+60 @ 96,269
+56.0% @ 906,264
+48.15% @ 747,369
+50 @ 94,384
+46.30% @ 482,387
+43.83% @ 234,428
+Accuracy (%) @ 48,483
+39.51% @ 233,484
+40 @ 96,499
+GPT3: babbage-002 (2021-09) @ 823,512
+GPT3: davinci-002 (2021-09) @ 817,545
+GPT3.5-Instruct (2021-09) @ 804,579
+30 @ 96,613
+GPT3.5-0125 (2023-12) @ 794,612
+GPT3.5-0613 (2021-09) @ 794,647
+GPT3.5-1106 (2023-04) @ 794,679
+GPT4-0613 (2021-09) @ 785,711
+20 @ 95,728
+GPT4-1106 (2023-04) @ 785,747
+GPT4-0125 (2023-12) @ 785,780
+12.35% @ 230,797
+GPT4o-20240513 (2023-09) @ 812,812
+10 @ 95,844
+9.26% @ 224,843
+GPT4omini-20240718 (2023-09) @ 831,847
+2021-09 @ 166,922
+2023-12 @ 427,921
+2023-04 @ 688,921
+2023-09 @ 938,918
+Model Training Data Cutoff Date @ 556,978
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

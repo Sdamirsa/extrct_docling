@@ -90,9 +90,6 @@
         "$ref": "#/texts/41"
       },
       {
-        "$ref": "#/texts/42"
-      },
-      {
         "$ref": "#/tables/1"
       },
       {
@@ -283,9 +280,6 @@
       },
       {
         "$ref": "#/texts/312"
-      },
-      {
-        "$ref": "#/texts/313"
       },
       {
         "$ref": "#/texts/314"
@@ -564,9 +558,6 @@
         "$ref": "#/texts/793"
       },
       {
-        "$ref": "#/texts/794"
-      },
-      {
         "$ref": "#/tables/4"
       },
       {
@@ -639,9 +630,6 @@
         "$ref": "#/texts/821"
       },
       {
-        "$ref": "#/texts/822"
-      },
-      {
         "$ref": "#/tables/6"
       },
       {
@@ -685,9 +673,6 @@
       },
       {
         "$ref": "#/texts/832"
-      },
-      {
-        "$ref": "#/texts/833"
       },
       {
         "$ref": "#/tables/12"
@@ -849,9 +834,6 @@
         "$ref": "#/texts/1032"
       },
       {
-        "$ref": "#/texts/1033"
-      },
-      {
         "$ref": "#/pictures/8"
       },
       {
@@ -912,16 +894,10 @@
         "$ref": "#/texts/1134"
       },
       {
-        "$ref": "#/texts/1135"
-      },
-      {
         "$ref": "#/pictures/9"
       },
       {
         "$ref": "#/texts/1190"
-      },
-      {
-        "$ref": "#/texts/1191"
       },
       {
         "$ref": "#/pictures/10"
@@ -930,16 +906,10 @@
         "$ref": "#/texts/1411"
       },
       {
-        "$ref": "#/texts/1412"
-      },
-      {
         "$ref": "#/pictures/11"
       },
       {
         "$ref": "#/texts/1588"
-      },
-      {
-        "$ref": "#/texts/1589"
       },
       {
         "$ref": "#/texts/1590"
@@ -951,25 +921,16 @@
         "$ref": "#/texts/1693"
       },
       {
-        "$ref": "#/texts/1694"
-      },
-      {
         "$ref": "#/pictures/13"
       },
       {
         "$ref": "#/texts/1747"
       },
       {
-        "$ref": "#/texts/1748"
-      },
-      {
         "$ref": "#/pictures/14"
       },
       {
         "$ref": "#/texts/1881"
-      },
-      {
-        "$ref": "#/texts/1882"
       },
       {
         "$ref": "#/tables/15"
@@ -1752,7 +1713,7 @@
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "title",
       "prov": [
         {
           "page_no": 1,
@@ -1770,8 +1731,7 @@
         }
       ],
       "orig": "Vision-Language and Large Language Model Performance in Gastroenterology: GPT, Claude, Llama, Phi, Mistral, Gemma, and Quantized Models",
-      "text": "Vision-Language and Large Language Model Performance in Gastroenterology: GPT, Claude, Llama, Phi, Mistral, Gemma, and Quantized Models",
-      "level": 1
+      "text": "Vision-Language and Large Language Model Performance in Gastroenterology: GPT, Claude, Llama, Phi, Mistral, Gemma, and Quantized Models"
     },
     {
       "self_ref": "#/texts/1",
@@ -2923,11 +2883,11 @@
     {
       "self_ref": "#/texts/42",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/tables/1"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 5,
@@ -2945,8 +2905,7 @@
         }
       ],
       "orig": "Table 1: LLMs and human performance on specialty and subspecialty board exams.",
-      "text": "Table 1: LLMs and human performance on specialty and subspecialty board exams.",
-      "level": 1
+      "text": "Table 1: LLMs and human performance on specialty and subspecialty board exams."
     },
     {
       "self_ref": "#/texts/43",
@@ -3002,9 +2961,9 @@
           "page_no": 7,
           "bbox": {
             "l": 72.024,
-            "t": 537.1360000000001,
+            "t": 717.1360000000001,
             "r": 543.034,
-            "b": 402.60400000000004,
+            "b": 582.604,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -10333,7 +10292,7 @@
     {
       "self_ref": "#/texts/313",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/2"
       },
       "children": [],
       "content_layer": "body",
@@ -23315,7 +23274,7 @@
       ],
       "orig": "1.1 Gastroenterology Board Exam Context",
       "text": "1.1 Gastroenterology Board Exam Context",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/789",
@@ -23370,7 +23329,7 @@
       ],
       "orig": "1.2 ACG Question Bank Characteristics",
       "text": "1.2 ACG Question Bank Characteristics",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/791",
@@ -23456,11 +23415,11 @@
     {
       "self_ref": "#/texts/794",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/tables/4"
       },
       "children": [],
       "content_layer": "body",
-      "label": "text",
+      "label": "caption",
       "prov": [
         {
           "page_no": 36,
@@ -23696,7 +23655,7 @@
       ],
       "orig": "2.1 Finding the Best Setting: Function, Prompt, Max-Token, and Temperature",
       "text": "2.1 Finding the Best Setting: Function, Prompt, Max-Token, and Temperature",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/803",
@@ -24037,7 +23996,7 @@
       ],
       "orig": "2.2 Structured Output",
       "text": "2.2 Structured Output",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/815",
@@ -24119,7 +24078,7 @@
       ],
       "orig": "2.3 Structured and Unstructured Prompt",
       "text": "2.3 Structured and Unstructured Prompt",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/818",
@@ -24246,11 +24205,11 @@
     {
       "self_ref": "#/texts/822",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/tables/6"
       },
       "children": [],
       "content_layer": "body",
-      "label": "text",
+      "label": "caption",
       "prov": [
         {
           "page_no": 42,
@@ -24543,11 +24502,11 @@
     {
       "self_ref": "#/texts/833",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/tables/12"
       },
       "children": [],
       "content_layer": "body",
-      "label": "text",
+      "label": "caption",
       "prov": [
         {
           "page_no": 48,
@@ -24756,7 +24715,7 @@
       ],
       "orig": "3.1. LLMs in Experiment 1",
       "text": "3.1. LLMs in Experiment 1",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/841",
@@ -26023,7 +25982,7 @@
       ],
       "orig": "3.2. Local Models, the Quantization Concept, and Computer Configuration",
       "text": "3.2. Local Models, the Quantization Concept, and Computer Configuration",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/885",
@@ -26214,7 +26173,7 @@
       ],
       "orig": "4.1 Handling Image-Inclusive Questions",
       "text": "4.1 Handling Image-Inclusive Questions",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/892",
@@ -26694,7 +26653,7 @@
       ],
       "orig": "4.2 Models in Experiment 2",
       "text": "4.2 Models in Experiment 2",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/909",
@@ -29811,7 +29770,7 @@
       ],
       "orig": "5.1 Extracting Answers from Raw Output Utilizing GPT3.5",
       "text": "5.1 Extracting Answers from Raw Output Utilizing GPT3.5",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/1024",
@@ -29974,7 +29933,7 @@
       ],
       "orig": "5.2  Performance of GPT3.5 in Extracting Answers from Raw Textual LLM Responses",
       "text": "5.2  Performance of GPT3.5 in Extracting Answers from Raw Textual LLM Responses",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/1030",
@@ -30074,11 +30033,11 @@
     {
       "self_ref": "#/texts/1033",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/8"
       },
       "children": [],
       "content_layer": "body",
-      "label": "text",
+      "label": "caption",
       "prov": [
         {
           "page_no": 58,
@@ -32366,7 +32325,7 @@
       ],
       "orig": "5.3 Human Evaluator",
       "text": "5.3 Human Evaluator",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/1118",
@@ -32489,7 +32448,7 @@
       ],
       "orig": "5.4 Questions Classification: Difficulty, Taxonomy, Care Phase, Subject, Length Question Type: Gastroenterology Subject Category",
       "text": "5.4 Questions Classification: Difficulty, Taxonomy, Care Phase, Subject, Length Question Type: Gastroenterology Subject Category",
-      "level": 1
+      "level": 2
     },
     {
       "self_ref": "#/texts/1122",
@@ -32850,11 +32809,11 @@
     {
       "self_ref": "#/texts/1135",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/9"
       },
       "children": [],
       "content_layer": "body",
-      "label": "text",
+      "label": "caption",
       "prov": [
         {
           "page_no": 61,
@@ -34362,11 +34321,11 @@
     {
       "self_ref": "#/texts/1191",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/10"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 62,
@@ -34384,8 +34343,7 @@
         }
       ],
       "orig": "Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions",
-      "text": "Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions",
-      "level": 1
+      "text": "Supplementary  Figure  S4.  Performance  Stratified  by  Image-Inclusive  and  Text-Based Questions"
     },
     {
       "self_ref": "#/texts/1192",
@@ -40330,11 +40288,11 @@
     {
       "self_ref": "#/texts/1412",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/11"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 63,
@@ -40352,8 +40310,7 @@
         }
       ],
       "orig": "Supplementary Figure S5. Performance Stratified by Question Subject",
-      "text": "Supplementary Figure S5. Performance Stratified by Question Subject",
-      "level": 1
+      "text": "Supplementary Figure S5. Performance Stratified by Question Subject"
     },
     {
       "self_ref": "#/texts/1413",
@@ -45110,11 +45067,11 @@
     {
       "self_ref": "#/texts/1589",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/12"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 64,
@@ -45132,8 +45089,7 @@
         }
       ],
       "orig": "Supplementary Figure S6. Performance stratified by patient care phase",
-      "text": "Supplementary Figure S6. Performance stratified by patient care phase",
-      "level": 1
+      "text": "Supplementary Figure S6. Performance stratified by patient care phase"
     },
     {
       "self_ref": "#/texts/1590",
@@ -47946,11 +47902,11 @@
     {
       "self_ref": "#/texts/1694",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/13"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 65,
@@ -47968,8 +47924,7 @@
         }
       ],
       "orig": "Supplementary Figure S7. Performance Stratified by Question Difficulty",
-      "text": "Supplementary Figure S7. Performance Stratified by Question Difficulty",
-      "level": 1
+      "text": "Supplementary Figure S7. Performance Stratified by Question Difficulty"
     },
     {
       "self_ref": "#/texts/1695",
@@ -49405,11 +49360,11 @@
     {
       "self_ref": "#/texts/1748",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/pictures/14"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 66,
@@ -49427,8 +49382,7 @@
         }
       ],
       "orig": "Supplementary Figure S8. Performance stratified by the question length",
-      "text": "Supplementary Figure S8. Performance stratified by the question length",
-      "level": 1
+      "text": "Supplementary Figure S8. Performance stratified by the question length"
     },
     {
       "self_ref": "#/texts/1749",
@@ -53024,11 +52978,11 @@
     {
       "self_ref": "#/texts/1882",
       "parent": {
-        "$ref": "#/body"
+        "$ref": "#/tables/15"
       },
       "children": [],
       "content_layer": "body",
-      "label": "section_header",
+      "label": "caption",
       "prov": [
         {
           "page_no": 67,
@@ -53046,8 +53000,7 @@
         }
       ],
       "orig": "Supplementary Table S5. The cost and time of executing one question with an average length",
-      "text": "Supplementary Table S5. The cost and time of executing one question with an average length",
-      "level": 1
+      "text": "Supplementary Table S5. The cost and time of executing one question with an average length"
     },
     {
       "self_ref": "#/texts/1883",
@@ -54369,6 +54322,9 @@
         },
         {
           "$ref": "#/texts/310"
+        },
+        {
+          "$ref": "#/texts/313"
         }
       ],
       "content_layer": "body",
@@ -54530,7 +54486,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/313"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -57737,6 +57697,9 @@
         },
         {
           "$ref": "#/texts/1116"
+        },
+        {
+          "$ref": "#/texts/1033"
         }
       ],
       "content_layer": "body",
@@ -57898,7 +57861,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1033"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -58190,6 +58157,9 @@
         },
         {
           "$ref": "#/texts/1189"
+        },
+        {
+          "$ref": "#/texts/1135"
         }
       ],
       "content_layer": "body",
@@ -58351,7 +58321,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1135"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -59138,6 +59112,9 @@
         },
         {
           "$ref": "#/texts/1410"
+        },
+        {
+          "$ref": "#/texts/1191"
         }
       ],
       "content_layer": "body",
@@ -59299,7 +59276,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1191"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -59954,6 +59935,9 @@
         },
         {
           "$ref": "#/texts/1587"
+        },
+        {
+          "$ref": "#/texts/1412"
         }
       ],
       "content_layer": "body",
@@ -60103,10 +60087,10 @@
         {
           "page_no": 63,
           "bbox": {
-            "l": 71.15312194824219,
-            "t": 690.3331680297852,
-            "r": 480.06488037109375,
-            "b": 84.17498779296875,
+            "l": 71.15326690673828,
+            "t": 690.3308258056641,
+            "r": 480.06439208984375,
+            "b": 84.1737060546875,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -60115,7 +60099,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1412"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -60551,6 +60539,9 @@
         },
         {
           "$ref": "#/texts/1692"
+        },
+        {
+          "$ref": "#/texts/1589"
         }
       ],
       "content_layer": "body",
@@ -60712,7 +60703,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1589"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -60998,6 +60993,9 @@
         },
         {
           "$ref": "#/texts/1746"
+        },
+        {
+          "$ref": "#/texts/1694"
         }
       ],
       "content_layer": "body",
@@ -61159,7 +61157,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1694"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -61685,6 +61687,9 @@
         },
         {
           "$ref": "#/texts/1880"
+        },
+        {
+          "$ref": "#/texts/1748"
         }
       ],
       "content_layer": "body",
@@ -61834,10 +61839,10 @@
         {
           "page_no": 66,
           "bbox": {
-            "l": 71.76449584960938,
-            "t": 687.9678421020508,
-            "r": 350.736328125,
-            "b": 129.56219482421875,
+            "l": 71.76472473144531,
+            "t": 687.968505859375,
+            "r": 350.736572265625,
+            "b": 129.5609130859375,
             "coord_origin": "BOTTOMLEFT"
           },
           "charspan": [
@@ -61846,7 +61851,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1748"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "image": {
@@ -65094,7 +65103,11 @@
       "parent": {
         "$ref": "#/body"
       },
-      "children": [],
+      "children": [
+        {
+          "$ref": "#/texts/42"
+        }
+      ],
       "content_layer": "body",
       "label": "table",
       "prov": [
@@ -65113,7 +65126,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/42"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "data": {
@@ -76915,7 +76932,11 @@
       "parent": {
         "$ref": "#/body"
       },
-      "children": [],
+      "children": [
+        {
+          "$ref": "#/texts/794"
+        }
+      ],
       "content_layer": "body",
       "label": "table",
       "prov": [
@@ -76934,7 +76955,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/794"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "data": {
@@ -78385,7 +78410,11 @@
       "parent": {
         "$ref": "#/body"
       },
-      "children": [],
+      "children": [
+        {
+          "$ref": "#/texts/822"
+        }
+      ],
       "content_layer": "body",
       "label": "table",
       "prov": [
@@ -78404,7 +78433,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/822"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "data": {
@@ -84426,7 +84459,11 @@
       "parent": {
         "$ref": "#/body"
       },
-      "children": [],
+      "children": [
+        {
+          "$ref": "#/texts/833"
+        }
+      ],
       "content_layer": "body",
       "label": "table",
       "prov": [
@@ -84445,7 +84482,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/833"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "data": {
@@ -90910,7 +90951,11 @@
       "parent": {
         "$ref": "#/body"
       },
-      "children": [],
+      "children": [
+        {
+          "$ref": "#/texts/1882"
+        }
+      ],
       "content_layer": "body",
       "label": "table",
       "prov": [
@@ -90929,7 +90974,11 @@
           ]
         }
       ],
-      "captions": [],
+      "captions": [
+        {
+          "$ref": "#/texts/1882"
+        }
+      ],
       "references": [],
       "footnotes": [],
       "data": {

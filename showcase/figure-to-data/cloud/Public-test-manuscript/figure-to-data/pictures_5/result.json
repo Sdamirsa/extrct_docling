@@ -1,0 +1,42 @@
+{
+ "mode": "measured",
+ "method": "cloud",
+ "backend": "openai-compatible",
+ "model": "anthropic/claude-sonnet-5.5",
+ "panel_split": "gutters",
+ "seconds": 12.03,
+ "calls": [
+  {
+   "panel": null,
+   "prompt": "cloud list",
+   "wall_s": 2.45,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 2560,
+   "eval_tokens": 161,
+   "cut": false,
+   "cost_usd": 0.00673,
+   "turns": 1,
+   "tool_calls": null
+  },
+  {
+   "panel": null,
+   "prompt": "cloud read",
+   "wall_s": 9.44,
+   "total_s": null,
+   "load_s": null,
+   "prompt_eval_s": null,
+   "eval_s": null,
+   "prompt_tokens": 6170,
+   "eval_tokens": 1776,
+   "cut": false,
+   "cost_usd": 0.0301,
+   "turns": 1,
+   "tool_calls": null
+  }
+ ],
+ "ollama_ps": [],
+ "issues": []
+}

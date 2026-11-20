@@ -1,0 +1,190 @@
+Figure pictures_13 of Public-test-manuscript, page 65
+Image: figure.png, 671 x 1801 px
+Caption in the paper: Supplementary Figure S7. Performance Stratified by Question Difficulty
+
+Charts found by layout analysis: 4 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart 1, box [3, 3, 999, 246], crop panel-1.png, y ticks 20 | 40 | 60 | 100 (linear), x ticks GPT-3.5 Web | GPT-3.5 API | GPT-4 Web | GPT-4 AP1 | GPT-4omini API | Claude3-Hiaku Web | Claude3-Haiku AP1 | Cla n-pl | 3-Opus Web | Claude3.5-Sonnet API | Mistralv2-7b-Q8 Local | Mistral-Large Poe | Liama2-7b Poe | Llama2-13b Poe | Llama2-70b Poe | Llama3-8b Poe | Lam Poe | Llama3.1-405b Poe | Gemn Web | GemmPoe | Gemma2-9b-Q8 Local | Gemma2-27b Poe | Ph/3-3b-Q16 Local | Phi3-14b-06 Local (categorical)
+- chart 2, box [0, 253, 999, 497], crop panel-2.png, y ticks 20 | 40 | 60 | 80 | 100 (linear), x ticks GPT-4 Web | GPT-4 API | GPT-4omini API | Clauds3-Hiaku Web | Claude3-Haiku API | Claude3-Sonnet Web | Claude3-Sonnet APt | Mixtral-8x7b Poe | Lama2-7b Poe | Llama2-13b Poe | Llama2-70b Poe | Llama3-8b Poe | Llama3.1-405b Poe | Gemini Web | Ggen veb | Gen Ppoe | Gemma2-9b-Q8 Local | Gemma2-27b Poe | Phi3-3b-Q16 Local | Phi3-14b-Q6 Local (categorical)
+- chart 3, box [0, 501, 999, 748], crop panel-3.png, y ticks 0 | 20 | 40 | 60 | 80 | 100 (linear), x ticks 0 | GPT-3.5 Web | GPT-4 Web | GPT-40 API | Claude3-Hlaku Web | Ca APl | Caea u-web | Claude3-Sonnet API | Claude3-Opus Web | Mistralv2-7b Pos | Mistraiv2-7b-Q8 Local | Mixtral-8x7b Poe | Llama2-7b Poe | Lama2-13b-Q5 Local | Larna3.1-405b Poe | Gemini Web | GeminiAdvanced Web | Gemma2-9b Poe | Gemma2-27b Poe | Phi3-3b-Q16 Local | Phi3-14b-Q6 Local (categorical)
+- chart 4, box [3, 755, 999, 998], crop panel-4.png, y ticks 20 | 40 | 80 | 100 (linear), x ticks GPT-3.5 Web | Claude3-Hlaku Web | Ca n-veb | Mistralv2-7b Poe | MkPp0oe | Llama3.1-70b Poe | Llama3.1-405b Poe | Gen veb | Gemma2-27b Poe | Pht3-3b-Q16 Local (categorical)
+
+Text printed in chart 1 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question Difficulty (Average Human Score): Q1 (N = 75) @ 528,18
+Correct @ 949,68
+100 @ 39,72
+20P @ 938,99
+COP @ 939,130
+NOP @ 939,160
+Error @ 940,193
+08 @ 43,210
+Incorrect @ 957,224
+60 @ 40,346
+Percenlage @ 12,398
+40 @ 42,481
+19.3% @ 356,492
+2.0s @ 764,500
+HES @ 463,529
+3 @ 241,573
+33.35% @ 885,599
+20 @ 41,616
+32.1% @ 950,606
+29.3N @ 132,624
+200S] @ 682,688
+GPT-4 AP1 @ 144,813
+3-Opus Web @ 308,818
+GPT-3.5 Web @ 76,828
+GPT-3.5 API @ 100,822
+GPT-4 Web @ 122,820
+GPT-4omini API @ 175,836
+Liama2-7b Poe @ 481,837
+Llama3-8b Poe @ 603,838
+Gemn Web @ 773,825
+Claude3-Haiku AP1 @ 228,852
+Mistral-Large Poe @ 415,846
+Llama2-13b Poe @ 540,844
+Llama2-70b Poe @ 582,841
+Lam Poe @ 662,842
+Llama3.1-405b Poe @ 719,855
+GemmPoe @ 805,846
+Gemma2-27b Poe @ 844,850
+Ph/3-3b-Q16 Local @ 883,850
+Phi3-14b-06 Local @ 904,850
+Claude3-Hiaku Web @ 207,857
+Cla n-pl @ 269,857
+Claude3.5-Sonnet API @ 326,865
+Mistralv2-7b-Q8 Local @ 387,868
+Gemma2-9b-Q8 Local @ 816,868
+Claude3- @ 269,898
+
+Text printed in chart 2 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question Difficulty (Average Human Score): Q2 (N = 75) @ 528,20
+100 @ 43,77
+Correct @ 949,73
+20P @ 939,101
+EOP @ 939,133
+NOP @ 939,164
+80 @ 43,214
+Incomect @ 955,226
+60 @ 45,349
+Percenlage @ 15,399
+512613% @ 346,410
+62.75 @ 885,403
+40 @ 45,482
+52. @ 268,483
+422.05 @ 431,536
+1.05 @ 871,528
+42.42./% @ 939,538
+1.33 @ 725,547
+38.7% @ 805,565
+547% @ 681,588
+20 @ 44,618
+GPT-4 Web @ 124,819
+GPT-4 API @ 146,814
+Gemini Web @ 773,825
+GPT-4omini API @ 177,836
+Mixtral-8x7b Poe @ 440,844
+Lama2-7b Poe @ 483,836
+Llama2-13b Poe @ 543,843
+Llama2-70b Poe @ 583,842
+Llama3-8b Poe @ 606,838
+Gen Ppoe @ 806,844
+Clauds3-Hiaku Web @ 210,856
+Claude3-Haiku API @ 232,851
+Claude3-Sonnet Web @ 248,862
+Claude3-Sonnet APt @ 270,858
+Llama3.1-405b Poe @ 719,853
+Ggen veb @ 775,866
+Gemma2-9b-Q8 Local @ 816,865
+Gemma2-27b Poe @ 845,849
+Phi3-3b-Q16 Local @ 884,850
+Phi3-14b-Q6 Local @ 905,850
+
+Text printed in chart 3 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question Difficulty (Average Human Score): Q3 (N = 75) @ 530,29
+Correct @ 950,81
+100 @ 40,86
+2OP @ 939,108
+EOP @ 938,139
+NOP @ 940,172
+Eo @ 940,200
+80 @ 45,220
+Incomect @ 955,233
+60 @ 45,354
+Percenlage @ 15,404
+t27% @ 478,405
+80.0% @ 215,425
+53.0 @ 819,425
+60.0% @ 946,425
+5475 @ 115,459
+5705 @ 928,479
+40 @ 46,488
+50.7% @ 805,485
+20 @ 43,620
+0 @ 49,755
+GPT-4 Web @ 125,820
+GPT-40 API @ 166,819
+GPT-3.5 Web @ 80,827
+Llama2-7b Poe @ 484,837
+Gemini Web @ 774,827
+Claude3-Hlaku Web @ 209,856
+Ca APl @ 232,852
+Claude3-Sonnet API @ 270,857
+Claude3-Opus Web @ 293,854
+Mistralv2-7b Pos @ 378,845
+Mixtral-8x7b Poe @ 440,845
+Larna3.1-405b Poe @ 720,852
+Gemma2-9b Poe @ 805,846
+Gemma2-27b Poe @ 846,849
+Phi3-3b-Q16 Local @ 884,850
+Phi3-14b-Q6 Local @ 905,851
+Caea u-web @ 248,863
+Mistraiv2-7b-Q8 Local @ 389,867
+Lama2-13b-Q5 Local @ 553,864
+GeminiAdvanced Web @ 776,868
+
+Text printed in chart 4 (text @ x,y on a 0-1000 grid of that chart's crop):
+Question Difficulty (Average Human Score): Q4 (N = 75) @ 528,19
+100 @ 37,75
+Correct @ 950,71
+2OP @ 939,98
+FOP @ 939,130
+NOP @ 939,160
+Error @ 940,192
+80 @ 42,211
+20.0% @ 374,228
+Incorrect @ 956,226
+92.7 @ 166,264
+87767N @ 351,292
+747% @ 212,317
+- 09 @ 46,348
+Percenlage @ 12,397
+E2rs @ 476,397
+58.158.0% @ 121,445
+58.05 @ 274,447
+55.255 @ 723,444
+57.25 @ 827,435
+40 @ 40,482
+520% @ 255,474
+507% @ 417,482
+457% @ 928,508
+387% @ 681,562
+20 @ 41,618
+29.3% @ 520,628
+25.3% @ 559,655
+GPT-3.5 Web @ 76,828
+GPT-4 AP1 @ 144,815
+GPT-40 API @ 163,818
+Mistralv2-7b Poe @ 376,846
+MkPp0oe @ 437,847
+Llama3.1-70b Poe @ 701,849
+Claude3-Hlaku Web @ 207,858
+Ca n-veb @ 246,864
+Llama3.1-405b Poe @ 719,856
+Gemma2-27b Poe @ 844,852
+Pht3-3b-Q16 Local @ 884,850
+Gen veb @ 775,869
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

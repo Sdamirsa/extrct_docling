@@ -1,0 +1,114 @@
+Figure pictures_2 of Public-test-manuscript, page 16
+Image: figure.png, 1419 x 918 px
+Caption in the paper: Figure 3. Impact of output structure (a), temperature (b), Max_token (c), and prompt engineering (d) on LLM MCQ performance .
+
+Charts found by layout analysis: 4 (box = [x0, y0, x1, y1] on a 0-1000 grid of the image, x from the left, y from the top). The analysis can be wrong: trust the image.
+- chart 1, box [6, 7, 501, 301], crop panel-1.png, y ticks Langchain | Function Call - | Standard Output | 0 (categorical), x ticks 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 (linear)
+- chart 2, box [519, 7, 999, 301], crop panel-2.png, y ticks Default (temp=1) | Default - 10% | Default - 40% | Default - 60% | Default - 90% | temp=0 (categorical), x ticks 38 | 40 | 42 | 44 | 46 | 48 | 50 | 52 (linear)
+- chart 3, box [6, 327, 500, 1000], crop panel-3.png, y ticks Best Prompt (candidate 4) | Give Model Time to Think | Consensus Technique | Expert Mimicry | Confidence Scoring | Contextual Embedding | Comparative Analysis | Elimination Method | Answer Justification | Chain of Thought | Option Analysis | Direct Question | Raw | 0 (categorical), x ticks 0 | 10 | 20 | 30 | 40 | 50 (linear)
+- chart 4, box [519, 326, 999, 1000], crop panel-4.png, y ticks Candidate 6 | Candidate 5 | Candidate 4 | Candidate 3 | Candidate 2 | Candidate 1 | Give Model Time to Think | Consensus Technique | Expert Mimicry | Confidence Scoring | Contextual Embedding | Comparative Analysis | Elimination Method | Answer Justification | Chain of Thought | Option Analysis | Direct Question- | Raw (categorical), x ticks 35 | 40 | 42.5 | 45 | 47.5 | 50 | 52.5 (linear)
+
+Text printed in chart 1 (text @ x,y on a 0-1000 grid of that chart's crop):
+a @ 22,81
+Langchain @ 267,178
+Response Generation @ 110,444
+Function Call - @ 258,454
+Standard Output @ 243,730
+GPT3-API @ 951,737
+GPT4-API @ 950,793
+0 @ 326,900
+10 @ 420,898
+20 @ 514,898
+30 @ 607,896
+40 @ 702,896
+50 @ 794,898
+60 @ 888,898
+70 @ 982,898
+Accuracy (%) @ 662,965
+
+Text printed in chart 2 (text @ x,y on a 0-1000 grid of that chart's crop):
+b @ 24,69
+Default (temp=1) @ 207,89
+H @ 649,91
+Default - 10% @ 226,222
+Default - 40% @ 226,372
+Temperature @ 98,450
+Default - 60% @ 225,506
+Default - 90% @ 226,657
+H @ 335,741
+best prompt @ 410,737
+temp=0 @ 249,807
+raw prompt @ 407,798
+38 @ 314,898
+40 @ 410,898
+42 @ 505,898
+44 @ 603,896
+46 @ 698,896
+48 @ 795,898
+50 @ 890,898
+52 @ 985,896
+Accuracy (%) @ 651,965
+
+Text printed in chart 3 (text @ x,y on a 0-1000 grid of that chart's crop):
+C @ 21,34
+Best Prompt (candidate 4) @ 197,54
+Give Model Time to Think @ 203,122
+Consensus Technique @ 218,190
+Expert Mimicry @ 249,256
+Confidence Scoring @ 229,324
+Contextual Embedding @ 213,390
+MT: 512 @ 925,448
+Comparative Analysis @ 218,459
+Experiment Setting @ 59,472
+MT: 1024 @ 929,472
+MT: 512plus @ 940,497
+Elimination Method @ 230,524
+Answer Justification @ 229,587
+Chain of Thought @ 240,659
+Option Analysis @ 246,727
+Direct Question @ 250,793
+Raw @ 301,862
+0 @ 327,964
+10 @ 447,964
+20 @ 567,964
+30 @ 688,963
+40 @ 808,964
+50 @ 928,964
+Accuracy (%) @ 664,987
+
+Text printed in chart 4 (text @ x,y on a 0-1000 grid of that chart's crop):
+d @ 24,32
+Candidate 6 @ 238,48
+Candidate 5 @ 238,97
+Candidate 4 @ 238,149
+Candidate 3 @ 237,198
+Candidate 2 @ 237,249
+Candidate 1 @ 236,300
+Give Model Time to Think @ 176,349
+1 @ 751,347
+Consensus Technique @ 194,401
+Expert Mimicry @ 223,452
+Function @ 36,473
+Confidence Scoring @ 201,500
+Contextual Embedding @ 185,551
+Comparative Analysis @ 192,602
+Elimination Method @ 204,650
+Answer Justification @ 203,697
+Chain of Thought @ 212,750
+Option Analysis @ 221,802
+Direct Question- @ 226,852
+Raw @ 276,904
+35.0 @ 337,964
+375 @ 426,964
+40.0 @ 518,964
+42.5 @ 609,964
+45.0 @ 699,964
+47.5 @ 790,964
+50.0 @ 882,964
+52.5 @ 973,964
+Accuracy (%) @ 652,987
+
+Text printed outside the charts (legend, titles; text @ x,y on a 0-1000 grid of the image):
+(none found)
+
+Part of this text was read by OCR and can hold misreads; the image decides.

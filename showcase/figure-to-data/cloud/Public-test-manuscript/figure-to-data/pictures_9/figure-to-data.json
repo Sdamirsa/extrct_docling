@@ -1,0 +1,29 @@
+{
+  "schema": "extrct.figure-data/1",
+  "figure": {
+    "bundle": "Public-test-manuscript",
+    "self_ref": "#/pictures/9",
+    "image_path": "images/picture_010.png",
+    "page": 61,
+    "bbox": [
+      76.01,
+      183.02,
+      536.91,
+      697.01
+    ]
+  },
+  "source_kind": "raster",
+  "panels": [],
+  "labeler": {
+    "kind": "engine",
+    "name": "extrct figure-to-data cloud (anthropic/claude-sonnet-5.5)",
+    "date": "2026-11-20",
+    "time_minutes": null
+  },
+  "description": "Heatmap-style strips showing per-question correctness (green correct, red incorrect, with a few yellow and light-grey cells) for about 37 LLM configurations, aligned with question characteristics (difficulty quartile, length tertile, taxonomy, topic and organ-system membership).",
+  "uncertain": [
+    "not a data chart: Heatmap-style strips showing per-question correctness (green correct, red incorrect, with a few yellow and light-grey cells) for about 37 LLM configurations, aligned with question characteristics (difficulty quartile, length tertile, taxonomy, topic and organ-system membership).",
+    "Per-question correct/incorrect status for each LLM row is shown as colour strips with no numeric values or axis ticks, so none were tabulated.",
+    "Question characteristic strips (difficulty quartiles, length tertiles, taxonomy, diagnosis/treatment/investigation/complications, organ systems) are binary or colour-coded marks with no values, so none were tabulated."
+  ]
+}

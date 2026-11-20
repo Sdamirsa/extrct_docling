@@ -45,7 +45,7 @@ uv run amir-batch <PDFs or a folder> -o <output folder> --figure-data-config con
 
 | Mode | Command | GPU | Speed (68-page paper) |
 |---|---|---|---|
-| **Suggested (default)** — VLM figure descriptions + VLM tables | `amir-batch paper.pdf` | **≥ 24 GB GPU** (measured peak **18.8 GiB**) | ~12 min |
+| **Suggested (default)** — VLM figure descriptions; each table by the model that has its text (TableFormer, Granite-Vision VLM for tables without PDF text) | `amir-batch paper.pdf` | **≥ 24 GB GPU** (measured peak **18.8 GiB**) | ~5 min (r7) |
 | Middle — VLM figure descriptions, TableFormer tables | `amir-batch paper.pdf --no-granite-vision-tables` | **≥ 16 GB GPU** (measured peak 11.5 GiB) | ~2.4 min |
 | Fast — no VLMs | `amir-batch paper.pdf --picture-description off --no-granite-vision-tables` | not required (peak 1.6 GiB when a GPU is present; CPU-only is slower, untimed) | ~1 min |
 

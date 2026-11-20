@@ -41,7 +41,8 @@ done
 secret_patterns=(
   'gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}'
   'hf_[A-Za-z0-9]{30,}'
-  'sk-(ant-)?[A-Za-z0-9_-]{20,}'
+  # A key starts a token: "Risk-Score-Interfaces" (a paper's name) is none.
+  '(^|[^A-Za-z0-9])sk-(ant-)?[A-Za-z0-9_-]{20,}'
   'AKIA[0-9A-Z]{16}'
   'xox[abprs]-[A-Za-z0-9-]{10,}'
   '-----BEGIN [A-Z ]*PRIVATE KEY-----'

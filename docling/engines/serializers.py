@@ -18,7 +18,12 @@ On top of Docling's markdown serializer:
 - a table whose cells miss words printed in its box (``amir__pdf_text``, see
   :func:`~docling.engines.text_repair.attach_table_pdf_text`) is followed by
   a ``Table text from the PDF (cell recall 0.61): …`` paragraph, so the
-  markdown and the chunks keep the words the table model dropped.
+  markdown and the chunks keep the words the table model dropped;
+- the footnotes of a table or a figure follow it, one paragraph each, as
+  they do in ``<stem>.html``. docling-core leaves a floating item's
+  footnotes to the item's serializer, and its markdown table and picture
+  serializers write none: on 65 trial papers and supplements 350 footnotes
+  (analysis populations, missing data, definitions) were in the HTML only.
 
 ``DoclingDocument.export_to_markdown`` builds its own serializer and takes no
 table serializer, so the markdown exports go through :func:`export_markdown`.
@@ -42,10 +47,17 @@ from docling_core.transforms.serializer.markdown import (
     MarkdownDocSerializer,
     MarkdownMetaSerializer,
     MarkdownParams,
+    MarkdownPictureSerializer,
     MarkdownTableSerializer,
 )
-from docling_core.types.doc import DoclingDocument, ImageRefMode, TableItem
-from docling_core.types.doc.document import BaseMeta
+from docling_core.types.doc import (
+    DoclingDocument,
+    ImageRefMode,
+    PictureItem,
+    TableItem,
+    TextItem,
+)
+from docling_core.types.doc.document import BaseMeta, FloatingItem
 from typing_extensions import override
 
 from docling.engines.figure_typing import TEXT_EXPORT_META_PARAMS
@@ -80,6 +92,7 @@ def export_markdown(
         doc=doc,
         params=markdown_params(image_mode),
         table_serializer=_MarkdownTableSerializer(),
+        picture_serializer=_PictureSerializer(),
         meta_serializer=_MarkedMetaSerializer(),
     )
     return serializer.serialize().text
@@ -98,6 +111,7 @@ class _ChunkingSerializerProvider(ChunkingSerializerProvider):
             doc=doc,
             params=defaults.model_copy(update=_TEXT_EXPORT_PARAMS),
             table_serializer=_ChunkingTableSerializer(),
+            picture_serializer=_PictureSerializer(),
             meta_serializer=_MarkedMetaSerializer(),
         )
 
@@ -135,7 +149,24 @@ class _MarkdownTableSerializer(MarkdownTableSerializer):
         result = super().serialize(
             item=item, doc_serializer=doc_serializer, doc=doc, **kwargs
         )
+        result = _with_footnotes(result, item, doc_serializer, doc, **kwargs)
         return _with_pdf_text(result, item, doc_serializer, **kwargs)
+
+
+class _PictureSerializer(MarkdownPictureSerializer):
+    @override
+    def serialize(
+        self,
+        *,
+        item: PictureItem,
+        doc_serializer: BaseDocSerializer,
+        doc: DoclingDocument,
+        **kwargs: Any,
+    ) -> SerializationResult:
+        result = super().serialize(
+            item=item, doc_serializer=doc_serializer, doc=doc, **kwargs
+        )
+        return _with_footnotes(result, item, doc_serializer, doc, **kwargs)
 
 
 class _ChunkingTableSerializer(TripletTableSerializer):
@@ -151,7 +182,36 @@ class _ChunkingTableSerializer(TripletTableSerializer):
         result = super().serialize(
             item=item, doc_serializer=doc_serializer, doc=doc, **kwargs
         )
+        result = _with_footnotes(result, item, doc_serializer, doc, **kwargs)
         return _with_pdf_text(result, item, doc_serializer, **kwargs)
+
+
+def _with_footnotes(
+    result: SerializationResult,
+    item: FloatingItem,
+    doc_serializer: BaseDocSerializer,
+    doc: DoclingDocument,
+    **kwargs: Any,
+) -> SerializationResult:
+    """*result* followed by the item's footnotes, one paragraph each."""
+    excluded = doc_serializer.get_excluded_refs(**kwargs)
+    if kwargs.get("_nested_in_table") or item.self_ref in excluded:
+        return result
+    notes = [
+        create_ser_result(
+            text=doc_serializer.post_process(text=note.text), span_source=note
+        )
+        for ref in item.footnotes
+        if isinstance(note := ref.resolve(doc), TextItem)
+        and note.self_ref not in excluded
+        and note.text.strip()
+    ]
+    if not notes:
+        return result
+    return create_ser_result(
+        text="\n\n".join(part.text for part in (result, *notes) if part.text),
+        span_source=[result, *notes],
+    )
 
 
 def _with_pdf_text(

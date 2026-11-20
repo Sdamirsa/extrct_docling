@@ -403,3 +403,42 @@ def test_chunks_keep_a_tables_pdf_text_and_skip_text_less_chunks(
     small_chunk = next(row for row in rows if row["self_refs"] == [small.self_ref])
     assert "Table text from the PDF (cell recall 0.50)" in small_chunk["text"]
     assert any(long.self_ref in row["self_refs"] for row in rows)
+
+
+def test_footnotes_of_a_table_and_a_figure_follow_them_in_every_export(
+    tmp_path: Path,
+) -> None:
+    """docling-core leaves a floating item's footnotes to the item's
+    serializer and its markdown ones write none: they were in the HTML only."""
+    doc = DoclingDocument(name="paper")
+    doc.add_page(page_no=1, size=Size(width=600, height=800))
+    doc.add_heading(text="Results", prov=_PROV)
+    table = doc.add_table(data=_grid([["Arm", "Deaths"], ["Device", "12"]]), prov=_PROV)
+    table_note = doc.add_text(
+        label=DocItemLabel.FOOTNOTE, text="No valve deployed in 7 patients.", prov=_PROV
+    )
+    table.footnotes.append(table_note.get_ref())
+    picture = doc.add_picture(prov=_PROV)
+    figure_note = doc.add_text(
+        label=DocItemLabel.FOOTNOTE,
+        text="Bars show the interquartile range.",
+        prov=_PROV,
+    )
+    picture.footnotes.append(figure_note.get_ref())
+    notes = (table_note.text, figure_note.text)
+
+    markdown = export_markdown(doc)
+    assert [markdown.count(note) for note in notes] == [1, 1]
+    assert markdown.index("Device") < markdown.index(table_note.text)
+
+    paths = write_chunks(ConversionResult.model_construct(document=doc), tmp_path)
+    rows = [json.loads(line) for line in paths.chunks_jsonl.read_text().splitlines()]
+    with_table = next(row for row in rows if table.self_ref in row["self_refs"])
+    assert table_note.text in with_table["text"]
+    assert table_note.self_ref in with_table["self_refs"]
+    assert sum(figure_note.text in row["text"] for row in rows) == 1
+
+    pdf_dir = tmp_path / "paper"
+    pdf_dir.mkdir()
+    html = write_document_html(doc, pdf_dir).read_text(encoding="utf-8")
+    assert [html.count(note) for note in notes] == [1, 1]

@@ -31,6 +31,7 @@ from docling.engines.artifacts import crops_by_self_ref
 from docling.engines.figure_data.publish import get_chart_data
 from docling.engines.figure_typing import get_figure_type
 from docling.engines.picture_filter import PictureNoiseFlag
+from docling.engines.text_repair import table_structure_model
 
 if TYPE_CHECKING:
     from docling.datamodel.document import ConversionResult
@@ -196,6 +197,7 @@ def _table_row(
         "prov": _prov_block(item),
         "caption_text": item.caption_text(doc) if hasattr(item, "caption_text") else "",
         "image_path": _safe_relative(image_path, pdf_dir),
+        "structure_model": table_structure_model(item),
         "markdown": markdown,
         "html": html,
         "num_rows": data.num_rows if data is not None else 0,

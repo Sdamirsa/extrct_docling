@@ -3,7 +3,10 @@
 
 import importlib.metadata
 import logging
+import re
+import unicodedata
 import warnings
+from collections import Counter
 from collections.abc import Collection, Sequence
 from functools import cached_property
 from pathlib import Path
@@ -38,6 +41,33 @@ from docling.utils.otsl import parse_otsl_output
 from docling.utils.profiling import TimeRecorder
 
 _log = logging.getLogger(__name__)
+
+
+# Granite-Vision keeps a table whose box has PDF text (a table of contents)
+# while its cells hold this share of that text's words. Below it the model
+# stopped early: two contents fragments held 0.46 and 0.49 of their words,
+# TableFormer all of them. The bar is under the check's 0.95 on purpose: a
+# lost space at a line break costs a few words, not a fifth.
+MIN_PDF_WORDS_HELD = 0.8
+_MIN_PDF_WORDS = 8
+_WORD_TOKEN = re.compile(r"[a-z0-9]{2,}")
+
+
+def _word_counts(text: str) -> Counter[str]:
+    return Counter(_WORD_TOKEN.findall(unicodedata.normalize("NFKC", text).lower()))
+
+
+def pdf_words_held(table: Table) -> float | None:
+    """The share of the words the PDF prints in *table*'s box that its cells
+    hold; None for a box with next to no PDF text (an image, OCR)."""
+    printed = _word_counts(
+        " ".join(cell.text for cell in table.cluster.cells if not cell.from_ocr)
+    )
+    total = sum(printed.values())
+    if total < _MIN_PDF_WORDS:
+        return None
+    held = _word_counts(" ".join(cell.text for cell in table.table_cells))
+    return 1 - sum((printed - held).values()) / total
 
 
 def merge_table_predictions(
@@ -200,36 +230,93 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
             accelerator_options=self.accelerator_options,
         )
 
+    def _tableformer_prediction(
+        self, conv_res: ConversionResult, page: Page, why: str
+    ) -> TableStructurePrediction | None:
+        """TableFormer's tables of *page* (it predicts every table of the
+        page), or None when it cannot run."""
+        if self._tableformer_unavailable:
+            return None
+        try:
+            return self._tableformer.predict_tables(conv_res, [page])[0]
+        except Exception:
+            # Construction failures (no weights offline) would repeat on every
+            # page; remember and stop trying.
+            self._tableformer_unavailable = True
+            _log.exception(
+                "TableFormer failed on page %d; GraniteVision reads its tables (%s)",
+                page.page_no,
+                why,
+            )
+            return None
+
+    def _reads_pdf_text(self, cluster: Cluster) -> bool:
+        """Whether the table is TableFormer's to make: a table (not a table
+        of contents) whose box holds text of the PDF rather than of OCR."""
+        if not self.options.pdf_text_first or cluster.label != DocItemLabel.TABLE:
+            return False
+        printed = [cell for cell in cluster.cells if cell.text.strip()]
+        from_pdf = sum(1 for cell in printed if not cell.from_ocr)
+        return from_pdf > 0 and 2 * from_pdf >= len(printed)
+
+    def _tables_from_pdf_text(
+        self,
+        conv_res: ConversionResult,
+        page: Page,
+        clusters: Sequence[Cluster],
+    ) -> tuple[dict[int, Table], TableStructurePrediction | None]:
+        """The tables of *clusters* that TableFormer makes, by cluster id, and
+        its prediction for the page when it ran."""
+        wanted = [cluster.id for cluster in clusters if self._reads_pdf_text(cluster)]
+        if not wanted:
+            return {}, None
+        tableformer = self._tableformer_prediction(
+            conv_res, page, f"tables {wanted} hold PDF text"
+        )
+        if tableformer is None:
+            return {}, None
+        tables: dict[int, Table] = {}
+        for cid in wanted:
+            table = tableformer.table_map.get(cid)
+            if table is None:
+                continue
+            degenerate = degenerate_table_reason(
+                table.num_rows, table.num_cols, table.table_cells
+            )
+            if degenerate is not None:
+                _log.warning(
+                    "TableFormer table [%s] on page %d: %s; read by GraniteVision",
+                    cid,
+                    page.page_no,
+                    degenerate,
+                )
+                continue
+            tables[cid] = table
+        return tables, tableformer
+
     def _tableformer_fallback(
         self,
         conv_res: ConversionResult,
         page: Page,
         granite: TableStructurePrediction,
         reasons: dict[int, str],
+        tableformer: TableStructurePrediction | None = None,
     ) -> TableStructurePrediction:
         """*granite* with TableFormer's structure for the tables in *reasons*
         (cluster id -> why Granite's is unusable), stored on *page*.
 
         TableFormer reads the PDF's text cells (cell matching), so these
         tables are not retyped from the image either. It predicts every table
-        of the page; only the ones in *reasons* are kept.
+        of the page (*tableformer*, when it already ran for the page); only
+        the ones in *reasons* are kept.
         """
-        if self._tableformer_unavailable:
-            page.predictions.tablestructure = granite
-            return granite
-        try:
-            tableformer = self._tableformer.predict_tables(conv_res, [page])[0]
-        except Exception:
-            # Construction failures (no weights offline) would repeat on every
-            # page with a flagged table; remember and stop trying.
-            self._tableformer_unavailable = True
-            _log.exception(
-                "TableFormer fallback failed on page %d; keeping GraniteVision "
-                "tables %s (%s)",
-                page.page_no,
-                sorted(reasons),
+        if tableformer is None:
+            tableformer = self._tableformer_prediction(
+                conv_res,
+                page,
                 "; ".join(f"[{cid}] {reason}" for cid, reason in reasons.items()),
             )
+        if tableformer is None:
             page.predictions.tablestructure = granite
             return granite
         usable: set[int] = set()
@@ -277,129 +364,62 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
                 predictions.append(existing)
                 continue
 
-            with TimeRecorder(conv_res, "table_structure"):
-                assert page.predictions.layout is not None
-                assert page.size is not None
-
-                table_prediction = TableStructurePrediction()
+            assert page.predictions.layout is not None
+            assert page.size is not None
+            table_prediction = TableStructurePrediction()
+            clusters = [
+                c
+                for c in page.predictions.layout.clusters
+                if c.label in (DocItemLabel.TABLE, DocItemLabel.DOCUMENT_INDEX)
+            ]
+            if not clusters or not self.enabled:
                 page.predictions.tablestructure = table_prediction
+                predictions.append(table_prediction)
+                continue
 
-                clusters = [
-                    c
-                    for c in page.predictions.layout.clusters
-                    if c.label in (DocItemLabel.TABLE, DocItemLabel.DOCUMENT_INDEX)
-                ]
-
-                if not clusters or not self.enabled:
-                    predictions.append(table_prediction)
-                    continue
-
-                # Crop one image per table cluster from the page image
-                valid_pairs = []
-                for cluster in clusters:
-                    crop = page.get_image(scale=1.0, cropbox=cluster.bbox)
-                    if crop is not None:
-                        valid_pairs.append((cluster, crop))
-
-                if not valid_pairs:
-                    predictions.append(table_prediction)
-                    continue
-
-                valid_clusters, valid_images = zip(*valid_pairs)
-
-                conversations = [
-                    [
-                        {
-                            "role": "user",
-                            "content": [
-                                {"type": "image"},
-                                {"type": "text", "text": "<tables_otsl>"},
-                            ],
-                        }
-                    ]
-                    for _ in valid_images
-                ]
-
-                texts = [
-                    self._processor.apply_chat_template(
-                        conv, tokenize=False, add_generation_prompt=True
+            # TableFormer records its own table_structure time.
+            from_pdf_text, tableformer = self._tables_from_pdf_text(
+                conv_res, page, clusters
+            )
+            granite_clusters = [c for c in clusters if c.id not in from_pdf_text]
+            granite_tables: dict[int, Table] = {}
+            truncated: set[int] = set()
+            budget = 0
+            if granite_clusters:
+                with TimeRecorder(conv_res, "table_structure"):
+                    granite_tables, truncated, budget = self._granite_tables(
+                        page, granite_clusters
                     )
-                    for conv in conversations
-                ]
-
-                inputs = self._processor(
-                    text=texts,
-                    images=list(valid_images),
-                    return_tensors="pt",
-                    padding=True,
-                    do_pad=True,
-                ).to(self.device)
-
-                budget = self._generation_budget(valid_clusters)
-                output_ids = cast(Any, self._model).generate(
-                    **inputs,
-                    max_new_tokens=budget,
-                    use_cache=True,
+            table_prediction.table_map = {
+                cluster.id: table
+                for cluster in clusters
+                if (
+                    table := from_pdf_text.get(cluster.id)
+                    or granite_tables.get(cluster.id)
                 )
-                truncated = self._truncated_cluster_ids(
-                    output_ids[:, inputs["input_ids"].shape[1] :],
-                    valid_clusters,
-                    budget,
-                )
+                is not None
+            }
+            page.predictions.tablestructure = table_prediction
 
-                # Decode only generated tokens (strip input prompt tokens)
-                output_texts = [
-                    self._processor.decode(
-                        output_ids[i, inputs["input_ids"].shape[1] :],
-                        skip_special_tokens=True,
+            reasons: dict[int, str] = {}
+            for cid, tbl in granite_tables.items():
+                if cid in truncated:
+                    reasons[cid] = f"hit the {budget}-token generation budget"
+                elif (
+                    degenerate := degenerate_table_reason(
+                        tbl.num_rows, tbl.num_cols, tbl.table_cells
                     )
-                    for i in range(len(valid_images))
-                ]
-
-                for cluster, raw_text in zip(valid_clusters, output_texts):
-                    _log.debug(
-                        f"GraniteVision table [{cluster.id}] raw output: {raw_text!r}"
+                ) is not None:
+                    reasons[cid] = f"{tbl.num_rows}x{tbl.num_cols} grid, {degenerate}"
+                elif (
+                    held := pdf_words_held(tbl)
+                ) is not None and held < MIN_PDF_WORDS_HELD:
+                    reasons[cid] = (
+                        f"holds {held:.2f} of the words the PDF prints in its box"
                     )
-                    try:
-                        otsl_seq, table_cells, num_rows, num_cols = parse_otsl_output(
-                            raw_text
-                        )
-                    except Exception as exc:
-                        _log.warning(
-                            f"Failed to parse OTSL output for table cluster {cluster.id}: {exc}"
-                        )
-                        otsl_seq, table_cells, num_rows, num_cols = [], [], 0, 0
-
-                    tbl = Table(
-                        otsl_seq=otsl_seq,
-                        table_cells=table_cells,
-                        num_rows=num_rows,
-                        num_cols=num_cols,
-                        id=cluster.id,
-                        page_no=page.page_no,
-                        cluster=cluster,
-                        label=cluster.label,
-                    )
-                    table_prediction.table_map[cluster.id] = tbl
-
-                reasons: dict[int, str] = {}
-                for cid, tbl in table_prediction.table_map.items():
-                    if cid in truncated:
-                        reasons[cid] = f"hit the {budget}-token generation budget"
-                    elif (
-                        degenerate := degenerate_table_reason(
-                            tbl.num_rows, tbl.num_cols, tbl.table_cells
-                        )
-                    ) is not None:
-                        reasons[cid] = (
-                            f"{tbl.num_rows}x{tbl.num_cols} grid, {degenerate}"
-                        )
-
-            # Outside the TimeRecorder: TableFormer records its own
-            # table_structure time.
             if reasons and self.options.tableformer_fallback:
                 table_prediction = self._tableformer_fallback(
-                    conv_res, page, table_prediction, reasons
+                    conv_res, page, table_prediction, reasons, tableformer
                 )
             else:
                 for cid in sorted(truncated):
@@ -413,3 +433,86 @@ class GraniteVisionTableStructureModel(BaseTableStructureModel):
             predictions.append(table_prediction)
 
         return predictions
+
+    def _granite_tables(
+        self, page: Page, clusters: Sequence[Cluster]
+    ) -> tuple[dict[int, Table], set[int], int]:
+        """Granite-Vision's tables of *clusters* by cluster id, the ids whose
+        generation was cut off, and the token budget of the batch."""
+        # Crop one image per table cluster from the page image
+        valid_pairs = []
+        for cluster in clusters:
+            crop = page.get_image(scale=1.0, cropbox=cluster.bbox)
+            if crop is not None:
+                valid_pairs.append((cluster, crop))
+        if not valid_pairs:
+            return {}, set(), 0
+
+        valid_clusters, valid_images = zip(*valid_pairs)
+        conversations = [
+            [
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image"},
+                        {"type": "text", "text": "<tables_otsl>"},
+                    ],
+                }
+            ]
+            for _ in valid_images
+        ]
+        texts = [
+            self._processor.apply_chat_template(
+                conv, tokenize=False, add_generation_prompt=True
+            )
+            for conv in conversations
+        ]
+        inputs = self._processor(
+            text=texts,
+            images=list(valid_images),
+            return_tensors="pt",
+            padding=True,
+            do_pad=True,
+        ).to(self.device)
+
+        budget = self._generation_budget(valid_clusters)
+        output_ids = cast(Any, self._model).generate(
+            **inputs,
+            max_new_tokens=budget,
+            use_cache=True,
+        )
+        truncated = self._truncated_cluster_ids(
+            output_ids[:, inputs["input_ids"].shape[1] :],
+            valid_clusters,
+            budget,
+        )
+        # Decode only generated tokens (strip input prompt tokens)
+        output_texts = [
+            self._processor.decode(
+                output_ids[i, inputs["input_ids"].shape[1] :],
+                skip_special_tokens=True,
+            )
+            for i in range(len(valid_images))
+        ]
+
+        tables: dict[int, Table] = {}
+        for cluster, raw_text in zip(valid_clusters, output_texts):
+            _log.debug(f"GraniteVision table [{cluster.id}] raw output: {raw_text!r}")
+            try:
+                otsl_seq, table_cells, num_rows, num_cols = parse_otsl_output(raw_text)
+            except Exception as exc:
+                _log.warning(
+                    f"Failed to parse OTSL output for table cluster {cluster.id}: {exc}"
+                )
+                otsl_seq, table_cells, num_rows, num_cols = [], [], 0, 0
+            tables[cluster.id] = Table(
+                otsl_seq=otsl_seq,
+                table_cells=table_cells,
+                num_rows=num_rows,
+                num_cols=num_cols,
+                id=cluster.id,
+                page_no=page.page_no,
+                cluster=cluster,
+                label=cluster.label,
+            )
+        return tables, truncated, budget

@@ -198,6 +198,19 @@ class GraniteVisionTableStructureOptions(BaseTableStructureOptions):
             )
         ),
     ] = True
+    pdf_text_first: Annotated[
+        bool,
+        Field(
+            description=(
+                "Give a table whose box holds text of the PDF to TableFormer (accurate mode, with cell "
+                "matching), which fills the cells from that text. Granite Vision retypes every cell from "
+                "the image: it left printed rows out and misread digits (177 for 172) in tables that held "
+                "95 % of their words. It keeps what has no PDF text to read (an image, a page read by OCR) "
+                "and tables of contents, where its grid is the better one; and a table whose TableFormer "
+                "grid is degenerate."
+            )
+        ),
+    ] = True
 
 
 class OcrOptions(BaseOptions):

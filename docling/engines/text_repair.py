@@ -365,6 +365,18 @@ def _region_style(
     return found.most_common(1)[0][0] if found else None
 
 
+def table_structure_model(table: TableItem) -> str | None:
+    """Which model made *table*'s grid: ``tableformer`` fills cells from the
+    PDF's text cells and keeps their boxes, ``granite_vision`` writes the
+    text it reads in the image and has no boxes. None for an empty grid."""
+    filled = [cell for cell in table.data.table_cells if cell.text.strip()]
+    if not filled:
+        return None
+    if all(cell.bbox is not None for cell in filled):
+        return "tableformer"
+    return "granite_vision"
+
+
 def get_table_pdf_text(table: TableItem) -> dict | None:
     """The stored PDF text of a table box (``text``, ``cell_text_recall``)."""
     if table.meta is None:

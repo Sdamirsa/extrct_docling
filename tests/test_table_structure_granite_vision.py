@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 import torch
 from docling_core.types.doc import BoundingBox, DocItemLabel, TableCell
+from docling_core.types.doc.page import BoundingRectangle, TextCell
 from huggingface_hub import try_to_load_from_cache
 
 from docling.datamodel.accelerator_options import AcceleratorOptions
@@ -27,8 +28,10 @@ from docling.models.stages.table_structure import (
     table_structure_model_granite_vision,
 )
 from docling.models.stages.table_structure.table_structure_model_granite_vision import (
+    MIN_PDF_WORDS_HELD,
     GraniteVisionTableStructureModel,
     merge_table_predictions,
+    pdf_words_held,
 )
 from docling.utils.otsl import parse_otsl_output
 
@@ -396,8 +399,12 @@ def test_a_truncated_granite_table_takes_its_structure_from_tableformer(
     monkeypatch.setattr(
         GraniteVisionTableStructureModel, "_generation_budget", lambda self, c: 8
     )
+    # Granite-Vision has to read the table for its generation to be cut off.
     options = PdfPipelineOptions(
-        do_ocr=False, table_structure_options=GraniteVisionTableStructureOptions()
+        do_ocr=False,
+        table_structure_options=GraniteVisionTableStructureOptions(
+            pdf_text_first=False
+        ),
     )
     converter = DocumentConverter(
         format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)}
@@ -422,3 +429,133 @@ def test_a_truncated_granite_table_takes_its_structure_from_tableformer(
         assert table.data.num_rows > 1
         assert table.data.num_cols > 1
         assert all(cell.bbox is not None for cell in table.data.table_cells)
+
+
+def test_a_printed_less_than_sign_stays_in_its_cell():
+    """Only OTSL tags are tags: "p<0.001" and "Age < 18" are cell text, and
+    the cell does not end at their "<"."""
+    text = (
+        "<ched>Group<ched>P value<nl>"
+        "<fcel>Age < 18 years<fcel>(p<0.001)<nl>"
+        "<fcel>eGFR <15 ml/min or >90<fcel>0.42<nl>"
+    )
+    _, cells, num_rows, num_cols = parse_otsl_output(text)
+
+    assert (num_rows, num_cols) == (3, 2)
+    assert [cell.text for cell in cells] == [
+        "Group",
+        "P value",
+        "Age < 18 years",
+        "(p<0.001)",
+        "eGFR <15 ml/min or >90",
+        "0.42",
+    ]
+
+
+def test_list_markup_inside_a_cell_makes_no_columns():
+    text = (
+        "<ched>Criterion<ched>Detail<nl>"
+        "<fcel>Exclusion<fcel><ul><li>Pregnancy</li><li>Dialysis<br>or transplant</li></ul><nl>"
+    )
+    _, cells, num_rows, num_cols = parse_otsl_output(text)
+
+    assert (num_rows, num_cols) == (2, 2)
+    assert cells[-1].text == "Pregnancy Dialysis or transplant"
+
+
+def _text_cells(texts: list[str], *, from_ocr: bool = False) -> list[TextCell]:
+    rect = BoundingRectangle.from_bounding_box(BoundingBox(l=0, t=0, r=10, b=10))
+    return [
+        TextCell(index=i, text=text, orig=text, from_ocr=from_ocr, rect=rect)
+        for i, text in enumerate(texts)
+    ]
+
+
+def _cluster(label: DocItemLabel, cells: list[TextCell]) -> Cluster:
+    return Cluster(
+        id=1, label=label, bbox=BoundingBox(l=0, t=0, r=100, b=100), cells=cells
+    )
+
+
+def test_a_table_goes_to_the_model_that_has_its_text() -> None:
+    """TableFormer fills cells from the PDF's text, so it gets a table whose
+    box holds that text. Granite-Vision gets what only an image shows (no
+    text, or text OCR read) and tables of contents, whose grid it draws
+    better."""
+    model = GraniteVisionTableStructureModel(
+        enabled=False,
+        artifacts_path=None,
+        options=GraniteVisionTableStructureOptions(),
+        accelerator_options=AcceleratorOptions(),
+    )
+    printed = ["Age < 18 years", "172 (11.5)", "Paclitaxel"]
+
+    assert model._reads_pdf_text(_cluster(DocItemLabel.TABLE, _text_cells(printed)))
+    assert not model._reads_pdf_text(
+        _cluster(DocItemLabel.TABLE, _text_cells(printed, from_ocr=True))
+    )
+    assert not model._reads_pdf_text(_cluster(DocItemLabel.TABLE, []))
+    assert not model._reads_pdf_text(
+        _cluster(DocItemLabel.DOCUMENT_INDEX, _text_cells(printed))
+    )
+    model.options.pdf_text_first = False
+    assert not model._reads_pdf_text(_cluster(DocItemLabel.TABLE, _text_cells(printed)))
+
+
+def test_a_granite_table_is_measured_against_the_words_its_box_prints() -> None:
+    """A table of contents Granite-Vision stopped early on holds half its
+    words: below the bar, so TableFormer redoes it. A box OCR read has no
+    PDF words to measure against."""
+    entries = [
+        "1 Introduction 5",
+        "2 Study design 9",
+        "3 Eligibility criteria 14",
+        "4 Endpoints and definitions 21",
+        "5 Statistical analysis 30",
+    ]
+    stopped = _table(1, [["1", "Introduction", "5"], ["2", "Study design", "9"]])
+    stopped.cluster = _cluster(DocItemLabel.DOCUMENT_INDEX, _text_cells(entries))
+    held = pdf_words_held(stopped)
+    assert held is not None and held < MIN_PDF_WORDS_HELD
+
+    complete = _table(1, [[entry] for entry in entries])
+    complete.cluster = stopped.cluster
+    assert pdf_words_held(complete) == 1.0
+
+    complete.cluster = _cluster(
+        DocItemLabel.DOCUMENT_INDEX, _text_cells(entries, from_ocr=True)
+    )
+    assert pdf_words_held(complete) is None
+
+
+@pytest.mark.skipif(
+    not _GRANITE_ON_GPU, reason="needs CUDA and the Granite-Vision weights cached"
+)
+def test_a_table_with_pdf_text_is_made_by_tableformer_without_granite(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    asked: list[int] = []
+    granite_tables = GraniteVisionTableStructureModel._granite_tables
+
+    def spy(self, page, clusters):
+        asked.extend(cluster.id for cluster in clusters)
+        return granite_tables(self, page, clusters)
+
+    monkeypatch.setattr(GraniteVisionTableStructureModel, "_granite_tables", spy)
+    options = PdfPipelineOptions(
+        do_ocr=False, table_structure_options=GraniteVisionTableStructureOptions()
+    )
+    converter = DocumentConverter(
+        format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)}
+    )
+
+    doc = converter.convert(
+        Path("tests/data/pdf/sources/2305.03393v1-pg9.pdf")
+    ).document
+
+    assert doc.tables
+    assert asked == []
+    for table in doc.tables:
+        assert table.data.num_rows > 1
+        filled = [cell for cell in table.data.table_cells if cell.text.strip()]
+        assert filled and all(cell.bbox is not None for cell in filled)

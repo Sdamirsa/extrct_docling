@@ -84,6 +84,7 @@ from docling.engines.text_repair import (
     WORD_TAIL,
     get_table_pdf_text,
     pdf_page_texts,
+    table_structure_model,
 )
 from docling.utils.text_layer import (
     PartlyUnreadablePage,
@@ -220,6 +221,9 @@ class DegenerateTable(BaseModel):
 
 class TableCheck(CheckBlock):
     count: int = 0
+    # Tables by the model that made their grid (``tableformer``: cell text
+    # from the PDF; ``granite_vision``: retyped from the image).
+    by_structure_model: dict[str, int] = Field(default_factory=dict)
     low_recall: list[TableRecall] = Field(default_factory=list)
     degenerate: list[DegenerateTable] = Field(default_factory=list)
 
@@ -1069,8 +1073,17 @@ def _check_tables(doc: DoclingDocument) -> TableCheck:
         f"{t.self_ref} (p{t.page}, {t.rows}x{t.cols}) degenerate: {t.reason}"
         for t in degenerate
     ]
+    by_model = Counter(
+        model
+        for table in doc.tables
+        if (model := table_structure_model(table)) is not None
+    )
     return TableCheck(
-        count=len(doc.tables), low_recall=low, degenerate=degenerate, issues=issues
+        count=len(doc.tables),
+        by_structure_model=dict(sorted(by_model.items())),
+        low_recall=low,
+        degenerate=degenerate,
+        issues=issues,
     )
 
 

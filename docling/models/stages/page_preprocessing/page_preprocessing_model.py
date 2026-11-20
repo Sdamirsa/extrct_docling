@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
+import logging
 import re
 import warnings
 from collections.abc import Iterable
@@ -14,12 +15,15 @@ from PIL import ImageDraw
 from PIL.Image import Image
 from pydantic import BaseModel
 
-from docling.datamodel.base_models import Page
+from docling.datamodel.base_models import InputFormat, Page
 from docling.datamodel.document import ConversionResult
 from docling.datamodel.pipeline_options import OcrMode, PdfPipelineOptions
 from docling.datamodel.settings import settings
 from docling.models.base_model import BasePageModel
 from docling.utils.profiling import TimeRecorder
+from docling.utils.text_layer import PageTextLayer, read_document, read_pdf
+
+_log = logging.getLogger(__name__)
 
 
 def resolve_skip_cell_extraction(pipeline_options: PdfPipelineOptions) -> bool:
@@ -41,11 +45,16 @@ class PagePreprocessingOptions(BaseModel):
     skip_cell_extraction: bool = (
         False  # Skip text cell extraction for VLM-only processing
     )
+    # Leave a page whose text layer is unreadable to the OCR stage (set when
+    # OCR runs; without OCR the page keeps the text it has).
+    ocr_unreadable_pages: bool = False
 
 
 class PagePreprocessingModel(BasePageModel):
     def __init__(self, options: PagePreprocessingOptions):
         self.options = options
+        # The text layers of the document being converted, by its hash.
+        self._text_layers: tuple[str, dict[int, PageTextLayer]] = ("", {})
 
         # Pre-compiled regex patterns for efficiency
         self.GLYPH_RE = re.compile(r"GLYPH<[0-9A-Fa-f]+>")
@@ -86,12 +95,61 @@ class PagePreprocessingModel(BasePageModel):
 
         return page
 
+    def _read_through_fonts(self, conv_res: ConversionResult, page: Page) -> None:
+        """Where the PDF's text layer does not say what the page prints
+        (``docling.utils.text_layer``): give the cells of fonts read by glyph
+        number their decoded text, and leave a page that is unreadable to the
+        OCR stage, as a page without text."""
+        if conv_res.input.format != InputFormat.PDF or page.parsed_page is None:
+            return
+        layer = self._document_text_layers(conv_res).get(page.page_no)
+        if layer is None:
+            return
+        parsed = page.parsed_page
+        if layer.unreadable and self.options.ocr_unreadable_pages:
+            parsed.textline_cells, parsed.word_cells, parsed.char_cells = [], [], []
+            parsed.has_lines = parsed.has_words = parsed.has_chars = False
+            page.text_layer_unreadable = True
+            return
+        if not layer.glyph_order:
+            return
+        for cell in (*parsed.textline_cells, *parsed.word_cells, *parsed.char_cells):
+            text, decoded = layer.read_box(cell.rect.to_bounding_box())
+            if decoded:
+                cell.text = cell.orig = " ".join(text.split())
+
+    def _document_text_layers(
+        self, conv_res: ConversionResult
+    ) -> dict[int, PageTextLayer]:
+        document = conv_res.input.document_hash
+        if self._text_layers[0] != document:
+            self._text_layers = (document, self._read_text_layers(conv_res))
+        return self._text_layers[1]
+
+    @staticmethod
+    def _read_text_layers(conv_res: ConversionResult) -> dict[int, PageTextLayer]:
+        try:
+            from pypdfium2 import PdfiumError
+        except ImportError:
+            # pdfium is an extra of its own beside docling-parse.
+            return {}
+        source = conv_res.input._backend.path_or_stream
+        try:
+            if isinstance(source, Path):
+                return read_pdf(source)
+            return read_document(source)
+        except PdfiumError as exc:
+            # A PDF pdfium cannot open on its own (a password): as before.
+            _log.debug("Text layer of %s not read: %s", conv_res.input.file, exc)
+            return {}
+
     # Extract and populate the page cells and store it in the page object
     def _parse_page_cells(self, conv_res: ConversionResult, page: Page) -> Page:
         assert page._backend is not None
 
         page.parsed_page = page._backend.get_segmented_page()
         assert page.parsed_page is not None
+        self._read_through_fonts(conv_res, page)
 
         # Rate the text quality from the PDF parser, and aggregate on page
         text_scores = []

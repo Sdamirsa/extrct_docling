@@ -75,6 +75,7 @@ from docling.engines.structure import (
     DocumentRole,
     quality_report,
     structure_document,
+    text_layer_warnings,
     write_structure,
 )
 from docling.engines.structured_outputs import write_structured_outputs
@@ -92,6 +93,7 @@ from docling.engines.vlm_specs import (
     build_picture_description_options,
 )
 from docling.exceptions import ConversionError
+from docling.utils.text_layer import read_pdf, summary as text_layer_summary
 
 _log = logging.getLogger(__name__)
 
@@ -412,6 +414,16 @@ class PdfEngine:
             )
         with _step(errors, "quality"):
             output.quality = quality_report(doc)
+            if local_pdf is not None:
+                found = text_layer_summary(read_pdf(local_pdf))
+                if found.affected:
+                    output.quality.text_layer = found
+                    output.quality.warnings += text_layer_warnings(
+                        found,
+                        # A converter handed in is taken to run OCR, as Docling's does.
+                        ocr_ran=self._pipeline_options is None
+                        or bool(self._pipeline_options.do_ocr),
+                    )
             for warning in output.quality.blocking:
                 errors.append(
                     PdfEngineError(

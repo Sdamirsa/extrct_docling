@@ -223,7 +223,12 @@ class FigureDataOptions(BaseModel):
     cloud_max_output_tokens: int = 64000
     # How hard the cloud model is asked to think, sent as
     # ``reasoning_effort``; None leaves it to the endpoint's default.
-    cloud_reasoning_effort: str | None = "high"
+    # "medium" by the maintainer's decision (2026-11-20). Measured on one
+    # paper with Sonnet 5.5 against "high": a third cheaper and twice as
+    # fast, the values it returns as often right (258 of 268), but it
+    # leaves the unlabelled values of dense charts out (258 of 573 values
+    # right against 378). ``amir-figdata read --effort high`` reads those.
+    cloud_reasoning_effort: str | None = "medium"
     # The same for the cloud method's first call, which only lists the
     # charts of the figure. Gemini 3.8 Flash thought for four minutes about
     # that at "high" and lists as well at "low".

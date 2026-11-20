@@ -612,6 +612,7 @@ class StandardPdfPipeline(ConvertPipeline):
                 skip_cell_extraction=resolve_skip_cell_extraction(
                     self.pipeline_options
                 ),
+                ocr_unreadable_pages=bool(self.pipeline_options.do_ocr),
             )
         )
         self.ocr_model = self._make_ocr_model(art_path)

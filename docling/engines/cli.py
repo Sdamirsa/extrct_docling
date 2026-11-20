@@ -356,6 +356,20 @@ def main(
             help="Rerun a PDF this many more times when the engine raises.",
         ),
     ] = 1,
+    only: Annotated[
+        list[str] | None,
+        typer.Option(
+            "--only",
+            help=(
+                "Convert only the PDFs with these file names (repeatable) and "
+                "leave the bundles of the other inputs as they are, whatever "
+                "engine release wrote them. The whole input is still read, so "
+                "a supplement keeps its manuscript. For a PDF that has to be "
+                "converted again, e.g. one whose text layer an earlier "
+                "release could not read."
+            ),
+        ),
+    ] = None,
     check_only: Annotated[
         bool,
         typer.Option(
@@ -416,6 +430,13 @@ def main(
         raise typer.Exit(code=2) from None
     if pair_supplements:
         pairs += _pair_supplements(plan)
+    wanted = set(only or [])
+    unknown = wanted - {item.path.name for item in plan}
+    if unknown:
+        console.print(
+            f"[red]--only: not among the inputs: {escape(', '.join(sorted(unknown)))}[/red]"
+        )
+        raise typer.Exit(code=2)
     for manuscript, paired in pairs:
         console.print(
             f"[cyan]supplement[/cyan] {escape(paired.path.name)} of "
@@ -494,7 +515,8 @@ def main(
                 progress.update(
                     task_id, description=f"[cyan]{escape(pdf_path.name)}[/cyan]"
                 )
-                if skip_existing and _is_done(item, expected, console):
+                left_out = bool(wanted) and pdf_path.name not in wanted
+                if left_out or (skip_existing and _is_done(item, expected, console)):
                     bundle = pdf_dir / "standard" if compare else pdf_dir
                     rows.append(_bundle_row(pdf_path, bundle, status=RowStatus.SKIPPED))
                 else:

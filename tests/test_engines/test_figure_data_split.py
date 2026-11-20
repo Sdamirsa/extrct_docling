@@ -313,7 +313,7 @@ def test_cloud_method_posts_figure_and_context_to_a_chat_completions_endpoint(
     assert body["model"] == "anthropic/claude-sonnet-5.5"
     assert "temperature" not in body
     assert body["response_format"]["type"] == "json_schema"
-    assert body["reasoning_effort"] == "high"
+    assert body["reasoning_effort"] == "medium"
     # An enforced schema with optional fields lost the upper bound of
     # every interval on one provider: each field has to be written.
     sent = body["response_format"]["json_schema"]["schema"]

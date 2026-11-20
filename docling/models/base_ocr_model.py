@@ -221,6 +221,19 @@ class BaseOcrModel(BasePageModel, BaseModelWithOptions):
         # Compute the OCR rects according to the mode
         ocr_rects: list[BoundingBox]
 
+        # A page whose text layer is unreadable has text the PDF-aware modes
+        # would take for programmatic and skip: it is read as a whole.
+        if page.text_layer_unreadable:
+            return [
+                BoundingBox(
+                    l=0,
+                    t=0,
+                    r=page.size.width,
+                    b=page.size.height,
+                    coord_origin=CoordOrigin.TOPLEFT,
+                )
+            ]
+
         # Both DEFAULT and PDF_AWARE_LAYOUT_REGIONS make OCR input as layout detections eliminated by PDF cells
         if (
             self.options.mode == OcrMode.DEFAULT

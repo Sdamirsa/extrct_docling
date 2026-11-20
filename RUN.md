@@ -158,9 +158,11 @@ cheaper and four and a half times slower than Sonnet 5.5). For another
 endpoint: `--figure-data-base-url <url> --figure-data-key-env <VARIABLE>
 --figure-data-model <its model name>`. An endpoint on this machine (a
 local Ollama's `/v1`) needs no key. The call asks the model to think
-(`reasoning_effort` high) and allows 64,000 output tokens; an endpoint
-that rejects the reply schema or the reasoning setting is asked again
-without it.
+(`reasoning_effort` medium since r6; `amir-figdata read --effort high`
+costs half as much again and returns the unlabelled values of dense
+charts that medium leaves out) and allows 64,000 output tokens; an
+endpoint that rejects the reply schema or the reasoning setting is asked
+again without it.
 
 Each paper gets a `figure-to-data/` folder: `prepare.json`, one folder per
 figure (`figure.png`, `figure.txt`, `evidence.json`, then
@@ -259,6 +261,23 @@ for an existing bundle without reconverting:
 ```bash
 uv run --frozen python -c "from pathlib import Path; from docling.engines import rebuild_document_html as r; [r(p.parent) for p in Path('samples/out').glob('*/document.json')]"
 ```
+
+**A PDF whose text does not say what the page prints** (since r6). Some
+PDFs embed a font without a Unicode map: the page prints "Sample size" and
+the PDF's text reads `6DPSOH VL]H`. The conversion reads such text through
+its fonts. Where the codes are glyph numbers in the standard order it
+decodes them exactly, and the bundle holds the printed text. Where they
+cannot be decoded and make up 30 % or more of a page, the page is read by
+OCR. `run.json` → `quality.text_layer` names the pages (`glyph_order_pages`,
+`unreadable_pages`, `partly_unreadable_pages`) with the warnings
+`text_layer_decoded`, `text_layer_read_by_ocr` and
+`text_layer_partly_unreadable`; `check.json` → `text_layer` lists the pages
+read by OCR and the partly unreadable ones as issues, because nothing in
+the PDF can confirm their text. A bundle converted before r6 from such a
+PDF holds unreadable text with status `SUCCESS`: convert it again, alone,
+with `amir-batch <folder> -o <out> --only <file.pdf>` (repeatable). The
+whole folder is still read, so a supplement keeps its manuscript, and the
+bundles of the other PDFs stay as they are, whatever release wrote them.
 
 `preview.html` is **not standalone** (use `preview.embedded.html` for that) — it references `images/page_NNNN.png`
 etc. by relative path. Sharing just the `.html` file renders a blank page;

@@ -543,6 +543,9 @@ class Page(BaseModel):
     # page_hash: Optional[str] = None
     size: Size | None = None
     parsed_page: SegmentedPdfPage | None = None
+    # The PDF's text of this page does not say what the page prints (fonts
+    # without a Unicode map): its text cells were dropped and OCR reads it.
+    text_layer_unreadable: bool = False
     predictions: PagePredictions = PagePredictions()
     assembled: AssembledUnit | None = None
 

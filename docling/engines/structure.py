@@ -67,6 +67,7 @@ from pydantic import BaseModel, Field
 
 from docling.engines.run_snapshot import write_text_atomic
 from docling.engines.text_repair import GlyphStyle, pdf_text_styles
+from docling.utils.text_layer import TextLayerSummary, pages_text
 
 _log = logging.getLogger(__name__)
 
@@ -178,7 +179,10 @@ class QualityReport(BaseModel):
     ``few_text_blocks`` (blocking: the text is there but packed into fewer
     blocks than pages, so paragraphs and headings are lost), ``no_headings``,
     ``repeated_heading_text``, ``text_mostly_in_tables``,
-    ``pages_without_content``.
+    ``pages_without_content``; and from the PDF's text layer
+    (:func:`text_layer_warnings`): ``text_layer_decoded``,
+    ``text_layer_read_by_ocr``, ``text_layer_unreadable`` (blocking: OCR was
+    off), ``text_layer_partly_unreadable``.
     """
 
     pages: int = 0
@@ -191,6 +195,7 @@ class QualityReport(BaseModel):
     pages_without_text: list[int] = Field(default_factory=list)
     chars_in_tables_share: float | None = None
     repeated_heading_texts: list[RepeatedHeading] = Field(default_factory=list)
+    text_layer: TextLayerSummary | None = None
     warnings: list[QualityWarning] = Field(default_factory=list)
 
     @property
@@ -1223,6 +1228,60 @@ def quality_report(doc: DoclingDocument) -> QualityReport:
         repeated_heading_texts=repeated,
         warnings=warnings,
     )
+
+
+def text_layer_warnings(
+    found: TextLayerSummary, *, ocr_ran: bool
+) -> list[QualityWarning]:
+    """What a reader of the bundle has to know about pages whose PDF text
+    does not say what they print."""
+    warnings: list[QualityWarning] = []
+    if found.glyph_order_pages:
+        warnings.append(
+            QualityWarning(
+                code="text_layer_decoded",
+                blocking=False,
+                detail=(
+                    f"{len(found.glyph_order_pages)} page(s) hold text in a font "
+                    "without a Unicode map, decoded from its glyph numbers: "
+                    f"{pages_text(found.glyph_order_pages)}"
+                ),
+            )
+        )
+    if found.unreadable_pages:
+        pages = pages_text(found.unreadable_pages)
+        warnings.append(
+            QualityWarning(
+                code="text_layer_read_by_ocr",
+                blocking=False,
+                detail=(
+                    f"the text layer of {len(found.unreadable_pages)} page(s) "
+                    f"cannot be read; their text is what OCR read: {pages}"
+                ),
+            )
+            if ocr_ran
+            else QualityWarning(
+                code="text_layer_unreadable",
+                blocking=True,
+                detail=(
+                    f"the text layer of {len(found.unreadable_pages)} page(s) "
+                    f"cannot be read and OCR is off: {pages}"
+                ),
+            )
+        )
+    if found.partly_unreadable_pages:
+        warnings.append(
+            QualityWarning(
+                code="text_layer_partly_unreadable",
+                blocking=False,
+                detail="characters in a font the text layer cannot read: "
+                + ", ".join(
+                    f"p{page.page} {page.share:.0%}"
+                    for page in found.partly_unreadable_pages[:12]
+                ),
+            )
+        )
+    return warnings
 
 
 # --- bundle file --------------------------------------------------------------

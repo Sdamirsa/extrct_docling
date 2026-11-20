@@ -28,10 +28,9 @@ import unicodedata
 from collections import Counter
 from collections.abc import Mapping
 from pathlib import Path
-from typing import TYPE_CHECKING, NamedTuple
+from typing import NamedTuple
 
 from docling_core.types.doc import (
-    BoundingBox,
     ContentLayer,
     DescriptionAnnotation,
     DoclingDocument,
@@ -45,8 +44,7 @@ from docling_core.types.doc.document import (
     MetaUtils,
 )
 
-if TYPE_CHECKING:
-    from pypdfium2 import PdfPage
+from docling.utils.text_layer import read_pdf, user_space_rect
 
 _log = logging.getLogger(__name__)
 
@@ -103,20 +101,36 @@ def strip_vlm_stop_tokens(doc: DoclingDocument) -> int:
 
 def pdf_page_words(pdf_path: Path) -> dict[int, set[str]]:
     """Lower-case words of each page's text layer, keyed by 1-based page."""
+    pages: dict[int, set[str]] = {}
+    for index, text in enumerate(pdf_page_texts(pdf_path)):
+        text = unicodedata.normalize("NFKC", PDF_HYPHENATION.sub("", text)).lower()
+        pages[index + 1] = set(_WORD.findall(text))
+    return pages
+
+
+def pdf_page_texts(pdf_path: Path) -> list[str]:
+    """The text of each page's text layer as the page prints it: fonts read
+    by glyph number are decoded, and a page that is unreadable has none
+    (``docling.utils.text_layer``)."""
     import pypdfium2 as pdfium
 
+    layers = read_pdf(pdf_path)
     pdf = pdfium.PdfDocument(pdf_path)
     try:
-        pages: dict[int, set[str]] = {}
+        texts: list[str] = []
         for index in range(len(pdf)):
-            page = pdf[index]
-            textpage = page.get_textpage()
-            text = textpage.get_text_range()
-            textpage.close()
-            page.close()
-            text = unicodedata.normalize("NFKC", PDF_HYPHENATION.sub("", text)).lower()
-            pages[index + 1] = set(_WORD.findall(text))
-        return pages
+            layer = layers.get(index + 1)
+            if layer is not None and layer.unreadable:
+                texts.append("")
+            elif layer is not None and layer.glyph_order:
+                texts.append(layer.text())
+            else:
+                page = pdf[index]
+                textpage = page.get_textpage()
+                texts.append(textpage.get_text_range())
+                textpage.close()
+                page.close()
+        return texts
     finally:
         pdf.close()
 
@@ -194,6 +208,7 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
     returns the number of tables that got it."""
     import pypdfium2 as pdfium
 
+    layers = read_pdf(pdf_path)
     pdf = pdfium.PdfDocument(pdf_path)
     attached = 0
     try:
@@ -202,10 +217,17 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
             for prov in table.prov:
                 if not 1 <= prov.page_no <= len(pdf):
                     continue
+                layer = layers.get(prov.page_no)
+                if layer is not None and layer.unreadable:
+                    # Nothing to compare the cells with, nothing worth keeping.
+                    continue
+                if layer is not None and layer.glyph_order:
+                    region_text += layer.read_box(prov.bbox)[0]
+                    continue
                 page = pdf[prov.page_no - 1]
                 textpage = page.get_textpage()
                 region_text += textpage.get_text_bounded(
-                    *_user_space_rect(page, prov.bbox)
+                    *user_space_rect(page, prov.bbox)
                 )
                 textpage.close()
                 page.close()
@@ -234,30 +256,6 @@ def attach_table_pdf_text(doc: DoclingDocument, pdf_path: Path) -> int:
     if attached:
         _log.info("Kept the PDF text of %d table(s) with incomplete cells", attached)
     return attached
-
-
-def _user_space_rect(
-    page: PdfPage, bbox: BoundingBox
-) -> tuple[float, float, float, float]:
-    """*bbox* as the ``(left, bottom, right, top)`` PDF user-space rectangle
-    pdfium's text API takes.
-
-    Docling measures from the top-left corner of the page as displayed: from
-    the visible box (CropBox within MediaBox) and after ``/Rotate``. User space
-    is unrotated and its origin is wherever the PDF puts it: some journals
-    crop 34 pt off every side, and a box read without that offset reads the
-    text 34 pt away.
-    """
-    box = bbox.to_top_left_origin(page.get_height())
-    left, bottom, right, top = page.get_bbox()
-    rotation = page.get_rotation()
-    if rotation == 90:
-        return left + box.t, bottom + box.l, left + box.b, bottom + box.r
-    if rotation == 180:
-        return right - box.r, bottom + box.t, right - box.l, bottom + box.b
-    if rotation == 270:
-        return right - box.b, top - box.r, right - box.t, top - box.l
-    return left + box.l, top - box.b, left + box.r, top - box.t
 
 
 class GlyphStyle(NamedTuple):
@@ -301,7 +299,7 @@ def pdf_text_styles(
             textpage = page.get_textpage()
             try:
                 for key in keys:
-                    rect = _user_space_rect(page, regions[key].bbox)
+                    rect = user_space_rect(page, regions[key].bbox)
                     style = _region_style(textpage, rect)
                     if style is not None:
                         styles[key] = style

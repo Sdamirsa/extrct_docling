@@ -504,3 +504,43 @@ def test_supplement_named_on_the_command_line_is_paired(tmp_path: Path) -> None:
         "PULSE Supplementary.pdf"
     ]
     assert by_name["PULSE.pdf"].related == []
+
+
+@needs_fixture
+def test_only_converts_the_named_pdf_and_leaves_the_other_bundles(
+    tmp_path: Path,
+) -> None:
+    """``--only`` converts one PDF of a folder again, still as the supplement
+    of its manuscript; the bundle of an input that is not named stays as an
+    earlier release wrote it, which a plain rerun would convert again."""
+    inputs = tmp_path / "in"
+    inputs.mkdir()
+    for name in ("Paper.pdf", "Paper Supplementary.pdf"):
+        shutil.copyfile(FIXTURE_PDF, inputs / name)
+    out = tmp_path / "out"
+    assert _batch(str(inputs), "-o", str(out)).exit_code == 0
+
+    def written_by_an_earlier_release(bundle: str) -> str:
+        path = out / bundle / "run.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["engine"]["version"] = "2.131.0-r0"
+        path.write_text(json.dumps(record), encoding="utf-8")
+        return path.read_text(encoding="utf-8")
+
+    manuscript = written_by_an_earlier_release("Paper")
+    written_by_an_earlier_release("Paper_Supplementary")
+
+    misspelt = _batch(str(inputs), "-o", str(out), "--only", "Papr.pdf")
+    assert misspelt.exit_code == 2
+    assert "--only: not among the inputs: Papr.pdf" in misspelt.output
+
+    result = _batch(str(inputs), "-o", str(out), "--only", "Paper Supplementary.pdf")
+    assert result.exit_code == 0, result.output
+    assert "reconverting Paper_Supplementary: engine version differs" in result.output
+    assert (out / "Paper" / "run.json").read_text(encoding="utf-8") == manuscript
+    supplement = json.loads(
+        (out / "Paper_Supplementary" / "run.json").read_text(encoding="utf-8")
+    )
+    assert supplement["engine"]["version"] != "2.131.0-r0"
+    assert supplement["document_role"] == "supplement"
+    assert [related["bundle"] for related in supplement["related"]] == ["Paper"]

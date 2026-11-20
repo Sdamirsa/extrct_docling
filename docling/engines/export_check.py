@@ -83,6 +83,13 @@ from docling.engines.text_repair import (
     WORD_HEAD,
     WORD_TAIL,
     get_table_pdf_text,
+    pdf_page_texts,
+)
+from docling.utils.text_layer import (
+    PartlyUnreadablePage,
+    pages_text,
+    read_pdf,
+    summary,
 )
 
 if TYPE_CHECKING:
@@ -260,6 +267,17 @@ class FigureDataCheck(CheckBlock):
     low_confidence: int = 0
 
 
+class TextLayerCheck(CheckBlock):
+    """Pages whose PDF text does not say what they print
+    (``docling.utils.text_layer``). A page decoded from glyph numbers is
+    checked like any other by ``page_recall``, against the decoded text; an
+    unreadable page has no PDF text to check its OCR text against."""
+
+    glyph_order_pages: list[int] = Field(default_factory=list)
+    unreadable_pages: list[int] = Field(default_factory=list)
+    partly_unreadable_pages: list[PartlyUnreadablePage] = Field(default_factory=list)
+
+
 class BundleCheck(BaseModel):
     """Result of :func:`check_bundle`; ``ok`` and ``issues`` roll up the
     blocks' issues."""
@@ -285,6 +303,9 @@ class BundleCheck(BaseModel):
     figure_data: FigureDataCheck = Field(
         default_factory=lambda: FigureDataCheck(skipped="not checked")
     )
+    text_layer: TextLayerCheck = Field(
+        default_factory=lambda: TextLayerCheck(skipped="not checked")
+    )
 
     @model_validator(mode="after")
     def _roll_up(self) -> Self:
@@ -308,6 +329,7 @@ class BundleCheck(BaseModel):
             ("structure", self.structure),
             ("guards", self.guards),
             ("figure_data", self.figure_data),
+            ("text_layer", self.text_layer),
         )
 
     def summary_line(self) -> str:
@@ -436,6 +458,11 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
         figure_data=_check_figure_data(
             _read_rows(pdf_dir / "figures.jsonl", FigureRow) or [], run
         ),
+        text_layer=(
+            _check_text_layer(pdf_path)
+            if pdf_path is not None
+            else TextLayerCheck(skipped=pdf_skip)
+        ),
     )
 
 
@@ -528,20 +555,23 @@ def _source_pdf(run: RunRecord | None) -> tuple[Path | None, str | None]:
 
 
 def _pdf_page_texts(pdf_path: Path) -> list[str]:
-    import pypdfium2 as pdfium
+    return [PDF_HYPHENATION.sub("", text) for text in pdf_page_texts(pdf_path)]
 
-    pdf = pdfium.PdfDocument(pdf_path)
-    try:
-        texts: list[str] = []
-        for index in range(len(pdf)):
-            page = pdf[index]
-            textpage = page.get_textpage()
-            texts.append(PDF_HYPHENATION.sub("", textpage.get_text_range()))
-            textpage.close()
-            page.close()
-        return texts
-    finally:
-        pdf.close()
+
+def _check_text_layer(pdf_path: Path) -> TextLayerCheck:
+    found = summary(read_pdf(pdf_path))
+    result = TextLayerCheck(**found.model_dump())
+    if found.unreadable_pages:
+        result.issues.append(
+            "text layer unreadable, the text of these pages is not checked "
+            f"against the PDF (OCR reads them): {pages_text(found.unreadable_pages)}"
+        )
+    result.issues += [
+        f"p{page.page}: {page.share:.0%} of the characters are in a font the "
+        "text layer cannot read"
+        for page in found.partly_unreadable_pages
+    ]
+    return result
 
 
 # --- text views ---------------------------------------------------------------

@@ -145,7 +145,12 @@ Backends (`--figure-data-backend`):
   Gemini 3.8 Flash under an enforced schema wrote `err_lo` and left
   `err_hi` out of every point (three tries of three), and wrote both when
   the schema stood only in the prompt. `reasoning_effort` is sent
-  (`cloud_reasoning_effort`, default `high`, as the agent's sessions run);
+  (`cloud_reasoning_effort`, default `medium` since r6 by the maintainer's
+  decision; measured on the showcase paper with Sonnet 5.5 against `high`,
+  2026-11-20: 0.70 against 1.06 USD and half the reading time, 258 of the
+  268 values it returns right, but 258 of 573 against 378, because the
+  unlabelled values of dense charts are left out; the agent's sessions
+  still run at `high`);
   the reply and the model's thinking share `cloud_max_output_tokens`
   (64,000: on the densest bench figure Sonnet 5.5 used 24,000, Gemini 3.8
   Flash thought for 26,000 and was cut at a first limit of 32,000; a model

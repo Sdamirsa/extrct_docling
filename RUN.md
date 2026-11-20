@@ -14,6 +14,12 @@ uv run --no-sync amir-batch samples/aca-papers -o samples/aca-papers_out \
     --supplement "PULSE Supplementary.pdf=Wang_et_al_2026_A_knowledge_enhanced_domain_aware_large_language.pdf"
 ```
 
+The numbers behind the charts are a step after it, with one of the two recommended step configs
+(`configs/figure-to-data/README.md`): `uv run --no-sync amir-figdata step samples/aca-papers_out --config
+configs/figure-to-data/recommended-cloud.toml` (Claude Sonnet 5.5 through OpenRouter, five bundles at a
+time) or `recommended-local.toml` (Gemma 4 in Ollama); `amir-batch ... --figure-data-config <file>` does
+both in one command.
+
 Four supplements are paired with their manuscript by file name
 (`AMIE-Mx Supplementary.pdf` ↔ `AMIE-Mx.pdf`); `--supplement` names the fifth,
 whose name shares nothing with its manuscript's. Run it from a clean checkout
@@ -88,7 +94,7 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--preview / --no-preview` | on | Renders the clickable HTML bbox viewer (`preview.html`). |
 | `--vlm-preset` | `granite_docling` | Full-page VLM preset, only used with `--compare`. |
 | `--images-scale` | `1.5` | Scale factor for rendered page/crop images (rendering only — does not affect layout or `self_ref` assignment). |
-| `--granite-vision-tables / --no-granite-vision-tables` | **on** | Table structure via Granite-Vision VLM (4.1-4b) vs. plain TableFormer. With it on, a table whose generation hits the token budget or whose grid is degenerate is redone by TableFormer (logged as `structure taken from TableFormer`). |
+| `--granite-vision-tables / --no-granite-vision-tables` | **on** | On: each table goes to the model that has its text (r7): TableFormer for a table whose box holds PDF text, Granite-Vision VLM (4.1-4b) for a table of contents, an image-only table and a page read by OCR; `tables.jsonl` → `structure_model` names it. Off: plain TableFormer for every table. With it on, a table whose generation hits the token budget or whose grid is degenerate is redone by TableFormer (logged as `structure taken from TableFormer`). |
 | `--picture-description` | `granite_vision_4b` | VLM preset for figure captions. Other values: `granite_vision`, `smolvlm`, `pixtral`, `qwen25_vl_3b`, or `off`. |
 | `--figure-types / --no-figure-types` | **on** | Types every figure with BiomedCLIP (`ct`, `angiography`, `ecg`, `ultrasound`, `kaplan_meier`, `bar_chart`, ...) → `figures.jsonl[*].figure_type`. Runs in every config, VLM or not; ~0.8 GB GPU, ~15 ms per figure. Needs the `models-vlm-inline` extra (open-clip-torch). |
 | `--picture-area-threshold` | `0.03` | Smallest picture (fraction of the page area) that gets a VLM caption. Docling's default of 0.05 left real charts at 4-5 % of the page uncaptioned. |
@@ -243,6 +249,13 @@ attribute list are in `.claude/reference/structure/RULES.md`; the same
 records are in `structure.json`. `run.json` → `quality.warnings` uses stable
 codes (`few_text_blocks`, `no_body_text`, `no_headings`, ...); a blocking
 one turns the status into `PARTIAL_SUCCESS`.
+
+The footnotes of a table or a figure follow it in all three text exports
+since r7, one paragraph each and in the same order: in `<stem>.html`
+(`div.extrct-table-notes`), in `<stem>.md` and in the chunk that holds the
+table or figure. Before r7 the markdown and the chunks had none: on 65
+trial papers and supplements that was 350 footnotes (analysis populations,
+missing data, definitions).
 
 Unlike the markdown and chunks, it leaves out nothing Docling extracted —
 every `document.json` item is one tagged element — and marks what isn't

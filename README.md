@@ -30,6 +30,17 @@ Same install command everywhere (`uv sync --frozen --no-group docs --extra stand
 Check the GPU is visible: `uv run python -c "import torch; print(torch.cuda.is_available())"`.
 Paths work with either slash style (`out\my-paper` on Windows is fine); all outputs are UTF-8 and use `/` in their internal links, so a bundle made on Linux opens on Windows and vice versa.
 
+## ▶️ The numbers behind the charts: two recommended step configs
+
+After the conversion, the figure-to-data step reads the data out of every chart. Its recommended settings are two files in [`configs/figure-to-data/`](configs/figure-to-data/README.md); the conversion keeps its defaults.
+
+```bash
+uv run amir-figdata step <output folder> --config configs/figure-to-data/recommended-cloud.toml   # Claude Sonnet 5.5 through OpenRouter
+uv run amir-figdata step <output folder> --config configs/figure-to-data/recommended-local.toml   # Gemma 4 26B in Ollama, nothing leaves the machine
+# or with the conversion, in one command:
+uv run amir-batch <PDFs or a folder> -o <output folder> --figure-data-config configs/figure-to-data/recommended-cloud.toml
+```
+
 ## 🖥️ Hardware for the suggested config
 
 | Mode | Command | GPU | Speed (68-page paper) |
@@ -45,7 +56,7 @@ Measured on an NVIDIA GB10 (DGX Spark, 128 GB unified memory) with Docling v2.13
 | Stage | Model | Why |
 |---|---|---|
 | Layout + reading order | Docling **Heron** layout model | upstream default, fast |
-| Tables | **Granite-Vision 4.1-4B** (VLM, same weights as figures); TableFormer for a table it cuts off or returns degenerate | better than TableFormer on messy clinical tables |
+| Tables | **TableFormer** (cell text from the PDF) for a table whose box holds PDF text; **Granite-Vision 4.1-4B** (VLM, same weights as figures) for a table of contents, an image-only table and a page read by OCR; each one redoes what the other cuts off or leaves out | Granite-Vision retypes cells from the image: on trial tables it left rows out and misread digits; routed, 0.95 of the printed words in 17 of 18 flagged tables instead of 0 (r7) |
 | Figure descriptions | **Granite-Vision 4.1-4B** (VLM) | one paragraph per figure → `figures.jsonl[*].vlm_caption` |
 | Figure type | **BiomedCLIP** (zero-shot, PubMed-trained) | `ct`, `angiography`, `ecg`, `kaplan_meier`, `bar_chart`, ... → `figures.jsonl[*].figure_type` (83.5 % on a 97-figure medical sample vs 16.5 % for Docling's generic classifier) |
 | Noise filter | Docling generic picture classifier + bbox-repeat heuristic | tags + strips logos / badges / QR codes / repeated banners ("noise"); its generic label is *not* a figure type |
@@ -130,6 +141,7 @@ Releases of this fork are git tags named `extrct_docling-v<docling version>-r<n>
 
 | Release | Date | Based on | What's in it |
 |---|---|---|---|
+| [`extrct_docling-v2.131.0-r7`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r7) | 2026-11-20 | Docling v2.131.0 | **Reconvert for the tables.** Each table goes to the model that has its text: TableFormer (cell text from the PDF) for a table whose box holds PDF text, Granite-Vision for a table of contents, an image-only table and a page read by OCR, and each redoes what the other cuts off or leaves out. Granite-Vision, the only table model before, retyped cells from the image: on 65 trial papers it left printed rows out and misread digits in tables the check passed (177 for 172, 118/1379 for 1178/1379). Measured on single pages: of 18 flagged tables 17 hold 0.95 of their printed words instead of 0, of 80 random flagged ones 68, of 40 that passed 38; the table stage is about 100 times faster. `tables.jsonl` → `structure_model` names the model. The OTSL parser no longer ends a cell at a printed `<` ("p<0.001"). The footnotes of tables and figures are in the markdown and the chunks too, as in the HTML (350 footnotes were in the HTML only). Two recommended configs of the figure-to-data step in `configs/figure-to-data/` (cloud: Sonnet 5.5, effort medium; local: Gemma 4 in Ollama), for `amir-figdata step --config` and `amir-batch --figure-data-config`; the step reads several bundles at a time (`--workers`, each in a process of its own). |
 | [`extrct_docling-v2.131.0-r6`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r6) | 2026-11-20 | Docling v2.131.0 | **Reconvert PDFs whose text does not say what the page prints:** a font embedded without a Unicode map leaves its glyph codes in the PDF's text (`6DPSOH VL]H` where the page prints "Sample size"), and r5 converted such pages to unreadable text with status `SUCCESS` (found in 5 of 87 PDFs, 135 pages; one supplement on all of its 57). The conversion now reads the PDF's text through its fonts (`docling/utils/text_layer.py`): glyph numbers of the standard order are decoded exactly, a page that cannot be decoded is read by OCR, and `run.json` → `quality.text_layer` and `check.json` → `text_layer` name the pages. `amir-batch <folder> --only <file.pdf>` converts chosen PDFs of a folder again and leaves the other bundles as they are. Also: the cloud method's read call asks for `medium` reasoning effort (was `high`: a third cheaper and twice as fast, with fewer values from dense charts; `amir-figdata read --effort high` for those); the pre-push scan no longer takes a paper's name for a key. |
 | [`extrct_docling-v2.131.0-r5`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r5) | 2026-11-19 | Docling v2.131.0 | **The numbers behind the charts**: `--figure-data ollama|cloud|agent`, a step of its own on finished bundles that reads the data out of every chart figure and writes it back at the figure, marked as read by a model (markdown, HTML, chunks, JSON, the page viewer); `amir-figdata` runs it on any output folder. The model that reads a figure also lists its charts and the rules cut the figure by that list: on 51 figures the cut is right on 37 with the local model and 46 with a cloud model, against 24 by rules alone. `amir-batch` takes **Word files and ZIP archives** of supplements (a `.docx` becomes a PDF through LibreOffice and is converted like any PDF; `run.json` records `source.converted_from`). An embedded figure bitmap is captured with its transparency mask. Evidence: the [chart-to-data mini bench](docs/mini-bench/chart-to-data/README.md), rounds 1 to 5. |
 | [`extrct_docling-v2.131.0-r4`](https://github.com/Sdamirsa/extrct_docling/tree/extrct_docling-v2.131.0-r4) | 2026-11-16 | Docling v2.131.0 | **Reconvert watermarked PDFs:** a diagonal watermark (SSRN "Preprint not peer reviewed", a journal's "ARTICLE IN PRESS") no longer folds each page into one text block (a 20-page paper came out as 5 text items and no headings, status SUCCESS); the watermark is kept as background-layer text. Structure pass (`structure.json`, `structure_version` 1): title is `<h1>`, heading levels from numbering, standard section names and the PDF's own type (`<h2>`..`<h6>`, markdown `##`/`###`, chunk heading paths), `data-role` / `data-section-ref` on every block, tables and figures tied to their caption and number (`data-number`, `data-caption-ref`, `data-for`, first mention), a line repeated in the page margin becomes a page header/footer instead of a heading, caption-like headings (`Table S11. …`, `Algorithm 1 …`) become captions. `run.json` adds `quality` (label counts, warnings with stable codes; a blocking one — `few_text_blocks`, `no_body_text` — sets `PARTIAL_SUCCESS`), `document_role` and `related`; `amir-batch` pairs a supplement with its manuscript by file name or `--supplement`. Figure-to-data v1 (`--figure-data`, `amir-figdata`; off by default). Labels of some items differ from r3 bundles (title, captions, furniture): locators made against an r3 bundle of the same PDF may not hold |
@@ -142,10 +154,10 @@ Pin it from another project:
 ```bash
 # as a git submodule
 git submodule add https://github.com/Sdamirsa/extrct_docling.git vendor/extrct_docling
-git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r6
+git -C vendor/extrct_docling checkout extrct_docling-v2.131.0-r7
 
 # or as a dependency (uv.lock then records the resolved commit)
-uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r6"
+uv add "docling-slim[standard,feat-ocr-rapidocr-onnx,models-vlm-inline] @ git+https://github.com/Sdamirsa/extrct_docling@extrct_docling-v2.131.0-r7"
 ```
 
 In code, `docling.engines.ENGINE_VERSION` gives the release (`"2.131.0-r5"`).

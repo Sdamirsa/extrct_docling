@@ -26,5 +26,71 @@
   "Local: Gemma 4 26B": "one_rule",
   "Cloud: Sonnet 5.5": "one_rule",
   "Cloud: Gemini 3.8 Flash": "one_rule"
+ },
+ "round5": {
+  "title": "Built, and run through the pipeline (round 5)",
+  "note": "The rule is in the step since release r5: the local engine lists the charts in its overview call, the cloud method in one extra call at low reasoning effort. On the 51 figures the built rule gives the cuts the check measured (37, 46 and 46 figures cut right). Three papers then went through the pipeline command with both methods: every command exits 0, every bundle check is OK, and the readings are in every export.",
+  "table": [
+   [
+    "Showcase paper",
+    "Local, round 4",
+    "Local, round 5",
+    "Cloud, round 4",
+    "Cloud, round 5"
+   ],
+   [
+    "Figures cut right, of 11",
+    "5",
+    "<b>10</b>",
+    "5",
+    "<b>11</b>"
+   ],
+   [
+    "Six main figures: values right, of 573",
+    "96",
+    "<b>148</b>",
+    "421",
+    "<b>378</b>"
+   ],
+   [
+    "Five dense figures: sampled bars right, of 60",
+    "8",
+    "9",
+    "38",
+    "<b>46</b>"
+   ],
+   [
+    "Reading the 12 figures",
+    "1,609 s",
+    "2,023 s",
+    "358 s",
+    "421 s"
+   ],
+   [
+    "Cost",
+    "local",
+    "local",
+    "0.91 USD",
+    "1.06 USD"
+   ]
+  ],
+  "cards": [
+   {
+    "title": "Three papers, 23 chart candidates",
+    "text": "The cut is right on 14 (local) and 15 (cloud) of the 18 figures that have a truth, against 6 with the rules alone."
+   },
+   {
+    "title": "Local: the broken figures are read in their real charts",
+    "text": "Figure 7 goes from 26 to 51 of 52 values right, Figure 4 from 10 to 37 of 222. The five-panel figure round 4 declined is read."
+   },
+   {
+    "title": "Cloud: better on dense grids, lower on one chart",
+    "text": "Figure 4 is one chart of 37 bars. Round 4's wrong cut had given the model its two halves as crops, and it estimated 43 unlabelled segments. Cut right, it has no crop and returned the 37 printed shares alone."
+   },
+   {
+    "title": "Eight defects found and fixed",
+    "text": "Six by an independent review, two by the runs. The costliest: a cloud reply that put a sentence before its JSON was thrown away whole, 153 seconds of reading."
+   }
+  ]
  }
 }

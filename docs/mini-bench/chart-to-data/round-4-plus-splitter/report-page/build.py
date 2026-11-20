@@ -133,6 +133,37 @@ def said(name: str, row: dict, raw: dict) -> dict:
     return info
 
 
+def round5_section(text: dict | None) -> str:
+    """The section on what was built and run after the check (round 5):
+    a note, one table and a row of cards, from ``final_text.json``."""
+    if not text:
+        return ""
+    head, *rows = text["table"]
+    table = (
+        "<thead><tr>"
+        + "".join(f"<th{' class=\"r\"' if i else ''}>{cell}</th>" for i, cell in enumerate(head))
+        + "</tr></thead><tbody>"
+        + "".join(
+            "<tr>"
+            + "".join(
+                f"<td{' class=\"r num\"' if i else ''}>{cell}</td>" for i, cell in enumerate(row)
+            )
+            + "</tr>"
+            for row in rows
+        )
+        + "</tbody>"
+    )
+    cards = "".join(
+        f'<div class="panel"><h3>{card["title"]}</h3><p>{card["text"]}</p></div>'
+        for card in text["cards"]
+    )
+    return (
+        f'<section><h2>{text["title"]}</h2><p class="note">{text["note"]}</p>'
+        f'<div class="panel scroll"><table>{table}</table></div>'
+        f'<div class="cols">{cards}</div></section>'
+    )
+
+
 def main() -> None:
     out = Path(sys.argv[1])
     results = json.loads((ROUND / "results.json").read_text(encoding="utf-8"))
@@ -318,6 +349,7 @@ def main() -> None:
             for card in text["decision"]
         ),
     )
+    page = page.replace("/*__ROUND5__*/", round5_section(text.get("round5")))
     page = page.replace(
         "/*__PICKED__*/",
         ", ".join(f"{json.dumps(k)}: {json.dumps(v)}" for k, v in text["picked"].items()),

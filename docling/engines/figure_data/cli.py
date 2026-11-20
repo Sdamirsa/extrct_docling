@@ -27,9 +27,13 @@ trying a method); without it they sit inside each bundle.
 
 from __future__ import annotations
 
+import json
+import logging
 from collections.abc import Callable
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from multiprocessing import get_context
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any
 
 import typer
 from pydantic import BaseModel
@@ -58,9 +62,74 @@ from docling.engines.figure_data.step import (
     FigureOutcome,
     StepRun,
     embed_step,
+    needs_step,
     prepare_step,
     read_step,
 )
+from docling.engines.run_snapshot import read_run_record
+
+_log = logging.getLogger(__name__)
+
+# The keys of a step config (configs/figure-to-data/*.toml): the options of
+# ``amir-figdata step`` that say how the figures are read. amir-batch takes
+# the same file (``--figure-data-config``) under its own option names.
+STEP_CONFIG_KEYS = {
+    "method": "figure_data",
+    "model": "figure_data_model",
+    "backend": "figure_data_backend",
+    "base_url": "figure_data_base_url",
+    "api_key_env": "figure_data_key_env",
+    "ollama_url": "figure_data_ollama_url",
+    "effort": "figure_data_effort",
+    "workers": "figure_data_workers",
+}
+
+
+def load_step_config(path: Path) -> dict[str, Any]:
+    """A step config, TOML (Python 3.11 and later) or JSON; a key that is not
+    a step option is an error."""
+    text = path.read_text(encoding="utf-8")
+    if path.suffix.lower() == ".json":
+        data = json.loads(text)
+    else:
+        try:
+            import tomllib
+        except ImportError:  # Python 3.10
+            raise typer.BadParameter(
+                "a TOML config needs Python 3.11 or later; give a .json file"
+            ) from None
+        data = tomllib.loads(text)
+    unknown = sorted(set(data) - set(STEP_CONFIG_KEYS))
+    if unknown:
+        raise typer.BadParameter(
+            f"{path.name}: not an option of the figure-to-data step: "
+            f"{', '.join(unknown)} (known: {', '.join(STEP_CONFIG_KEYS)})"
+        )
+    return data
+
+
+def _step_config(ctx: typer.Context, value: Path | None) -> Path | None:
+    """``--config``: the file's values become the defaults of the step's
+    options, so an option given on the command line wins."""
+    if value is not None:
+        ctx.default_map = {**(ctx.default_map or {}), **load_step_config(value)}
+    return value
+
+
+_ConfigOption = Annotated[
+    Path | None,
+    typer.Option(
+        "--config",
+        exists=True,
+        dir_okay=False,
+        is_eager=True,
+        callback=_step_config,
+        help=(
+            "A step config (configs/figure-to-data/recommended-cloud.toml, "
+            "recommended-local.toml); options given here win."
+        ),
+    ),
+]
 
 app = typer.Typer(
     add_completion=False,
@@ -291,6 +360,7 @@ def embed(
 @app.command()
 def step(
     folders: _Folders = None,
+    config: _ConfigOption = None,
     pdf_dir: _PdfDir = None,
     method: _Method = "ollama",
     model: _Model = None,
@@ -305,8 +375,26 @@ def step(
         ),
     ] = True,
     force: Annotated[
-        bool, typer.Option(help="Prepare again what is already prepared.")
+        bool,
+        typer.Option(
+            help="Prepare and read again a bundle this method and model already read."
+        ),
     ] = False,
+    effort: Annotated[
+        str | None,
+        typer.Option(
+            help="cloud, agent: how hard the model is asked to think "
+            "(low, medium, high). Default: the method's own."
+        ),
+    ] = None,
+    workers: Annotated[
+        int,
+        typer.Option(
+            min=1,
+            help="cloud, agent: bundles read at the same time, each in a "
+            "process of its own (ollama reads one figure at a time).",
+        ),
+    ] = 1,
     unload_after: Annotated[
         bool, typer.Option(help="ollama: unload the model at the end.")
     ] = False,
@@ -321,12 +409,26 @@ def step(
             "cloud_base_url": base_url,
             "cloud_api_key_env": api_key_env,
             "ollama_url": ollama_url,
+            **(
+                {"cloud_reasoning_effort": effort, "claude_effort": effort}
+                if effort is not None
+                else {}
+            ),
         }
     )
     bundles = _bundles(folders or [])
     if not bundles:
         console.print("[red]No bundles given.[/red]")
         raise typer.Exit(code=2)
+    if not force:
+        # A run that stopped is started again without paying twice.
+        done = [bundle for bundle in bundles if not _needs_reading(bundle, options)]
+        for bundle in done:
+            console.print(
+                f"{escape(bundle.name)}: already read by {options.method} "
+                f"{escape(options.model)}, left alone (--force reads it again)"
+            )
+        bundles = [bundle for bundle in bundles if bundle not in done]
     runs = run_on_bundles(
         [(bundle, find_source_pdf(bundle, pdf_dir)) for bundle in bundles],
         options,
@@ -334,8 +436,80 @@ def step(
         embed=embed_readings,
         force=force,
         unload_after=unload_after,
+        workers=workers,
     )
     console.print(runs_table(runs))
+
+
+def _needs_reading(bundle: Path, options: FigureDataOptions) -> bool:
+    """Whether *bundle* has no reading by this step version, method and
+    model, or its last one left figures failed (an endpoint that refused,
+    a reply that broke off)."""
+    if needs_step(bundle, options):
+        return True
+    record = read_run_record(bundle)
+    block = record.figure_to_data if record is not None else None
+    return bool(block and (block.get("figures") or {}).get("failed"))
+
+
+def run_in_processes(
+    bundles: list[tuple[Path, Path | None]],
+    options: FigureDataOptions,
+    console: Console,
+    *,
+    workers: int,
+    embed: bool = True,
+    force: bool = False,
+) -> list[StepRun]:
+    """The step on each (bundle, PDF), *workers* bundles at a time, each in
+    a process of its own: pdfium, which renders the crops, is not
+    thread-safe. A bundle the step fails on is reported and left as it was."""
+    runs: list[StepRun] = []
+    settings = options.model_dump_json()
+    with ProcessPoolExecutor(
+        max_workers=workers, mp_context=get_context("spawn")
+    ) as pool:
+        futures = {
+            pool.submit(
+                _one_bundle,
+                str(bundle),
+                str(pdf) if pdf is not None else None,
+                settings,
+                embed,
+                force,
+            ): bundle
+            for bundle, pdf in bundles
+        }
+        for future in as_completed(futures):
+            bundle = futures[future]
+            try:
+                runs.append(future.result())
+            except Exception as exc:
+                _log.exception("figure-to-data failed on %s", bundle)
+                console.print(
+                    f"[red]figure-to-data failed[/red] on {escape(bundle.name)}: "
+                    f"{escape(type(exc).__name__)}: {escape(str(exc)[:200])}"
+                )
+    return runs
+
+
+def _one_bundle(
+    bundle: str, pdf: str | None, settings: str, embed: bool, force: bool
+) -> StepRun:
+    """The step on one bundle, in a worker process."""
+    options = FigureDataOptions.model_validate_json(settings)
+    console = Console()
+    bundle_dir, pdf_path = Path(bundle), Path(pdf) if pdf is not None else None
+    manifest = prepare_step(bundle_dir, pdf_path, options, force=force)
+    console.print(_prepared_line(bundle_dir, pdf_path, manifest), soft_wrap=True)
+    run, _ = read_step(
+        bundle_dir / STEP_DIRNAME,
+        options,
+        on_result=outcome_printer(console, bundle_dir.name),
+    )
+    if embed:
+        run.embedded = embed_step(bundle_dir, options, pdf_path=pdf_path)
+    return run
 
 
 def run_on_bundles(
@@ -346,9 +520,15 @@ def run_on_bundles(
     embed: bool = True,
     force: bool = False,
     unload_after: bool = False,
+    workers: int = 1,
 ) -> list[StepRun]:
     """The step on each (bundle, PDF) with one reader, so that a local
-    model is loaded once for all of them."""
+    model is loaded once for all of them; with several *workers* (not for
+    ollama) each bundle in a process of its own."""
+    if workers > 1 and options.method != "ollama" and len(bundles) > 1:
+        return run_in_processes(
+            bundles, options, console, workers=workers, embed=embed, force=force
+        )
     reader = build_reader(options)
     runs: list[StepRun] = []
     try:

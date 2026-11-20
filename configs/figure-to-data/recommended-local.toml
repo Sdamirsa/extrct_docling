@@ -1,0 +1,26 @@
+# The recommended figure-to-data step with everything on this machine: the
+# numbers behind the charts of converted papers, read by Gemma 4 26B (4-bit)
+# in Ollama. Nothing leaves the machine.
+#
+#   uv run amir-figdata step <bundle or output folder> \
+#       --config configs/figure-to-data/recommended-local.toml
+#   # or with the conversion, in one command:
+#   uv run amir-batch <PDFs or a folder> -o <output folder> \
+#       --figure-data-config configs/figure-to-data/recommended-local.toml
+#
+# Only the step: the conversion keeps its own defaults.
+#
+# Ollama has to be running, with the model pulled
+# (`ollama pull gemma4:26b-a4b-it-qat`). The overview call lists the charts
+# of a figure, one call reads each chart; one figure at a time. Measured on
+# three papers against the cloud config: the charts are cut about as well
+# (14 against 15 of 18 figures right), the values less well (on the showcase
+# paper 148 against 378 of 573 values right), and reading takes about three
+# times as long.
+#
+# Options given on the command line win over this file.
+
+method = "ollama"
+model = "gemma4:26b-a4b-it-qat"
+backend = "ollama"
+ollama_url = "http://127.0.0.1:11434"

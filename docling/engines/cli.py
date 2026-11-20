@@ -68,7 +68,13 @@ from docling.engines.export_check import (
     check_bundle,
     write_bundle_check,
 )
-from docling.engines.figure_data.cli import outcome_printer, runs_table
+from docling.engines.figure_data.cli import (
+    STEP_CONFIG_KEYS,
+    load_step_config,
+    outcome_printer,
+    run_in_processes,
+    runs_table,
+)
 from docling.engines.figure_data.methods import FigureReader, build_reader
 from docling.engines.figure_data.schema import (
     Backend,
@@ -170,6 +176,22 @@ class PlannedPdf(BaseModel):
 
 
 _DONE_STATUSES = {ConversionStatus.SUCCESS, ConversionStatus.PARTIAL_SUCCESS}
+
+
+def _figure_data_config(ctx: typer.Context, value: Path | None) -> Path | None:
+    """``--figure-data-config``: a step config (the file of ``amir-figdata
+    step --config``) as the defaults of the ``--figure-data*`` options, so
+    one given on the command line wins. The conversion's options are not in
+    it."""
+    if value is not None:
+        ctx.default_map = {
+            **(ctx.default_map or {}),
+            **{
+                STEP_CONFIG_KEYS[key]: setting
+                for key, setting in load_step_config(value).items()
+            },
+        }
+    return value
 
 
 @app.command()
@@ -326,6 +348,44 @@ def main(
             ),
         ),
     ] = FigureDataOptions().ollama_url,
+    figure_data_config: Annotated[
+        Path | None,
+        typer.Option(
+            "--figure-data-config",
+            exists=True,
+            dir_okay=False,
+            is_eager=True,
+            callback=_figure_data_config,
+            help=(
+                "A config of the figure-to-data step "
+                "(configs/figure-to-data/recommended-cloud.toml, "
+                "recommended-local.toml): sets --figure-data and the options "
+                "after it; options given here win."
+            ),
+        ),
+    ] = None,
+    figure_data_effort: Annotated[
+        str | None,
+        typer.Option(
+            "--figure-data-effort",
+            help=(
+                "--figure-data cloud and agent: how hard the model is asked to "
+                "think (low, medium, high). Default: the method's own (cloud "
+                "medium, agent high)."
+            ),
+        ),
+    ] = None,
+    figure_data_workers: Annotated[
+        int,
+        typer.Option(
+            "--figure-data-workers",
+            min=1,
+            help=(
+                "--figure-data cloud and agent, with --figure-data-when end: "
+                "bundles read at the same time, each in a process of its own."
+            ),
+        ),
+    ] = 1,
     figure_data_when: Annotated[
         StepTiming,
         typer.Option(
@@ -471,9 +531,18 @@ def main(
                     "cloud_base_url": figure_data_base_url,
                     "cloud_api_key_env": figure_data_key_env,
                     "ollama_url": figure_data_ollama_url,
+                    **(
+                        {
+                            "cloud_reasoning_effort": figure_data_effort,
+                            "claude_effort": figure_data_effort,
+                        }
+                        if figure_data_effort is not None
+                        else {}
+                    ),
                 }
             ),
             console,
+            workers=figure_data_workers,
         )
         if figure_data != "off" and not compare
         else None
@@ -560,8 +629,7 @@ def main(
                 # reading model is loaded beside them.
                 del engine
                 _release_gpu_memory()
-                for item in plan:
-                    figure_step.run(item.pdf_dir, item.path)
+                figure_step.run_all([(item.pdf_dir, item.path) for item in plan])
         except KeyboardInterrupt:
             console.print(
                 "[red]Interrupted[/red] during figure-to-data; the bundles "
@@ -589,9 +657,13 @@ class _FigureStep:
     """The figure-to-data step on the bundles of a batch, with one reader
     for all of them."""
 
-    def __init__(self, options: FigureDataOptions, console: Console) -> None:
+    def __init__(
+        self, options: FigureDataOptions, console: Console, *, workers: int = 1
+    ) -> None:
         self.options = options
         self.console = console
+        # A local model is loaded once and serves one figure at a time.
+        self.workers = 1 if options.method == "ollama" else workers
         self.runs: list[StepRun] = []
         self.bundles: list[Path] = []
         self._reader: FigureReader | None = None
@@ -622,6 +694,25 @@ class _FigureStep:
                 f"[red]figure-to-data failed[/red] on {escape(bundle.name)}: "
                 f"{escape(type(exc).__name__)}: {escape(str(exc)[:200])}"
             )
+
+    def run_all(self, items: list[tuple[Path, Path]]) -> None:
+        """The step on every bundle of the batch; with several workers each
+        bundle in a process of its own (pdfium, which renders the crops, is
+        not thread-safe)."""
+        todo = [
+            (bundle, pdf)
+            for bundle, pdf in items
+            if (bundle / "document.json").is_file() and needs_step(bundle, self.options)
+        ]
+        if self.workers == 1 or len(todo) < 2:
+            for bundle, pdf in todo:
+                self.run(bundle, pdf)
+            return
+        for run in run_in_processes(
+            todo, self.options, self.console, workers=self.workers
+        ):
+            self.runs.append(run)
+            self.bundles.append(next(b for b, _ in todo if b.name == run.bundle))
 
     def close(self) -> None:
         if self._reader is not None:

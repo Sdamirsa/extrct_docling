@@ -1,0 +1,31 @@
+# The recommended figure-to-data step with a cloud model: the numbers behind
+# the charts of converted papers, read by Claude Sonnet 5.5 through
+# OpenRouter (an OpenAI-compatible API).
+#
+#   uv run amir-figdata step <bundle or output folder> \
+#       --config configs/figure-to-data/recommended-cloud.toml
+#   # or with the conversion, in one command:
+#   uv run amir-batch <PDFs or a folder> -o <output folder> \
+#       --figure-data-config configs/figure-to-data/recommended-cloud.toml
+#
+# Only the step: the conversion keeps its own defaults.
+#
+# Per figure: one short call lists the charts, at low reasoning effort; one
+# call reads them, at the effort below. THE FIGURE IMAGES ARE SENT TO
+# OPENROUTER and to the model host it picks. Measured on 88 trial papers and
+# supplements: about 9 USD for 280 chart candidates, 3 cents a figure, five
+# bundles at a time.
+#
+# api_key_env names the environment variable that holds the key; it is read
+# from the environment or from a line `NAME=...` in the repository's .env,
+# and never written into a bundle. Put your own variable's name here.
+#
+# Options given on the command line win over this file.
+
+method = "cloud"
+model = "anthropic/claude-sonnet-5.5"
+backend = "openai-compatible"
+base_url = "https://openrouter.ai/api/v1"
+api_key_env = "OPENROUTER_API_KEY_GG"
+effort = "medium"
+workers = 5

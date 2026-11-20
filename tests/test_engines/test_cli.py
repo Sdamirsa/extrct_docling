@@ -12,6 +12,7 @@ import shutil
 from pathlib import Path
 
 import pytest
+import typer
 from click.testing import Result
 from rich.console import Console
 from typer.testing import CliRunner
@@ -22,6 +23,7 @@ from docling.engines.cli import (
     RowStatus,
     _collect_sources,
     _compare_row,
+    _FigureStep,
     _pair_named_supplements,
     _pair_supplements,
     _plan_bundles,
@@ -32,6 +34,8 @@ from docling.engines.compare_pipelines import (
     _rename_pdf_dir,
     _render_comparison_md,
 )
+from docling.engines.figure_data.cli import STEP_CONFIG_KEYS, app as figdata_app
+from docling.engines.figure_data.schema import FigureDataOptions
 from docling.engines.html_export import MANIFEST_ID
 from docling.engines.pdf_engine import PdfEngine
 from docling.engines.schemas import PdfConversionOutput, SourceKind
@@ -544,3 +548,113 @@ def test_only_converts_the_named_pdf_and_leaves_the_other_bundles(
     assert supplement["engine"]["version"] != "2.131.0-r0"
     assert supplement["document_role"] == "supplement"
     assert [related["bundle"] for related in supplement["related"]] == ["Paper"]
+
+
+@needs_fixture
+def test_a_step_config_sets_the_figure_data_options_and_the_command_line_wins(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """``--figure-data-config`` takes the file of ``amir-figdata step
+    --config``; an option given on the command line wins, and a key the step
+    does not have is refused."""
+    built: list[tuple[FigureDataOptions, int]] = []
+
+    def record(self, options, console, *, workers=1):
+        built.append((options, workers))
+        self.options, self.console, self.workers = options, console, workers
+        self.runs, self.bundles, self._reader = [], [], None
+
+    monkeypatch.setattr(_FigureStep, "__init__", record)
+    monkeypatch.setattr(_FigureStep, "run_all", lambda self, items: None)
+    inputs = tmp_path / "in"
+    inputs.mkdir()
+    shutil.copyfile(FIXTURE_PDF, inputs / "paper.pdf")
+    config = tmp_path / "step.toml"
+    config.write_text(
+        'method = "cloud"\nmodel = "vendor/model-a"\napi_key_env = "MY_KEY"\n'
+        'effort = "low"\nworkers = 3\n',
+        encoding="utf-8",
+    )
+    typo = tmp_path / "typo.toml"
+    typo.write_text('modle = "x"\n', encoding="utf-8")
+
+    refused = _batch(
+        str(inputs), "-o", str(tmp_path / "x"), "--figure-data-config", str(typo)
+    )
+    assert refused.exit_code == 2
+    assert "not an option of the figure-to-data step: modle" in refused.output
+
+    result = _batch(
+        str(inputs),
+        "-o",
+        str(tmp_path / "out"),
+        "--figure-data-config",
+        str(config),
+        "--figure-data-model",
+        "vendor/model-b",
+    )
+    assert result.exit_code == 0, result.output
+    [(options, workers)] = built
+    assert (options.method, options.model, options.cloud_api_key_env) == (
+        "cloud",
+        "vendor/model-b",
+        "MY_KEY",
+    )
+    assert options.cloud_reasoning_effort == "low"
+    assert workers == 3
+
+
+def test_the_recommended_step_configs_hold_step_options_only() -> None:
+    """The two shipped configs are what others run: every key is an option
+    of ``amir-figdata step``, and neither touches the conversion."""
+    tomllib = pytest.importorskip("tomllib")
+    step = typer.main.get_command(figdata_app).commands["step"]
+    names = {param.name for param in step.params}
+    for name, method in (("cloud", "cloud"), ("local", "ollama")):
+        path = Path(f"configs/figure-to-data/recommended-{name}.toml")
+        config = tomllib.loads(path.read_text(encoding="utf-8"))
+        assert set(config) <= set(STEP_CONFIG_KEYS) <= names
+        assert config["method"] == method
+
+
+def test_the_step_leaves_alone_a_bundle_this_model_already_read(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A step started again does not pay twice: a bundle the same method
+    and model read is skipped, one whose last reading had failed figures is
+    read again, and --force reads every one."""
+    from docling.engines.figure_data import cli as figdata_cli
+    from docling.engines.figure_data.step import STEP_VERSION
+
+    read: list[list[str]] = []
+    monkeypatch.setattr(
+        figdata_cli,
+        "run_on_bundles",
+        lambda bundles, *a, **k: read.append([b.name for b, _ in bundles]) or [],
+    )
+    options = FigureDataOptions(method="cloud")
+    for name, figures in (("done", {"read": 3}), ("refused", {"read": 1, "failed": 2})):
+        bundle = tmp_path / name
+        bundle.mkdir()
+        (bundle / "document.json").write_text("{}", encoding="utf-8")
+        block = {
+            "step_version": STEP_VERSION,
+            "method": options.method,
+            "backend": options.backend,
+            "model": options.model,
+            "figures": figures,
+        }
+        (bundle / "run.json").write_text(
+            json.dumps({"figure_to_data": block}), encoding="utf-8"
+        )
+
+    runner = CliRunner()
+    first = runner.invoke(figdata_app, ["step", str(tmp_path), "--method", "cloud"])
+    forced = runner.invoke(
+        figdata_app, ["step", str(tmp_path), "--method", "cloud", "--force"]
+    )
+
+    assert first.exit_code == 0, first.output
+    assert "done: already read by cloud" in first.output
+    assert read == [["refused"], ["done", "refused"]]
+    assert forced.exit_code == 0, forced.output

@@ -1,35 +1,33 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
-"""Repairs of two faults of Docling's PDF parser, docling-parse 7.20.
+"""Repair of a fault of Docling's PDF parser, docling-parse 7.28: the words
+of tightly justified text run together.
 
-**Temporary.** docling-parse 7.28 reads both right on every page measured
-(2026-11-25). Remove this module when the upgrade is validated and a
-conversion with ``PdfPipelineOptions.repair_parser_text`` off shows it
-changes nothing; the plan, with what to test, is in
+**Temporary.** Remove this module when docling-parse separates these words
+itself (a conversion with ``PdfPipelineOptions.repair_parser_text`` off then
+shows no page this repair changes); what to test is in
 ``.claude/reference/quality/2026-11-25-parser-faults-and-upgrade-plan.md``.
 
-Found on the 416 bundles of trial papers and supplements converted
-2026-11-20 to 2026-11-24:
+In tightly justified text set without space characters (JAMA papers)
+docling-parse takes some gaps between words for letter spacing:
+"tionanddeathinpatientswithheartfailure". 7.28 separates more of them than
+7.20 did (41811324 p2: 1.3 % of its words fused, 7.20 4.6 %), but judges
+these gaps in em of the run's own letter spacing since 7.25, so the space
+factors of ``DecodeConfig`` no longer move them and 7.20's repair (a decode
+with factor 0.20) does nothing; on a synthetic Helvetica page it joins words
+up to 0.125 em apart, as 7.20 did. The glyphs say where the words are: in
+the runs of the fused pages measured, the gap between two glyphs at a
+word's end was 0.11 to 0.15 of the line's height and at most 0 inside a
+word (glyph boxes overlap). A page with :data:`MIN_FUSED_RUNS` runs of
+:data:`FUSED_RUN_LETTERS`+ letters is decoded again with its glyphs (the
+backend keeps none), and a gap wider than :data:`WORD_GAP` of the cell's
+height inside such a run becomes a space; word cells are cut there. Letters
+never change; a long word printed as one ("electrophysiological", a German
+compound) has no such gap and stays whole.
 
-- **Look-alike letters** (1 bundle, 6 pages). For some fonts (a Calibri subset
-  written by Word) the parser gives a glyph number for the character, a
-  letter of Latin Extended-A/B: "RepoƌtiŶg SuŵŵaƌǇ" where the page prints
-  "Reporting Summary", "śłŜ" for "(1)", "łŃ months" for "12 months".
-  pdfium reads the same characters right. A cell's character of that block
-  that pdfium reads as a printable ASCII character at the same place (the
-  two texts aligned) takes pdfium's; a real "ł" or "Š" reads the same in
-  both and stays.
-- **Fused words** (27 bundles; 82 pages of 17 repaired). In tightly
-  justified text without space characters (JAMA papers) the parser joins
-  two words whose gap is
-  under 0.33 of the font's space width: "studiesandsmallrandomizedclinical
-  trials". A page with such runs is decoded again with 0.20, which separated
-  the words on every page measured and split none there; on a normal NEJM
-  page 0.20 splits words (one-letter tokens 1.1 % -> 5.5 %), so the new
-  decode is kept only where the runs go, words stay whole and the page's
-  characters are the same.
-
+7.20's other fault, letters read as look-alikes ("RepoƌtiŶg SuŵŵaƌǇ"),
+7.28 reads right; ``check.json`` -> ``text_quality`` still names such pages.
 This is unlike ``docling.utils.text_layer``, which reads PDFs whose text
 layer itself does not say what the pages print, and stays.
 """
@@ -37,107 +35,29 @@ layer itself does not say what the pages print, and stays.
 from __future__ import annotations
 
 import re
-import unicodedata
 from collections.abc import Iterable
 from dataclasses import dataclass
 from io import BytesIO
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from docling_core.types.doc import BoundingBox
+from docling_core.types.doc.page import BoundingRectangle
 from pydantic import BaseModel, Field
 
 if TYPE_CHECKING:
-    from docling_core.types.doc.page import SegmentedPdfPage
+    from docling_core.types.doc.page import SegmentedPdfPage, TextCell
 
-# Glyph numbers of the letters, digits and brackets of the fonts seen fall
-# in these blocks: Latin Extended-A/B, IPA, spacing and combining marks, the
-# Greek signs below the letters, the Coptic forms the Calibri subset gave its
-# digits, Cyrillic (a glyph number read for ">="). The Greek letters are
-# left out: a Symbol font prints them from ASCII codes, so pdfium reads
-# "81 m" where the page prints and Docling reads micrometres; taking
-# pdfium's would turn a unit into another. A real Polish or Cyrillic letter
-# reads the same in pdfium and stays. The check names a page from this many
-# the PDF's text lacks.
-LOOKALIKE = re.compile("[\u0100-\u0385\u03d8-\u04ff]")
-MIN_PAGE_LOOKALIKES = 3
 # Runs of this many letters are two or more words run together; no page of
 # the controls held one, the fused pages 2.3 to 4.6 % of their words.
 FUSED_RUN_LETTERS = 18
 MIN_FUSED_RUNS = 3
-RESPACED_SPACE_FACTOR = 0.20
+WORD_GAP = 0.06
 MAX_ONE_LETTER_RISE = 0.01
 MAX_CHAR_DIFFERENCE = 0.005
 
 _WORD = re.compile(r"[A-Za-z]+")
-# pdfium marks a line-end hyphen with U+0002 or U+FFFE.
-_PDFIUM_HYPHENS = str.maketrans({"\x02": "-", "\ufffe": "-"})
-
-
-def lookalike_letters(texts: Iterable[str]) -> int:
-    """How many characters of the look-alike blocks *texts* hold."""
-    return sum(len(LOOKALIKE.findall(text)) for text in texts)
-
-
-def letters_from_pdfium(text: str, pdfium: str) -> tuple[str, int]:
-    """*text* (a cell of Docling's parser) with each character of the
-    look-alike blocks that pdfium reads as a printable ASCII character at the
-    same place taking pdfium's, and how many did. The two are aligned without
-    their spaces and pdfium's non-ASCII marks (a bullet), which could never
-    replace one (:func:`_aligned`), so a neighbour's character in pdfium's
-    box does not shift the places."""
-    theirs = [
-        ch
-        for ch in pdfium.translate(_PDFIUM_HYPHENS)
-        if not ch.isspace()
-        and (ch.isascii() or not unicodedata.category(ch).startswith(("P", "S")))
-    ]
-    ours = [index for index, ch in enumerate(text) if not ch.isspace()]
-    chars = list(text)
-    replaced = 0
-    for mine, other in _aligned([chars[i] for i in ours], theirs):
-        index = ours[mine]
-        if _stands_for(chars[index], theirs[other]) and chars[index] != theirs[other]:
-            chars[index] = theirs[other]
-            replaced += 1
-    return "".join(chars), replaced
-
-
-def _stands_for(char: str, other: str) -> bool:
-    return bool(LOOKALIKE.match(char)) and other.isascii() and other.isprintable()
-
-
-def _aligned(ours: list[str], theirs: list[str]) -> list[tuple[int, int]]:
-    """The places of *ours* and *theirs* paired by the cheapest edit: equal
-    characters, and a look-alike against a printable ASCII character, cost
-    nothing; another pair, or a character of one side only, costs one."""
-    rows, cols = len(ours), len(theirs)
-    if not rows or not cols:
-        return []
-    cost = [[0] * (cols + 1) for _ in range(rows + 1)]
-    for i in range(1, rows + 1):
-        cost[i][0] = i
-    for j in range(1, cols + 1):
-        cost[0][j] = j
-    for i in range(1, rows + 1):
-        mine = ours[i - 1]
-        above, row = cost[i - 1], cost[i]
-        for j in range(1, cols + 1):
-            other = theirs[j - 1]
-            pair = 0 if mine == other or _stands_for(mine, other) else 1
-            row[j] = min(above[j - 1] + pair, above[j] + 1, row[j - 1] + 1)
-    pairs: list[tuple[int, int]] = []
-    i, j = rows, cols
-    while i and j:
-        mine, other = ours[i - 1], theirs[j - 1]
-        pair = 0 if mine == other or _stands_for(mine, other) else 1
-        if cost[i][j] == cost[i - 1][j - 1] + pair:
-            pairs.append((i - 1, j - 1))
-            i, j = i - 1, j - 1
-        elif cost[i][j] == cost[i - 1][j] + 1:
-            i -= 1
-        else:
-            j -= 1
-    return pairs[::-1]
+_RUN = re.compile(f"[A-Za-z]{{{FUSED_RUN_LETTERS},}}")
 
 
 @dataclass(frozen=True)
@@ -182,46 +102,126 @@ def respacing_holds(before: Spacing, after: Spacing) -> bool:
 
 
 class Respacer:
-    """The pages of one PDF decoded again by docling-parse with the space
-    factor :data:`RESPACED_SPACE_FACTOR`, its other settings as the backend
-    has them; cells measured from the top-left corner, as the backend gives
-    them."""
+    """The pages of one PDF decoded again by docling-parse with their glyphs,
+    the line and word cells spaced where the glyphs of a run stand apart
+    (:func:`respaced`); cells measured from the top-left corner, as the
+    backend gives them."""
 
     def __init__(self, source: Path | BytesIO) -> None:
-        from docling_parse.pdf_parser import DecodeConfig, DoclingPdfParser
+        from docling_parse.pdf_parser import DoclingPdfParser
 
         stream = BytesIO(source.getvalue()) if isinstance(source, BytesIO) else source
-        self._document = DoclingPdfParser().load(
-            path_or_stream=stream,
-            lazy=True,
-            decode_config=DecodeConfig(
-                line_space_width_factor_for_merge_with_space=RESPACED_SPACE_FACTOR,
-                word_space_width_factor_for_merge=RESPACED_SPACE_FACTOR,
-            ),
-        )
+        self._document = DoclingPdfParser().load(path_or_stream=stream, lazy=True)
 
     def page(self, page_no: int) -> SegmentedPdfPage:
         page = self._document.get_page(page_no)
         height = page.dimension.height
         for cell in (*page.textline_cells, *page.word_cells, *page.char_cells):
             cell.to_top_left_origin(height)
+        page.textline_cells, page.word_cells = respaced(page)
         return page
 
     def close(self) -> None:
         self._document.unload()
 
 
+def respaced(page: SegmentedPdfPage) -> tuple[list[TextCell], list[TextCell]]:
+    """The page's line and word cells with a space wherever two glyphs of a
+    run of :data:`FUSED_RUN_LETTERS`+ letters stand more than
+    :data:`WORD_GAP` of the cell's height apart; a word cell is cut into one
+    per word there. Upright cells only."""
+    glyphs = [
+        (cell.rect.to_bounding_box(), cell.text)
+        for cell in page.char_cells
+        if cell.text.strip() and round(cell.rect.angle_360) == 0
+    ]
+    lines = []
+    for cell in page.textline_cells:
+        gaps = _word_gaps(cell, glyphs)
+        lines.append(_spaced(cell, gaps) if gaps else cell)
+    words: list[TextCell] = []
+    for cell in page.word_cells:
+        gaps = _word_gaps(cell, glyphs)
+        words.extend(_cut(cell, gaps) if gaps else [cell])
+    for index, cell in enumerate(words):
+        cell.index = index
+    return lines, words
+
+
+def _word_gaps(
+    cell: TextCell, glyphs: list[tuple[BoundingBox, str]]
+) -> dict[int, float]:
+    """The places in the cell's text a space goes before, each with the x of
+    its gap. A run whose letters the cell's glyphs hold other than once is
+    left alone."""
+    runs = list(_RUN.finditer(cell.text))
+    if not runs or round(cell.rect.angle_360) != 0:
+        return {}
+    box = cell.rect.to_bounding_box()
+    mine = sorted((g for g in glyphs if _centre_in(g[0], box)), key=lambda g: g[0].l)
+    # The glyph that printed each character (a ligature prints two).
+    glyph_of = [number for number, (_, text) in enumerate(mine) for _ in text]
+    printed = "".join(text for _, text in mine)
+    widest = WORD_GAP * abs(box.b - box.t)
+    gaps: dict[int, float] = {}
+    for run in runs:
+        at = printed.find(run.group(0))
+        if at < 0 or printed.find(run.group(0), at + 1) >= 0:
+            continue
+        for k in range(1, len(run.group(0))):
+            left, right = glyph_of[at + k - 1], glyph_of[at + k]
+            before, after = mine[left][0], mine[right][0]
+            if left != right and after.l - before.r > widest:
+                gaps[run.start() + k] = (before.r + after.l) / 2
+    return gaps
+
+
+def _spaced(cell: TextCell, gaps: dict[int, float]) -> TextCell:
+    text = "".join(" " + ch if i in gaps else ch for i, ch in enumerate(cell.text))
+    return cell.model_copy(update={"text": text, "orig": text})
+
+
+def _cut(cell: TextCell, gaps: dict[int, float]) -> list[TextCell]:
+    box = cell.rect.to_bounding_box()
+    places = sorted(gaps)
+    edges = [box.l, *(gaps[place] for place in places), box.r]
+    pieces = []
+    for number, (start, end) in enumerate(zip([0, *places], [*places, len(cell.text)])):
+        text = cell.text[start:end].strip()
+        piece = BoundingBox(
+            l=edges[number],
+            t=box.t,
+            r=edges[number + 1],
+            b=box.b,
+            coord_origin=box.coord_origin,
+        )
+        pieces.append(
+            cell.model_copy(
+                update={
+                    "text": text,
+                    "orig": text,
+                    "rect": BoundingRectangle.from_bounding_box(piece),
+                }
+            )
+        )
+    return pieces
+
+
+def _centre_in(glyph: BoundingBox, box: BoundingBox, slack: float = 0.5) -> bool:
+    x = (glyph.l + glyph.r) / 2
+    y = (glyph.t + glyph.b) / 2
+    top, bottom = min(box.t, box.b), max(box.t, box.b)
+    return box.l - slack <= x <= box.r + slack and top - slack <= y <= bottom + slack
+
+
 class ParserRepairSummary(BaseModel):
     """Pages whose text cells of Docling's PDF parser were repaired
     (:mod:`docling.utils.parser_repair`, temporary): ``respaced_pages``
-    decoded again with tighter word spacing; ``letter_pages`` with letters
-    read as look-alikes replaced by pdfium's (``letters`` of them, in the
-    text lines)."""
+    whose words run together were spaced by the gaps between their
+    glyphs."""
 
     respaced_pages: list[int] = Field(default_factory=list)
-    letter_pages: list[int] = Field(default_factory=list)
-    letters: int = 0
 
     @property
     def affected(self) -> bool:
-        return bool(self.respaced_pages or self.letter_pages)
+        return bool(self.respaced_pages)

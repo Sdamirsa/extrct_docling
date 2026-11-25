@@ -2134,11 +2134,12 @@ class PdfPipelineOptions(PaginatedPipelineOptions):
         bool,
         Field(
             description=(
-                "Repair two faults of docling-parse 7.20 in the text cells before layout, tables and exports "
-                "read them (docling.utils.parser_repair, temporary until the parser upgrade): a page whose "
-                "words run together is decoded again with tighter word spacing, kept where that separates "
-                "them and splits none; letters read as Latin Extended look-alikes (glyph numbers) take "
-                "pdfium's reading. Off: the parser's cells as they come."
+                "Repair a fault of docling-parse in the text cells before layout, tables and exports read "
+                "them (docling.utils.parser_repair, temporary until the parser separates these words): on a "
+                "page whose words run together (tightly justified text without space characters), a gap "
+                "between the glyphs of a run wider than 0.06 of the line's height becomes a space, kept "
+                "where that separates the runs and splits no words; letters never change. Off: the "
+                "parser's cells as they come."
             )
         ),
     ] = True

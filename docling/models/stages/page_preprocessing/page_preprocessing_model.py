@@ -22,16 +22,13 @@ from docling.datamodel.pipeline_options import OcrMode, PdfPipelineOptions
 from docling.datamodel.settings import settings
 from docling.models.base_model import BasePageModel
 from docling.utils.parser_repair import (
-    LOOKALIKE,
     Respacer,
-    letters_from_pdfium,
-    lookalike_letters,
     needs_respacing,
     respacing_holds,
     spacing,
 )
 from docling.utils.profiling import TimeRecorder
-from docling.utils.text_layer import PageTextLayer, read_document, read_pages, read_pdf
+from docling.utils.text_layer import PageTextLayer, read_document, read_pdf
 
 _log = logging.getLogger(__name__)
 
@@ -58,7 +55,7 @@ class PagePreprocessingOptions(BaseModel):
     # Leave a page whose text layer is unreadable to the OCR stage (set when
     # OCR runs; without OCR the page keeps the text it has).
     ocr_unreadable_pages: bool = False
-    # Repair the faults of docling-parse 7.20 (docling.utils.parser_repair).
+    # Repair docling-parse's fused words (docling.utils.parser_repair).
     repair_parser_text: bool = False
 
 
@@ -67,7 +64,7 @@ class PagePreprocessingModel(BasePageModel):
         self.options = options
         # The text layers of the document being converted, by its hash.
         self._text_layers: tuple[str, dict[int, PageTextLayer]] = ("", {})
-        # Its pages decoded again with tighter word spacing, opened when needed.
+        # Its pages decoded again with their glyphs, opened when needed.
         self._respacer: tuple[str, Respacer | None] = ("", None)
 
         # Pre-compiled regex patterns for efficiency
@@ -133,10 +130,9 @@ class PagePreprocessingModel(BasePageModel):
                 cell.text = cell.orig = " ".join(text.split())
 
     def _repair_parser_text(self, conv_res: ConversionResult, page: Page) -> None:
-        """Repair the faults of docling-parse 7.20 in the page's cells
-        (``docling.utils.parser_repair``, temporary): words run together,
-        letters read as look-alikes. A page the text layer reads through its
-        fonts is left to that."""
+        """Space the words docling-parse runs together in the page's cells
+        (``docling.utils.parser_repair``, temporary). A page the text layer
+        reads through its fonts is left to that."""
         parsed = page.parsed_page
         if (
             not self.options.repair_parser_text
@@ -146,43 +142,24 @@ class PagePreprocessingModel(BasePageModel):
             or page.page_no in self._document_text_layers(conv_res)
         ):
             return
-        source = conv_res.input._backend.path_or_stream
         before = spacing(cell.text for cell in parsed.textline_cells)
-        if needs_respacing(before):
-            again = self._document_respacer(conv_res, source).page(page.page_no)
-            after = spacing(cell.text for cell in again.textline_cells)
-            if respacing_holds(before, after):
-                parsed.textline_cells = again.textline_cells
-                parsed.word_cells = again.word_cells
-                page.parser_respaced = True
-            _log.info(
-                "Page %d: %d runs of words without spaces; decoded again with "
-                "tighter spacing: %d runs, %s",
-                page.page_no,
-                before.fused,
-                after.fused,
-                "kept" if page.parser_respaced else "not kept",
-            )
-        if not lookalike_letters(c.text for c in parsed.textline_cells):
+        if not needs_respacing(before):
             return
-        layer = read_pages(source, [page.page_no]).get(page.page_no)
-        if layer is None:
-            return
-        for cells, counted in (
-            (parsed.textline_cells, True),
-            (parsed.word_cells, False),
-            (parsed.char_cells, False),
-        ):
-            for cell in cells:
-                if not LOOKALIKE.search(cell.text):
-                    continue
-                pdfium, _ = layer.read_box(cell.rect.to_bounding_box())
-                text, replaced = letters_from_pdfium(cell.text, pdfium)
-                if not replaced:
-                    continue
-                cell.text = cell.orig = text
-                if counted:
-                    page.parser_letters_repaired += replaced
+        source = conv_res.input._backend.path_or_stream
+        again = self._document_respacer(conv_res, source).page(page.page_no)
+        after = spacing(cell.text for cell in again.textline_cells)
+        if respacing_holds(before, after):
+            parsed.textline_cells = again.textline_cells
+            parsed.word_cells = again.word_cells
+            page.parser_respaced = True
+        _log.info(
+            "Page %d: %d runs of words without spaces; spaced by the gaps "
+            "between their glyphs: %d runs, %s",
+            page.page_no,
+            before.fused,
+            after.fused,
+            "kept" if page.parser_respaced else "not kept",
+        )
 
     def _document_respacer(
         self, conv_res: ConversionResult, source: Path | BytesIO

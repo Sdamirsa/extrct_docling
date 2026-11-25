@@ -1,10 +1,11 @@
 # SPDX-FileCopyrightText: The Docling Contributors
 # SPDX-License-Identifier: MIT
 
-"""The temporary repairs of docling-parse 7.20's faults
-(:mod:`docling.utils.parser_repair`): words of tightly set text run
-together, letters read as look-alikes; and the check that names both
-whether or not they were repaired.
+"""The temporary repair of docling-parse's fused words
+(:mod:`docling.utils.parser_repair`): the words of tightly set text run
+together and are spaced by the gaps between their glyphs; and the check
+that names such pages, and pages of look-alike letters, whether or not
+anything was repaired.
 
 ``test_docling_parse_runs_the_words_of_tight_text_together`` states the
 fault itself: when it fails after a parser upgrade, the parser no longer has
@@ -31,7 +32,6 @@ from docling.engines import PdfEngine
 from docling.engines.export_check import _check_text_quality
 from docling.utils.parser_repair import (
     Respacer,
-    letters_from_pdfium,
     needs_respacing,
     respacing_holds,
     spacing,
@@ -44,16 +44,18 @@ _LINES = [
     "nevertheless these studies have been limited by low numbers",
     "high crossover rates and heterogeneous implant experience",
 ]
-# Thousandths of an em between words, no space character. docling-parse 7.20
-# joins words up to 125 apart with its default spacing and separates them
-# from 100 with the repair's (measured on this page, 2026-11-25).
+# Thousandths of an em between words, no space character. docling-parse 7.28
+# joins words up to 125 apart and separates them from 150 (7.20 the same with
+# its default spacing; measured on this page, 2026-11-25).
 _TIGHT_GAP = 110
+# A long word printed as one, on a line of its own.
+_LONG_WORD = "electrocardiographically"
 
 
 def _tight_pdf() -> bytes:
     """A page of justified-looking lines whose words are placed apart by a
-    small shift and hold no space character, as JAMA sets its text; a last
-    line with ordinary spaces."""
+    small shift and hold no space character, as JAMA sets its text; a long
+    word set whole; a last line with ordinary spaces."""
     shown = [
         "[" + f" -{_TIGHT_GAP} ".join(f"({word})" for word in line.split()) + "] TJ"
         for line in _LINES
@@ -61,6 +63,7 @@ def _tight_pdf() -> bytes:
     stream = (
         "BT /F 10 Tf 14 TL 72 720 Td\n"
         + "\nT*\n".join(shown)
+        + f"\nT*\n({_LONG_WORD}) Tj"
         + "\nT*\n(An ordinary line with spaces in it.) Tj\nET"
     ).encode("latin-1")
     objects = [
@@ -105,19 +108,27 @@ def test_docling_parse_runs_the_words_of_tight_text_together(tmp_path: Path) -> 
     assert needs_respacing(found), _line_texts(pdf)
 
 
-def test_decoded_again_the_words_are_apart_and_the_page_kept(tmp_path: Path) -> None:
+def test_the_glyph_gaps_part_the_words_and_keep_a_long_word(tmp_path: Path) -> None:
     pdf = tmp_path / "tight.pdf"
     pdf.write_bytes(_tight_pdf())
     respacer = Respacer(pdf)
     try:
-        again = [cell.text for cell in respacer.page(1).textline_cells]
+        page = respacer.page(1)
     finally:
         respacer.close()
+    lines = [cell.text for cell in page.textline_cells]
+    words = [cell.text for cell in page.word_cells]
 
-    assert respacing_holds(spacing(_line_texts(pdf)), spacing(again))
-    joined = " ".join(again)
+    assert respacing_holds(spacing(_line_texts(pdf)), spacing(lines))
     for line in _LINES:
-        assert line in joined
+        assert line in lines
+    assert _LONG_WORD in lines
+    # Word cells are cut there too (TableFormer matches its cells to them),
+    # each within the box of the word it was cut from.
+    assert words[:8] == _LINES[0].split()
+    first, second = page.word_cells[0].rect, page.word_cells[1].rect
+    assert first.to_bounding_box().r <= second.to_bounding_box().l
+    assert _LONG_WORD in words
 
 
 def test_a_new_decode_that_splits_words_or_changes_characters_is_refused() -> None:
@@ -129,32 +140,6 @@ def test_a_new_decode_that_splits_words_or_changes_characters_is_refused() -> No
     assert not respacing_holds(fused, split)
     assert not respacing_holds(fused, other)
     assert not needs_respacing(spacing(["an ordinary electrocardiographically"]))
-
-
-def test_a_letter_read_as_a_look_alike_takes_pdfiums_by_place() -> None:
-    # "Reporting Summary" as docling-parse 7.20 reads a Calibri subset.
-    misread = "Repo\u018cti\u0176g Su\u0175\u0175a\u018c\u01c7"
-
-    assert letters_from_pdfium(misread, "Reporting Summary") == (
-        "Reporting Summary",
-        6,
-    )
-    # A real letter of the block reads the same in both and stays; a hyphen
-    # pdfium marks at a line end pairs with the parser's.
-    assert letters_from_pdfium(
-        "\u0141\u00f3d\u017a pro-", "\u0141\u00f3d\u017a pro\ufffe"
-    ) == (
-        "\u0141\u00f3d\u017a pro-",
-        0,
-    )
-    # Digits and brackets of the same font, with a bullet and the next line
-    # in pdfium's box: the alignment pairs the rest one to one.
-    criteria = "documented by \u015b\u0142\u015c a note for \u0142\u0143 months"
-    assert letters_from_pdfium(
-        criteria, "documented by \u2002 \u2022 (1) a note for 12 months; AND"
-    ) == ("documented by (1) a note for 12 months", 5)
-    # Nothing to pair it with: left alone.
-    assert letters_from_pdfium(misread, "") == (misread, 0)
 
 
 def test_the_check_names_pages_with_run_together_words_or_look_alikes() -> None:

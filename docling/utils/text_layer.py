@@ -26,7 +26,6 @@ import ctypes
 import logging
 import re
 from array import array
-from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
 from functools import lru_cache
@@ -425,40 +424,6 @@ def read_document(source: Path | BytesIO) -> dict[int, PageTextLayer]:
             sum(1 for layer in layers.values() if layer.glyph_order),
             sum(1 for layer in layers.values() if layer.unreadable),
         )
-    return layers
-
-
-def read_pages(
-    source: Path | BytesIO, page_numbers: Iterable[int]
-) -> dict[int, PageTextLayer]:
-    """The text layers of the pages *page_numbers* (1-based) whatever they
-    hold, read as :func:`read_document` reads a suspect page but by the
-    page's own fonts only (``docling.utils.parser_repair`` compares cells of
-    Docling's parser with what pdfium reads in the same box)."""
-    import pypdfium2 as pdfium
-
-    layers: dict[int, PageTextLayer] = {}
-    with pypdfium2_lock:
-        pdf = pdfium.PdfDocument(
-            source.getvalue() if isinstance(source, BytesIO) else source
-        )
-        try:
-            for page_no in sorted(set(page_numbers)):
-                if not 1 <= page_no <= len(pdf):
-                    continue
-                page = pdf[page_no - 1]
-                textpage = page.get_textpage()
-                try:
-                    chars = _read_chars(textpage, page_no)
-                    _read_centres(textpage, chars)
-                    chars.geometry = PageGeometry.of(page)
-                    proven = any(map(proves_glyph_order, chars.font_texts().values()))
-                    layers[page_no] = _layer(chars, glyph_order_proven=proven)
-                finally:
-                    textpage.close()
-                    page.close()
-        finally:
-            pdf.close()
     return layers
 
 

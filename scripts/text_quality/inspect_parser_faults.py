@@ -9,16 +9,16 @@
 Each bundle's source PDF (found by its hash in the source folder or in the
 output's ``_converted`` folder) is decoded by the installed docling-parse as
 the engine decodes it, and each page's text lines are judged by the rules of
-``docling.utils.parser_repair``: fused words (decoded again with the repair's
-space factor, kept or refused) and look-alike letters (pdfium's characters
-paired by place: pages with letters repaired; cells that keep a letter of
-the block, real ones like "ł" included). Pages that
+``docling.utils.parser_repair``: fused words (spaced by the gaps between
+their glyphs, kept or refused), and the characters of the look-alike blocks
+the check counts (``export_check.LOOKALIKE``: docling-parse 7.20 gave glyph
+numbers for a Calibri subset; real letters like "ł" count too). Pages that
 ``docling.utils.text_layer`` reads through their fonts (r6) are left out, as
 in the engine. The report gets one line per bundle and is resumed when run
 again; bundles with something found are printed.
 
 On another docling-parse (an upgrade), the same run says whether the faults
-are still there: no page should need respacing or hold look-alikes.
+are still there: no page should need respacing.
 See ``.claude/reference/quality/2026-11-25-parser-faults-and-upgrade-plan.md``.
 """
 
@@ -32,16 +32,14 @@ from pathlib import Path
 
 from docling_parse.pdf_parser import DoclingPdfParser
 
+from docling.engines.export_check import LOOKALIKE
 from docling.utils.parser_repair import (
-    LOOKALIKE,
     Respacer,
-    letters_from_pdfium,
-    lookalike_letters,
     needs_respacing,
     respacing_holds,
     spacing,
 )
-from docling.utils.text_layer import read_pages, read_pdf
+from docling.utils.text_layer import read_pdf
 
 
 def _pdfs_by_hash(out_dir: Path, src_dir: Path) -> dict[str, Path]:
@@ -57,8 +55,7 @@ def _inspect(pdf: Path) -> dict:
     row: dict = {
         "respaced": [],
         "respacing_refused": [],
-        "letter_pages": {},
-        "letter_cells_unpaired": 0,
+        "lookalike_pages": {},
     }
     r6_pages = set(read_pdf(pdf))
     document = DoclingPdfParser().load(path_or_stream=pdf, lazy=True)
@@ -82,21 +79,9 @@ def _inspect(pdf: Path) -> dict:
                         round(after.one_letter_share - before.one_letter_share, 4),
                     ]
                 )
-            found = lookalike_letters(cell.text for cell in cells)
+            found = sum(len(LOOKALIKE.findall(cell.text)) for cell in cells)
             if found:
-                layer = read_pages(pdf, [page_no])[page_no]
-                repaired = 0
-                for cell in cells:
-                    if not LOOKALIKE.search(cell.text):
-                        continue
-                    cell.to_top_left_origin(page.dimension.height)
-                    pdfium, _ = layer.read_box(cell.rect.to_bounding_box())
-                    text, replaced = letters_from_pdfium(cell.text, pdfium)
-                    repaired += replaced
-                    if LOOKALIKE.search(text):
-                        row["letter_cells_unpaired"] += 1
-                if repaired:
-                    row["letter_pages"][page_no] = [found, repaired]
+                row["lookalike_pages"][page_no] = found
     finally:
         document.unload()
         if respacer is not None:
@@ -126,12 +111,12 @@ def main(report: Path, pairs: list[str]) -> None:
                 row |= {"error": "source PDF not found"} if pdf is None else _inspect(pdf)
                 out.write(json.dumps(row) + "\n")
                 out.flush()
-                if row.get("respaced") or row.get("respacing_refused") or row.get("letter_pages"):
+                if row.get("respaced") or row.get("respacing_refused") or row.get("lookalike_pages"):
                     print(
                         f"{out_dir.name}/{bundle.name}: respaced "
                         f"{[p[0] for p in row['respaced']]}, refused "
-                        f"{[p[0] for p in row['respacing_refused']]}, letter pages "
-                        f"{row['letter_pages']}, unpaired cells {row['letter_cells_unpaired']}",
+                        f"{[p[0] for p in row['respacing_refused']]}, look-alike "
+                        f"characters by page {row['lookalike_pages']}",
                         flush=True,
                     )
     print(f"done in {time.time() - started:.0f} s")

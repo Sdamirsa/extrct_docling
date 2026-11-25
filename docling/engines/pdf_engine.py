@@ -430,10 +430,6 @@ class PdfEngine:
                 respaced_pages=sorted(
                     p.page_no for p in result.pages if p.parser_respaced
                 ),
-                letter_pages=sorted(
-                    p.page_no for p in result.pages if p.parser_letters_repaired
-                ),
-                letters=sum(p.parser_letters_repaired for p in result.pages),
             )
             if repaired.affected:
                 output.quality.parser_repair = repaired

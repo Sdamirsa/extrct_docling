@@ -1290,23 +1290,17 @@ def text_layer_warnings(
 def parser_repair_warnings(found: ParserRepairSummary) -> list[QualityWarning]:
     """What was repaired in the text cells of Docling's PDF parser
     (``docling.utils.parser_repair``)."""
-    parts = []
-    if found.respaced_pages:
-        parts.append(
-            f"words run together on {len(found.respaced_pages)} page(s), decoded "
-            f"again with tighter word spacing: {pages_text(found.respaced_pages)}"
-        )
-    if found.letter_pages:
-        parts.append(
-            f"{found.letters} letter(s) read as look-alike characters on "
-            f"{len(found.letter_pages)} page(s), replaced by pdfium's reading: "
-            f"{pages_text(found.letter_pages)}"
-        )
-    if not parts:
+    if not found.respaced_pages:
         return []
     return [
         QualityWarning(
-            code="parser_text_repaired", blocking=False, detail="; ".join(parts)
+            code="parser_text_repaired",
+            blocking=False,
+            detail=(
+                f"words run together on {len(found.respaced_pages)} page(s), spaced "
+                "by the gaps between their glyphs: "
+                f"{pages_text(found.respaced_pages)}"
+            ),
         )
     ]
 

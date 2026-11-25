@@ -140,14 +140,14 @@ def write_text_atomic(target: Path, text: str) -> None:
 def public_source_path(path: Path) -> str:
     """*path* relative to the current directory, or its file name when it is
     outside it: absolute paths leak usernames and machine layout into shared
-    bundles."""
-    resolved = path.resolve()
+    bundles. A path given under the current directory stays as given when a
+    link in it leads elsewhere (a worktree whose ``samples/`` links to the
+    main checkout), so the bundle names the PDF from where it was run."""
     cwd = Path.cwd()
-    return (
-        resolved.relative_to(cwd).as_posix()
-        if resolved.is_relative_to(cwd)
-        else path.name
-    )
+    for candidate in (path.absolute(), path.resolve()):
+        if ".." not in candidate.parts and candidate.is_relative_to(cwd):
+            return candidate.relative_to(cwd).as_posix()
+    return path.name
 
 
 class RunSource(BaseModel):

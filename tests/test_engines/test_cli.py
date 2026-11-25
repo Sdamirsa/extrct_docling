@@ -696,3 +696,23 @@ def test_the_step_leaves_alone_a_bundle_this_model_already_read(
     assert "done: already read by cloud" in first.output
     assert read == [["refused"], ["done", "refused"]]
     assert forced.exit_code == 0, forced.output
+
+
+def test_a_batch_from_a_worktree_records_the_input_as_given(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """A worktree's ``samples/`` links to the main checkout: the bundle names
+    the PDF from the worktree, not by its file name only (r8's 333 bundles)."""
+    from docling.engines.run_snapshot import public_source_path
+
+    main = tmp_path / "main" / "samples"
+    main.mkdir(parents=True)
+    (main / "paper.pdf").write_bytes(b"%PDF-1.7\n")
+    worktree = tmp_path / "worktree"
+    worktree.mkdir()
+    (worktree / "samples").symlink_to(main)
+    monkeypatch.chdir(worktree)
+
+    assert public_source_path(Path("samples/paper.pdf")) == "samples/paper.pdf"
+    assert public_source_path(main / "paper.pdf") == "paper.pdf"
+    assert public_source_path(Path("../main/samples/paper.pdf")) == "paper.pdf"

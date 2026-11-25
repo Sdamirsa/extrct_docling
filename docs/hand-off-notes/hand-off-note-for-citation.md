@@ -30,6 +30,8 @@ Inside that folder:
 | `nodes.jsonl`, `document.json` | agent (rarely) | full node detail if a chunk/table/figure row isn't enough |
 | `preview.html` + `images/` | human | visual audit — click or deep-link to see the page + highlighted box behind any extraction |
 | `run.json` | either | which engine config produced this bundle (see "Citations must survive reprocessing" below) |
+| `methods.md` | human | the methods paragraph to cite the conversion with in a paper, with this run's versions, models and numbers |
+| `provenance.html` | human | how the bundle was made: every step the PDF went through, with its model, settings and outcome |
 
 ## The addressable unit: `self_ref`
 

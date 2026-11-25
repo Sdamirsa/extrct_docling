@@ -20,3 +20,4 @@ a reproducer, root-cause hypothesis, and tested workarounds (if any).
 | [cross-page-merge-bbox-page-height.md](cross-page-merge-bbox-page-height.md) | Continuation of a paragraph on a page of another size is boxed with the first page's height (patched in the fork). |
 | [watermark-cell-swallows-page.md](watermark-cell-swallows-page.md) | A diagonal watermark's page-sized cell box folds each page into one text block: no headings, no paragraphs (patched in the fork). |
 | [opencv5-resize-segfault-aarch64.md](opencv5-resize-segfault-aarch64.md) | Intermittent SIGSEGV in RapidOCR's `cv2.resize` (OpenCV 5.0.0, aarch64) that kills a whole `amir-batch` run. |
+| [docling-parse-fused-words-justified-text.md](docling-parse-fused-words-justified-text.md) | docling-parse 7.28 still joins the words of tightly justified text set without space characters; the space factors no longer help (worked around in the fork; draft report, not filed). |

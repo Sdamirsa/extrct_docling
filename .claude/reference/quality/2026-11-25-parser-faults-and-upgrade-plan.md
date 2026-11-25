@@ -5,7 +5,9 @@
 Read this first in the session that upgrades docling-parse. It holds what
 was found, what release r8 does about it (a temporary repair of our own),
 and the plan for the upgrade at the project, architecture, component and
-code levels. The numbers of the r8 reconversion are in §8.
+code levels. The numbers of the r8 reconversion are in §8. **The upgrade
+was done the same day (r9): its results and what changed in the plan are
+in §9**; §2-§7 describe r8 and the plan as written before it.
 
 ## 1. What was found
 
@@ -260,3 +262,97 @@ PDF -> docling-parse (cells: line, word, char) -> page preprocessing
   and source folders at their `samples/` paths, with
   `README-nirct_remaining127.md` at its root). The disk had 23-26 GB free;
   the other two sets were not zipped (not needed).
+
+## 9. The upgrade, 2026-11-25 (release r9)
+
+docling-parse 7.20.0 -> 7.28.0 and docling-core 2.98.0 -> 2.99.0 (the lowest
+that 7.28 accepts; one change at a time), on branch `parser-upgrade`, with the
+user's go-ahead. Installed with `uv pip install` of the two exact versions,
+not `uv sync`: only those two packages changed, the CUDA torch stayed.
+
+**Does the upgrade fix the faults?** Half of them.
+
+| Page (docling-parse's own line cells) | 7.20 | 7.28 |
+|---|---|---|
+| 38760584 p21, look-alikes | 649 look-alikes, 38.5 % dictionary words | 0, 97.7 % |
+| 41811324 p2 / p4, fused | 4.6 % / 3.1 % of words fused | 1.3 % / 0.5 % |
+| 41910382_supplement1 p66 (unmapped), 34449183_supplement1 p374 (glyph numbers) | the PDF's own faults | unchanged |
+
+- 7.28 also clears r8's residue that the 0.20 decode could not: the scanner
+  manual `30883058_supplement1` (21 pages) and AMIE-Mx p20 hold no fused page.
+- **r8's fused-word repair does nothing on 7.28.** Since 7.25 (docling-parse
+  PR #437) a run's gaps are judged in em of the run's own letter spacing, so
+  the `DecodeConfig` space factors no longer move them (the config does reach
+  the C++ decoder). On the test's synthetic Helvetica page 7.28 joins words up
+  to 0.129 em apart and separates them from 0.130 em (7.20 by default: up to
+  0.125 em, measured in coarser steps).
+  pdfium is no fallback: it also misses many of these spaces
+  ("inpatientswithheart").
+- **The glyphs say where the words are.** In the runs of 41811324 p2, p4 and
+  29297076 p3, the gap between two glyphs at a word's end is 0.107-0.145 of
+  the line's height; inside a word it is at most -0.003 (glyph boxes
+  overlap). The test's char-gap measurement: `$S/parser-upgrade/char_gaps.py`
+  in the session's scratch (not kept).
+
+**Decision (plan §7 step 4, "on is better -> keep and adapt"):** upgrade;
+keep the repair, rebuilt on the glyph gaps; remove the look-alike part and
+its pdfium per-page read (7.28 reads those fonts right); keep the check.
+
+**What r9's repair does** (`docling/utils/parser_repair.py`): a page with 3+
+runs of 18+ letters is decoded again with its glyphs (the backend keeps no
+glyph cells: they are materialized only for `text_cell_unit == CHAR`), and on
+each line holding such a run, a gap between two glyphs wider than 0.06 of the
+line's height with no space there becomes one; word cells on that line are
+cut at the gap. Letters never change. Guards as r8 (characters the same
+within 0.5 %, runs at least halved, one-letter share up at most 1 point).
+Taking every gap of such a line, not only those inside the runs, also
+separates "(LBBB).It", "12months", "P2Y12inhibitors" with no rise in
+one-letter words. Cost: 0.1-0.7 s per fused page.
+
+Measured on page cells (fused runs before -> after, letters always the same):
+41811324 p2 11 -> 0, p7 6 -> 1; 31237645 p8 14 -> 1; 29297076 p2 6 -> 1; the
+synthetic page 5 -> 0. Left alone: 38760584 p7 ("electrophysiological",
+Czech names; the guard refuses), 41849741_supplement1 p47 (German compounds,
+real words; no gap).
+
+**Four PDFs converted four ways** (picture descriptions off, everything else
+default; `amir-batch`):
+
+| PDF | r8 on 7.20 | 7.28, repair off | 7.28, r8 repair | r9 |
+|---|---|---|---|---|
+| 41811324 (JAMA, 9 p) | ok, recall 0.981, respaced 6 p | 4 issues (fused p2, p3, p7), recall 0.978 | same as off (respaced none) | ok, recall 0.985, respaced p2-p4, p7 |
+| 38760584 (25 p) | 1 issue (p8 recall 0.92), recall 0.991, 3,726 letters replaced | same issue, 0.991, nothing to repair | same | same |
+| 29297076_supplement2 (352 p, r6 glyph order, 176 tables) | 25 issues, recall 0.974, 19 flagged p, 76 low-recall tables | 14 issues, 0.991, 8 flagged p (all among the 19), 16 low-recall tables | same | same; ~2 s/p in all |
+| 36477458 (NEJM control, 11 p) | ok, 0.9908 | ok, 0.9915 | same | same |
+
+A word diff of the text by page (document.json) shows 7.28 reading better
+beyond the two faults: words 7.20 split ("I mplantation", "o f", "( n",
+"L VEF", "42 ,"), a figure label 7.20 garbled ("phsng en n an em w-em" ->
+"Sphere-9(TM) with Affera(TM) Mapping and Ablation System"), fused text r8
+never touched ("JAMACardiology", "Atotal", 41811324 p6). Text that seemed
+lost on 41811324 p3/p5 is there, in another place of the reading order. Left:
+"bundlebranch" (a join across a line break, in r8 too).
+
+**Tests.** Engine suite on 7.28: the fault test
+(`test_docling_parse_runs_the_words_of_tight_text_together`) still passes (the
+fault is there); r8's re-decode tests failed and were rewritten for the glyph
+gaps (a long word set whole as control); the look-alike repair test went.
+Upstream: `test_e2e_conversion` and `test_interfaces` compare with 7.20's
+output; their PDF groundtruth was regenerated and reviewed by word diff
+(mostly spacing 7.28 gets right; not better: a line of U+FFFD in
+`redp5110_sampled`, underscores lost in a file name of `2305.03393v1`, the
+Arabic and Persian samples reordered by 7.25's right-to-left fix).
+`test_e2e_ocr_conversion` fails on both versions: `tesserocr` is not
+installed.
+
+**Also in r9:** `public_source_path` keeps a path given under the current
+directory as given (worktree batches, §8); every bundle gets
+`provenance.html` and `methods.md` (`docling/engines/provenance.py`).
+
+**Next** (unchanged from §7 steps 5 and 7): report the fused-words residue
+upstream (draft: `.claude/issues-with-docling/docling-parse-fused-words-justified-text.md`);
+fonts whose codes are the embedded font's glyph numbers, through the font's
+`cmap`. Remove the repair when a docling-parse release separates these
+words: the fault test above then fails. Reconversion: the bundles r8
+repaired or flagged first (they gain the most), then the rest when convenient
+(7.28 changes normal pages too, for the better on the four measured).

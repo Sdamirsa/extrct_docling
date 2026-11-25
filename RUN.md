@@ -103,7 +103,7 @@ uv run amir-batch <pdf-or-dir> [<pdf-or-dir> ...] [OPTIONS]
 | `--picture-area-threshold` | `0.03` | Smallest picture (fraction of the page area) that gets a VLM caption. Docling's default of 0.05 left real charts at 4-5 % of the page uncaptioned. |
 | `--skip-existing / --no-skip-existing` | **on** | Skip a PDF whose bundle is complete and error-free for the same file (binary hash, else name + size), engine release and options; otherwise reconvert and print why. |
 | `--retries` | `1` | Rerun a PDF that many more times when the engine raises, before marking it `EXCEPTION`. |
-| `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`), no conversion. |
+| `--check-only` | off | Run the bundle self-check on existing bundles (writes `check.json`, rewrites `provenance.html` and `methods.md`), no conversion. |
 | `--pair-supplements / --no-pair-supplements` | **on** | A PDF named like another of the batch plus `Supplementary` (`supplement`, `supp`, `SI`, `appendix`, an optional number) is recorded as that manuscript's supplement: `run.json` of both gets `related` (role, file name, size, hash, bundle folder), the supplement `document_role: "supplement"`, and every element of its HTML `data-document-role`. |
 | `--supplement SUPP.pdf=MANUSCRIPT.pdf` | none | Pair two PDFs of the batch whose names do not say so (repeatable); recorded with `pairing: "explicit"`. |
 | `--figure-data` | `off` | Adds the figure-to-data step on the finished bundles: `ollama` (a local model, nothing leaves the machine), `cloud` (a cloud model's API endpoint: a short call that lists the charts, then one call per figure) or `agent` (one agent session per figure). See [Figure-to-data](#figure-to-data-the-numbers-behind-the-charts). |
@@ -229,6 +229,8 @@ structure.json         # outline with heading levels; per element: role, section
 run.json               # env, timing, full engine_config/pipeline_options, errors, complete flag (written last),
                        # quality (label counts, warnings), structure_version, document_role, related
 check.json             # bundle self-check: coverage, text-layer recall, fidelity, tables, chunks, issues
+provenance.html        # how the bundle was made: every step in order, with its model, settings, outcome
+methods.md             # a methods paragraph for a paper + software versions, with this run's numbers
 images/                # page renders + picture/table crops
 preview.html           # bbox viewer — needs images/ alongside it, see below
 preview.embedded.html  # same viewer, images inlined — a single shareable file
@@ -295,16 +297,23 @@ with `amir-batch <folder> -o <out> --only <file.pdf>` (repeatable). The
 whole folder is still read, so a supplement keeps its manuscript, and the
 bundles of the other PDFs stay as they are, whatever release wrote them.
 
-**Text Docling's PDF parser misreads** (since r8, temporary until the
-parser upgrade). docling-parse 7.20 runs the words of tightly justified
-text together where the PDF holds no space characters ("studiesandsmall
-randomizedclinicaltrials", JAMA papers), and reads the letters of some
-Calibri subsets as look-alikes ("RepoƌtiŶg SuŵŵaƌǇ"). The conversion decodes
-such a page again with tighter word spacing, kept only where that separates
-the words and splits none, and takes pdfium's reading for the look-alike
-letters. `run.json` → `quality.parser_repair` names the pages
-(`respaced_pages`, `letter_pages`) with the warning `parser_text_repaired`;
-`check.json` → `text_quality` lists the pages that still show either fault.
+**Text Docling's PDF parser misreads** (since r8; since r9 on
+docling-parse 7.28, temporary until the parser separates these words
+itself). docling-parse runs the words of tightly justified text together
+where the PDF holds no space characters ("studiesandsmall
+randomizedclinicaltrials", JAMA papers); 7.28 less often than 7.20
+(41811324 p2: 1.3 % of the words fused, 4.6 % on 7.20). On a page with three
+or more runs of 18 or more letters the conversion decodes the page again
+with its glyphs, and on each line holding such a run a gap between two
+glyphs wider than 0.06 of the line's height, with no space there, becomes a
+space; kept only where that separates the runs and splits no words. Letters
+never change, and a long word printed as one ("electrophysiological") has no
+such gap and stays whole. The letters 7.20 read as look-alikes in some
+Calibri subsets ("RepoƌtiŶg SuŵŵaƌǇ") 7.28 reads right; r8's repair of them
+is gone. `run.json` → `quality.parser_repair` names the pages
+(`respaced_pages`; an r8 bundle also has `letter_pages` and `letters`) with
+the warning `parser_text_repaired`; `check.json` → `text_quality` lists the
+pages that still show either fault.
 `PdfPipelineOptions(repair_parser_text=False)` turns the repair off.
 
 `preview.html` is **not standalone** (use `preview.embedded.html` for that) — it references `images/page_NNNN.png`

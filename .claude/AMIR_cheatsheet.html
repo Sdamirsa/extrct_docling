@@ -115,7 +115,8 @@ print(out.status, out.output_dir)
 # samples/out/my-paper/{
 #   my-paper.md, my-paper.embedded.md,
 #   document.json, nodes.jsonl, chunks.jsonl,
-#   tables.jsonl, figures.jsonl, run.json,
+#   tables.jsonl, figures.jsonl, structure.json,
+#   run.json, check.json, provenance.html, methods.md,
 #   images/, preview.html
 # }</code></pre>
     </div>
@@ -162,7 +163,11 @@ res = run_comparison(
 <tr><td><code>chunks.jsonl</code></td><td>HybridChunker output: <code>{index, text, token_count, headings, page_nos, self_refs}</code>. RAG-ready.</td></tr>
 <tr><td><code>tables.jsonl</code></td><td>One row per table: caption_text, markdown, html, dims, flat cells (with offsets and spans), image_path.</td></tr>
 <tr><td><code>figures.jsonl</code></td><td>One row per figure: caption_text, image_path, <b>figure_type</b> (BiomedCLIP), <b>vlm_caption</b>, <b>generic_classifier_label</b> (noise filter only), <b>is_noise</b> + <b>noise_reason</b>, annotations.</td></tr>
+<tr><td><code>structure.json</code></td><td>Outline with heading levels; per element: role, section, number, caption links; relabelled items.</td></tr>
 <tr><td><code>run.json</code></td><td>Reproducibility: schema_version, source, status, timing, engine_config, full pipeline_options, models summary, python/platform/package versions.</td></tr>
+<tr><td><code>check.json</code></td><td>Bundle self-check: HTML item coverage, PDF text-layer recall per page, export fidelity, tables, chunks; <code>ok</code> + <code>issues</code>.</td></tr>
+<tr><td><code>provenance.html</code></td><td>How the bundle was made: every step in order (Docling / patched in this fork / Amir Engine / skipped, with the reason), each with model, settings, outcome. Rewritten by <code>--check-only</code>.</td></tr>
+<tr><td><code>methods.md</code></td><td>A methods paragraph for a paper + software versions, with this run's numbers.</td></tr>
 <tr><td><code>images/page_NNNN.png</code></td><td>Page renders.</td></tr>
 <tr><td><code>images/picture_NNN.png</code></td><td>Figure crops (via <code>PictureItem.get_image()</code>).</td></tr>
 <tr><td><code>images/table_NNN.png</code></td><td>Table crops (via <code>TableItem.get_image()</code>).</td></tr>

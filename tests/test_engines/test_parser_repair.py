@@ -45,8 +45,8 @@ _LINES = [
     "high crossover rates and heterogeneous implant experience",
 ]
 # Thousandths of an em between words, no space character. docling-parse 7.28
-# joins words up to 125 apart and separates them from 150 (7.20 the same with
-# its default spacing; measured on this page, 2026-11-25).
+# joins words up to 129 apart and separates them from 130; 7.20 joined them
+# up to 125 with its default spacing (measured on this page, 2026-11-25).
 _TIGHT_GAP = 110
 # A long word printed as one, on a line of its own.
 _LONG_WORD = "electrocardiographically"

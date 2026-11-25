@@ -16,7 +16,7 @@ docling-parse takes some gaps between words for letter spacing:
 these gaps in em of the run's own letter spacing since 7.25, so the space
 factors of ``DecodeConfig`` no longer move them and 7.20's repair (a decode
 with factor 0.20) does nothing; on a synthetic Helvetica page it joins words
-up to 0.125 em apart, as 7.20 did. The glyphs say where the words are: in
+up to 0.129 em apart and separates them from 0.130 em. The glyphs say where the words are: in
 the runs of the fused pages measured, the gap between two glyphs at a
 word's end was 0.11 to 0.15 of the line's height and at most 0 inside a
 word (glyph boxes overlap). A page with :data:`MIN_FUSED_RUNS` runs of

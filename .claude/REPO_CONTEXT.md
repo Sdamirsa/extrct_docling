@@ -123,12 +123,13 @@ out = PdfEngine(images_scale=1.5).convert(
     output_dir=Path("samples/out"),
     make_html_preview=True,
 )
-# samples/out/<pdf-stem>/{<pdf-stem>.md, document.json, nodes.jsonl, run.json,
+# samples/out/<pdf-stem>/{<pdf-stem>.md, document.json, nodes.jsonl, structure.json,
+#   run.json, check.json, provenance.html, methods.md,
 #   images/page_*.png, images/picture_*.png, images/table_*.png, preview.html}
 ```
 
 `PdfEngine` flags (Phase 1+2+3):
-- `save_artifacts=True` (default) — `document.json`, `nodes.jsonl`, `chunks.jsonl`, `tables.jsonl`, `figures.jsonl`, `run.json`, image crops. Auto-enables page + picture image generation.
+- `save_artifacts=True` (default) — `document.json`, `nodes.jsonl`, `chunks.jsonl`, `tables.jsonl`, `figures.jsonl`, `structure.json`, `run.json`, `check.json`, `provenance.html` (every step the PDF went through, with model, settings, outcome; `docling/engines/provenance.py`) and `methods.md` (a methods paragraph for a paper), image crops. Auto-enables page + picture image generation.
 - `link_images=True` (default) — primary `<stem>.md` rewrites `<!-- image -->` placeholders to `![](images/picture_NNN.png)`.
 - `embed_images=True` (default) — additionally writes `<stem>.embedded.md` with base64 data URIs and `<stem>.html` (`docling/engines/html_export.py`: Docling HTML + per-block `data-self-ref`/`data-page`/`data-bbox` + JSON manifest; every `document.json` item is in it — furniture, noise pictures, figure-internal text, table footnotes, list markers and undecoded-formula text are added/marked, since Docling's HTML serializer skips them; `rebuild_document_html(pdf_dir)` regenerates it from a bundle).
 - Ligature repair (always on for local PDFs) — `docling/engines/text_repair.py` rejoins words the parser split around a ligature glyph ("speci fi city"), only into words pdfium reads on the same page; `orig` keeps the raw text.

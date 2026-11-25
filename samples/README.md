@@ -47,7 +47,11 @@ open samples/out/my-paper/preview.html       # macOS
 | `figures.jsonl` | One row per figure: caption_text, image_path, **figure_type** + **figure_type_confidence** (BiomedCLIP), **vlm_caption** (when picture description on), **generic_classifier_label** (noise filter only), **is_noise** + **noise_reason**, raw annotations. |
 | `document.json` | Full `DoclingDocument` serialisation (canonical, round-trippable). |
 | `nodes.jsonl` | One JSON object per node from `iterate_items()` — label, bbox/page (`prov`), text, captions, table cells, plus `_kind`, `_level`, and `image_path` for pictures/tables. |
+| `structure.json` | Where each element sits: the outline (heading levels), each element's role, section, number and caption links, and the items a rule relabelled. |
 | `run.json` | Reproducibility snapshot: schema version, source, status, timing, engine config, full `pipeline_options` (incl. model spec), per-stage models summary, environment (python, platform, machine, package versions), output summary, errors. |
+| `check.json` | Bundle self-check: every item in the HTML, PDF text-layer recall per page, export fidelity, tables, chunks; `ok` + `issues`. |
+| `provenance.html` | How the bundle was made: every step the PDF went through in order (Docling's, the fork's patches, the Amir Engine's; skipped steps with the reason), each with its model, settings and outcome. Built from the bundle's own files. |
+| `methods.md` | A methods paragraph for a paper and a software version list, with this run's versions, models and numbers. |
 | `images/page_NNNN.png` | Page renders. |
 | `images/picture_NNN.png` | Extracted figures (`PictureItem.get_image()`). |
 | `images/table_NNN.png` | Extracted tables (`TableItem.get_image()`). |

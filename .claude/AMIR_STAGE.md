@@ -31,7 +31,7 @@ Two paths were quietly corrected during implementation:
 
 Reason: `docling/models/` holds upstream's ML-model wrappers (layout, OCR, VLM); putting Pydantic data schemas there is a naming collision waiting to happen. Same logic for `docling/utils/`. Keeping all Amir Engine code under `docling/engines/` makes future upstream merges easier.
 
-Two deliberate exceptions, because the page preprocessing stage (`docling/models/stages/page_preprocessing/`) calls them on the parser's cells, and `docling/engines/` imports the pipeline (a module there would make a cycle): `docling/utils/text_layer.py` (r6, PDFs whose text layer has no Unicode map; permanent) and `docling/utils/parser_repair.py` (r8, docling-parse 7.20's faults; temporary, to be removed after the parser upgrade).
+Two deliberate exceptions, because the page preprocessing stage (`docling/models/stages/page_preprocessing/`) calls them on the parser's cells, and `docling/engines/` imports the pipeline (a module there would make a cycle): `docling/utils/text_layer.py` (r6, PDFs whose text layer has no Unicode map; permanent) and `docling/utils/parser_repair.py` (r8, rebuilt in r9 for docling-parse 7.28's fused words; temporary, to be removed when docling-parse separates these words itself).
 
 ## Per-PDF output layout (Phase 1+2+3 deliverable)
 

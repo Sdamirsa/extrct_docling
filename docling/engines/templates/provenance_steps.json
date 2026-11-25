@@ -19,8 +19,8 @@
     "title": "Repair the parser's text",
     "owner": "docling_patched",
     "code": "docling/utils/parser_repair.py",
-    "does": "Compares the parser's text with a second PDF reader (pdfium): characters read as look-alikes are replaced and words run together are separated.",
-    "patch": "added by the fork (r8), until docling-parse is upgraded"
+    "does": "Finds words the parser ran together in tightly justified text and puts a space where their glyphs stand apart; letters never change. (On docling-parse 7.20, r8 also replaced letters read as look-alikes by a second reader's, pdfium.)",
+    "patch": "added by the fork (r8; by the gaps between glyphs since r9), until docling-parse separates these words itself"
   },
   "ocr": {
     "phase": "read",

@@ -21,10 +21,12 @@ the runs of the fused pages measured, the gap between two glyphs at a
 word's end was 0.11 to 0.15 of the line's height and at most 0 inside a
 word (glyph boxes overlap). A page with :data:`MIN_FUSED_RUNS` runs of
 :data:`FUSED_RUN_LETTERS`+ letters is decoded again with its glyphs (the
-backend keeps none), and a gap wider than :data:`WORD_GAP` of the cell's
-height inside such a run becomes a space; word cells are cut there. Letters
-never change; a long word printed as one ("electrophysiological", a German
-compound) has no such gap and stays whole.
+backend keeps none), and on a line holding such a run, a gap between two
+glyphs wider than :data:`WORD_GAP` of the line's height, with no space
+there, becomes one (so also after a comma or a digit: "(LBBB).It",
+"12months"); word cells on that line are cut there. Letters never change;
+a long word printed as one ("electrophysiological", a German compound) has
+no such gap and stays whole.
 
 7.20's other fault, letters read as look-alikes ("RepoƌtiŶg SuŵŵaƌǇ"),
 7.28 reads right; ``check.json`` -> ``text_quality`` still names such pages.
@@ -126,22 +128,28 @@ class Respacer:
 
 
 def respaced(page: SegmentedPdfPage) -> tuple[list[TextCell], list[TextCell]]:
-    """The page's line and word cells with a space wherever two glyphs of a
-    run of :data:`FUSED_RUN_LETTERS`+ letters stand more than
-    :data:`WORD_GAP` of the cell's height apart; a word cell is cut into one
-    per word there. Upright cells only."""
+    """The page's line and word cells with a space wherever, on a line that
+    holds a run of :data:`FUSED_RUN_LETTERS`+ letters, two glyphs stand more
+    than :data:`WORD_GAP` of the cell's height apart with no space between
+    them; a word cell on such a line is cut into one per word there. Upright
+    cells only."""
     glyphs = [
         (cell.rect.to_bounding_box(), cell.text)
         for cell in page.char_cells
         if cell.text.strip() and round(cell.rect.angle_360) == 0
     ]
+    fused_lines = []
     lines = []
     for cell in page.textline_cells:
-        gaps = _word_gaps(cell, glyphs)
+        gaps = _word_gaps(cell, glyphs) if _RUN.search(cell.text) else {}
+        if gaps:
+            fused_lines.append(cell.rect.to_bounding_box())
         lines.append(_spaced(cell, gaps) if gaps else cell)
     words: list[TextCell] = []
     for cell in page.word_cells:
-        gaps = _word_gaps(cell, glyphs)
+        box = cell.rect.to_bounding_box()
+        on_line = any(_centre_in(box, line) for line in fused_lines)
+        gaps = _word_gaps(cell, glyphs) if on_line else {}
         words.extend(_cut(cell, gaps) if gaps else [cell])
     for index, cell in enumerate(words):
         cell.index = index
@@ -152,27 +160,31 @@ def _word_gaps(
     cell: TextCell, glyphs: list[tuple[BoundingBox, str]]
 ) -> dict[int, float]:
     """The places in the cell's text a space goes before, each with the x of
-    its gap. A run whose letters the cell's glyphs hold other than once is
-    left alone."""
-    runs = list(_RUN.finditer(cell.text))
-    if not runs or round(cell.rect.angle_360) != 0:
+    its gap. A cell whose characters its glyphs hold other than once in a row
+    is left alone."""
+    if round(cell.rect.angle_360) != 0:
         return {}
     box = cell.rect.to_bounding_box()
     mine = sorted((g for g in glyphs if _centre_in(g[0], box)), key=lambda g: g[0].l)
     # The glyph that printed each character (a ligature prints two).
     glyph_of = [number for number, (_, text) in enumerate(mine) for _ in text]
     printed = "".join(text for _, text in mine)
+    squeezed = "".join(ch for ch in cell.text if not ch.isspace())
+    at = printed.find(squeezed)
+    if not squeezed or at < 0 or printed.find(squeezed, at + 1) >= 0:
+        return {}
     widest = WORD_GAP * abs(box.b - box.t)
     gaps: dict[int, float] = {}
-    for run in runs:
-        at = printed.find(run.group(0))
-        if at < 0 or printed.find(run.group(0), at + 1) >= 0:
+    k = at
+    for offset, ch in enumerate(cell.text):
+        if ch.isspace():
             continue
-        for k in range(1, len(run.group(0))):
-            left, right = glyph_of[at + k - 1], glyph_of[at + k]
+        if k > at and not cell.text[offset - 1].isspace():
+            left, right = glyph_of[k - 1], glyph_of[k]
             before, after = mine[left][0], mine[right][0]
             if left != right and after.l - before.r > widest:
-                gaps[run.start() + k] = (before.r + after.l) / 2
+                gaps[offset] = (before.r + after.l) / 2
+        k += 1
     return gaps
 
 

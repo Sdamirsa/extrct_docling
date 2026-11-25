@@ -210,11 +210,53 @@ PDF -> docling-parse (cells: line, word, char) -> page preprocessing
    normal pages change, else only the bundles r8 repaired).
 5. Report the residue upstream (docling-parse) with the papers' DOIs, not
    the files.
-6. Then the next fix (separate from the upgrade): fonts whose codes are
+6. Small engine fix, any release: `public_source_path` keeps a linked path
+   under the current directory instead of the file name only (§8).
+7. Then the next fix (separate from the upgrade): fonts whose codes are
    glyph numbers of the embedded font (§1, `text_quality.unmapped_pages`):
    decode through the font's `cmap` in `text_layer.py`, measured on the
    pages the check names, before any OCR fallback.
 
 ## 8. The r8 reconversion of 2026-11-25
 
-(Filled in after the reconversion: what was inspected, what changed.)
+- **Inspected:** all 416 bundles, with the repair's own rules on
+  docling-parse's cells (`scripts/text_quality/inspect_parser_faults.py`,
+  19 min) and with the check's `text_quality` on the bundles' text against
+  the PDFs' (the same function, ~15 min).
+- **Converted again with r8** from a worktree at the tag (`--only`): 24
+  bundles, 16.5 min in all. r7 copies are kept in
+  `samples/archived/r7_before_r8/` (444 MB). Figure readings: kept aside,
+  put back (7 bundles, no picture moved) and embedded again; none read again.
+
+| Set | Bundles redone | Why | check ok of the set, r7 -> now |
+|---|---|---|---|
+| nirct_remaining127 | 17 | 10 respaced (59 pages), 38760584 look-alikes (3,726 characters, 6 pages), 6 for the `_docx` names | 249 -> 256 of 326 |
+| nirct_validation22 | 5 | respaced (24 pages) | 46 -> 50 of 67 |
+| aca-papers | 2 | respaced (AgentMD p5, p7; Dynamic-Specialist-MAS p6) | 18 of 23 (both passed before) |
+
+  Document recall of the repaired bundles: 0.85-0.95 -> 0.98-0.99 (e.g.
+  41811324 0.888 -> 0.981, 38760584 0.849 -> 0.991, 41060665 0.906 -> 0.991).
+  The `_docx` pairs hold the same as before under their new names.
+- **Residue** (named by `text_quality`, text complete but joined): fused
+  runs that decoding again did not separate on 30 pages of 8 bundles of
+  nirct_remaining127 (21 in the scanner manual `30883058_supplement1`), 12
+  pages of 3 in nirct_validation22 (`41849741_supplement1` 10 of them), aca
+  `AMIE-Mx` p20; glyph numbers in both readers: `34449183_supplement1` p374.
+- **Found on the way: input paths from a worktree.** A batch run from a
+  worktree whose `samples/` folders are links records `run.json` ->
+  `source.input` as the file name only (`public_source_path` resolves the
+  link to the main checkout, outside the worktree's directory, and keeps
+  the name for privacy). The checks written at conversion were right (the
+  engine passes the path); a later `amir-figdata embed` re-checked without
+  the PDF and skipped page recall, and the figure-to-data step on another
+  machine would not find the PDFs. All 333 such records (the whole
+  nirct_remaining127 set, converted from the r7 worktree, and the 7 r8
+  bundles of the other sets) were given their path from the repository
+  root in place (that field only, PDF found by hash and name), and the 7
+  re-checked. Engine fix for the next release: keep the path as given
+  (`os.path.abspath`, not `resolve`) when it lies under the current
+  directory, or run batches from the repository root at the tag.
+- **Transfer:** `samples/nirct_remaining127-r8-2026-11-25.zip` (the output
+  and source folders at their `samples/` paths, with
+  `README-nirct_remaining127.md` at its root). The disk had 23-26 GB free;
+  the other two sets were not zipped (not needed).

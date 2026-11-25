@@ -796,12 +796,24 @@ def _plan_bundles(
     sources: list[SourceFile], output_dir: Path, console: Console, *, compare: bool
 ) -> list[PlannedPdf]:
     """Each PDF with its bundle folder, resolved for the whole batch so that
-    two PDFs never share one (see :func:`resolve_pdf_dir`)."""
+    two PDFs never share one (see :func:`resolve_pdf_dir`). The batch's own
+    PDFs name their folders first; a PDF made from a Word file named like
+    one of them is ``<name>_docx`` (``29931092_supplement1.docx`` beside
+    ``29931092_supplement1.pdf``), not ``<name>_2``."""
     plan: list[PlannedPdf] = []
     taken: set[Path] = set()
-    for source in sources:
+    own_names = {
+        bundle_dir_name(source.pdf.name)
+        for source in sources
+        if source.converted_from is None
+    }
+    for source in sorted(sources, key=lambda s: s.converted_from is not None):
         pdf_path = source.pdf
         size, binary_hash = pdf_path.stat().st_size, create_file_hash(pdf_path)
+        base = bundle_dir_name(pdf_path.name)
+        origin = source.converted_from
+        if origin is not None and base in own_names:
+            base = f"{base}_{Path(origin.file_name).suffix.lstrip('.').lower()}"
         pdf_dir = resolve_pdf_dir(
             output_dir,
             pdf_path.name,
@@ -809,9 +821,10 @@ def _plan_bundles(
             binary_hash=binary_hash,
             taken=taken,
             bundle_subdir="standard" if compare else None,
+            base=base,
         )
         taken.add(pdf_dir)
-        if pdf_dir.name != bundle_dir_name(pdf_path.name):
+        if pdf_dir.name != base:
             console.print(
                 f"[yellow]name clash[/yellow] {escape(str(pdf_path))} -> "
                 f"{escape(str(pdf_dir))}"

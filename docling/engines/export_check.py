@@ -86,6 +86,12 @@ from docling.engines.text_repair import (
     pdf_page_texts,
     table_structure_model,
 )
+from docling.utils.parser_repair import (
+    FUSED_RUN_LETTERS,
+    LOOKALIKE,
+    MIN_FUSED_RUNS,
+    MIN_PAGE_LOOKALIKES,
+)
 from docling.utils.text_layer import (
     PartlyUnreadablePage,
     pages_text,
@@ -120,6 +126,13 @@ _WORD = re.compile(r"[^\W_]{2,}")
 # Letters only: a font without a Unicode map prints control codes and symbols.
 _LETTER_WORD = re.compile(r"[^\W\d_]{2,}")
 _ALPHA = re.compile(r"[a-z]+")
+_LETTER_RUN = re.compile(r"[A-Za-z]+")
+# Characters of the look-alike blocks real text next to never uses.
+_GLYPH_NUMBERS = re.compile(
+    "[\u0180-\u019f\u01a2-\u01ae\u01b1-\u01cc\u01dd-\u0217\u021c-\u02af"
+    "\u0370-\u0383\u03d8-\u03ff]"
+)
+_MIN_GLYPH_NUMBERS = 10
 
 _HIDDEN = re.compile(r"<(script|style|title)\b[^>]*>.*?</\1\s*>", re.S | re.I)
 _ABOUT = re.compile(r'<header class="extrct-about">.*?</header>', re.S)
@@ -282,6 +295,26 @@ class TextLayerCheck(CheckBlock):
     partly_unreadable_pages: list[PartlyUnreadablePage] = Field(default_factory=list)
 
 
+class TextQualityCheck(CheckBlock):
+    """Pages of ``document.json`` whose text shows a fault of Docling's PDF
+    parser (``docling.utils.parser_repair``), whether or not it was
+    repaired: ``fused_pages``, words run together (3+ runs of 18+ letters
+    the PDF's own text does not hold); ``lookalike_pages``, characters read
+    as look-alikes (3+ of Latin Extended-A/B to Cyrillic the PDF's text does
+    not hold). A parser that has the faults again shows here.
+    ``unmapped_pages``: 10+ characters that real text next to never uses
+    (Latin Extended-B but for Romanian, Vietnamese and Pinyin letters, IPA,
+    the Greek signs, the Coptic forms), whatever the PDF's text holds: a font
+    whose codes are its glyph numbers, which both readers give as they are
+    (a Calibri subset, "\u03ee\u0358\u03f2 \u015d\u0176" for "2.6 in"). Neither the
+    parser repair nor ``text_layer`` reads them; OCR or the font's own glyph
+    table could."""
+
+    fused_pages: list[int] = Field(default_factory=list)
+    lookalike_pages: list[int] = Field(default_factory=list)
+    unmapped_pages: list[int] = Field(default_factory=list)
+
+
 class BundleCheck(BaseModel):
     """Result of :func:`check_bundle`; ``ok`` and ``issues`` roll up the
     blocks' issues."""
@@ -310,6 +343,9 @@ class BundleCheck(BaseModel):
     text_layer: TextLayerCheck = Field(
         default_factory=lambda: TextLayerCheck(skipped="not checked")
     )
+    text_quality: TextQualityCheck = Field(
+        default_factory=lambda: TextQualityCheck(skipped="not checked")
+    )
 
     @model_validator(mode="after")
     def _roll_up(self) -> Self:
@@ -334,6 +370,7 @@ class BundleCheck(BaseModel):
             ("guards", self.guards),
             ("figure_data", self.figure_data),
             ("text_layer", self.text_layer),
+            ("text_quality", self.text_quality),
         )
 
     def summary_line(self) -> str:
@@ -467,6 +504,7 @@ def check_bundle(pdf_dir: Path, pdf_path: Path | None = None) -> BundleCheck:
             if pdf_path is not None
             else TextLayerCheck(skipped=pdf_skip)
         ),
+        text_quality=_check_text_quality(doc, pdf_pages),
     )
 
 
@@ -575,6 +613,64 @@ def _check_text_layer(pdf_path: Path) -> TextLayerCheck:
         "text layer cannot read"
         for page in found.partly_unreadable_pages
     ]
+    return result
+
+
+def _check_text_quality(
+    doc: DoclingDocument, pdf_pages: list[str] | None
+) -> TextQualityCheck:
+    """A run of letters or a character of the look-alike blocks that the PDF's own
+    text of the page (pdfium's) also holds is printed so ("electro
+    physiological" in one word, "Neužil"), not a fault of the parser. So a
+    run pdfium reads together as well is not named; on the JAMA pages found
+    pdfium has the spaces of most."""
+    by_page: dict[int, list[str]] = {}
+    for item in doc.texts:
+        # A paragraph that runs onto the next page: each page its own part.
+        for prov in item.prov:
+            start, end = prov.charspan
+            part = item.text[start:end] if len(item.prov) > 1 else item.text
+            by_page.setdefault(prov.page_no, []).append(part)
+    result = TextQualityCheck()
+    for page_no, texts in sorted(by_page.items()):
+        printed = unicodedata.normalize(
+            "NFC",
+            pdf_pages[page_no - 1]
+            if pdf_pages is not None and 0 < page_no <= len(pdf_pages)
+            else "",
+        )
+        texts = [unicodedata.normalize("NFC", text) for text in texts]
+        printed_words = set(_LETTER_RUN.findall(printed))
+        runs = [
+            word
+            for word in _LETTER_RUN.findall("\n".join(texts))
+            if len(word) >= FUSED_RUN_LETTERS and word not in printed_words
+        ]
+        if len(runs) >= MIN_FUSED_RUNS:
+            result.fused_pages.append(page_no)
+            result.issues.append(
+                f"p{page_no}: words run together ({len(runs)} runs of "
+                f"{FUSED_RUN_LETTERS}+ letters the PDF's text does not hold), "
+                f"e.g. {runs[0][:40]}"
+            )
+        seen = Counter(LOOKALIKE.findall("\n".join(texts)))
+        letters = sum(
+            max(0, count - printed.count(char)) for char, count in seen.items()
+        )
+        if letters >= MIN_PAGE_LOOKALIKES:
+            result.lookalike_pages.append(page_no)
+            result.issues.append(
+                f"p{page_no}: {letters} characters of Latin Extended to Cyrillic "
+                "the PDF's text does not hold, look-alikes of characters the "
+                "parser misread"
+            )
+        strange = sum(len(_GLYPH_NUMBERS.findall(part)) for part in texts)
+        if strange >= _MIN_GLYPH_NUMBERS:
+            result.unmapped_pages.append(page_no)
+            result.issues.append(
+                f"p{page_no}: {strange} characters real text does not use "
+                "(glyph numbers of a font without a Unicode map; OCR could read them)"
+            )
     return result
 
 

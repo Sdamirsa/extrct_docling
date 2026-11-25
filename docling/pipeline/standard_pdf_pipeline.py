@@ -613,6 +613,7 @@ class StandardPdfPipeline(ConvertPipeline):
                     self.pipeline_options
                 ),
                 ocr_unreadable_pages=bool(self.pipeline_options.do_ocr),
+                repair_parser_text=self.pipeline_options.repair_parser_text,
             )
         )
         self.ocr_model = self._make_ocr_model(art_path)

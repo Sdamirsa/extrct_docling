@@ -67,6 +67,7 @@ from pydantic import BaseModel, Field
 
 from docling.engines.run_snapshot import write_text_atomic
 from docling.engines.text_repair import GlyphStyle, pdf_text_styles
+from docling.utils.parser_repair import ParserRepairSummary
 from docling.utils.text_layer import TextLayerSummary, pages_text
 
 _log = logging.getLogger(__name__)
@@ -182,7 +183,8 @@ class QualityReport(BaseModel):
     ``pages_without_content``; and from the PDF's text layer
     (:func:`text_layer_warnings`): ``text_layer_decoded``,
     ``text_layer_read_by_ocr``, ``text_layer_unreadable`` (blocking: OCR was
-    off), ``text_layer_partly_unreadable``.
+    off), ``text_layer_partly_unreadable``; and from the repair of Docling's
+    PDF parser (:func:`parser_repair_warnings`): ``parser_text_repaired``.
     """
 
     pages: int = 0
@@ -196,6 +198,7 @@ class QualityReport(BaseModel):
     chars_in_tables_share: float | None = None
     repeated_heading_texts: list[RepeatedHeading] = Field(default_factory=list)
     text_layer: TextLayerSummary | None = None
+    parser_repair: ParserRepairSummary | None = None
     warnings: list[QualityWarning] = Field(default_factory=list)
 
     @property
@@ -1282,6 +1285,30 @@ def text_layer_warnings(
             )
         )
     return warnings
+
+
+def parser_repair_warnings(found: ParserRepairSummary) -> list[QualityWarning]:
+    """What was repaired in the text cells of Docling's PDF parser
+    (``docling.utils.parser_repair``)."""
+    parts = []
+    if found.respaced_pages:
+        parts.append(
+            f"words run together on {len(found.respaced_pages)} page(s), decoded "
+            f"again with tighter word spacing: {pages_text(found.respaced_pages)}"
+        )
+    if found.letter_pages:
+        parts.append(
+            f"{found.letters} letter(s) read as look-alike characters on "
+            f"{len(found.letter_pages)} page(s), replaced by pdfium's reading: "
+            f"{pages_text(found.letter_pages)}"
+        )
+    if not parts:
+        return []
+    return [
+        QualityWarning(
+            code="parser_text_repaired", blocking=False, detail="; ".join(parts)
+        )
+    ]
 
 
 # --- bundle file --------------------------------------------------------------

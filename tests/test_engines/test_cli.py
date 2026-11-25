@@ -39,7 +39,7 @@ from docling.engines.figure_data.schema import FigureDataOptions
 from docling.engines.html_export import MANIFEST_ID
 from docling.engines.pdf_engine import PdfEngine
 from docling.engines.schemas import PdfConversionOutput, SourceKind
-from docling.engines.sources import SourceFile
+from docling.engines.sources import ConvertedFrom, SourceFile
 from docling.utils.utils import create_file_hash
 
 FIXTURE_PDF = Path("tests/data/pdf/sources/2305.03393v1-pg9.pdf")
@@ -296,6 +296,44 @@ def test_bundle_folders_of_a_batch_never_collide(tmp_path: Path) -> None:
         "論文.pdf": "論文",
     }
     assert all(item.pdf_dir.parent == out for item in plan)
+
+
+def test_a_pdf_made_from_a_word_file_named_like_a_pdf_says_so(tmp_path: Path) -> None:
+    """A trial gave its supplement as a Word file and as a PDF of the same
+    name: the PDF keeps the name and the one made from the Word file is
+    ``_docx``, whichever sorts first; a Word file alone keeps its name."""
+    made = tmp_path / "out" / "_converted"
+    made.mkdir(parents=True)
+    own = tmp_path / "in" / "a_supplement1.pdf"
+    own.parent.mkdir()
+    own.write_bytes(b"%PDF own")
+    (made / "a_supplement1.pdf").write_bytes(b"%PDF made from docx")
+    (made / "b_supplement1.pdf").write_bytes(b"%PDF made from docx too")
+
+    def from_word(pdf: Path) -> SourceFile:
+        return SourceFile(
+            pdf=pdf,
+            converted_from=ConvertedFrom(
+                file_name=f"{pdf.stem}.docx", file_size_bytes=1, binary_hash="0" * 64
+            ),
+        )
+
+    sources = [
+        from_word(made / "a_supplement1.pdf"),
+        from_word(made / "b_supplement1.pdf"),
+        SourceFile(pdf=own),
+    ]
+    plan = _plan_bundles(
+        sources, tmp_path / "out", Console(file=io.StringIO()), compare=False
+    )
+
+    assert {
+        str(item.path.relative_to(tmp_path)): item.pdf_dir.name for item in plan
+    } == {
+        "in/a_supplement1.pdf": "a_supplement1",
+        "out/_converted/a_supplement1.pdf": "a_supplement1_docx",
+        "out/_converted/b_supplement1.pdf": "b_supplement1",
+    }
 
 
 def test_a_pdf_keeps_its_bundle_folder_across_batches(tmp_path: Path) -> None:

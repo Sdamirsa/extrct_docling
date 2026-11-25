@@ -546,6 +546,11 @@ class Page(BaseModel):
     # The PDF's text of this page does not say what the page prints (fonts
     # without a Unicode map): its text cells were dropped and OCR reads it.
     text_layer_unreadable: bool = False
+    # Text cells of Docling's PDF parser repaired (docling.utils.parser_repair,
+    # temporary): decoded again with tighter word spacing; letters read as
+    # look-alikes replaced by pdfium's, counted in the text lines.
+    parser_respaced: bool = False
+    parser_letters_repaired: int = 0
     predictions: PagePredictions = PagePredictions()
     assembled: AssembledUnit | None = None
 

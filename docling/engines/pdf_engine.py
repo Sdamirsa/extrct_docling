@@ -73,6 +73,7 @@ from docling.engines.structure import (
     STRUCTURE_FILENAME,
     STRUCTURE_VERSION,
     DocumentRole,
+    parser_repair_warnings,
     quality_report,
     structure_document,
     text_layer_warnings,
@@ -93,6 +94,7 @@ from docling.engines.vlm_specs import (
     build_picture_description_options,
 )
 from docling.exceptions import ConversionError
+from docling.utils.parser_repair import ParserRepairSummary
 from docling.utils.text_layer import read_pdf, summary as text_layer_summary
 
 _log = logging.getLogger(__name__)
@@ -424,6 +426,18 @@ class PdfEngine:
                         ocr_ran=self._pipeline_options is None
                         or bool(self._pipeline_options.do_ocr),
                     )
+            repaired = ParserRepairSummary(
+                respaced_pages=sorted(
+                    p.page_no for p in result.pages if p.parser_respaced
+                ),
+                letter_pages=sorted(
+                    p.page_no for p in result.pages if p.parser_letters_repaired
+                ),
+                letters=sum(p.parser_letters_repaired for p in result.pages),
+            )
+            if repaired.affected:
+                output.quality.parser_repair = repaired
+                output.quality.warnings += parser_repair_warnings(repaired)
             for warning in output.quality.blocking:
                 errors.append(
                     PdfEngineError(
@@ -768,9 +782,11 @@ def resolve_pdf_dir(
     binary_hash: str | None = None,
     taken: Collection[Path] = (),
     bundle_subdir: str | None = None,
+    base: str | None = None,
 ) -> Path:
     """The bundle folder of the PDF *file_name*: ``<output_dir>/<base>``, or
-    ``<base>_2``, ``<base>_3``... with ``base = bundle_dir_name(file_name)``.
+    ``<base>_2``, ``<base>_3``... with ``base = bundle_dir_name(file_name)``
+    unless *base* is given.
 
     A folder of that sequence whose ``run.json`` records this PDF (its name,
     and its size and binary hash where known) is reused wherever it is, so a
@@ -780,7 +796,7 @@ def resolve_pdf_dir(
     ``run.json`` — an interrupted conversion of this PDF leaves one — is
     reused. *bundle_subdir* is where each folder keeps the ``run.json`` that
     identifies it (``standard`` in a comparison folder)."""
-    base = bundle_dir_name(file_name)
+    base = base or bundle_dir_name(file_name)
 
     def record_dir(folder: Path) -> Path:
         return folder / bundle_subdir if bundle_subdir is not None else folder

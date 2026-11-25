@@ -79,7 +79,10 @@ From `docling/engines/cli.py` (`_collect_sources`) and
   deterministic, not input order.
 - Output folder names are the sanitized stem; two PDFs of a batch that map to
   the same name (`Smith 2020.pdf` and `Smith_2020.pdf`, or `main.pdf` in two
-  input folders) get `_2`, `_3`, ... suffixes, logged at run time.
+  input folders) get `_2`, `_3`, ... suffixes, logged at run time. A PDF
+  made from a Word file named like a PDF of the batch (a trial gave
+  `x_supplement1.docx` and `x_supplement1.pdf`) is `x_supplement1_docx`, and
+  the PDF keeps the plain name (since r8).
 
 ## Full command reference
 
@@ -291,6 +294,18 @@ PDF holds unreadable text with status `SUCCESS`: convert it again, alone,
 with `amir-batch <folder> -o <out> --only <file.pdf>` (repeatable). The
 whole folder is still read, so a supplement keeps its manuscript, and the
 bundles of the other PDFs stay as they are, whatever release wrote them.
+
+**Text Docling's PDF parser misreads** (since r8, temporary until the
+parser upgrade). docling-parse 7.20 runs the words of tightly justified
+text together where the PDF holds no space characters ("studiesandsmall
+randomizedclinicaltrials", JAMA papers), and reads the letters of some
+Calibri subsets as look-alikes ("RepoƌtiŶg SuŵŵaƌǇ"). The conversion decodes
+such a page again with tighter word spacing, kept only where that separates
+the words and splits none, and takes pdfium's reading for the look-alike
+letters. `run.json` → `quality.parser_repair` names the pages
+(`respaced_pages`, `letter_pages`) with the warning `parser_text_repaired`;
+`check.json` → `text_quality` lists the pages that still show either fault.
+`PdfPipelineOptions(repair_parser_text=False)` turns the repair off.
 
 `preview.html` is **not standalone** (use `preview.embedded.html` for that) — it references `images/page_NNNN.png`
 etc. by relative path. Sharing just the `.html` file renders a blank page;

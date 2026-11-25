@@ -2130,6 +2130,18 @@ class PdfPipelineOptions(PaginatedPipelineOptions):
             )
         ),
     ] = False
+    repair_parser_text: Annotated[
+        bool,
+        Field(
+            description=(
+                "Repair two faults of docling-parse 7.20 in the text cells before layout, tables and exports "
+                "read them (docling.utils.parser_repair, temporary until the parser upgrade): a page whose "
+                "words run together is decoded again with tighter word spacing, kept where that separates "
+                "them and splits none; letters read as Latin Extended look-alikes (glyph numbers) take "
+                "pdfium's reading. Off: the parser's cells as they come."
+            )
+        ),
+    ] = True
     table_structure_options: Annotated[
         BaseTableStructureOptions,
         Field(

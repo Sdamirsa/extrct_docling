@@ -1,0 +1,147 @@
+{
+  "parse_pages": {
+    "phase": "read",
+    "title": "Parse pages",
+    "owner": "docling",
+    "code": "docling/backend/docling_parse_backend.py",
+    "does": "Reads every character of the PDF with its font and position, and renders each page as an image."
+  },
+  "text_layer": {
+    "phase": "read",
+    "title": "Read the text through its fonts",
+    "owner": "docling_patched",
+    "code": "docling/utils/text_layer.py",
+    "does": "Checks how each font maps its codes to letters: a font that stores glyph numbers is decoded, and a page whose text cannot be read is handed to OCR.",
+    "patch": "added by the fork (r6) for fonts embedded without a Unicode map"
+  },
+  "parser_repair": {
+    "phase": "read",
+    "title": "Repair the parser's text",
+    "owner": "docling_patched",
+    "code": "docling/utils/parser_repair.py",
+    "does": "Compares the parser's text with a second PDF reader (pdfium): characters read as look-alikes are replaced and words run together are separated.",
+    "patch": "added by the fork (r8), until docling-parse is upgraded"
+  },
+  "ocr": {
+    "phase": "read",
+    "title": "OCR",
+    "owner": "docling_patched",
+    "code": "docling/models/base_ocr_model.py",
+    "does": "Recognises text in the page image where the PDF holds none: bitmap regions, and whole pages whose text cannot be read.",
+    "patch": "a page whose text layer is unreadable is read whole"
+  },
+  "docling_unrecorded": {
+    "phase": "read",
+    "title": "Docling conversion",
+    "owner": "docling",
+    "code": "docling/document_converter.py",
+    "does": "Docling converted the PDF with a converter handed to the engine."
+  },
+  "layout": {
+    "phase": "page",
+    "title": "Layout detection",
+    "owner": "docling",
+    "code": "docling/models/stages/layout/layout_model.py",
+    "does": "An object-detection model marks the regions of each page: paragraphs, headings, tables, figures, captions, page headers and footers."
+  },
+  "layout_cleanup": {
+    "phase": "page",
+    "title": "Layout clean-up",
+    "owner": "docling_patched",
+    "code": "docling/utils/layout_postprocessor.py",
+    "does": "Resolves overlapping regions, gives each the parser's text inside it and drops empty ones.",
+    "patch": "a diagonal watermark is kept out of the text"
+  },
+  "table_structure": {
+    "phase": "page",
+    "title": "Table structure",
+    "owner": "docling_patched",
+    "code": "docling/models/stages/table_structure/",
+    "does": "Rebuilds the rows, columns and cells of each table region."
+  },
+  "assemble": {
+    "phase": "page",
+    "title": "Assemble the document",
+    "owner": "docling_patched",
+    "code": "docling/models/stages/reading_order/readingorder_model.py",
+    "does": "Puts the regions in reading order, joins paragraphs that run on across pages, and builds the document tree.",
+    "patch": "a paragraph continued on a page of another size keeps its position"
+  },
+  "picture_classifier": {
+    "phase": "figures",
+    "title": "Picture classifier",
+    "owner": "docling",
+    "code": "docling/models/stages/picture_classifier/",
+    "does": "An image classifier sorts each picture into a kind: chart, photograph, logo, diagram and others."
+  },
+  "picture_description": {
+    "phase": "figures",
+    "title": "Picture description",
+    "owner": "docling",
+    "code": "docling/models/stages/picture_description/",
+    "does": "A vision-language model writes a short description of each picture."
+  },
+  "enrichment": {
+    "phase": "figures",
+    "title": "Code, formula and chart enrichment",
+    "owner": "docling",
+    "code": "docling/models/stages/code_formula/, chart_extraction/",
+    "does": "Optional models that turn code and formulas into text and read the data of charts."
+  },
+  "text_repairs": {
+    "phase": "cleanup",
+    "title": "Text repairs",
+    "owner": "amir_engine",
+    "code": "docling/engines/text_repair.py",
+    "does": "Removes end-of-text tokens a vision model left in descriptions, rejoins words split at a ligature (fi, fl) where the PDF prints them whole, and keeps the PDF's own text with tables whose cells miss printed words."
+  },
+  "structure": {
+    "phase": "cleanup",
+    "title": "Structure pass",
+    "owner": "amir_engine",
+    "code": "docling/engines/structure.py",
+    "does": "Settles what each element is: running page headers and footers, captions tied to their table or figure, the title, heading levels."
+  },
+  "quality": {
+    "phase": "cleanup",
+    "title": "Quality report",
+    "owner": "amir_engine",
+    "code": "docling/engines/structure.py",
+    "does": "Counts what came out on each page and raises warnings with stable codes, such as no headings or pages without text."
+  },
+  "figure_types": {
+    "phase": "cleanup",
+    "title": "Figure typing",
+    "owner": "amir_engine",
+    "code": "docling/engines/figure_typing.py",
+    "does": "Types each figure zero-shot with a biomedical image-text model (BiomedCLIP): CT, ECG, Kaplan-Meier curve, bar chart and others."
+  },
+  "noise_filter": {
+    "phase": "cleanup",
+    "title": "Picture noise filter",
+    "owner": "amir_engine",
+    "code": "docling/engines/picture_filter.py",
+    "does": "Marks logos, badges and pictures repeated on many pages as noise: kept in the HTML, left out of the markdown."
+  },
+  "exports": {
+    "phase": "write",
+    "title": "Write the bundle",
+    "owner": "amir_engine",
+    "code": "docling/engines/pdf_engine.py",
+    "does": "Writes the document as Docling JSON, per-element and chunked JSONL, tables and figures as JSONL, markdown, a standalone HTML page and a page viewer."
+  },
+  "self_check": {
+    "phase": "write",
+    "title": "Self-check",
+    "owner": "amir_engine",
+    "code": "docling/engines/export_check.py",
+    "does": "Checks the bundle against the PDF and itself: every item once in the HTML, each page's words in the output, the exports faithful to document.json, table grids, chunks."
+  },
+  "figure_to_data": {
+    "phase": "figure_data",
+    "title": "Figure to data",
+    "owner": "amir_engine",
+    "code": "docling/engines/figure_data/",
+    "does": "A model reads the values plotted in chart figures; values under a confidence threshold are kept out of the markdown."
+  }
+}

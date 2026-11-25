@@ -96,6 +96,9 @@ out/<pdf-name>/
 ├── run.json                🧾 engine release + git commit, models, options, timing, package versions, errors,
 │                              quality (label counts + warnings), structure_version, related PDFs
 ├── check.json              ✅ self-check: every item in the HTML, PDF text recall per page, export fidelity, issues
+├── provenance.html         🧭 how it was made: every step in order (Docling / patched in this fork / ours / skipped),
+│                              models, settings and outcomes, from run.json and check.json
+├── methods.md              📝 a methods paragraph for a paper + software versions, with this run's numbers
 ├── figure-to-data/         📊 only with --figure-data: per chart figure the high-resolution image, the context a reader
 │                              was given, figure-to-data.md / .json (what a model read from it), and runs/ with each run's config
 └── images/                 🖼️ page renders + figure/table crops

@@ -84,6 +84,7 @@ from docling.engines.figure_data.schema import (
 )
 from docling.engines.figure_data.step import StepRun, needs_step, run_step
 from docling.engines.pdf_engine import PdfEngine, bundle_dir_name, resolve_pdf_dir
+from docling.engines.provenance import write_provenance
 from docling.engines.run_snapshot import ENGINE_VERSION, RunRecord, read_run_record
 from docling.engines.schemas import PdfConversionOutput, RelatedDocument
 from docling.engines.sources import (
@@ -1084,6 +1085,10 @@ def _check_row(pdf_path: Path, pdf_dir: Path) -> BatchRow:
             output=pdf_dir,
         )
     write_bundle_check(pdf_dir, check)
+    try:
+        write_provenance(pdf_dir, check=check.model_dump(mode="json"))
+    except Exception:
+        _log.exception("writing the provenance of %s failed", pdf_dir)
     return _bundle_row(pdf_path, pdf_dir, check=check)
 
 

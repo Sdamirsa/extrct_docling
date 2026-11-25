@@ -712,7 +712,7 @@ _HTML_TEMPLATE = """<!doctype html>
 </head>
 <body>
 <header>
-  <h1>Docling preview — {title}</h1>
+  <h1>Docling preview — {title} <small><a href="provenance.html">How this was made</a></small></h1>
   <div class="hint">Click any bounding box to inspect node metadata. Dashed boxes are filtered as noise. A figure tagged <b>data</b> has values a model read from it. Append <code>?ref=self_ref[,self_ref...]</code> to this page's URL (values from <code>chunks.jsonl</code> / <code>nodes.jsonl</code>, e.g. <code>#/texts/12</code>) to jump to and highlight cited evidence.</div>
   {summary}
   {legend}

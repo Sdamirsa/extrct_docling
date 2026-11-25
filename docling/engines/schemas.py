@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from enum import Enum
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -194,3 +194,80 @@ class PdfConversionOutput(BaseModel):
 
     def kind(self) -> Literal["pdf"]:
         return "pdf"
+
+
+ProvenancePhase = Literal["read", "page", "figures", "cleanup", "write", "figure_data"]
+ProvenanceOwner = Literal["docling", "docling_patched", "amir_engine"]
+ProvenanceState = Literal["ran", "skipped", "not_recorded"]
+
+
+class ProvenanceStep(BaseModel):
+    """One step a PDF went through, as its bundle's files record it
+    (:mod:`docling.engines.provenance`)."""
+
+    key: str = Field(
+        ..., description="Stable id of the step, e.g. ``table_structure``."
+    )
+    phase: ProvenancePhase
+    title: str
+    does: str = Field(..., description="What the step does, in one plain sentence.")
+    owner: ProvenanceOwner = Field(
+        ...,
+        description=(
+            "``docling``: upstream Docling, unchanged; ``docling_patched``: "
+            "Docling's step as this fork changed it (``patch``); "
+            "``amir_engine``: this fork's own code."
+        ),
+    )
+    patch: str | None = Field(None, description="What this fork changed in the step.")
+    code: str | None = Field(None, description="Where the step's code lives.")
+    state: ProvenanceState = "ran"
+    reason: str | None = Field(
+        None, description="Why the step was skipped or is not recorded."
+    )
+    model: str | None = Field(None, description="Model the step ran (repo id).")
+    settings: dict[str, str] = Field(
+        default_factory=dict, description="The step's key settings, as shown."
+    )
+    recorded: dict[str, Any] = Field(
+        default_factory=dict,
+        description="What run.json / check.json / structure.json record for the step.",
+    )
+    outcome: list[str] = Field(default_factory=list, description="Short facts.")
+    errors: list[str] = Field(
+        default_factory=list, description="Errors run.json records for the step."
+    )
+
+
+class BundleProvenance(BaseModel):
+    """Every step of a bundle in execution order, with the facts of the
+    run: what ``provenance.html`` shows and embeds as JSON."""
+
+    schema_version: str = "extrct.provenance/1"
+    bundle: str
+    file_name: str | None = None
+    pages: int | None = None
+    sha256: str | None = Field(
+        None, description="``run.json`` → ``source.binary_hash``."
+    )
+    document_role: str | None = None
+    converted_from: str | None = Field(
+        None, description="File the PDF was made from, when it is not the input."
+    )
+    engine: dict[str, Any] = Field(
+        default_factory=dict, description="``run.json`` → ``engine``."
+    )
+    started_at: str | None = None
+    duration_seconds: float | None = Field(
+        None, description="Of the Docling conversion only (``run.json`` → ``timing``)."
+    )
+    status: str | None = None
+    check_ok: bool | None = None
+    issue_codes: dict[str, int] = Field(
+        default_factory=dict, description="``check.json`` issues per check."
+    )
+    errors: list[str] = Field(default_factory=list)
+    steps: list[ProvenanceStep] = Field(default_factory=list)
+    not_recorded: list[str] = Field(
+        default_factory=list, description="What the bundle's files do not tell."
+    )

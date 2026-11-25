@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>${title}</title>
+<style>
+:root{--bg:#f5f6f8;--paper:#fff;--ink:#1c2230;--muted:#5c6577;--line:#d3d9e2;
+--docling:#2a6bb0;--docling-bg:#eaf2fb;--docling_patched:#b25d0b;--docling_patched-bg:#fcf1e4;
+--amir_engine:#0f7a6e;--amir_engine-bg:#e6f4f1;--skip:#8d94a1;--good:#17803d;--bad:#b42318;
+color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#12151b;--paper:#1a1f28;--ink:#e5e8ee;
+--muted:#9aa2b1;--line:#343c49;--docling:#82b4ec;--docling-bg:#1b2a3c;--docling_patched:#efa75e;
+--docling_patched-bg:#33271a;--amir_engine:#5ec7ba;--amir_engine-bg:#15302c;--skip:#7c8492;
+--good:#4cc27a;--bad:#f2766b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 18px 48px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em}
+.muted{color:var(--muted)}.good{color:var(--good)}.bad{color:var(--bad)}
+.eyebrow{margin:0;color:var(--muted);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.top h1{margin:2px 0 14px;font-size:1.6rem;line-height:1.25;word-break:break-word}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 18px;margin:0 0 16px}
+.facts div{min-width:0}
+.facts dt{color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em}
+.facts dd{margin:0;word-break:break-word}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0;padding:10px 0 0;
+border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.legend li{display:flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:4px;border:2px solid var(--c);background:var(--cb)}
+.o-docling{--c:var(--docling);--cb:var(--docling-bg)}
+.o-docling_patched{--c:var(--docling_patched);--cb:var(--docling_patched-bg)}
+.o-amir_engine{--c:var(--amir_engine);--cb:var(--amir_engine-bg)}
+.st-skipped,.st-not_recorded{--c:var(--skip);--cb:transparent}
+.legend .st-skipped .sw{border-style:dashed}
+.map{margin:22px 0 30px}
+.map ol{display:flex;flex-wrap:wrap;gap:14px 30px;list-style:none;margin:0;padding:0}
+.map li{position:relative;flex:1 1 150px;min-width:0}
+.map li+li::before{content:"\2192";position:absolute;left:-23px;top:-6px;color:var(--muted);font-size:1.15rem}
+.map p{margin:0 0 6px;font-size:.76rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pills{display:flex;flex-wrap:wrap;gap:5px}
+.pill{display:inline-flex;gap:5px;align-items:baseline;padding:2px 9px;border-radius:10px;
+border:1.5px solid var(--c);background:var(--cb);color:var(--ink);text-decoration:none;font-size:.8rem}
+.pill span{color:var(--c);font-weight:700;font-variant-numeric:tabular-nums}
+.pill.st-skipped,.pill.st-not_recorded{border-style:dashed;color:var(--muted)}
+.phase{position:relative;padding-left:46px}
+.phase::before{content:"";position:absolute;left:15px;top:34px;bottom:-30px;border-left:2px solid var(--line)}
+.phase:last-child::before{display:none}
+.phase h2{position:relative;margin:0 0 14px;font-size:1.1rem;font-weight:650}
+.phase h2 small{display:block;font-size:.8rem;font-weight:400;color:var(--muted)}
+.badge{position:absolute;left:-46px;top:0;width:32px;height:32px;border-radius:50%;display:grid;
+place-items:center;background:var(--ink);color:var(--paper);font-size:.9rem;font-weight:700}
+.steps{list-style:none;margin:0 0 34px;padding:0}
+.card{position:relative;background:var(--paper);border:1px solid var(--line);
+border-left:5px solid var(--c);border-radius:10px;padding:12px 16px 10px}
+.card+.card{margin-top:26px}
+.card+.card::before{content:"";position:absolute;left:26px;top:-27px;height:19px;border-left:2px solid var(--line)}
+.card+.card::after{content:"";position:absolute;left:21px;top:-9px;border:6px solid transparent;border-top:7px solid var(--line)}
+.card.st-skipped,.card.st-not_recorded{background:transparent;border-style:dashed;color:var(--muted)}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.head h3{margin:0;font-size:1.02rem;font-weight:650;flex:1 1 auto}
+.no{color:var(--c);font-weight:700;font-variant-numeric:tabular-nums}
+.tag{font-size:.74rem;padding:1px 8px;border-radius:999px;background:var(--cb);color:var(--c);
+border:1px solid var(--c);white-space:nowrap}
+.st-skipped .tag,.st-not_recorded .tag{border-style:dashed}
+.body{display:grid;grid-template-columns:1.25fr 1fr;gap:4px 24px}
+.does{margin:6px 0}
+.patch,.why{margin:6px 0;font-size:.88rem}
+.patch span{color:var(--docling_patched);font-weight:600}
+.why span{font-weight:600}
+.settings{margin:8px 0 4px;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.84rem}
+.settings div{display:flex;gap:5px;min-width:0}
+.settings dt{color:var(--muted)}
+.settings dd{margin:0;word-break:break-word}
+.outcome{margin:6px 0;padding-left:18px;font-size:.92rem}
+.outcome li{margin:2px 0}
+.outcome b{font-variant-numeric:tabular-nums}
+.outcome .error{color:var(--bad)}
+.none{margin:6px 0;color:var(--muted);font-size:.88rem;font-style:italic}
+details{margin-top:6px;font-size:.84rem}
+summary{cursor:pointer;color:var(--muted)}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;
+max-height:340px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.code{margin:4px 0 0;text-align:right;color:var(--muted);font-size:.76rem;word-break:break-word}
+.notes{margin-top:8px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+.notes h2{font-size:.9rem;margin:0 0 4px;color:var(--ink)}
+.notes a{color:inherit}
+@media (max-width:760px){.body{grid-template-columns:1fr}.phase{padding-left:0}
+.phase::before{display:none}.badge{position:static;display:inline-grid;width:26px;height:26px;
+margin-right:8px;font-size:.8rem;vertical-align:1px}.phase h2 small{margin-top:2px}
+.map ol{flex-direction:column;gap:22px}.map li{flex:none}
+.map li+li::before{content:"\2193";left:0;top:-23px}.top h1{font-size:1.3rem}}
+@media (min-width:761px){.facts .wide{grid-column:span 2}}
+</style>
+<script type="application/json" id="${script_id}">${data}</script>
+</head>
+<body>
+<div class="wrap">
+${header}
+${overview}
+<main>${sections}</main>
+<footer class="notes"><h2>Not recorded</h2><ul>${notes}</ul>
+<p>Drawn by ${written_by} from this bundle's run.json, check.json, structure.json and figures.jsonl; nothing here is assumed from the code. The same steps are in <code>&lt;script id="${script_id}"&gt;</code> as JSON for agents. <a href="methods.md">methods.md</a> is a methods paragraph for a paper.</p></footer>
+</div>
+</body>
+</html>

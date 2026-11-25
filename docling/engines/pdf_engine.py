@@ -53,6 +53,11 @@ from docling.engines.picture_filter import (
     PictureNoiseFlag,
     classify_pictures,
 )
+from docling.engines.provenance import (
+    METHODS_FILENAME,
+    PROVENANCE_FILENAME,
+    write_provenance,
+)
 from docling.engines.run_snapshot import (
     RUN_JSON_FILENAME,
     build_run_snapshot,
@@ -627,6 +632,16 @@ class PdfEngine:
             with _step(errors, "export_check"):
                 output.check = check_bundle(pdf_dir, pdf_path=local_pdf)
                 output.check_json = write_bundle_check(pdf_dir, output.check)
+        with _step(errors, "provenance"):
+            write_provenance(
+                pdf_dir,
+                run=snapshot(complete=True),
+                check=(
+                    output.check.model_dump(mode="json")
+                    if output.check is not None
+                    else None
+                ),
+            )
         with _step(errors, "run_snapshot"):
             output.run_json = write_run_snapshot(pdf_dir, snapshot(complete=True))
 
@@ -737,6 +752,8 @@ def _bundle_files(pdf_dir: Path) -> tuple[Path, ...]:
         STRUCTURE_FILENAME,
         RUN_JSON_FILENAME,
         CHECK_FILENAME,
+        PROVENANCE_FILENAME,
+        METHODS_FILENAME,
         f"{stem}.md",
         f"{stem}.embedded.md",
         f"{stem}.html",

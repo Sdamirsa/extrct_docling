@@ -223,7 +223,8 @@ def embed_results(
     """Write *results* (each with the note that goes above its table) into
     an existing bundle: ``document.json``, ``figures.jsonl``, the markdown
     files, ``chunks.jsonl``, the HTML, the page viewer, ``run.json`` and
-    ``check.json`` (each when the bundle has it). Returns how many figures
+    ``check.json`` (each when the bundle has it), and ``provenance.html`` /
+    ``methods.md`` (when it has ``run.json``). Returns how many figures
     carry a record."""
     # These modules import this package.
     from docling.engines.chunker import (
@@ -234,6 +235,7 @@ def embed_results(
     from docling.engines.export_check import check_bundle, write_bundle_check
     from docling.engines.html_export import rebuild_document_html
     from docling.engines.pdf_engine import rewrite_bundle_markdown
+    from docling.engines.provenance import write_provenance
     from docling.engines.visualizer import (
         PREVIEW_EMBEDDED_FILENAME,
         PREVIEW_FILENAME,
@@ -283,6 +285,8 @@ def embed_results(
             embed_html_images(preview)
     if (bundle_dir / "check.json").is_file():
         write_bundle_check(bundle_dir, check_bundle(bundle_dir, pdf_path=pdf_path))
+    if run_json.is_file():
+        write_provenance(bundle_dir)
     _log.info("Embedded figure data of %d figure(s) into %s", attached, bundle_dir)
     return attached
 

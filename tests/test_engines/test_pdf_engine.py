@@ -45,10 +45,16 @@ from docling.engines.figure_typing import (
     get_figure_type,
 )
 from docling.engines.pdf_engine import (
+    _bundle_files,
     _link_picture_placeholders,
     _strip_noise_embedded,
 )
 from docling.engines.picture_filter import classify_pictures
+from docling.engines.provenance import (
+    METHODS_FILENAME,
+    PROVENANCE_FILENAME,
+    build_provenance,
+)
 from docling.engines.structured_outputs import write_structured_outputs
 from docling.engines.text_repair import (
     attach_table_pdf_text,
@@ -342,6 +348,19 @@ def test_pdf_engine_writes_artifacts(tmp_path: Path) -> None:
     check = json.loads((pdf_dir / "check.json").read_text(encoding="utf-8"))
     assert check["bundle"] == pdf_dir.name
     assert output.check is not None and output.check.ok == check["ok"]
+
+    # The provenance files are part of the bundle (a reconversion removes
+    # stale copies) and are drawn from the run that wrote them.
+    for name in (PROVENANCE_FILENAME, METHODS_FILENAME):
+        assert pdf_dir / name in _bundle_files(pdf_dir)
+        assert (pdf_dir / name).is_file()
+    assert all(error["component"] != "provenance" for error in run["errors"])
+    provenance = build_provenance(pdf_dir)
+    assert provenance.engine["version"] == ENGINE_VERSION
+    assert provenance.check_ok == check["ok"]
+    steps = {step.key: step for step in provenance.steps}
+    assert steps["figure_types"].state == "skipped"
+    assert steps["table_structure"].outcome[0].startswith(f"{len(doc['tables'])} table")
 
     # Where each element sits, and what the conversion holds: the outline of
     # structure.json is the document's section headers, and run.json counts

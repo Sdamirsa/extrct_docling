@@ -1,29 +1,28 @@
 # STATUS
 
-_Rewritten from scratch by `/project-memory`. Read this first, every session. Last: 2026-11-25._
+_Rewritten from scratch by `/project-memory`. Read this first, every session. Last: 2026-11-27._
 
 ## Current focus
 
-- Release `extrct_docling-v2.131.0-r8` (Docling 2.131.0, docling-parse 7.20) is tagged and pushed. It carries a temporary repair of docling-parse 7.20's fused words and look-alike characters (`docling/utils/parser_repair.py`); the upgrade plan is `.claude/reference/quality/2026-11-25-parser-faults-and-upgrade-plan.md` (read it first).
+- Release `extrct_docling-v2.131.0-r9` (Docling 2.131.0, docling-parse 7.28) is tagged and pushed: 7.28 reads r8's look-alikes right, the fused words it still joins are spaced by the gaps between glyphs (`docling/utils/parser_repair.py`, temporary), and every bundle draws its steps (`provenance.html`, `methods.md`). Results: `.claude/reference/quality/2026-11-25-parser-faults-and-upgrade-plan.md` §9.
 
 ## Active work
 
-- None running. The three sample sets are final for now (the nirct and aca output folders under `samples/`, r7 plus the r8 reconversion of the bundles r8 changes); the 127-trial set is zipped for transfer; its figure-to-data step runs on another device.
+- None running. The maintainer is moving the sample sets (the nirct and aca inputs, outputs and `samples/archived/`) to a repo of their own. Their 416 bundles are r7 and r8 conversions; since 2026-11-27 every `check.json` is r8's; each set has `pipeline_extrct_docling-<version>[_postfix-<date>].html` (HANDOFF §9).
 
 ## Next steps
 
-1. Upgrade docling-parse 7.20 -> 7.28 in a branch (needs docling-core >= 2.99 and a `uv sync`: ask the user first). Run the HTML-completeness test, then the suite (plan §7 step 2).
-2. Measure on the five sample documents of plan §7 step 3, three ways (r8 on 7.20; 7.28 repair on; 7.28 repair off): is the repair still needed, does it still work; then remove or keep it and release r9.
-3. Engine fix: `public_source_path` keeps a linked path under the current directory (worktree batches recorded bare file names, plan §8).
-4. Next fix after the upgrade: decode fonts whose codes are the embedded font's glyph numbers through its `cmap` (`check.json` -> `text_quality.unmapped_pages`, plan §1).
+1. Fonts whose codes are the embedded font's glyph numbers (`check.json` -> `text_quality.unmapped_pages`, one supplement page in the sets): decode them through the font's `cmap` in `docling/utils/text_layer.py`, measured on the pages the check names, before any OCR fallback (plan §1).
+2. When the disk allows (about 25 GB free) and the maintainer wants it: reconvert the sample sets with r9 from the repository root at the tag (about 14 h), the bundles the check flags first; put the figure readings back only where no picture moved.
+3. File the docling-parse fused-words report (draft: `.claude/issues-with-docling/docling-parse-fused-words-justified-text.md`); remove the repair when a release separates these words.
 
 ## Blockers / open decisions
 
-- The docling-parse upgrade changes the environment: the user's go-ahead before `uv add` / `uv sync`.
-- Disk is nearly full (about 14 GB free): the r7/r8 worktrees under `.claude/worktrees/`, `samples/archived/r7_before_r8/` and the old `samples/nirct_validation22_out.zip` are the user's to clear.
+- Disk: 18 GB free. The maintainer's to clear: `.claude/worktrees/` (`r7-release`, `r8-release`, `agent-a75a01f2844443a5c` on `gpu-docker-explore`) and the scratch conversions of this session.
 
 ## Watch-outs
 
-- A repair that replaces characters: dry-run it over every set and print the (old -> new) pairs first; Greek letters from a Symbol font read as ASCII in pdfium (L-6).
-- After any batch: every `run.json` -> `source.input` must exist from the repository root (L-7). Exit 3 is a finished batch with check issues; 139 a segfault, run it again.
-- Write-capable scripts run on scratch copies unless the user asked for that folder (L-3).
+- One-time fixes to sample bundles live in prose, not in the bundles: list them before describing or redoing a set's provenance (L-8).
+- A repair that replaces characters (the `cmap` decoding next): dry-run it over every set and print the (old -> new) pairs first; a Symbol font's Greek letters read as ASCII in pdfium (L-6).
+- Write-capable scripts run on scratch copies (hard links are fine) unless the user asked for that folder (L-3).
+- An older release's code: a script file from the repository root with `PYTHONPATH=<worktree>`; assert `docling.__file__` (`python -c` imports the checkout's).
